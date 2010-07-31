@@ -16,8 +16,8 @@
  ***************************************************************************/
 
 // QT includes
-#include <qstringlist.h>
-#include <qpushbutton.h>
+#include <tqstringlist.h>
+#include <tqpushbutton.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -27,7 +27,7 @@
 // #include "freeverbsetupimpl.h"
 #include "fxpluginhandler.h"
 
-FX_SetupImpl::FX_SetupImpl(QWidget *parent, const char *name,
+FX_SetupImpl::FX_SetupImpl(TQWidget *parent, const char *name,
         KConfig *config,
         FXPluginHandler *fxpluginhandler )
  : FX_Setup(parent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
@@ -89,18 +89,18 @@ void FX_SetupImpl::slotReload()
 }
 
 
-void FX_SetupImpl::slotConfigureEffect(QListBoxItem *item)
+void FX_SetupImpl::slotConfigureEffect(TQListBoxItem *item)
 {
   m_fxpluginhandler->showEffectGUI(item->text());
 }
 
 
-void FX_SetupImpl::Init(QStringList c_avail)
+void FX_SetupImpl::Init(TQStringList c_avail)
 {
   m_config->setGroup("Effect Stack Configuration");
-  QStringList conf_active = m_config->readListEntry("Activated");
-  QStringList c_active;
-  QStringList::Iterator sit, it;
+  TQStringList conf_active = m_config->readListEntry("Activated");
+  TQStringList c_active;
+  TQStringList::Iterator sit, it;
   
   listBox_Available->clear();
   listBox_Active->clear();
@@ -135,7 +135,7 @@ void FX_SetupImpl::slotSaveWasClicked()
   m_config->setGroup("Effect Stack Configuration");
 
   // Read ListBox Available FX
-  QStringList slist;
+  TQStringList slist;
   for(uint i=0; i<listBox_Available->count(); i++){
     slist.append( listBox_Available->text( (int)i) );  
   }
@@ -144,7 +144,7 @@ void FX_SetupImpl::slotSaveWasClicked()
 
   // Read ListBox Activated FX
   slist.clear();
-  QString t;
+  TQString t;
   for(uint i=0; i<listBox_Active->count(); i++){
     t = listBox_Active->text( (int)i );
     slist.append( t );

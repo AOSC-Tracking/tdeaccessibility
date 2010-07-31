@@ -14,10 +14,10 @@
 #define KSAYIT_TTSPLUGIN
 
 // QT includes
-#include <qobject.h>
-#include <qwidget.h>
-#include <qframe.h>
-#include <qstring.h>
+#include <tqobject.h>
+#include <tqwidget.h>
+#include <tqframe.h>
+#include <tqstring.h>
 
 
 // KDE includes
@@ -65,7 +65,7 @@
 class TTSPlugin : public QObject
 {
 protected:
-    TTSPlugin(QObject *parent, const char *name) : QObject(parent, name){};
+    TTSPlugin(TQObject *parent, const char *name) : TQObject(parent, name){};
     
 public:
     /** Returns the name of the plugin. This name is the unique identifier
@@ -74,12 +74,12 @@ public:
      *  The PluginHandler internally references to each TTS plugin by this name.\n
      *  Has to be reimplemented by the plugin implementation.
      */
-    virtual QString getName_KS() const = 0;
+    virtual TQString getName_KS() const = 0;
     
     /** Returns the description of the plugin.\n
      *  Has to be reimplemented by the plugin implementation.
      */
-    virtual  QString getDescription_KS() const = 0;
+    virtual  TQString getDescription_KS() const = 0;
     
     /** Returns the supported control actions of the plugin.
      *  It is represented as an OR'ed value of enum \pACTIONS. 
@@ -88,10 +88,10 @@ public:
      
     /** Returnes a pointer to the GUI widget to configure the plugin.\n
      *  Will be deleted by the PluginHandler.\n
-     *  \param frame A pointer to the QFrame object in which the dialog will
+     *  \param frame A pointer to the TQFrame object in which the dialog will
      *  be embedded.
      */
-    virtual const QWidget* getGUI_KS(QFrame *frame) = 0;
+    virtual const TQWidget* getGUI_KS(TQFrame *frame) = 0;
        
     /** Let the plugin (re)load its configuration
      */
@@ -109,14 +109,14 @@ public:
      *  In this case, KSayIt uses a built-in audio player to play back
      *  the file via aRts.\n
      *  If this plugin provides its own audio output mechanisms, then return
-     *  \p QString::null.\n
+     *  \p TQString::null.\n
      *  The TTS processing shall be implemented non-blocking, i.e. this function has
      *  to return a valid string as soon as possible, before the typically time
      *  consuming TTS processing starts. The synchronization with KSayIt shall
      *  be performed by the status flags (see \p getStatus_KS()).
      *  \param text The text to speach. 
      */
-    virtual QString sayText_KS(const QString &text) = 0;
+    virtual TQString sayText_KS(const TQString &text) = 0;
     
     /** Returns an OR'ed value of status bits of the plugin.\n
      *  Currently only \p TTS::AUDIOFILE is defined.\n This

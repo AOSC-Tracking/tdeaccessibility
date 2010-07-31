@@ -13,8 +13,8 @@
 #define FXPLUGIN_H
 
 // QT includes
-#include <qobject.h>
-#include <qstring.h>
+#include <tqobject.h>
+#include <tqstring.h>
 
 // KDE includes
 #include <kapplication.h>
@@ -37,7 +37,7 @@ class FXPlugin : public QObject
 {
 // Q_OBJECT
 public:
-    FXPlugin(QObject *parent=0, const char* name=0){};
+    FXPlugin(TQObject *parent=0, const char* name=0){};
        
     /** Sets the Main application object. Useful for config objects etc.
      */
@@ -49,12 +49,12 @@ public:
      *  The PluginHandler internally references to each effect plugin by this name.\n
      *  Has to be reimplemented by the plugin implementation.
      */
-    virtual QString getName_KS() const = 0;
+    virtual TQString getName_KS() const = 0;
     
     /** Returns the description of the plugin.\n
      *  Has to be reimplemented by the plugin implementation.
      */
-    virtual QString getDescription_KS() const = 0;
+    virtual TQString getDescription_KS() const = 0;
     
     /** Shows the GUI to configure the plugin. The configuration can to be
      *  stored in the global configuration file of KSayIt.\n

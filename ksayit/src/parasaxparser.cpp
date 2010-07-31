@@ -22,7 +22,7 @@
 
 ParaSaxParser::ParaSaxParser()
 {
-    m_reader = new QXmlSimpleReader();
+    m_reader = new TQXmlSimpleReader();
 
     m_handler = new SaxHandler();
     m_reader->setContentHandler(m_handler);
@@ -30,8 +30,8 @@ ParaSaxParser::ParaSaxParser()
     m_reader->setEntityResolver(m_handler);
     m_reader->setDeclHandler(m_handler);
 
-    m_XmlInputHeader = QString::null;
-    m_XmlInputBody   = QString::null;    
+    m_XmlInputHeader = TQString::null;
+    m_XmlInputBody   = TQString::null;    
 }
 
 ParaSaxParser::~ParaSaxParser()
@@ -51,23 +51,23 @@ ParaSaxParser* ParaSaxParser::Instance()
 }
 
 
-void ParaSaxParser::setProcessingInstruction(const QString &data)
+void ParaSaxParser::setProcessingInstruction(const TQString &data)
 {
     m_XmlInputHeader = data;
 }
 
 
-void ParaSaxParser::setData(const QString &data)
+void ParaSaxParser::setData(const TQString &data)
 {
     m_XmlInputBody = data;
 }
 
 
-void ParaSaxParser::getText(QString &data)
+void ParaSaxParser::getText(TQString &data)
 {
-    QString XmlPart = m_XmlInputHeader + m_XmlInputBody;
+    TQString XmlPart = m_XmlInputHeader + m_XmlInputBody;
     
-    QXmlInputSource input;
+    TQXmlInputSource input;
     input.setData(XmlPart);
 
     m_handler->reset();
@@ -78,12 +78,12 @@ void ParaSaxParser::getText(QString &data)
 }
 
 
-void ParaSaxParser::getRTFText(QString &data)
+void ParaSaxParser::getRTFText(TQString &data)
 {    
-    QString XmlPart = m_XmlInputHeader + m_XmlInputBody;    
+    TQString XmlPart = m_XmlInputHeader + m_XmlInputBody;    
     kdDebug(100200) << "ParaSaxParser::getRTFText(): " << XmlPart << endl;
     
-    QXmlInputSource input;
+    TQXmlInputSource input;
     input.setData(XmlPart);
 
     m_handler->reset();

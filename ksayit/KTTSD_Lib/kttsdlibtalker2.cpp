@@ -13,7 +13,7 @@
 #include <unistd.h> //sleep
 
 // Qt includes
-#include <qstring.h>
+#include <tqstring.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -21,22 +21,22 @@
 // App specific includes
 #include "kttsdlibtalker2.h"
 
-kttsdlibtalker2::kttsdlibtalker2(QObject *parent, const char *name)
-    : QObject(parent, name), DCOPStub("kttsd", "KSpeech")
+kttsdlibtalker2::kttsdlibtalker2(TQObject *parent, const char *name)
+    : TQObject(parent, name), DCOPStub("kttsd", "KSpeech")
 {
     m_client = NULL;
 
     connectDCOPSignal("kttsd", "KSpeech",
-        "textStarted(QCString, uint)",
-        "textStarted(QCString, uint)", false);    
+        "textStarted(TQCString, uint)",
+        "textStarted(TQCString, uint)", false);    
     
     connectDCOPSignal("kttsd", "KSpeech",
-        "textFinished(QCString, uint)",
-        "textFinished(QCString, uint)", false);    
+        "textFinished(TQCString, uint)",
+        "textFinished(TQCString, uint)", false);    
     
     connectDCOPSignal("kttsd", "KSpeech",
-        "textStopped(QCString, uint)",
-        "textStopped(QCString, uint)", false);    
+        "textStopped(TQCString, uint)",
+        "textStopped(TQCString, uint)", false);    
     
 }
 
@@ -52,8 +52,8 @@ void kttsdlibtalker2::KTTSD_init(KApplication *Appl)
 
     m_client = Appl->dcopClient();
     if ( !m_client->isApplicationRegistered("kttsd")){
-        QString error;
-        if ( Appl->startServiceByDesktopName("kttsd", QStringList(), &error) ){
+        TQString error;
+        if ( Appl->startServiceByDesktopName("kttsd", TQStringList(), &error) ){
             // throw(error);
 	    kdDebug() << "Starting KTTSD failed with message " << error << endl;
         }
@@ -64,7 +64,7 @@ void kttsdlibtalker2::KTTSD_init(KApplication *Appl)
 }
 
 
-uint kttsdlibtalker2::KTTSD_setText(const QString &text, QString lang)
+uint kttsdlibtalker2::KTTSD_setText(const TQString &text, TQString lang)
 {
     kdDebug(100200) << "kttsdlibtalker2::KTTSD_setText()" << endl;
     uint jobNum = setText(text, lang);
@@ -134,7 +134,7 @@ int kttsdlibtalker2::KTTSD_getCurrentTextJob()
 // DCOP signals
 ////////////////////////////////////////////    
 
-ASYNC kttsdlibtalker2::textStarted(const QCString &appID,
+ASYNC kttsdlibtalker2::textStarted(const TQCString &appID,
         const uint jobNum)
 {
     kdDebug(100200) << "*** kttsdlibtalker2::textStarted()" << endl;
@@ -144,7 +144,7 @@ ASYNC kttsdlibtalker2::textStarted(const QCString &appID,
 }
 
 
-ASYNC kttsdlibtalker2::textFinished(const QCString &appID,
+ASYNC kttsdlibtalker2::textFinished(const TQCString &appID,
         const uint jobNum)
 {
     kdDebug(100200) << "*** kttsdlibtalker2::textFinished()" << endl;
@@ -154,7 +154,7 @@ ASYNC kttsdlibtalker2::textFinished(const QCString &appID,
 }
 
 
-ASYNC kttsdlibtalker2::textStopped(const QCString &appID,
+ASYNC kttsdlibtalker2::textStopped(const TQCString &appID,
         const uint jobNum)
 {
     kdDebug(100200) << "*** kttsdlibtalker2::textStopped()" << endl;

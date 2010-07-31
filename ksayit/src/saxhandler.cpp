@@ -21,9 +21,9 @@
 #include "saxhandler.h"
 
 SaxHandler::SaxHandler()
- : QXmlDefaultHandler()
+ : TQXmlDefaultHandler()
 {
-    m_output = QString::null;
+    m_output = TQString::null;
     m_rtf = true;
     m_tagmap["action"]        = "B";
     m_tagmap["application"]   = "B";
@@ -74,21 +74,21 @@ void SaxHandler::setRTF(bool rtf)
 }
 
 
-bool SaxHandler::startElement(const QString &,
-                    const QString &,
-                    const QString & qName,
-                    const QXmlAttributes & atts )
+bool SaxHandler::startElement(const TQString &,
+                    const TQString &,
+                    const TQString & qName,
+                    const TQXmlAttributes & atts )
 {
     if ( !m_rtf )
         return true;
         
-    QString tag = qName.lower();
+    TQString tag = qName.lower();
     
     TagMapT::iterator it;
     it = m_tagmap.find(tag);
     if ( it != m_tagmap.end() ){
         // tag found in hash table
-        QString rtftag = (*it).second;
+        TQString rtftag = (*it).second;
         m_output += "<" + rtftag + ">";
     }
     
@@ -96,20 +96,20 @@ bool SaxHandler::startElement(const QString &,
 }
 
 
-bool SaxHandler::endElement(const QString &,
-                    const QString &,
-                    const QString & qName)
+bool SaxHandler::endElement(const TQString &,
+                    const TQString &,
+                    const TQString & qName)
 {
     if ( !m_rtf )
         return true;
 
-    QString tag = qName.lower();
+    TQString tag = qName.lower();
 
     TagMapT::iterator it;
     it = m_tagmap.find(tag);
     if ( it != m_tagmap.end() ){
         // tag found in hash table
-        QString rtftag = (*it).second;
+        TQString rtftag = (*it).second;
         m_output += "</" + rtftag.section(" ", 0, 0) + ">";
     }
 
@@ -117,50 +117,50 @@ bool SaxHandler::endElement(const QString &,
 }
 
 
-bool SaxHandler::characters(const QString & ch)
+bool SaxHandler::characters(const TQString & ch)
 {
     m_output += ch;
     return true;
 }
 
 
-bool SaxHandler::fatalError(const QXmlParseException &exc)
+bool SaxHandler::fatalError(const TQXmlParseException &exc)
 {
-    QString err = i18n("Fatal error while parsing XML-Paragraph:\n");
+    TQString err = i18n("Fatal error while parsing XML-Paragraph:\n");
     err += i18n("%1, Line: %2").arg(exc.message()).arg(exc.lineNumber());
     KMessageBox::error(0, err, i18n("Fatal error") );
     return false;
 }
 
 
-bool SaxHandler::resolveEntity(const QString &publicId,
-                    const QString &systemId,
-                    QXmlInputSource* &ret)
+bool SaxHandler::resolveEntity(const TQString &publicId,
+                    const TQString &systemId,
+                    TQXmlInputSource* &ret)
 {
     return true;
 }
 
 
-bool SaxHandler::externalEntityDecl(const QString & name,
-                    const QString & publicId,
-                    const QString & systemId)
+bool SaxHandler::externalEntityDecl(const TQString & name,
+                    const TQString & publicId,
+                    const TQString & systemId)
 {
     kdDebug(100200) << "externalEntityDecl(): " << name << ", " << publicId << ", " << systemId << endl;
     return true;
 }
 
 
-bool SaxHandler::internalEntityDecl(const QString & name,
-                    const QString & value)
+bool SaxHandler::internalEntityDecl(const TQString & name,
+                    const TQString & value)
 {
     kdDebug() << "internalEntityDecl(): " << name << ", " << value << endl;
     return true;
 }
 
 
-bool SaxHandler::skippedEntity(const QString &name)
+bool SaxHandler::skippedEntity(const TQString &name)
 {
-    QString warn = i18n("Unresolved entity found: %1.\n").arg(name);
+    TQString warn = i18n("Unresolved entity found: %1.\n").arg(name);
     warn += i18n("KSayIt does not support DocBook files with external entities. ");
     warn += i18n("Parsing can continue, but the resulting text will contain gaps.");
     
@@ -173,7 +173,7 @@ bool SaxHandler::skippedEntity(const QString &name)
 }
 
 
-void SaxHandler::getData( QString &data ) const
+void SaxHandler::getData( TQString &data ) const
 {
     data = m_output;
 }
@@ -181,7 +181,7 @@ void SaxHandler::getData( QString &data ) const
 
 void SaxHandler::reset()
 {
-    m_output = QString::null;
+    m_output = TQString::null;
 }
 
 

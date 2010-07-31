@@ -21,14 +21,14 @@
 // #include <vector>
 
 // QT includes
-#include <qvaluelist.h>
-#include <qmap.h>
+#include <tqvaluelist.h>
+#include <tqmap.h>
 
 // KDE includes
 #include <klistview.h>
 
-typedef QValueList<int> ParameterList_type;
-typedef QMap<QString, ParameterList_type> EffectConfig_type;
+typedef TQValueList<int> ParameterList_type;
+typedef TQMap<TQString, ParameterList_type> EffectConfig_type;
 
 namespace KSayItGlobal {
     static const int item_initial_id = 100;
@@ -54,9 +54,9 @@ This abstract class is the interface to access the items of the TreeView.
 class ListViewInterface : public KListViewItem
 {
 public:
-    ListViewInterface(ListViewInterface *parent=0, QString label=QString::null);
-    ListViewInterface(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
-    ListViewInterface(KListView *lv=0, QString label=QString::null);
+    ListViewInterface(ListViewInterface *parent=0, TQString label=TQString::null);
+    ListViewInterface(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    ListViewInterface(KListView *lv=0, TQString label=TQString::null);
 
     // ~ListViewItemInterface();
     
@@ -67,15 +67,15 @@ public:
      * \returns <tt>true</tt> if the operation was successfully performed,
      * in all other cases <tt>false</tt>.
      */
-    virtual bool setValue( unsigned int index, QVariant data ) = 0;
+    virtual bool setValue( unsigned int index, TQVariant data ) = 0;
     
     /**
      * Requests data from the item referenced by the index.
      * \param index See <tt>setValue()</tt>.
-     * \returns The requested data as a <tt>QVariant</tt> or a invalid
-     * <tt>QVariant()</tt> if the data was not available.
+     * \returns The requested data as a <tt>TQVariant</tt> or a invalid
+     * <tt>TQVariant()</tt> if the data was not available.
      */
-    virtual QVariant getValue( unsigned int index ) const = 0;
+    virtual TQVariant getValue( unsigned int index ) const = 0;
 
 };
 

@@ -17,9 +17,9 @@
 using namespace std;
 
 // QT includes
-#include <qobject.h>
-#include <qwidget.h>
-#include <qframe.h>
+#include <tqobject.h>
+#include <tqwidget.h>
+#include <tqframe.h>
 
 #include <kdemacros.h>
 #include "kdeexportfix.h"
@@ -70,25 +70,25 @@ public slots:
     void slotTextStarted(const uint job);
     
 public:
-    KTTSDLib(QObject *parent=0, const char *name=0, KApplication *Appl=0);
+    KTTSDLib(TQObject *parent=0, const char *name=0, KApplication *Appl=0);
 
     ~KTTSDLib();
 
     /** Reimplementations from the base class.
      */
-    QString getName() const;
+    TQString getName() const;
     
-    QString getDescription() const;
+    TQString getDescription() const;
     
     int getActions();
     
-    const QWidget* getGUI(QFrame *frame);
+    const TQWidget* getGUI(TQFrame *frame);
        
     void reloadConfiguration();
     
     bool saveWasClicked() const;
     
-    void setText(const QString &text);
+    void setText(const TQString &text);
     
     void sayText();
     

@@ -19,8 +19,8 @@
 #define KSAYITSYSTEMTRAY_H
 
 // QT includes
-#include <qwidget.h>
-#include <qpixmap.h>
+#include <tqwidget.h>
+#include <tqpixmap.h>
 
 // KDE includes
 #include <kapplication.h>
@@ -43,7 +43,7 @@ class KSayItSystemTray : public KSystemTray  {
   friend class State;
 
 public: 
-    KSayItSystemTray(QWidget *parent=0, const char *name=0);
+    KSayItSystemTray(TQWidget *parent=0, const char *name=0);
     ~KSayItSystemTray();
 
 signals:
@@ -105,19 +105,19 @@ public:
 protected: // Methods
   /** Reimplementation from base class
    */
-  void mousePressEvent(QMouseEvent *);
+  void mousePressEvent(TQMouseEvent *);
 
   /** Reimplementation from base class
    */  
-  void mouseReleaseEvent(QMouseEvent *);
+  void mouseReleaseEvent(TQMouseEvent *);
 
   /** KSystemTray default mouse handling
    */
-  void normalMousePressEvent(QMouseEvent *e);
+  void normalMousePressEvent(TQMouseEvent *e);
 
   /** KSystemTray default mouse handling
    */
-  void normalMouseReleaseEvent(QMouseEvent *e);
+  void normalMouseReleaseEvent(TQMouseEvent *e);
 
   /** Called if the Tray icon was clicked. 
    */
@@ -153,15 +153,15 @@ public:
   State();
   ~State();
 
-  virtual void mousePressEvent(KSayItSystemTray *caller, QMouseEvent *e);
-  virtual void mouseReleaseEvent(KSayItSystemTray *caller, QMouseEvent *e);
+  virtual void mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e);
+  virtual void mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e);
   virtual void setContext(KSayItSystemTray *caller);
 
 protected:
   void changeState(KSayItSystemTray *caller, State *state);
   void say(KSayItSystemTray *caller);  
-  void mousePressEventCall(KSayItSystemTray *caller, QMouseEvent *e);
-  void mouseReleaseEventCall(KSayItSystemTray *caller, QMouseEvent *e);
+  void mousePressEventCall(KSayItSystemTray *caller, TQMouseEvent *e);
+  void mouseReleaseEventCall(KSayItSystemTray *caller, TQMouseEvent *e);
 };
 
 
@@ -175,13 +175,13 @@ public:
 
 protected:
   StateWAIT();
-  void mousePressEvent(KSayItSystemTray *caller, QMouseEvent *e);
-  void mouseReleaseEvent(KSayItSystemTray *caller, QMouseEvent *e);
+  void mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e);
+  void mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e);
   void setContext(KSayItSystemTray *caller);
 
 private:
   static StateWAIT *_instance;
-  QPixmap m_traypixmap;
+  TQPixmap m_traypixmap;
 };
 
 
@@ -195,13 +195,13 @@ public:
 
 protected:
   StateSAY();
-  void mousePressEvent(KSayItSystemTray *caller, QMouseEvent *e);
-  void mouseReleaseEvent(KSayItSystemTray *caller, QMouseEvent *e);
+  void mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e);
+  void mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e);
   void setContext(KSayItSystemTray *caller);
 
 private:
   static StateSAY *_instance;
-  QPixmap m_traypixmap;
+  TQPixmap m_traypixmap;
 };
 
 
@@ -215,13 +215,13 @@ public:
 
 protected:
   StateCLIPEMPTY();
-  void mousePressEvent(KSayItSystemTray *caller, QMouseEvent *e);
-  void mouseReleaseEvent(KSayItSystemTray *caller, QMouseEvent *e);
+  void mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e);
+  void mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e);
   void setContext(KSayItSystemTray *caller);
 
 private:
   static StateCLIPEMPTY *_instance;
-  QPixmap m_traypixmap;
+  TQPixmap m_traypixmap;
 };
 
 

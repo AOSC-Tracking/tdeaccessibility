@@ -13,7 +13,7 @@
 #define KSAYITBOOKMARKHANDLER_H
 
 // Qt includes
-#include <qstring.h>
+#include <tqstring.h>
 
 // KDE includes
 #include <kbookmarkmanager.h>
@@ -40,14 +40,14 @@ public:
      * Called when a bookmark in the menu was clicked.
      * \param url The URL of the selected bookmark.
      */
-    void openBookmarkURL(const QString &url);
+    void openBookmarkURL(const TQString &url);
 
     /**
      * Reimplemented from base class.\n
      * Returns the Title when a new bookmark is about to be created.
      * \returns The title of the bookmark.
      */
-    QString currentTitle() const;
+    TQString currentTitle() const;
 
 
     /**
@@ -55,20 +55,20 @@ public:
      * Returns the URL when a new bookmark is about to be created.
      * \returns The URL of the bookmark.
      */
-    QString currentURL() const;
+    TQString currentURL() const;
 
     /**
      * Sets ID and title of the current TreeView item.
      * \param ID The unique ID of the item.
      * \param title The bookmark title of the item.
      */
-    void notifyBookmarkHandler(const QString &ID, const QString &title);
+    void notifyBookmarkHandler(const TQString &ID, const TQString &title);
     
     /**
      * Deletes the bookmark designated by the given url.
      * \param url The url of the bookmark.
      */
-    void deleteBookmark(const QString &url, const QString &title);
+    void deleteBookmark(const TQString &url, const TQString &title);
 
     /**
      * Iterates recursively through all bookmarks below the
@@ -92,7 +92,7 @@ private:
             KBookmark &bookmark,
             KBookmarkGroup &group,
             const KBookmarkGroup &bkGroup,
-            const QString &url);
+            const TQString &url);
     
     /**
      * Searches the Bookmark designted by its URL.
@@ -108,10 +108,10 @@ private:
             KBookmark &bookmark,
             KBookmarkGroup &group,
             const KBookmarkGroup &bkGroup,
-            const QString &title);
+            const TQString &title);
 private:
-    QString m_ID;
-    QString m_title;
+    TQString m_ID;
+    TQString m_title;
     KBookmarkManager *m_bkManager;
     KSayItApp *m_parent;
 

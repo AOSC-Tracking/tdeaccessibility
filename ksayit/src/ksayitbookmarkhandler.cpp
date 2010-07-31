@@ -11,7 +11,7 @@
 //
 
 // Qt include
-#include <qregexp.h>
+#include <tqregexp.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -26,8 +26,8 @@
 KSayItBookmarkHandler::KSayItBookmarkHandler(KBookmarkManager *bkManager, KSayItApp* parent)
  : KBookmarkOwner(), m_bkManager(bkManager), m_parent(parent)
 {
-    m_ID       = QString::null;
-    m_title    = QString::null;
+    m_ID       = TQString::null;
+    m_title    = TQString::null;
 }
 
 KSayItBookmarkHandler::~KSayItBookmarkHandler()
@@ -35,7 +35,7 @@ KSayItBookmarkHandler::~KSayItBookmarkHandler()
 }
 
 
-void KSayItBookmarkHandler::notifyBookmarkHandler(const QString &ID, const QString &title)
+void KSayItBookmarkHandler::notifyBookmarkHandler(const TQString &ID, const TQString &title)
 {
     kdDebug(100200) << "KSayItBookmarkHandler::notifyBookmarkManager()" << endl;
     
@@ -44,15 +44,15 @@ void KSayItBookmarkHandler::notifyBookmarkHandler(const QString &ID, const QStri
 }
 
 
-void KSayItBookmarkHandler::openBookmarkURL(const QString &url)
+void KSayItBookmarkHandler::openBookmarkURL(const TQString &url)
 {
     kdDebug(100200) << "KSayItBookmarkHandler::openBookmarkURL(" << url << ")" << endl;
     
-    QString l_url = url;
-    QString title = QString::null;
-    QString type = l_url.section( "://", 0, 0 );
-    QString ID   = l_url.section( QRegExp("/+"), 1, 1 );
-    QString err  = QString::null;
+    TQString l_url = url;
+    TQString title = TQString::null;
+    TQString type = l_url.section( "://", 0, 0 );
+    TQString ID   = l_url.section( TQRegExp("/+"), 1, 1 );
+    TQString err  = TQString::null;
     
     // Some checks
     if ( type != "ksayit" ){
@@ -71,7 +71,7 @@ void KSayItBookmarkHandler::openBookmarkURL(const QString &url)
         title = bookmark.text();
     }
         
-    QString result = QString::null;
+    TQString result = TQString::null;
     result = m_parent->setItemByBookmark( ID, title );
     if ( !result.isNull() ){
         KMessageBox::sorry( 0, result, i18n("Bookmark not found") );           
@@ -79,11 +79,11 @@ void KSayItBookmarkHandler::openBookmarkURL(const QString &url)
 }
 
 
-QString KSayItBookmarkHandler::currentTitle() const
+TQString KSayItBookmarkHandler::currentTitle() const
 {
     kdDebug(100200) << "KSayItBookmarkHandler::currentTitle()" << endl;
     
-    QString result;
+    TQString result;
     if ( m_title.isEmpty()){
         result = i18n("untitled");
     } else {
@@ -94,18 +94,18 @@ QString KSayItBookmarkHandler::currentTitle() const
 }
 
 
-QString KSayItBookmarkHandler::currentURL() const
+TQString KSayItBookmarkHandler::currentURL() const
 {
     kdDebug(100200) << "KSayItBookmarkHandler::currentURL()" << endl;
     
-    QString url;
+    TQString url;
     url = "ksayit://" + m_ID;
     
     return url;
 }
 
 
-void KSayItBookmarkHandler::deleteBookmark(const QString &url, const QString &title)
+void KSayItBookmarkHandler::deleteBookmark(const TQString &url, const TQString &title)
 {
     kdDebug(100200) << "KSayItBookmarkHandler::deleteBookmark()" << endl;
     
@@ -129,8 +129,8 @@ void KSayItBookmarkHandler::deleteBookmark(const QString &url, const QString &ti
     int qty = 0;
     qty = recursiveGetBkByTitle( bookmark, group, bkRoot, title );
     if ( qty == 1 ){
-        QString url = bookmark.url().url();
-        QString title = bookmark.text();
+        TQString url = bookmark.url().url();
+        TQString title = bookmark.text();
         group.deleteBookmark( bookmark );
         m_bkManager->emitChanged( group );   
         m_bkManager->save(); // make persistent    
@@ -142,7 +142,7 @@ bool KSayItBookmarkHandler::recursiveGetBkByURL(
         KBookmark &bookmark,
         KBookmarkGroup &group,
         const KBookmarkGroup &bkGroup,
-        const QString &url)
+        const TQString &url)
 {
     KBookmark bkNext;
     bool found = false;
@@ -156,7 +156,7 @@ bool KSayItBookmarkHandler::recursiveGetBkByURL(
                 return true;
             bkNext = bkGroup.next( bk );
         } else {
-            QString l_url = bk.url().url();
+            TQString l_url = bk.url().url();
             if ( l_url == url ){
                 bookmark = bk;
                 group = bkGroup;
@@ -174,7 +174,7 @@ int KSayItBookmarkHandler::recursiveGetBkByTitle(
         KBookmark &bookmark,
         KBookmarkGroup &group,
         const KBookmarkGroup &bkGroup,
-        const QString &title)
+        const TQString &title)
 {
     KBookmark bkNext;
     int qty = 0;
@@ -186,7 +186,7 @@ int KSayItBookmarkHandler::recursiveGetBkByTitle(
             qty += recursiveGetBkByTitle( bookmark, group, bk.toGroup(), title );
             bkNext = bkGroup.next( bk );
         } else {
-            QString l_title = bk.text();
+            TQString l_title = bk.text();
             if ( l_title == title ){
                 bookmark = bk;
                 group = bkGroup;
@@ -208,7 +208,7 @@ void KSayItBookmarkHandler::traverseBookmarks(KBookmarkGroup bkGroup)
         return;
         
     KURL url;
-    QString title;
+    TQString title;
     KBookmark bkNext, bkPrev, bkNew;
     
     KBookmark bk = bkGroup.first();           
@@ -228,7 +228,7 @@ void KSayItBookmarkHandler::traverseBookmarks(KBookmarkGroup bkGroup)
             //
             // Modifications on URL/Title END           
                           
-            bkNew = bkGroup.addBookmark( m_bkManager, title, url, QString::null, false );
+            bkNew = bkGroup.addBookmark( m_bkManager, title, url, TQString::null, false );
             bkGroup.moveItem( bkNew, bkPrev );
             bkGroup.deleteBookmark( bk );            
         }

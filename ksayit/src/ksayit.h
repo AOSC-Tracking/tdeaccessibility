@@ -25,8 +25,8 @@
 using namespace std;
 
 // include files for Qt
-#include <qstringlist.h>
-#include <qclipboard.h>
+#include <tqstringlist.h>
+#include <tqclipboard.h>
 
 // include files for KDE 
 #include <kapplication.h>
@@ -73,15 +73,15 @@ class KSayItApp : public KMainWindow, public DCOPObject
 public:
     /** construtor of KSayItApp, calls all init functions to create the application.
      */
-    KSayItApp(QWidget* parent=0, const char* name=0, WFlags f=0,
-        const QCString &objID=0);
+    KSayItApp(TQWidget* parent=0, const char* name=0, WFlags f=0,
+        const TQCString &objID=0);
     ~KSayItApp();
 
 k_dcop:
     /** DCOP interface for say operation
     \param msg The text to speak.
      */
-    ASYNC dcopSayText(QString msg);
+    ASYNC dcopSayText(TQString msg);
 
     /** DCOP interface for stop operation
      */
@@ -101,7 +101,7 @@ private slots:
     /** Puts the given text on the Job-Stack of KTTSD.
      * \param text The text to say.
      */
-    void slotSetText(const QString &text);
+    void slotSetText(const TQString &text);
     
     /** Called from the ListView widget after one or many
      * 'setText'-Calls. Starts to say the text.
@@ -112,7 +112,7 @@ private slots:
      * new content in the edit window must be shown.
      * \str The new content of the EditView.
      */    
-    void slotTreeViewChanged(const QString &str);
+    void slotTreeViewChanged(const TQString &str);
     
     /** save general Options like all bar positions and status as well as the geometry to
      * the configuration file.
@@ -127,7 +127,7 @@ private slots:
      * current actions.
      * @param text the text that is displayed in the statusbar
      */
-    void slotStatusMsg(const QString &text);
+    void slotStatusMsg(const TQString &text);
 
     /** opens the Preferences-Dialog.
      */
@@ -167,7 +167,7 @@ private slots:
     void slotEnableCopyCut(bool enable);
 
     /** sets the Caption of the MainWindow */
-    void slotSetCaption(const QString &caption);
+    void slotSetCaption(const TQString &caption);
 
     /** called when the Text was changed.
      * \param empty True if the TextEdit view is empty.
@@ -193,7 +193,7 @@ private slots:
     
     /** Called to delete a bookmark
      */
-    void slotDeleteBookmark(const QString &url, const QString &title);
+    void slotDeleteBookmark(const TQString &url, const TQString &title);
     
     /** Called to edit bookmarks.
      */
@@ -245,7 +245,7 @@ private slots:
      * Catches the signal from the TreeView object
      * and forwards it to the BookmarkHandler object.
      */
-    void slotNotifyBookmarkHandler(const QString &ID, const QString &title);
+    void slotNotifyBookmarkHandler(const TQString &ID, const TQString &title);
         
     /**
      * Copies the content of the current bookmark file to the
@@ -253,22 +253,22 @@ private slots:
      * BookmarkHandler.
      * \param newname The name of the new bookmark file.
      */
-    void slotChangeBookmarkFilename(const QString &newname);    
+    void slotChangeBookmarkFilename(const TQString &newname);    
 
     /** Loads bookmark file corresponding to the given file.
      * \param newname The name of the new file.
      */
-    void slotSetBookmarkFilename(const QString &newname);    
+    void slotSetBookmarkFilename(const TQString &newname);    
 
 public:   
     /**
      * Selects the item with the given ID in the TreeView.
      * \param ID The ID of the item to select.
      * \param title The title of the bookmark.
-     * \returns <tt>QString::null</tt>, if the operation was successfull,
+     * \returns <tt>TQString::null</tt>, if the operation was successfull,
      * an error message, if the ID was not found.
      */
-    QString setItemByBookmark( const QString &ID, const QString &title );
+    TQString setItemByBookmark( const TQString &ID, const TQString &title );
     
 private: // Methods
     /** read general Options again and initialize all variables.
@@ -284,7 +284,7 @@ private: // Methods
 
     /**
      */
-    void initBookmarkManager(const QString &filename);
+    void initBookmarkManager(const TQString &filename);
     
     /** creates the centerwidget of the KTMainWindow instance and sets it as the view.
      */
@@ -300,7 +300,7 @@ private: // Methods
 
     /** reimplemented from baseclass
      */
-    virtual void closeEvent(QCloseEvent *ce);
+    virtual void closeEvent(TQCloseEvent *ce);
     
     /** disable/enable Actions.
      * \param actions An OR'ed integer of enum ACTIONS. A '1' is supposed
@@ -315,9 +315,9 @@ private: // Methods
      * \p ksayit/ksayit_bookmarks/.
      * \param filename The name of the bookmark file.
      * \returns The absolute pathname of the given bookmark file.
-     * Returns \p QString::null if the operation was not successfull.
+     * Returns \p TQString::null if the operation was not successfull.
      */
-    QString getBookmarkDir(const QString &filename);
+    TQString getBookmarkDir(const TQString &filename);
     
     
 private:
@@ -350,14 +350,14 @@ private:
     
     // Misc stuff
     QClipboard *cb;
-    QString clip;
+    TQString clip;
     KTTSDLib *m_kttslib;
     FXPluginHandler *m_fxpluginhandler;
     bool m_ap_saying;
     bool m_ap_paused;
     bool m_textview_empty;
     bool m_enableChangeNotifications;
-    QString m_currentBookmarkFile;
+    TQString m_currentBookmarkFile;
 
 };
  

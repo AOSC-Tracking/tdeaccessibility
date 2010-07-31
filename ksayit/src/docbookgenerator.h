@@ -13,7 +13,7 @@
 #define DOCBOOKGENERATOR_H
 
 // Qt includes
-#include <qtextstream.h>
+#include <tqtextstream.h>
 
 // KDE includes
 
@@ -36,26 +36,26 @@ public:
      * \param item A pointer to the root item of the tree. Must be of type
      * \p RobDocument.
      */
-    void writeBook(QTextStream &doc, ListViewInterface *item);
+    void writeBook(TQTextStream &doc, ListViewInterface *item);
 
 
 private:
-    void writeBookInfo(QTextStream &doc, ListViewInterface *item);
-    void writeTitleOfBook(QTextStream &doc, ListViewInterface *item);
-    void writeChapter(QTextStream &doc, ListViewInterface *item);
-    void writeKeywordSet(QTextStream &doc, ListViewInterface *item);
-    void writeKeyword(QTextStream &doc, ListViewInterface *item);
-    void writeAbstract(QTextStream &doc, ListViewInterface *item);
-    void writePara(QTextStream &doc, ListViewInterface *item);
-    void writeAuthorGroup(QTextStream &doc, ListViewInterface *item);
-    void writeAuthor(QTextStream &doc, ListViewInterface *item);
-    void writeDate(QTextStream &doc, ListViewInterface *item);
-    void writeReleaseInfo(QTextStream &doc, ListViewInterface *item);
-    void writeSect1(QTextStream &doc, ListViewInterface *item);
-    void writeSect2(QTextStream &doc, ListViewInterface *item);
-    void writeSect3(QTextStream &doc, ListViewInterface *item);
-    void writeSect4(QTextStream &doc, ListViewInterface *item);
-    void writeSect5(QTextStream &doc, ListViewInterface *item);
+    void writeBookInfo(TQTextStream &doc, ListViewInterface *item);
+    void writeTitleOfBook(TQTextStream &doc, ListViewInterface *item);
+    void writeChapter(TQTextStream &doc, ListViewInterface *item);
+    void writeKeywordSet(TQTextStream &doc, ListViewInterface *item);
+    void writeKeyword(TQTextStream &doc, ListViewInterface *item);
+    void writeAbstract(TQTextStream &doc, ListViewInterface *item);
+    void writePara(TQTextStream &doc, ListViewInterface *item);
+    void writeAuthorGroup(TQTextStream &doc, ListViewInterface *item);
+    void writeAuthor(TQTextStream &doc, ListViewInterface *item);
+    void writeDate(TQTextStream &doc, ListViewInterface *item);
+    void writeReleaseInfo(TQTextStream &doc, ListViewInterface *item);
+    void writeSect1(TQTextStream &doc, ListViewInterface *item);
+    void writeSect2(TQTextStream &doc, ListViewInterface *item);
+    void writeSect3(TQTextStream &doc, ListViewInterface *item);
+    void writeSect4(TQTextStream &doc, ListViewInterface *item);
+    void writeSect5(TQTextStream &doc, ListViewInterface *item);
 
 
 

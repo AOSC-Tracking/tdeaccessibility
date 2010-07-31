@@ -15,12 +15,12 @@
  *  along with this program; if not, write to the Free Software
  */
 
-#include <qpainter.h>
-#include <qtooltip.h>
-#include <qdrawutil.h>
-#include <qcursor.h>
-#include <qimage.h>
-#include <qpopupmenu.h>
+#include <tqpainter.h>
+#include <tqtooltip.h>
+#include <tqdrawutil.h>
+#include <tqcursor.h>
+#include <tqimage.h>
+#include <tqpopupmenu.h>
 
 #include <kaboutapplication.h>
 #include <kpopupmenu.h>
@@ -50,7 +50,7 @@ extern "C"
 #include <X11/keysymdef.h>
 #include <X11/extensions/XKB.h>
 
-    KDE_EXPORT KPanelApplet* init(QWidget *parent, const QString& configFile)
+    KDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
     {
         KGlobal::locale()->insertCatalogue("kbstateapplet");
         KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, parent, "kbstateapplet");
@@ -85,8 +85,8 @@ static ModifierKey modifierKeys[] = {
 
 /********************************************************************/
 
-KbStateApplet::KbStateApplet(const QString& configFile, Type t, int actions,
-                       QWidget *parent, const char *name)
+KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
+                       TQWidget *parent, const char *name)
   : KPanelApplet( configFile, t, actions, parent, name )
 {
    for (int i = 0; i < 8; i++) {
@@ -113,7 +113,7 @@ KbStateApplet::KbStateApplet(const QString& configFile, Type t, int actions,
 		accessxFeatures = 0;
 
    //startTimer(100); // ten times a second
-   connect(kapp, SIGNAL(kdisplayPaletteChanged()), SLOT(paletteChanged()));
+   connect(kapp, TQT_SIGNAL(kdisplayPaletteChanged()), TQT_SLOT(paletteChanged()));
    
    kapp->installX11EventFilter (this);
    int opcode_rtn, error_rtn;
@@ -139,27 +139,27 @@ void KbStateApplet::buildPopupMenu()
    sizePopup->insertItem(i18n("Small"),  13);
    sizePopup->insertItem(i18n("Medium"), 20);
    sizePopup->insertItem(i18n("Large"),  26);
-   connect(sizePopup,SIGNAL(activated(int)), this, SLOT(setIconDim(int)));
+   connect(sizePopup,TQT_SIGNAL(activated(int)), this, TQT_SLOT(setIconDim(int)));
 
    showPopup=new KPopupMenu(this);
    showPopup->setCheckable( true );
-   modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, SLOT(toggleModifier()));
-	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, SLOT(toggleLockkeys()));
-	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, SLOT(toggleMouse()));
-	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, SLOT(toggleAccessX()));
+   modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQT_SLOT(toggleModifier()));
+	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQT_SLOT(toggleLockkeys()));
+	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQT_SLOT(toggleMouse()));
+	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQT_SLOT(toggleAccessX()));
 
 	popup = new KPopupMenu(this);
 	popup->setCheckable( true );
    popup->insertTitle(0, i18n("Keyboard Status Applet"));
 	popup->insertItem(i18n("Set Icon Size"),sizePopup);
 	fillSpaceItem = popup->insertItem(i18n("Fill Available Space"),
-												 this, SLOT(toggleFillSpace()));
+												 this, TQT_SLOT(toggleFillSpace()));
    popup->insertItem(i18n("Show"),showPopup);
-   popup->insertItem(i18n("Configure AccessX Features..."), this, SLOT(configureAccessX()));
-   popup->insertItem(i18n("Configure Keyboard..."), this, SLOT(configureKeyboard()));
-   popup->insertItem(i18n("Configure Mouse..."), this, SLOT(configureMouse()));
+   popup->insertItem(i18n("Configure AccessX Features..."), this, TQT_SLOT(configureAccessX()));
+   popup->insertItem(i18n("Configure Keyboard..."), this, TQT_SLOT(configureKeyboard()));
+   popup->insertItem(i18n("Configure Mouse..."), this, TQT_SLOT(configureMouse()));
    popup->insertSeparator();
-   popup->insertItem(i18n("About"), this, SLOT(about()));
+   popup->insertItem(i18n("About"), this, TQT_SLOT(about()));
    setCustomMenu(popup);
    updateMenu();
 }
@@ -263,7 +263,7 @@ int KbStateApplet::heightForWidth(int w) const {
    return length*size;
 }
 
-void KbStateApplet::mousePressEvent(QMouseEvent *e) {
+void KbStateApplet::mousePressEvent(TQMouseEvent *e) {
    if (e->button() == RightButton)
       popup->popup(e->globalPos());
 }
@@ -286,8 +286,8 @@ void KbStateApplet::toggleFillSpace() {
 	emit updateLayout();
 }
 
-void KbStateApplet::resizeEvent( QResizeEvent*e ) {
-   QWidget::resizeEvent(e);
+void KbStateApplet::resizeEvent( TQResizeEvent*e ) {
+   TQWidget::resizeEvent(e);
    layout();
 }
 
@@ -546,9 +546,9 @@ void KbStateApplet::initMasks() {
       }
       if ((map <= 7) && !(icons[map])) {
          icons[map] = new KeyIcon (i, instance, this, modifierKeys[i].name);
-         QToolTip::add (icons[map], i18n (modifierKeys[i].name));
-         connect (icons[map], SIGNAL(stateChangeRequest (KeyIcon*,bool,bool)),
-                                SLOT(stateChangeRequest (KeyIcon*,bool,bool)));
+         TQToolTip::add (icons[map], i18n (modifierKeys[i].name));
+         connect (icons[map], TQT_SIGNAL(stateChangeRequest (KeyIcon*,bool,bool)),
+                                TQT_SLOT(stateChangeRequest (KeyIcon*,bool,bool)));
          if (modifierKeys[i].isModifier)
             modifiers.append(icons[map]);
          else
@@ -623,7 +623,7 @@ bool KbStateApplet::x11Event (XEvent *evt) {
    return false;
 }
 
-void KbStateApplet::timerEvent(QTimerEvent*) {
+void KbStateApplet::timerEvent(TQTimerEvent*) {
    XkbStateRec state_return;
    XkbGetState (this->x11Display(), XkbUseCoreKbd, &state_return);
    unsigned char latched = XkbStateMods (&state_return);
@@ -747,7 +747,7 @@ void KbStateApplet::saveConfig()
 /********************************************************************/
 
 KeyIcon::KeyIcon (int keyId, KInstance *instance,
-                  QWidget *parent, const char *name)
+                  TQWidget *parent, const char *name)
  : StatusIcon (modifierKeys[keyId].name, parent, name) {
    this->instance = instance;
    this->keyId = keyId;
@@ -755,7 +755,7 @@ KeyIcon::KeyIcon (int keyId, KInstance *instance,
    isLocked  = false;
    isLatched = false;
    updateImages ();
-   connect (this, SIGNAL(clicked()), SLOT(clickedSlot()));
+   connect (this, TQT_SIGNAL(clicked()), TQT_SLOT(clickedSlot()));
 }
 
 KeyIcon::~KeyIcon () {
@@ -777,9 +777,9 @@ void KeyIcon::clickedSlot () {
 }
 
 
-void KeyIcon::resizeEvent( QResizeEvent*e )
+void KeyIcon::resizeEvent( TQResizeEvent*e )
 {
-   QWidget::resizeEvent(e);
+   TQWidget::resizeEvent(e);
    updateImages();
 }
 
@@ -791,7 +791,7 @@ void KeyIcon::updateImages () {
 	   latched   = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, KIcon::NoGroup, size-4);
    	unlatched = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, KIcon::NoGroup, size-4);
 		
-		QImage img = latched.convertToImage();
+		TQImage img = latched.convertToImage();
 		KIconEffect::colorize(img,  KGlobalSettings::highlightedTextColor(), 1.0);
 		latched.convertFromImage (img);
 		
@@ -803,8 +803,8 @@ void KeyIcon::updateImages () {
    update();
 }
 
-void KeyIcon::drawButton (QPainter *p) {
-   QColor black;
+void KeyIcon::drawButton (TQPainter *p) {
+   TQColor black;
 
    int x = (width()-locked.width())/2;
    int y = (height()-locked.height())/2;
@@ -824,12 +824,12 @@ void KeyIcon::drawButton (QPainter *p) {
       black = KGlobalSettings::textColor();
    }
 
-   QString text = i18n(modifierKeys[keyId].text);
+   TQString text = i18n(modifierKeys[keyId].text);
    if (!text.isEmpty() && !text.isNull()) {
-      QFont font = KGlobalSettings::generalFont();
-      font.setWeight(QFont::Black);
-      QFontMetrics metrics(font);
-      QRect rect = metrics.boundingRect (text);
+      TQFont font = KGlobalSettings::generalFont();
+      font.setWeight(TQFont::Black);
+      TQFontMetrics metrics(font);
+      TQRect rect = metrics.boundingRect (text);
       int size;
       if (!strcmp(modifierKeys[keyId].name, "Alt Graph"))
          size = rect.width()>rect.height()?rect.width():rect.height();
@@ -855,14 +855,14 @@ void KeyIcon::drawButton (QPainter *p) {
 
 /********************************************************************/
 
-MouseIcon::MouseIcon (KInstance *instance, QWidget *parent, const char *name)
+MouseIcon::MouseIcon (KInstance *instance, TQWidget *parent, const char *name)
 	: StatusIcon ("", parent, name)
 {
 	this->instance = instance;
 	state = 0;
 	activekey = 0;
 	updateImages ();
-	connect (this, SIGNAL(clicked()), SLOT(clickedSlot()));
+	connect (this, TQT_SIGNAL(clicked()), TQT_SLOT(clickedSlot()));
 }
 
 MouseIcon::~MouseIcon () {
@@ -880,17 +880,17 @@ void MouseIcon::setActiveKey (int activekey) {
 	update();
 }
 
-void MouseIcon::resizeEvent( QResizeEvent*e )
+void MouseIcon::resizeEvent( TQResizeEvent*e )
 {
-	QWidget::resizeEvent(e);
+	TQWidget::resizeEvent(e);
 	updateImages();
 }
 
-QPixmap loadIcon(KInstance *instance, int size, QColor color, QString name) {
+TQPixmap loadIcon(KInstance *instance, int size, TQColor color, TQString name) {
 	KIconLoader *loader = instance->iconLoader();
-	QPixmap result = loader->loadIcon(name, KIcon::NoGroup, size);
+	TQPixmap result = loader->loadIcon(name, KIcon::NoGroup, size);
 
-	QImage img = result.convertToImage();
+	TQImage img = result.convertToImage();
 	KIconEffect::colorize(img, color, 1.0);
 	result.convertFromImage (img);
 	
@@ -900,8 +900,8 @@ QPixmap loadIcon(KInstance *instance, int size, QColor color, QString name) {
 void MouseIcon::updateImages () {
 	int size = width()<height() ? width() : height();
 
-	QColor textcolor = KGlobalSettings::textColor();
-	QColor basecolor = KGlobalSettings::baseColor();
+	TQColor textcolor = KGlobalSettings::textColor();
+	TQColor basecolor = KGlobalSettings::baseColor();
 	mouse = loadIcon (instance, size, textcolor, "kbstate_mouse");
 	leftSelected   = loadIcon (instance, size, textcolor,
 										"kbstate_mouse_left_selected");
@@ -922,7 +922,7 @@ void MouseIcon::updateImages () {
 	update();
 }
 
-void MouseIcon::drawButton (QPainter *p) {
+void MouseIcon::drawButton (TQPainter *p) {
 	p->drawPixmap(0,0, mouse);
 	if ((state & Button1Mask) != 0)
 		p->drawPixmap(0,0, leftSelected);
@@ -956,15 +956,15 @@ void MouseIcon::drawButton (QPainter *p) {
 
 /********************************************************************/
 
-TimeoutIcon::TimeoutIcon (KInstance *instance, const QString &text,
-								  const QString &featurename,
-								  QWidget *parent, const char *name)
+TimeoutIcon::TimeoutIcon (KInstance *instance, const TQString &text,
+								  const TQString &featurename,
+								  TQWidget *parent, const char *name)
  : StatusIcon (text, parent, name) {
 	this->instance = instance;
 	this->featurename = featurename;
 	glyth = " ";
 	setImage (featurename);
-   connect (&timer, SIGNAL(timeout()), this, SLOT(timeout()));
+   connect (&timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(timeout()));
 }
 
 TimeoutIcon::~TimeoutIcon () {
@@ -975,19 +975,19 @@ void TimeoutIcon::update () {
    if (pixmap.width() != size)
 		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
 
-   QImage img = pixmap.convertToImage();
+   TQImage img = pixmap.convertToImage();
    KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
    image = pixmap;
-   QWidget::update();
+   TQWidget::update();
 }
 
-void TimeoutIcon::setGlyth (const QString &glyth) {
+void TimeoutIcon::setGlyth (const TQString &glyth) {
    timer.stop();
    this->glyth = glyth;
 
-   QImage img = pixmap.convertToImage();
+   TQImage img = pixmap.convertToImage();
    KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
@@ -995,14 +995,14 @@ void TimeoutIcon::setGlyth (const QString &glyth) {
    update();
 }
 
-void TimeoutIcon::setImage (const QString &name, int timeout) {
+void TimeoutIcon::setImage (const TQString &name, int timeout) {
    timer.stop();
    iconname = name;
 	if (!name.isNull() && !name.isEmpty()) {
 	   int size = width()<height() ? width() : height();
 		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
 
-   	QImage img = pixmap.convertToImage();
+   	TQImage img = pixmap.convertToImage();
    	KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
    	pixmap.convertFromImage (img);
 
@@ -1019,8 +1019,8 @@ void TimeoutIcon::timeout () {
 }
 
 
-void TimeoutIcon::drawButton (QPainter *p) {
-	QString text = glyth;
+void TimeoutIcon::drawButton (TQPainter *p) {
+	TQString text = glyth;
 	int count  = 1;
 	int factor = 19;
 
@@ -1032,10 +1032,10 @@ void TimeoutIcon::drawButton (QPainter *p) {
 		factor = 64;
 	}
 
-   QFont font = KGlobalSettings::generalFont();
-   font.setWeight(QFont::Black);
-   QFontMetrics metrics(font);
-   QRect rect = metrics.boundingRect (text);
+   TQFont font = KGlobalSettings::generalFont();
+   font.setWeight(TQFont::Black);
+   TQFontMetrics metrics(font);
+   TQRect rect = metrics.boundingRect (text);
    int size = count*rect.width() > rect.height()
 			? count*rect.width() : rect.height();
    if (font.pixelSize() != -1)
@@ -1049,13 +1049,13 @@ void TimeoutIcon::drawButton (QPainter *p) {
 	   p->drawText (0,0, width()/2, height()/2, Qt::AlignCenter, text);
 	}
 	else {
-		QColor t = KGlobalSettings::textColor();
-		QColor b = KGlobalSettings::baseColor();
-		p->setPen (QColor ((2*t.red()+3*b.red())/5,
+		TQColor t = KGlobalSettings::textColor();
+		TQColor b = KGlobalSettings::baseColor();
+		p->setPen (TQColor ((2*t.red()+3*b.red())/5,
 					  (2*t.green()+3*b.green())/5,
 					  (2*t.blue()+3*b.blue())/5));
 		p->drawText (width()/2,0, width()/2, height(), Qt::AlignCenter, text);
-		p->setPen (QColor ((2*t.red()+b.red())/3,
+		p->setPen (TQColor ((2*t.red()+b.red())/3,
 					  (2*t.green()+b.green())/3,
 					  (2*t.blue()+b.blue())/3));
 		p->drawText (0,0, width(), height(), Qt::AlignCenter, text);
@@ -1066,14 +1066,14 @@ void TimeoutIcon::drawButton (QPainter *p) {
 
 /********************************************************************/
 
-StatusIcon::StatusIcon (const QString &text, QWidget *parent, const char *name)
- : QPushButton (text, parent, name) {
-   setSizePolicy(QSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored));
+StatusIcon::StatusIcon (const TQString &text, TQWidget *parent, const char *name)
+ : TQPushButton (text, parent, name) {
+   setSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
 }
 
 StatusIcon::~StatusIcon () {
 }
 
-QSize StatusIcon::minimumSizeHint () const {
-   return QSize (0,0);
+TQSize StatusIcon::minimumSizeHint () const {
+   return TQSize (0,0);
 }

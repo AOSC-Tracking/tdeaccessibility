@@ -17,11 +17,11 @@
 #include <stdlib.h> // getenv, system
 
 // include files for QT
-#include <qdir.h>
-#include <qapplication.h>
-#include <qdockwindow.h>
-#include <qfileinfo.h>
-#include <qfile.h>
+#include <tqdir.h>
+#include <tqapplication.h>
+#include <tqdockwindow.h>
+#include <tqfileinfo.h>
+#include <tqfile.h>
 
 // include files for KDE
 #include <klocale.h>
@@ -55,8 +55,8 @@
 #define KSAYITUI "ksayitui.rc"
 #define ID_STATUS_MSG 1
 
-KSayItApp::KSayItApp(QWidget* parent, const char* name, WFlags f,
-    const QCString &objID)
+KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
+    const TQCString &objID)
   : KMainWindow(parent, name, f), DCOPObject(objID)
 {
     config    = NULL;
@@ -67,7 +67,7 @@ KSayItApp::KSayItApp(QWidget* parent, const char* name, WFlags f,
     bkManager = NULL;
     bkHandler = NULL;
     bkMenu    = NULL;
-    m_currentBookmarkFile = QString::null;
+    m_currentBookmarkFile = TQString::null;
   
     config=kapp->config();
     m_kttslib = new KTTSDLib(this, "KTTSD-Library", kapp);
@@ -83,27 +83,27 @@ KSayItApp::KSayItApp(QWidget* parent, const char* name, WFlags f,
     readOptions();
     
     // connect TTS plugin handler to this object
-    connect(m_kttslib, SIGNAL(signalFinished()),
-            this, SLOT(slotTTSFinished()) );
+    connect(m_kttslib, TQT_SIGNAL(signalFinished()),
+            this, TQT_SLOT(slotTTSFinished()) );
     
     // only used if library thinks it has to call the preferences dialog.
     // e.g. when it detects a bad configuration.
-    connect(m_kttslib, SIGNAL(signalCallPreferences()),
-            this, SLOT(slotPreferences()) );
+    connect(m_kttslib, TQT_SIGNAL(signalCallPreferences()),
+            this, TQT_SLOT(slotPreferences()) );
     
     // init Clipboard
-    cb = QApplication::clipboard();
-    connect(cb, SIGNAL(dataChanged()), this, SLOT(slotClipboardChanged()) );
+    cb = TQApplication::clipboard();
+    connect(cb, TQT_SIGNAL(dataChanged()), this, TQT_SLOT(slotClipboardChanged()) );
     
     // create SystemTray object
     tray = new KSayItSystemTray(this, "system_tray");
-    connect(tray, SIGNAL(signalCallPreferences()), this, SLOT(slotPreferences()) );
-    connect(tray, SIGNAL(signalSayActivated()), this, SLOT(slotSayText()) );
-    connect(tray, SIGNAL(signalSayClipboard()), this, SLOT(slotSayClipboard()) );
-    connect(tray, SIGNAL(signalShutUpActivated()), this, SLOT(slotStopActivated()) );
-    connect(tray, SIGNAL(signalPauseActivated()), this, SLOT(slotPauseActivated()) );
-    connect(tray, SIGNAL(signalNextActivated()), this, SLOT(slotNextSentenceActivated()) );
-    connect(tray, SIGNAL(signalPrevActivated()), this, SLOT(slotPrevSentenceActivated()) );
+    connect(tray, TQT_SIGNAL(signalCallPreferences()), this, TQT_SLOT(slotPreferences()) );
+    connect(tray, TQT_SIGNAL(signalSayActivated()), this, TQT_SLOT(slotSayText()) );
+    connect(tray, TQT_SIGNAL(signalSayClipboard()), this, TQT_SLOT(slotSayClipboard()) );
+    connect(tray, TQT_SIGNAL(signalShutUpActivated()), this, TQT_SLOT(slotStopActivated()) );
+    connect(tray, TQT_SIGNAL(signalPauseActivated()), this, TQT_SLOT(slotPauseActivated()) );
+    connect(tray, TQT_SIGNAL(signalNextActivated()), this, TQT_SLOT(slotNextSentenceActivated()) );
+    connect(tray, TQT_SIGNAL(signalPrevActivated()), this, TQT_SLOT(slotPrevSentenceActivated()) );
     tray->show();
     tray->setEnabled(true);
     
@@ -141,61 +141,61 @@ KSayItApp::~KSayItApp()
 void KSayItApp::initActions()
 {
   // Standard-Actions
-  open   = KStdAction::open(this, SLOT(slotFileOpen()), actionCollection());
-  save   = KStdAction::save(this, SLOT(slotFileSave()), actionCollection());
-  saveAs = KStdAction::saveAs(this, SLOT(slotFileSaveAs()), actionCollection());
-  KStdAction::quit(this, SLOT(slotFileQuit()), actionCollection());
-  KStdAction::close(this, SLOT(slotCloseMainWindow()), actionCollection());
-  cut   = KStdAction::cut(view, SLOT(slotCut()), actionCollection());
-  copy  = KStdAction::copy(view, SLOT(slotCopy()), actionCollection());
-  paste = KStdAction::paste(view, SLOT(slotPaste()), actionCollection());
-  preferences = KStdAction::preferences(this, SLOT(slotPreferences()), actionCollection());
-  KStdAction::keyBindings(this, SLOT(slotEditKeys()), actionCollection());
-  KStdAction::configureToolbars(this, SLOT(slotConfigureToolbar()), actionCollection());
+  open   = KStdAction::open(this, TQT_SLOT(slotFileOpen()), actionCollection());
+  save   = KStdAction::save(this, TQT_SLOT(slotFileSave()), actionCollection());
+  saveAs = KStdAction::saveAs(this, TQT_SLOT(slotFileSaveAs()), actionCollection());
+  KStdAction::quit(this, TQT_SLOT(slotFileQuit()), actionCollection());
+  KStdAction::close(this, TQT_SLOT(slotCloseMainWindow()), actionCollection());
+  cut   = KStdAction::cut(view, TQT_SLOT(slotCut()), actionCollection());
+  copy  = KStdAction::copy(view, TQT_SLOT(slotCopy()), actionCollection());
+  paste = KStdAction::paste(view, TQT_SLOT(slotPaste()), actionCollection());
+  preferences = KStdAction::preferences(this, TQT_SLOT(slotPreferences()), actionCollection());
+  KStdAction::keyBindings(this, TQT_SLOT(slotEditKeys()), actionCollection());
+  KStdAction::configureToolbars(this, TQT_SLOT(slotConfigureToolbar()), actionCollection());
   KStdAction::showToolbar("mainToolBar", actionCollection());
-  statusBarAction = KStdAction::showStatusbar(this, SLOT(slotToggleStatusBar()), actionCollection());
+  statusBarAction = KStdAction::showStatusbar(this, TQT_SLOT(slotToggleStatusBar()), actionCollection());
 
   // User defined actions
   say = new KAction (i18n("Say"),
               Qt::Key_F9,
-              this, SLOT (slotSayText()),
+              this, TQT_SLOT (slotSayText()),
               actionCollection(),
               "say_it");
 
   pause = new KAction (i18n("Pause"),
               Qt::Key_Pause,
-              this, SLOT (slotPauseActivated()),
+              this, TQT_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
   
   shutup = new KAction (i18n("Shut Up"),
               Qt::Key_F10,
-              this, SLOT (slotStopActivated()),
+              this, TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
               
   next_sentence = new KAction (i18n("Next Sentence"),
               Qt::Key_Next,
-              this, SLOT (slotNextSentenceActivated()),
+              this, TQT_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
 
   prev_sentence = new KAction (i18n("Previous Sentence"),
               Qt::Key_Prior,
-              this, SLOT(slotPrevSentenceActivated()),
+              this, TQT_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
   
   clear = new KAction (i18n("Clear"),
               Qt::Key_F12,
-              this, SLOT(slotClear()),
+              this, TQT_SLOT(slotClear()),
               actionCollection(),
               "clear");
   
   edit = new KToggleAction( i18n("Edit Text"),
              0,
-             this, SLOT(slotEditToggled()),
+             this, TQT_SLOT(slotEditToggled()),
              actionCollection(),
              "edittext");
              
@@ -225,9 +225,9 @@ void KSayItApp::initActions()
 }
 
 
-void KSayItApp::initBookmarkManager(const QString &filename)
+void KSayItApp::initBookmarkManager(const TQString &filename)
 {
-    QString bkFile = getBookmarkDir( filename );
+    TQString bkFile = getBookmarkDir( filename );
     if ( bkFile.isNull() )
         return;
     
@@ -247,14 +247,14 @@ void KSayItApp::initBookmarkManager(const QString &filename)
 }
 
 
-void KSayItApp::slotNotifyBookmarkHandler(const QString &ID, const QString &title)
+void KSayItApp::slotNotifyBookmarkHandler(const TQString &ID, const TQString &title)
 {
     if ( bkHandler )
         bkHandler->notifyBookmarkHandler(ID, title);
 }
 
 
-void KSayItApp::slotDeleteBookmark(const QString &url, const QString &title)
+void KSayItApp::slotDeleteBookmark(const TQString &url, const TQString &title)
 {
     kdDebug(100200) << "KSayItApp::slotDeleteBookmark(" << url << ")" << endl;
     if ( bkHandler )
@@ -262,16 +262,16 @@ void KSayItApp::slotDeleteBookmark(const QString &url, const QString &title)
 }
 
 
-QString KSayItApp::getBookmarkDir(const QString &filename)
+TQString KSayItApp::getBookmarkDir(const TQString &filename)
 {
-    QString bkRelPath = "ksayit/ksayit_bookmarks/" + filename + ".bookmarks";
-    QString bkFile;   
+    TQString bkRelPath = "ksayit/ksayit_bookmarks/" + filename + ".bookmarks";
+    TQString bkFile;   
     bkFile = locateLocal("data", bkRelPath);
     return bkFile;
 }
 
 
-void KSayItApp::slotSetBookmarkFilename(const QString &newname)
+void KSayItApp::slotSetBookmarkFilename(const TQString &newname)
 {
     kdDebug(100200) << "KSayItApp::slotSetBookmarkFilename(" << newname << ")" << endl;
     
@@ -279,21 +279,21 @@ void KSayItApp::slotSetBookmarkFilename(const QString &newname)
 }
 
 
-void KSayItApp::slotChangeBookmarkFilename(const QString &newname)
+void KSayItApp::slotChangeBookmarkFilename(const TQString &newname)
 {
     kdDebug(100200) << "KSayItApp::slotChangeBookmarkFilename(" << newname << ")" << endl;
     
     if ( m_currentBookmarkFile.isNull() )
         return;
         
-    QString newbkFile = getBookmarkDir(newname);
+    TQString newbkFile = getBookmarkDir(newname);
     if ( newbkFile.isNull() )
         return;    
     
     // copy old bookmarkfile to new file
     if ( m_currentBookmarkFile != newbkFile ){
-        if ( QFile::exists(m_currentBookmarkFile) ){
-            QString command = QString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);
+        if ( TQFile::exists(m_currentBookmarkFile) ){
+            TQString command = TQString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);
             system( command.ascii() );
         }
         // install new BookmarkHandler based on the new file
@@ -302,9 +302,9 @@ void KSayItApp::slotChangeBookmarkFilename(const QString &newname)
 }
 
 
-QString KSayItApp::setItemByBookmark( const QString &ID, const QString &title )
+TQString KSayItApp::setItemByBookmark( const TQString &ID, const TQString &title )
 {
-    QString result;
+    TQString result;
     result = treeview->selectItemByID( ID, title );
     return result;
 }
@@ -325,17 +325,17 @@ void KSayItApp::initView()
   view->setMinimumSize(view->sizeHint());
   setCentralWidget(view);
   // connections
-  connect( view, SIGNAL(signalEnableCopyCut(bool)),
-    this, SLOT(slotEnableCopyCut(bool)));
-  connect( view, SIGNAL(signalShowStatus(const QString &)),
-    this, SLOT(slotStatusMsg(const QString &)));
-  connect( view, SIGNAL(signalSetCaption(const QString &)),
-    this, SLOT(slotSetCaption(const QString &)));
-  connect( view, SIGNAL(signalTextChanged(bool)),
-    this, SLOT(slotTextChanged(bool)) );
+  connect( view, TQT_SIGNAL(signalEnableCopyCut(bool)),
+    this, TQT_SLOT(slotEnableCopyCut(bool)));
+  connect( view, TQT_SIGNAL(signalShowStatus(const TQString &)),
+    this, TQT_SLOT(slotStatusMsg(const TQString &)));
+  connect( view, TQT_SIGNAL(signalSetCaption(const TQString &)),
+    this, TQT_SLOT(slotSetCaption(const TQString &)));
+  connect( view, TQT_SIGNAL(signalTextChanged(bool)),
+    this, TQT_SLOT(slotTextChanged(bool)) );
   
   // DockWindow
-  QDockWindow *docview = new QDockWindow(QDockWindow::InDock, this, "docview");
+  TQDockWindow *docview = new TQDockWindow(TQDockWindow::InDock, this, "docview");
   treeview = new DocTreeViewImpl(docview, "treeview");
   treeview->enableContextMenus( true );
   // treeview->clear();
@@ -344,22 +344,22 @@ void KSayItApp::initView()
   this->setDockEnabled(docview, Qt::DockTop, false);
   this->setDockEnabled(docview, Qt::DockBottom, false);
   this->moveDockWindow(docview, Qt::DockLeft);
-  connect( treeview, SIGNAL(signalContentChanged(const QString&)),
-    this, SLOT(slotTreeViewChanged(const QString&)) );
-  connect( treeview, SIGNAL(signalSetText(const QString&)),
-    this, SLOT(slotSetText(const QString&)) );
-  connect( treeview, SIGNAL(signalAllNodesProcessed()),
-    this, SLOT(slotSayNode()) );
-  connect( treeview, SIGNAL(signalEnableTextedit(bool)),
-    this, SLOT(slotEnableTextedit(bool)) );
-  connect( treeview, SIGNAL(signalNotifyBookmarkManager(const QString&, const QString&)),
-    this, SLOT(slotNotifyBookmarkHandler(const QString&, const QString&)) );
-  connect( treeview, SIGNAL(signalSetBookmarkFilename(const QString&)),
-    this, SLOT(slotSetBookmarkFilename(const QString&)) );
-  connect( treeview, SIGNAL(signalChangeBookmarkFilename(const QString&)),
-    this, SLOT(slotChangeBookmarkFilename(const QString&)) );                     
-  connect( treeview, SIGNAL(signalDeleteBookmark(const QString&, const QString&)),
-    this, SLOT(slotDeleteBookmark(const QString&, const QString&)) );
+  connect( treeview, TQT_SIGNAL(signalContentChanged(const TQString&)),
+    this, TQT_SLOT(slotTreeViewChanged(const TQString&)) );
+  connect( treeview, TQT_SIGNAL(signalSetText(const TQString&)),
+    this, TQT_SLOT(slotSetText(const TQString&)) );
+  connect( treeview, TQT_SIGNAL(signalAllNodesProcessed()),
+    this, TQT_SLOT(slotSayNode()) );
+  connect( treeview, TQT_SIGNAL(signalEnableTextedit(bool)),
+    this, TQT_SLOT(slotEnableTextedit(bool)) );
+  connect( treeview, TQT_SIGNAL(signalNotifyBookmarkManager(const TQString&, const TQString&)),
+    this, TQT_SLOT(slotNotifyBookmarkHandler(const TQString&, const TQString&)) );
+  connect( treeview, TQT_SIGNAL(signalSetBookmarkFilename(const TQString&)),
+    this, TQT_SLOT(slotSetBookmarkFilename(const TQString&)) );
+  connect( treeview, TQT_SIGNAL(signalChangeBookmarkFilename(const TQString&)),
+    this, TQT_SLOT(slotChangeBookmarkFilename(const TQString&)) );                     
+  connect( treeview, TQT_SIGNAL(signalDeleteBookmark(const TQString&, const TQString&)),
+    this, TQT_SLOT(slotDeleteBookmark(const TQString&, const TQString&)) );
 }
 
 
@@ -369,7 +369,7 @@ void KSayItApp::readOptions()
   statusBarAction->setChecked(!statusBar()->isHidden());
 }
 
-void KSayItApp::closeEvent(QCloseEvent *ce)
+void KSayItApp::closeEvent(TQCloseEvent *ce)
 {
   ce->ignore();
   if ( !this->isVisible() ){
@@ -384,7 +384,7 @@ void KSayItApp::closeEvent(QCloseEvent *ce)
 // DCOP FUNCTIONS
 /////////////////////////////////////////////////////////////////////
 
-ASYNC KSayItApp::dcopSayText(QString msg)
+ASYNC KSayItApp::dcopSayText(TQString msg)
 {
   slotSetText( msg );
   sayActivated();
@@ -412,7 +412,7 @@ ASYNC KSayItApp::dcopSayXmlFile(KURL url)
             treeview->setEditMode( false );
         }
     }
-    catch( QString err ){
+    catch( TQString err ){
         KMessageBox::error(this, err);
         save  ->setEnabled(false);
         saveAs->setEnabled(true);              
@@ -425,7 +425,7 @@ ASYNC KSayItApp::dcopSayXmlFile(KURL url)
 
 
 /////////////////////////////////////////////////////////////////////
-// SLOT IMPLEMENTATION
+// TQT_SLOT IMPLEMENTATION
 /////////////////////////////////////////////////////////////////////
 
 void KSayItApp::slotEditToggled()
@@ -451,7 +451,7 @@ void KSayItApp::slotConfigureToolbar()
 {
   saveMainWindowSettings( config, "MainWindow" );
   KEditToolbar dlg(actionCollection(), KSAYITUI);
-  connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(slotNewToolbarConfig()));
+  connect(&dlg,TQT_SIGNAL(newToolbarConfig()),this,TQT_SLOT(slotNewToolbarConfig()));
   if (dlg.exec())
   {
      createGUI(KSAYITUI);
@@ -471,9 +471,9 @@ void KSayItApp::slotFileOpen()
     m_enableChangeNotifications = false;
    
     // open filerequester
-    QString fn;
-    QString usershome( getenv("HOME") );
-    KURL url = KFileDialog::getOpenURL(usershome, QString::null, this, i18n("File to Speak") );
+    TQString fn;
+    TQString usershome( getenv("HOME") );
+    KURL url = KFileDialog::getOpenURL(usershome, TQString::null, this, i18n("File to Speak") );
     try{
         if ( !url.isEmpty() ){
             resetView();    
@@ -486,7 +486,7 @@ void KSayItApp::slotFileOpen()
             bookmarkmenu->setEnabled(true);
         }
     }
-    catch( QString err ){
+    catch( TQString err ){
         KMessageBox::error(this, err);
         save  ->setEnabled(false);
         saveAs->setEnabled(true);
@@ -505,7 +505,7 @@ void KSayItApp::slotFileSave()
          save  ->setEnabled(false);
          saveAs->setEnabled(true);  
    }   
-   catch ( QString err )
+   catch ( TQString err )
    {
       KMessageBox::error(this, err);
       save  ->setEnabled(false);
@@ -523,7 +523,7 @@ void KSayItApp::slotFileSaveAs()
          saveAs->setEnabled(true);
          bookmarkmenu->setEnabled(true);  
    }   
-   catch ( QString err )
+   catch ( TQString err )
    {
       KMessageBox::error(this, err);
       save  ->setEnabled(true);
@@ -549,7 +549,7 @@ void KSayItApp::slotEditKeys()
 void KSayItApp::slotFileQuit()
 {
   slotStatusMsg(i18n("Exiting..."));
-  int really = KMessageBox::questionYesNo( this, i18n("Do you really want to quit?"), QString::null, KStdGuiItem::quit(), KStdGuiItem::cancel() );
+  int really = KMessageBox::questionYesNo( this, i18n("Do you really want to quit?"), TQString::null, KStdGuiItem::quit(), KStdGuiItem::cancel() );
   if (really == KMessageBox::Yes){
      slotSaveOptions();
      kapp->quit();
@@ -578,7 +578,7 @@ void KSayItApp::slotToggleStatusBar()
 }
 
 
-void KSayItApp::slotStatusMsg(const QString &text)
+void KSayItApp::slotStatusMsg(const TQString &text)
 {
   // change status message permanently
   statusBar()->clear();
@@ -586,7 +586,7 @@ void KSayItApp::slotStatusMsg(const QString &text)
 }
 
 
-void KSayItApp::slotSetCaption(const QString &caption)
+void KSayItApp::slotSetCaption(const TQString &caption)
 {
   this->setCaption(caption);
 }
@@ -600,7 +600,7 @@ void KSayItApp::slotPreferences()
                       m_fxpluginhandler,
                       m_kttslib);
 
-  if (prefs->exec() == QDialog::Accepted){
+  if (prefs->exec() == TQDialog::Accepted){
     delete prefs;
     m_kttslib->reloadConfiguration();
     m_fxpluginhandler ->readConfiguration();
@@ -719,7 +719,7 @@ void KSayItApp::slotSayNode()
 }
 
 
-void KSayItApp::slotSetText(const QString &text)
+void KSayItApp::slotSetText(const TQString &text)
 {
     // also invoked by the treeview for the each node
     if ( text.isNull() )
@@ -739,7 +739,7 @@ void KSayItApp::sayActivated()
     try {
         m_kttslib->sayText();
     }
-    catch (QString err){
+    catch (TQString err){
         kdDebug(100200) << "Exception catched in KSayItApp::sayActivated()" << endl;
         KMessageBox::sorry(0, err, i18n("Unable to speak text"));
         slotFinished();
@@ -813,7 +813,7 @@ void KSayItApp::setActions(int actions)
     
     // Get the mask of supported actions from the plugin.
     int mask = m_kttslib->getActions();
-    kdDebug(100200) << QString("KSayItApp:PSA: %1").arg(mask, 0, 2) << endl;
+    kdDebug(100200) << TQString("KSayItApp:PSA: %1").arg(mask, 0, 2) << endl;
     
     // disable actions not supported by the plugin
     int ma = actions & mask;
@@ -849,7 +849,7 @@ void KSayItApp::setActions(int actions)
 }
 
 
-void KSayItApp::slotTreeViewChanged(const QString &str)
+void KSayItApp::slotTreeViewChanged(const TQString &str)
 {
     kdDebug(100200) << "KSayItApp::slotTreeViewChanged()" << endl;
     

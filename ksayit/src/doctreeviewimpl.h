@@ -13,7 +13,7 @@
 #define DOCTREEVIEWIMPL_H
 
 // Qt includes
-#include <qstring.h>
+#include <tqstring.h>
 
 // KDE includes
 #include <kurl.h>
@@ -32,7 +32,7 @@ class ContextMenuHandler;
 /**
 This class implements the TreeView object.\n
 It takes a XML/DocBook file, parses it and builds up a hierarchical
-\p QListView structure corresponding to the structure of the document.
+\p TQListView structure corresponding to the structure of the document.
 The objective of this class is to maintain the document and provide
 all required methods to access or manipulate its content.
 @author Robert Vogl
@@ -40,7 +40,7 @@ all required methods to access or manipulate its content.
 class DocTreeViewImpl : public DocTreeView
 {
 public:
-    DocTreeViewImpl(QWidget* parent=0, const char* name=0, WFlags fl=0);
+    DocTreeViewImpl(TQWidget* parent=0, const char* name=0, WFlags fl=0);
 
     ~DocTreeViewImpl();
 
@@ -78,7 +78,7 @@ public:
      * persistent.
      * \param text The content of the TextEdit view.
      */
-    void setNodeContent(QString &text);
+    void setNodeContent(TQString &text);
 
     /**
      * Starting from the current selected node it travels recursively
@@ -102,10 +102,10 @@ public:
     /**
      * Sets the item active designated by the ID.
      * \param ID The ID (column 3) of the TreeView item.
-     * \returns <tt>QString::null</tt> if the operation was successfull,\n
+     * \returns <tt>TQString::null</tt> if the operation was successfull,\n
      * an error message, if the item was not found.
      */
-    QString selectItemByID(const QString &ID, const QString title);
+    TQString selectItemByID(const TQString &ID, const TQString title);
     
     /**
      * Enables/disables the contextmenus
@@ -145,30 +145,30 @@ protected slots:
      *
      * \param item The new active item of the TreeView.
      */
-    void slotItemClicked(QListViewItem *item);
+    void slotItemClicked(TQListViewItem *item);
     
     /**
      * Reimplemented from base class.
      * Called when the right button was pressed.
      * \param item The new active item of the TreeView.
      */
-    void slotRightButtonPressed(QListViewItem *item, const QPoint &pos, int);
+    void slotRightButtonPressed(TQListViewItem *item, const TQPoint &pos, int);
     
     /**
-     * Reimplemented from QWidget class.
+     * Reimplemented from TQWidget class.
      */
-    // void contextMenuEvent(QContextMenuEvent *e);
+    // void contextMenuEvent(TQContextMenuEvent *e);
 
 private: // Methods
-    void recursiveTextCollector(ListViewInterface* item, QTextStream &msg, bool header=true);
+    void recursiveTextCollector(ListViewInterface* item, TQTextStream &msg, bool header=true);
     void recursiveSayNodes(ListViewInterface* item);
-    void recursiveBuildItemIdentifier(ListViewInterface* item, QTextStream &idstring);
+    void recursiveBuildItemIdentifier(ListViewInterface* item, TQTextStream &idstring);
     void makeCurrentNodePersistent();
     int newIndexFirstChild();
     int newIndexLastChild();
     void findHighestIndex(ListViewInterface* item, int &index);
-    QString getItemTitle( ListViewInterface *item);
-    void makeToSingleLine( QString &content );    
+    TQString getItemTitle( ListViewInterface *item);
+    void makeToSingleLine( TQString &content );    
 
         
 private: // Attributes
@@ -176,7 +176,7 @@ private: // Attributes
     KPopupMenu *m_contextmenu; 
     ListViewInterface *m_rootItem;
     ListViewInterface *m_currentItem;
-    QString m_changedContent;
+    TQString m_changedContent;
     int m_idCounter;
     bool m_stopped;
     KURL m_url;

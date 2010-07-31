@@ -13,12 +13,12 @@
 #define FXPLUGINHANDLER_H
 
 // QT includes
-#include <qobject.h>
-#include <qlibrary.h>
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qmap.h>
-// #include <qvaluelist.h>
+#include <tqobject.h>
+#include <tqlibrary.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
+#include <tqmap.h>
+// #include <tqvaluelist.h>
 
 // KDE includes
 #include <kconfig.h>
@@ -36,9 +36,9 @@ using namespace Arts;
 /** Internal structure of the effect plugin
  */
 typedef struct {
-    QString name; // KService::Ptr->name()
-    QString library; // KService::Ptr->library()
-    QString description;
+    TQString name; // KService::Ptr->name()
+    TQString library; // KService::Ptr->library()
+    TQString description;
     long EffectID; // !=0, if effect is on the effect stack.
     FXPlugin *p; // factory->create(...)
 } fx_struct;
@@ -48,7 +48,7 @@ class FXPluginHandler : public QObject
 {
 Q_OBJECT
 public:
-    FXPluginHandler(QObject *parent = 0, const char *name = 0, KConfig *config=0);
+    FXPluginHandler(TQObject *parent = 0, const char *name = 0, KConfig *config=0);
     ~FXPluginHandler();
 
 public: // Methods  
@@ -64,14 +64,14 @@ public: // Methods
     /** Shows the GUI to setup the effect named name
     \param pname The name of the effect to configure.
      */ 
-    void showEffectGUI(const QString &pname);
+    void showEffectGUI(const TQString &pname);
     
     /** Activates the named effect
     \param pname Name of the effect to activate.
     \param server A pointer to the soundserver instance.
     \param fx_stack A pointer to the effect stack of the soundserver.
      */
-    void activateEffect(const QString &pname,
+    void activateEffect(const TQString &pname,
                         KArtsServer *server,
                         StereoEffectStack *fx_stack);
 
@@ -81,15 +81,15 @@ public: // Methods
     void deactivateEffects(StereoEffectStack *fx_stack);
     
     /** Returns a list of all available plugins.
-    \param pluginlist A reference to a QStringList that contains the available plugins.
+    \param pluginlist A reference to a TQStringList that contains the available plugins.
      */
-    void getPlugins(QStringList &pluginlist); 
+    void getPlugins(TQStringList &pluginlist); 
 
 private: // Attributes
     KConfig *m_config;
-    QMap<QString, fx_struct> m_mapPluginList; // holds all plugins found on the system
-    // QMap<QString, fx_struct> m_mapActivePlugins; // holds the active effects
-    QStringList m_lstActivePlugins;
+    TQMap<TQString, fx_struct> m_mapPluginList; // holds all plugins found on the system
+    // TQMap<TQString, fx_struct> m_mapActivePlugins; // holds the active effects
+    TQStringList m_lstActivePlugins;
           
 
 };

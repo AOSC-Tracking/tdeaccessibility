@@ -19,8 +19,8 @@
 using namespace std;
  
 // QT includes
-#include <qslider.h>
-#include <qlcdnumber.h>
+#include <tqslider.h>
+#include <tqlcdnumber.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -28,7 +28,7 @@ using namespace std;
 // App specific includes
 #include "freeverbsetupimpl.h"
 
-FreeverbSetupImpl::FreeverbSetupImpl(QWidget *parent, const char *name, bool modal, KConfig *config )
+FreeverbSetupImpl::FreeverbSetupImpl(TQWidget *parent, const char *name, bool modal, KConfig *config )
  : Freeverb_Setup(parent,name,modal), m_config(config) {
 
   // initialize Widgets

@@ -11,8 +11,8 @@
 //
 
 // Qt includes
-#include <qstring.h>
-#include <qvariant.h>
+#include <tqstring.h>
+#include <tqvariant.h>
 
 //KDE includes
 #include <kdebug.h>
@@ -33,11 +33,11 @@ DocbookGenerator::~DocbookGenerator()
 }
 
 
-void DocbookGenerator::writeBook(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeBook(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeBook()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "RobDocument" )
         return;
 
@@ -46,7 +46,7 @@ void DocbookGenerator::writeBook(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "BookInfo" ){
@@ -61,11 +61,11 @@ void DocbookGenerator::writeBook(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeBookInfo(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeBookInfo(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeBookInfo()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "BookInfo" )
         return;
 
@@ -75,7 +75,7 @@ void DocbookGenerator::writeBookInfo(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "KeywordSet" ){
@@ -97,18 +97,18 @@ void DocbookGenerator::writeBookInfo(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeTitleOfBook(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeTitleOfBook(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeTitle()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "BookInfo" )
         return;
 
     // Documents title is stored in root element (parent of BookInfo)
     ListViewInterface *parent = static_cast<ListViewInterface*>(item->parent());
     if ( parent ){
-        QString title = parent->text(0);
+        TQString title = parent->text(0);
 
         // add node to document
         doc << "<Title>" << title << "</Title>" << endl;
@@ -116,11 +116,11 @@ void DocbookGenerator::writeTitleOfBook(QTextStream &doc, ListViewInterface *ite
 }
 
 
-void DocbookGenerator::writeAuthorGroup(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeAuthorGroup(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeAuthorGroup()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "AuthorGroup" )
         return;
 
@@ -129,7 +129,7 @@ void DocbookGenerator::writeAuthorGroup(QTextStream &doc, ListViewInterface *ite
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Author" ){
@@ -143,15 +143,15 @@ void DocbookGenerator::writeAuthorGroup(QTextStream &doc, ListViewInterface *ite
 }
 
 
-void DocbookGenerator::writeAuthor(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeAuthor(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeAuthor()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Author" )
         return;
 
-    QString author = QString::null;
+    TQString author = TQString::null;
     author = ( item->getValue(KSayItGlobal::RAWDATA) ).toString();
 
     // add node to document
@@ -165,41 +165,41 @@ void DocbookGenerator::writeAuthor(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeDate(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeDate(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeDate()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Date" )
         return;
 
-    QString date = item->text(1);
+    TQString date = item->text(1);
 
     // add node to document
     doc << "<Date>" << date << "</Date>" << endl;
 }
 
 
-void DocbookGenerator::writeReleaseInfo(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeReleaseInfo(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeReleaseInfo()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "ReleaseInfo" )
         return;
 
-    QString releaseinfo = item->text(1);
+    TQString releaseinfo = item->text(1);
 
     // add node to document
     doc << "<ReleaseInfo>" << releaseinfo << "</ReleaseInfo>" << endl;
 }
 
 
-void DocbookGenerator::writeKeywordSet(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeKeywordSet(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeKeywordSet()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "KeywordSet" )
         return;
 
@@ -208,7 +208,7 @@ void DocbookGenerator::writeKeywordSet(QTextStream &doc, ListViewInterface *item
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = ( i->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
         if ( itemType == "Keyword" ){
@@ -222,16 +222,16 @@ void DocbookGenerator::writeKeywordSet(QTextStream &doc, ListViewInterface *item
 }
 
 
-void DocbookGenerator::writeKeyword(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeKeyword(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeKeyword()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Keyword" )
         return;
 
-    // QString keyword = item->text( 0 );
-    QString keyword = QString::null;    
+    // TQString keyword = item->text( 0 );
+    TQString keyword = TQString::null;    
     keyword = (item->getValue(3)).toString();
 
     // add node to document
@@ -242,11 +242,11 @@ void DocbookGenerator::writeKeyword(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeAbstract(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeAbstract(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeAbstract()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Abstract" )
         return;
 
@@ -255,7 +255,7 @@ void DocbookGenerator::writeAbstract(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -269,15 +269,15 @@ void DocbookGenerator::writeAbstract(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeChapter( QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeChapter( TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeChapter()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Chapter" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Chapter>" << endl;
@@ -285,7 +285,7 @@ void DocbookGenerator::writeChapter( QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -301,15 +301,15 @@ void DocbookGenerator::writeChapter( QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeSect1(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeSect1(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeSect1()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Sect1" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Sect1>" << endl;
@@ -317,7 +317,7 @@ void DocbookGenerator::writeSect1(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -333,15 +333,15 @@ void DocbookGenerator::writeSect1(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeSect2(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeSect2(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeSect1()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Sect2" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Sect2>" << endl;
@@ -349,7 +349,7 @@ void DocbookGenerator::writeSect2(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = ( i->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
         if ( itemType == "Para" ){
@@ -365,15 +365,15 @@ void DocbookGenerator::writeSect2(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeSect3(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeSect3(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeSect3()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Sect3" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Sect3>" << endl;
@@ -381,7 +381,7 @@ void DocbookGenerator::writeSect3(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -397,15 +397,15 @@ void DocbookGenerator::writeSect3(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeSect4(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeSect4(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeSect4()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Sect4" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Sect4>" << endl;
@@ -413,7 +413,7 @@ void DocbookGenerator::writeSect4(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -429,15 +429,15 @@ void DocbookGenerator::writeSect4(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writeSect5(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writeSect5(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writeSect5()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Sect5" )
         return;
 
-    QString title = item->text(0);
+    TQString title = item->text(0);
 
     // add node to document
     doc << "<Sect5>" << endl;
@@ -445,7 +445,7 @@ void DocbookGenerator::writeSect5(QTextStream &doc, ListViewInterface *item)
 
     // process childs
     ListViewInterface *i = static_cast<ListViewInterface*>(item->firstChild());
-    QString itemType;
+    TQString itemType;
     while( i ){
         itemType = (i->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
         if ( itemType == "Para" ){
@@ -459,15 +459,15 @@ void DocbookGenerator::writeSect5(QTextStream &doc, ListViewInterface *item)
 }
 
 
-void DocbookGenerator::writePara(QTextStream &doc, ListViewInterface *item)
+void DocbookGenerator::writePara(TQTextStream &doc, ListViewInterface *item)
 {
     kdDebug(100200) << "DocTreeViewImpl::writePara()" << endl;
     // read item's content
-    QString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
+    TQString whoAmI = (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString();
     if ( whoAmI != "Para" )
         return;
 
-    QString data = ( item->getValue(KSayItGlobal::RAWDATA) ).toString();
+    TQString data = ( item->getValue(KSayItGlobal::RAWDATA) ).toString();
 
     // add node to document
     doc << "<Para>" << endl;

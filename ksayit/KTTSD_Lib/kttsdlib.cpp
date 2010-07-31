@@ -12,8 +12,8 @@
 // #include <time.h> // nanosleep
 
 // Qt includes
-#include <qstring.h>
-#include <qstringlist.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
 
 // KDE includes
 #include <kglobal.h>
@@ -27,17 +27,17 @@
 #include "kttsdlibsetupimpl.h"
 
 
-KTTSDLib::KTTSDLib(QObject *parent, const char *name, KApplication *Appl)
- : QObject(parent, name), m_Appl(Appl)
+KTTSDLib::KTTSDLib(TQObject *parent, const char *name, KApplication *Appl)
+ : TQObject(parent, name), m_Appl(Appl)
 {
     KGlobal::locale()->insertCatalogue("libKTTSD");
-    m_talker = new kttsdlibtalker2(static_cast<QObject*>(this), "kttsdlibtalker");
-    connect(m_talker, SIGNAL(signalTextFinished(const uint)),
-        this, SLOT(slotTextFinished(const uint)) );
-    connect(m_talker, SIGNAL(signalTextStopped(const uint)),
-        this, SLOT(slotTextStopped(const uint)) );
-    connect(m_talker, SIGNAL(signalTextStarted(const uint)),
-        this, SLOT(slotTextStarted(const uint)) );
+    m_talker = new kttsdlibtalker2(static_cast<TQObject*>(this), "kttsdlibtalker");
+    connect(m_talker, TQT_SIGNAL(signalTextFinished(const uint)),
+        this, TQT_SLOT(slotTextFinished(const uint)) );
+    connect(m_talker, TQT_SIGNAL(signalTextStopped(const uint)),
+        this, TQT_SLOT(slotTextStopped(const uint)) );
+    connect(m_talker, TQT_SIGNAL(signalTextStarted(const uint)),
+        this, TQT_SLOT(slotTextStarted(const uint)) );
     
     // reset list of currently processed jobs
     while ( !jobList.empty() ){
@@ -59,15 +59,15 @@ KTTSDLib::~KTTSDLib()
 }
 
 
-QString KTTSDLib::getName() const
+TQString KTTSDLib::getName() const
 {
     return "KDE KTTSD";
 }
 
 
-QString KTTSDLib::getDescription() const
+TQString KTTSDLib::getDescription() const
 {
-    QString str;
+    TQString str;
     str =  i18n("<qt><big><u>Description:</u></big><br>");
     str += i18n("This plugin uses the KDE TTS Daemon for speech output.");
         
@@ -87,7 +87,7 @@ int KTTSDLib::getStatus() const
 }
     
 
-const QWidget* KTTSDLib::getGUI(QFrame *frame)
+const TQWidget* KTTSDLib::getGUI(TQFrame *frame)
 {
     kdDebug(100200) << "KTTSDLib::getGUI()" << endl;
     
@@ -111,7 +111,7 @@ bool KTTSDLib::saveWasClicked() const
 }
     
 
-void KTTSDLib::setText(const QString &text)
+void KTTSDLib::setText(const TQString &text)
 {
     kdDebug(100200) << "KTTSDLib::setText()" << endl;
     

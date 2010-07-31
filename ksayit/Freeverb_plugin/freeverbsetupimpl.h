@@ -19,7 +19,7 @@
 #define FREEVERBSETUPIMPL_H
 
 // QT includes
-#include <qwidget.h>
+#include <tqwidget.h>
 
 // KDE includes
 #include <kconfig.h>
@@ -34,7 +34,7 @@
 class FreeverbSetupImpl : public Freeverb_Setup  {
    Q_OBJECT
 public: 
-	FreeverbSetupImpl(QWidget *parent=0, const char *name=0, bool modal=true, KConfig *config=0);
+	FreeverbSetupImpl(TQWidget *parent=0, const char *name=0, bool modal=true, KConfig *config=0);
 	~FreeverbSetupImpl();
 
 public slots:

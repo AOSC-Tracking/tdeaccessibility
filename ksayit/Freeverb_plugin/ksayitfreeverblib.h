@@ -13,8 +13,8 @@
 #define KSAYITFREEVERBLIB_H
 
 // QT includes
-#include <qobject.h>
-#include <qstringlist.h>
+#include <tqobject.h>
+#include <tqstringlist.h>
 
 // KDE includes
 #include <ksimpleconfig.h>
@@ -29,14 +29,14 @@ class FreeverbPluginFactory : public KLibFactory
 Q_OBJECT
 public:
     // Consturctor
-    FreeverbPluginFactory(QObject *parent=0, const char* name=0);
+    FreeverbPluginFactory(TQObject *parent=0, const char* name=0);
     
     // Destructor
     virtual ~FreeverbPluginFactory(){ delete p_instance; };
     
-    QObject* createObject(QObject *parent=0, const char* name=0, 
-            const char* className="QObject", 
-            const QStringList &args=QStringList());        
+    TQObject* createObject(TQObject *parent=0, const char* name=0, 
+            const char* className="TQObject", 
+            const TQStringList &args=TQStringList());        
 
 private:
     static KInstance* p_instance;
@@ -52,7 +52,7 @@ class FreeverbPlugin : public FXPlugin
 Q_OBJECT
 public: 
     // Constructor
-    FreeverbPlugin(QObject *parent=0, const char* name=0); //, KApplication *Appl=0);
+    FreeverbPlugin(TQObject *parent=0, const char* name=0); //, KApplication *Appl=0);
     
     // Destructor
     ~FreeverbPlugin();    
@@ -63,11 +63,11 @@ public:
     
     /** returns the Name of the Plugin
     */
-    QString getName_KS() const;
+    TQString getName_KS() const;
     
     /** returns a description of the plugin
     */
-    QString getDescription_KS() const;
+    TQString getDescription_KS() const;
     
     /** shows the GUI to configure the plugin
     */

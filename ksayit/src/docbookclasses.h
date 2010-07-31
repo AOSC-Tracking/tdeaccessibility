@@ -13,10 +13,10 @@
 #define DOCBOOKCLASSES_H
 
 // Qt includes
-#include <qstring.h>
+#include <tqstring.h>
 
-#include <qvariant.h>
-#include <qvaluelist.h>
+#include <tqvariant.h>
+#include <tqvaluelist.h>
 
 // KDE includes
 #include <klistview.h>
@@ -32,7 +32,7 @@ class QStringList;
 //
 /**
  Represents the root item of the document, therefore it expects
- a \p QListView object as parent.\n
+ a \p TQListView object as parent.\n
  Structural item only (no references to a DOM node).
  @author Robert Vogl
  */
@@ -45,14 +45,14 @@ public:
      * \param label The label is shown in column 0 of the TreeView and is also
      * used as bookmark title.
      */
-    RobDocument(KListView *lv=0, QString label=QString::null);
+    RobDocument(KListView *lv=0, TQString label=TQString::null);
     ~RobDocument();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -67,14 +67,14 @@ private:
 class Overview : public ListViewInterface
 {
 public:
-    Overview(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Overview(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Overview();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -85,15 +85,15 @@ private:
 class Date : public ListViewInterface
 {
 public:
-    Date(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Date(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Date();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
     // Pointer to the associated Data
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -104,15 +104,15 @@ private:
 class ReleaseInfo : public ListViewInterface
 {
 public:
-    ReleaseInfo(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    ReleaseInfo(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~ReleaseInfo();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
     // Pointer to the associated Data
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -124,14 +124,14 @@ private:
 class AuthorGroup : public ListViewInterface
 {
 public:
-    AuthorGroup(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    AuthorGroup(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~AuthorGroup();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -143,14 +143,14 @@ private:
 class Author : public ListViewInterface
 {
 public:
-    Author(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Author(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Author();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -162,14 +162,14 @@ private:
 class KeywordSet : public ListViewInterface
 {
 public:
-    KeywordSet(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    KeywordSet(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~KeywordSet();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -180,14 +180,14 @@ private:
 class Keyword : public ListViewInterface
 {
 public:
-    Keyword(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Keyword(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Keyword();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -199,14 +199,14 @@ private:
 class Abstract : public ListViewInterface
 {
 public:
-    Abstract(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Abstract(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Abstract();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -217,14 +217,14 @@ private:
 class Para : public ListViewInterface
 {
 public:
-    Para(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Para(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Para();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -236,14 +236,14 @@ private:
 class Chapter : public ListViewInterface
 {
 public:
-    Chapter(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Chapter(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Chapter();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -255,14 +255,14 @@ private:
 class Sect1 : public ListViewInterface
 {
 public:
-    Sect1(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Sect1(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Sect1();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -274,14 +274,14 @@ private:
 class Sect2 : public ListViewInterface
 {
 public:
-    Sect2(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Sect2(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Sect2();
 
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -293,14 +293,14 @@ private:
 class Sect3 : public ListViewInterface
 {
 public:
-    Sect3(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Sect3(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Sect3();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -312,14 +312,14 @@ private:
 class Sect4 : public ListViewInterface
 {
 public:
-    Sect4(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Sect4(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Sect4();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 
@@ -331,14 +331,14 @@ private:
 class Sect5 : public ListViewInterface
 {
 public:
-    Sect5(ListViewInterface *parent=0, ListViewInterface *after=0, QString label=QString::null);
+    Sect5(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
     ~Sect5();
     
-    bool setValue( unsigned int index, QVariant data );
-    QVariant getValue( unsigned int index ) const;
+    bool setValue( unsigned int index, TQVariant data );
+    TQVariant getValue( unsigned int index ) const;
 
 private:    
-    QValueList<QVariant> m_valueList;
+    TQValueList<TQVariant> m_valueList;
 };
 
 #endif

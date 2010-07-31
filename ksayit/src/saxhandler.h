@@ -17,10 +17,10 @@
 using namespace std;
 
 // Qt includes
-#include <qxml.h>
-#include <qstring.h>
+#include <tqxml.h>
+#include <tqstring.h>
 
-typedef map<QString, QString> TagMapT;
+typedef map<TQString, TQString> TagMapT;
 
 
 /**
@@ -33,36 +33,36 @@ public:
     ~SaxHandler();
 
     // Reimplementations from base class
-    bool startElement(const QString &namespaceURI,
-                    const QString &localName,
-                    const QString &qName,
-                    const QXmlAttributes &atts );
+    bool startElement(const TQString &namespaceURI,
+                    const TQString &localName,
+                    const TQString &qName,
+                    const TQXmlAttributes &atts );
 
-    bool endElement(const QString &namespaceURI,
-                    const QString &localName,
-                    const QString &qName);
+    bool endElement(const TQString &namespaceURI,
+                    const TQString &localName,
+                    const TQString &qName);
 
-    bool characters(const QString &ch);
+    bool characters(const TQString &ch);
 
-    bool fatalError(const QXmlParseException &exc);
+    bool fatalError(const TQXmlParseException &exc);
 
-    bool resolveEntity(const QString &publicId,
-                    const QString &systemId,
-                    QXmlInputSource* &ret);
+    bool resolveEntity(const TQString &publicId,
+                    const TQString &systemId,
+                    TQXmlInputSource* &ret);
 
-    bool externalEntityDecl(const QString &name,
-                    const QString &publicId,
-                    const QString &systemId);
+    bool externalEntityDecl(const TQString &name,
+                    const TQString &publicId,
+                    const TQString &systemId);
 
-    bool internalEntityDecl(const QString &name,
-                    const QString &value);
+    bool internalEntityDecl(const TQString &name,
+                    const TQString &value);
 
-    bool skippedEntity(const QString &name);
+    bool skippedEntity(const TQString &name);
 
     /**
      * Returns the parser result.
      */
-    void getData( QString &data ) const;
+    void getData( TQString &data ) const;
 
     /**
      * Reset
@@ -78,7 +78,7 @@ public:
 
 
 private:
-    QString m_output;
+    TQString m_output;
     bool m_rtf;
     TagMapT m_tagmap;
 

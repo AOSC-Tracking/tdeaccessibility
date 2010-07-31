@@ -11,8 +11,8 @@
 //
 
 // Qt includes
-#include <qfile.h>
-#include <qvariant.h>
+#include <tqfile.h>
+#include <tqvariant.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -29,14 +29,14 @@
  * XML-ActionHandler
  */
 ContextActionHandler::ContextActionHandler(ContextMenuHandler *menuhandler)
- : QXmlDefaultHandler(), m_menuhandler(menuhandler)
+ : TQXmlDefaultHandler(), m_menuhandler(menuhandler)
 {
-    m_subName = QString::null;
-    m_actionName = QString::null;
-    m_qty = QString::null;
+    m_subName = TQString::null;
+    m_actionName = TQString::null;
+    m_qty = TQString::null;
     m_popup = menuhandler->m_popupmenu;
     m_hit = false;
-    m_searchID = QString::null;
+    m_searchID = TQString::null;
 } 
 
 ContextActionHandler::~ContextActionHandler()
@@ -44,16 +44,16 @@ ContextActionHandler::~ContextActionHandler()
 }
 
 
-void ContextActionHandler::setSearchID( const QString xmlID )
+void ContextActionHandler::setSearchID( const TQString xmlID )
 {
     m_searchID = xmlID;
 }
     
 
-bool ContextActionHandler::startElement( const QString &,
-            const QString &,
-            const QString &qName,
-            const QXmlAttributes &atts )
+bool ContextActionHandler::startElement( const TQString &,
+            const TQString &,
+            const TQString &qName,
+            const TQXmlAttributes &atts )
 {
     if ( qName == "Item" ){
         if ( atts.value("id") == m_searchID ){
@@ -84,9 +84,9 @@ bool ContextActionHandler::startElement( const QString &,
 }    
     
 
-bool ContextActionHandler::endElement( const QString &,
-            const QString &,
-            const QString &qName )
+bool ContextActionHandler::endElement( const TQString &,
+            const TQString &,
+            const TQString &qName )
 {
     if ( !(m_hit && m_menuhandler->m_popupmenu) )
         return true;
@@ -106,7 +106,7 @@ bool ContextActionHandler::endElement( const QString &,
 }
             
 
-bool ContextActionHandler::characters( const QString &ch )
+bool ContextActionHandler::characters( const TQString &ch )
 { 
     m_actionName += ch;
     return true;
@@ -117,8 +117,8 @@ bool ContextActionHandler::characters( const QString &ch )
 /**
  * MenuHandler
  */
-ContextMenuHandler::ContextMenuHandler(QObject *parent, const char *name)
- : QObject(parent, name), m_DocTreeView(parent)
+ContextMenuHandler::ContextMenuHandler(TQObject *parent, const char *name)
+ : TQObject(parent, name), m_DocTreeView(parent)
 {
     m_popupmenu = NULL;
     m_item = NULL;  
@@ -158,75 +158,75 @@ void ContextMenuHandler::initActions()
   // User defined actions
   renameItem = new KAction (i18n("Rename..."),
               0,
-              m_DocTreeView, SLOT (slotRenameItem()), NULL );
+              m_DocTreeView, TQT_SLOT (slotRenameItem()), NULL );
   
   deleteItem = new KAction (i18n("Delete..."),
               0,
-              m_DocTreeView, SLOT (slotDeleteItem()), NULL );
+              m_DocTreeView, TQT_SLOT (slotDeleteItem()), NULL );
               
   newBookInfo = new KAction ( i18n("Overview"),
               0,
-              m_DocTreeView, SLOT (slotNewBookInfo()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewBookInfo()), NULL );
 
   newChapter = new KAction ( i18n("Chapter"),
               0,
-              m_DocTreeView, SLOT (slotNewChapter()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewChapter()), NULL );
 
   newKeywordSet = new KAction ( i18n("Keywords"),
               0,
-              m_DocTreeView, SLOT (slotNewKeywordSet()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewKeywordSet()), NULL );
 
   newKeyword = new KAction ( i18n("Keyword"),
               0,
-              m_DocTreeView, SLOT (slotNewKeyword()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewKeyword()), NULL );
   
   newAbstract = new KAction ( i18n("Abstract"),
               0,
-              m_DocTreeView, SLOT (slotNewAbstract()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewAbstract()), NULL );
   
   newAuthorGroup = new KAction ( i18n("Authors"),
               0,
-              m_DocTreeView, SLOT (slotNewAuthorGroup()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewAuthorGroup()), NULL );
   
   newAuthor = new KAction ( i18n("Author"),
               0,
-              m_DocTreeView, SLOT (slotNewAuthor()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewAuthor()), NULL );
   
   newDate = new KAction ( i18n("Date"),
               0,
-              m_DocTreeView, SLOT (slotNewDate()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewDate()), NULL );
   
   newReleaseInfo = new KAction ( i18n("Release Info"),
               0,
-              m_DocTreeView, SLOT (slotNewReleaseInfo()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewReleaseInfo()), NULL );
 
   newTitle = new KAction ( i18n("Title"),
               0,
-              m_DocTreeView, SLOT (slotNewTitle()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewTitle()), NULL );
 
   newParagraph = new KAction ( i18n("Paragraph"),
               0,
-              m_DocTreeView, SLOT (slotNewParagraph()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewParagraph()), NULL );
 
   newSection_1 = new KAction ( i18n("Section Level 1"),
               0,
-              m_DocTreeView, SLOT (slotNewSection_1()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewSection_1()), NULL );
 
   newSection_2 = new KAction ( i18n("Section Level 2"),
               0,
-              m_DocTreeView, SLOT (slotNewSection_2()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewSection_2()), NULL );
 
   newSection_3 = new KAction ( i18n("Section Level 3"),
               0,
-              m_DocTreeView, SLOT (slotNewSection_3()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewSection_3()), NULL );
 
   newSection_4 = new KAction ( i18n("Section Level 4"),
               0,
-              m_DocTreeView, SLOT (slotNewSection_4()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewSection_4()), NULL );
 
   newSection_5 = new KAction ( i18n("Section Level 5"),
               0,
-              m_DocTreeView, SLOT (slotNewSection_5()), NULL );
+              m_DocTreeView, TQT_SLOT (slotNewSection_5()), NULL );
 }
 
 
@@ -237,7 +237,7 @@ KPopupMenu* ContextMenuHandler::getPopupMenu(ListViewInterface *item)
 
     m_item = item;
 
-    QString xmlID = ( item->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
+    TQString xmlID = ( item->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
     if ( xmlID.isNull() )
         return NULL;
 
@@ -268,7 +268,7 @@ void ContextMenuHandler::registerPopupMenu(ListViewInterface *item)
 
     m_item = item;
 
-    QString xmlID = ( item->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
+    TQString xmlID = ( item->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
     if ( xmlID.isNull() )
         return;
 
@@ -283,13 +283,13 @@ void ContextMenuHandler::registerPopupMenu(ListViewInterface *item)
 }
 
 
-bool ContextMenuHandler::parseXmlFile(const QString &xmlID)
+bool ContextMenuHandler::parseXmlFile(const TQString &xmlID)
 {
     kdDebug(100200) << "ContextMenuHandler::parseXmlFile()" << endl;
     kdDebug(100200) << "XML-File: " << m_XmlFilePath << endl;
      
-    QFile xmlFile( m_XmlFilePath );
-    QXmlSimpleReader parser;
+    TQFile xmlFile( m_XmlFilePath );
+    TQXmlSimpleReader parser;
     ContextActionHandler handler(this);
     handler.setSearchID(xmlID);
     parser.setContentHandler( &handler );
@@ -297,7 +297,7 @@ bool ContextMenuHandler::parseXmlFile(const QString &xmlID)
 }
 
 
-KAction* ContextMenuHandler::ActionFactory( const QString &actionName, const QString &qty )
+KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQString &qty )
 {
     bool enabled;
     if ( qty.lower() == "n" ){
@@ -307,7 +307,7 @@ KAction* ContextMenuHandler::ActionFactory( const QString &actionName, const QSt
         // check if qty is within allowed limits
         ListViewInterface *i = static_cast<ListViewInterface*>(m_item->firstChild());
         int count = 0;
-        QString name = QString::null;
+        TQString name = TQString::null;
         while (i){
             name = ( i->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
             if ( name.lower() == actionName.lower() ){
@@ -391,7 +391,7 @@ void ContextMenuHandler::setItemEditable( bool editable )
 }
 
 
-void ContextMenuHandler::setItemMaxlines( const QString &maxlines )
+void ContextMenuHandler::setItemMaxlines( const TQString &maxlines )
 {
     if ( maxlines == "" )
         return;

@@ -13,7 +13,7 @@
 #define DOCBOOKPARSER_H
 
 // Qt includes
-#include <qdom.h>
+#include <tqdom.h>
 
 // KDE includes
 
@@ -31,27 +31,27 @@ public:
     // Destructor
     ~DocbookParser();
     
-    void parseBook(const QDomElement &element, ListViewInterface *item);
+    void parseBook(const TQDomElement &element, ListViewInterface *item);
     
     int getIdCounter(){ return m_idCounter; };
 
 private: // Methods
     // a selection of DocBook elements
-    void parseBookInfo(const QDomElement &element, ListViewInterface *item);
-    void parseAuthorGroup(const QDomElement &element, ListViewInterface *item);
-    void parseAuthor(const QDomElement &element, ListViewInterface *item);
-    void parseKeywordSet(const QDomElement &element, ListViewInterface *item);
-    void parseAbstract(const QDomElement &element, ListViewInterface *item);
-    void parseChapter(const QDomElement &element, ListViewInterface *item);
-    void parseSect1(const QDomElement &element, ListViewInterface *item);
-    void parseSect2(const QDomElement &element, ListViewInterface *item);
-    void parseSect3(const QDomElement &element, ListViewInterface *item);
-    void parseSect4(const QDomElement &element, ListViewInterface *item);
-    void parseSect5(const QDomElement &element, ListViewInterface *item);
-    void parsePara(const QDomElement &element, ListViewInterface *item);
+    void parseBookInfo(const TQDomElement &element, ListViewInterface *item);
+    void parseAuthorGroup(const TQDomElement &element, ListViewInterface *item);
+    void parseAuthor(const TQDomElement &element, ListViewInterface *item);
+    void parseKeywordSet(const TQDomElement &element, ListViewInterface *item);
+    void parseAbstract(const TQDomElement &element, ListViewInterface *item);
+    void parseChapter(const TQDomElement &element, ListViewInterface *item);
+    void parseSect1(const TQDomElement &element, ListViewInterface *item);
+    void parseSect2(const TQDomElement &element, ListViewInterface *item);
+    void parseSect3(const TQDomElement &element, ListViewInterface *item);
+    void parseSect4(const TQDomElement &element, ListViewInterface *item);
+    void parseSect5(const TQDomElement &element, ListViewInterface *item);
+    void parsePara(const TQDomElement &element, ListViewInterface *item);
 
     // Helpers
-    QString node2raw(QDomNode node) const;
+    TQString node2raw(TQDomNode node) const;
     
 private: // Attributes
     ContextMenuHandler *m_contextmenuhandler;

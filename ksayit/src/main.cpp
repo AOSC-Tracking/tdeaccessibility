@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     KArtsDispatcher dispatcher;
  
     // setup DCOP
-    QCString appID = app.dcopClient()->registerAs( app.name(), false );
+    TQCString appID = app.dcopClient()->registerAs( app.name(), false );
     
     KSayItApp *ksayit = new KSayItApp(0, "MainWindow", 0, appID);    
     // ksayit->hide();

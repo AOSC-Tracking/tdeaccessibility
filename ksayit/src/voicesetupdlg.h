@@ -19,7 +19,7 @@
 #define VOICESETUPDLG_H
 
 // QT includes
-#include <qframe.h>
+#include <tqframe.h>
 
 // KDE includes
 #include <kdialogbase.h>
@@ -35,7 +35,7 @@ class VoiceSetupDlg : public KDialogBase  {
   Q_OBJECT
 
 public: 
-  VoiceSetupDlg(QWidget *parent=0, const char *name=0, const QString &caption=NULL,
+  VoiceSetupDlg(TQWidget *parent=0, const char *name=0, const TQString &caption=NULL,
         bool modal=true,
         KConfig *config=0,
         FXPluginHandler *fxpluginhandler=0,
@@ -69,7 +69,7 @@ private: // Methods
 private slots:
     /** Called when the Page changes.
      */
-    void slotPageChanged(QWidget *page);
+    void slotPageChanged(TQWidget *page);
 
     /** Reimplementation from base class.
      */
@@ -83,7 +83,7 @@ private:
     KConfig *m_config;
     FXPluginHandler *m_fxpluginhandler;
     KTTSDLib *m_kttslib;
-    QFrame *m_fxPage;
+    TQFrame *m_fxPage;
     
 };
 

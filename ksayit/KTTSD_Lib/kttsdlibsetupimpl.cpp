@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 // Qt includes
-#include <qpushbutton.h>
+#include <tqpushbutton.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -23,7 +23,7 @@
 // App specific includes
 #include "kttsdlibsetupimpl.h"
 
-KTTSDlibSetupImpl::KTTSDlibSetupImpl(QWidget *parent, const char *name)
+KTTSDlibSetupImpl::KTTSDlibSetupImpl(TQWidget *parent, const char *name)
  : KTTSDlibSetup(parent, name)
 {
 }
@@ -47,16 +47,16 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
         fgets(cmdresult, 18, fp);
         pclose(fp);
     }
-    if ( !QCString(cmdresult).contains("kcmkttsd") ){
-            QString error = i18n("Control Center Module for KTTSD not found.");
+    if ( !TQCString(cmdresult).contains("kcmkttsd") ){
+            TQString error = i18n("Control Center Module for KTTSD not found.");
             KMessageBox::sorry(this, error, i18n("Problem"));
             return;
     }
 
     // invoke the Control Center Module
     KProcess *kcmproc = new KProcess();
-    connect(kcmproc, SIGNAL(processExited(KProcess*)),
-                    this, SLOT(slotKCMProcessExited(KProcess*)) );
+    connect(kcmproc, TQT_SIGNAL(processExited(KProcess*)),
+                    this, TQT_SLOT(slotKCMProcessExited(KProcess*)) );
     (*kcmproc) << "kcmshell";
     (*kcmproc) << "kcmkttsd";
     kcmproc->start(KProcess::NotifyOnExit);

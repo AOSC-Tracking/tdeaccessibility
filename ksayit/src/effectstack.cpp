@@ -11,7 +11,7 @@
 //
 
 // Qt includes
-#include <qstringlist.h>
+#include <tqstringlist.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -37,8 +37,8 @@ bool EffectStack::loadEffects()
 {
     kdDebug(100200) << "EffectStack::loadEffects()" << endl;
     
-    QStringList c_active;
-    QStringList::Iterator fx_it;
+    TQStringList c_active;
+    TQStringList::Iterator fx_it;
   
     // create filterstack
     FX_Stack = server.server().outstack();

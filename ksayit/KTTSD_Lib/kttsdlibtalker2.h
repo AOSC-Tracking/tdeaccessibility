@@ -13,8 +13,8 @@
 #define KTTSDLIBTALKER2_H
 
 // Qt includes
-#include <qobject.h>
-#include <qcstring.h>
+#include <tqobject.h>
+#include <tqcstring.h>
 
 #include <kspeech_stub.h>
 #include <kspeechsink.h>
@@ -26,7 +26,7 @@
 /**
 @author Robert Vogl
 */
-class kttsdlibtalker2 : public QObject, public KSpeech_stub, virtual public KSpeechSink
+class kttsdlibtalker2 : public TQObject, public KSpeech_stub, virtual public KSpeechSink
 {
 Q_OBJECT
 
@@ -36,7 +36,7 @@ signals:
     void signalTextStopped(const uint);
 
 public:
-    kttsdlibtalker2(QObject *parent = 0, const char *name = 0);
+    kttsdlibtalker2(TQObject *parent = 0, const char *name = 0);
 
     ~kttsdlibtalker2();
     
@@ -46,7 +46,7 @@ public:
     
     /** See \p KSpeech Class Reference. Returns the job number.
      */
-    uint KTTSD_setText(const QString &text, QString lang);
+    uint KTTSD_setText(const TQString &text, TQString lang);
     
     /** See \p KSpeech Class Reference.
      */
@@ -85,12 +85,12 @@ protected:
     ////////////////////////////////////////////
     // Slots for DCOP signals
     ////////////////////////////////////////////    
-    ASYNC textStarted(const QCString &appID, const uint jobNum);
-    ASYNC textFinished(const QCString &appID, const uint jobNum);
-    ASYNC textStopped(const QCString &appID, const uint jobNum);
+    ASYNC textStarted(const TQCString &appID, const uint jobNum);
+    ASYNC textFinished(const TQCString &appID, const uint jobNum);
+    ASYNC textStopped(const TQCString &appID, const uint jobNum);
     
 private:
-    QCString m_objID;
+    TQCString m_objID;
     KApplication *m_Appl;
     DCOPClient *m_client;
     uint m_jobNum;

@@ -20,9 +20,9 @@
 using namespace std;
 
  // QT includes 
-#include <qradiobutton.h>
-#include <qtextstream.h>
-#include <qstring.h>
+#include <tqradiobutton.h>
+#include <tqtextstream.h>
+#include <tqstring.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -33,7 +33,7 @@ using namespace std;
 // App specific includes
 #include "ksayitviewimpl.h"
 
-KSayItViewImpl::KSayItViewImpl(QWidget *parent, const char *name ) : KSayItView(parent,name) {
+KSayItViewImpl::KSayItViewImpl(TQWidget *parent, const char *name ) : KSayItView(parent,name) {
 
   // some presets
 
@@ -41,7 +41,7 @@ KSayItViewImpl::KSayItViewImpl(QWidget *parent, const char *name ) : KSayItView(
 KSayItViewImpl::~KSayItViewImpl(){
 }
 
-QString& KSayItViewImpl::getText(){
+TQString& KSayItViewImpl::getText(){
   t = TextEdit->text();
   return t;
 }
@@ -104,7 +104,7 @@ void KSayItViewImpl::textClear()
   TextEdit->clear();
 }
 
-void KSayItViewImpl::setText(const QString &text)
+void KSayItViewImpl::setText(const TQString &text)
 {
   // set text to text
   TextEdit->setText( text );

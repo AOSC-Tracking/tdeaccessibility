@@ -11,8 +11,8 @@
 //
 
 // QT includes
-// #include <qtextcodec.h>
-#include <qstringlist.h>
+// #include <tqtextcodec.h>
+#include <tqstringlist.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -41,19 +41,19 @@ KInstance *FreeverbPluginFactory::p_instance = 0L;
 
 
 // Factory Constructor
-FreeverbPluginFactory::FreeverbPluginFactory(QObject *parent, const char* name)
+FreeverbPluginFactory::FreeverbPluginFactory(TQObject *parent, const char* name)
 {
     p_instance = new KInstance("FreeverbPluginFactory");
 }
 
     
-QObject* FreeverbPluginFactory::createObject(QObject *parent, const char* name, 
+TQObject* FreeverbPluginFactory::createObject(TQObject *parent, const char* name, 
             const char*, 
-            const QStringList &)
+            const TQStringList &)
 {
     kdDebug(100200) << "FreeverbPluginFactory::createObject()" << endl;
     
-    QObject* obj = new FreeverbPlugin( parent, name );
+    TQObject* obj = new FreeverbPlugin( parent, name );
     emit objectCreated( obj );
     return obj;  
 }        
@@ -62,7 +62,7 @@ QObject* FreeverbPluginFactory::createObject(QObject *parent, const char* name,
 
 
 // Plugin Constructor
-FreeverbPlugin::FreeverbPlugin(QObject *parent, const char* name) //, KApplication *Appl)
+FreeverbPlugin::FreeverbPlugin(TQObject *parent, const char* name) //, KApplication *Appl)
  : FXPlugin(parent, name) //, m_Appl(Appl)
 {
     m_config = new KSimpleConfig("ksayit_freeverbrc");
@@ -84,14 +84,14 @@ void FreeverbPlugin::setApplication(KApplication *Appl)
 
 /** returns the Name of the Plugin
 */
-QString FreeverbPlugin::getName_KS() const
+TQString FreeverbPlugin::getName_KS() const
 {
     return "Synth_FREEVERB";
 }
 
 /** returns a description of the plugin
 */
-QString FreeverbPlugin::getDescription_KS() const
+TQString FreeverbPlugin::getDescription_KS() const
 {
     return i18n("This is a freeverb effect.");
 }

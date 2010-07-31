@@ -19,12 +19,12 @@
 // using namespace std;
  
 // QT includes
-#include <qpixmap.h>
-#include <qstringlist.h>
-#include <qcombobox.h>
-#include <qcolor.h>
-#include <qlayout.h>
-#include <qwidget.h>
+#include <tqpixmap.h>
+#include <tqstringlist.h>
+#include <tqcombobox.h>
+#include <tqcolor.h>
+#include <tqlayout.h>
+#include <tqwidget.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -39,7 +39,7 @@
 #include "fxpluginhandler.h"
 #include "kttsdlib.h"
 
-VoiceSetupDlg::VoiceSetupDlg(QWidget *parent, const char *name, const QString &caption,
+VoiceSetupDlg::VoiceSetupDlg(TQWidget *parent, const char *name, const TQString &caption,
         bool modal,
         KConfig *config,
         FXPluginHandler *fxpluginhandler,
@@ -51,7 +51,7 @@ VoiceSetupDlg::VoiceSetupDlg(QWidget *parent, const char *name, const QString &c
 {
 
   setIconListAllVisible(true);
-  connect (this, SIGNAL(aboutToShowPage(QWidget*)), this, SLOT(slotPageChanged(QWidget*)));
+  connect (this, TQT_SIGNAL(aboutToShowPage(TQWidget*)), this, TQT_SLOT(slotPageChanged(TQWidget*)));
 
   initVoicePage();
   initFXPage();
@@ -66,26 +66,26 @@ VoiceSetupDlg::~VoiceSetupDlg()
 
 void VoiceSetupDlg::initVoicePage()
 {
-    QPixmap icon = KGlobal::iconLoader()->loadIcon("ksayit", KIcon::Toolbar, KIcon::SizeMedium);
-    QFrame *voicePage = addPage( i18n( "Voice" ), i18n("Voice Settings"), icon );
-    QVBoxLayout *voiceLayout = new QVBoxLayout( voicePage, 0, spacingHint() );
+    TQPixmap icon = KGlobal::iconLoader()->loadIcon("ksayit", KIcon::Toolbar, KIcon::SizeMedium);
+    TQFrame *voicePage = addPage( i18n( "Voice" ), i18n("Voice Settings"), icon );
+    TQVBoxLayout *voiceLayout = new TQVBoxLayout( voicePage, 0, spacingHint() );
     
-    const QWidget *voiceDialog = m_kttslib->getGUI( voicePage );
-    voiceLayout->addWidget( const_cast<QWidget*>(voiceDialog) );
+    const TQWidget *voiceDialog = m_kttslib->getGUI( voicePage );
+    voiceLayout->addWidget( const_cast<TQWidget*>(voiceDialog) );
 }
 
 
 void VoiceSetupDlg::initFXPage()
 {
-    QPixmap icon = KGlobal::iconLoader()->loadIcon("ksysguard", KIcon::Toolbar, KIcon::SizeMedium);
+    TQPixmap icon = KGlobal::iconLoader()->loadIcon("ksysguard", KIcon::Toolbar, KIcon::SizeMedium);
     m_fxPage = addPage( i18n( "Audio FX" ), i18n("Effect Stack"), icon );
-    QVBoxLayout *fxLayout = new QVBoxLayout( m_fxPage, 0, spacingHint() );
+    TQVBoxLayout *fxLayout = new TQVBoxLayout( m_fxPage, 0, spacingHint() );
     
     FX_SetupImpl *fxDialog = new FX_SetupImpl(m_fxPage, "fxsetup", m_config, m_fxpluginhandler);
     fxLayout->addWidget(fxDialog);
-    connect( this, SIGNAL(signalOKWasClicked()), fxDialog, SLOT(slotSaveWasClicked()) );
-    connect( this, SIGNAL(signalRemoveAllFX()), fxDialog, SLOT(slotRemoveAll()) );
-    connect( this, SIGNAL(signalReloadFX()), fxDialog, SLOT(slotReload()) );
+    connect( this, TQT_SIGNAL(signalOKWasClicked()), fxDialog, TQT_SLOT(slotSaveWasClicked()) );
+    connect( this, TQT_SIGNAL(signalRemoveAllFX()), fxDialog, TQT_SLOT(slotRemoveAll()) );
+    connect( this, TQT_SIGNAL(signalReloadFX()), fxDialog, TQT_SLOT(slotReload()) );
     
     // Disable/enable FX-Setup depending on TTS-libs capability
     int status = m_kttslib->getStatus() & TTS::AUDIOFILE;
@@ -98,7 +98,7 @@ void VoiceSetupDlg::initFXPage()
 }
 
 
-void VoiceSetupDlg::slotPageChanged(QWidget *page)
+void VoiceSetupDlg::slotPageChanged(TQWidget *page)
 {
     kdDebug(100200) << "+++ entering VoiceSetupDlg::slotPageChanged: " << page << endl;
     
@@ -109,7 +109,7 @@ void VoiceSetupDlg::slotPageChanged(QWidget *page)
     if ( status ){
         m_fxPage->setEnabled(true);
     } else {
-        QString q = i18n("The active TTS system does not make use of aRts effects.");
+        TQString q = i18n("The active TTS system does not make use of aRts effects.");
         KMessageBox::information( this, q, i18n("Plugin Configuration"), "KSayIt_Audiofile" );
         m_fxPage->setEnabled(false);
     }
@@ -131,7 +131,7 @@ void VoiceSetupDlg::slotOk()
 	// check if configuration was saved O.K.
     if ( m_kttslib->saveWasClicked() ){
 		kdDebug(100200) << "--- leaving VoiceSetupDlg::slotOk" << endl;
-		QDialog::accept();
+		TQDialog::accept();
 	}
 }
 
@@ -139,7 +139,7 @@ void VoiceSetupDlg::slotOk()
 void VoiceSetupDlg::slotCancel()
 {
     kdDebug(100200) << "VoiceSetupDlg::slotCancel()" << endl;
-    QDialog::reject();
+    TQDialog::reject();
 }
 
 #include "voicesetupdlg.moc"

@@ -19,8 +19,8 @@
 #define FXSETUPIMPL_H
 
 // QT includes
-#include <qwidget.h>
-#include <qlistbox.h>
+#include <tqwidget.h>
+#include <tqlistbox.h>
 
 
 // KDE includes
@@ -39,7 +39,7 @@ class FX_SetupImpl : public FX_Setup  {
    Q_OBJECT
 
 public: 
-  FX_SetupImpl(QWidget *parent=0, const char *name=0,
+  FX_SetupImpl(TQWidget *parent=0, const char *name=0,
           KConfig *config=0,
           FXPluginHandler *fxpluginhandler=0);
   ~FX_SetupImpl();
@@ -65,7 +65,7 @@ public slots:
       Opens a modal dialog to configure the efffect.
    \param item The double clicked item.
    */
-  void slotConfigureEffect(QListBoxItem *item);
+  void slotConfigureEffect(TQListBoxItem *item);
   
   /** Saves the configuration
    */
@@ -75,12 +75,12 @@ private: // Methods
   /** Loads the configuration and initializes the widget.
    \param c_avail List of available plugins.
    */
-  void Init(QStringList c_avail);
+  void Init(TQStringList c_avail);
 
 private:
   KConfig *m_config;
   FXPluginHandler *m_fxpluginhandler;
-  QStringList pluginlist;
+  TQStringList pluginlist;
   
 };
 

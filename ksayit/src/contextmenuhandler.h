@@ -13,9 +13,9 @@
 #define CONTEXTMENUHANDLER_H
 
 // Qt includes
-#include <qobject.h>
-#include <qstring.h>
-#include <qxml.h>
+#include <tqobject.h>
+#include <tqstring.h>
+#include <tqxml.h>
 
 // KDE includes
 #include <kaction.h>
@@ -28,36 +28,36 @@ class ListViewInterface;
 /**
 @author Robert Vogl
 */
-class ContextActionHandler : public QXmlDefaultHandler 
+class ContextActionHandler : public TQXmlDefaultHandler 
 {
 public:
     ContextActionHandler(ContextMenuHandler *menuhandler = 0);
     ~ContextActionHandler();
     
     // Reimplementations from base class
-    bool startElement( const QString &namespaceURI,
-            const QString &localName,
-            const QString &qName,
-            const QXmlAttributes &atts );    
+    bool startElement( const TQString &namespaceURI,
+            const TQString &localName,
+            const TQString &qName,
+            const TQXmlAttributes &atts );    
     
     // Reimplementations from base class
-    bool endElement( const QString &namespaceURI,
-            const QString &localName,
-            const QString &qName );
+    bool endElement( const TQString &namespaceURI,
+            const TQString &localName,
+            const TQString &qName );
             
     // Reimplementations from base class
-    bool characters( const QString &ch );
+    bool characters( const TQString &ch );
 
-    void setSearchID( const QString xmlID );
+    void setSearchID( const TQString xmlID );
     
 private:
     ContextMenuHandler *m_menuhandler;
-    QString m_subName;
-    QString m_actionName;
-    QString m_qty;
+    TQString m_subName;
+    TQString m_actionName;
+    TQString m_qty;
     KPopupMenu *m_popup;
     bool m_hit;
-    QString m_searchID;
+    TQString m_searchID;
 };
 
 
@@ -68,7 +68,7 @@ class ContextMenuHandler : public QObject
 {
 Q_OBJECT
 public:
-    ContextMenuHandler(QObject *parent = 0, const char *name = 0);
+    ContextMenuHandler(TQObject *parent = 0, const char *name = 0);
 
     ~ContextMenuHandler();
 
@@ -94,7 +94,7 @@ public:
      * given element.
      * \returns A Pointer to the action. 
      */
-    KAction* ActionFactory( const QString &actionName, const QString &qty );
+    KAction* ActionFactory( const TQString &actionName, const TQString &qty );
     
     /**
      * Creates a Popup context menu for the given item and stores a
@@ -111,11 +111,11 @@ public:
      * Sets the number of lines a editable item can hold.
      * -1 = unlimited.
      */
-    void setItemMaxlines( const QString &maxlines ); 
+    void setItemMaxlines( const TQString &maxlines ); 
 
 private: // Methods
     void initActions();
-    bool parseXmlFile(const QString &xmlID);
+    bool parseXmlFile(const TQString &xmlID);
 
 public: // Attributes
     KPopupMenu* m_popupmenu;
@@ -143,9 +143,9 @@ private:
     KAction* newSection_5;
 
     // mixed stuff
-    QString m_XmlFilePath;
+    TQString m_XmlFilePath;
     ListViewInterface* m_item;
-    QObject* m_DocTreeView;
+    TQObject* m_DocTreeView;
 
 };
 

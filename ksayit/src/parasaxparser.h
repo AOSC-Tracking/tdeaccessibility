@@ -13,8 +13,8 @@
 #define PARASAXPARSER_H
 
 // Qt includes
-#include <qxml.h>
-#include <qstring.h>
+#include <tqxml.h>
+#include <tqstring.h>
 
 // App specific includes
 #include "saxhandler.h"
@@ -39,27 +39,27 @@ public:
      * info, e.g. to resolve entities defined in the internal DTD.
      * \param data The header (preamble) of the DocBook document. 
      */
-    void setProcessingInstruction(const QString &data);
+    void setProcessingInstruction(const TQString &data);
     
     /**
      * This is the 'para' element to parse. It has to be encapsulated
      * in <para> and </para>. Nested 'para' elements are not supported.
      * \param data See description.
      */
-    void setData(const QString &data);
+    void setData(const TQString &data);
     
     /**
      * Returns the pure text content of the paragraph without tags.
      * \param data See description.
      */
-    void getText(QString &data);
+    void getText(TQString &data);
     
     /**
      * Returns the text in RTF format, i.e. replaces DocBook tags
      * with RTF tags.
      * \param data See description. 
      */
-    void getRTFText(QString &data);
+    void getRTFText(TQString &data);
 
 protected:
     ParaSaxParser();
@@ -67,9 +67,9 @@ protected:
 private:
     static ParaSaxParser* _instance;
     SaxHandler* m_handler;
-    QXmlSimpleReader* m_reader;
-    QString m_XmlInputHeader;
-    QString m_XmlInputBody;
+    TQXmlSimpleReader* m_reader;
+    TQString m_XmlInputHeader;
+    TQString m_XmlInputBody;
 
 
 };

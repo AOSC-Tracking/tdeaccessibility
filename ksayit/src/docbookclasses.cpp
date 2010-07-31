@@ -10,11 +10,11 @@
 //
 //
 // Qt includes
-#include <qwidget.h>
-#include <qtextstream.h>
-#include <qpixmap.h>
-#include <qregexp.h>
-#include <qstringlist.h>
+#include <tqwidget.h>
+#include <tqtextstream.h>
+#include <tqpixmap.h>
+#include <tqregexp.h>
+#include <tqstringlist.h>
 
 //KDE includes
 #include <kdebug.h>
@@ -31,16 +31,16 @@
 //////////////////////////////////////
 // Interface
 //////////////////////////////////////
-ListViewInterface::ListViewInterface(ListViewInterface *parent, QString label)
+ListViewInterface::ListViewInterface(ListViewInterface *parent, TQString label)
     : KListViewItem( parent, label )
 {
 }
 
-ListViewInterface::ListViewInterface(ListViewInterface *parent, ListViewInterface *after, QString label) : KListViewItem( parent, after, label )
+ListViewInterface::ListViewInterface(ListViewInterface *parent, ListViewInterface *after, TQString label) : KListViewItem( parent, after, label )
 {
 }
 
-ListViewInterface::ListViewInterface(KListView *lv, QString label)
+ListViewInterface::ListViewInterface(KListView *lv, TQString label)
     : KListViewItem( lv, label )
 {
 }
@@ -52,23 +52,23 @@ ListViewInterface::ListViewInterface(KListView *lv, QString label)
 /**
  * RobDocument
  */
-RobDocument::RobDocument(KListView *lv, QString label)
+RobDocument::RobDocument(KListView *lv, TQString label)
     : ListViewInterface( lv, label )
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("contents", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("contents", KIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("RobDocument") );                            // XmlContextName
+    m_valueList.append( TQString("RobDocument") );                            // XmlContextName
     m_valueList.append( (bool)false );                                       // isEditable
     m_valueList.append( (int)0 );                                            // MaxLines
-    m_valueList.append(QString::null);                                       // Summary
-    m_valueList.append(QString::null);                                       // RawData
+    m_valueList.append(TQString::null);                                       // Summary
+    m_valueList.append(TQString::null);                                       // RawData
     m_valueList.append("<H1><center>" + i18n("unnamed") + "</center></H1>"); // RTFHeader
-    m_valueList.append(QString::null);                                       // RTFData
+    m_valueList.append(TQString::null);                                       // RTFData
     m_valueList.append(i18n("unnamed") + "\n");                              // SpeakerHeader
-    m_valueList.append(QString::null);                                       // SpeakerData
+    m_valueList.append(TQString::null);                                       // SpeakerData
     // new Concept (end)      
 }
 
@@ -76,12 +76,12 @@ RobDocument::~RobDocument()
 {
 }
 
-bool RobDocument::setValue( unsigned int index, QVariant data )
+bool RobDocument::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -98,12 +98,12 @@ bool RobDocument::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant RobDocument::getValue( unsigned int index ) const
+TQVariant RobDocument::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -116,24 +116,24 @@ QVariant RobDocument::getValue( unsigned int index ) const
 /**
  * Overview
  */
-Overview::Overview(ListViewInterface *parent, ListViewInterface *after, QString label)
+Overview::Overview(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "0"); // upmost element
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("BookInfo") );               // XmlContextName
+    m_valueList.append( TQString("BookInfo") );               // XmlContextName
     m_valueList.append( (bool)false );                       // isEditable
     m_valueList.append( (int)0 );                            // MaxLines 
-    m_valueList.append(QString::null);                       // Summary
-    m_valueList.append(QString::null);                       // RawData
+    m_valueList.append(TQString::null);                       // Summary
+    m_valueList.append(TQString::null);                       // RawData
     m_valueList.append("<H1>" + i18n("Overview") + "</H1>"); // RTFHeader
-    m_valueList.append(QString::null);                       // RTFData
+    m_valueList.append(TQString::null);                       // RTFData
     m_valueList.append(i18n("Overview") + "\n");             // SpeakerHeader
-    m_valueList.append(QString::null);                       // SpeakerData
+    m_valueList.append(TQString::null);                       // SpeakerData
     // new Concept (end)      
 }
 
@@ -141,12 +141,12 @@ Overview::~Overview()
 {
 }
 
-bool Overview::setValue( unsigned int index, QVariant data )
+bool Overview::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -157,12 +157,12 @@ bool Overview::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Overview::getValue( unsigned int index ) const
+TQVariant Overview::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -171,24 +171,24 @@ QVariant Overview::getValue( unsigned int index ) const
 /**
  * Date
  */
-Date::Date(ListViewInterface *parent, ListViewInterface *after, QString label)
+Date::Date(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000001");
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Date") );              // XmlContextName
+    m_valueList.append( TQString("Date") );              // XmlContextName
     m_valueList.append( (bool)false );                  // isEditable
     m_valueList.append( (int)1 );                       // MaxLines
-    m_valueList.append(QString::null);                  // Summary
-    m_valueList.append(QString::null);                  // RawData
+    m_valueList.append(TQString::null);                  // Summary
+    m_valueList.append(TQString::null);                  // RawData
     m_valueList.append("<B>" + i18n("Date") +": </B>"); // RTFHeader
-    m_valueList.append(QString::null);                  // RTFData
+    m_valueList.append(TQString::null);                  // RTFData
     m_valueList.append(i18n("Date") + ": ");            // SpeakerHeader
-    m_valueList.append(QString::null);                  // SpeakerData
+    m_valueList.append(TQString::null);                  // SpeakerData
     // new Concept (end)
 }
 
@@ -196,12 +196,12 @@ Date::~Date()
 {
 }
     
-bool Date::setValue( unsigned int index, QVariant data )
+bool Date::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -224,12 +224,12 @@ bool Date::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Date::getValue( unsigned int index ) const
+TQVariant Date::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -238,24 +238,24 @@ QVariant Date::getValue( unsigned int index ) const
 /**
  * ReleaseInfo
  */
-ReleaseInfo::ReleaseInfo(ListViewInterface *parent, ListViewInterface *after, QString label)
+ReleaseInfo::ReleaseInfo(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000002");
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("ReleaseInfo") );           // XmlContextName
+    m_valueList.append( TQString("ReleaseInfo") );           // XmlContextName
     m_valueList.append( (bool)false );                      // isEditable
     m_valueList.append( (int)1 );                           // MaxLines
-    m_valueList.append(QString::null);                      // Summary
-    m_valueList.append(QString::null);                      // RawData
+    m_valueList.append(TQString::null);                      // Summary
+    m_valueList.append(TQString::null);                      // RawData
     m_valueList.append("<B>" + i18n("Release") + ": </B>"); // RTFHeader
-    m_valueList.append(QString::null);                      // RTFData
+    m_valueList.append(TQString::null);                      // RTFData
     m_valueList.append(i18n("Release") + ": ");             // SpeakerHeader
-    m_valueList.append(QString::null);                      // SpeakerData
+    m_valueList.append(TQString::null);                      // SpeakerData
     // new Concept (end)
 }
 
@@ -263,12 +263,12 @@ ReleaseInfo::~ReleaseInfo()
 {
 }
 
-bool ReleaseInfo::setValue( unsigned int index, QVariant data )
+bool ReleaseInfo::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -291,12 +291,12 @@ bool ReleaseInfo::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant ReleaseInfo::getValue( unsigned int index ) const
+TQVariant ReleaseInfo::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -305,24 +305,24 @@ QVariant ReleaseInfo::getValue( unsigned int index ) const
 /**
  * Authorgroup
  */
-AuthorGroup::AuthorGroup(ListViewInterface *parent, ListViewInterface *after, QString label)
+AuthorGroup::AuthorGroup(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("kdmconfig", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("kdmconfig", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000003");
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("AuthorGroup") );            // XmlContextName
+    m_valueList.append( TQString("AuthorGroup") );            // XmlContextName
     m_valueList.append( (bool)false );                       // isEditable
     m_valueList.append( (int)0 );                            // MaxLines
-    m_valueList.append(QString::null);                       // Summary
-    m_valueList.append(QString::null);                       // RawData
+    m_valueList.append(TQString::null);                       // Summary
+    m_valueList.append(TQString::null);                       // RawData
     m_valueList.append("<H2>" + i18n("Author(s)")+ "</H2>"); // RTFHeader
-    m_valueList.append(QString::null);                       // RTFData
+    m_valueList.append(TQString::null);                       // RTFData
     m_valueList.append(i18n("Author(s)") + "\n");            // SpeakerHeader
-    m_valueList.append(QString::null);                       // SpeakerData
+    m_valueList.append(TQString::null);                       // SpeakerData
     // new Concept (end)
 }
 
@@ -330,12 +330,12 @@ AuthorGroup::~AuthorGroup()
 {
 }
     
-bool AuthorGroup::setValue( unsigned int index, QVariant data )
+bool AuthorGroup::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -346,12 +346,12 @@ bool AuthorGroup::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant AuthorGroup::getValue( unsigned int index ) const
+TQVariant AuthorGroup::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -361,23 +361,23 @@ QVariant AuthorGroup::getValue( unsigned int index ) const
 /**
  * Author
  */
-Author::Author(ListViewInterface *parent, ListViewInterface *after, QString label)
+Author::Author(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("personal", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("personal", KIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Author") );               // XmlContextName
+    m_valueList.append( TQString("Author") );               // XmlContextName
     m_valueList.append( (bool)false );                     // isEditable
     m_valueList.append( (int)1 );                          // MaxLines
-    m_valueList.append(QString::null);                     // Summary
-    m_valueList.append(QString::null);                     // RawData
+    m_valueList.append(TQString::null);                     // Summary
+    m_valueList.append(TQString::null);                     // RawData
     m_valueList.append("<B>" + i18n("Author") + ": </B>"); // RTFHeader
-    m_valueList.append(QString::null);                     // RTFData
+    m_valueList.append(TQString::null);                     // RTFData
     m_valueList.append(i18n("Author") + ": ");             // SpeakerHeader
-    m_valueList.append(QString::null);                     // SpeakerData
+    m_valueList.append(TQString::null);                     // SpeakerData
     // new Concept (end)
 }
 
@@ -385,16 +385,16 @@ Author::~Author()
 {
 }
     
-// void Author::setData(const QString &data, QDomDocument &)
+// void Author::setData(const TQString &data, TQDomDocument &)
 // {
 //     // canonify string
-//     QString m_data = data;
-//     m_data.replace( QRegExp("\n"), "" ); // remove Newlines
-//     m_data.replace( QRegExp(" {2,}"), " " ); // remove multiple spaces
-//     m_data.replace( QRegExp("[\t|\r]{1,}"), ""); // remove Tabs
+//     TQString m_data = data;
+//     m_data.replace( TQRegExp("\n"), "" ); // remove Newlines
+//     m_data.replace( TQRegExp(" {2,}"), " " ); // remove multiple spaces
+//     m_data.replace( TQRegExp("[\t|\r]{1,}"), ""); // remove Tabs
 //     // split string "firstname surname"
-//     QString firstname = m_data.section(' ', 0, 0);
-//     QString surname = m_data.section(' ', 1, 1);
+//     TQString firstname = m_data.section(' ', 0, 0);
+//     TQString surname = m_data.section(' ', 1, 1);
 //     // update node elements
 //     m_node1.setNodeValue(firstname);
 //     m_node2.setNodeValue(surname);
@@ -402,12 +402,12 @@ Author::~Author()
 //     this->setText(1, firstname + " " + surname);
 // }   
 
-bool Author::setValue( unsigned int index, QVariant data )
+bool Author::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -431,12 +431,12 @@ bool Author::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Author::getValue( unsigned int index ) const
+TQVariant Author::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -445,24 +445,24 @@ QVariant Author::getValue( unsigned int index ) const
 /**
  * KeywordSet
  */
-KeywordSet::KeywordSet(ListViewInterface *parent, ListViewInterface *after, QString label)
+KeywordSet::KeywordSet(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("txt", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("txt", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000004");
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("KeywordSet") );             // XmlContextName
+    m_valueList.append( TQString("KeywordSet") );             // XmlContextName
     m_valueList.append( (bool)false );                       // isEditable
     m_valueList.append( (int)0 );                            // MaxLines
-    m_valueList.append(QString::null);                       // Summary
-    m_valueList.append(QString::null);                       // RawData
+    m_valueList.append(TQString::null);                       // Summary
+    m_valueList.append(TQString::null);                       // RawData
     m_valueList.append("<H2>" + i18n("Keywords") + "</H2>"); // RTFHeader
-    m_valueList.append(QString::null);                       // RTFData
+    m_valueList.append(TQString::null);                       // RTFData
     m_valueList.append(i18n("Keywords") + "\n");             // SpeakerHeader
-    m_valueList.append(QString::null);                       // SpeakerData
+    m_valueList.append(TQString::null);                       // SpeakerData
     // new Concept (end)
 }
 
@@ -470,12 +470,12 @@ KeywordSet::~KeywordSet()
 {
 }
 
-bool KeywordSet::setValue( unsigned int index, QVariant data )
+bool KeywordSet::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -486,12 +486,12 @@ bool KeywordSet::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant KeywordSet::getValue( unsigned int index ) const
+TQVariant KeywordSet::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -500,20 +500,20 @@ QVariant KeywordSet::getValue( unsigned int index ) const
 /**
  * Keyword
  */
-Keyword::Keyword(ListViewInterface *parent, ListViewInterface *after, QString label)
+Keyword::Keyword(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Keyword") ); // XmlContextName
+    m_valueList.append( TQString("Keyword") ); // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (bool)1 );            // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -521,12 +521,12 @@ Keyword::~Keyword()
 {
 }
 
-bool Keyword::setValue( unsigned int index, QVariant data )
+bool Keyword::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -550,12 +550,12 @@ bool Keyword::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Keyword::getValue( unsigned int index ) const
+TQVariant Keyword::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -566,24 +566,24 @@ QVariant Keyword::getValue( unsigned int index ) const
 /**
  * Abstract
  */
-Abstract::Abstract(ListViewInterface *parent, ListViewInterface *after, QString label)
+Abstract::Abstract(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000005");
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Abstract") );               // XmlContextName
+    m_valueList.append( TQString("Abstract") );               // XmlContextName
     m_valueList.append( (bool)false );                       // isEditable
     m_valueList.append( (int)0 );                            // MaxLines
-    m_valueList.append(QString::null);                       // Summary
-    m_valueList.append(QString::null);                       // RawData
+    m_valueList.append(TQString::null);                       // Summary
+    m_valueList.append(TQString::null);                       // RawData
     m_valueList.append("<H2>" + i18n("Abstract") + "</H2>"); // RTFHeader
-    m_valueList.append(QString::null);                       // RTFData
+    m_valueList.append(TQString::null);                       // RTFData
     m_valueList.append(i18n("Abstract") + "\n");             // SpeakerHeader
-    m_valueList.append(QString::null);                       // SpeakerData
+    m_valueList.append(TQString::null);                       // SpeakerData
     // new Concept (end)
 }
 
@@ -591,12 +591,12 @@ Abstract::~Abstract()
 {
 }
     
-bool Abstract::setValue( unsigned int index, QVariant data )
+bool Abstract::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -607,12 +607,12 @@ bool Abstract::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Abstract::getValue( unsigned int index ) const
+TQVariant Abstract::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -622,23 +622,23 @@ QVariant Abstract::getValue( unsigned int index ) const
 /**
  * Para
  */
-Para::Para(ListViewInterface *parent, ListViewInterface *after, QString label)
+Para::Para(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Para") );        // XmlContextName
+    m_valueList.append( TQString("Para") );        // XmlContextName
     m_valueList.append( (bool)false );            // isEditable
     m_valueList.append( (int)-1 );                // MaxLines
-    m_valueList.append(QString::null);            // Summary
-    m_valueList.append(QString::null);            // RawData
-    m_valueList.append(QString::null);            // RTFHeader
-    m_valueList.append(QString::null);            // RTFData
+    m_valueList.append(TQString::null);            // Summary
+    m_valueList.append(TQString::null);            // RawData
+    m_valueList.append(TQString::null);            // RTFHeader
+    m_valueList.append(TQString::null);            // RTFData
     m_valueList.append(i18n("Paragraph") + "\n"); // SpeakerHeader
-    m_valueList.append(QString::null);            // SpeakerData
+    m_valueList.append(TQString::null);            // SpeakerData
     // new Concept (end)
 }
 
@@ -646,13 +646,13 @@ Para::~Para()
 {
 }   
 
-bool Para::setValue( unsigned int index, QVariant data )
+bool Para::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
-    QString sData = QString::null;
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
+    TQString sData = TQString::null;
     ParaSaxParser *p = ParaSaxParser::Instance();
     switch (index){
         case KSayItGlobal::ISEDITABLE:
@@ -681,12 +681,12 @@ bool Para::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Para::getValue( unsigned int index ) const
+TQVariant Para::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -696,23 +696,23 @@ QVariant Para::getValue( unsigned int index ) const
 /**
  * Chapter
  */
-Chapter::Chapter(ListViewInterface *parent, ListViewInterface *after, QString label)
+Chapter::Chapter(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Chapter") ); // XmlContextName
+    m_valueList.append( TQString("Chapter") ); // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -720,12 +720,12 @@ Chapter::~Chapter()
 {
 }
     
-bool Chapter::setValue( unsigned int index, QVariant data )
+bool Chapter::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -742,12 +742,12 @@ bool Chapter::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Chapter::getValue( unsigned int index ) const
+TQVariant Chapter::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -757,23 +757,23 @@ QVariant Chapter::getValue( unsigned int index ) const
 /**
  * Sect1
  */
-Sect1::Sect1(ListViewInterface *parent, ListViewInterface *after, QString label)
+Sect1::Sect1(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Sect1") );   // XmlContextName
+    m_valueList.append( TQString("Sect1") );   // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -781,12 +781,12 @@ Sect1::~Sect1()
 {
 }
     
-bool Sect1::setValue( unsigned int index, QVariant data )
+bool Sect1::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -803,12 +803,12 @@ bool Sect1::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Sect1::getValue( unsigned int index ) const
+TQVariant Sect1::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -817,23 +817,23 @@ QVariant Sect1::getValue( unsigned int index ) const
 /**
  * Sect2
  */
-Sect2::Sect2(ListViewInterface *parent, ListViewInterface *after, QString label)
+Sect2::Sect2(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Sect2") );   // XmlContextName
+    m_valueList.append( TQString("Sect2") );   // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -841,12 +841,12 @@ Sect2::~Sect2()
 {
 }
     
-bool Sect2::setValue( unsigned int index, QVariant data )
+bool Sect2::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -863,12 +863,12 @@ bool Sect2::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Sect2::getValue( unsigned int index ) const
+TQVariant Sect2::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -877,23 +877,23 @@ QVariant Sect2::getValue( unsigned int index ) const
 /**
  * Sect3
  */
-Sect3::Sect3(ListViewInterface *parent, ListViewInterface *after, QString label)
+Sect3::Sect3(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Sect3") );   // XmlContextName
+    m_valueList.append( TQString("Sect3") );   // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -901,12 +901,12 @@ Sect3::~Sect3()
 {
 }
     
-bool Sect3::setValue( unsigned int index, QVariant data )
+bool Sect3::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -923,12 +923,12 @@ bool Sect3::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Sect3::getValue( unsigned int index ) const
+TQVariant Sect3::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -937,23 +937,23 @@ QVariant Sect3::getValue( unsigned int index ) const
 /**
  * Sect4
  */
-Sect4::Sect4(ListViewInterface *parent, ListViewInterface *after, QString label)
+Sect4::Sect4(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Sect4") );   // XmlContextName
+    m_valueList.append( TQString("Sect4") );   // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -961,12 +961,12 @@ Sect4::~Sect4()
 {
 }
     
-bool Sect4::setValue( unsigned int index, QVariant data )
+bool Sect4::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -983,12 +983,12 @@ bool Sect4::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Sect4::getValue( unsigned int index ) const
+TQVariant Sect4::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;
@@ -997,23 +997,23 @@ QVariant Sect4::getValue( unsigned int index ) const
 /**
  * Sect5
  */
-Sect5::Sect5(ListViewInterface *parent, ListViewInterface *after, QString label)
+Sect5::Sect5(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    QPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
     m_valueList.clear();
-    m_valueList.append( QString("Sect5") );   // XmlContextName
+    m_valueList.append( TQString("Sect5") );   // XmlContextName
     m_valueList.append( (bool)false );        // isEditable
     m_valueList.append( (int)0 );             // MaxLines
-    m_valueList.append(QString::null);        // Summary
-    m_valueList.append(QString::null);        // RawData
-    m_valueList.append(QString::null);        // RTFHeader
-    m_valueList.append(QString::null);        // RTFData
-    m_valueList.append(QString::null);        // SpeakerHeader
-    m_valueList.append(QString::null);        // SpeakerData
+    m_valueList.append(TQString::null);        // Summary
+    m_valueList.append(TQString::null);        // RawData
+    m_valueList.append(TQString::null);        // RTFHeader
+    m_valueList.append(TQString::null);        // RTFData
+    m_valueList.append(TQString::null);        // SpeakerHeader
+    m_valueList.append(TQString::null);        // SpeakerData
     // new Concept (end)
 }
 
@@ -1021,12 +1021,12 @@ Sect5::~Sect5()
 {
 }
     
-bool Sect5::setValue( unsigned int index, QVariant data )
+bool Sect5::setValue( unsigned int index, TQVariant data )
 {
     if ( index<1 || index > m_valueList.count() )
         return false;
 
-    QValueList<QVariant>::Iterator it = m_valueList.at(index);
+    TQValueList<TQVariant>::Iterator it = m_valueList.at(index);
     switch (index){
         case KSayItGlobal::ISEDITABLE:
             *it = data;
@@ -1043,12 +1043,12 @@ bool Sect5::setValue( unsigned int index, QVariant data )
     return true;
 }
 
-QVariant Sect5::getValue( unsigned int index ) const
+TQVariant Sect5::getValue( unsigned int index ) const
 {
     if (  index > m_valueList.count() )
-        return QVariant(); // a invalid QVariant
+        return TQVariant(); // a invalid QVariant
 
-    QVariant data;
+    TQVariant data;
     data = m_valueList[index];
 
     return data;

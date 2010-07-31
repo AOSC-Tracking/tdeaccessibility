@@ -19,8 +19,8 @@
 #define KSAYITVIEWIMPL_H
 
 // QT includes
-#include <qwidget.h>
-#include <qstring.h>
+#include <tqwidget.h>
+#include <tqstring.h>
 
 // KDE includes
 
@@ -35,12 +35,12 @@ class KSayItViewImpl : public KSayItView  {
    Q_OBJECT
 
 public: 
-    KSayItViewImpl(QWidget *parent=0, const char *name=0);
+    KSayItViewImpl(TQWidget *parent=0, const char *name=0);
     ~KSayItViewImpl();
 
 signals:
-  void signalSetCaption(const QString &caption);
-  void signalShowStatus(const QString &status);
+  void signalSetCaption(const TQString &caption);
+  void signalShowStatus(const TQString &status);
   void signalEnableCopyCut(bool enable);
   
   /** Emitted when the text in the TextEditor view cahnges.
@@ -73,11 +73,11 @@ private slots:
 public: // Methods
   /** Returns the text of the TextEdit-Widget
    */
-  QString& getText();
+  TQString& getText();
   
   /** Set the content of the textEdit-Widget to text
    */
-  void setText(const QString &text);
+  void setText(const TQString &text);
   
   /** Enables/disables the Textedit
    * \param enable true=enabled, false=diabled
@@ -89,7 +89,7 @@ public: // Methods
   void textClear();
 
 private: 
-  QString t;
+  TQString t;
 
      
 };

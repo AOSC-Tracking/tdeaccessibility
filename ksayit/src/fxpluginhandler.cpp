@@ -11,7 +11,7 @@
 //
 
 // QT includes
-#include <qdir.h>
+#include <tqdir.h>
 
 // KDE includes
 #include <kdebug.h>
@@ -26,8 +26,8 @@
 #include "ksayit_ttsplugin.h"
 
 
-FXPluginHandler::FXPluginHandler(QObject *parent, const char *name, KConfig *config)
- : QObject(parent, name), m_config(config)
+FXPluginHandler::FXPluginHandler(TQObject *parent, const char *name, KConfig *config)
+ : TQObject(parent, name), m_config(config)
 {
     m_mapPluginList.clear();
     m_lstActivePlugins.clear();
@@ -36,7 +36,7 @@ FXPluginHandler::FXPluginHandler(QObject *parent, const char *name, KConfig *con
 
 FXPluginHandler::~FXPluginHandler()
 {
-    QMap<QString, fx_struct>::Iterator mit;
+    TQMap<TQString, fx_struct>::Iterator mit;
      
     for (mit=m_mapPluginList.begin(); mit!=m_mapPluginList.end(); ++mit){
         if ( (*mit).p != 0 ){
@@ -50,7 +50,7 @@ void FXPluginHandler::searchPlugins()
 {  
     kdDebug(100200) << "FXPluginHandler::searchPlugins()" << endl;
     
-    QStringList sRegistered;
+    TQStringList sRegistered;
     fx_struct plugin;
     
     sRegistered.clear();
@@ -58,8 +58,8 @@ void FXPluginHandler::searchPlugins()
     
     KTrader::OfferList offers = KTrader::self()->query("KSayIt/FXPlugin");
     KLibFactory *factory = NULL;
-    QString library = QString::null;
-    QString name = QString::null;
+    TQString library = TQString::null;
+    TQString name = TQString::null;
     
     KTrader::OfferList::Iterator it=offers.begin();
     for ( ;it!=offers.end(); ++it ){
@@ -70,11 +70,11 @@ void FXPluginHandler::searchPlugins()
         if ( factory ){
             kdDebug(100200) << "FXPluginHandler::searchPlugins(): Plugin factory found." << endl;
             // register found plugin
-            if ( !sRegistered.contains( QString(name) )){
-                sRegistered.append( QString(name) );
+            if ( !sRegistered.contains( TQString(name) )){
+                sRegistered.append( TQString(name) );
                 plugin.name    = name;
                 plugin.library = library;
-                plugin.description = QString::null;
+                plugin.description = TQString::null;
                 plugin.EffectID = 0;
                 plugin.p = NULL;
                 m_mapPluginList[plugin.name] = plugin; // update Plugin Map
@@ -90,8 +90,8 @@ void FXPluginHandler::readConfiguration()
     kdDebug(100200) << "+++ entering FXPluginHandler::readConfiguration()" << endl;
     
     fx_struct plugin;
-    QMap<QString, fx_struct>::Iterator mit;
-    QStringList::Iterator lit;
+    TQMap<TQString, fx_struct>::Iterator mit;
+    TQStringList::Iterator lit;
     
     // unload all plugins and destroy the effect objects
     lit = m_lstActivePlugins.begin();
@@ -112,7 +112,7 @@ void FXPluginHandler::readConfiguration()
     
     // load active plugins as given in config file
     m_config->setGroup("Effect Stack Configuration");
-    QStringList conf_active = m_config->readListEntry("Activated");
+    TQStringList conf_active = m_config->readListEntry("Activated");
     KLibFactory *factory = NULL;   
     
     for (lit=conf_active.begin(); lit!=conf_active.end(); ++lit){ // for all in config
@@ -123,7 +123,7 @@ void FXPluginHandler::readConfiguration()
             // load plugin            
             factory = KLibLoader::self()->factory( (plugin.library).latin1() );
             if ( factory ){
-                plugin.p = static_cast<FXPlugin*>( factory->create( (QObject*)this, (plugin.name).latin1() ) );
+                plugin.p = static_cast<FXPlugin*>( factory->create( (TQObject*)this, (plugin.name).latin1() ) );
                 if ( plugin.p ){ // Plugin found
                     plugin.p->setApplication( KApplication::kApplication() );
                     plugin.description = plugin.p->getDescription_KS();
@@ -138,11 +138,11 @@ void FXPluginHandler::readConfiguration()
 }
 
 
-void FXPluginHandler::showEffectGUI(const QString &pname)
+void FXPluginHandler::showEffectGUI(const TQString &pname)
 {
     kdDebug(100200) << "FXPluginHandler::showEffectGUI(): " << pname << endl;
     
-    QMap<QString, fx_struct>::Iterator mit;
+    TQMap<TQString, fx_struct>::Iterator mit;
     fx_struct plugin;
     
     // find plugin with name==pname in list and show its GUI
@@ -156,7 +156,7 @@ void FXPluginHandler::showEffectGUI(const QString &pname)
             kdDebug(100200) << "Effect not active yet. Loading..." << endl;
             KLibFactory *factory = KLibLoader::self()->factory( (plugin.library).latin1() );
             if ( factory ){
-                plugin.p = static_cast<FXPlugin*>( factory->create( (QObject*)this, (plugin.name).latin1() ) );
+                plugin.p = static_cast<FXPlugin*>( factory->create( (TQObject*)this, (plugin.name).latin1() ) );
                 if ( plugin.p ){ // Plugin found
                     plugin.p->setApplication( KApplication::kApplication() );
                     plugin.description = plugin.p->getDescription_KS();
@@ -173,14 +173,14 @@ void FXPluginHandler::showEffectGUI(const QString &pname)
  }
 
 
-void FXPluginHandler::getPlugins(QStringList &pluginlist)
+void FXPluginHandler::getPlugins(TQStringList &pluginlist)
 {
     // kdDebug(100200) << "FXPluginHandler::getPlugins" << endl;
     
     pluginlist.clear();
-    QString sPname;
+    TQString sPname;
     
-    QMap<QString, fx_struct>::Iterator mit;
+    TQMap<TQString, fx_struct>::Iterator mit;
     for (mit=m_mapPluginList.begin(); mit!=m_mapPluginList.end(); ++mit){
         sPname = (*mit).name; //testing
         pluginlist.append( sPname );    
@@ -188,13 +188,13 @@ void FXPluginHandler::getPlugins(QStringList &pluginlist)
 } 
 
 
-void FXPluginHandler::activateEffect(const QString &pname,
+void FXPluginHandler::activateEffect(const TQString &pname,
                                    KArtsServer *server,
                                    StereoEffectStack *fx_stack)
 {
     kdDebug(100200) << "FXPluginHandler::activateEffect: " << pname << endl;
     
-    QMap<QString, fx_struct>::Iterator mit;
+    TQMap<TQString, fx_struct>::Iterator mit;
     fx_struct plugin;
     
     // find plugin with name==pname
@@ -215,7 +215,7 @@ void FXPluginHandler::deactivateEffects(StereoEffectStack *fx_stack)
 {
     kdDebug(100200) << "FXPluginHandler::deactivateEffects." << endl;
     
-    QMap<QString, fx_struct>::Iterator mit;
+    TQMap<TQString, fx_struct>::Iterator mit;
     fx_struct plugin;
       
     for (mit=m_mapPluginList.begin(); mit!=m_mapPluginList.end(); ++mit){

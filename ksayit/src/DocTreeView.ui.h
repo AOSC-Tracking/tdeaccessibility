@@ -11,7 +11,7 @@
 *****************************************************************************/
 
 
-void DocTreeView::slotItemClicked( QListViewItem * )
+void DocTreeView::slotItemClicked( TQListViewItem * )
 {
 
 }
@@ -126,7 +126,7 @@ void DocTreeView::slotNewSection_5()
 }
 
 
-void DocTreeView::slotRightButtonPressed( QListViewItem *i, const QPoint &, int )
+void DocTreeView::slotRightButtonPressed( TQListViewItem *i, const TQPoint &, int )
 {
 
 }
