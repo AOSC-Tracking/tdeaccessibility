@@ -25,7 +25,7 @@
 #include "Types.h"
 
 // forward declarations
-class QStringList;
+class TQStringList;
 
 //
 // Classes for Roberts elements

@@ -29,8 +29,8 @@ extern "C"
 #include <X11/XKBlib.h>
 }
      
-class QLabel;      
-class QGridLayout;
+class TQLabel;      
+class TQGridLayout;
 class KPopupMenu;
 
 class StatusIcon : public TQPushButton {
