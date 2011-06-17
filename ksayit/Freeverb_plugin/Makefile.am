@@ -1,4 +1,4 @@
-INCLUDES = -I$(top_srcdir)/ksayit/src $(all_includes)
+INCLUDES = -I$(top_srcdir)/ksayit/src $(all_includes) -I$(kde_includes)/kde -I$(kde_includes)/arts
 METASOURCES = AUTO
 kde_servicetypes_DATA = ksayit_libFreeverb_service.desktop
 kde_services_DATA = ksayit_libFreeverb.desktop

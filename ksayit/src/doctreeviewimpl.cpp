@@ -11,7 +11,7 @@
 //
 #include <stdlib.h> // getenv
 
-// Qt includes
+// TQt includes
 #include <tqdom.h>
 #include <tqfile.h>
 #include <tqwidget.h>
@@ -41,8 +41,8 @@
 //////////////////////////////////////
 // TreeView Implementation
 //////////////////////////////////////
-DocTreeViewImpl::DocTreeViewImpl(TQWidget* parent, const char* name, WFlags fl)
- : DocTreeView(parent, name, fl)
+DocTreeViewImpl::DocTreeViewImpl(TQWidget* tqparent, const char* name, WFlags fl)
+ : DocTreeView(tqparent, name, fl)
 {
     m_rootItem = NULL;
     m_url = KURL();
@@ -66,7 +66,7 @@ DocTreeViewImpl::DocTreeViewImpl(TQWidget* parent, const char* name, WFlags fl)
     m_currentItem = m_rootItem;
     m_parasaxparser = ParaSaxParser::Instance();
     m_editMode = false;
-    m_changedContent = TQString::null;
+    m_changedContent = TQString();
     
     m_contextmenuhandler = NULL;
     m_contextmenu = NULL;
@@ -86,7 +86,7 @@ DocTreeViewImpl::~DocTreeViewImpl()
 void DocTreeViewImpl::enableContextMenus( bool enabled )
 {
     if ( enabled ){
-        m_contextmenuhandler = new ContextMenuHandler(this, "contextmenuhandler");
+        m_contextmenuhandler = new ContextMenuHandler(TQT_TQOBJECT(this), "contextmenuhandler");
     } else {
         if ( m_contextmenuhandler )
             delete m_contextmenuhandler;
@@ -105,7 +105,7 @@ void DocTreeViewImpl::clear()
     
     // inform BookmarkHandler
     // 
-    emit signalSetBookmarkFilename( TQString::null );
+    emit signalSetBookmarkFilename( TQString() );
     
     listView->clear();
     m_rootItem = new RobDocument( listView, i18n("unnamed") );
@@ -193,11 +193,11 @@ void DocTreeViewImpl::openFile(const KURL &url)
     if( domTree.setContent(&file) ){
         // extract Header
         file.reset();
-        TQString header = TQString::null;
+        TQString header = TQString();
         TQString line;
         int offset;
         file.readLine( line, file.size() );
-        while( !file.atEnd() && (offset = line.find("<book", 0, false)) < 0 ){
+        while( !file.atEnd() && (offset = line.tqfind("<book", 0, false)) < 0 ){
             header += line;    
             file.readLine( line, file.size() );  
         }
@@ -261,7 +261,7 @@ void DocTreeViewImpl::openFile(const KURL &url)
             docbookparser.parseBook(root , m_rootItem);
             m_idCounter = docbookparser.getIdCounter();  
     } else {
-        err = i18n("The file is of type %1, 'book' expected.").arg(root.tagName() );
+        err = i18n("The file is of type %1, 'book' expected.").tqarg(root.tagName() );
         throw(err);
     }
     
@@ -329,7 +329,7 @@ void DocTreeViewImpl::saveFileAs()
 
     makeCurrentNodePersistent();
     
-    m_url = KFileDialog::getSaveURL(TQString::null, "*.docbook", this, i18n("Save File As"));
+    m_url = KFileDialog::getSaveURL(TQString(), "*.docbook", this, i18n("Save File As"));
     if ( m_url.isEmpty() ) // dialog cancelled
         return;
     if ( !m_url.isValid() ){
@@ -391,9 +391,9 @@ void DocTreeViewImpl::setEditMode(bool mode)
 void DocTreeViewImpl::makeToSingleLine( TQString &content )
 {
     // canonify string
-    content.replace( TQRegExp("\n"), "" );          // remove Newlines
-    content.replace( TQRegExp(" {2,}"), " " );      // remove multiple spaces
-    content.replace( TQRegExp("[\t|\r]{1,}"), "");  // remove Tabs
+    content.tqreplace( TQRegExp("\n"), "" );          // remove Newlines
+    content.tqreplace( TQRegExp(" {2,}"), " " );      // remove multiple spaces
+    content.tqreplace( TQRegExp("[\t|\r]{1,}"), "");  // remove Tabs
 }    
 
 
@@ -402,10 +402,10 @@ TQString DocTreeViewImpl::selectItemByID(const TQString &ID, const TQString titl
     kdDebug(100200) << "DocTreeViewImpl::selectItemByID(" << ID << ")" << endl;
 
     if ( ID.isNull() )
-        return TQString::null;
+        return TQString();
         
     TQString sTitle = title.lower();
-    TQString err = TQString::null;
+    TQString err = TQString();
     
     /**
      * Search on structure (URL)
@@ -416,7 +416,7 @@ TQString DocTreeViewImpl::selectItemByID(const TQString &ID, const TQString titl
     TQStringList::Iterator it = partList.begin();
     it++; // skip first element (allways RobDocument)
     int childNum = 0;
-    TQString childType = TQString::null;
+    TQString childType = TQString();
     ListViewInterface *item = m_rootItem;
     bool hit = false;
     
@@ -459,7 +459,7 @@ TQString DocTreeViewImpl::selectItemByID(const TQString &ID, const TQString titl
         // with the given title.
         item = NULL;
         TQListViewItemIterator sit( m_rootItem );
-        TQString itemTitle = TQString::null;
+        TQString itemTitle = TQString();
         while ( sit.current() ) {
             item = static_cast<ListViewInterface*>(sit.current());
             if ( !item )
@@ -503,7 +503,7 @@ void DocTreeViewImpl::slotItemClicked(TQListViewItem *item)
     
     if ( item ){
         m_currentItem = static_cast<ListViewInterface*>(item);
-        TQString str = TQString::null;
+        TQString str = TQString();
         TQTextStream msg(&str, IO_ReadWrite);
         msg.setEncoding(TQTextStream::UnicodeUTF8);
 
@@ -517,7 +517,7 @@ void DocTreeViewImpl::slotItemClicked(TQListViewItem *item)
         
         // Create Bookmark-ID depending on the location of the item
         // within the tree
-        TQString idstring = TQString::null;
+        TQString idstring = TQString();
         TQTextStream id(&idstring, IO_ReadWrite);
         id.setEncoding(TQTextStream::UnicodeUTF8);
         id << "1=RobDocument";
@@ -553,21 +553,21 @@ void DocTreeViewImpl::recursiveBuildItemIdentifier(ListViewInterface* item, TQTe
     if ( !item )
         return;
     
-    // 1. Do we have a parent (=parentItem)?
+    // 1. Do we have a tqparent (=tqparentItem)?
     // If no -> return, if yes -> recursive call
-    ListViewInterface *parentItem = NULL;
-    parentItem = static_cast<ListViewInterface*>( item->parent() );
-    if ( parentItem ){
-        recursiveBuildItemIdentifier( parentItem, idstring );
+    ListViewInterface *tqparentItem = NULL;
+    tqparentItem = static_cast<ListViewInterface*>( item->tqparent() );
+    if ( tqparentItem ){
+        recursiveBuildItemIdentifier( tqparentItem, idstring );
     } else {
         // break recursion
         return;
     }
     
-    // 2. Which child of the parentItem are we? Append no. to idstring.
+    // 2. Which child of the tqparentItem are we? Append no. to idstring.
     int childno = 0;
     TQString itemID = item->text(3);
-    ListViewInterface *i = static_cast<ListViewInterface*>( parentItem->firstChild() );
+    ListViewInterface *i = static_cast<ListViewInterface*>( tqparentItem->firstChild() );
     while( i ){
         childno++;
         if ( i->text(3) == itemID )
@@ -585,17 +585,17 @@ void DocTreeViewImpl::recursiveBuildItemIdentifier(ListViewInterface* item, TQTe
 TQString DocTreeViewImpl::getItemTitle( ListViewInterface *item )
 {
     if ( !item )
-        return TQString::null;
+        return TQString();
         
     TQString col0 = item->text(0);
-    TQString title = TQString::null;
+    TQString title = TQString();
     // if ( col0 == i18n("Paragraph") ){ // better to use XmlContextName?
     if( (item->getValue(KSayItGlobal::XMLCONTEXTNAME)).toString() == i18n("Paragraph") ){
         title = ( item->getValue(KSayItGlobal::SPEAKERDATA) ).toString().left(32);        
         
         // canonify string
-        title.replace( TQRegExp("^( |\t|\n)+"), "");
-        title.replace( TQRegExp("( |\t|\n)$+"), "");            
+        title.tqreplace( TQRegExp("^( |\t|\n)+"), "");
+        title.tqreplace( TQRegExp("( |\t|\n)$+"), "");            
     } else {
         title = col0.left(32);
     }
@@ -700,7 +700,7 @@ void DocTreeViewImpl::makeCurrentNodePersistent()
     m_currentItem->setValue( KSayItGlobal::RTFDATA,     m_changedContent );
     m_currentItem->setValue( KSayItGlobal::SPEAKERDATA, m_changedContent );
 
-    m_changedContent = TQString::null;
+    m_changedContent = TQString();
 }    
 
 /** replaced by slotRightButtonPressed()
@@ -756,13 +756,13 @@ void DocTreeViewImpl::slotDeleteItem()
     kdDebug(100200) << "DocTreeViewImpl::slotDeleteItem()" << endl;
     
     ListViewInterface *itemToDelete = m_currentItem;
-    ListViewInterface *parentItem = NULL;
-    parentItem = static_cast<ListViewInterface*>(itemToDelete->parent());
-    if ( !parentItem )
-        return; // delete only items with parent
+    ListViewInterface *tqparentItem = NULL;
+    tqparentItem = static_cast<ListViewInterface*>(itemToDelete->tqparent());
+    if ( !tqparentItem )
+        return; // delete only items with tqparent
     
     // try to delete bookmark
-    TQString url = TQString::null;
+    TQString url = TQString();
     TQTextStream id(&url, IO_ReadWrite);
     id.setEncoding(TQTextStream::UnicodeUTF8);
     id << "ksayit://1=RobDocument";
@@ -779,15 +779,15 @@ void DocTreeViewImpl::slotDeleteItem()
     TQListViewItemIterator itr( m_rootItem );
     while ( itr.current() ) {
         item = static_cast<ListViewInterface*>(itr.current());
-        item->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );    
+        item->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );    
         ++itr;
     }
     
     // show
     m_rootItem->sort();
-    listView->setSelected( parentItem, true );
-    listView->ensureItemVisible( parentItem );
-    slotItemClicked( parentItem );
+    listView->setSelected( tqparentItem, true );
+    listView->ensureItemVisible( tqparentItem );
+    slotItemClicked( tqparentItem );
 }
 
 
@@ -797,7 +797,7 @@ void DocTreeViewImpl::slotNewBookInfo()
     if ( whoAmI == "RobDocument" ){
         int newIndex = newIndexFirstChild();
         Overview *overview = new Overview( m_currentItem, NULL, i18n("Overview") );
-        overview->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        overview->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         m_contextmenuhandler->registerPopupMenu( overview );
     }
@@ -810,7 +810,7 @@ void DocTreeViewImpl::slotNewChapter()
     if ( whoAmI == "RobDocument" ){
         int newIndex = newIndexLastChild();
         Chapter *chapter = new Chapter( m_currentItem, NULL, i18n("Chapter") );
-        chapter->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        chapter->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Chapter Title");
         chapter->setText(0, newTitle );
@@ -829,7 +829,7 @@ void DocTreeViewImpl::slotNewKeywordSet()
         // New TreeView item
         int newIndex = newIndexFirstChild();
         KeywordSet *keywordset = new KeywordSet(m_currentItem, NULL, i18n("Keywords"));
-        keywordset->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        keywordset->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( keywordset );
     }
@@ -843,7 +843,7 @@ void DocTreeViewImpl::slotNewKeyword()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Keyword *keyword = new Keyword(m_currentItem, NULL, i18n("Keyword"));
-        keyword->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        keyword->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newKeyword = i18n("New Keyword");
         keyword->setText(0, newKeyword );
@@ -863,7 +863,7 @@ void DocTreeViewImpl::slotNewAbstract()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Abstract *abstract = new Abstract(m_currentItem, NULL, i18n("Abstract"));
-        abstract->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        abstract->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( abstract );
         
@@ -883,7 +883,7 @@ void DocTreeViewImpl::slotNewAuthorGroup()
         // New TreeView item
         int newIndex = newIndexFirstChild();
         AuthorGroup *authorgroup = new AuthorGroup(m_currentItem, NULL, i18n("Author(s)"));
-        authorgroup->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        authorgroup->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( authorgroup );
         
@@ -903,7 +903,7 @@ void DocTreeViewImpl::slotNewAuthor()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Author *author = new Author(m_currentItem);
-        author->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        author->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
     
         author->setText(0, i18n("Author") );
         TQString newAuthor = i18n("Firstname Surname"); 
@@ -924,10 +924,10 @@ void DocTreeViewImpl::slotNewDate()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Date *date = new Date(m_currentItem, NULL, i18n("Date"));
-        date->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        date->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         // get current date
         TQString today;
-        today = KGlobal::locale()->formatDate(TQDate::currentDate(Qt::LocalTime), true);
+        today = KGlobal::locale()->formatDate(TQDate::tqcurrentDate(Qt::LocalTime), true);
         date->setText( 1, today);
         date->setValue( KSayItGlobal::RAWDATA,     today );
         date->setValue( KSayItGlobal::RTFDATA,     today );
@@ -945,7 +945,7 @@ void DocTreeViewImpl::slotNewReleaseInfo()
         // New TreeView item
         int newIndex = newIndexLastChild();
         ReleaseInfo *relinfo = new ReleaseInfo(m_currentItem, NULL, i18n("Release"));
-        relinfo->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        relinfo->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newRelease = "0.0.0";
         relinfo->setText( 1, newRelease );
@@ -966,20 +966,20 @@ void DocTreeViewImpl::slotNewTitle()
 void DocTreeViewImpl::slotNewParagraph()
 {
 /*    // Create Null element
-    TQDomElement parentElement = TQDomElement();
+    TQDomElement tqparentElement = TQDomElement();
 
     NodeList_type list;
     list.clear();
     m_currentItem->getNodes( list );
-    parentElement = (list.front()).toElement();
+    tqparentElement = (list.front()).toElement();
 
-    if ( parentElement.isNull() )
+    if ( tqparentElement.isNull() )
         return;
 */
     // New TreeView item
     int newIndex = newIndexLastChild();
     Para *para = new Para(m_currentItem, NULL, i18n("Paragraph"));
-    para->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+    para->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
 
     m_contextmenuhandler->registerPopupMenu( para );
     
@@ -992,7 +992,7 @@ void DocTreeViewImpl::slotNewSection_1()
     if ( whoAmI == "Chapter" ){
         int newIndex = newIndexLastChild();
         Sect1 *sect1 = new Sect1(m_currentItem, NULL, i18n("Section Level 1"));
-        sect1->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        sect1->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect1->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1009,7 +1009,7 @@ void DocTreeViewImpl::slotNewSection_2()
     if ( whoAmI == "Sect1" ){
         int newIndex = newIndexLastChild();
         Sect2 *sect2 = new Sect2(m_currentItem, NULL, i18n("Section Level 2"));
-        sect2->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        sect2->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect2->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1026,7 +1026,7 @@ void DocTreeViewImpl::slotNewSection_3()
     if ( whoAmI == "Sect2" ){
         int newIndex = newIndexLastChild();
         Sect3 *sect3 = new Sect3(m_currentItem, NULL, i18n("Section Level 3"));
-        sect3->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        sect3->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect3->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1043,7 +1043,7 @@ void DocTreeViewImpl::slotNewSection_4()
     if ( whoAmI == "Sect3" ){
         int newIndex = newIndexLastChild();
         Sect4 *sect4 = new Sect4(m_currentItem, NULL, i18n("Section Level 4"));
-        sect4->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        sect4->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect4->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1060,7 +1060,7 @@ void DocTreeViewImpl::slotNewSection_5()
     if ( whoAmI == "Sect4" ){
         int newIndex = newIndexLastChild();
         Sect5 *sect5 = new Sect5(m_currentItem, NULL, i18n("Section Level 5"));
-        sect5->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
+        sect5->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect5->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1086,7 +1086,7 @@ int DocTreeViewImpl::newIndexFirstChild()
         item = static_cast<ListViewInterface*>(it.current());
         itemIndex = (item->text(3)).toInt();
         if ( itemIndex > currentIndex ){
-            item->setText(3, TQString("%1").arg(itemIndex+1).rightJustify(8,'0') );;    
+            item->setText(3, TQString("%1").tqarg(itemIndex+1).rightJustify(8,'0') );;    
         }
         ++it;
     }
@@ -1116,7 +1116,7 @@ int DocTreeViewImpl::newIndexLastChild()
         item = static_cast<ListViewInterface*>(it.current());
         itemIndex = (item->text(3)).toInt();
         if ( itemIndex > lastIndex ){
-            item->setText(3, TQString("%1").arg(itemIndex+1).rightJustify(8,'0') );    
+            item->setText(3, TQString("%1").tqarg(itemIndex+1).rightJustify(8,'0') );    
         }
         ++it;
     }

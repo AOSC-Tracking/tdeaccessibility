@@ -26,8 +26,8 @@
 // App specific includes
 #include "ksayitsystemtray.h"
 
-KSayItSystemTray::KSayItSystemTray(TQWidget *parent, const char *name)
- : KSystemTray(parent,name)
+KSayItSystemTray::KSayItSystemTray(TQWidget *tqparent, const char *name)
+ : KSystemTray(tqparent,name)
 {
   initActions();
   changeState( StateCLIPEMPTY::Instance() );
@@ -46,7 +46,7 @@ void KSayItSystemTray::initActions()
   menu = this->contextMenu();
   help = new KHelpMenu(this, kapp->aboutData(), false, actionCollection());
   // Standard actions
-  settings = KStdAction::preferences(this, TQT_SLOT(slotPreferences()), actionCollection());
+  settings = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(slotPreferences()), actionCollection());
   help_about = KStdAction::aboutApp(help, TQT_SLOT(aboutApplication()), actionCollection());
   help_kde = KStdAction::aboutKDE(help, TQT_SLOT(aboutKDE()), actionCollection());
 
@@ -54,28 +54,28 @@ void KSayItSystemTray::initActions()
   say = new KAction(i18n("Say"),
               "player_play",
               0,
-              this, TQT_SLOT (slotSayActivated()),
+              TQT_TQOBJECT(this), TQT_SLOT (slotSayActivated()),
               actionCollection(),
               "say_it");
   
   shutup = new KAction(i18n("Shut Up"),
               "player_stop",
               0,
-              this, TQT_SLOT (slotStopActivated()),
+              TQT_TQOBJECT(this), TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
   
   pause = new KAction (i18n("Pause"),
               "player_pause",
               0,
-              this, TQT_SLOT (slotPauseActivated()),
+              TQT_TQOBJECT(this), TQT_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
 
   next_sentence = new KAction (i18n("Next Sentence"),
               "2rightarrow",
               0,
-              this, TQT_SLOT (slotNextSentenceActivated()),
+              TQT_TQOBJECT(this), TQT_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
@@ -83,7 +83,7 @@ void KSayItSystemTray::initActions()
   prev_sentence = new KAction (i18n("Previous Sentence"),
               "2leftarrow",
               0,
-              this, TQT_SLOT(slotPrevSentenceActivated()),
+              TQT_TQOBJECT(this), TQT_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
 
@@ -253,7 +253,7 @@ void StateWAIT::setContext(KSayItSystemTray *caller)
 
 void StateWAIT::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button pressed
+  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -262,7 +262,7 @@ void StateWAIT::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateWAIT::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button released
+  if (e->button()==Qt::LeftButton){ // left Mouse-button released
     say(caller);
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling
@@ -294,7 +294,7 @@ void StateSAY::setContext(KSayItSystemTray *caller)
 
 void StateSAY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button pressed
+  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -303,7 +303,7 @@ void StateSAY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateSAY::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button released
+  if (e->button()==Qt::LeftButton){ // left Mouse-button released
     TQWidget::mouseReleaseEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling
@@ -336,7 +336,7 @@ void StateCLIPEMPTY::setContext(KSayItSystemTray *caller)
 
 void StateCLIPEMPTY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button pressed
+  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -345,7 +345,7 @@ void StateCLIPEMPTY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateCLIPEMPTY::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==LeftButton){ // left Mouse-button released
+  if (e->button()==Qt::LeftButton){ // left Mouse-button released
     TQWidget::mouseReleaseEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling

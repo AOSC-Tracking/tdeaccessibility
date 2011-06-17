@@ -11,7 +11,7 @@
 //
 // #include <time.h> // nanosleep
 
-// Qt includes
+// TQt includes
 #include <tqstring.h>
 #include <tqstringlist.h>
 
@@ -27,8 +27,8 @@
 #include "kttsdlibsetupimpl.h"
 
 
-KTTSDLib::KTTSDLib(TQObject *parent, const char *name, KApplication *Appl)
- : TQObject(parent, name), m_Appl(Appl)
+KTTSDLib::KTTSDLib(TQObject *tqparent, const char *name, KApplication *Appl)
+ : TQObject(tqparent, name), m_Appl(Appl)
 {
     KGlobal::locale()->insertCatalogue("libKTTSD");
     m_talker = new kttsdlibtalker2(static_cast<TQObject*>(this), "kttsdlibtalker");
@@ -81,7 +81,7 @@ int KTTSDLib::getActions()
 }
 
 
-int KTTSDLib::getStatus() const
+int KTTSDLib::gettqStatus() const
 {
     return TTS::AUDIOFILE;
 }

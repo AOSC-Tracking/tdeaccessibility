@@ -33,14 +33,15 @@
 
 class KSayItViewImpl : public KSayItView  {
    Q_OBJECT
+  TQ_OBJECT
 
 public: 
-    KSayItViewImpl(TQWidget *parent=0, const char *name=0);
+    KSayItViewImpl(TQWidget *tqparent=0, const char *name=0);
     ~KSayItViewImpl();
 
 signals:
   void signalSetCaption(const TQString &caption);
-  void signalShowStatus(const TQString &status);
+  void signalShowtqStatus(const TQString &status);
   void signalEnableCopyCut(bool enable);
   
   /** Emitted when the text in the TextEditor view cahnges.

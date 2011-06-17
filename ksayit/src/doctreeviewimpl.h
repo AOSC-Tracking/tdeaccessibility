@@ -12,7 +12,7 @@
 #ifndef DOCTREEVIEWIMPL_H
 #define DOCTREEVIEWIMPL_H
 
-// Qt includes
+// TQt includes
 #include <tqstring.h>
 
 // KDE includes
@@ -40,7 +40,7 @@ all required methods to access or manipulate its content.
 class DocTreeViewImpl : public DocTreeView
 {
 public:
-    DocTreeViewImpl(TQWidget* parent=0, const char* name=0, WFlags fl=0);
+    DocTreeViewImpl(TQWidget* tqparent=0, const char* name=0, WFlags fl=0);
 
     ~DocTreeViewImpl();
 
@@ -102,7 +102,7 @@ public:
     /**
      * Sets the item active designated by the ID.
      * \param ID The ID (column 3) of the TreeView item.
-     * \returns <tt>TQString::null</tt> if the operation was successfull,\n
+     * \returns <tt>TQString()</tt> if the operation was successfull,\n
      * an error message, if the item was not found.
      */
     TQString selectItemByID(const TQString &ID, const TQString title);

@@ -41,19 +41,19 @@ KInstance *FreeverbPluginFactory::p_instance = 0L;
 
 
 // Factory Constructor
-FreeverbPluginFactory::FreeverbPluginFactory(TQObject *parent, const char* name)
+FreeverbPluginFactory::FreeverbPluginFactory(TQObject *tqparent, const char* name)
 {
     p_instance = new KInstance("FreeverbPluginFactory");
 }
 
     
-TQObject* FreeverbPluginFactory::createObject(TQObject *parent, const char* name, 
+TQObject* FreeverbPluginFactory::createObject(TQObject *tqparent, const char* name, 
             const char*, 
             const TQStringList &)
 {
     kdDebug(100200) << "FreeverbPluginFactory::createObject()" << endl;
     
-    TQObject* obj = new FreeverbPlugin( parent, name );
+    TQObject* obj = new FreeverbPlugin( tqparent, name );
     emit objectCreated( obj );
     return obj;  
 }        
@@ -62,8 +62,8 @@ TQObject* FreeverbPluginFactory::createObject(TQObject *parent, const char* name
 
 
 // Plugin Constructor
-FreeverbPlugin::FreeverbPlugin(TQObject *parent, const char* name) //, KApplication *Appl)
- : FXPlugin(parent, name) //, m_Appl(Appl)
+FreeverbPlugin::FreeverbPlugin(TQObject *tqparent, const char* name) //, KApplication *Appl)
+ : FXPlugin(tqparent, name) //, m_Appl(Appl)
 {
     m_config = new KSimpleConfig("ksayit_freeverbrc");
     

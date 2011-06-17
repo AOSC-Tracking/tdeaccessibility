@@ -10,7 +10,7 @@
 //
 //
 
-// Qt includes
+// TQt includes
 #include <tqregexp.h>
 #include <tqstring.h>
 #include <tqtextstream.h>
@@ -58,7 +58,7 @@ TQString DocbookParser::node2raw(TQDomNode node) const
 void DocbookParser::parseBook(const TQDomElement &element, ListViewInterface *item)
 {
     kdDebug(100200) << "+++ entering parseBook()" << endl;
-    item->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    item->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( item );
           
@@ -89,7 +89,7 @@ void DocbookParser::parseBookInfo(const TQDomElement &element, ListViewInterface
     kdDebug(100200) << "+++ entering parseBookInfo()" << endl;
 
     Overview *overview = new Overview(item, NULL, i18n("Overview"));
-    overview->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    overview->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( overview );
     
@@ -122,7 +122,7 @@ void DocbookParser::parseBookInfo(const TQDomElement &element, ListViewInterface
             data = node.firstChild().toText();
             if( !data.isNull() ){
                 Date *date = new Date(overview, NULL, i18n("Date"));
-                date->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+                date->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
                 date->setText( 1, data.nodeValue() );
                 date->setValue(KSayItGlobal::RTFDATA, data.nodeValue());
                 date->setValue(KSayItGlobal::SPEAKERDATA, data.nodeValue());
@@ -140,7 +140,7 @@ void DocbookParser::parseBookInfo(const TQDomElement &element, ListViewInterface
             data = node.firstChild().toText();
             if( !data.isNull() ){
                 ReleaseInfo *relinfo = new ReleaseInfo(overview, NULL, i18n("Release"));
-                relinfo->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+                relinfo->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
                 relinfo->setText( 1, data.nodeValue() );
                 relinfo->setValue(KSayItGlobal::RTFDATA, data.nodeValue());
                 relinfo->setValue(KSayItGlobal::SPEAKERDATA, data.nodeValue());
@@ -176,7 +176,7 @@ void DocbookParser::parseAuthorGroup(const TQDomElement &element, ListViewInterf
 
     // item = overview
     AuthorGroup *authorgroup = new AuthorGroup(item, NULL, i18n("Author(s)"));
-    authorgroup->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    authorgroup->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( authorgroup );
 
@@ -199,11 +199,11 @@ void DocbookParser::parseAuthor(const TQDomElement &element, ListViewInterface *
     TQDomText data;
     TQDomText firstname = TQDomText();
     TQDomText surname = TQDomText();
-    TQString s_firstname = TQString::null;
-    TQString s_surname = TQString::null;
+    TQString s_firstname = TQString();
+    TQString s_surname = TQString();
 
     Author *author = new Author(item);
-    author->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    author->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
 
     TQDomNode node = element.firstChild();
     while( !node.isNull() ){
@@ -241,7 +241,7 @@ void DocbookParser::parseKeywordSet(const TQDomElement &element, ListViewInterfa
 
     // item = overview
     KeywordSet *keywordset = new KeywordSet(item, NULL, i18n("Keywords"));
-    keywordset->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    keywordset->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( keywordset );
     
@@ -252,7 +252,7 @@ void DocbookParser::parseKeywordSet(const TQDomElement &element, ListViewInterfa
             data = node.firstChild().toText();
             if( !data.isNull() ){
                 Keyword *keyword = new Keyword(keywordset);
-                keyword->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+                keyword->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
                 keyword->setText(0, data.nodeValue() );
                 keyword->setValue(KSayItGlobal::RTFDATA,     data.nodeValue() );
                 keyword->setValue(KSayItGlobal::SPEAKERDATA, data.nodeValue() );
@@ -275,7 +275,7 @@ void DocbookParser::parseAbstract(const TQDomElement &element, ListViewInterface
     // item = overview
     TQDomText data;
     Abstract *abstract = new Abstract(item, NULL, i18n("Abstract"));
-    abstract->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    abstract->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( abstract );
 
@@ -296,7 +296,7 @@ void DocbookParser::parseChapter(const TQDomElement &element, ListViewInterface 
     
     TQDomText data;
     Chapter *chapter = new Chapter(item, NULL, i18n("Chapter"));
-    chapter->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    chapter->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( chapter );
     
@@ -326,7 +326,7 @@ void DocbookParser::parseSect1(const TQDomElement &element, ListViewInterface *i
 
     TQDomText data;
     Sect1 *sect1 = new Sect1(item, NULL, i18n("Section Level 1"));
-    sect1->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    sect1->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( sect1 );
 
@@ -356,7 +356,7 @@ void DocbookParser::parseSect2(const TQDomElement &element, ListViewInterface *i
 
     TQDomText data;
     Sect2 *sect2 = new Sect2(item, NULL, i18n("Section Level 2"));
-    sect2->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    sect2->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( sect2 );
 
@@ -386,7 +386,7 @@ void DocbookParser::parseSect3(const TQDomElement &element, ListViewInterface *i
 
     TQDomText data;
     Sect3 *sect3 = new Sect3(item, NULL, i18n("Section Level 3"));
-    sect3->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    sect3->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( sect3 );
 
@@ -416,7 +416,7 @@ void DocbookParser::parseSect4(const TQDomElement &element, ListViewInterface *i
     
     TQDomText data;
     Sect4 *sect4 = new Sect4(item, NULL, i18n("Section Level 4"));
-    sect4->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    sect4->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( sect4 );
 
@@ -446,7 +446,7 @@ void DocbookParser::parseSect5(const TQDomElement &element, ListViewInterface *i
     
     TQDomText data;
     Sect5 *sect5 = new Sect5(item, NULL, i18n("Section Level 4"));
-    sect5->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    sect5->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( sect5 );
 
@@ -473,15 +473,15 @@ void DocbookParser::parsePara(const TQDomElement &element, ListViewInterface *it
     kdDebug(100200) << "+++ entering parsePara()" << endl;
 
     Para *para = new Para(item, NULL, i18n("Paragraph"));
-    para->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );
+    para->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );
     // register Popup menu
     m_contextmenuhandler->registerPopupMenu( para );
     
     TQString raw = node2raw(element);
     // remove <para> tags
-    raw.replace( TQRegExp("</?(para|Para|PARA)/?>"),"");
-    raw.replace( TQRegExp("^ "),"" );
-    raw.replace( TQRegExp("^\n"), "" );
+    raw.tqreplace( TQRegExp("</?(para|Para|PARA)/?>"),"");
+    raw.tqreplace( TQRegExp("^ "),"" );
+    raw.tqreplace( TQRegExp("^\n"), "" );
     
     para->setValue(KSayItGlobal::RAWDATA,     raw);
     para->setValue(KSayItGlobal::RTFDATA,     raw);

@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-// Qt includes
+// TQt includes
 #include <tqpushbutton.h>
 
 // KDE includes
@@ -23,8 +23,8 @@
 // App specific includes
 #include "kttsdlibsetupimpl.h"
 
-KTTSDlibSetupImpl::KTTSDlibSetupImpl(TQWidget *parent, const char *name)
- : KTTSDlibSetup(parent, name)
+KTTSDlibSetupImpl::KTTSDlibSetupImpl(TQWidget *tqparent, const char *name)
+ : KTTSDlibSetup(tqparent, name)
 {
 }
 
@@ -47,7 +47,7 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
         fgets(cmdresult, 18, fp);
         pclose(fp);
     }
-    if ( !TQCString(cmdresult).contains("kcmkttsd") ){
+    if ( !TQCString(cmdresult).tqcontains("kcmkttsd") ){
             TQString error = i18n("Control Center Module for KTTSD not found.");
             KMessageBox::sorry(this, error, i18n("Problem"));
             return;

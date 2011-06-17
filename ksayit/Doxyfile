@@ -16,7 +16,7 @@ ABBREVIATE_BRIEF       = "The $name class" \
                          is \
                          provides \
                          specifies \
-                         contains \
+                         tqcontains \
                          represents \
                          a \
                          an \
@@ -102,7 +102,7 @@ FILE_PATTERNS          = *.c \
                          *.tlh \
                          *.diff \
                          *.patch \
-                         *.moc \
+                         *.tqmoc \
                          *.xpm \
                          *.dox
 RECURSIVE              = yes

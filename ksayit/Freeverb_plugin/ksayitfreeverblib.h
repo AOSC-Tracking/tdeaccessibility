@@ -27,15 +27,16 @@
 class FreeverbPluginFactory : public KLibFactory
 {
 Q_OBJECT
+  TQ_OBJECT
 public:
     // Consturctor
-    FreeverbPluginFactory(TQObject *parent=0, const char* name=0);
+    FreeverbPluginFactory(TQObject *tqparent=0, const char* name=0);
     
     // Destructor
     virtual ~FreeverbPluginFactory(){ delete p_instance; };
     
-    TQObject* createObject(TQObject *parent=0, const char* name=0, 
-            const char* className="TQObject", 
+    TQObject* createObject(TQObject *tqparent=0, const char* name=0, 
+            const char* className=TQOBJECT_OBJECT_NAME_STRING, 
             const TQStringList &args=TQStringList());        
 
 private:
@@ -50,9 +51,10 @@ private:
 class FreeverbPlugin : public FXPlugin
 {
 Q_OBJECT
+  TQ_OBJECT
 public: 
     // Constructor
-    FreeverbPlugin(TQObject *parent=0, const char* name=0); //, KApplication *Appl=0);
+    FreeverbPlugin(TQObject *tqparent=0, const char* name=0); //, KApplication *Appl=0);
     
     // Destructor
     ~FreeverbPlugin();    

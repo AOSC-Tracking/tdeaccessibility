@@ -10,7 +10,7 @@
 //
 //
 
-// Qt includes
+// TQt includes
 #include <tqfile.h>
 #include <tqvariant.h>
 
@@ -31,12 +31,12 @@
 ContextActionHandler::ContextActionHandler(ContextMenuHandler *menuhandler)
  : TQXmlDefaultHandler(), m_menuhandler(menuhandler)
 {
-    m_subName = TQString::null;
-    m_actionName = TQString::null;
-    m_qty = TQString::null;
+    m_subName = TQString();
+    m_actionName = TQString();
+    m_qty = TQString();
     m_popup = menuhandler->m_popupmenu;
     m_hit = false;
-    m_searchID = TQString::null;
+    m_searchID = TQString();
 } 
 
 ContextActionHandler::~ContextActionHandler()
@@ -117,8 +117,8 @@ bool ContextActionHandler::characters( const TQString &ch )
 /**
  * MenuHandler
  */
-ContextMenuHandler::ContextMenuHandler(TQObject *parent, const char *name)
- : TQObject(parent, name), m_DocTreeView(parent)
+ContextMenuHandler::ContextMenuHandler(TQObject *tqparent, const char *name)
+ : TQObject(tqparent, name), m_DocTreeView(tqparent)
 {
     m_popupmenu = NULL;
     m_item = NULL;  
@@ -293,7 +293,7 @@ bool ContextMenuHandler::parseXmlFile(const TQString &xmlID)
     ContextActionHandler handler(this);
     handler.setSearchID(xmlID);
     parser.setContentHandler( &handler );
-    return parser.parse( &xmlFile );     
+    return parser.parse( TQT_TQIODEVICE(&xmlFile) );
 }
 
 
@@ -307,7 +307,7 @@ KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQ
         // check if qty is within allowed limits
         ListViewInterface *i = static_cast<ListViewInterface*>(m_item->firstChild());
         int count = 0;
-        TQString name = TQString::null;
+        TQString name = TQString();
         while (i){
             name = ( i->getValue(KSayItGlobal::XMLCONTEXTNAME) ).toString();
             if ( name.lower() == actionName.lower() ){
@@ -378,9 +378,9 @@ KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQ
 }
 
 
-KPopupMenu* ContextMenuHandler::SubMenuFactory(KPopupMenu *parent)
+KPopupMenu* ContextMenuHandler::SubMenuFactory(KPopupMenu *tqparent)
 {
-    return new KPopupMenu(parent);
+    return new KPopupMenu(tqparent);
 }
 
 

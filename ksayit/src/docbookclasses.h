@@ -12,7 +12,7 @@
 #ifndef DOCBOOKCLASSES_H
 #define DOCBOOKCLASSES_H
 
-// Qt includes
+// TQt includes
 #include <tqstring.h>
 
 #include <tqvariant.h>
@@ -32,7 +32,7 @@ class TQStringList;
 //
 /**
  Represents the root item of the document, therefore it expects
- a \p TQListView object as parent.\n
+ a \p TQListView object as tqparent.\n
  Structural item only (no references to a DOM node).
  @author Robert Vogl
  */
@@ -41,11 +41,11 @@ class RobDocument : public ListViewInterface
 public:
     /**
      * Constructor
-     * \param lv The ListView parent.
+     * \param lv The ListView tqparent.
      * \param label The label is shown in column 0 of the TreeView and is also
      * used as bookmark title.
      */
-    RobDocument(KListView *lv=0, TQString label=TQString::null);
+    RobDocument(KListView *lv=0, TQString label=TQString());
     ~RobDocument();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -67,7 +67,7 @@ private:
 class Overview : public ListViewInterface
 {
 public:
-    Overview(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Overview(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Overview();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -85,7 +85,7 @@ private:
 class Date : public ListViewInterface
 {
 public:
-    Date(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Date(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Date();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -104,7 +104,7 @@ private:
 class ReleaseInfo : public ListViewInterface
 {
 public:
-    ReleaseInfo(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    ReleaseInfo(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~ReleaseInfo();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -124,7 +124,7 @@ private:
 class AuthorGroup : public ListViewInterface
 {
 public:
-    AuthorGroup(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    AuthorGroup(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~AuthorGroup();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -143,7 +143,7 @@ private:
 class Author : public ListViewInterface
 {
 public:
-    Author(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Author(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Author();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -162,7 +162,7 @@ private:
 class KeywordSet : public ListViewInterface
 {
 public:
-    KeywordSet(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    KeywordSet(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~KeywordSet();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -180,7 +180,7 @@ private:
 class Keyword : public ListViewInterface
 {
 public:
-    Keyword(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Keyword(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Keyword();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -199,7 +199,7 @@ private:
 class Abstract : public ListViewInterface
 {
 public:
-    Abstract(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Abstract(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Abstract();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -217,7 +217,7 @@ private:
 class Para : public ListViewInterface
 {
 public:
-    Para(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Para(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Para();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -236,7 +236,7 @@ private:
 class Chapter : public ListViewInterface
 {
 public:
-    Chapter(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Chapter(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Chapter();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -255,7 +255,7 @@ private:
 class Sect1 : public ListViewInterface
 {
 public:
-    Sect1(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Sect1(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Sect1();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -274,7 +274,7 @@ private:
 class Sect2 : public ListViewInterface
 {
 public:
-    Sect2(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Sect2(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Sect2();
 
     bool setValue( unsigned int index, TQVariant data );
@@ -293,7 +293,7 @@ private:
 class Sect3 : public ListViewInterface
 {
 public:
-    Sect3(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Sect3(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Sect3();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -312,7 +312,7 @@ private:
 class Sect4 : public ListViewInterface
 {
 public:
-    Sect4(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Sect4(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Sect4();
     
     bool setValue( unsigned int index, TQVariant data );
@@ -331,7 +331,7 @@ private:
 class Sect5 : public ListViewInterface
 {
 public:
-    Sect5(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString::null);
+    Sect5(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
     ~Sect5();
     
     bool setValue( unsigned int index, TQVariant data );

@@ -30,14 +30,15 @@ using namespace Arts;
  *  derived from FXPlugin, include 'ksayit_fxplugin.h' and reimplement all the
  *  pure virtual functions provided herein.
  *  *Appl is a pointer to the main application as delivered by \p KApplication::kApplication().
- *  It can be used for any reason i.e. to install a Qt translator.\n
+ *  It can be used for any reason i.e. to install a TQt translator.\n
  \author Robert Vogl
  */
-class FXPlugin : public QObject
+class FXPlugin : public TQObject
 {
 // Q_OBJECT
+  TQ_OBJECT
 public:
-    FXPlugin(TQObject *parent=0, const char* name=0){};
+    FXPlugin(TQObject *tqparent=0, const char* name=0){};
        
     /** Sets the Main application object. Useful for config objects etc.
      */

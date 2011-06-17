@@ -10,7 +10,7 @@
 //
 //
 
-// Qt includes
+// TQt includes
 #include <tqstring.h>
 #include <tqvariant.h>
 
@@ -105,10 +105,10 @@ void DocbookGenerator::writeTitleOfBook(TQTextStream &doc, ListViewInterface *it
     if ( whoAmI != "BookInfo" )
         return;
 
-    // Documents title is stored in root element (parent of BookInfo)
-    ListViewInterface *parent = static_cast<ListViewInterface*>(item->parent());
-    if ( parent ){
-        TQString title = parent->text(0);
+    // Documents title is stored in root element (tqparent of BookInfo)
+    ListViewInterface *tqparent = static_cast<ListViewInterface*>(item->tqparent());
+    if ( tqparent ){
+        TQString title = tqparent->text(0);
 
         // add node to document
         doc << "<Title>" << title << "</Title>" << endl;
@@ -151,7 +151,7 @@ void DocbookGenerator::writeAuthor(TQTextStream &doc, ListViewInterface *item)
     if ( whoAmI != "Author" )
         return;
 
-    TQString author = TQString::null;
+    TQString author = TQString();
     author = ( item->getValue(KSayItGlobal::RAWDATA) ).toString();
 
     // add node to document
@@ -231,7 +231,7 @@ void DocbookGenerator::writeKeyword(TQTextStream &doc, ListViewInterface *item)
         return;
 
     // TQString keyword = item->text( 0 );
-    TQString keyword = TQString::null;    
+    TQString keyword = TQString();    
     keyword = (item->getValue(3)).toString();
 
     // add node to document

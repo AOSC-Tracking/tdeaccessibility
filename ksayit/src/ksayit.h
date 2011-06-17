@@ -24,7 +24,7 @@
 
 using namespace std;
 
-// include files for Qt
+// include files for TQt
 #include <tqstringlist.h>
 #include <tqclipboard.h>
 
@@ -68,12 +68,13 @@ class KSayItBookmarkHandler;
 class KSayItApp : public KMainWindow, public DCOPObject
 {
   Q_OBJECT
+//  TQ_OBJECT
   K_DCOP
 
 public:
     /** construtor of KSayItApp, calls all init functions to create the application.
      */
-    KSayItApp(TQWidget* parent=0, const char* name=0, WFlags f=0,
+    KSayItApp(TQWidget* tqparent=0, const char* name=0, WFlags f=0,
         const TQCString &objID=0);
     ~KSayItApp();
 
@@ -114,7 +115,7 @@ private slots:
      */    
     void slotTreeViewChanged(const TQString &str);
     
-    /** save general Options like all bar positions and status as well as the geometry to
+    /** save general Options like all bar positions and status as well as the tqgeometry to
      * the configuration file.
      */
     void slotSaveOptions();
@@ -265,7 +266,7 @@ public:
      * Selects the item with the given ID in the TreeView.
      * \param ID The ID of the item to select.
      * \param title The title of the bookmark.
-     * \returns <tt>TQString::null</tt>, if the operation was successfull,
+     * \returns <tt>TQString()</tt>, if the operation was successfull,
      * an error message, if the ID was not found.
      */
     TQString setItemByBookmark( const TQString &ID, const TQString &title );
@@ -315,7 +316,7 @@ private: // Methods
      * \p ksayit/ksayit_bookmarks/.
      * \param filename The name of the bookmark file.
      * \returns The absolute pathname of the given bookmark file.
-     * Returns \p TQString::null if the operation was not successfull.
+     * Returns \p TQString() if the operation was not successfull.
      */
     TQString getBookmarkDir(const TQString &filename);
     
@@ -349,7 +350,7 @@ private:
     KActionMenu *bookmarkmenu;
     
     // Misc stuff
-    QClipboard *cb;
+    TQClipboard *cb;
     TQString clip;
     KTTSDLib *m_kttslib;
     FXPluginHandler *m_fxpluginhandler;

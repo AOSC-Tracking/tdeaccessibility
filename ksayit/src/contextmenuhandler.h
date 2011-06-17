@@ -12,7 +12,7 @@
 #ifndef CONTEXTMENUHANDLER_H
 #define CONTEXTMENUHANDLER_H
 
-// Qt includes
+// TQt includes
 #include <tqobject.h>
 #include <tqstring.h>
 #include <tqxml.h>
@@ -64,11 +64,12 @@ private:
 /**
 @author Robert Vogl
 */
-class ContextMenuHandler : public QObject
+class ContextMenuHandler : public TQObject
 {
 Q_OBJECT
+  TQ_OBJECT
 public:
-    ContextMenuHandler(TQObject *parent = 0, const char *name = 0);
+    ContextMenuHandler(TQObject *tqparent = 0, const char *name = 0);
 
     ~ContextMenuHandler();
 
@@ -79,10 +80,10 @@ public:
     KPopupMenu* getPopupMenu(ListViewInterface *item);
     
     /**
-     * \returns A pointer to the Submenu as a child of the parent
-     * \p parent.
+     * \returns A pointer to the Submenu as a child of the tqparent
+     * \p tqparent.
      */
-    KPopupMenu* SubMenuFactory(KPopupMenu *parent);
+    KPopupMenu* SubMenuFactory(KPopupMenu *tqparent);
     
     /**
      * Creates an action sufficiant to the given name.

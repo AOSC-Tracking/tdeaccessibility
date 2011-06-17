@@ -12,7 +12,7 @@
 #ifndef DOCBOOKGENERATOR_H
 #define DOCBOOKGENERATOR_H
 
-// Qt includes
+// TQt includes
 #include <tqtextstream.h>
 
 // KDE includes

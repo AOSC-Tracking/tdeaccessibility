@@ -33,7 +33,7 @@ using namespace std;
 // App specific includes
 #include "ksayitviewimpl.h"
 
-KSayItViewImpl::KSayItViewImpl(TQWidget *parent, const char *name ) : KSayItView(parent,name) {
+KSayItViewImpl::KSayItViewImpl(TQWidget *tqparent, const char *name ) : KSayItView(tqparent,name) {
 
   // some presets
 
@@ -51,9 +51,9 @@ void KSayItViewImpl::enableTextedit( bool enable )
 {
     // if enable==true, we are in Edit Mode => RTF-Mode off.
     if ( enable ){
-        TextEdit->setTextFormat( Qt::PlainText);
+        TextEdit->setTextFormat( TQt::PlainText);
     } else {
-        TextEdit->setTextFormat( Qt::RichText);
+        TextEdit->setTextFormat( TQt::RichText);
     }    
     TextEdit->setReadOnly( !enable );
 }

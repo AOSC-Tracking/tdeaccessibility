@@ -45,9 +45,10 @@ class kttsdlibtalker2;
 /**
 @author Robert Vogl
 */
-class KDE_EXPORT KTTSDLib : public QObject
+class KDE_EXPORT KTTSDLib : public TQObject
 {
-Q_OBJECT   
+Q_OBJECT
+TQ_OBJECT
 signals:
     /** Emitted when the plugin has been finished speeking.
      */
@@ -70,7 +71,7 @@ public slots:
     void slotTextStarted(const uint job);
     
 public:
-    KTTSDLib(TQObject *parent=0, const char *name=0, KApplication *Appl=0);
+    KTTSDLib(TQObject *tqparent=0, const char *name=0, KApplication *Appl=0);
 
     ~KTTSDLib();
 
@@ -92,7 +93,7 @@ public:
     
     void sayText();
     
-    int getStatus() const;
+    int gettqStatus() const;
     
     void stop();
     

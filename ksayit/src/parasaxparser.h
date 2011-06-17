@@ -12,7 +12,7 @@
 #ifndef PARASAXPARSER_H
 #define PARASAXPARSER_H
 
-// Qt includes
+// TQt includes
 #include <tqxml.h>
 #include <tqstring.h>
 

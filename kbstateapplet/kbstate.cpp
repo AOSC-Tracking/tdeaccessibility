@@ -50,16 +50,16 @@ extern "C"
 #include <X11/keysymdef.h>
 #include <X11/extensions/XKB.h>
 
-    KDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
+    KDE_EXPORT KPanelApplet* init(TQWidget *tqparent, const TQString& configFile)
     {
         KGlobal::locale()->insertCatalogue("kbstateapplet");
-        KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, parent, "kbstateapplet");
+        KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, tqparent, "kbstateapplet");
         return applet;
     }
 }
 
 struct ModifierKey {
-   const unsigned int mask;
+   const unsigned int tqmask;
    const KeySym keysym;
    const char *name;
    const char *icon;
@@ -86,8 +86,8 @@ static ModifierKey modifierKeys[] = {
 /********************************************************************/
 
 KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
-                       TQWidget *parent, const char *name)
-  : KPanelApplet( configFile, t, actions, parent, name )
+                       TQWidget *tqparent, const char *name)
+  : KPanelApplet( configFile, t, actions, tqparent, name )
 {
    for (int i = 0; i < 8; i++) {
       icons[i] = 0;
@@ -145,12 +145,12 @@ void KbStateApplet::buildPopupMenu()
    showPopup->setCheckable( true );
    modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQT_SLOT(toggleModifier()));
 	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQT_SLOT(toggleLockkeys()));
-	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQT_SLOT(toggleMouse()));
-	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQT_SLOT(toggleAccessX()));
+	mouseItem=showPopup->insertItem(i18n("Mouse tqStatus"), this, TQT_SLOT(toggleMouse()));
+	accessxItem=showPopup->insertItem(i18n("AccessX tqStatus"), this, TQT_SLOT(toggleAccessX()));
 
 	popup = new KPopupMenu(this);
 	popup->setCheckable( true );
-   popup->insertTitle(0, i18n("Keyboard Status Applet"));
+   popup->insertTitle(0, i18n("Keyboard tqStatus Applet"));
 	popup->insertItem(i18n("Set Icon Size"),sizePopup);
 	fillSpaceItem = popup->insertItem(i18n("Fill Available Space"),
 												 this, TQT_SLOT(toggleFillSpace()));
@@ -179,7 +179,7 @@ void KbStateApplet::updateMenu()
 
 void calculateSizes (int space, int modifiers, int lockkeys, int accessx,
 							bool showMouse, int &lines, int &length, int &size)
-// Calculates the layout based on a given number of modifiers, lockkeys and
+// Calculates the tqlayout based on a given number of modifiers, lockkeys and
 // accessx features.
 // Output:
 // lines:  number of lines
@@ -264,7 +264,7 @@ int KbStateApplet::heightForWidth(int w) const {
 }
 
 void KbStateApplet::mousePressEvent(TQMouseEvent *e) {
-   if (e->button() == RightButton)
+   if (e->button() == Qt::RightButton)
       popup->popup(e->globalPos());
 }
 
@@ -281,17 +281,17 @@ void KbStateApplet::toggleFillSpace() {
 	fillSpace = !fillSpace;
 	saveConfig();
 	updateMenu();
-	layout();
+	tqlayout();
 	updateGeometry();
 	emit updateLayout();
 }
 
 void KbStateApplet::resizeEvent( TQResizeEvent*e ) {
    TQWidget::resizeEvent(e);
-   layout();
+   tqlayout();
 }
 
-void KbStateApplet::layout() {
+void KbStateApplet::tqlayout() {
 	int size = this->size;
 
    int lines, length, x,y,dx,dy, ldx,ldy;
@@ -308,7 +308,7 @@ void KbStateApplet::layout() {
 			accessxCount++;
 	}
 
-   if (orientation() == Vertical) {
+   if (orientation() ==Qt::Vertical) {
 		calculateSizes (width(), modifierCount, lockkeyCount, accessxCount,
 							 showMouse, lines, length, size);
 		
@@ -527,21 +527,21 @@ void KbStateApplet::initMasks() {
    state = 0;
    
    for (int i = 0; strcmp(modifierKeys[i].name, "") != 0; i++) {
-      int mask = modifierKeys[i].mask;
-      if (mask == 0)
+      int tqmask = modifierKeys[i].tqmask;
+      if (tqmask == 0)
          if (modifierKeys[i].keysym != 0)
-            mask = XkbKeysymToModifiers (this->x11Display(), modifierKeys[i].keysym);
+            tqmask = XkbKeysymToModifiers (this->x11Display(), modifierKeys[i].keysym);
          else if (!strcmp(modifierKeys[i].name, "Win"))
-            mask = KKeyNative::modX(KKey::WIN);
+            tqmask = KKeyNative::modX(KKey::WIN);
          else
-            mask = XkbKeysymToModifiers (this->x11Display(), XK_Mode_switch)
+            tqmask = XkbKeysymToModifiers (this->x11Display(), XK_Mode_switch)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Shift)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Latch)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Lock);
       
       int map = 0;
       for (map = 0; map < 8; map++) {
-         if ((mask & (1 << map)) != 0)
+         if ((tqmask & (1 << map)) != 0)
             break;
       }
       if ((map <= 7) && !(icons[map])) {
@@ -608,7 +608,7 @@ bool KbStateApplet::x11Event (XEvent *evt) {
 				else
 					mouse->setActiveKey (0);
 
-				layout();
+				tqlayout();
 				updateGeometry();
 				emit updateLayout();
 				break;
@@ -660,7 +660,7 @@ void KbStateApplet::stateChangeRequest (KeyIcon *source, bool latched, bool lock
 void KbStateApplet::toggleModifier() {
    showModifiers = !showModifiers;
    updateMenu();
-   layout();
+   tqlayout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -669,7 +669,7 @@ void KbStateApplet::toggleModifier() {
 void KbStateApplet::toggleLockkeys() {
    showLockkeys = !showLockkeys;
    updateMenu();
-   layout();
+   tqlayout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -678,7 +678,7 @@ void KbStateApplet::toggleLockkeys() {
 void KbStateApplet::toggleMouse() {
    showMouse = !showMouse;
    updateMenu();
-   layout();
+   tqlayout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -687,7 +687,7 @@ void KbStateApplet::toggleMouse() {
 void KbStateApplet::toggleAccessX() {
 	showAccessX = !showAccessX;
 	updateMenu();
-	layout();
+	tqlayout();
 	updateGeometry();
 	saveConfig();
 	emit updateLayout();
@@ -712,7 +712,7 @@ void KbStateApplet::configureMouse() {
 }
 
 void KbStateApplet::about() {
-   KAboutData about("kbstateapplet", I18N_NOOP("Keyboard Status Applet"), "0.2",
+   KAboutData about("kbstateapplet", I18N_NOOP("Keyboard tqStatus Applet"), "0.2",
                     I18N_NOOP("Panel applet that shows the state of the modifier keys"), KAboutData::License_GPL_V2, "(C) 2004 Gunnar Schmi Dt");
    KAboutApplication a(&about, this);
    a.exec();
@@ -747,8 +747,8 @@ void KbStateApplet::saveConfig()
 /********************************************************************/
 
 KeyIcon::KeyIcon (int keyId, KInstance *instance,
-                  TQWidget *parent, const char *name)
- : StatusIcon (modifierKeys[keyId].name, parent, name) {
+                  TQWidget *tqparent, const char *name)
+ : StatusIcon (modifierKeys[keyId].name, tqparent, name) {
    this->instance = instance;
    this->keyId = keyId;
    this->tristate = (modifierKeys[keyId].isModifier);
@@ -810,7 +810,7 @@ void KeyIcon::drawButton (TQPainter *p) {
    int y = (height()-locked.height())/2;
    int o = 0;
    if (isLocked || isLatched) {
-      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), true, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), true, 1, NULL);
       p->fillRect (1,1,width()-2,height()-2, KGlobalSettings::highlightColor());
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x+1,y+1, latched);
@@ -818,7 +818,7 @@ void KeyIcon::drawButton (TQPainter *p) {
       o = 1;
    }
    else {
-      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), false, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), false, 1, NULL);
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x,y, unlatched);
       black = KGlobalSettings::textColor();
@@ -844,9 +844,9 @@ void KeyIcon::drawButton (TQPainter *p) {
       p->setPen (black);
       p->setFont (font);
       if (!strcmp(modifierKeys[keyId].name, "Alt Graph"))
-      p->drawText (o,o, width(), height(), Qt::AlignCenter, text);
+      p->drawText (o,o, width(), height(), TQt::AlignCenter, text);
       else
-         p->drawText (o,o, width(), height()*(251)/384, Qt::AlignCenter, text);
+         p->drawText (o,o, width(), height()*(251)/384, TQt::AlignCenter, text);
    }
    if (tristate && isLocked) {
       p->drawPixmap(x+o,y+o, locked);
@@ -855,8 +855,8 @@ void KeyIcon::drawButton (TQPainter *p) {
 
 /********************************************************************/
 
-MouseIcon::MouseIcon (KInstance *instance, TQWidget *parent, const char *name)
-	: StatusIcon ("", parent, name)
+MouseIcon::MouseIcon (KInstance *instance, TQWidget *tqparent, const char *name)
+	: StatusIcon ("", tqparent, name)
 {
 	this->instance = instance;
 	state = 0;
@@ -958,8 +958,8 @@ void MouseIcon::drawButton (TQPainter *p) {
 
 TimeoutIcon::TimeoutIcon (KInstance *instance, const TQString &text,
 								  const TQString &featurename,
-								  TQWidget *parent, const char *name)
- : StatusIcon (text, parent, name) {
+								  TQWidget *tqparent, const char *name)
+ : StatusIcon (text, tqparent, name) {
 	this->instance = instance;
 	this->featurename = featurename;
 	glyth = " ";
@@ -1046,7 +1046,7 @@ void TimeoutIcon::drawButton (TQPainter *p) {
    p->setFont (font);
 	if (count == 1) {
 		p->setPen (KGlobalSettings::textColor());
-	   p->drawText (0,0, width()/2, height()/2, Qt::AlignCenter, text);
+	   p->drawText (0,0, width()/2, height()/2, TQt::AlignCenter, text);
 	}
 	else {
 		TQColor t = KGlobalSettings::textColor();
@@ -1054,26 +1054,26 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 		p->setPen (TQColor ((2*t.red()+3*b.red())/5,
 					  (2*t.green()+3*b.green())/5,
 					  (2*t.blue()+3*b.blue())/5));
-		p->drawText (width()/2,0, width()/2, height(), Qt::AlignCenter, text);
+		p->drawText (width()/2,0, width()/2, height(), TQt::AlignCenter, text);
 		p->setPen (TQColor ((2*t.red()+b.red())/3,
 					  (2*t.green()+b.green())/3,
 					  (2*t.blue()+b.blue())/3));
-		p->drawText (0,0, width(), height(), Qt::AlignCenter, text);
+		p->drawText (0,0, width(), height(), TQt::AlignCenter, text);
 		p->setPen (KGlobalSettings::textColor());
-		p->drawText (0,0, width()/2, height(), Qt::AlignCenter, text);
+		p->drawText (0,0, width()/2, height(), TQt::AlignCenter, text);
 	}
 }
 
 /********************************************************************/
 
-StatusIcon::StatusIcon (const TQString &text, TQWidget *parent, const char *name)
- : TQPushButton (text, parent, name) {
-   setSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
+StatusIcon::StatusIcon (const TQString &text, TQWidget *tqparent, const char *name)
+ : TQPushButton (text, tqparent, name) {
+   tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
 }
 
 StatusIcon::~StatusIcon () {
 }
 
-TQSize StatusIcon::minimumSizeHint () const {
+TQSize StatusIcon::tqminimumSizeHint () const {
    return TQSize (0,0);
 }

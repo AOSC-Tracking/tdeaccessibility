@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>DocTreeView</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>DocTreeView</cstring>
     </property>
@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>100</width>
             <height>200</height>
@@ -105,21 +105,21 @@
 <connections>
     <connection>
         <sender>listView</sender>
-        <signal>clicked(QListViewItem*)</signal>
+        <signal>clicked(TQListViewItem*)</signal>
         <receiver>DocTreeView</receiver>
-        <slot>slotItemClicked(QListViewItem*)</slot>
+        <slot>slotItemClicked(TQListViewItem*)</slot>
     </connection>
     <connection>
         <sender>listView</sender>
-        <signal>rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</signal>
+        <signal>rightButtonPressed(TQListViewItem*,const TQPoint&amp;,int)</signal>
         <receiver>DocTreeView</receiver>
-        <slot>slotRightButtonPressed(QListViewItem*,const QPoint&amp;,int)</slot>
+        <slot>slotRightButtonPressed(TQListViewItem*,const TQPoint&amp;,int)</slot>
     </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
 </includes>
-<signals>
+<Q_SIGNALS>
     <signal>signalContentChanged(const QString &amp;)</signal>
     <signal>signalAllNodesProcessed()</signal>
     <signal>signalSetText(const QString &amp;)</signal>
@@ -128,9 +128,9 @@
     <signal>signalSetBookmarkFilename(const QString&amp;)</signal>
     <signal>signalChangeBookmarkFilename(const QString &amp;)</signal>
     <signal>signalDeleteBookmark(const QString&amp;, const QString&amp;)</signal>
-</signals>
-<slots>
-    <slot>slotItemClicked( QListViewItem * )</slot>
+</Q_SIGNALS>
+<Q_SLOTS>
+    <slot>slotItemClicked( TQListViewItem * )</slot>
     <slot access="protected">slotRenameItem()</slot>
     <slot access="protected">slotDeleteItem()</slot>
     <slot access="protected">slotNewBookInfo()</slot>
@@ -149,9 +149,9 @@
     <slot access="protected">slotNewSection_3()</slot>
     <slot access="protected">slotNewSection_4()</slot>
     <slot access="protected">slotNewSection_5()</slot>
-    <slot>slotRightButtonPressed( QListViewItem * i, const QPoint &amp;, int )</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+    <slot>slotRightButtonPressed( TQListViewItem * i, const TQPoint &amp;, int )</slot>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
 </includehints>

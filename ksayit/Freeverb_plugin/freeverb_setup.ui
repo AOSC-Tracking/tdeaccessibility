@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
 <class>Freeverb_Setup</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>Freeverb_Setup</cstring>
     </property>
@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>360</width>
             <height>300</height>
@@ -36,15 +36,15 @@
         <property name="resizeMode">
             <enum>Minimum</enum>
         </property>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QFrame">
+                <widget class="TQFrame">
                     <property name="name">
                         <cstring>frame_room</cstring>
                     </property>
@@ -56,7 +56,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -72,18 +72,18 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel_room</cstring>
                             </property>
                             <property name="text">
                                 <string>&lt;b&gt;Room&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QLCDNumber">
+                        <widget class="TQLCDNumber">
                             <property name="name">
                                 <cstring>LCD_room</cstring>
                             </property>
@@ -121,7 +121,7 @@
                                 <enum>Flat</enum>
                             </property>
                         </widget>
-                        <widget class="QSlider">
+                        <widget class="TQSlider">
                             <property name="name">
                                 <cstring>slider_room</cstring>
                             </property>
@@ -149,7 +149,7 @@
                         </widget>
                     </vbox>
                 </widget>
-                <widget class="QFrame">
+                <widget class="TQFrame">
                     <property name="name">
                         <cstring>frame_damp</cstring>
                     </property>
@@ -161,7 +161,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -177,18 +177,18 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel_damp</cstring>
                             </property>
                             <property name="text">
                                 <string>&lt;b&gt;Damp&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QLCDNumber">
+                        <widget class="TQLCDNumber">
                             <property name="name">
                                 <cstring>LCD_damp</cstring>
                             </property>
@@ -226,7 +226,7 @@
                                 <enum>Flat</enum>
                             </property>
                         </widget>
-                        <widget class="QSlider">
+                        <widget class="TQSlider">
                             <property name="name">
                                 <cstring>slider_damp</cstring>
                             </property>
@@ -248,7 +248,7 @@
                         </widget>
                     </vbox>
                 </widget>
-                <widget class="QFrame">
+                <widget class="TQFrame">
                     <property name="name">
                         <cstring>frame_wet</cstring>
                     </property>
@@ -260,7 +260,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -276,18 +276,18 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel_wet</cstring>
                             </property>
                             <property name="text">
                                 <string>&lt;b&gt;Wet&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QLCDNumber">
+                        <widget class="TQLCDNumber">
                             <property name="name">
                                 <cstring>LCD_wet</cstring>
                             </property>
@@ -325,7 +325,7 @@
                                 <enum>Flat</enum>
                             </property>
                         </widget>
-                        <widget class="QSlider">
+                        <widget class="TQSlider">
                             <property name="name">
                                 <cstring>slider_wet</cstring>
                             </property>
@@ -347,7 +347,7 @@
                         </widget>
                     </vbox>
                 </widget>
-                <widget class="QFrame">
+                <widget class="TQFrame">
                     <property name="name">
                         <cstring>frame_dry</cstring>
                     </property>
@@ -359,7 +359,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -375,18 +375,18 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel_dry</cstring>
                             </property>
                             <property name="text">
                                 <string>&lt;b&gt;Dry&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QLCDNumber">
+                        <widget class="TQLCDNumber">
                             <property name="name">
                                 <cstring>LCD_dry</cstring>
                             </property>
@@ -424,7 +424,7 @@
                                 <enum>Flat</enum>
                             </property>
                         </widget>
-                        <widget class="QSlider">
+                        <widget class="TQSlider">
                             <property name="name">
                                 <cstring>slider_dry</cstring>
                             </property>
@@ -446,7 +446,7 @@
                         </widget>
                     </vbox>
                 </widget>
-                <widget class="QFrame">
+                <widget class="TQFrame">
                     <property name="name">
                         <cstring>frame_width</cstring>
                     </property>
@@ -458,7 +458,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -474,18 +474,18 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel_width</cstring>
                             </property>
                             <property name="text">
                                 <string>&lt;b&gt;Width&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QLCDNumber">
+                        <widget class="TQLCDNumber">
                             <property name="name">
                                 <cstring>LCD_width</cstring>
                             </property>
@@ -523,7 +523,7 @@
                                 <enum>Flat</enum>
                             </property>
                         </widget>
-                        <widget class="QSlider">
+                        <widget class="TQSlider">
                             <property name="name">
                                 <cstring>slider_width</cstring>
                             </property>
@@ -569,9 +569,9 @@
                 <enum>Horizontal</enum>
             </property>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout12</cstring>
+                <cstring>tqlayout12</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -587,7 +587,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>180</width>
                             <height>20</height>
@@ -598,7 +598,7 @@
                     <property name="name">
                         <cstring>OK_Button</cstring>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>60</width>
                             <height>0</height>
@@ -653,15 +653,15 @@
         <slot>slotOKwasClicked()</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>sliderRoomChanged(int)</slot>
     <slot>sliderDampChanged(int)</slot>
     <slot>sliderWetChanged(int)</slot>
     <slot>sliderDryChanged(int)</slot>
     <slot>sliderWidthChanged(int)</slot>
     <slot>slotOKwasClicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>
 </includehints>

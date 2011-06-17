@@ -37,7 +37,7 @@
  *  \p createPlugin() returns a pointer to an instance of your class.
  *  The Plugin Handler of KSayIt calls this function with a parameter pointing
  *  to the main application instance, as delivered by \p KApplication::kApplication().
- *  This pointer can be used for any reason i.e. to install a Qt translator.\n
+ *  This pointer can be used for any reason i.e. to install a TQt translator.\n
  *  An instance of your class should be deleted by use of \p destroyPlugin().\n
  *  Example:
  \code
@@ -54,7 +54,7 @@
         }
     };
  \endcode
- *  KSayIt expects two Qt-signals from the plugin:\n
+ *  KSayIt expects two TQt-signals from the plugin:\n
  *  \p signalPluginFinished() must be emitted when the plugin is finished,
  *  i.e. a task to speak text has been finished.\n
  *  \p signalPluginFailed() is optional and shall emitted if the processing
@@ -62,10 +62,10 @@
  \author Robert Vogl
  */
 
-class TTSPlugin : public QObject
+class TTSPlugin : public TQObject
 {
 protected:
-    TTSPlugin(TQObject *parent, const char *name) : TQObject(parent, name){};
+    TTSPlugin(TQObject *tqparent, const char *name) : TQObject(tqparent, name){};
     
 public:
     /** Returns the name of the plugin. This name is the unique identifier
@@ -109,7 +109,7 @@ public:
      *  In this case, KSayIt uses a built-in audio player to play back
      *  the file via aRts.\n
      *  If this plugin provides its own audio output mechanisms, then return
-     *  \p TQString::null.\n
+     *  \p TQString().\n
      *  The TTS processing shall be implemented non-blocking, i.e. this function has
      *  to return a valid string as soon as possible, before the typically time
      *  consuming TTS processing starts. The synchronization with KSayIt shall

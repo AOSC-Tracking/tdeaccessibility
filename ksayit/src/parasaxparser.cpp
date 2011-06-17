@@ -12,7 +12,7 @@
 // #include <iostream> // cout
 // using namespace std;
 
-// Qt includes
+// TQt includes
 
 // KDE includes
 #include <kdebug.h>
@@ -30,8 +30,8 @@ ParaSaxParser::ParaSaxParser()
     m_reader->setEntityResolver(m_handler);
     m_reader->setDeclHandler(m_handler);
 
-    m_XmlInputHeader = TQString::null;
-    m_XmlInputBody   = TQString::null;    
+    m_XmlInputHeader = TQString();
+    m_XmlInputBody   = TQString();    
 }
 
 ParaSaxParser::~ParaSaxParser()

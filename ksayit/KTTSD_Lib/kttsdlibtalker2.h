@@ -12,7 +12,7 @@
 #ifndef KTTSDLIBTALKER2_H
 #define KTTSDLIBTALKER2_H
 
-// Qt includes
+// TQt includes
 #include <tqobject.h>
 #include <tqcstring.h>
 
@@ -29,6 +29,7 @@
 class kttsdlibtalker2 : public TQObject, public KSpeech_stub, virtual public KSpeechSink
 {
 Q_OBJECT
+  TQ_OBJECT
 
 signals:
     void signalTextStarted(const uint);
@@ -36,7 +37,7 @@ signals:
     void signalTextStopped(const uint);
 
 public:
-    kttsdlibtalker2(TQObject *parent = 0, const char *name = 0);
+    kttsdlibtalker2(TQObject *tqparent = 0, const char *name = 0);
 
     ~kttsdlibtalker2();
     

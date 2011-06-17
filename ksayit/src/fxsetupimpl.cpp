@@ -27,10 +27,10 @@
 // #include "freeverbsetupimpl.h"
 #include "fxpluginhandler.h"
 
-FX_SetupImpl::FX_SetupImpl(TQWidget *parent, const char *name,
+FX_SetupImpl::FX_SetupImpl(TQWidget *tqparent, const char *name,
         KConfig *config,
         FXPluginHandler *fxpluginhandler )
- : FX_Setup(parent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
+ : FX_Setup(tqparent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
 { 
    m_fxpluginhandler->getPlugins(pluginlist);
   
@@ -109,7 +109,7 @@ void FX_SetupImpl::Init(TQStringList c_avail)
   pushButton_removeAll->setEnabled(false);
   
   for (sit=conf_active.begin(); sit!=conf_active.end(); ++sit){
-      it = c_avail.find(*sit);
+      it = c_avail.tqfind(*sit);
       if ( it!=c_avail.end() ){ // active plugin as per config-file in pluginlist found
           c_active.append(*sit); // append to active list
           c_avail.remove(*sit); // remove active plugin from the list of avail plugins

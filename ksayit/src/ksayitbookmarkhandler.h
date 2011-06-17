@@ -12,7 +12,7 @@
 #ifndef KSAYITBOOKMARKHANDLER_H
 #define KSAYITBOOKMARKHANDLER_H
 
-// Qt includes
+// TQt includes
 #include <tqstring.h>
 
 // KDE includes
@@ -31,7 +31,7 @@ class KSayItApp;
 class KSayItBookmarkHandler : public KBookmarkOwner
 {
 public:
-    KSayItBookmarkHandler(KBookmarkManager *bkManager=0, KSayItApp* parent=0);
+    KSayItBookmarkHandler(KBookmarkManager *bkManager=0, KSayItApp* tqparent=0);
     virtual ~KSayItBookmarkHandler();
 
 public:

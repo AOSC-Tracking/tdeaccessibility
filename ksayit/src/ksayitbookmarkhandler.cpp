@@ -10,7 +10,7 @@
 //
 //
 
-// Qt include
+// TQt include
 #include <tqregexp.h>
 
 // KDE includes
@@ -23,11 +23,11 @@
 #include "ksayitbookmarkhandler.h"
 #include "ksayit.h"
 
-KSayItBookmarkHandler::KSayItBookmarkHandler(KBookmarkManager *bkManager, KSayItApp* parent)
- : KBookmarkOwner(), m_bkManager(bkManager), m_parent(parent)
+KSayItBookmarkHandler::KSayItBookmarkHandler(KBookmarkManager *bkManager, KSayItApp* tqparent)
+ : KBookmarkOwner(), m_bkManager(bkManager), m_parent(tqparent)
 {
-    m_ID       = TQString::null;
-    m_title    = TQString::null;
+    m_ID       = TQString();
+    m_title    = TQString();
 }
 
 KSayItBookmarkHandler::~KSayItBookmarkHandler()
@@ -49,10 +49,10 @@ void KSayItBookmarkHandler::openBookmarkURL(const TQString &url)
     kdDebug(100200) << "KSayItBookmarkHandler::openBookmarkURL(" << url << ")" << endl;
     
     TQString l_url = url;
-    TQString title = TQString::null;
+    TQString title = TQString();
     TQString type = l_url.section( "://", 0, 0 );
     TQString ID   = l_url.section( TQRegExp("/+"), 1, 1 );
-    TQString err  = TQString::null;
+    TQString err  = TQString();
     
     // Some checks
     if ( type != "ksayit" ){
@@ -71,7 +71,7 @@ void KSayItBookmarkHandler::openBookmarkURL(const TQString &url)
         title = bookmark.text();
     }
         
-    TQString result = TQString::null;
+    TQString result = TQString();
     result = m_parent->setItemByBookmark( ID, title );
     if ( !result.isNull() ){
         KMessageBox::sorry( 0, result, i18n("Bookmark not found") );           
@@ -228,7 +228,7 @@ void KSayItBookmarkHandler::traverseBookmarks(KBookmarkGroup bkGroup)
             //
             // Modifications on URL/Title END           
                           
-            bkNew = bkGroup.addBookmark( m_bkManager, title, url, TQString::null, false );
+            bkNew = bkGroup.addBookmark( m_bkManager, title, url, TQString(), false );
             bkGroup.moveItem( bkNew, bkPrev );
             bkGroup.deleteBookmark( bk );            
         }

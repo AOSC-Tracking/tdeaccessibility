@@ -39,12 +39,12 @@
 #include "fxpluginhandler.h"
 #include "kttsdlib.h"
 
-VoiceSetupDlg::VoiceSetupDlg(TQWidget *parent, const char *name, const TQString &caption,
+VoiceSetupDlg::VoiceSetupDlg(TQWidget *tqparent, const char *name, const TQString &caption,
         bool modal,
         KConfig *config,
         FXPluginHandler *fxpluginhandler,
         KTTSDLib *ttslib)
- : KDialogBase(IconList, caption, Ok|Cancel, Ok, parent, name, modal, true),
+ : KDialogBase(IconList, caption, Ok|Cancel, Ok, tqparent, name, modal, true),
    m_config(config),
    m_fxpluginhandler(fxpluginhandler),
    m_kttslib(ttslib)
@@ -88,7 +88,7 @@ void VoiceSetupDlg::initFXPage()
     connect( this, TQT_SIGNAL(signalReloadFX()), fxDialog, TQT_SLOT(slotReload()) );
     
     // Disable/enable FX-Setup depending on TTS-libs capability
-    int status = m_kttslib->getStatus() & TTS::AUDIOFILE;
+    int status = m_kttslib->gettqStatus() & TTS::AUDIOFILE;
     if ( status ){
         m_fxPage->setEnabled(true);
     } else {
@@ -105,7 +105,7 @@ void VoiceSetupDlg::slotPageChanged(TQWidget *page)
     if ( page != m_fxPage )
         return;
     
-    int status = m_kttslib->getStatus() & TTS::AUDIOFILE;
+    int status = m_kttslib->gettqStatus() & TTS::AUDIOFILE;
     if ( status ){
         m_fxPage->setEnabled(true);
     } else {
@@ -120,7 +120,7 @@ void VoiceSetupDlg::slotOk()
 {
     kdDebug(100200) << "+++ entering VoiceSetupDlg::slotOK()" << endl;
     
-    int status = m_kttslib->getStatus();
+    int status = m_kttslib->gettqStatus();
     if ( (status & TTS::AUDIOFILE) == 0 ){
         emit signalRemoveAllFX();
     }

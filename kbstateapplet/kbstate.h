@@ -35,20 +35,22 @@ class KPopupMenu;
 
 class StatusIcon : public TQPushButton {
    Q_OBJECT
+  TQ_OBJECT
 public:
-   StatusIcon (const TQString &text, TQWidget *parent, const char *name=0);
+   StatusIcon (const TQString &text, TQWidget *tqparent, const char *name=0);
    ~StatusIcon ();
 
-   TQSize minimumSizeHint () const;
+   TQSize tqminimumSizeHint () const;
 };
 typedef TQPtrList<StatusIcon> IconList;
 
 class TimeoutIcon : public StatusIcon {
    Q_OBJECT
+  TQ_OBJECT
 public:
    TimeoutIcon (KInstance *instance, const TQString &text,
 					 const TQString &featurename,
-					 TQWidget *parent, const char *name=0);
+					 TQWidget *tqparent, const char *name=0);
    ~TimeoutIcon ();
 
    void update ();
@@ -72,9 +74,10 @@ private slots:
 
 class KeyIcon : public StatusIcon {
    Q_OBJECT
+  TQ_OBJECT
 public:
    KeyIcon (int keyId, KInstance *instance,
-            TQWidget *parent, const char *name=0);
+            TQWidget *tqparent, const char *name=0);
    ~KeyIcon ();
    void setState (bool latched, bool locked);
    void drawButton (TQPainter *p);
@@ -102,8 +105,9 @@ private:
 
 class MouseIcon : public StatusIcon {
 	Q_OBJECT
+  TQ_OBJECT
 	public:
-		MouseIcon (KInstance *instance, TQWidget *parent, const char *name=0);
+		MouseIcon (KInstance *instance, TQWidget *tqparent, const char *name=0);
 		~MouseIcon ();
 		void setState (int state);
 		void setActiveKey (int activekey);
@@ -130,10 +134,11 @@ class MouseIcon : public StatusIcon {
 
 class KbStateApplet : public KPanelApplet {
    Q_OBJECT
+  TQ_OBJECT
 
 public:
    KbStateApplet(const TQString& configFile, Type t = Normal, int actions = 0,
-              TQWidget *parent = 0, const char *name = 0);
+              TQWidget *tqparent = 0, const char *name = 0);
    ~KbStateApplet();
 
    int widthForHeight(int height) const;
@@ -165,7 +170,7 @@ private slots:
 private:
    void loadConfig();
    void saveConfig();
-   void layout();
+   void tqlayout();
    
    int xkb_base_event_type;
 

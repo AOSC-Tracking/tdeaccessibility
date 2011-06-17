@@ -37,9 +37,10 @@ class FXPluginHandler;
   */
 class FX_SetupImpl : public FX_Setup  {
    Q_OBJECT
+  TQ_OBJECT
 
 public: 
-  FX_SetupImpl(TQWidget *parent=0, const char *name=0,
+  FX_SetupImpl(TQWidget *tqparent=0, const char *name=0,
           KConfig *config=0,
           FXPluginHandler *fxpluginhandler=0);
   ~FX_SetupImpl();

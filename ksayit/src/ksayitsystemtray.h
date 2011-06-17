@@ -39,11 +39,12 @@ class State;
   */
 class KSayItSystemTray : public KSystemTray  {
    Q_OBJECT
+  TQ_OBJECT
 
   friend class State;
 
 public: 
-    KSayItSystemTray(TQWidget *parent=0, const char *name=0);
+    KSayItSystemTray(TQWidget *tqparent=0, const char *name=0);
     ~KSayItSystemTray();
 
 signals:
@@ -149,6 +150,7 @@ private:
 
 class State : public KSystemTray {
   Q_OBJECT
+  TQ_OBJECT
 public:
   State();
   ~State();

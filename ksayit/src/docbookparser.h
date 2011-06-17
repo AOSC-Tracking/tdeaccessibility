@@ -12,7 +12,7 @@
 #ifndef DOCBOOKPARSER_H
 #define DOCBOOKPARSER_H
 
-// Qt includes
+// TQt includes
 #include <tqdom.h>
 
 // KDE includes

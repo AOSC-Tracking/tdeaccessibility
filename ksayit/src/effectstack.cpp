@@ -10,7 +10,7 @@
 //
 //
 
-// Qt includes
+// TQt includes
 #include <tqstringlist.h>
 
 // KDE includes

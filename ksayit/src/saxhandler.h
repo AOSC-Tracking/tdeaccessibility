@@ -1,7 +1,7 @@
 //
 // C++ Interface: saxhandler
 //
-// Description: Qt SAX2-Handler
+// Description: TQt SAX2-Handler
 //
 //
 // Author: Robert Vogl <voglrobe@web.de>, (C) 2005
@@ -16,7 +16,7 @@
 #include <map>
 using namespace std;
 
-// Qt includes
+// TQt includes
 #include <tqxml.h>
 #include <tqstring.h>
 
@@ -26,7 +26,7 @@ typedef map<TQString, TQString> TagMapT;
 /**
 @author Robert Vogl
 */
-class SaxHandler : public QXmlDefaultHandler
+class SaxHandler : public TQXmlDefaultHandler
 {
 public:
     SaxHandler();

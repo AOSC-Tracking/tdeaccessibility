@@ -28,8 +28,8 @@ using namespace std;
 // App specific includes
 #include "freeverbsetupimpl.h"
 
-FreeverbSetupImpl::FreeverbSetupImpl(TQWidget *parent, const char *name, bool modal, KConfig *config )
- : Freeverb_Setup(parent,name,modal), m_config(config) {
+FreeverbSetupImpl::FreeverbSetupImpl(TQWidget *tqparent, const char *name, bool modal, KConfig *config )
+ : Freeverb_Setup(tqparent,name,modal), m_config(config) {
 
   // initialize Widgets
   Init();
