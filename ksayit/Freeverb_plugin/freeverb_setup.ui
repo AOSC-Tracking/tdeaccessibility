@@ -661,7 +661,7 @@
     <slot>sliderWidthChanged(int)</slot>
     <slot>slotOKwasClicked()</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>
 </includehints>

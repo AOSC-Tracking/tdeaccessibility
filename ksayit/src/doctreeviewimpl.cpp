@@ -553,21 +553,21 @@ void DocTreeViewImpl::recursiveBuildItemIdentifier(ListViewInterface* item, TQTe
     if ( !item )
         return;
     
-    // 1. Do we have a tqparent (=tqparentItem)?
+    // 1. Do we have a tqparent (=parentItem)?
     // If no -> return, if yes -> recursive call
-    ListViewInterface *tqparentItem = NULL;
-    tqparentItem = static_cast<ListViewInterface*>( item->tqparent() );
-    if ( tqparentItem ){
-        recursiveBuildItemIdentifier( tqparentItem, idstring );
+    ListViewInterface *parentItem = NULL;
+    parentItem = static_cast<ListViewInterface*>( item->tqparent() );
+    if ( parentItem ){
+        recursiveBuildItemIdentifier( parentItem, idstring );
     } else {
         // break recursion
         return;
     }
     
-    // 2. Which child of the tqparentItem are we? Append no. to idstring.
+    // 2. Which child of the parentItem are we? Append no. to idstring.
     int childno = 0;
     TQString itemID = item->text(3);
-    ListViewInterface *i = static_cast<ListViewInterface*>( tqparentItem->firstChild() );
+    ListViewInterface *i = static_cast<ListViewInterface*>( parentItem->firstChild() );
     while( i ){
         childno++;
         if ( i->text(3) == itemID )
@@ -756,9 +756,9 @@ void DocTreeViewImpl::slotDeleteItem()
     kdDebug(100200) << "DocTreeViewImpl::slotDeleteItem()" << endl;
     
     ListViewInterface *itemToDelete = m_currentItem;
-    ListViewInterface *tqparentItem = NULL;
-    tqparentItem = static_cast<ListViewInterface*>(itemToDelete->tqparent());
-    if ( !tqparentItem )
+    ListViewInterface *parentItem = NULL;
+    parentItem = static_cast<ListViewInterface*>(itemToDelete->tqparent());
+    if ( !parentItem )
         return; // delete only items with tqparent
     
     // try to delete bookmark
@@ -785,9 +785,9 @@ void DocTreeViewImpl::slotDeleteItem()
     
     // show
     m_rootItem->sort();
-    listView->setSelected( tqparentItem, true );
-    listView->ensureItemVisible( tqparentItem );
-    slotItemClicked( tqparentItem );
+    listView->setSelected( parentItem, true );
+    listView->ensureItemVisible( parentItem );
+    slotItemClicked( parentItem );
 }
 
 
@@ -966,14 +966,14 @@ void DocTreeViewImpl::slotNewTitle()
 void DocTreeViewImpl::slotNewParagraph()
 {
 /*    // Create Null element
-    TQDomElement tqparentElement = TQDomElement();
+    TQDomElement parentElement = TQDomElement();
 
     NodeList_type list;
     list.clear();
     m_currentItem->getNodes( list );
-    tqparentElement = (list.front()).toElement();
+    parentElement = (list.front()).toElement();
 
-    if ( tqparentElement.isNull() )
+    if ( parentElement.isNull() )
         return;
 */
     // New TreeView item

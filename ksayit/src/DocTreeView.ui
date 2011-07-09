@@ -151,7 +151,7 @@
     <slot access="protected">slotNewSection_5()</slot>
     <slot>slotRightButtonPressed( TQListViewItem * i, const TQPoint &amp;, int )</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
 </includehints>
