@@ -47,7 +47,7 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
         fgets(cmdresult, 18, fp);
         pclose(fp);
     }
-    if ( !TQCString(cmdresult).tqcontains("kcmkttsd") ){
+    if ( !TQCString(cmdresult).contains("kcmkttsd") ){
             TQString error = i18n("Control Center Module for KTTSD not found.");
             KMessageBox::sorry(this, error, i18n("Problem"));
             return;

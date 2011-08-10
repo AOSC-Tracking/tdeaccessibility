@@ -70,7 +70,7 @@ void FXPluginHandler::searchPlugins()
         if ( factory ){
             kdDebug(100200) << "FXPluginHandler::searchPlugins(): Plugin factory found." << endl;
             // register found plugin
-            if ( !sRegistered.tqcontains( TQString(name) )){
+            if ( !sRegistered.contains( TQString(name) )){
                 sRegistered.append( TQString(name) );
                 plugin.name    = name;
                 plugin.library = library;
@@ -96,7 +96,7 @@ void FXPluginHandler::readConfiguration()
     // unload all plugins and destroy the effect objects
     lit = m_lstActivePlugins.begin();
     while ( lit != m_lstActivePlugins.end() ){
-        mit = m_mapPluginList.tqfind( *lit );
+        mit = m_mapPluginList.find( *lit );
         if ( mit!=m_mapPluginList.end() ){
             plugin = *mit;
             if ( (plugin.p != NULL) && (plugin.EffectID == 0) ){
@@ -116,7 +116,7 @@ void FXPluginHandler::readConfiguration()
     KLibFactory *factory = NULL;   
     
     for (lit=conf_active.begin(); lit!=conf_active.end(); ++lit){ // for all in config
-        mit = m_mapPluginList.tqfind(*lit);
+        mit = m_mapPluginList.find(*lit);
         if( mit!=m_mapPluginList.end() ){
             // plugin found in list of registered plugins 
             plugin = *mit;
@@ -146,7 +146,7 @@ void FXPluginHandler::showEffectGUI(const TQString &pname)
     fx_struct plugin;
     
     // find plugin with name==pname in list and show its GUI
-    mit = m_mapPluginList.tqfind(pname);
+    mit = m_mapPluginList.find(pname);
     if ( mit != m_mapPluginList.end() ){
         plugin = *mit;
         if ( plugin.p != NULL ){ // plugin loaded
@@ -198,7 +198,7 @@ void FXPluginHandler::activateEffect(const TQString &pname,
     fx_struct plugin;
     
     // find plugin with name==pname
-    mit = m_mapPluginList.tqfind(pname);
+    mit = m_mapPluginList.find(pname);
     if ( mit!=m_mapPluginList.end() ){
         plugin = *mit;
         if ( plugin.p != NULL ){

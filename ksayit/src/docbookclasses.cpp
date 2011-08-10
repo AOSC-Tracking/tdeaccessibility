@@ -389,9 +389,9 @@ Author::~Author()
 // {
 //     // canonify string
 //     TQString m_data = data;
-//     m_data.tqreplace( TQRegExp("\n"), "" ); // remove Newlines
-//     m_data.tqreplace( TQRegExp(" {2,}"), " " ); // remove multiple spaces
-//     m_data.tqreplace( TQRegExp("[\t|\r]{1,}"), ""); // remove Tabs
+//     m_data.replace( TQRegExp("\n"), "" ); // remove Newlines
+//     m_data.replace( TQRegExp(" {2,}"), " " ); // remove multiple spaces
+//     m_data.replace( TQRegExp("[\t|\r]{1,}"), ""); // remove Tabs
 //     // split string "firstname surname"
 //     TQString firstname = m_data.section(' ', 0, 0);
 //     TQString surname = m_data.section(' ', 1, 1);

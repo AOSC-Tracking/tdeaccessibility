@@ -197,7 +197,7 @@ void DocTreeViewImpl::openFile(const KURL &url)
         TQString line;
         int offset;
         file.readLine( line, file.size() );
-        while( !file.atEnd() && (offset = line.tqfind("<book", 0, false)) < 0 ){
+        while( !file.atEnd() && (offset = line.find("<book", 0, false)) < 0 ){
             header += line;    
             file.readLine( line, file.size() );  
         }
@@ -391,9 +391,9 @@ void DocTreeViewImpl::setEditMode(bool mode)
 void DocTreeViewImpl::makeToSingleLine( TQString &content )
 {
     // canonify string
-    content.tqreplace( TQRegExp("\n"), "" );          // remove Newlines
-    content.tqreplace( TQRegExp(" {2,}"), " " );      // remove multiple spaces
-    content.tqreplace( TQRegExp("[\t|\r]{1,}"), "");  // remove Tabs
+    content.replace( TQRegExp("\n"), "" );          // remove Newlines
+    content.replace( TQRegExp(" {2,}"), " " );      // remove multiple spaces
+    content.replace( TQRegExp("[\t|\r]{1,}"), "");  // remove Tabs
 }    
 
 
@@ -594,8 +594,8 @@ TQString DocTreeViewImpl::getItemTitle( ListViewInterface *item )
         title = ( item->getValue(KSayItGlobal::SPEAKERDATA) ).toString().left(32);        
         
         // canonify string
-        title.tqreplace( TQRegExp("^( |\t|\n)+"), "");
-        title.tqreplace( TQRegExp("( |\t|\n)$+"), "");            
+        title.replace( TQRegExp("^( |\t|\n)+"), "");
+        title.replace( TQRegExp("( |\t|\n)$+"), "");            
     } else {
         title = col0.left(32);
     }

@@ -479,9 +479,9 @@ void DocbookParser::parsePara(const TQDomElement &element, ListViewInterface *it
     
     TQString raw = node2raw(element);
     // remove <para> tags
-    raw.tqreplace( TQRegExp("</?(para|Para|PARA)/?>"),"");
-    raw.tqreplace( TQRegExp("^ "),"" );
-    raw.tqreplace( TQRegExp("^\n"), "" );
+    raw.replace( TQRegExp("</?(para|Para|PARA)/?>"),"");
+    raw.replace( TQRegExp("^ "),"" );
+    raw.replace( TQRegExp("^\n"), "" );
     
     para->setValue(KSayItGlobal::RAWDATA,     raw);
     para->setValue(KSayItGlobal::RTFDATA,     raw);

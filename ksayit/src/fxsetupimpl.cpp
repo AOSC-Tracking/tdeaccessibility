@@ -109,7 +109,7 @@ void FX_SetupImpl::Init(TQStringList c_avail)
   pushButton_removeAll->setEnabled(false);
   
   for (sit=conf_active.begin(); sit!=conf_active.end(); ++sit){
-      it = c_avail.tqfind(*sit);
+      it = c_avail.find(*sit);
       if ( it!=c_avail.end() ){ // active plugin as per config-file in pluginlist found
           c_active.append(*sit); // append to active list
           c_avail.remove(*sit); // remove active plugin from the list of avail plugins
