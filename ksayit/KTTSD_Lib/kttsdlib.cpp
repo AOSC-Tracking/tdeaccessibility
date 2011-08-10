@@ -27,8 +27,8 @@
 #include "kttsdlibsetupimpl.h"
 
 
-KTTSDLib::KTTSDLib(TQObject *tqparent, const char *name, KApplication *Appl)
- : TQObject(tqparent, name), m_Appl(Appl)
+KTTSDLib::KTTSDLib(TQObject *parent, const char *name, KApplication *Appl)
+ : TQObject(parent, name), m_Appl(Appl)
 {
     KGlobal::locale()->insertCatalogue("libKTTSD");
     m_talker = new kttsdlibtalker2(static_cast<TQObject*>(this), "kttsdlibtalker");

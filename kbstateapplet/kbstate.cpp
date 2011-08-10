@@ -50,16 +50,16 @@ extern "C"
 #include <X11/keysymdef.h>
 #include <X11/extensions/XKB.h>
 
-    KDE_EXPORT KPanelApplet* init(TQWidget *tqparent, const TQString& configFile)
+    KDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
     {
         KGlobal::locale()->insertCatalogue("kbstateapplet");
-        KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, tqparent, "kbstateapplet");
+        KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, parent, "kbstateapplet");
         return applet;
     }
 }
 
 struct ModifierKey {
-   const unsigned int tqmask;
+   const unsigned int mask;
    const KeySym keysym;
    const char *name;
    const char *icon;
@@ -86,8 +86,8 @@ static ModifierKey modifierKeys[] = {
 /********************************************************************/
 
 KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
-                       TQWidget *tqparent, const char *name)
-  : KPanelApplet( configFile, t, actions, tqparent, name )
+                       TQWidget *parent, const char *name)
+  : KPanelApplet( configFile, t, actions, parent, name )
 {
    for (int i = 0; i < 8; i++) {
       icons[i] = 0;
@@ -527,21 +527,21 @@ void KbStateApplet::initMasks() {
    state = 0;
    
    for (int i = 0; strcmp(modifierKeys[i].name, "") != 0; i++) {
-      int tqmask = modifierKeys[i].tqmask;
-      if (tqmask == 0)
+      int mask = modifierKeys[i].mask;
+      if (mask == 0)
          if (modifierKeys[i].keysym != 0)
-            tqmask = XkbKeysymToModifiers (this->x11Display(), modifierKeys[i].keysym);
+            mask = XkbKeysymToModifiers (this->x11Display(), modifierKeys[i].keysym);
          else if (!strcmp(modifierKeys[i].name, "Win"))
-            tqmask = KKeyNative::modX(KKey::WIN);
+            mask = KKeyNative::modX(KKey::WIN);
          else
-            tqmask = XkbKeysymToModifiers (this->x11Display(), XK_Mode_switch)
+            mask = XkbKeysymToModifiers (this->x11Display(), XK_Mode_switch)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Shift)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Latch)
                  | XkbKeysymToModifiers (this->x11Display(), XK_ISO_Level3_Lock);
       
       int map = 0;
       for (map = 0; map < 8; map++) {
-         if ((tqmask & (1 << map)) != 0)
+         if ((mask & (1 << map)) != 0)
             break;
       }
       if ((map <= 7) && !(icons[map])) {
@@ -747,8 +747,8 @@ void KbStateApplet::saveConfig()
 /********************************************************************/
 
 KeyIcon::KeyIcon (int keyId, KInstance *instance,
-                  TQWidget *tqparent, const char *name)
- : StatusIcon (modifierKeys[keyId].name, tqparent, name) {
+                  TQWidget *parent, const char *name)
+ : StatusIcon (modifierKeys[keyId].name, parent, name) {
    this->instance = instance;
    this->keyId = keyId;
    this->tristate = (modifierKeys[keyId].isModifier);
@@ -855,8 +855,8 @@ void KeyIcon::drawButton (TQPainter *p) {
 
 /********************************************************************/
 
-MouseIcon::MouseIcon (KInstance *instance, TQWidget *tqparent, const char *name)
-	: StatusIcon ("", tqparent, name)
+MouseIcon::MouseIcon (KInstance *instance, TQWidget *parent, const char *name)
+	: StatusIcon ("", parent, name)
 {
 	this->instance = instance;
 	state = 0;
@@ -958,8 +958,8 @@ void MouseIcon::drawButton (TQPainter *p) {
 
 TimeoutIcon::TimeoutIcon (KInstance *instance, const TQString &text,
 								  const TQString &featurename,
-								  TQWidget *tqparent, const char *name)
- : StatusIcon (text, tqparent, name) {
+								  TQWidget *parent, const char *name)
+ : StatusIcon (text, parent, name) {
 	this->instance = instance;
 	this->featurename = featurename;
 	glyth = " ";
@@ -1066,8 +1066,8 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 
 /********************************************************************/
 
-StatusIcon::StatusIcon (const TQString &text, TQWidget *tqparent, const char *name)
- : TQPushButton (text, tqparent, name) {
+StatusIcon::StatusIcon (const TQString &text, TQWidget *parent, const char *name)
+ : TQPushButton (text, parent, name) {
    tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
 }
 

@@ -105,10 +105,10 @@ void DocbookGenerator::writeTitleOfBook(TQTextStream &doc, ListViewInterface *it
     if ( whoAmI != "BookInfo" )
         return;
 
-    // Documents title is stored in root element (tqparent of BookInfo)
-    ListViewInterface *tqparent = static_cast<ListViewInterface*>(item->tqparent());
-    if ( tqparent ){
-        TQString title = tqparent->text(0);
+    // Documents title is stored in root element (parent of BookInfo)
+    ListViewInterface *parent = static_cast<ListViewInterface*>(item->parent());
+    if ( parent ){
+        TQString title = parent->text(0);
 
         // add node to document
         doc << "<Title>" << title << "</Title>" << endl;

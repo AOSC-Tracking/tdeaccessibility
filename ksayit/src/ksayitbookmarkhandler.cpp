@@ -23,8 +23,8 @@
 #include "ksayitbookmarkhandler.h"
 #include "ksayit.h"
 
-KSayItBookmarkHandler::KSayItBookmarkHandler(KBookmarkManager *bkManager, KSayItApp* tqparent)
- : KBookmarkOwner(), m_bkManager(bkManager), m_parent(tqparent)
+KSayItBookmarkHandler::KSayItBookmarkHandler(KBookmarkManager *bkManager, KSayItApp* parent)
+ : KBookmarkOwner(), m_bkManager(bkManager), m_parent(parent)
 {
     m_ID       = TQString();
     m_title    = TQString();

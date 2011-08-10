@@ -71,7 +71,7 @@ public slots:
     void slotTextStarted(const uint job);
     
 public:
-    KTTSDLib(TQObject *tqparent=0, const char *name=0, KApplication *Appl=0);
+    KTTSDLib(TQObject *parent=0, const char *name=0, KApplication *Appl=0);
 
     ~KTTSDLib();
 

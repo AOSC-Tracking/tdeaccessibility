@@ -69,7 +69,7 @@ class ContextMenuHandler : public TQObject
 Q_OBJECT
   TQ_OBJECT
 public:
-    ContextMenuHandler(TQObject *tqparent = 0, const char *name = 0);
+    ContextMenuHandler(TQObject *parent = 0, const char *name = 0);
 
     ~ContextMenuHandler();
 
@@ -80,10 +80,10 @@ public:
     KPopupMenu* getPopupMenu(ListViewInterface *item);
     
     /**
-     * \returns A pointer to the Submenu as a child of the tqparent
-     * \p tqparent.
+     * \returns A pointer to the Submenu as a child of the parent
+     * \p parent.
      */
-    KPopupMenu* SubMenuFactory(KPopupMenu *tqparent);
+    KPopupMenu* SubMenuFactory(KPopupMenu *parent);
     
     /**
      * Creates an action sufficiant to the given name.

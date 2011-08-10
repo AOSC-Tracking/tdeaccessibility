@@ -40,7 +40,7 @@ all required methods to access or manipulate its content.
 class DocTreeViewImpl : public DocTreeView
 {
 public:
-    DocTreeViewImpl(TQWidget* tqparent=0, const char* name=0, WFlags fl=0);
+    DocTreeViewImpl(TQWidget* parent=0, const char* name=0, WFlags fl=0);
 
     ~DocTreeViewImpl();
 

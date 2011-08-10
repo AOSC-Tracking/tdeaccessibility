@@ -33,7 +33,7 @@ using namespace std;
 // App specific includes
 #include "ksayitviewimpl.h"
 
-KSayItViewImpl::KSayItViewImpl(TQWidget *tqparent, const char *name ) : KSayItView(tqparent,name) {
+KSayItViewImpl::KSayItViewImpl(TQWidget *parent, const char *name ) : KSayItView(parent,name) {
 
   // some presets
 

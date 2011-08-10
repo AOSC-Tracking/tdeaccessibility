@@ -117,8 +117,8 @@ bool ContextActionHandler::characters( const TQString &ch )
 /**
  * MenuHandler
  */
-ContextMenuHandler::ContextMenuHandler(TQObject *tqparent, const char *name)
- : TQObject(tqparent, name), m_DocTreeView(tqparent)
+ContextMenuHandler::ContextMenuHandler(TQObject *parent, const char *name)
+ : TQObject(parent, name), m_DocTreeView(parent)
 {
     m_popupmenu = NULL;
     m_item = NULL;  
@@ -378,9 +378,9 @@ KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQ
 }
 
 
-KPopupMenu* ContextMenuHandler::SubMenuFactory(KPopupMenu *tqparent)
+KPopupMenu* ContextMenuHandler::SubMenuFactory(KPopupMenu *parent)
 {
-    return new KPopupMenu(tqparent);
+    return new KPopupMenu(parent);
 }
 
 

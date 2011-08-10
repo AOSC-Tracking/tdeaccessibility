@@ -23,8 +23,8 @@
 // App specific includes
 #include "kttsdlibsetupimpl.h"
 
-KTTSDlibSetupImpl::KTTSDlibSetupImpl(TQWidget *tqparent, const char *name)
- : KTTSDlibSetup(tqparent, name)
+KTTSDlibSetupImpl::KTTSDlibSetupImpl(TQWidget *parent, const char *name)
+ : KTTSDlibSetup(parent, name)
 {
 }
 

@@ -26,8 +26,8 @@
 // App specific includes
 #include "ksayitsystemtray.h"
 
-KSayItSystemTray::KSayItSystemTray(TQWidget *tqparent, const char *name)
- : KSystemTray(tqparent,name)
+KSayItSystemTray::KSayItSystemTray(TQWidget *parent, const char *name)
+ : KSystemTray(parent,name)
 {
   initActions();
   changeState( StateCLIPEMPTY::Instance() );

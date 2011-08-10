@@ -26,8 +26,8 @@
 #include "ksayit_ttsplugin.h"
 
 
-FXPluginHandler::FXPluginHandler(TQObject *tqparent, const char *name, KConfig *config)
- : TQObject(tqparent, name), m_config(config)
+FXPluginHandler::FXPluginHandler(TQObject *parent, const char *name, KConfig *config)
+ : TQObject(parent, name), m_config(config)
 {
     m_mapPluginList.clear();
     m_lstActivePlugins.clear();

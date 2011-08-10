@@ -39,12 +39,12 @@
 #include "fxpluginhandler.h"
 #include "kttsdlib.h"
 
-VoiceSetupDlg::VoiceSetupDlg(TQWidget *tqparent, const char *name, const TQString &caption,
+VoiceSetupDlg::VoiceSetupDlg(TQWidget *parent, const char *name, const TQString &caption,
         bool modal,
         KConfig *config,
         FXPluginHandler *fxpluginhandler,
         KTTSDLib *ttslib)
- : KDialogBase(IconList, caption, Ok|Cancel, Ok, tqparent, name, modal, true),
+ : KDialogBase(IconList, caption, Ok|Cancel, Ok, parent, name, modal, true),
    m_config(config),
    m_fxpluginhandler(fxpluginhandler),
    m_kttslib(ttslib)

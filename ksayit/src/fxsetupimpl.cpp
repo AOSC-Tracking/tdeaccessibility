@@ -27,10 +27,10 @@
 // #include "freeverbsetupimpl.h"
 #include "fxpluginhandler.h"
 
-FX_SetupImpl::FX_SetupImpl(TQWidget *tqparent, const char *name,
+FX_SetupImpl::FX_SetupImpl(TQWidget *parent, const char *name,
         KConfig *config,
         FXPluginHandler *fxpluginhandler )
- : FX_Setup(tqparent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
+ : FX_Setup(parent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
 { 
    m_fxpluginhandler->getPlugins(pluginlist);
   

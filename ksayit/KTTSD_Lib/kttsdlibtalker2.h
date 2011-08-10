@@ -37,7 +37,7 @@ signals:
     void signalTextStopped(const uint);
 
 public:
-    kttsdlibtalker2(TQObject *tqparent = 0, const char *name = 0);
+    kttsdlibtalker2(TQObject *parent = 0, const char *name = 0);
 
     ~kttsdlibtalker2();
     

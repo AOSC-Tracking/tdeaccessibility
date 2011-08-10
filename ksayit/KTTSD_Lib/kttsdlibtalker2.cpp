@@ -21,8 +21,8 @@
 // App specific includes
 #include "kttsdlibtalker2.h"
 
-kttsdlibtalker2::kttsdlibtalker2(TQObject *tqparent, const char *name)
-    : TQObject(tqparent, name), DCOPStub("kttsd", "KSpeech")
+kttsdlibtalker2::kttsdlibtalker2(TQObject *parent, const char *name)
+    : TQObject(parent, name), DCOPStub("kttsd", "KSpeech")
 {
     m_client = NULL;
 

@@ -54,8 +54,8 @@ This abstract class is the interface to access the items of the TreeView.
 class ListViewInterface : public KListViewItem
 {
 public:
-    ListViewInterface(ListViewInterface *tqparent=0, TQString label=TQString());
-    ListViewInterface(ListViewInterface *tqparent=0, ListViewInterface *after=0, TQString label=TQString());
+    ListViewInterface(ListViewInterface *parent=0, TQString label=TQString());
+    ListViewInterface(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString());
     ListViewInterface(KListView *lv=0, TQString label=TQString());
 
     // ~ListViewItemInterface();

@@ -36,7 +36,7 @@ class VoiceSetupDlg : public KDialogBase  {
   TQ_OBJECT
 
 public: 
-  VoiceSetupDlg(TQWidget *tqparent=0, const char *name=0, const TQString &caption=NULL,
+  VoiceSetupDlg(TQWidget *parent=0, const char *name=0, const TQString &caption=NULL,
         bool modal=true,
         KConfig *config=0,
         FXPluginHandler *fxpluginhandler=0,

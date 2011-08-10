@@ -31,12 +31,12 @@
 //////////////////////////////////////
 // Interface
 //////////////////////////////////////
-ListViewInterface::ListViewInterface(ListViewInterface *tqparent, TQString label)
-    : KListViewItem( tqparent, label )
+ListViewInterface::ListViewInterface(ListViewInterface *parent, TQString label)
+    : KListViewItem( parent, label )
 {
 }
 
-ListViewInterface::ListViewInterface(ListViewInterface *tqparent, ListViewInterface *after, TQString label) : KListViewItem( tqparent, after, label )
+ListViewInterface::ListViewInterface(ListViewInterface *parent, ListViewInterface *after, TQString label) : KListViewItem( parent, after, label )
 {
 }
 
@@ -116,8 +116,8 @@ TQVariant RobDocument::getValue( unsigned int index ) const
 /**
  * Overview
  */
-Overview::Overview(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Overview::Overview(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -171,8 +171,8 @@ TQVariant Overview::getValue( unsigned int index ) const
 /**
  * Date
  */
-Date::Date(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Date::Date(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -238,8 +238,8 @@ TQVariant Date::getValue( unsigned int index ) const
 /**
  * ReleaseInfo
  */
-ReleaseInfo::ReleaseInfo(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+ReleaseInfo::ReleaseInfo(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -305,8 +305,8 @@ TQVariant ReleaseInfo::getValue( unsigned int index ) const
 /**
  * Authorgroup
  */
-AuthorGroup::AuthorGroup(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+AuthorGroup::AuthorGroup(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("kdmconfig", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -361,8 +361,8 @@ TQVariant AuthorGroup::getValue( unsigned int index ) const
 /**
  * Author
  */
-Author::Author(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Author::Author(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("personal", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -445,8 +445,8 @@ TQVariant Author::getValue( unsigned int index ) const
 /**
  * KeywordSet
  */
-KeywordSet::KeywordSet(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+KeywordSet::KeywordSet(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("txt", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -500,8 +500,8 @@ TQVariant KeywordSet::getValue( unsigned int index ) const
 /**
  * Keyword
  */
-Keyword::Keyword(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Keyword::Keyword(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     // new Concept (begin)
     m_valueList.clear();
@@ -566,8 +566,8 @@ TQVariant Keyword::getValue( unsigned int index ) const
 /**
  * Abstract
  */
-Abstract::Abstract(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Abstract::Abstract(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -622,8 +622,8 @@ TQVariant Abstract::getValue( unsigned int index ) const
 /**
  * Para
  */
-Para::Para(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Para::Para(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -696,8 +696,8 @@ TQVariant Para::getValue( unsigned int index ) const
 /**
  * Chapter
  */
-Chapter::Chapter(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Chapter::Chapter(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -757,8 +757,8 @@ TQVariant Chapter::getValue( unsigned int index ) const
 /**
  * Sect1
  */
-Sect1::Sect1(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Sect1::Sect1(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -817,8 +817,8 @@ TQVariant Sect1::getValue( unsigned int index ) const
 /**
  * Sect2
  */
-Sect2::Sect2(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Sect2::Sect2(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -877,8 +877,8 @@ TQVariant Sect2::getValue( unsigned int index ) const
 /**
  * Sect3
  */
-Sect3::Sect3(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Sect3::Sect3(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -937,8 +937,8 @@ TQVariant Sect3::getValue( unsigned int index ) const
 /**
  * Sect4
  */
-Sect4::Sect4(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Sect4::Sect4(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);
@@ -997,8 +997,8 @@ TQVariant Sect4::getValue( unsigned int index ) const
 /**
  * Sect5
  */
-Sect5::Sect5(ListViewInterface *tqparent, ListViewInterface *after, TQString label)
-    : ListViewInterface(tqparent, after, label)
+Sect5::Sect5(ListViewInterface *parent, ListViewInterface *after, TQString label)
+    : ListViewInterface(parent, after, label)
 {
     TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
     this->setPixmap(0, pixmap);

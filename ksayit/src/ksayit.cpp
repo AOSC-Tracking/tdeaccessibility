@@ -55,9 +55,9 @@
 #define KSAYITUI "ksayitui.rc"
 #define ID_STATUS_MSG 1
 
-KSayItApp::KSayItApp(TQWidget* tqparent, const char* name, WFlags f,
+KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
     const TQCString &objID)
-  : KMainWindow(tqparent, name, f), DCOPObject(objID)
+  : KMainWindow(parent, name, f), DCOPObject(objID)
 {
     config    = NULL;
     view      = NULL;
@@ -811,12 +811,12 @@ void KSayItApp::setActions(int actions)
 {
     // ACTIONS::PLAY | ACTIONS::STOP  | ACTIONS::PAUSE | ACTIONS::FFWD | ACTIONS::FREV;
     
-    // Get the tqmask of supported actions from the plugin.
-    int tqmask = m_kttslib->getActions();
-    kdDebug(100200) << TQString("KSayItApp:PSA: %1").tqarg(tqmask, 0, 2) << endl;
+    // Get the mask of supported actions from the plugin.
+    int mask = m_kttslib->getActions();
+    kdDebug(100200) << TQString("KSayItApp:PSA: %1").tqarg(mask, 0, 2) << endl;
     
     // disable actions not supported by the plugin
-    int ma = actions & tqmask;
+    int ma = actions & mask;
     
     if (ma & ACTIONS::PLAY){
         say->setEnabled(true);

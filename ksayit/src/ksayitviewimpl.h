@@ -36,7 +36,7 @@ class KSayItViewImpl : public KSayItView  {
   TQ_OBJECT
 
 public: 
-    KSayItViewImpl(TQWidget *tqparent=0, const char *name=0);
+    KSayItViewImpl(TQWidget *parent=0, const char *name=0);
     ~KSayItViewImpl();
 
 signals:

@@ -38,7 +38,7 @@ class FXPlugin : public TQObject
 // Q_OBJECT
   TQ_OBJECT
 public:
-    FXPlugin(TQObject *tqparent=0, const char* name=0){};
+    FXPlugin(TQObject *parent=0, const char* name=0){};
        
     /** Sets the Main application object. Useful for config objects etc.
      */

@@ -44,7 +44,7 @@ class KSayItSystemTray : public KSystemTray  {
   friend class State;
 
 public: 
-    KSayItSystemTray(TQWidget *tqparent=0, const char *name=0);
+    KSayItSystemTray(TQWidget *parent=0, const char *name=0);
     ~KSayItSystemTray();
 
 signals:

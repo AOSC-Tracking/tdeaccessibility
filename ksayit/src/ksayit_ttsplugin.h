@@ -65,7 +65,7 @@
 class TTSPlugin : public TQObject
 {
 protected:
-    TTSPlugin(TQObject *tqparent, const char *name) : TQObject(tqparent, name){};
+    TTSPlugin(TQObject *parent, const char *name) : TQObject(parent, name){};
     
 public:
     /** Returns the name of the plugin. This name is the unique identifier

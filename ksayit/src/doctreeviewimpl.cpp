@@ -41,8 +41,8 @@
 //////////////////////////////////////
 // TreeView Implementation
 //////////////////////////////////////
-DocTreeViewImpl::DocTreeViewImpl(TQWidget* tqparent, const char* name, WFlags fl)
- : DocTreeView(tqparent, name, fl)
+DocTreeViewImpl::DocTreeViewImpl(TQWidget* parent, const char* name, WFlags fl)
+ : DocTreeView(parent, name, fl)
 {
     m_rootItem = NULL;
     m_url = KURL();
@@ -553,10 +553,10 @@ void DocTreeViewImpl::recursiveBuildItemIdentifier(ListViewInterface* item, TQTe
     if ( !item )
         return;
     
-    // 1. Do we have a tqparent (=parentItem)?
+    // 1. Do we have a parent (=parentItem)?
     // If no -> return, if yes -> recursive call
     ListViewInterface *parentItem = NULL;
-    parentItem = static_cast<ListViewInterface*>( item->tqparent() );
+    parentItem = static_cast<ListViewInterface*>( item->parent() );
     if ( parentItem ){
         recursiveBuildItemIdentifier( parentItem, idstring );
     } else {
@@ -757,9 +757,9 @@ void DocTreeViewImpl::slotDeleteItem()
     
     ListViewInterface *itemToDelete = m_currentItem;
     ListViewInterface *parentItem = NULL;
-    parentItem = static_cast<ListViewInterface*>(itemToDelete->tqparent());
+    parentItem = static_cast<ListViewInterface*>(itemToDelete->parent());
     if ( !parentItem )
-        return; // delete only items with tqparent
+        return; // delete only items with parent
     
     // try to delete bookmark
     TQString url = TQString();

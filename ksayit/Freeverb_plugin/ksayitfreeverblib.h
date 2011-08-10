@@ -30,12 +30,12 @@ Q_OBJECT
   TQ_OBJECT
 public:
     // Consturctor
-    FreeverbPluginFactory(TQObject *tqparent=0, const char* name=0);
+    FreeverbPluginFactory(TQObject *parent=0, const char* name=0);
     
     // Destructor
     virtual ~FreeverbPluginFactory(){ delete p_instance; };
     
-    TQObject* createObject(TQObject *tqparent=0, const char* name=0, 
+    TQObject* createObject(TQObject *parent=0, const char* name=0, 
             const char* className=TQOBJECT_OBJECT_NAME_STRING, 
             const TQStringList &args=TQStringList());        
 
@@ -54,7 +54,7 @@ Q_OBJECT
   TQ_OBJECT
 public: 
     // Constructor
-    FreeverbPlugin(TQObject *tqparent=0, const char* name=0); //, KApplication *Appl=0);
+    FreeverbPlugin(TQObject *parent=0, const char* name=0); //, KApplication *Appl=0);
     
     // Destructor
     ~FreeverbPlugin();    
