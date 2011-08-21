@@ -61,7 +61,7 @@ private slots:
 
 private:
     // returns e.g. "kwin/eventsrc" from a given path
-    // "/opt/kde3/share/apps/kwin/eventsrc"
+    // "/opt/trinity/share/apps/kwin/eventsrc"
     TQString makeRelative( const TQString& fullPath );
 
     TQStringList m_eventSrcNames;

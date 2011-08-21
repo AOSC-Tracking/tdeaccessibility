@@ -2,7 +2,7 @@ INCLUDES = -I$(top_srcdir)/ksayit/src $(all_includes) -I$(kde_includes)/kde -I$(
 METASOURCES = AUTO
 kde_servicetypes_DATA = ksayit_libFreeverb_service.desktop
 kde_services_DATA = ksayit_libFreeverb.desktop
-fxpluginsdir = $(kde_libraries)/kde3
+fxpluginsdir = $(kde_libraries)/trinity
 fxplugins_LTLIBRARIES = libFreeverb_plugin.la
 libFreeverb_plugin_la_LDFLAGS = -avoid-version -module -no-undefined \
 	$(all_libraries)

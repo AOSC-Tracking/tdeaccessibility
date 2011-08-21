@@ -2322,7 +2322,7 @@ not build" column shows the configure command to not build the plugin:</para>
 </tbody></tgroup></informaltable></para>
 
 <para>By default, the commands above will install &ktts; to
-<filename>/opt/kde3</filename>.  If this folder is not in your
+<filename>/opt/trinity</filename>.  If this folder is not in your
 $<envar>KDEDIRS</envar> path, you may need to add a
 <userinput>--prefix=<replaceable>target</replaceable></userinput> option.
 For example,</para>

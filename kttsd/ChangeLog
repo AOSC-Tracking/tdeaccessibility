@@ -437,7 +437,7 @@
               flite.desktop      -> kttsd_fliteplugin.desktop
               epos-kttsdplugin.desktop -> kttsd_eposplugin.desktop
               freetts.desktop     -> kttsd_freettsplugin.desktop
-           In $KDEDIR/lib/kde3/:
+           In $KDEDIR/lib/trinity/:
               libfestivalplugin        -> libkttsd_festivalplugin
               libfestivalintplugin   -> libkttsd_festivalintplugin
               libcommandplugin     -> libkttsd_commandplugin
@@ -482,8 +482,8 @@
         * Rename Hadifax to Hadifix.
           NOTE: After rebuilding and installing, you will want to delete the
                 following files:
-                  $KDEDIR/lib/kde3/libhadifaxplugin.la
-                  $KDEDIR/lib/kde3/libhadifaxplugin.so
+                  $KDEDIR/lib/trinity/libhadifaxplugin.la
+                  $KDEDIR/lib/trinity/libhadifaxplugin.so
                   $KDEDIR/share/services/hadifax.desktop
 
 2004-09-02  Paul Giannaros
