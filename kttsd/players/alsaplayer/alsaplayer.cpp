@@ -1001,7 +1001,7 @@ void AlsaPlayer::xrun()
             stream == SND_PCM_STREAM_PLAYBACK ? "underrun" : "overrun",
             diff.tv_sec * 1000 + diff.tv_usec / 1000.0);
         if (m_debugLevel >= 2) {
-            DBG("tqStatus:");
+            DBG("Status:");
             snd_pcm_status_dump(status, log);
         }
         if ((res = snd_pcm_prepare(handle))<0) {
@@ -1011,7 +1011,7 @@ void AlsaPlayer::xrun()
         return;        /* ok, data should be accepted again */
     } if (SND_PCM_STATE_DRAINING == snd_pcm_status_get_state(status)) {
         if (m_debugLevel >= 2) {
-            DBG("tqStatus(DRAINING):");
+            DBG("Status(DRAINING):");
             snd_pcm_status_dump(status, log);
         }
         if (stream == SND_PCM_STREAM_CAPTURE) {
@@ -1024,7 +1024,7 @@ void AlsaPlayer::xrun()
         }
     }
     if (m_debugLevel >= 2) {
-        DBG("tqStatus(R/W):");
+        DBG("Status(R/W):");
         snd_pcm_status_dump(status, log);
     }
     ERR("read/write error, state = %s", snd_pcm_state_name(snd_pcm_status_get_state(status)));
