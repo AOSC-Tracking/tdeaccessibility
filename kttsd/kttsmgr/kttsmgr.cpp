@@ -268,7 +268,7 @@ TQString KttsMgrTray::gettqStatus()
         int jobState = 0;
         if (job != 0)
         {
-            // kdDebug() << "KttsMgrTray::gettqStatus: job = " << job << endl;
+            // kdDebug() << "KttsMgrTray::getStatus: job = " << job << endl;
             jobState = getTextJobState(job);
             int sentenceCount = getTextCount(job);
             uint seq = moveRelTextSentence(0, job);

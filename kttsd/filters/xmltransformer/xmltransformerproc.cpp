@@ -282,7 +282,7 @@ void XmlTransformerProc::processOutput()
 
     if (exitStatus != 0)
     {
-        kdDebug() << "XmlTransformerProc::processOutput: xsltproc abnormal exit.  tqStatus = " << exitStatus << endl;
+        kdDebug() << "XmlTransformerProc::processOutput: xsltproc abnormal exit.  Status = " << exitStatus << endl;
         m_state = fsFinished;
         TQFile::remove(m_outFilename);
         emit filteringFinished();

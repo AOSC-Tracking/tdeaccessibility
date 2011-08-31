@@ -145,12 +145,12 @@ void KbStateApplet::buildPopupMenu()
    showPopup->setCheckable( true );
    modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQT_SLOT(toggleModifier()));
 	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQT_SLOT(toggleLockkeys()));
-	mouseItem=showPopup->insertItem(i18n("Mouse tqStatus"), this, TQT_SLOT(toggleMouse()));
-	accessxItem=showPopup->insertItem(i18n("AccessX tqStatus"), this, TQT_SLOT(toggleAccessX()));
+	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQT_SLOT(toggleMouse()));
+	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQT_SLOT(toggleAccessX()));
 
 	popup = new KPopupMenu(this);
 	popup->setCheckable( true );
-   popup->insertTitle(0, i18n("Keyboard tqStatus Applet"));
+   popup->insertTitle(0, i18n("Keyboard Status Applet"));
 	popup->insertItem(i18n("Set Icon Size"),sizePopup);
 	fillSpaceItem = popup->insertItem(i18n("Fill Available Space"),
 												 this, TQT_SLOT(toggleFillSpace()));
@@ -712,7 +712,7 @@ void KbStateApplet::configureMouse() {
 }
 
 void KbStateApplet::about() {
-   KAboutData about("kbstateapplet", I18N_NOOP("Keyboard tqStatus Applet"), "0.2",
+   KAboutData about("kbstateapplet", I18N_NOOP("Keyboard Status Applet"), "0.2",
                     I18N_NOOP("Panel applet that shows the state of the modifier keys"), KAboutData::License_GPL_V2, "(C) 2004 Gunnar Schmi Dt");
    KAboutApplication a(&about, this);
    a.exec();
