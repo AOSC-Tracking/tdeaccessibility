@@ -19,7 +19,7 @@ INCLUDES= $(all_includes)
 METASOURCES = AUTO
 
 # the library search path. 
-kmousetool_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+kmousetool_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx $(LIB_KIO) -lktexteditor
 
 messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
