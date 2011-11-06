@@ -181,7 +181,7 @@ if [ ! -z $showhelp ] || [ -z $module ] || [ -z $directory ]; then
 	echo "the beginning of command line arguments if it exists."
 	echo "	'--' signifies the end of options."
 	echo ""
-	echo "Example: cvs2dist /sources/kdegames kolf/objects/picture \\"
+	echo "Example: cvs2dist /sources/tdegames kolf/objects/picture \\"
 	echo "         -n kolf-picture -v 0.9 -r \"kolf/game.h\" \\"
 	echo "         --log ~/tmp/extra-file"
 	echo ""

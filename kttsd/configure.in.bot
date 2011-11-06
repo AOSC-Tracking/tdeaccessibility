@@ -59,7 +59,7 @@ if test "x$have_akode" = xno && test "x$with_akode" = xcheck; then
     echo "* The build of the KTTS aKode audio plugin has been"
     echo "* disabled because the aKode library configuration"
     echo "* script (akode-config) was not found. The aKode libary"
-    echo "* is part of the kdesupport module."
+    echo "* is part of the tdesupport module."
     echo "*"
     echo "********************************************************"
 fi

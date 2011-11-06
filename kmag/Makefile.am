@@ -27,7 +27,7 @@ METASOURCES = AUTO
 KDE_OPTIONS = nofinal
 
 # the library search path. 
-kmag_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx $(LIB_KIO) -lktexteditor
+kmag_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -ltdefx $(LIB_KIO) -lktexteditor
 
 rcdir = $(kde_datadir)/kmag
 rc_DATA = kmagui.rc

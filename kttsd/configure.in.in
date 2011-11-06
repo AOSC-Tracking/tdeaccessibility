@@ -179,7 +179,7 @@ AM_CONDITIONAL(include_kttsd_alsaplayer, [test "x$have_alsa" = "xyes"])
 dnl ================================================================================
 
 dnl Check for aKode library.  Note: As of about 16 Jul 2005, it got moved
-dnl from kdemultimedia to kdesupport.
+dnl from kdemultimedia to tdesupport.
 
 AC_DEFUN([KDE_CHECK_AKODE],
 [
