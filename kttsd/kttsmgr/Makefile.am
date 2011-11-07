@@ -22,10 +22,10 @@ kttsmgr_SOURCES =  \
 	kspeechsink.skel \
 	kttsmgr.cpp
 
-kttsmgr_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -ltdefx $(LIB_KIO) -lktexteditor
+kttsmgr_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -lktexteditor
 kttsmgr_LDADD = \
 	$(LIB_KUTILS) \
-	$(LIB_KDEUI)
+	$(LIB_TDEUI)
 
 # Header files that should not be installed.
 noinst_HEADERS = kttsmgr.h

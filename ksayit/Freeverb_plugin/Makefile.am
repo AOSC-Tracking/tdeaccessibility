@@ -6,7 +6,7 @@ fxpluginsdir = $(kde_libraries)/trinity
 fxplugins_LTLIBRARIES = libFreeverb_plugin.la
 libFreeverb_plugin_la_LDFLAGS = -avoid-version -module -no-undefined \
 	$(all_libraries)
-libFreeverb_plugin_la_LIBADD = $(LIB_KDECORE) $(LIB_KDEUI) -lartskde\
+libFreeverb_plugin_la_LIBADD = $(LIB_TDECORE) $(LIB_TDEUI) -lartskde\
 	-lartsmodules
 noinst_HEADERS = freeverbsetupimpl.h ksayitfreeverblib.h kdeexportfix.h
 libFreeverb_plugin_la_SOURCES = freeverbsetupimpl.cpp freeverb_setup.ui \

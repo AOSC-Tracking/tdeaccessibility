@@ -3,7 +3,7 @@ bin_PROGRAMS = kmag
 ## INCLUDES were found outside kdevelop specific part
 
 kmag_SOURCES = kmagzoomview.cpp kmagselrect.cpp kmag.cpp main.cpp 
-kmag_LDADD   = $(LIB_KDEPRINT)
+kmag_LDADD   = $(LIB_TDEPRINT)
 
 
 EXTRA_DIST = main.cpp version.h kmag.cpp kmag.h kmagui.rc kmag.desktop lo32-app-kmag.png lo16-app-kmag.png kmagselrect.cpp kmagselrect.h hi16-app-kmag.png kmagzoomview.cpp kmagzoomview.h 
@@ -27,7 +27,7 @@ METASOURCES = AUTO
 KDE_OPTIONS = nofinal
 
 # the library search path. 
-kmag_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -ltdefx $(LIB_KIO) -lktexteditor
+kmag_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -lktexteditor
 
 rcdir = $(kde_datadir)/kmag
 rc_DATA = kmagui.rc

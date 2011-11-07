@@ -5,7 +5,7 @@ INCLUDES = \
 METASOURCES = AUTO
 libKTTSD_Lib_la_LDFLAGS = -no-undefined $(all_libraries) -version-info 0:1
 lib_LTLIBRARIES = libKTTSD_Lib.la
-libKTTSD_Lib_la_LIBADD = $(LIB_KDEUI) $(LIB_KDECORE)
+libKTTSD_Lib_la_LIBADD = $(LIB_TDEUI) $(LIB_TDECORE)
 noinst_HEADERS = kttsdlib.h kttsdlibsetupimpl.h kttsdlibtalker2.h kdeexportfix.h
 
 kspeech_DIR = $(KTTS_KSPEECH_DIR)
