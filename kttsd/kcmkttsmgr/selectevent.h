@@ -60,8 +60,8 @@ private slots:
     void slotEventSrcComboBox_activated(int index);
 
 private:
-    // returns e.g. "kwin/eventsrc" from a given path
-    // "/opt/trinity/share/apps/kwin/eventsrc"
+    // returns e.g. "twin/eventsrc" from a given path
+    // "/opt/trinity/share/apps/twin/eventsrc"
     TQString makeRelative( const TQString& fullPath );
 
     TQStringList m_eventSrcNames;

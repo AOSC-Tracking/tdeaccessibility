@@ -54,7 +54,7 @@
 #include <ktempfile.h>
 #include <kpopupmenu.h>
 #include <kedittoolbar.h>
-#include <kwin.h>
+#include <twin.h>
 
 #if KDE_VERSION < 220
 #include <tqprinter.h>

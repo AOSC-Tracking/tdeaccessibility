@@ -132,8 +132,8 @@ TQString SelectEvent::getEvent()
         return TQString();
 }
 
-// returns e.g. "kwin/eventsrc" from a given path
-// "/opt/trinity/share/apps/kwin/eventsrc"
+// returns e.g. "twin/eventsrc" from a given path
+// "/opt/trinity/share/apps/twin/eventsrc"
 TQString SelectEvent::makeRelative( const TQString& fullPath )
 {
     int slash = fullPath.findRev( '/' ) - 1;
