@@ -19,7 +19,7 @@
 // include files for QT
 #include <tqdir.h>
 #include <tqapplication.h>
-#include <tqdoctwindow.h>
+#include <tqdockwindow.h>
 #include <tqfileinfo.h>
 #include <tqfile.h>
 
