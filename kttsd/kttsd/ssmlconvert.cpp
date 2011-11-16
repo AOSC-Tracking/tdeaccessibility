@@ -220,7 +220,7 @@ bool SSMLConvert::transform(const TQString &text, const TQString &xsltFilename) 
     // not wrap it in such.  But maybe this should be handled by SpeechData::setText()?
     *wstream << text;
     inFile.close();
-#if KDE_VERSION >= KDE_MAKE_VERSION (3,3,0)
+#if TDE_VERSION >= KDE_MAKE_VERSION (3,3,0)
     inFile.sync();
 #endif
 

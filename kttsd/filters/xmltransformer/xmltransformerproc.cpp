@@ -230,7 +230,7 @@ bool XmlTransformerProc::init(KConfig* config, const TQString& configGroup)
     text.replace(TQRegExp("&(?!amp;)"),"&amp;");
     *wstream << text;
     inFile.close();
-#if KDE_VERSION >= KDE_MAKE_VERSION (3,3,0)
+#if TDE_VERSION >= KDE_MAKE_VERSION (3,3,0)
     inFile.sync();
 #endif
 

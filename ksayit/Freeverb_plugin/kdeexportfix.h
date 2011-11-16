@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include <kdeversion.h>
-#if KDE_VERSION < KDE_MAKE_VERSION (3,3,2)
+#if TDE_VERSION < KDE_MAKE_VERSION (3,3,2)
 #undef KDE_EXPORT
 #define KDE_EXPORT
 #endif

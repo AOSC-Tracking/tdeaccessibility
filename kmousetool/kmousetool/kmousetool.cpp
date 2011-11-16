@@ -273,7 +273,7 @@ KMouseTool::KMouseTool(TQWidget *parent, const char *name) : KMouseToolUI(parent
 	connect(buttonHelp, TQT_SIGNAL(clicked()), this, TQT_SLOT(helpSelected()));
 	buttonClose->setGuiItem(KStdGuiItem::close());
 	connect(buttonClose, TQT_SIGNAL(clicked()), this, TQT_SLOT(closeSelected()));
-#if KDE_VERSION >= KDE_MAKE_VERSION (3,1,90)
+#if TDE_VERSION >= KDE_MAKE_VERSION (3,1,90)
 	buttonQuit->setGuiItem(KStdGuiItem::quit());
 #endif // KDE 3.2
 	connect(buttonQuit, TQT_SIGNAL(clicked()), this, TQT_SLOT(quitSelected()));

@@ -31,7 +31,7 @@
 #include <kdeversion.h>
 
 // include files for KDE
-#if KDE_VERSION > 300
+#if TDE_VERSION > 300
 #include <kapplication.h>
 #else
 #include <kapp.h>
@@ -56,7 +56,7 @@
 #include <kedittoolbar.h>
 #include <twin.h>
 
-#if KDE_VERSION < 220
+#if TDE_VERSION < 220
 #include <tqprinter.h>
 #else
 #include <kprinter.h>
@@ -803,7 +803,7 @@ void KmagApp::slotFilePrint()
 
   bool toggled(false);
 
-#if KDE_VERSION < 220
+#if TDE_VERSION < 220
   TQPrinter printer;
 #else
   KPrinter printer;
@@ -817,7 +817,7 @@ void KmagApp::slotFilePrint()
 
   const TQPixmap pixmap(m_zoomView->getPixmap());
 
-#if KDE_VERSION >= 220
+#if TDE_VERSION >= 220
   // use some AI to get the best orientation
   if(pixmap.width() > pixmap.height()) {
     printer.setOrientation(KPrinter::Landscape);
