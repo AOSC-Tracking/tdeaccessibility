@@ -61,7 +61,7 @@ TalkerChooserConf::TalkerChooserConf( TQWidget *parent, const char *name, const 
     m_widget = new TalkerChooserConfWidget(this, "TalkerChooserConfigWidget");
     tqlayout->addWidget(m_widget);
 
-    // Determine if kdeutils Regular Expression Editor is installed.
+    // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
     m_widget->reEditorButton->setEnabled(m_reEditorInstalled);
 
@@ -204,7 +204,7 @@ void TalkerChooserConf::slotReEditorButton_clicked()
         KParts::ComponentFactory::createInstanceFromQuery<TQDialog>( "KRegExpEditor/KRegExpEditor" );
     if ( editorDialog )
     {
-        // kdeutils was installed, so the dialog was found.  Fetch the editor interface.
+        // tdeutils was installed, so the dialog was found.  Fetch the editor interface.
         KRegExpEditorInterface *reEditor =
             static_cast<KRegExpEditorInterface *>(editorDialog->qt_cast( "KRegExpEditorInterface" ) );
         Q_ASSERT( reEditor ); // This should not fail!// now use the editor.

@@ -68,7 +68,7 @@ SbdConf::SbdConf( TQWidget *parent, const char *name, const TQStringList& /*args
     m_widget = new SbdConfWidget(this, "SbdConfigWidget");
     tqlayout->addWidget(m_widget);
 
-    // Determine if kdeutils Regular Expression Editor is installed.
+    // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
 
     m_widget->reButton->setEnabled( m_reEditorInstalled );
@@ -214,7 +214,7 @@ void SbdConf::slotReButton_clicked()
             KParts::ComponentFactory::createInstanceFromQuery<TQDialog>( "KRegExpEditor/KRegExpEditor" );
     if ( editorDialog )
     {
-        // kdeutils was installed, so the dialog was found.  Fetch the editor interface.
+        // tdeutils was installed, so the dialog was found.  Fetch the editor interface.
         KRegExpEditorInterface *reEditor =
                 static_cast<KRegExpEditorInterface *>(editorDialog->qt_cast( "KRegExpEditorInterface" ) );
         Q_ASSERT( reEditor ); // This should not fail!// now use the editor.

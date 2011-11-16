@@ -99,7 +99,7 @@ StringReplacerConf::StringReplacerConf( TQWidget *parent, const char *name, cons
     connect(m_widget->appIdLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
         this, TQT_SLOT(configChanged()));
 
-    // Determine if kdeutils Regular Expression Editor is installed.
+    // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
 
     // Set up defaults.
@@ -655,7 +655,7 @@ void StringReplacerConf::slotRemoveButton_clicked()
 
 void StringReplacerConf::slotTypeButtonGroup_clicked()
 {
-    // Enable Regular Expression Editor button if editor is installed (requires kdeutils).
+    // Enable Regular Expression Editor button if editor is installed (requires tdeutils).
     if ( !m_editWidget ) return;
     m_editWidget->matchButton->setEnabled( m_editWidget->regexpRadioButton->isOn() &&  m_reEditorInstalled );
 }
@@ -670,7 +670,7 @@ void StringReplacerConf::slotMatchButton_clicked()
         KParts::ComponentFactory::createInstanceFromQuery<TQDialog>( "KRegExpEditor/KRegExpEditor" );
     if ( editorDialog )
     {
-        // kdeutils was installed, so the dialog was found.  Fetch the editor interface.
+        // tdeutils was installed, so the dialog was found.  Fetch the editor interface.
         KRegExpEditorInterface *reEditor =
             static_cast<KRegExpEditorInterface *>(editorDialog->qt_cast( "KRegExpEditorInterface" ) );
         Q_ASSERT( reEditor ); // This should not fail!// now use the editor.

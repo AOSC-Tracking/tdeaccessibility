@@ -150,7 +150,7 @@ class StringReplacerConf : public KttsFilterConf
         // Edit Dialog and widget.
         KDialogBase* m_editDlg;
         EditReplacementWidget* m_editWidget;
-        // True if kdeutils Regular Expression Editor is installed.
+        // True if tdeutils Regular Expression Editor is installed.
         bool m_reEditorInstalled;
         // Language Codes.
         TQStringList m_languageCodeList;

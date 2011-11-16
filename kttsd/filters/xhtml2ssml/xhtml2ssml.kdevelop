@@ -1,5 +1,5 @@
 <?xml version = '1.0'?>
-<kdevelop>
+<tdevelop>
   <general>
     <author>Paul Giannaros</author>
     <email>ceruleanblaze@gmail.com</email>
@@ -109,4 +109,4 @@
     <recursivewhencommitremove>true</recursivewhencommitremove>
     <revertoptions>-C</revertoptions>
   </kdevcvsservice>
-</kdevelop>
+</tdevelop>

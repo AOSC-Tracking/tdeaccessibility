@@ -131,7 +131,7 @@ class SbdConf : public KttsFilterConf
 
         // Configuration Widget.
         SbdConfWidget* m_widget;
-        // True if kdeutils Regular Expression Editor is installed.
+        // True if tdeutils Regular Expression Editor is installed.
         bool m_reEditorInstalled;
         // Language Code.
         TQStringList m_languageCodeList;

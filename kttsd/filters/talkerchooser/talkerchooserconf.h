@@ -126,7 +126,7 @@ class TalkerChooserConf : public KttsFilterConf
     private:
         // Configuration Widget.
         TalkerChooserConfWidget*    m_widget;
-        // True if kdeutils Regular Expression Editor is installed.
+        // True if tdeutils Regular Expression Editor is installed.
         bool                        m_reEditorInstalled;
         // User's chosen Talker Code.
         TalkerCode                  m_talkerCode;

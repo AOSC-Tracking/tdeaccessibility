@@ -26,7 +26,7 @@
 #include <tqregexp.h>
 
 // KDE includes.
-#include <kdeversion.h>
+#include <tdeversion.h>
 #include <kconfig.h>
 #include <ktempfile.h>
 #include <kstandarddirs.h>

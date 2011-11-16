@@ -29,7 +29,7 @@ fi
 
 set -x
 
-# libktts removed.  See kdeaccessibility/kttsd/kcmkttsmgr/Makefile.am
+# libktts removed.  See tdeaccessibility/kttsd/kcmkttsmgr/Makefile.am
 # for example how to build without it.
 # on or about 20 Dec 2004.
 $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/libktts
@@ -47,7 +47,7 @@ $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/kcm_kttsmgr
 rm -f $PREFIX/share/applnk/Settings/Accessibility/kcmkttsmgr.desktop
 rm -f $PREFIX/share/applications/kde/kcmkttsmgr.desktop
 
-# Renamed libkttsjobmgr to libkttsjobmgrpart per kdelibs/NAMING convention
+# Renamed libkttsjobmgr to libkttsjobmgrpart per tdelibs/NAMING convention
 # on or about 19 Oct 2004:
 
 $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/libkttsjobmgr

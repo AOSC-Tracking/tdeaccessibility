@@ -1,4 +1,4 @@
-## kdeaccessibility/icontheme/Makefile.am
+## tdeaccessibility/icontheme/Makefile.am
 ## (C) 1997-2001 Stephan Kulow
 ## (C) 2005 Gunnar Schmi Dt
 

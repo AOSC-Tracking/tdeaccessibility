@@ -28,7 +28,7 @@
 #include <tqtooltip.h>
 #include <tqpopupmenu.h>
 
-#include <kdeversion.h>
+#include <tdeversion.h>
 
 // include files for KDE
 #if TDE_VERSION > 300

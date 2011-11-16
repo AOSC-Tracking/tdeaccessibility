@@ -1,4 +1,4 @@
-# Allow build from within kdebase or kdeaccessibility.
+# Allow build from within tdebase or tdeaccessibility.
 INCLUDES    = \
 	-I$(top_srcdir)/kate/interfaces \
 	-I$(kde_includes)/kate \

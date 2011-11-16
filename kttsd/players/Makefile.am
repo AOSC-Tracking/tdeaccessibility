@@ -1,19 +1,19 @@
-#kdevelop: artsplayer_DIR = artsplayer
+#tdevelop: artsplayer_DIR = artsplayer
 if include_kttsd_artsplayer
     artsplayer_DIR = artsplayer
 endif
 
-#kdevelop: gstplayer_DIR = gstplayer
+#tdevelop: gstplayer_DIR = gstplayer
 if include_kttsd_gstplayer
     gstplayer_DIR = gstplayer
 endif
 
-#kdevelop: alsaplayer_DIR = alsaplayer
+#tdevelop: alsaplayer_DIR = alsaplayer
 if include_kttsd_alsaplayer
     alsaplayer_DIR = alsaplayer
 endif
 
-#kdevelop: akodeplayer_DIR = akodeplayer
+#tdevelop: akodeplayer_DIR = akodeplayer
 if include_kttsd_akodeplayer
     akodeplayer_DIR = akodeplayer
 endif

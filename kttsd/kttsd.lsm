@@ -6,7 +6,7 @@ Description:    KTTS -- KDE Text-to-Speech -- is a subsystem within the KDE
                 desktop for conversion of text to audible speech. KTTS is
                 currently under development and aims to become the standard
                 subsystem for all KDE applications to provide speech output.
-Keywords:       KDE accessibility kdeaccessibility TTS Text-to-Speech KTTSD
+Keywords:       KDE accessibility tdeaccessibility TTS Text-to-Speech KTTSD
                 kttsmgr festival flite hadifix MBROLA freetts epos SSML
 Author:         pupeno@pupeno.com (José Pablo Ezequiel Fernández)
                 garycramblitt@comcast.net (Gary Cramblitt)

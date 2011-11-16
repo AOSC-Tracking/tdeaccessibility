@@ -1,5 +1,5 @@
 /***************************************************** vim:set ts=4 sw=4 sts=4:
-  kdelibs < 3.3.2 had a bug in the KDE_EXPORT macro.  This file fixes this
+  tdelibs < 3.3.2 had a bug in the KDE_EXPORT macro.  This file fixes this
   by undefining it.
   -------------------
   Copyright : (C) 2005 by Gary Cramblitt <garycramblitt@comcast.net>
@@ -18,7 +18,7 @@
 #ifndef _KDEEXPORTFIX_H_
 #define _KDEEXPORTFIX_H_
 
-#include <kdeversion.h>
+#include <tdeversion.h>
 #if TDE_VERSION < KDE_MAKE_VERSION (3,3,2)
 #undef KDE_EXPORT
 #define KDE_EXPORT

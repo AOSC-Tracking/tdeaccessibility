@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY ktts "<application>KTTS</application>">
   <!ENTITY kappname "&ktts;">
-  <!ENTITY package "kdeaccessibility">
+  <!ENTITY package "tdeaccessibility">
   <!ENTITY mbrola "<application>MBROLA</application>">
   <!ENTITY % imageobjectco.module "INCLUDE">
   <!ENTITY % addindex "IGNORE">
@@ -110,7 +110,7 @@ Please at least include KDE, the KDE package it is in, the name
 <keywordset>
 <keyword>KDE</keyword>
 <keyword>accessibility</keyword>
-<keyword>kdeaccessibility</keyword>
+<keyword>tdeaccessibility</keyword>
 <keyword>TTS</keyword>
 <keyword>Text-to-Speech</keyword>
 <keyword>KTTSD</keyword>
@@ -1340,7 +1340,7 @@ of this handbook.  If you have the &kde; Regular Expression editor installed,
 there is a button available on the <guilabel>Add</guilabel> or
 <guilabel>Edit</guilabel> screens that will assist you at
 constructing regular expressions.  The &kde; Regular Expression Editor is part
-of the <command>kdeutils</command> package.</para>
+of the <command>tdeutils</command> package.</para>
 
 <para>&ktts; comes with a few word list files, including a list
 of emoticons, such as ":-)", some abbreviations typically used in IRC or
@@ -2082,7 +2082,7 @@ application -->
 &install.intro.documentation;
 </para>
 
-<para>(FUTURE) Debian Install Command: <command>apt-get install kdeaccessibility</command></para>
+<para>(FUTURE) Debian Install Command: <command>apt-get install tdeaccessibility</command></para>
 
 <note>
 <para>You will find links to source and binary packages
@@ -2090,9 +2090,9 @@ on the <ulink url="http://accessibility.kde.org/developer/kttsd/">
 &kde; Accessibility</ulink> web site (http://accessibility.kde.org).</para>
 
 <para>If you have access to the &kde; code repository, you can download &ktts;
-by checking out the <command>kdeaccessibility</command> module.  &ktts;
+by checking out the <command>tdeaccessibility</command> module.  &ktts;
 will be found in the <command>kttsd</command> folder.  You can also
-download tarballs of the kdeaccessibility source code from
+download tarballs of the tdeaccessibility source code from
 <ulink url="ftp://ftp.kde.org/pub/kde/">
 ftp://ftp.kde.org/pub/kde/</ulink></para>
 </note>
@@ -2246,7 +2246,7 @@ xsltproc with the command <command>apt-get install xsltproc</command>.</para>
 
 <para>In order to compile &ktts;, you must have a
 recent (&kde; 3.4 or greater) copy of the &kde; development files,
-including kdelibs and arts.</para>
+including tdelibs and arts.</para>
 
 <para>If you downloaded &ktts; as a tarball, log in
 as a normal user and untar the tarball to a suitable folder, 
@@ -2345,12 +2345,12 @@ make install
 </programlisting>
 
 <para>If you downloaded the &ktts; source from the
-<filename>kdeaccessibility</filename> code repository module, or downloaded the nightly
+<filename>tdeaccessibility</filename> code repository module, or downloaded the nightly
 tarball, use the following commands to compile and install.
 </para>
 
 <programlisting>
-cd kdeaccessibility
+cd tdeaccessibility
 echo kttsd>inst-apps
 make -f Makefile.cvs
 ./configure

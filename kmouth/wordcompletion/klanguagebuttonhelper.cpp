@@ -39,7 +39,7 @@ TQString languageName (TQString languageCode) {
 }
 
 void loadLanguageList(KLanguageButton *combo)
-// This function was taken from kdebase/kcontrol/kdm/kdm-appear.cpp
+// This function was taken from tdebase/kcontrol/kdm/kdm-appear.cpp
 {
   TQStringList langlist = KGlobal::dirs()->findAllResources("locale",
 			TQString::tqfromLatin1("*/entry.desktop"));

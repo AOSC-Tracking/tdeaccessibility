@@ -5,7 +5,7 @@ for KTTS:
 
 1.  There was a bug in aKode that prevents it from playing .wav files.  Carewolf
     applied a patch on 13 Jun 2005 to decoderpluginhandler.cpp for this,
-    so you may need to update your kdemultimedia modules.
+    so you may need to update your tdemultimedia modules.
 
 2.  aKode doesn't instantly stop when calling pause() or stop().
     See bug:107135.

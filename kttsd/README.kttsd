@@ -1,10 +1,10 @@
 Where is KTTSD?
 
 KTTSD was moved on 20 Dec 2004.
-Most of it has moved to kdeaccessibility/kttsd.
+Most of it has moved to tdeaccessibility/kttsd.
 The following pieces were also moved.
 
-kttsd/libktts -> kdelibs/interfaces/kspeech
-kttsd/app-plugins/khtml-plugin -> kdebase/konqueror/kttsplugin
-kttsd/app-plugins/kate-plugin -> kdebase/kate/plugins/ktts
-kttsd/app-plugins/katepart-plugin -> kdebase/kate/plugin/katepartktts
+kttsd/libktts -> tdelibs/interfaces/kspeech
+kttsd/app-plugins/khtml-plugin -> tdebase/konqueror/kttsplugin
+kttsd/app-plugins/kate-plugin -> tdebase/kate/plugins/ktts
+kttsd/app-plugins/katepart-plugin -> tdebase/kate/plugin/katepartktts

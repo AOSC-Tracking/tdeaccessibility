@@ -155,9 +155,9 @@
         * Change toolbar buttons on Jobs tab to push buttons so they can be used from keyboard.
           Clean up screen layout and add WhatsThis help.
         * Added sayText convenience method to kspeech.h, which combines setText and startText
-          into a single call.  Be sure to update kdelibs/interfaces/kspeech before attempting to
+          into a single call.  Be sure to update tdelibs/interfaces/kspeech before attempting to
           compile kttsd:
-            cd kdelibs/interfaces/kspeech
+            cd tdelibs/interfaces/kspeech
             cvs up
             make install
         * When starting or restoring KTTSMgr, defaults to Jobs tab if visible.
@@ -189,7 +189,7 @@
 
 2005-02-15  Gary Cramblitt (PhantomsDad)
         * Translations now working.
-        * Include a copy of kdelibs/interfaces/kspeech in compat/ dir.  This permits distribution
+        * Include a copy of tdelibs/interfaces/kspeech in compat/ dir.  This permits distribution
           and compilation of KTTS for KDE less than 3.4.
         * Support for Italian voices.  Download from
           http://www.csrf.pd.cnr.it/TTS/It-FESTIVAL-download.htm.
@@ -261,16 +261,16 @@
           GStreamer 0.8.0, which causes KTTSMgr to immediately crash on startup.
 
 2004-12-20  Gary Cramblitt (PhantomsDad)
-        * kdenonbeta/kttsd moved to kdeaccessibility/kttsd.
-        * kdenonbeta/kttsd/libktts moved to kdelibs/interfaces/kspeech.  libktts dropped.
-        * kdenonbeta/app-plugins/khtml-plugin moved to kdebase/konqueror/kttsplugin.
-        * kdenonbeta/app-plugins/kate-plugin moved to kdebase/kate/plugins/ktts.
-        * kdenonbeta/app-plugins/katepart-plugin moved to kdebase/kate/plugin/katepartktts.
+        * kdenonbeta/kttsd moved to tdeaccessibility/kttsd.
+        * kdenonbeta/kttsd/libktts moved to tdelibs/interfaces/kspeech.  libktts dropped.
+        * kdenonbeta/app-plugins/khtml-plugin moved to tdebase/konqueror/kttsplugin.
+        * kdenonbeta/app-plugins/kate-plugin moved to tdebase/kate/plugins/ktts.
+        * kdenonbeta/app-plugins/katepart-plugin moved to tdebase/kate/plugin/katepartktts.
 
 2004-12-19  Gary Cramblitt (PhantomsDad)
         * Change Festival voices from ini to xml format.  Permit translators to translate voice names.
         * Add "--enable-kttsd-gstreamer" option to configure, defaulting to no.
-          Warn packagers not to distribute gstreamer in binary packages of kdeaccessibility as it
+          Warn packagers not to distribute gstreamer in binary packages of tdeaccessibility as it
           creates unwanted dependencies.
 
 2004-12-18  Gary Cramblitt (PhantomsDad)
@@ -446,7 +446,7 @@
               libeposkttsdplugin     -> libkttsd_eposplugin
               libfreettsplugin     -> libkttsd_freettsplugin
 
-          Rename libkttsjobmgr to libkttsjobmgrpart per kdelibs/NAMING convention.
+          Rename libkttsjobmgr to libkttsjobmgrpart per tdelibs/NAMING convention.
 
           There is a new shell script, clean_obsolete.sh that will remove these
           obsolete files from your system.

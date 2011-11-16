@@ -326,12 +326,12 @@ modulename=`echo $modulename | sed -e 's#^.*/##'`
 
 remove="$remove $modulename.lsm"
 
-# we check out kde-i18n/subdirs in temp_dir/kde-i18n..
+# we check out tde-i18n/subdirs in temp_dir/tde-i18n..
 if [ $doi18n = "yes" ]; then
     pushd $temp_dir
-    echo "cvs co kde-i18n/subdirs" >> $log
-    cvs -z4 -q -d "$cvsroot" co $branch -P kde-i18n/subdirs > /dev/null 2>&1
-    i18nlangs_tmp="$(cat kde-i18n/subdirs)"
+    echo "cvs co tde-i18n/subdirs" >> $log
+    cvs -z4 -q -d "$cvsroot" co $branch -P tde-i18n/subdirs > /dev/null 2>&1
+    i18nlangs_tmp="$(cat tde-i18n/subdirs)"
     skiplist="`echo $noi18nlang | sed -e 's/,/ /g'`"
     skiplist="$skiplist $always_skip_languages"
     for lang in $i18nlangs_tmp; do
@@ -359,7 +359,7 @@ if [ -d $module/doc/$name ]; then
 	    pushd $temp_dir
 	    for lang in $i18nlangs; do
 		test -d $temp_dist/doc/$lang && rm -Rf $temp_dist/doc/$lang
-		docdirname="kde-i18n/$lang/docs/$modulename/$name"
+		docdirname="tde-i18n/$lang/docs/$modulename/$name"
 		echo "cvs co $docdirname" >> $log
 		cvs -z4 -q -d "$cvsroot" co $branch -P "$docdirname" > /dev/null 2>&1
 		if [ ! -d "$docdirname" ]; then
@@ -401,7 +401,7 @@ if [ $doi18n = "yes" ]; then
 	for lang in $i18nlangs; do
         dest=$temp_dist/po/$lang
         for poname in $pofilenames; do
-    		pofilename="kde-i18n/$lang/messages/$modulename/$poname.po";
+    		pofilename="tde-i18n/$lang/messages/$modulename/$poname.po";
     		echo "cvs co $pofilename" >> $log
     		cvs -z4 -q -d "$cvsroot" co $branch -P "$pofilename" > /dev/null 2>&1
     		if [ ! -f "$pofilename" ]; then

@@ -7,17 +7,17 @@
     qt3-dev-tools  3.3.3-4.1      Qt3 development tools
     qt3-doc        3.3.3-4.1      Qt3 API documentation
     kde            3.1.2          The K Desktop Environment
-    kdelibs4       3.2.3-2        KDE core libraries
-    kdelibs4-dev   3.2.3-2        KDE core libraries (development files)
-    kdelibs4-doc   3.2.3-2        KDE core library documentation    
+    tdelibs4       3.2.3-2        KDE core libraries
+    tdelibs4-dev   3.2.3-2        KDE core libraries (development files)
+    tdelibs4-doc   3.2.3-2        KDE core library documentation    
     kde-devel      3.1.2          The K Desktop Environment (development files
     kde-devel-extr 3.1.2-0.2      The K Desktop Environment (extra development
     exuberant-ctag 5.5.4-1        build tag file indexes of source code defini
     cdbs           0.4.26-1.1     common build system for Debian packages
 
 * Here's my build procedure (note that I'm using CDBS):
-    - cd kdeaccessibility/doc/kttsd && make distclean && cd kdeaccessibility/kttsd && make distclean
-    - cvs2dist kdeaccessibility kttsd --version 0.3.0
+    - cd tdeaccessibility/doc/kttsd && make distclean && cd tdeaccessibility/kttsd && make distclean
+    - cvs2dist tdeaccessibility kttsd --version 0.3.0
     - Copy resulting kttsd-0.3.0.tar.gz to a work folder and rename to kttsd_0.3.0.orig.tar.gz
       (Note underscore)
     - Unpack tarball

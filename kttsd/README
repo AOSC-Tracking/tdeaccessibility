@@ -27,7 +27,7 @@ text file or any portion of a file.
 
 khmtl-plugin
   A plugin for Konqueror that permits you to speak all or any portion of an
-HTML web page.  (Note: this component is in kdebase/konqueror/kttsplugin)
+HTML web page.  (Note: this component is in tdebase/konqueror/kttsplugin)
 
 Original Author: José Pablo Ezequiel "Pupeno" Fernández <pupeno@kde.org>
 Current Maintainer: Gary Cramblitt <garycramblitt@comcast.net>
@@ -122,7 +122,7 @@ not build" column shows the configure command to not build the plugin:
   FreeTTS        non-free  --disable-kttsd-freetts
 
 IMPORTANT NOTE TO BINARY PACKAGERS:
-Please do not distribute binary packages of kdeaccessibility with the
+Please do not distribute binary packages of tdeaccessibility with the
 gstreamer plugin, as this creates unwanted dependencies.  Instead,
 distribute the gstreamer plugin in a separate package, e.g.
 kde-accessibility-extras.  The separate package should require
@@ -162,5 +162,5 @@ kcmkttsmgr         A KControl module for managing KTTSD.  Run using "kcmshell kc
 kttsmgr            Application for managing KTTSD.  Wrapper for kcmkttsmgr plus a system tray icon.
 app-plugins        Plugins for other applications to speak text.
   kate               Embedded Kate plugin.
-compat             Copy of kdelibs/interfaces/kspeech.  Used when compiling for KDE less than 3.4.
+compat             Copy of tdelibs/interfaces/kspeech.  Used when compiling for KDE less than 3.4.
 debian             Debian packaging files. (possibly way out of date)

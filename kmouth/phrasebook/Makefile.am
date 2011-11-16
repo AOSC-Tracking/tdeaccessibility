@@ -1,4 +1,4 @@
-####### kdevelop will overwrite this part!!! (begin)##########
+####### tdevelop will overwrite this part!!! (begin)##########
 noinst_LIBRARIES = libphrasebook.a
 
 INCLUDES = $(all_includes)
@@ -10,7 +10,7 @@ libphrasebook_a_SOURCES = buttonboxui.ui phrasetree.cpp phrasebookparser.cpp phr
 
 EXTRA_DIST = phrasebook.cpp phrasebook.h phrasebookdialog.cpp phrasebookdialog.h phrasebookparser.cpp phrasebookparser.h phrasetree.cpp phrasetree.h phrasebookdialogui.rc buttonboxui.ui 
 
-####### kdevelop will overwrite this part!!! (end)############
+####### tdevelop will overwrite this part!!! (end)############
 
 rcdir = $(kde_datadir)/kmouth
 rc_DATA = phrasebookdialogui.rc

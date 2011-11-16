@@ -1,6 +1,6 @@
 bin_PROGRAMS = kmag
 
-## INCLUDES were found outside kdevelop specific part
+## INCLUDES were found outside tdevelop specific part
 
 kmag_SOURCES = kmagzoomview.cpp kmagselrect.cpp kmag.cpp main.cpp 
 kmag_LDADD   = $(LIB_TDEPRINT)

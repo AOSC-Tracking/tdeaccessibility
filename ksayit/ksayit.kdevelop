@@ -1,5 +1,5 @@
 <?xml version = '1.0'?>
-<kdevelop>
+<tdevelop>
   <general>
     <author>Robert Vogl</author>
     <email>voglrobe@web.de</email>
@@ -193,4 +193,4 @@
       <usermanualurl/>
     </projectdoc>
   </kdevdocumentation>
-</kdevelop>
+</tdevelop>

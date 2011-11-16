@@ -27,7 +27,7 @@
 #include <tqtextstream.h>
 
 // KDE includes.
-#include <kdeversion.h>
+#include <tdeversion.h>
 #include <kstandarddirs.h>
 #include <kprocess.h>
 #include <ktempfile.h>

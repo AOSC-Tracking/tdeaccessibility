@@ -37,7 +37,7 @@
 #include <kpopupmenu.h>
 #include <kaboutapplication.h>
 #include <dcopclient.h>
-#include <kdeversion.h>
+#include <tdeversion.h>
 
 // KTTSMgr includes.
 #include "kspeech.h"
