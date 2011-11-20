@@ -647,8 +647,8 @@
 <variables>
     <variable>TQMap&lt;TQString,int&gt; maleVoices;</variable>
     <variable>TQMap&lt;int,TQString&gt; defaultVoices;</variable>
-    <variable>QPixmap female;</variable>
-    <variable>QPixmap male;</variable>
+    <variable>TQPixmap female;</variable>
+    <variable>TQPixmap male;</variable>
     <variable>TQMap&lt;TQString,int&gt; femaleVoices;</variable>
 </variables>
 <Q_SIGNALS>
