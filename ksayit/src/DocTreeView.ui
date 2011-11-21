@@ -116,6 +116,9 @@
         <slot>slotRightButtonPressed(TQListViewItem*,const TQPoint&amp;,int)</slot>
     </connection>
 </connections>
+<forwards>
+    <forward>class TQListViewItem;</forward>
+</forwards>
 <includes>
     <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
 </includes>
