@@ -471,7 +471,7 @@ void FestivalIntConf::scanVoices()
         TQDomNodeList voices = voicesDoc.elementsByTagName("voice");
         uint voicesCount = voices.count();
         if (voicesCount == 0)
-            kdDebug() << "FestivalIntConf::scanVoices: Unable to open " << voicesFilename << ".  Is KDEDIR defined?" << endl;
+            kdDebug() << "FestivalIntConf::scanVoices: Unable to open " << voicesFilename << ".  Is TDEDIR defined?" << endl;
 
         // Iterate thru list of voice codes returned by Festival,
         // find matching entry in voices.xml file, and add to list of supported voices.

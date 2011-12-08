@@ -1563,7 +1563,7 @@ Player* Speaker::createPlayerObject()
             return createPlayerObject();
         }
         else
-            kdDebug() << "Speaker::createPlayerObject: Could not load aRts plugin.  Is KDEDIRS set  correctly?" << endl;
+            kdDebug() << "Speaker::createPlayerObject: Could not load aRts plugin.  Is TDEDIRS set  correctly?" << endl;
     } else
         // Must have GStreamer >= 0.8.7.  If not, use aRts.
         if (m_playerOption == 1)

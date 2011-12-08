@@ -1909,7 +1909,7 @@ window, then start <command>kttsmgr</command> in the second.</para>
 I installed it, and I can use it in Festival, but it does not show up in <command>kttsmgr</command>.</para>
 </question>
 <answer>
-<para>Edit file <command>$KDEHOME/share/apps/kttsd/festivalint/voices</command> to
+<para>Edit file <command>$TDEHOME/share/apps/kttsd/festivalint/voices</command> to
 add the new voice.  The other entries can be used as a guide.  If you
 successfully add a voice, please send a patch to the developers along
 with the &URL; from which you obtained the voice file.</para>
@@ -2323,7 +2323,7 @@ not build" column shows the configure command to not build the plugin:</para>
 
 <para>By default, the commands above will install &ktts; to
 <filename>/opt/trinity</filename>.  If this folder is not in your
-$<envar>KDEDIRS</envar> path, you may need to add a
+$<envar>TDEDIRS</envar> path, you may need to add a
 <userinput>--prefix=<replaceable>target</replaceable></userinput> option.
 For example,</para>
 

@@ -177,7 +177,7 @@ Player* TestPlayer::createPlayerObject(int playerOption)
     }
     if (player == 0)
         kdDebug() << "TestPlayer::createPlayerObject: Could not load " + plugInName +
-            ".  Is KDEDIRS set correctly?" << endl;
+            ".  Is TDEDIRS set correctly?" << endl;
     else
         // Must have GStreamer >= 0.8.7.
         if (playerOption == 1)

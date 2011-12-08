@@ -429,7 +429,7 @@
 2004-10-19  Gary Cramblitt (PhantomsDad)
         * The following installed files were renamed
           on or about 19 Oct 2004:
-            In $KDEDIR/share/services/:
+            In $TDEDIR/share/services/:
               festival.desktop         -> kttsd_festivalplugin.desktop
               festivalint.desktop   -> kttsd_festivalintplugin.desktop
               command.desktop     -> kttsd_commandplugin.desktop
@@ -437,7 +437,7 @@
               flite.desktop      -> kttsd_fliteplugin.desktop
               epos-kttsdplugin.desktop -> kttsd_eposplugin.desktop
               freetts.desktop     -> kttsd_freettsplugin.desktop
-           In $KDEDIR/lib/trinity/:
+           In $TDEDIR/lib/trinity/:
               libfestivalplugin        -> libkttsd_festivalplugin
               libfestivalintplugin   -> libkttsd_festivalintplugin
               libcommandplugin     -> libkttsd_commandplugin
@@ -458,7 +458,7 @@
 2004-10-13  Gary Cramblitt (PhantomsDad)
         * libktts is now a versioned shared library.  You may need to remove the
           unversioned library, ie.
-             rm $KDEDIR/lib/libktts.*
+             rm $TDEDIR/lib/libktts.*
 
 2004-10-13  Gary Cramblitt (PhantomsDad)
         * Revert previous change.  Sorry.
@@ -467,7 +467,7 @@
         * Remove versioning from libkttsd.
           NOTE: After rebuilding and installing, you will want to delete
                 the following file:
-                  $KDEDIR/lib/libkttsd.so.1.0.0
+                  $TDEDIR/lib/libkttsd.so.1.0.0
 
 2004-10-12  Gary Cramblitt (PhantomsDad)
         * Added Handbook.
@@ -482,9 +482,9 @@
         * Rename Hadifax to Hadifix.
           NOTE: After rebuilding and installing, you will want to delete the
                 following files:
-                  $KDEDIR/lib/trinity/libhadifaxplugin.la
-                  $KDEDIR/lib/trinity/libhadifaxplugin.so
-                  $KDEDIR/share/services/hadifax.desktop
+                  $TDEDIR/lib/trinity/libhadifaxplugin.la
+                  $TDEDIR/lib/trinity/libhadifaxplugin.so
+                  $TDEDIR/share/services/hadifax.desktop
 
 2004-09-02  Paul Giannaros
         * FreeTTS plugin.
@@ -504,7 +504,7 @@
         * Minor fixes to kttsjobmgrpart.
 
 2004-08-09  Gary Cramblitt (PhantomsDad)
-        * Remove requirement to copy pluginconf.h to $KDEDIR/include when running designer
+        * Remove requirement to copy pluginconf.h to $TDEDIR/include when running designer
           against plugin configuration widgets.
         * Epos plugin not listing codecs.
         * Some plugins listing codecs multiple times.

@@ -54,7 +54,7 @@ $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/libkttsjobmgr
 
 # The following installed files were renamed
 # on or about 19 Oct 2004:
-#  In $KDEDIR/share/services/:
+#  In $TDEDIR/share/services/:
 #    festival.desktop         -> kttsd_festivalplugin.desktop
 #    festivalint.desktop      -> kttsd_festivalintplugin.desktop
 #    command.desktop          -> kttsd_commandplugin.desktop
@@ -62,7 +62,7 @@ $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/libkttsjobmgr
 #    flite.desktop            -> kttsd_fliteplugin.desktop
 #    epos-kttsdplugin.desktop -> kttsd_eposplugin.desktop
 #    freetts.desktop          -> kttsd_freettsplugin.desktop
-#  In $KDEDIR/lib/trinity/:
+#  In $TDEDIR/lib/trinity/:
 #    libfestivalplugin        -> libkttsd_festivalplugin
 #    libfestivalintplugin     -> libkttsd_festivalintplugin
 #    libcommandplugin         -> libkttsd_commandplugin
