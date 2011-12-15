@@ -24,12 +24,12 @@ void VoiceFileWidget::genderButton_clicked()
     }
     else if (gender == HadifixProc::NoGender) {
        KMessageBox::sorry (this,
-                    i18n("The gender of the voice file %1 could not be detected.").tqarg(voiceFileURL->url()),
+                    i18n("The gender of the voice file %1 could not be detected.").arg(voiceFileURL->url()),
                     i18n("Trying to Determine the Gender - Hadifix Plug In"));
     }
     else {
        KMessageBox::detailedSorry (this,
-                    i18n("The file %1 does not seem to be a voice file.").tqarg(voiceFileURL->url()),
+                    i18n("The file %1 does not seem to be a voice file.").arg(voiceFileURL->url()),
                     details, i18n("Trying to Determine the Gender - Hadifix Plug In"));
     }
 }

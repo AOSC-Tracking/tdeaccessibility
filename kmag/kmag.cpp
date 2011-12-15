@@ -21,8 +21,8 @@
 #include <tqdir.h>
 #include <tqprinter.h>
 #include <tqpainter.h>
-#include <tqlayout.h>
-#include <tqclipboard.h>
+#include <layout.h>
+#include <clipboard.h>
 #include <tqdragobject.h>
 #include <tqwhatsthis.h>
 #include <tqtooltip.h>
@@ -247,7 +247,7 @@ void KmagApp::initActions()
 void KmagApp::initView()
 {
   m_zoomView = new KMagZoomView( this, "ZoomView" );
-  m_zoomView->tqsetSizePolicy( TQSizePolicy( (TQSizePolicy::SizeType)7, (TQSizePolicy::SizeType)7, m_zoomView->sizePolicy().hasHeightForWidth() ) );
+  m_zoomView->setSizePolicy( TQSizePolicy( (TQSizePolicy::SizeType)7, (TQSizePolicy::SizeType)7, m_zoomView->sizePolicy().hasHeightForWidth() ) );
   m_zoomView->setFrameShape( TQFrame::StyledPanel );
   m_zoomView->setFrameShadow( TQFrame::Raised );
 
@@ -550,7 +550,7 @@ void KmagApp::saveZoomPixmap()
   bool toggled(false);
 
   // stop refresh temporarily
-  if (m_zoomView->getRefreshtqStatus()) {
+  if (m_zoomView->getRefreshStatus()) {
     slotToggleRefresh();
     toggled = true;
   }
@@ -571,7 +571,7 @@ void KmagApp::saveZoomPixmap()
           KMessageBox::error(0, i18n("Unable to upload file over the network."),
                             i18n("Error Writing File"));
         } else {
-          KMessageBox::information(0, i18n("Current zoomed image saved to\n%1").tqarg(url.prettyURL()),
+          KMessageBox::information(0, i18n("Current zoomed image saved to\n%1").arg(url.prettyURL()),
                               i18n("Information"), "save_confirm");
         }
       }
@@ -583,7 +583,7 @@ void KmagApp::saveZoomPixmap()
         KMessageBox::error(0, i18n("Unable to save file. Please check if you have permission to write to the directory."),
                             i18n("Error Writing File"));
       } else {
-        KMessageBox::information(0, i18n("Current zoomed image saved to\n%1").tqarg(url.prettyURL()),
+        KMessageBox::information(0, i18n("Current zoomed image saved to\n%1").arg(url.prettyURL()),
                                 i18n("Information"), "save_confirm");
       }
     }
@@ -597,7 +597,7 @@ void KmagApp::saveZoomPixmap()
 void KmagApp::slotToggleRefresh()
 {
   m_zoomView->toggleRefresh();
-  if(m_zoomView->getRefreshtqStatus()) {
+  if(m_zoomView->getRefreshStatus()) {
     refreshSwitch->setIcon("stop.png");
     refreshSwitch->setText(i18n("Stop"));
     refreshSwitch->setToolTip(i18n("Click to stop window update"));
@@ -810,7 +810,7 @@ void KmagApp::slotFilePrint()
 #endif
 
   // stop refresh temporarily
-  if (m_zoomView->getRefreshtqStatus()) {
+  if (m_zoomView->getRefreshStatus()) {
     slotToggleRefresh();
     toggled = true;
   }
@@ -864,7 +864,7 @@ void KmagApp::slotFileQuit()
 
 void KmagApp::copyToClipBoard()
 {
-  TQClipboard *cb=KApplication::tqclipboard();
+  TQClipboard *cb=KApplication::clipboard();
   cb->setPixmap(m_zoomView->getPixmap());
 }
 

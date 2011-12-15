@@ -23,7 +23,7 @@
 #include <tqstringlist.h>
 #include <tqcombobox.h>
 #include <tqcolor.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqwidget.h>
 
 // KDE includes
@@ -88,7 +88,7 @@ void VoiceSetupDlg::initFXPage()
     connect( this, TQT_SIGNAL(signalReloadFX()), fxDialog, TQT_SLOT(slotReload()) );
     
     // Disable/enable FX-Setup depending on TTS-libs capability
-    int status = m_kttslib->gettqStatus() & TTS::AUDIOFILE;
+    int status = m_kttslib->getStatus() & TTS::AUDIOFILE;
     if ( status ){
         m_fxPage->setEnabled(true);
     } else {
@@ -105,7 +105,7 @@ void VoiceSetupDlg::slotPageChanged(TQWidget *page)
     if ( page != m_fxPage )
         return;
     
-    int status = m_kttslib->gettqStatus() & TTS::AUDIOFILE;
+    int status = m_kttslib->getStatus() & TTS::AUDIOFILE;
     if ( status ){
         m_fxPage->setEnabled(true);
     } else {
@@ -120,7 +120,7 @@ void VoiceSetupDlg::slotOk()
 {
     kdDebug(100200) << "+++ entering VoiceSetupDlg::slotOK()" << endl;
     
-    int status = m_kttslib->gettqStatus();
+    int status = m_kttslib->getStatus();
     if ( (status & TTS::AUDIOFILE) == 0 ){
         emit signalRemoveAllFX();
     }

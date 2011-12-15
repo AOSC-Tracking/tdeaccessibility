@@ -20,7 +20,7 @@
 #include <tqhbox.h>
 #include <tqlabel.h>
 #include <tqsplitter.h>
-#include <tqclipboard.h>
+#include <clipboard.h>
 #include <tqpushbutton.h>
 #include <tqobjectlist.h>
 #include <tqwhatsthis.h>
@@ -163,7 +163,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
     hbox3->setSpacing(6);
 
     // Do not let button box stretch vertically.
-    m_buttonBox->tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Expanding, TQSizePolicy::Fixed));
+    m_buttonBox->setSizePolicy(TQSizePolicy(TQSizePolicy::Expanding, TQSizePolicy::Fixed));
 
     // All the buttons with "job_" at start of their names will be enabled/disabled when a job is
     // selected in the Job List View.
@@ -274,7 +274,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
 
     // Create a label for current sentence.
     TQLabel* currentSentenceLabel = new TQLabel(sentenceVBox);
-    currentSentenceLabel->tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Preferred, TQSizePolicy::Fixed));
+    currentSentenceLabel->setSizePolicy(TQSizePolicy(TQSizePolicy::Preferred, TQSizePolicy::Fixed));
     currentSentenceLabel->setText(i18n("Current Sentence"));
 
     // Create a box to contain the current sentence.
@@ -506,7 +506,7 @@ void KttsJobMgrPart::slot_job_change_talker()
 void KttsJobMgrPart::slot_speak_clipboard()
 {
     // Get the clipboard object.
-    TQClipboard *cb = kapp->tqclipboard();
+    TQClipboard *cb = kapp->clipboard();
 
 
     // Copy text from the clipboard.
@@ -518,7 +518,7 @@ void KttsJobMgrPart::slot_speak_clipboard()
         {
             if (supportsMarkup(NULL, KSpeech::mtHtml))
             {
-                TQByteArray d = data->tqencodedData("text/html");
+                TQByteArray d = data->encodedData("text/html");
                 text = TQString(d);
             }
         }
@@ -526,7 +526,7 @@ void KttsJobMgrPart::slot_speak_clipboard()
         {
             if (supportsMarkup(NULL, KSpeech::mtSsml))
             {
-                TQByteArray d = data->tqencodedData("text/ssml");
+                TQByteArray d = data->encodedData("text/ssml");
                 text = TQString(d);
             }
         }

@@ -13,7 +13,7 @@
 #define DOCBOOKGENERATOR_H
 
 // TQt includes
-#include <tqtextstream.h>
+#include <textstream.h>
 
 // KDE includes
 

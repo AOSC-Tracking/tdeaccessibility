@@ -18,7 +18,7 @@
         </property>
         <widget class="TQLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>tqlayout1</cstring>
+                <cstring>layout1</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -141,7 +141,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>240</height>
@@ -152,7 +152,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout2</cstring>
+                <cstring>layout2</cstring>
             </property>
             <vbox>
                 <property name="name">

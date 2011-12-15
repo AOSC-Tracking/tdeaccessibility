@@ -27,8 +27,8 @@
 // TQt includes.
 #include <tqfile.h>
 #include <tqapplication.h>
-#include <tqtextcodec.h>
-#include <tqlayout.h>
+#include <textcodec.h>
+#include <layout.h>
 #include <tqslider.h>
 
 // KDE includes.
@@ -55,11 +55,11 @@ EposConf::EposConf( TQWidget* parent, const char* name, const TQStringList& /*ar
     m_eposProc = 0;
     m_progressDlg = 0;
 
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "EposConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new EposConfWidget(this, "EposConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     // Build codec list and fill combobox.
     m_codecList = PlugInProc::buildCodecList();
@@ -194,12 +194,12 @@ TQString EposConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(m_languageCode)
-                    .tqarg("fixed")
-                    .tqarg("neutral")
-                    .tqarg("medium")
-                    .tqarg(rate)
-                    .tqarg("Epos TTS Synthesis System");
+                    .arg(m_languageCode)
+                    .arg("fixed")
+                    .arg("neutral")
+                    .arg("medium")
+                    .arg(rate)
+                    .arg("Epos TTS Synthesis System");
         }
     }
     return TQString();

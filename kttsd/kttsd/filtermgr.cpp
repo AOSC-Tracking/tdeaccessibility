@@ -352,7 +352,7 @@ KttsFilterProc* FilterMgr::loadFilterPlugin(const TQString& desktopEntryName)
 
     // Find the plugin.
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
+        TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
     if (offers.count() == 1)
     {

@@ -132,12 +132,12 @@ void KLanguageButton::insertSubmenu( const TQString &text, const TQString &tag,
 void KLanguageButton::insertLanguage( const TQString& path, const TQString& name,
                         const TQString& sub, const TQString &submenu, int index )
 {
-  TQString output = name + TQString::tqfromLatin1( " (" ) + path +
-                   TQString::tqfromLatin1( ")" );
+  TQString output = name + TQString::fromLatin1( " (" ) + path +
+                   TQString::fromLatin1( ")" );
 #if 0
   // Nooooo ! Country != language
   TQPixmap flag( locate( "locale", sub + path +
-                TQString::tqfromLatin1( "/flag.png" ) ) );
+                TQString::fromLatin1( "/flag.png" ) ) );
 #endif
   insertItem( output, path, submenu, index );
 }
@@ -182,8 +182,8 @@ void KLanguageButton::clear()
 {
   if ( i < 0 || i >= count() )
     return;
-  TQString output = name + TQString::tqfromLatin1( " (" ) + tag( i ) +
-                   TQString::tqfromLatin1( ")" );
+  TQString output = name + TQString::fromLatin1( " (" ) + tag( i ) +
+                   TQString::fromLatin1( ")" );
   changeItem( output, i );
 }*/
 

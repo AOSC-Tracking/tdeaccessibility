@@ -25,7 +25,7 @@
 #include <math.h>
 
 // TQt includes.
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqlabel.h>
 #include <tqstring.h>
 #include <tqstringlist.h>
@@ -33,7 +33,7 @@
 #include <tqdir.h>
 #include <tqslider.h>
 #include <tqdom.h>
-#include <tqtextcodec.h>
+#include <textcodec.h>
 
 // KDE includes.
 #include <kdialog.h>
@@ -65,11 +65,11 @@ FestivalIntConf::FestivalIntConf( TQWidget* parent, const char* name, const TQSt
     m_progressDlg = 0;
     m_supportsSSML = FestivalIntProc::ssUnknown;
 
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FestivalIntConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new FestivalIntConfWidget(this, "FestivalIntConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     m_widget->festivalPath->setMode(KFile::File | KFile::ExistingOnly);
     m_widget->festivalPath->setFilter("*");
@@ -229,12 +229,12 @@ TQString FestivalIntConf::getTalkerCode()
             "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
             "<prosody volume=\"%4\" rate=\"%5\" />"
             "<kttsd synthesizer=\"%6\" />")
-            .tqarg(voiceTemp.languageCode)
-            .tqarg(voiceTemp.code)
-            .tqarg(voiceTemp.gender)
-            .tqarg(volume)
-            .tqarg(rate)
-            .tqarg("Festival Interactive");
+            .arg(voiceTemp.languageCode)
+            .arg(voiceTemp.code)
+            .arg(voiceTemp.gender)
+            .arg(volume)
+            .arg(rate)
+            .arg("Festival Interactive");
     return normalTalkerCode;
 }
 

@@ -107,7 +107,7 @@ int TalkerMgr::loadPlugIns(KConfig* config)
 
             // Find the KTTSD SynthPlugin.
             KTrader::OfferList offers = KTrader::self()->query(
-                "KTTSD/SynthPlugin", TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
+                "KTTSD/SynthPlugin", TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
             if(offers.count() > 1){
                 ++bad;
@@ -134,7 +134,7 @@ int TalkerMgr::loadPlugIns(KConfig* config)
                         } else {
                             // Synchronous plugins are run in a separate thread.
                             // Init will start the thread and it will immediately go to sleep.
-                            TQString threadedPlugInName = TQString::tqfromLatin1("threaded") + desktopEntryName;
+                            TQString threadedPlugInName = TQString::fromLatin1("threaded") + desktopEntryName;
                             ThreadedPlugIn* speechThread = new ThreadedPlugIn(speech,
                                     this, threadedPlugInName.latin1());
                             speechThread->init(config, "Talker_" + talkerCode);

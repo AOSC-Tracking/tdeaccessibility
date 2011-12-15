@@ -189,12 +189,12 @@ bool GStreamerPlayer::requireVersion(uint major, uint minor, uint micro)
     }
 
     gst_version(&gmajor, &gminor, &gmicro);
-    // kdDebug() << TQString("GStreamerPlayer::requireVersion: You have gstreamer %1.%2.%3 installed.").tqarg(gmajor).tqarg(gminor).tqarg(gmicro) << endl;
+    // kdDebug() << TQString("GStreamerPlayer::requireVersion: You have gstreamer %1.%2.%3 installed.").arg(gmajor).arg(gminor).arg(gmicro) << endl;
     if (gmajor > major) return true;
     if (gminor > minor) return true;
     if (gmicro >= micro) return true;
-    kdDebug() << TQString("GStreamerPlayer::requireVersion: You have gstreamer %1.%2.%3 installed.").tqarg(gmajor).tqarg(gminor).tqarg(gmicro) << endl;
-    kdDebug() << TQString("GStreamerPlayer::requireVersion: This application requires %1.%2.%3 or greater.").tqarg(major).tqarg(minor).tqarg(micro) << endl;
+    kdDebug() << TQString("GStreamerPlayer::requireVersion: You have gstreamer %1.%2.%3 installed.").arg(gmajor).arg(gminor).arg(gmicro) << endl;
+    kdDebug() << TQString("GStreamerPlayer::requireVersion: This application requires %1.%2.%3 or greater.").arg(major).arg(minor).arg(micro) << endl;
     return false;
 }
 

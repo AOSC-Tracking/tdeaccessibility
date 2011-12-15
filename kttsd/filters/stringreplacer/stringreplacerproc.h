@@ -27,7 +27,7 @@
 
 // TQt includes.
 #include <tqobject.h>
-#include <tqtextstream.h>
+#include <textstream.h>
 #include <tqvaluelist.h>
 #include <tqregexp.h>
 #include <tqstringlist.h>

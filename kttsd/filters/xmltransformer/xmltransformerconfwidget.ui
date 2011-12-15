@@ -22,7 +22,7 @@
         </property>
         <widget class="TQLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>tqlayout5</cstring>
+                <cstring>layout5</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -59,7 +59,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout6</cstring>
+                <cstring>layout6</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -72,7 +72,7 @@
                     <property name="text">
                         <string>&amp;Name:</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -90,7 +90,7 @@
                     <property name="text">
                         <string>&amp;XSLT file:</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -107,7 +107,7 @@
                     <property name="text">
                         <string>xsltproc &amp;executable:</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -135,7 +135,7 @@
                 </property>
                 <widget class="TQLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>tqlayout6</cstring>
+                        <cstring>layout6</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -169,7 +169,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>tqlayout5</cstring>
+                        <cstring>layout5</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -182,7 +182,7 @@
                             <property name="text">
                                 <string>&amp;Root element is:</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">
@@ -200,7 +200,7 @@
                             <property name="text">
                                 <string>or DOC&amp;TYPE is:</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">
@@ -217,7 +217,7 @@
                             <property name="text">
                                 <string>and Application &amp;ID contains:</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">

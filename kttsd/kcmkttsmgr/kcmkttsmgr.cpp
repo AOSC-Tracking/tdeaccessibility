@@ -28,7 +28,7 @@
 #include <tqtabwidget.h>
 #include <tqcheckbox.h>
 #include <tqvbox.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqradiobutton.h>
 #include <tqslider.h>
 #include <tqlabel.h>
@@ -119,10 +119,10 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     m_suppressConfigChanged = false;
 
     // Add the KTTS Manager widget
-    TQGridLayout *tqlayout = new TQGridLayout(this, 0, 0);
+    TQGridLayout *layout = new TQGridLayout(this, 0, 0);
     m_kttsmgrw = new KCMKttsMgrWidget(this, "kttsmgrw");
     // m_kttsmgrw = new KCMKttsMgrWidget(this);
-    tqlayout->addWidget(m_kttsmgrw, 0, 0);
+    layout->addWidget(m_kttsmgrw, 0, 0);
 
     // Give buttons icons.
     // Talkers tab.
@@ -1100,7 +1100,7 @@ PlugInConf* KCMKttsMgr::loadTalkerPlugin(const TQString& name)
 
     // Find the plugin.
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(name));
+        TQString("DesktopEntryName == '%1'").arg(name));
 
     if (offers.count() == 1)
     {
@@ -1144,7 +1144,7 @@ KttsFilterConf* KCMKttsMgr::loadFilterPlugin(const TQString& plugInName)
 
     // Find the plugin.
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(plugInName));
+        TQString("DesktopEntryName == '%1'").arg(plugInName));
 
     if (offers.count() == 1)
     {
@@ -2093,7 +2093,7 @@ void KCMKttsMgr::configureFilter()
         true,
         true);
     m_configDlg->setInitialSize(TQSize(600, 450), false);
-    m_loadedFilterPlugIn->setMinimumSize(m_loadedFilterPlugIn->tqminimumSizeHint());
+    m_loadedFilterPlugIn->setMinimumSize(m_loadedFilterPlugIn->minimumSizeHint());
     m_loadedFilterPlugIn->show();
     m_configDlg->setMainWidget(m_loadedFilterPlugIn);
     m_configDlg->setHelp("configure-filter", "kttsd");
@@ -2221,7 +2221,7 @@ TQString KCMKttsMgr::FilterDesktopEntryNameToName(const TQString& desktopEntryNa
 {
     if (desktopEntryName.isEmpty()) return TQString();
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
+        TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
     if (offers.count() == 1)
         return offers[0]->name();
@@ -2533,7 +2533,7 @@ TQListViewItem* KCMKttsMgr::addNotifyItem(
     else
     {
         if (event == "default")
-            eventName = i18n("All other %1 events").tqarg(eventSrcName);
+            eventName = i18n("All other %1 events").arg(eventSrcName);
         else
             eventName = NotifyEvent::getEventName(eventSrc, event);
     }

@@ -18,7 +18,7 @@
 
 #include "texttospeechsystem.h"
 #include <tqregexp.h>
-#include <tqtextcodec.h>
+#include <textcodec.h>
 #include <tqptrlist.h>
 #include <stdlib.h>
 

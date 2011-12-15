@@ -24,7 +24,7 @@
 // TQt includes.
 #include <tqstring.h>
 #include <tqhbox.h>
-#include <tqlayout.h>
+#include <layout.h>
 
 // KDE includes.
 #include <klocale.h>
@@ -55,11 +55,11 @@ TalkerChooserConf::TalkerChooserConf( TQWidget *parent, const char *name, const 
     // kdDebug() << "TalkerChooserConf::TalkerChooserConf: Running" << endl;
 
     // Create configuration widget.
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "TalkerChooserConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new TalkerChooserConfWidget(this, "TalkerChooserConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();

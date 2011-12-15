@@ -25,7 +25,7 @@
 #include <iostream>
 using namespace std;
 
-#include <tqtextstream.h>
+#include <textstream.h>
 
 #include <kdebug.h>
 #include <klocale.h>

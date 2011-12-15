@@ -21,7 +21,7 @@
 #include <tqvaluestack.h>
 #include <tqstringlist.h>
 #include <tqregexp.h>
-#include <tqtextcodec.h>
+#include <textcodec.h>
 #include <tqfile.h>
 #include <kdebug.h>
 
@@ -225,10 +225,10 @@ void Speech::speak(TQString command, bool stdIn, const TQString &text, const TQS
 }
 
 void Speech::receivedStdout (KProcess *, char *buffer, int buflen) {
-   kdDebug() << TQString::tqfromLatin1(buffer, buflen) + "\n";
+   kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
 void Speech::receivedStderr (KProcess *, char *buffer, int buflen) {
-   kdDebug() << TQString::tqfromLatin1(buffer, buflen) + "\n";
+   kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
 
 void Speech::wroteStdin(KProcess *) {

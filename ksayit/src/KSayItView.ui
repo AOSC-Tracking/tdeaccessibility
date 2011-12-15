@@ -23,7 +23,7 @@
             <property name="name">
                 <cstring>TextEdit</cstring>
             </property>
-            <property name="tqminimumSize">
+            <property name="minimumSize">
                 <size>
                     <width>400</width>
                     <height>200</height>

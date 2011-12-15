@@ -26,7 +26,7 @@
 #include <tqfileinfo.h>
 #include <tqstring.h>
 #include <tqhbox.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqcheckbox.h>
 #include <tqdom.h>
 #include <tqfile.h>
@@ -67,11 +67,11 @@ StringReplacerConf::StringReplacerConf( TQWidget *parent, const char *name, cons
     // kdDebug() << "StringReplacerConf::StringReplacerConf: Running" << endl;
 
     // Create configuration widget.
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "StringReplacerConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new StringReplacerConfWidget(this, "StringReplacerConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
     m_widget->substLView->setSortColumn(-1);
 
     connect(m_widget->nameLineEdit, TQT_SIGNAL(textChanged(const TQString&)),

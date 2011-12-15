@@ -20,9 +20,9 @@
 
 // TQt includes.
 #include <tqcstring.h>
-#include <tqclipboard.h>
-#include <tqtextstream.h>
-#include <tqtextcodec.h>
+#include <clipboard.h>
+#include <textstream.h>
+#include <textcodec.h>
 #include <tqfile.h>
 
 // KDE includes.
@@ -790,7 +790,7 @@ uint KTTSD::moveRelTextSentence(const int n, const uint jobNum /*=0*/)
 void KTTSD::speakClipboard()
 {
     // Get the clipboard object.
-    TQClipboard *cb = kapp->tqclipboard();
+    TQClipboard *cb = kapp->clipboard();
 
     // Copy text from the clipboard.
     TQString text = cb->text();

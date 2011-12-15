@@ -17,7 +17,7 @@
 
 
 #include "configwizard.h"
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqlabel.h>
 #include <klistview.h>
 #include <klocale.h>

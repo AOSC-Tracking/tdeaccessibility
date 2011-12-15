@@ -39,7 +39,7 @@
 #include <tqsound.h>
 #include <kglobalsettings.h>
 #include <kdebug.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqlineedit.h>
 #include <tqcheckbox.h>
 #include <ksystemtray.h>

@@ -22,7 +22,7 @@
  ******************************************************************************/
 
 // TQt includes.
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqfile.h>
 #include <tqapplication.h>
 
@@ -49,11 +49,11 @@ FliteConf::FliteConf( TQWidget* parent, const char* name, const TQStringList& /*
     m_fliteProc = 0;
     m_progressDlg = 0;
     
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FliteConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new FliteConfWidget(this, "FliteConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
     
     defaults();
     
@@ -115,12 +115,12 @@ TQString FliteConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(m_languageCode)
-                    .tqarg("fixed")
-                    .tqarg("neutral")
-                    .tqarg("medium")
-                    .tqarg("medium")
-                    .tqarg("Festival Lite (flite)");
+                    .arg(m_languageCode)
+                    .arg("fixed")
+                    .arg("neutral")
+                    .arg("medium")
+                    .arg("medium")
+                    .arg("Festival Lite (flite)");
         }
     }
     return TQString();

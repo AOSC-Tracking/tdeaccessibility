@@ -179,7 +179,7 @@ void KbStateApplet::updateMenu()
 
 void calculateSizes (int space, int modifiers, int lockkeys, int accessx,
 							bool showMouse, int &lines, int &length, int &size)
-// Calculates the tqlayout based on a given number of modifiers, lockkeys and
+// Calculates the layout based on a given number of modifiers, lockkeys and
 // accessx features.
 // Output:
 // lines:  number of lines
@@ -281,17 +281,17 @@ void KbStateApplet::toggleFillSpace() {
 	fillSpace = !fillSpace;
 	saveConfig();
 	updateMenu();
-	tqlayout();
+	layout();
 	updateGeometry();
 	emit updateLayout();
 }
 
 void KbStateApplet::resizeEvent( TQResizeEvent*e ) {
    TQWidget::resizeEvent(e);
-   tqlayout();
+   layout();
 }
 
-void KbStateApplet::tqlayout() {
+void KbStateApplet::layout() {
 	int size = this->size;
 
    int lines, length, x,y,dx,dy, ldx,ldy;
@@ -608,7 +608,7 @@ bool KbStateApplet::x11Event (XEvent *evt) {
 				else
 					mouse->setActiveKey (0);
 
-				tqlayout();
+				layout();
 				updateGeometry();
 				emit updateLayout();
 				break;
@@ -660,7 +660,7 @@ void KbStateApplet::stateChangeRequest (KeyIcon *source, bool latched, bool lock
 void KbStateApplet::toggleModifier() {
    showModifiers = !showModifiers;
    updateMenu();
-   tqlayout();
+   layout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -669,7 +669,7 @@ void KbStateApplet::toggleModifier() {
 void KbStateApplet::toggleLockkeys() {
    showLockkeys = !showLockkeys;
    updateMenu();
-   tqlayout();
+   layout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -678,7 +678,7 @@ void KbStateApplet::toggleLockkeys() {
 void KbStateApplet::toggleMouse() {
    showMouse = !showMouse;
    updateMenu();
-   tqlayout();
+   layout();
    updateGeometry();
    saveConfig();
    emit updateLayout();
@@ -687,7 +687,7 @@ void KbStateApplet::toggleMouse() {
 void KbStateApplet::toggleAccessX() {
 	showAccessX = !showAccessX;
 	updateMenu();
-	tqlayout();
+	layout();
 	updateGeometry();
 	saveConfig();
 	emit updateLayout();
@@ -810,7 +810,7 @@ void KeyIcon::drawButton (TQPainter *p) {
    int y = (height()-locked.height())/2;
    int o = 0;
    if (isLocked || isLatched) {
-      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), true, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), true, 1, NULL);
       p->fillRect (1,1,width()-2,height()-2, KGlobalSettings::highlightColor());
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x+1,y+1, latched);
@@ -818,7 +818,7 @@ void KeyIcon::drawButton (TQPainter *p) {
       o = 1;
    }
    else {
-      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), false, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), false, 1, NULL);
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x,y, unlatched);
       black = KGlobalSettings::textColor();
@@ -1068,12 +1068,12 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 
 StatusIcon::StatusIcon (const TQString &text, TQWidget *parent, const char *name)
  : TQPushButton (text, parent, name) {
-   tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
+   setSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
 }
 
 StatusIcon::~StatusIcon () {
 }
 
-TQSize StatusIcon::tqminimumSizeHint () const {
+TQSize StatusIcon::minimumSizeHint () const {
    return TQSize (0,0);
 }

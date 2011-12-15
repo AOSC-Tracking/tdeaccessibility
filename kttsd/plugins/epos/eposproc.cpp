@@ -28,7 +28,7 @@
 // TQt includes.
 #include <tqstring.h>
 #include <tqstringlist.h>
-#include <tqtextcodec.h>
+#include <textcodec.h>
 #include <tqfile.h>
 
 // KDE includes.
@@ -210,7 +210,7 @@ void EposProc::synth(
     *m_eposProc << eposClientExePath;
     // Language.
     if (!eposLanguage.isEmpty())
-        *m_eposProc << TQString("--language=%1").tqarg(eposLanguage);
+        *m_eposProc << TQString("--language=%1").arg(eposLanguage);
     // Rate (speed).
     // Map 50% to 200% onto 0 to 1000.
     // slider = alpha * (log(percent)-log(50))
@@ -221,10 +221,10 @@ void EposProc::synth(
     slider = slider - 500;
     // Map -500 to 500 onto 45 to -45 then shift to 130 to 40 (85 midpoint).
     float stretchValue = (-float(slider) * 45.0 / 500.0) + 85.0;
-    TQString timeMsg = TQString("--init_t=%1").tqarg(stretchValue, 0, 'f', 3);
+    TQString timeMsg = TQString("--init_t=%1").arg(stretchValue, 0, 'f', 3);
     *m_eposProc << timeMsg;
     // Pitch.  Map 50% to 200% onto 50 to 200.  easy.
-    TQString pitchMsg = TQString("--init_f=%1").tqarg(pitch);
+    TQString pitchMsg = TQString("--init_f=%1").arg(pitch);
     *m_eposProc << pitchMsg;
     // Output file.
     if (!suggestedFilename.isEmpty()) 
@@ -326,13 +326,13 @@ void EposProc::slotProcessExited(KProcess*)
 
 void EposProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStdout: Received output from Epos: " << buf << endl;
 }
 
 void EposProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStderr: Received error from Epos: " << buf << endl;
 }
 
