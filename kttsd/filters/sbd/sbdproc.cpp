@@ -306,7 +306,7 @@ TQString SbdThread::endSentence()
     return s;
 }
 
-// Parses a node of the SSML tree and recursively parses its children.
+// Parses a node of the SSML tree and recursively parses its tqchildren.
 // Returns the filtered text with each sentence a complete ssml tree.
 TQString SbdThread::parseSsmlNode( TQDomNode& n, const TQString& re )
 {
@@ -441,7 +441,7 @@ TQString SbdThread::parseSsml( const TQString& inputText, const TQString& re )
     // This flag is used to close out a previous sentence.
     m_sentenceStarted = false;
 
-    // Get the root element (speak) and recursively process its children.
+    // Get the root element (speak) and recursively process its tqchildren.
     TQDomElement docElem = doc.documentElement();
     TQDomNode n = docElem.firstChild();
     TQString ssml = parseSsmlNode( docElem, re );

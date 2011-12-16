@@ -1316,7 +1316,7 @@ uttIterator Speaker::deleteUtterance(uttIterator it)
                 TQCString jobStr;
                 jobStr.sprintf("%08i", it->sentence->jobNum);
                 TQString dest = m_speechData->keepAudioPath + "/kttsd-" +
-                    TQString("%1-%2").arg(jobStr.data()).arg(seqStr.data()) + ".wav";
+                    TQString("%1-%2").tqarg(jobStr.data()).tqarg(seqStr.data()) + ".wav";
                 TQFile::remove(dest);
                 TQDir d;
                 d.rename(it->audioUrl, dest);
@@ -1541,7 +1541,7 @@ Player* Speaker::createPlayerObject()
             }
     }
     KTrader::OfferList offers = KTrader::self()->query(
-            "KTTSD/AudioPlugin", TQString("DesktopEntryName == '%1'").arg(plugInName));
+            "KTTSD/AudioPlugin", TQString("DesktopEntryName == '%1'").tqarg(plugInName));
 
     if(offers.count() == 1)
     {

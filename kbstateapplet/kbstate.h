@@ -40,7 +40,7 @@ public:
    StatusIcon (const TQString &text, TQWidget *parent, const char *name=0);
    ~StatusIcon ();
 
-   TQSize minimumSizeHint () const;
+   TQSize tqminimumSizeHint () const;
 };
 typedef TQPtrList<StatusIcon> IconList;
 
@@ -170,7 +170,7 @@ private slots:
 private:
    void loadConfig();
    void saveConfig();
-   void layout();
+   void tqlayout();
    
    int xkb_base_event_type;
 

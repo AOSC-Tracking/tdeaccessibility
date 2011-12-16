@@ -373,13 +373,13 @@ void XmlTransformerProc::slotProcessExited(KProcess*)
 
 void XmlTransformerProc::slotReceivedStdout(KProcess*, char* /*buffer*/, int /*buflen*/)
 {
-    // TQString buf = TQString::fromLatin1(buffer, buflen);
+    // TQString buf = TQString::tqfromLatin1(buffer, buflen);
     // kdDebug() << "XmlTransformerProc::slotReceivedStdout: Received from xsltproc: " << buf << endl;
 }
 
 void XmlTransformerProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::fromLatin1(buffer, buflen);
+    TQString buf = TQString::tqfromLatin1(buffer, buflen);
     kdDebug() << "XmlTransformerProc::slotReceivedStderr: Received error from xsltproc: " << buf << endl;
 }
 

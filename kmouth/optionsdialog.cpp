@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <tqwhatsthis.h>
 #include <tqgrid.h>
@@ -125,11 +125,11 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
    tabCtl = new TQTabWidget (pageGeneral, "general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
-   behaviourWidget->layout()->setMargin(KDialog::marginHint());
+   behaviourWidget->tqlayout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (behaviourWidget, i18n("&Preferences"));
    
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
-   commandWidget->layout()->setMargin(KDialog::marginHint());
+   commandWidget->tqlayout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    TQPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);

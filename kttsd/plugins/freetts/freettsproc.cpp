@@ -206,12 +206,12 @@ void FreeTTSProc::slotProcessExited(KProcess*) {
 }
 
 void FreeTTSProc::slotReceivedStdout(KProcess*, char* buffer, int buflen) {
-	TQString buf = TQString::fromLatin1(buffer, buflen);
+	TQString buf = TQString::tqfromLatin1(buffer, buflen);
 	kdDebug() << "FreeTTSProc::slotReceivedStdout: Received output from FreeTTS: " << buf << endl;
 }
 
 void FreeTTSProc::slotReceivedStderr(KProcess*, char* buffer, int buflen) {
-	TQString buf = TQString::fromLatin1(buffer, buflen);
+	TQString buf = TQString::tqfromLatin1(buffer, buflen);
 	kdDebug() << "FreeTTSProc::slotReceivedStderr: Received error from FreeTTS: " << buf << endl;
 }
 

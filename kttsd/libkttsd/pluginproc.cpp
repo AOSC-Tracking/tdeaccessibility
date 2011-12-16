@@ -17,7 +17,7 @@
 
 // TQt includes. 
 #include <tqstring.h>
-#include <textcodec.h>
+#include <tqtextcodec.h>
 
 // KDE includes.
 #include <kdebug.h>

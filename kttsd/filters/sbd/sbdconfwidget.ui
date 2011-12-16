@@ -35,7 +35,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="1" column="0">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>tqlayout3</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -48,7 +48,7 @@
                     <property name="text">
                         <string>&amp;Name:</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -74,7 +74,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>layout17</cstring>
+                <cstring>tqlayout17</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -87,7 +87,7 @@
                     <property name="text">
                         <string>&amp;Sentence boundary regular expression:</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -118,7 +118,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>layout17_2</cstring>
+                <cstring>tqlayout17_2</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -131,7 +131,7 @@
                     <property name="text">
                         <string>&amp;Replacement sentence boundary:</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                     <property name="buddy" stdset="0">
@@ -168,7 +168,7 @@
                 </property>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout11</cstring>
+                        <cstring>tqlayout11</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -181,7 +181,7 @@
                             <property name="text">
                                 <string>&amp;Language is:</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">
@@ -199,7 +199,7 @@
                             <property name="text">
                                 <string>Application &amp;ID contains:</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">
@@ -213,7 +213,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>layout13</cstring>
+                        <cstring>tqlayout13</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -221,7 +221,7 @@
                         </property>
                         <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout12</cstring>
+                                <cstring>tqlayout12</cstring>
                             </property>
                             <hbox>
                                 <property name="name">
@@ -265,7 +265,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="5" column="0">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">

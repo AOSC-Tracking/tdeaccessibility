@@ -148,14 +148,14 @@ KttsToolTip::KttsToolTip ( TQWidget* parent ) : TQToolTip(parent)
 
     KttsMgrTray* kttsMgrTray = dynamic_cast<KttsMgrTray*>(parentWidget());
 
-    TQRect r(kttsMgrTray->geometry());
+    TQRect r(kttsMgrTray->tqgeometry());
     if ( !r.isValid() )
         return;
 
     TQString status = "<qt><b>KTTSMgr</b> - ";
     status += i18n("<qt>Text-to-Speech Manager");
     status += "<br/><br/>";
-    status += kttsMgrTray->getStatus();
+    status += kttsMgrTray->gettqStatus();
     status += "</qt>";
 
     tip(r, status);
@@ -257,7 +257,7 @@ TQString KttsMgrTray::stateToStr(int state)
     }
 }
 
-TQString KttsMgrTray::getStatus()
+TQString KttsMgrTray::gettqStatus()
 {
     if (!isKttsdRunning()) return i18n("Text-to-Speech System is not running");
     uint jobCount = getTextJobCount();
@@ -273,7 +273,7 @@ TQString KttsMgrTray::getStatus()
             int sentenceCount = getTextCount(job);
             uint seq = moveRelTextSentence(0, job);
             status += i18n(", current job %1 at sentence %2 of %3 sentences"
-                ).arg(stateToStr(jobState)).arg(seq).arg(sentenceCount);
+                ).tqarg(stateToStr(jobState)).tqarg(seq).tqarg(sentenceCount);
         }
     }
     return status;

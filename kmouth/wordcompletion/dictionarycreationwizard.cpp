@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <tqcheckbox.h>
 #include <tqradiobutton.h>
 #include <tqlineedit.h>
 #include <tqcombobox.h>
-#include <textcodec.h>
+#include <tqtextcodec.h>
 #include <tqwhatsthis.h>
 
 #include <klistview.h>
@@ -221,7 +221,7 @@ TQString DictionaryCreationWizard::createDictionary() {
    TQString dictionaryFile;
    do {
       dictnumber++;
-      filename = TQString("wordcompletion%1.dict").arg(dictnumber);
+      filename = TQString("wordcompletion%1.dict").tqarg(dictnumber);
       dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
@@ -283,10 +283,10 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
 
    TQWidget *contents = new TQWidget(viewport());
    addChild(contents);
-   TQGridLayout *layout = new TQGridLayout (contents);
+   TQGridLayout *tqlayout = new TQGridLayout (contents);
    setResizePolicy (TQScrollView::AutoOneFit);
-   layout->setColStretch (0, 0);
-   layout->setColStretch (1, 1);
+   tqlayout->setColStretch (0, 0);
+   tqlayout->setColStretch (1, 1);
 
    int row = 0;
    TQStringList::Iterator nIt = dictionaryNames.begin();
@@ -295,8 +295,8 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
       TQCheckBox *checkbox = new TQCheckBox(*nIt, contents);
       KIntNumInput *numInput = new KIntNumInput(contents);
-      layout->addWidget (checkbox, row, 0);
-      layout->addWidget (numInput, row, 1);
+      tqlayout->addWidget (checkbox, row, 0);
+      tqlayout->addWidget (numInput, row, 1);
       
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);

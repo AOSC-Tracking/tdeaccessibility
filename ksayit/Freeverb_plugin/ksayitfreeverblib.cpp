@@ -11,7 +11,7 @@
 //
 
 // QT includes
-// #include <textcodec.h>
+// #include <tqtextcodec.h>
 #include <tqstringlist.h>
 
 // KDE includes

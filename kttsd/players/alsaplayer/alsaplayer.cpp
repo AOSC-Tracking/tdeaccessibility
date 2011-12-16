@@ -432,10 +432,10 @@ TQStringList AlsaPlayer::getPluginList( const TQCString& /*classname*/ )
                 infoName += snd_pcm_info_get_name(pcminfo);
                 infoName += ")";
                 if (0 == devCnt) {
-                    TQString pcmName = TQString("default:%1").arg(card);
+                    TQString pcmName = TQString("default:%1").tqarg(card);
                     result.append(pcmName + infoName);
                 }
-                TQString pcmName = TQString("plughw:%1,%2").arg(card).arg(device);
+                TQString pcmName = TQString("plughw:%1,%2").tqarg(card).tqarg(device);
                 result.append(pcmName + infoName);
             }
             snd_ctl_close(handle);
@@ -1496,7 +1496,7 @@ void AlsaPlayer::header(int /*rtype*/, const char* /*name*/)
     else if (hwdata.channels == 2)
         channels = "Stereo";
     else
-        channels = TQString("Channels %1").arg(hwdata.channels);
+        channels = TQString("Channels %1").tqarg(hwdata.channels);
     DBG("Format: %s, Rate %d Hz, %s",
         snd_pcm_format_description(hwdata.format),
         hwdata.rate,

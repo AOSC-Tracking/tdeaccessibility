@@ -470,7 +470,7 @@
                         </widget>
                         <widget class="TQLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
                             <property name="name">
-                                <cstring>layout5</cstring>
+                                <cstring>tqlayout5</cstring>
                             </property>
                             <hbox>
                                 <property name="name">
@@ -525,7 +525,7 @@
                     <property name="sizeType">
                         <enum>Preferred</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>240</width>
                             <height>20</height>

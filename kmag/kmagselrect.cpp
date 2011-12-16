@@ -184,19 +184,19 @@ void KMagSelRect::hide()
 void KMagSelRect::update()
 {
   // make sure the selection window does not go outside of the display
-  if (height() > TQApplication::desktop()->geometry().height())
-    setHeight (TQApplication::desktop()->geometry().height());
-  if (width() > TQApplication::desktop()->geometry().width())
-    setWidth (TQApplication::desktop()->geometry().width());
+  if (height() > TQApplication::desktop()->tqgeometry().height())
+    setHeight (TQApplication::desktop()->tqgeometry().height());
+  if (width() > TQApplication::desktop()->tqgeometry().width())
+    setWidth (TQApplication::desktop()->tqgeometry().width());
 
   if (top() < 0)
     moveTop (0);
   if (left() < 0)
     moveLeft (0);
-  if (bottom() > TQApplication::desktop()->geometry().bottom())
-    moveBottom (TQApplication::desktop()->geometry().bottom());
-  if (right() > TQApplication::desktop()->geometry().right())
-    moveRight (TQApplication::desktop()->geometry().right());
+  if (bottom() > TQApplication::desktop()->tqgeometry().bottom())
+    moveBottom (TQApplication::desktop()->tqgeometry().bottom());
+  if (right() > TQApplication::desktop()->tqgeometry().right())
+    moveRight (TQApplication::desktop()->tqgeometry().right());
 
   if (selectionwindow != 0)
     selectionwindow->setSelRect (TQRect (topLeft(), bottomRight()));

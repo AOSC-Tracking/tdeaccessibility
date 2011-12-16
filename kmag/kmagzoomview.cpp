@@ -80,22 +80,22 @@ static uchar phand_bits[] = {
 
 
 static bool obscuredRegion (TQRegion &region, Window winId, Window ignoreId, Window start = 0, int level = -1) {
-  Window root, parent, *children; uint nchildren;
+  Window root, parent, *tqchildren; uint ntqchildren;
   if (0 == start)
     start = qt_xrootwin();
 
   bool winIdFound = false;
-  if (0 != XQueryTree (qt_xdisplay(), start, &root, &parent, &children, &nchildren)) {
-    for (uint i=0; i < nchildren; ++i) {
+  if (0 != XQueryTree (qt_xdisplay(), start, &root, &parent, &tqchildren, &ntqchildren)) {
+    for (uint i=0; i < ntqchildren; ++i) {
       if (winIdFound) {
-        if (ignoreId != children [i]) {
+        if (ignoreId != tqchildren [i]) {
           XWindowAttributes atts;
-          XGetWindowAttributes (qt_xdisplay(), children [i], &atts);
+          XGetWindowAttributes (qt_xdisplay(), tqchildren [i], &atts);
           if (atts.map_state == IsViewable)
             region -= TQRegion (atts.x, atts.y, atts.width, atts.height, TQRegion::Rectangle);
         }
       }
-      else if (winId == children [i])
+      else if (winId == tqchildren [i])
         winIdFound = true;
 
       // According to tests, my own window ID is either on toplevel or two levels below.
@@ -103,15 +103,15 @@ static bool obscuredRegion (TQRegion &region, Window winId, Window ignoreId, Win
       // then to five recursion levels, and make a full recursive search only if that
       // was unsuccessful.
       else if (level > 1)
-        winIdFound = obscuredRegion (region, winId, ignoreId, children [i], level-1);
+        winIdFound = obscuredRegion (region, winId, ignoreId, tqchildren [i], level-1);
       else if (level == -1)
-        if (! (winIdFound = obscuredRegion (region, winId, ignoreId, children [i], 0)))
-          if (! (winIdFound = obscuredRegion (region, winId, ignoreId, children [i], 1)))
-            winIdFound = obscuredRegion (region, winId, ignoreId, children [i], -1);
+        if (! (winIdFound = obscuredRegion (region, winId, ignoreId, tqchildren [i], 0)))
+          if (! (winIdFound = obscuredRegion (region, winId, ignoreId, tqchildren [i], 1)))
+            winIdFound = obscuredRegion (region, winId, ignoreId, tqchildren [i], -1);
     }
 
-    if (children != NULL)
-      XFree (children);
+    if (tqchildren != NULL)
+      XFree (tqchildren);
   }
 
   return winIdFound;
@@ -255,7 +255,7 @@ void KMagZoomView::drawContents ( TQPainter * p, int clipx, int clipy, int clipw
   if (m_invert) {
     TQImage zoomedImage;
     zoomedImage = zoomedPixmap.convertToImage();
-    zoomedImage.invertPixels (false);
+    zoomedImage.tqinvertPixels (false);
     p->drawImage (TQPoint (clipx-contentsX(), clipy-contentsY()), zoomedImage, zoomedImage.rect(),
                   TQt::ThresholdDither | TQt::ThresholdAlphaDither | TQt::AvoidDither);
   } else {
@@ -493,7 +493,7 @@ void KMagZoomView::mouseReleaseEvent(TQMouseEvent *e)
       // set the mouse mode to normal
       m_mouseMode = Normal;
 
-      // restore the cursor shape
+      // restore the cursor tqshape
       setCursor(arrowCursor);
 
       // restore the cursor position
@@ -504,7 +504,7 @@ void KMagZoomView::mouseReleaseEvent(TQMouseEvent *e)
       // set the mouse mode to normal
       m_mouseMode = Normal;
 
-      // restore the cursor shape
+      // restore the cursor tqshape
       setCursor(arrowCursor);
 
       // restore the cursor position
@@ -516,7 +516,7 @@ void KMagZoomView::mouseReleaseEvent(TQMouseEvent *e)
       // set the mouse mode to normal
       m_mouseMode = Normal;
 
-      // restore the cursor shape
+      // restore the cursor tqshape
       setCursor(arrowCursor);
     }    
     break;
@@ -706,7 +706,7 @@ void KMagZoomView::fitToWindow()
   m_selRect.moveCenter(currCenter);
   m_selRect.update();
 
-  viewport()->repaint(false);
+  viewport()->tqrepaint(false);
 }
 
 void KMagZoomView::setFitToWindow(bool fit)
@@ -751,18 +751,18 @@ void KMagZoomView::grabFrame()
   intersection &= TQRegion (selRect, TQRegion::Rectangle);
 
   // We don't want to overpaint other windows that happen to be on top
-  obscuredRegion (intersection, topLevelWidget()->winId(), m_selRect.winId());
+  obscuredRegion (intersection, tqtopLevelWidget()->winId(), m_selRect.winId());
   intersection.translate (-selRect.x(), -selRect.y());
 
   TQPainter painter (&m_grabbedPixmap, true);
-  TQMemArray<TQRect> rects (intersection.rects());
+  TQMemArray<TQRect> rects (intersection.tqrects());
   for (uint i = 0; i < rects.size(); i++)
     painter.fillRect (rects[i], TQBrush (TQColor (128, 128, 128)));
 
-  // call repaint to display the newly grabbed image
+  // call tqrepaint to display the newly grabbed image
   TQRect newSize = m_zoomMatrix.mapRect (m_grabbedPixmap.rect());
   resizeContents (newSize.width(), newSize.height());
-  viewport()->repaint(false);
+  viewport()->tqrepaint(false);
 }
 
 
@@ -775,7 +775,7 @@ void KMagZoomView::updateMouseView()
   if(m_selRect.left() <= pos.x() && pos.x() <= m_selRect.right() &&
      m_selRect.top() <= pos.y() && pos.y() <= m_selRect.bottom() &&
      m_refreshSwitch)
-    viewport()->repaint(false);
+    viewport()->tqrepaint(false);
 }
 
 /**
@@ -801,7 +801,7 @@ void KMagZoomView::setZoom(float zoom)
 {
   m_zoom = zoom;
   updateMatrix();
-  viewport()->repaint();
+  viewport()->tqrepaint();
 }
 
 /**
@@ -811,7 +811,7 @@ void KMagZoomView::setRotation(int rotation)
 {
   m_rotation = rotation;
   updateMatrix();
-  viewport()->repaint();
+  viewport()->tqrepaint();
 }
 
 /**
@@ -820,7 +820,7 @@ void KMagZoomView::setRotation(int rotation)
 void KMagZoomView::setInvertation(bool invert)
 {
   m_invert = invert;
-  viewport()->repaint();
+  viewport()->tqrepaint();
 }
 
 /**

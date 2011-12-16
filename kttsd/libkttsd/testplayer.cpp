@@ -162,7 +162,7 @@ Player* TestPlayer::createPlayerObject(int playerOption)
         }
     }
     KTrader::OfferList offers = KTrader::self()->query(
-            "KTTSD/AudioPlugin", TQString("DesktopEntryName == '%1'").arg(plugInName));
+            "KTTSD/AudioPlugin", TQString("DesktopEntryName == '%1'").tqarg(plugInName));
 
     if(offers.count() == 1)
     {

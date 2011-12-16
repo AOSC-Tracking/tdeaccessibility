@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <tqcheckbox.h>
 #include <tqlineedit.h>
@@ -71,11 +71,11 @@ public:
 
    void setLanguage (TQString languageCode) {
       TQString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + TQString::fromLatin1("/entry.desktop"));
+			languageCode + TQString::tqfromLatin1("/entry.desktop"));
 
       KSimpleConfig entry(filename);
-      entry.setGroup(TQString::fromLatin1("KCM Locale"));
-      TQString name = entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
+      entry.setGroup(TQString::tqfromLatin1("KCM Locale"));
+      TQString name = entry.readEntry(TQString::tqfromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ")", languageCode);
    }
 
@@ -136,7 +136,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         languageTag);
          if (!languageButton->containsTag(languageTag))
-            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
+            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
       }
 
    // Clean up disc space
@@ -159,7 +159,7 @@ void WordCompletionWidget::save() {
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
-         config->setGroup(TQString("Dictionary %1").arg(number));
+         config->setGroup(TQString("Dictionary %1").tqarg(number));
          config->writeEntry ("Filename", item->filename());
          config->writeEntry ("Name",     item->text (0));
          config->writeEntry ("Language", item->languageCode());
@@ -200,7 +200,7 @@ void WordCompletionWidget::addDictionary() {
       newDictionaryFiles += filename;
       TQString languageTag = wizard->language();
       if (!languageButton->containsTag(languageTag)) {
-         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
+         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
       }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
@@ -251,8 +251,8 @@ void WordCompletionWidget::exportDictionary() {
          return;
 
       if (KIO::NetAccess::exists(url, false, this)) {
-         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").tqarg(i18n("The file %1 already exists. "
+                                                          "Do you want to overwrite it?").tqarg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
          }
       }

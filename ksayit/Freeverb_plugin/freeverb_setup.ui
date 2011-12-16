@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>360</width>
             <height>300</height>
@@ -38,7 +38,7 @@
         </property>
         <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -56,7 +56,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -79,7 +79,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Room&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -161,7 +161,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -184,7 +184,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Damp&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -260,7 +260,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -283,7 +283,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Wet&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -359,7 +359,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -382,7 +382,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Dry&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -458,7 +458,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>260</height>
@@ -481,7 +481,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Width&lt;/b&gt;</string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -571,7 +571,7 @@
         </widget>
         <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout12</cstring>
+                <cstring>tqlayout12</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -587,7 +587,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>180</width>
                             <height>20</height>
@@ -598,7 +598,7 @@
                     <property name="name">
                         <cstring>OK_Button</cstring>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>60</width>
                             <height>0</height>

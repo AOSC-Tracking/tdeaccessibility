@@ -18,10 +18,10 @@
 // include files for TQt
 #include <tqprinter.h>
 #include <tqpainter.h>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqwhatsthis.h>
 #include <tqpopupmenu.h>
-#include <clipboard.h>
+#include <tqclipboard.h>
 
 // include files for KDE
 #include <klistbox.h>
@@ -48,16 +48,16 @@
 PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
-   TQVBoxLayout *layout = new TQVBoxLayout (this);
+   TQVBoxLayout *tqlayout = new TQVBoxLayout (this);
 
    listBox = new KListBox (this);
    listBox->setFocusPolicy(TQ_NoFocus);
    listBox->setSelectionMode (TQListBox::Extended);
    TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
-   layout->addWidget(listBox);
+   tqlayout->addWidget(listBox);
 
    TQHBoxLayout *rowLayout = new TQHBoxLayout ();
-   layout->addLayout(rowLayout);
+   tqlayout->addLayout(rowLayout);
 
    completion = new WordCompletion();
 
@@ -271,7 +271,7 @@ void PhraseList::cutListSelection () {
 }
 
 void PhraseList::copyListSelection () {
-   TQApplication::clipboard()->setText (getListSelection().join ("\n"));
+   TQApplication::tqclipboard()->setText (getListSelection().join ("\n"));
 }
 
 void PhraseList::lineEntered (const TQString &phrase) {
@@ -446,7 +446,7 @@ void PhraseList::save () {
 
    KURL url;
    if (book.save (this, i18n("Save As"), url, false) == -1)
-      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").tqarg( url.url() ));
 }
 
 void PhraseList::open () {
@@ -472,7 +472,7 @@ void PhraseList::open (KURL url) {
          insertIntoPhraseList (*it, false);
    }
    else
-      KMessageBox::sorry(this,i18n("There was an error loading file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error loading file\n%1").tqarg( url.url() ));
 }
 
 #include "phraselist.moc"

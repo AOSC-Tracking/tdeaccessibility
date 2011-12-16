@@ -24,7 +24,7 @@
 #include <tqstringlist.h>
 #include <tqdom.h>
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 
 // KDE includes.
 #include <tdeversion.h>

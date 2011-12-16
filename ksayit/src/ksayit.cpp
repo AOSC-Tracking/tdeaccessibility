@@ -92,7 +92,7 @@ KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
             TQT_TQOBJECT(this), TQT_SLOT(slotPreferences()) );
     
     // init Clipboard
-    cb = TQApplication::clipboard();
+    cb = TQApplication::tqclipboard();
     connect(cb, TQT_SIGNAL(dataChanged()), TQT_TQOBJECT(this), TQT_SLOT(slotClipboardChanged()) );
     
     // create SystemTray object
@@ -293,7 +293,7 @@ void KSayItApp::slotChangeBookmarkFilename(const TQString &newname)
     // copy old bookmarkfile to new file
     if ( m_currentBookmarkFile != newbkFile ){
         if ( TQFile::exists(m_currentBookmarkFile) ){
-            TQString command = TQString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);
+            TQString command = TQString("cp %1 %2").tqarg(m_currentBookmarkFile).tqarg(newbkFile);
             system( command.ascii() );
         }
         // install new BookmarkHandler based on the new file
@@ -322,12 +322,12 @@ void KSayItApp::initView()
 { 
   // create the main widget
   view = new KSayItViewImpl(this);
-  view->setMinimumSize(view->sizeHint());
+  view->setMinimumSize(view->tqsizeHint());
   setCentralWidget(view);
   // connections
   connect( view, TQT_SIGNAL(signalEnableCopyCut(bool)),
     TQT_TQOBJECT(this), TQT_SLOT(slotEnableCopyCut(bool)));
-  connect( view, TQT_SIGNAL(signalShowStatus(const TQString &)),
+  connect( view, TQT_SIGNAL(signalShowtqStatus(const TQString &)),
     TQT_TQOBJECT(this), TQT_SLOT(slotStatusMsg(const TQString &)));
   connect( view, TQT_SIGNAL(signalSetCaption(const TQString &)),
     TQT_TQOBJECT(this), TQT_SLOT(slotSetCaption(const TQString &)));
@@ -813,7 +813,7 @@ void KSayItApp::setActions(int actions)
     
     // Get the mask of supported actions from the plugin.
     int mask = m_kttslib->getActions();
-    kdDebug(100200) << TQString("KSayItApp:PSA: %1").arg(mask, 0, 2) << endl;
+    kdDebug(100200) << TQString("KSayItApp:PSA: %1").tqarg(mask, 0, 2) << endl;
     
     // disable actions not supported by the plugin
     int ma = actions & mask;

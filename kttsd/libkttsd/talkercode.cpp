@@ -507,7 +507,7 @@ void TalkerCode::parseTalkerCode(const TQString &talkerCode)
 {
     if (desktopEntryName.isEmpty()) return TQString();
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin",
-    TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
+    TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
 
     if (offers.count() == 1)
         return offers[0]->name();

@@ -28,7 +28,7 @@
 #include <tqstring.h>
 #include <tqstringlist.h>
 #include <tqthread.h>
-#include <textcodec.h>
+#include <tqtextcodec.h>
 
 // KDE includes.
 #include <kdebug.h>
@@ -268,11 +268,11 @@ void FestivalIntProc::synth(
             slider = slider - 500;
             // Map -500 to 500 onto 0.15 to -0.15.
             float stretchValue = -float(slider) * 0.15 / 500.0;
-            timeMsg = TQString("(set! hts_duration_stretch %1)").arg(
+            timeMsg = TQString("(set! hts_duration_stretch %1)").tqarg(
                     stretchValue, 0, 'f', 3);
         }
         else
-            timeMsg = TQString("(Parameter.set 'Duration_Stretch %1)").arg(
+            timeMsg = TQString("(Parameter.set 'Duration_Stretch %1)").tqarg(
                 1.0/(float(time)/100.0), 0, 'f', 2);
         sendToFestival(timeMsg);
         m_runningTime = time;
@@ -292,7 +292,7 @@ void FestivalIntProc::synth(
         }
         TQString pitchMsg = TQString(
             "(set! int_lr_params '((target_f0_mean %1) (target_f0_std 14)"
-            "(model_f0_mean 170) (model_f0_std 34)))").arg(pitchValue, 0, 10);
+            "(model_f0_mean 170) (model_f0_std 34)))").tqarg(pitchValue, 0, 10);
         sendToFestival(pitchMsg);
         m_runningPitch = pitch;
     }
@@ -500,7 +500,7 @@ void FestivalIntProc::slotProcessExited(KProcess*)
 
 void FestivalIntProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::fromLatin1(buffer, buflen);
+    TQString buf = TQString::tqfromLatin1(buffer, buflen);
     // kdDebug() << "FestivalIntProc::slotReceivedStdout: Received from Festival: " << buf << endl;
     bool promptSeen = (buf.contains("festival>") > 0);
     bool emitQueryVoicesFinished = false;
@@ -569,7 +569,7 @@ void FestivalIntProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 
 void FestivalIntProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::fromLatin1(buffer, buflen);
+    TQString buf = TQString::tqfromLatin1(buffer, buflen);
     kdDebug() << "FestivalIntProc::slotReceivedStderr: Received error from Festival: " << buf << endl;
 }
 

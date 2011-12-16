@@ -157,7 +157,7 @@ public:
    virtual void setBook (PhraseBook *book);
 
    const char *format (int i) const;
-   virtual TQByteArray encodedData (const char *) const;
+   virtual TQByteArray tqencodedData (const char *) const;
 
    static bool canDecode (const TQMimeSource *e);
    static bool decode (const TQMimeSource *e, PhraseBook *book);

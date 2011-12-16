@@ -16,11 +16,11 @@
  ***************************************************************************/
 
 // TQt includes.
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqcheckbox.h>
 #include <tqfile.h>
 #include <tqapplication.h>
-#include <textcodec.h>
+#include <tqtextcodec.h>
 
 // KDE includes.
 #include <kdialog.h>
@@ -48,11 +48,11 @@ CommandConf::CommandConf( TQWidget* parent, const char* name, const TQStringList
     m_commandProc = 0;
     m_progressDlg = 0;
 
-    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "CommandConfigWidgetLayout");
-    layout->setAlignment (TQt::AlignTop);
+    tqlayout->tqsetAlignment (TQt::AlignTop);
     m_widget = new CommandConfWidget(this, "CommandConfigWidget");
-    layout->addWidget(m_widget);
+    tqlayout->addWidget(m_widget);
 
     // Build codec list and fill combobox.
     m_codecList = PlugInProc::buildCodecList();
@@ -127,12 +127,12 @@ TQString CommandConf::getTalkerCode()
                 "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                 "<prosody volume=\"%4\" rate=\"%5\" />"
                 "<kttsd synthesizer=\"%6\" />")
-                .arg(m_languageCode)
-                .arg("fixed")
-                .arg("neutral")
-                .arg("medium")
-                .arg("medium")
-                .arg("Command");
+                .tqarg(m_languageCode)
+                .tqarg("fixed")
+                .tqarg("neutral")
+                .tqarg("medium")
+                .tqarg("medium")
+                .tqarg("Command");
         }
     }
     return TQString();

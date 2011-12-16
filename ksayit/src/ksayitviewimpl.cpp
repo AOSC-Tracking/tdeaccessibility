@@ -21,7 +21,7 @@ using namespace std;
 
  // QT includes 
 #include <tqradiobutton.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <tqstring.h>
 
 // KDE includes

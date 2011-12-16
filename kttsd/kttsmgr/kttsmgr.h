@@ -55,7 +55,7 @@ class KttsMgrTray: public KSystemTray, public KSpeech_stub, virtual public KSpee
         ~KttsMgrTray();
 
         void setExitWhenFinishedSpeaking();
-        TQString getStatus();
+        TQString gettqStatus();
 
     protected:
         // ASYNC textStarted(const TQCString& appId, uint jobNum);

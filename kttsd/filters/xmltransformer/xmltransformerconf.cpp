@@ -23,7 +23,7 @@
 
 // TQt includes.
 #include <tqstring.h>
-#include <layout.h>
+#include <tqlayout.h>
 
 // KDE includes.
 #include <klocale.h>
@@ -49,11 +49,11 @@ XmlTransformerConf::XmlTransformerConf( TQWidget *parent, const char *name, cons
     // kdDebug() << "XmlTransformerConf::XmlTransformerConf: Running" << endl;
 
     // Create configuration widget.
-    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "XmlTransformerConfWidgetLayout");
-    layout->setAlignment (TQt::AlignTop);
+    tqlayout->tqsetAlignment (TQt::AlignTop);
     m_widget = new XmlTransformerConfWidget(this, "XmlTransformerConfigWidget");
-    layout->addWidget(m_widget);
+    tqlayout->addWidget(m_widget);
 
     // Set up defaults.
     defaults();

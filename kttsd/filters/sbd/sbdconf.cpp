@@ -26,7 +26,7 @@
 #include <tqfileinfo.h>
 #include <tqstring.h>
 #include <tqhbox.h>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqdom.h>
 #include <tqfile.h>
 #include <tqradiobutton.h>
@@ -62,11 +62,11 @@ SbdConf::SbdConf( TQWidget *parent, const char *name, const TQStringList& /*args
     // kdDebug() << "SbdConf::SbdConf: Running" << endl;
 
     // Create configuration widget.
-    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "SbdConfigWidgetLayout");
-    layout->setAlignment (TQt::AlignTop);
+    tqlayout->tqsetAlignment (TQt::AlignTop);
     m_widget = new SbdConfWidget(this, "SbdConfigWidget");
-    layout->addWidget(m_widget);
+    tqlayout->addWidget(m_widget);
 
     // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();

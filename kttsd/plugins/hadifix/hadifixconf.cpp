@@ -15,7 +15,7 @@
  ***************************************************************************/
 
 // TQt includes. 
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <tqgroupbox.h>
 #include <tqstring.h>
@@ -92,15 +92,15 @@ class HadifixConfPrivate {
             TQString name = TQFileInfo(*it).fileName();
             gender = HadifixProc::determineGender(defaultMbrolaExec, *it);
             if (gender == HadifixProc::MaleGender)
-                configWidget->addVoice(*it, true, i18n("Male voice \"%1\"").arg(name));
+                configWidget->addVoice(*it, true, i18n("Male voice \"%1\"").tqarg(name));
             else if (gender == HadifixProc::FemaleGender)
-                configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").arg(name));
+                configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").tqarg(name));
             else {
                if (name == "de1")
-                   configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").arg(name));
+                   configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").tqarg(name));
                else {
-                   configWidget->addVoice(*it, true,  i18n("Unknown voice \"%1\"").arg(name));
-                   configWidget->addVoice(*it, false, i18n("Unknown voice \"%1\"").arg(name));
+                   configWidget->addVoice(*it, true,  i18n("Unknown voice \"%1\"").tqarg(name));
+                   configWidget->addVoice(*it, false, i18n("Unknown voice \"%1\"").tqarg(name));
                }
             }
          }
@@ -206,8 +206,8 @@ class HadifixConfPrivate {
 HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList &) : 
    PlugInConf( parent, name ){
    // kdDebug() << "HadifixConf::HadifixConf: Running" << endl;
-   TQVBoxLayout *layout = new TQVBoxLayout (this, KDialog::marginHint(), KDialog::spacingHint(), "CommandConfigWidgetLayout");
-   layout->setAlignment (TQt::AlignTop); 
+   TQVBoxLayout *tqlayout = new TQVBoxLayout (this, KDialog::marginHint(), KDialog::spacingHint(), "CommandConfigWidgetLayout");
+   tqlayout->tqsetAlignment (TQt::AlignTop); 
 
    d = new HadifixConfPrivate();
    d->configWidget = new HadifixConfigUI (this, "configWidget");
@@ -224,7 +224,7 @@ HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList
    d->initializeCharacterCodes();
    d->initializeVoices();
    d->setDefaults();
-   layout->addWidget (d->configWidget);
+   tqlayout->addWidget (d->configWidget);
 }
 
 /** Destructor */
@@ -284,12 +284,12 @@ TQString HadifixConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .arg(d->languageCode)
-                    .arg(voiceCode)
-                    .arg(gender)
-                    .arg(volume)
-                    .arg(rate)
-                    .arg("Hadifix");
+                    .tqarg(d->languageCode)
+                    .tqarg(voiceCode)
+                    .tqarg(gender)
+                    .tqarg(volume)
+                    .tqarg(rate)
+                    .tqarg("Hadifix");
         }
     }
     return TQString();

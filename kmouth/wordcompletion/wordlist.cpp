@@ -228,7 +228,7 @@ WordMap parseFiles (TQStringList files, TQTextStream::Encoding encoding, TQTextC
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         tqApp->processEvents (20);
+         tqApp->tqprocessEvents (20);
       }
    }
    return map;
@@ -237,7 +237,7 @@ WordMap parseFiles (TQStringList files, TQTextStream::Encoding encoding, TQTextC
 WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Merging dictionaries..."));
    pdlg->show();
-   tqApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    int progress = 0;
    int steps = files.count();
@@ -269,7 +269,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         tqApp->processEvents (20);
+         tqApp->tqprocessEvents (20);
       }
    }
    
@@ -290,7 +290,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
 WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing the KDE documentation..."));
    pdlg->show();
-   tqApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
@@ -304,7 +304,7 @@ WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg) {
 WordMap parseFile (TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing file..."));
    pdlg->show();
-   tqApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList files = filename;
 
@@ -314,7 +314,7 @@ WordMap parseFile (TQString filename, TQTextStream::Encoding encoding, TQTextCod
 WordMap parseDir (TQString directory, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing directory..."));
    pdlg->show();
-   tqApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList directories;
    directories += directory;
@@ -504,7 +504,7 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
       pdlg->setLabel (i18n("Performing spell check..."));
       pdlg->progressBar()->setTotalSteps(100);
       pdlg->progressBar()->setProgress(0);
-      tqApp->processEvents (20);
+      tqApp->tqprocessEvents (20);
       int progress = 0;
       int steps = 0;
       int percent = 0;
@@ -535,7 +535,7 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
                pdlg->progressBar()->setProgress(percent);
-               tqApp->processEvents (20);
+               tqApp->tqprocessEvents (20);
             }
          }
       }

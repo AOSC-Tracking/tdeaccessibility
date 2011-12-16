@@ -11,7 +11,7 @@
 //
 // TQt includes
 #include <tqwidget.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <tqpixmap.h>
 #include <tqregexp.h>
 #include <tqstringlist.h>

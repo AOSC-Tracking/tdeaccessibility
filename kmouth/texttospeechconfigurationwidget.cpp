@@ -18,9 +18,9 @@
 
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
-#include <textcodec.h>
+#include <tqtextcodec.h>
 #include <tqptrlist.h>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqwhatsthis.h>
 #include <kcombobox.h>
 #include <klocale.h>

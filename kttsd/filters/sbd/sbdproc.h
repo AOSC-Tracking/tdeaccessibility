@@ -204,7 +204,7 @@ class SbdThread: public TQObject, public TQThread
         TQString startSentence();
         // Ends a sentence and appends a Tab.
         TQString endSentence();
-        // Parses a node of the SSML tree and recursively parses its children.
+        // Parses a node of the SSML tree and recursively parses its tqchildren.
         // Returns the filtered text with each sentence a complete ssml tree.
         TQString parseSsmlNode( TQDomNode& n, const TQString& re );
 
