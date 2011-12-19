@@ -345,7 +345,7 @@
                                     <property name="text">
                                         <string>Epos server executable path:</string>
                                     </property>
-                                    <property name="tqalignment">
+                                    <property name="alignment">
                                         <set>AlignVCenter</set>
                                     </property>
                                     <property name="buddy" stdset="0">
@@ -370,7 +370,7 @@
                                     <property name="text">
                                         <string>Epos client executable path:</string>
                                     </property>
-                                    <property name="tqalignment">
+                                    <property name="alignment">
                                         <set>AlignVCenter</set>
                                     </property>
                                     <property name="buddy" stdset="0">
@@ -500,7 +500,7 @@
                                             <property name="text">
                                                 <string>Epos server:</string>
                                             </property>
-                                            <property name="tqalignment">
+                                            <property name="alignment">
                                                 <set>AlignVCenter|AlignLeft</set>
                                             </property>
                                             <property name="buddy" stdset="0">
@@ -525,7 +525,7 @@
                                             <property name="text">
                                                 <string>Epos client:</string>
                                             </property>
-                                            <property name="tqalignment">
+                                            <property name="alignment">
                                                 <set>AlignVCenter|AlignLeft</set>
                                             </property>
                                             <property name="buddy" stdset="0">

@@ -108,7 +108,7 @@
                             <property name="textFormat">
                                 <enum>AutoText</enum>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">

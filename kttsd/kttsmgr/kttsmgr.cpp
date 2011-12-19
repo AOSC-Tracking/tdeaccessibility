@@ -148,7 +148,7 @@ KttsToolTip::KttsToolTip ( TQWidget* parent ) : TQToolTip(parent)
 
     KttsMgrTray* kttsMgrTray = dynamic_cast<KttsMgrTray*>(parentWidget());
 
-    TQRect r(kttsMgrTray->tqgeometry());
+    TQRect r(kttsMgrTray->geometry());
     if ( !r.isValid() )
         return;
 
@@ -273,7 +273,7 @@ TQString KttsMgrTray::getStatus()
             int sentenceCount = getTextCount(job);
             uint seq = moveRelTextSentence(0, job);
             status += i18n(", current job %1 at sentence %2 of %3 sentences"
-                ).tqarg(stateToStr(jobState)).tqarg(seq).tqarg(sentenceCount);
+                ).arg(stateToStr(jobState)).arg(seq).arg(sentenceCount);
         }
     }
     return status;

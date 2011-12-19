@@ -293,7 +293,7 @@ void KSayItApp::slotChangeBookmarkFilename(const TQString &newname)
     // copy old bookmarkfile to new file
     if ( m_currentBookmarkFile != newbkFile ){
         if ( TQFile::exists(m_currentBookmarkFile) ){
-            TQString command = TQString("cp %1 %2").tqarg(m_currentBookmarkFile).tqarg(newbkFile);
+            TQString command = TQString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);
             system( command.ascii() );
         }
         // install new BookmarkHandler based on the new file
@@ -813,7 +813,7 @@ void KSayItApp::setActions(int actions)
     
     // Get the mask of supported actions from the plugin.
     int mask = m_kttslib->getActions();
-    kdDebug(100200) << TQString("KSayItApp:PSA: %1").tqarg(mask, 0, 2) << endl;
+    kdDebug(100200) << TQString("KSayItApp:PSA: %1").arg(mask, 0, 2) << endl;
     
     // disable actions not supported by the plugin
     int ma = actions & mask;

@@ -127,12 +127,12 @@ TQString CommandConf::getTalkerCode()
                 "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                 "<prosody volume=\"%4\" rate=\"%5\" />"
                 "<kttsd synthesizer=\"%6\" />")
-                .tqarg(m_languageCode)
-                .tqarg("fixed")
-                .tqarg("neutral")
-                .tqarg("medium")
-                .tqarg("medium")
-                .tqarg("Command");
+                .arg(m_languageCode)
+                .arg("fixed")
+                .arg("neutral")
+                .arg("medium")
+                .arg("medium")
+                .arg("Command");
         }
     }
     return TQString();

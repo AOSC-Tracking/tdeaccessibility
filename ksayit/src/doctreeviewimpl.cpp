@@ -261,7 +261,7 @@ void DocTreeViewImpl::openFile(const KURL &url)
             docbookparser.parseBook(root , m_rootItem);
             m_idCounter = docbookparser.getIdCounter();  
     } else {
-        err = i18n("The file is of type %1, 'book' expected.").tqarg(root.tagName() );
+        err = i18n("The file is of type %1, 'book' expected.").arg(root.tagName() );
         throw(err);
     }
     
@@ -779,7 +779,7 @@ void DocTreeViewImpl::slotDeleteItem()
     TQListViewItemIterator itr( m_rootItem );
     while ( itr.current() ) {
         item = static_cast<ListViewInterface*>(itr.current());
-        item->setText(3, TQString("%1").tqarg(++m_idCounter).rightJustify(8,'0') );    
+        item->setText(3, TQString("%1").arg(++m_idCounter).rightJustify(8,'0') );    
         ++itr;
     }
     
@@ -797,7 +797,7 @@ void DocTreeViewImpl::slotNewBookInfo()
     if ( whoAmI == "RobDocument" ){
         int newIndex = newIndexFirstChild();
         Overview *overview = new Overview( m_currentItem, NULL, i18n("Overview") );
-        overview->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        overview->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         m_contextmenuhandler->registerPopupMenu( overview );
     }
@@ -810,7 +810,7 @@ void DocTreeViewImpl::slotNewChapter()
     if ( whoAmI == "RobDocument" ){
         int newIndex = newIndexLastChild();
         Chapter *chapter = new Chapter( m_currentItem, NULL, i18n("Chapter") );
-        chapter->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        chapter->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Chapter Title");
         chapter->setText(0, newTitle );
@@ -829,7 +829,7 @@ void DocTreeViewImpl::slotNewKeywordSet()
         // New TreeView item
         int newIndex = newIndexFirstChild();
         KeywordSet *keywordset = new KeywordSet(m_currentItem, NULL, i18n("Keywords"));
-        keywordset->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        keywordset->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( keywordset );
     }
@@ -843,7 +843,7 @@ void DocTreeViewImpl::slotNewKeyword()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Keyword *keyword = new Keyword(m_currentItem, NULL, i18n("Keyword"));
-        keyword->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        keyword->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newKeyword = i18n("New Keyword");
         keyword->setText(0, newKeyword );
@@ -863,7 +863,7 @@ void DocTreeViewImpl::slotNewAbstract()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Abstract *abstract = new Abstract(m_currentItem, NULL, i18n("Abstract"));
-        abstract->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        abstract->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( abstract );
         
@@ -883,7 +883,7 @@ void DocTreeViewImpl::slotNewAuthorGroup()
         // New TreeView item
         int newIndex = newIndexFirstChild();
         AuthorGroup *authorgroup = new AuthorGroup(m_currentItem, NULL, i18n("Author(s)"));
-        authorgroup->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        authorgroup->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
 
         m_contextmenuhandler->registerPopupMenu( authorgroup );
         
@@ -903,7 +903,7 @@ void DocTreeViewImpl::slotNewAuthor()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Author *author = new Author(m_currentItem);
-        author->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        author->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
     
         author->setText(0, i18n("Author") );
         TQString newAuthor = i18n("Firstname Surname"); 
@@ -924,7 +924,7 @@ void DocTreeViewImpl::slotNewDate()
         // New TreeView item
         int newIndex = newIndexLastChild();
         Date *date = new Date(m_currentItem, NULL, i18n("Date"));
-        date->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        date->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         // get current date
         TQString today;
         today = KGlobal::locale()->formatDate(TQDate::currentDate(Qt::LocalTime), true);
@@ -945,7 +945,7 @@ void DocTreeViewImpl::slotNewReleaseInfo()
         // New TreeView item
         int newIndex = newIndexLastChild();
         ReleaseInfo *relinfo = new ReleaseInfo(m_currentItem, NULL, i18n("Release"));
-        relinfo->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        relinfo->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newRelease = "0.0.0";
         relinfo->setText( 1, newRelease );
@@ -979,7 +979,7 @@ void DocTreeViewImpl::slotNewParagraph()
     // New TreeView item
     int newIndex = newIndexLastChild();
     Para *para = new Para(m_currentItem, NULL, i18n("Paragraph"));
-    para->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+    para->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
 
     m_contextmenuhandler->registerPopupMenu( para );
     
@@ -992,7 +992,7 @@ void DocTreeViewImpl::slotNewSection_1()
     if ( whoAmI == "Chapter" ){
         int newIndex = newIndexLastChild();
         Sect1 *sect1 = new Sect1(m_currentItem, NULL, i18n("Section Level 1"));
-        sect1->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        sect1->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect1->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1009,7 +1009,7 @@ void DocTreeViewImpl::slotNewSection_2()
     if ( whoAmI == "Sect1" ){
         int newIndex = newIndexLastChild();
         Sect2 *sect2 = new Sect2(m_currentItem, NULL, i18n("Section Level 2"));
-        sect2->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        sect2->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect2->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1026,7 +1026,7 @@ void DocTreeViewImpl::slotNewSection_3()
     if ( whoAmI == "Sect2" ){
         int newIndex = newIndexLastChild();
         Sect3 *sect3 = new Sect3(m_currentItem, NULL, i18n("Section Level 3"));
-        sect3->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        sect3->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect3->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1043,7 +1043,7 @@ void DocTreeViewImpl::slotNewSection_4()
     if ( whoAmI == "Sect3" ){
         int newIndex = newIndexLastChild();
         Sect4 *sect4 = new Sect4(m_currentItem, NULL, i18n("Section Level 4"));
-        sect4->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        sect4->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect4->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1060,7 +1060,7 @@ void DocTreeViewImpl::slotNewSection_5()
     if ( whoAmI == "Sect4" ){
         int newIndex = newIndexLastChild();
         Sect5 *sect5 = new Sect5(m_currentItem, NULL, i18n("Section Level 5"));
-        sect5->setText(3, TQString("%1").tqarg(newIndex).rightJustify(8,'0') );
+        sect5->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         
         TQString newTitle = i18n("New Section Title");
         sect5->setValue( KSayItGlobal::RTFHEADER,     newTitle );
@@ -1086,7 +1086,7 @@ int DocTreeViewImpl::newIndexFirstChild()
         item = static_cast<ListViewInterface*>(it.current());
         itemIndex = (item->text(3)).toInt();
         if ( itemIndex > currentIndex ){
-            item->setText(3, TQString("%1").tqarg(itemIndex+1).rightJustify(8,'0') );;    
+            item->setText(3, TQString("%1").arg(itemIndex+1).rightJustify(8,'0') );;    
         }
         ++it;
     }
@@ -1116,7 +1116,7 @@ int DocTreeViewImpl::newIndexLastChild()
         item = static_cast<ListViewInterface*>(it.current());
         itemIndex = (item->text(3)).toInt();
         if ( itemIndex > lastIndex ){
-            item->setText(3, TQString("%1").tqarg(itemIndex+1).rightJustify(8,'0') );    
+            item->setText(3, TQString("%1").arg(itemIndex+1).rightJustify(8,'0') );    
         }
         ++it;
     }

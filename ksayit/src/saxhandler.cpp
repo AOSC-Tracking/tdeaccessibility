@@ -127,7 +127,7 @@ bool SaxHandler::characters(const TQString & ch)
 bool SaxHandler::fatalError(const TQXmlParseException &exc)
 {
     TQString err = i18n("Fatal error while parsing XML-Paragraph:\n");
-    err += i18n("%1, Line: %2").tqarg(exc.message()).tqarg(exc.lineNumber());
+    err += i18n("%1, Line: %2").arg(exc.message()).arg(exc.lineNumber());
     KMessageBox::error(0, err, i18n("Fatal error") );
     return false;
 }
@@ -160,7 +160,7 @@ bool SaxHandler::internalEntityDecl(const TQString & name,
 
 bool SaxHandler::skippedEntity(const TQString &name)
 {
-    TQString warn = i18n("Unresolved entity found: %1.\n").tqarg(name);
+    TQString warn = i18n("Unresolved entity found: %1.\n").arg(name);
     warn += i18n("KSayIt does not support DocBook files with external entities. ");
     warn += i18n("Parsing can continue, but the resulting text will contain gaps.");
     

@@ -194,12 +194,12 @@ TQString EposConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(m_languageCode)
-                    .tqarg("fixed")
-                    .tqarg("neutral")
-                    .tqarg("medium")
-                    .tqarg(rate)
-                    .tqarg("Epos TTS Synthesis System");
+                    .arg(m_languageCode)
+                    .arg("fixed")
+                    .arg("neutral")
+                    .arg("medium")
+                    .arg(rate)
+                    .arg("Epos TTS Synthesis System");
         }
     }
     return TQString();

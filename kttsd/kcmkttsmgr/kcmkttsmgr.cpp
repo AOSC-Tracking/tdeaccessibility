@@ -1100,7 +1100,7 @@ PlugInConf* KCMKttsMgr::loadTalkerPlugin(const TQString& name)
 
     // Find the plugin.
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(name));
+        TQString("DesktopEntryName == '%1'").arg(name));
 
     if (offers.count() == 1)
     {
@@ -1144,7 +1144,7 @@ KttsFilterConf* KCMKttsMgr::loadFilterPlugin(const TQString& plugInName)
 
     // Find the plugin.
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(plugInName));
+        TQString("DesktopEntryName == '%1'").arg(plugInName));
 
     if (offers.count() == 1)
     {
@@ -2221,7 +2221,7 @@ TQString KCMKttsMgr::FilterDesktopEntryNameToName(const TQString& desktopEntryNa
 {
     if (desktopEntryName.isEmpty()) return TQString();
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
-        TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
+        TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
     if (offers.count() == 1)
         return offers[0]->name();
@@ -2533,7 +2533,7 @@ TQListViewItem* KCMKttsMgr::addNotifyItem(
     else
     {
         if (event == "default")
-            eventName = i18n("All other %1 events").tqarg(eventSrcName);
+            eventName = i18n("All other %1 events").arg(eventSrcName);
         else
             eventName = NotifyEvent::getEventName(eventSrc, event);
     }

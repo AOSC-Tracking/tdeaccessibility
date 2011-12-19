@@ -221,7 +221,7 @@ TQString DictionaryCreationWizard::createDictionary() {
    TQString dictionaryFile;
    do {
       dictnumber++;
-      filename = TQString("wordcompletion%1.dict").tqarg(dictnumber);
+      filename = TQString("wordcompletion%1.dict").arg(dictnumber);
       dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));

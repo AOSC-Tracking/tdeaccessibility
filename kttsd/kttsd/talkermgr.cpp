@@ -107,7 +107,7 @@ int TalkerMgr::loadPlugIns(KConfig* config)
 
             // Find the KTTSD SynthPlugin.
             KTrader::OfferList offers = KTrader::self()->query(
-                "KTTSD/SynthPlugin", TQString("DesktopEntryName == '%1'").tqarg(desktopEntryName));
+                "KTTSD/SynthPlugin", TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
             if(offers.count() > 1){
                 ++bad;

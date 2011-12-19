@@ -268,11 +268,11 @@ void FestivalIntProc::synth(
             slider = slider - 500;
             // Map -500 to 500 onto 0.15 to -0.15.
             float stretchValue = -float(slider) * 0.15 / 500.0;
-            timeMsg = TQString("(set! hts_duration_stretch %1)").tqarg(
+            timeMsg = TQString("(set! hts_duration_stretch %1)").arg(
                     stretchValue, 0, 'f', 3);
         }
         else
-            timeMsg = TQString("(Parameter.set 'Duration_Stretch %1)").tqarg(
+            timeMsg = TQString("(Parameter.set 'Duration_Stretch %1)").arg(
                 1.0/(float(time)/100.0), 0, 'f', 2);
         sendToFestival(timeMsg);
         m_runningTime = time;
@@ -292,7 +292,7 @@ void FestivalIntProc::synth(
         }
         TQString pitchMsg = TQString(
             "(set! int_lr_params '((target_f0_mean %1) (target_f0_std 14)"
-            "(model_f0_mean 170) (model_f0_std 34)))").tqarg(pitchValue, 0, 10);
+            "(model_f0_mean 170) (model_f0_std 34)))").arg(pitchValue, 0, 10);
         sendToFestival(pitchMsg);
         m_runningPitch = pitch;
     }

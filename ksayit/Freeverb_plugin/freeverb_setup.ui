@@ -79,7 +79,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Room&lt;/b&gt;</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -184,7 +184,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Damp&lt;/b&gt;</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -283,7 +283,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Wet&lt;/b&gt;</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -382,7 +382,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Dry&lt;/b&gt;</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>
@@ -481,7 +481,7 @@
                             <property name="text">
                                 <string>&lt;b&gt;Width&lt;/b&gt;</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>WordBreak|AlignCenter</set>
                             </property>
                         </widget>

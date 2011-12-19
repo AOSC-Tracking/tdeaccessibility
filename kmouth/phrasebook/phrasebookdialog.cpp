@@ -132,7 +132,7 @@ void CheckBookItem::childChange (int numberDiff, int selDiff) {
       ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
 
    TQString text = i18n(" (%1 of %2 books selected)");
-   text = text.tqarg(selectedBooks).tqarg(numberOfBooks);
+   text = text.arg(selectedBooks).arg(numberOfBooks);
    setText(0, this->text(PhraseBookPrivate::name)+text);
 }
 
@@ -597,7 +597,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       {
          TQString s = i18n("In order to use the '%1' key as a shortcut, "
                           "it must be combined with the "
-                          "Win, Alt, Ctrl, and/or Shift keys.").tqarg(TQChar(key.sym()));
+                          "Win, Alt, Ctrl, and/or Shift keys.").arg(TQChar(key.sym()));
          KMessageBox::sorry( this, s, i18n("Invalid Shortcut Key") );
          return;
       }
@@ -731,7 +731,7 @@ void PhraseBookDialog::slotImportPhrasebook (const KURL &url) {
       if (book.open (url))
          addBook(treeView->currentItem(), &book);
       else
-         KMessageBox::sorry(this,i18n("There was an error loading file\n%1").tqarg( url.url() ));
+         KMessageBox::sorry(this,i18n("There was an error loading file\n%1").arg( url.url() ));
    }
 }
 
@@ -741,7 +741,7 @@ void PhraseBookDialog::slotExportPhrasebook () {
    
    KURL url;
    if (book.save (this, i18n("Export Phrase Book"), url) == -1)
-      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").tqarg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
 void PhraseBookDialog::slotPrint()
