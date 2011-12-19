@@ -57,7 +57,7 @@ TalkerChooserConf::TalkerChooserConf( TQWidget *parent, const char *name, const 
     // Create configuration widget.
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "TalkerChooserConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new TalkerChooserConfWidget(this, "TalkerChooserConfigWidget");
     tqlayout->addWidget(m_widget);
 

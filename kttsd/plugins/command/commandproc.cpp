@@ -382,13 +382,13 @@ void CommandProc::slotProcessExited(KProcess*)
 
 void CommandProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "CommandProc::slotReceivedStdout: Received output from Command: " << buf << endl;
 }
 
 void CommandProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "CommandProc::slotReceivedStderr: Received error from Command: " << buf << endl;
 }
 

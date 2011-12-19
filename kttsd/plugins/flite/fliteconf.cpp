@@ -51,7 +51,7 @@ FliteConf::FliteConf( TQWidget* parent, const char* name, const TQStringList& /*
     
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FliteConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new FliteConfWidget(this, "FliteConfigWidget");
     tqlayout->addWidget(m_widget);
     

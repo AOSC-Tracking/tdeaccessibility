@@ -41,7 +41,7 @@ public:
 
 signals:
   void signalSetCaption(const TQString &caption);
-  void signalShowtqStatus(const TQString &status);
+  void signalShowStatus(const TQString &status);
   void signalEnableCopyCut(bool enable);
   
   /** Emitted when the text in the TextEditor view cahnges.

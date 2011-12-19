@@ -218,13 +218,13 @@ void FliteProc::slotProcessExited(KProcess*)
 
 void FliteProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "FliteProc::slotReceivedStdout: Received output from Flite: " << buf << endl;
 }
 
 void FliteProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "FliteProc::slotReceivedStderr: Received error from Flite: " << buf << endl;
 }
 

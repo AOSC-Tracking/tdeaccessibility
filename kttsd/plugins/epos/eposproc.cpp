@@ -326,13 +326,13 @@ void EposProc::slotProcessExited(KProcess*)
 
 void EposProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStdout: Received output from Epos: " << buf << endl;
 }
 
 void EposProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
 {
-    TQString buf = TQString::tqfromLatin1(buffer, buflen);
+    TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStderr: Received error from Epos: " << buf << endl;
 }
 

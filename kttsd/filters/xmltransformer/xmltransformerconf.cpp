@@ -51,7 +51,7 @@ XmlTransformerConf::XmlTransformerConf( TQWidget *parent, const char *name, cons
     // Create configuration widget.
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "XmlTransformerConfWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new XmlTransformerConfWidget(this, "XmlTransformerConfigWidget");
     tqlayout->addWidget(m_widget);
 

@@ -2093,7 +2093,7 @@ void KCMKttsMgr::configureFilter()
         true,
         true);
     m_configDlg->setInitialSize(TQSize(600, 450), false);
-    m_loadedFilterPlugIn->setMinimumSize(m_loadedFilterPlugIn->tqminimumSizeHint());
+    m_loadedFilterPlugIn->setMinimumSize(m_loadedFilterPlugIn->minimumSizeHint());
     m_loadedFilterPlugIn->show();
     m_configDlg->setMainWidget(m_loadedFilterPlugIn);
     m_configDlg->setHelp("configure-filter", "kttsd");

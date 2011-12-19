@@ -67,7 +67,7 @@ FestivalIntConf::FestivalIntConf( TQWidget* parent, const char* name, const TQSt
 
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FestivalIntConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new FestivalIntConfWidget(this, "FestivalIntConfigWidget");
     tqlayout->addWidget(m_widget);
 

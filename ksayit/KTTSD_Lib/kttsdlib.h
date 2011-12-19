@@ -93,7 +93,7 @@ public:
     
     void sayText();
     
-    int gettqStatus() const;
+    int getStatus() const;
     
     void stop();
     

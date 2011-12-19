@@ -322,12 +322,12 @@ void KSayItApp::initView()
 { 
   // create the main widget
   view = new KSayItViewImpl(this);
-  view->setMinimumSize(view->tqsizeHint());
+  view->setMinimumSize(view->sizeHint());
   setCentralWidget(view);
   // connections
   connect( view, TQT_SIGNAL(signalEnableCopyCut(bool)),
     TQT_TQOBJECT(this), TQT_SLOT(slotEnableCopyCut(bool)));
-  connect( view, TQT_SIGNAL(signalShowtqStatus(const TQString &)),
+  connect( view, TQT_SIGNAL(signalShowStatus(const TQString &)),
     TQT_TQOBJECT(this), TQT_SLOT(slotStatusMsg(const TQString &)));
   connect( view, TQT_SIGNAL(signalSetCaption(const TQString &)),
     TQT_TQOBJECT(this), TQT_SLOT(slotSetCaption(const TQString &)));

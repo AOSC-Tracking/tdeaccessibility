@@ -389,11 +389,11 @@ HadifixProc::VoiceGender HadifixProc::determineGender(TQString mbrola, TQString 
 }
 
 void HadifixProc::receivedStdout (KProcess *, char *buffer, int buflen) {
-   stdOut += TQString::tqfromLatin1(buffer, buflen);
+   stdOut += TQString::fromLatin1(buffer, buflen);
 }
 
 void HadifixProc::receivedStderr (KProcess *, char *buffer, int buflen) {
-   stdErr += TQString::tqfromLatin1(buffer, buflen);
+   stdErr += TQString::fromLatin1(buffer, buflen);
 }
 
 /**

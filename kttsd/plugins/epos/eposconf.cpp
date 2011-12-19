@@ -57,7 +57,7 @@ EposConf::EposConf( TQWidget* parent, const char* name, const TQStringList& /*ar
 
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "EposConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new EposConfWidget(this, "EposConfigWidget");
     tqlayout->addWidget(m_widget);
 

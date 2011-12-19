@@ -40,7 +40,7 @@ public:
    StatusIcon (const TQString &text, TQWidget *parent, const char *name=0);
    ~StatusIcon ();
 
-   TQSize tqminimumSizeHint () const;
+   TQSize minimumSizeHint () const;
 };
 typedef TQPtrList<StatusIcon> IconList;
 

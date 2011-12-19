@@ -81,7 +81,7 @@ int KTTSDLib::getActions()
 }
 
 
-int KTTSDLib::gettqStatus() const
+int KTTSDLib::getStatus() const
 {
     return TTS::AUDIOFILE;
 }

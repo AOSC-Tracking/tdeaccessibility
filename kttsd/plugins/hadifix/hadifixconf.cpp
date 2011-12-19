@@ -207,7 +207,7 @@ HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList
    PlugInConf( parent, name ){
    // kdDebug() << "HadifixConf::HadifixConf: Running" << endl;
    TQVBoxLayout *tqlayout = new TQVBoxLayout (this, KDialog::marginHint(), KDialog::spacingHint(), "CommandConfigWidgetLayout");
-   tqlayout->tqsetAlignment (TQt::AlignTop); 
+   tqlayout->setAlignment (TQt::AlignTop); 
 
    d = new HadifixConfPrivate();
    d->configWidget = new HadifixConfigUI (this, "configWidget");
