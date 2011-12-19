@@ -115,12 +115,12 @@ TQString FliteConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(m_languageCode)
-                    .tqarg("fixed")
-                    .tqarg("neutral")
-                    .tqarg("medium")
-                    .tqarg("medium")
-                    .tqarg("Festival Lite (flite)");
+                    .arg(m_languageCode)
+                    .arg("fixed")
+                    .arg("neutral")
+                    .arg("medium")
+                    .arg("medium")
+                    .arg("Festival Lite (flite)");
         }
     }
     return TQString();

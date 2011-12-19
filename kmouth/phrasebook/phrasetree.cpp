@@ -470,7 +470,7 @@ void PhraseTree::_warning (const KKeySequence& cut, TQString sAction, TQString s
        i18n("The '%1' key combination has already been allocated "
        "to %2.\n"
        "Please choose a unique key combination.").
-       tqarg(cut.toString()).tqarg(sAction);
+       arg(cut.toString()).arg(sAction);
 
    KMessageBox::sorry( this, s, sTitle );
 }
@@ -485,7 +485,7 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
       {
          if (warnUser)
             _warning (cut.seq(iSeq),
-                      i18n("the standard \"%1\" action").tqarg(KStdAccel::label(id)),
+                      i18n("the standard \"%1\" action").arg(KStdAccel::label(id)),
                       i18n("Conflict with Standard Application Shortcut"));
          return true;
       }
@@ -501,7 +501,7 @@ bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
       if (iSeq > -1) {
          if (warnUser)
             _warning (cut.seq(iSeq),
-                      i18n("the global \"%1\" action").tqarg(it.key()),
+                      i18n("the global \"%1\" action").arg(it.key()),
                       i18n("Conflict with Global Shortcuts"));
          return true;
       }

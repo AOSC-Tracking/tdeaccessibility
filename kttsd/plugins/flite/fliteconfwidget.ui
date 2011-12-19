@@ -111,7 +111,7 @@
                             <property name="text">
                                 <string>&amp;Flite executable path:</string>
                             </property>
-                            <property name="tqalignment">
+                            <property name="alignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                             <property name="buddy" stdset="0">

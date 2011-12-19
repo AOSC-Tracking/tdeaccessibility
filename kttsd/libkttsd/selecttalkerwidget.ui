@@ -140,7 +140,7 @@
                                             <property name="text">
                                                 <string>&amp;Synthesizer:</string>
                                             </property>
-                                            <property name="tqalignment">
+                                            <property name="alignment">
                                                 <set>WordBreak|AlignVCenter|AlignLeft</set>
                                             </property>
                                             <property name="buddy" stdset="0">

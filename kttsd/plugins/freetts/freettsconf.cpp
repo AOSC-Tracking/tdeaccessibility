@@ -119,12 +119,12 @@ TQString FreeTTSConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(m_languageCode)
-                    .tqarg("fixed")
-                    .tqarg("neutral")
-                    .tqarg("medium")
-                    .tqarg("medium")
-                    .tqarg("FreeTTS");
+                    .arg(m_languageCode)
+                    .arg("fixed")
+                    .arg("neutral")
+                    .arg("medium")
+                    .arg("medium")
+                    .arg("FreeTTS");
         }
     }
     return TQString();

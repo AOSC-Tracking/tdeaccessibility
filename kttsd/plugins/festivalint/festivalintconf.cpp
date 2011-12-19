@@ -229,12 +229,12 @@ TQString FestivalIntConf::getTalkerCode()
             "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
             "<prosody volume=\"%4\" rate=\"%5\" />"
             "<kttsd synthesizer=\"%6\" />")
-            .tqarg(voiceTemp.languageCode)
-            .tqarg(voiceTemp.code)
-            .tqarg(voiceTemp.gender)
-            .tqarg(volume)
-            .tqarg(rate)
-            .tqarg("Festival Interactive");
+            .arg(voiceTemp.languageCode)
+            .arg(voiceTemp.code)
+            .arg(voiceTemp.gender)
+            .arg(volume)
+            .arg(rate)
+            .arg("Festival Interactive");
     return normalTalkerCode;
 }
 

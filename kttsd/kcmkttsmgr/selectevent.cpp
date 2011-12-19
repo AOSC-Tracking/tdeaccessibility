@@ -110,7 +110,7 @@ void SelectEvent::slotEventSrcComboBox_activated(int index)
     delete config;
     eventsListView->sort();
     item = eventsListView->lastChild();
-    TQString eventDesc = i18n("All other %1 events").tqarg(eventSrcComboBox->currentText());
+    TQString eventDesc = i18n("All other %1 events").arg(eventSrcComboBox->currentText());
     if ( !item )
         item = new KListViewItem( eventsListView, eventDesc, "default" );
     else

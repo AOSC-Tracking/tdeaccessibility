@@ -115,7 +115,7 @@ private slots:
      */    
     void slotTreeViewChanged(const TQString &str);
     
-    /** save general Options like all bar positions and status as well as the tqgeometry to
+    /** save general Options like all bar positions and status as well as the geometry to
      * the configuration file.
      */
     void slotSaveOptions();

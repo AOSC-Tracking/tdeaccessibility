@@ -184,9 +184,9 @@ void HadifixProc::synth(TQString text,
 
    TQString mbrolaCommand = d->hadifixProc->quote(mbrola);
    mbrolaCommand += " -e"; //Ignore fatal errors on unkown diphone
-   mbrolaCommand += TQString(" -v %1").tqarg(volume/100.0); // volume ratio
-   mbrolaCommand += TQString(" -f %1").tqarg(pitch/100.0);  // freqency ratio
-   mbrolaCommand += TQString(" -t %1").tqarg(1/(time/100.0));   // time ratio
+   mbrolaCommand += TQString(" -v %1").arg(volume/100.0); // volume ratio
+   mbrolaCommand += TQString(" -f %1").arg(pitch/100.0);  // freqency ratio
+   mbrolaCommand += TQString(" -t %1").arg(1/(time/100.0));   // time ratio
    mbrolaCommand += " " + d->hadifixProc->quote(voice);
    mbrolaCommand += " - " + d->hadifixProc->quote(waveFilename);
 

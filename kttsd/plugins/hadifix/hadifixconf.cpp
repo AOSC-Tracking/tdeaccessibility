@@ -92,15 +92,15 @@ class HadifixConfPrivate {
             TQString name = TQFileInfo(*it).fileName();
             gender = HadifixProc::determineGender(defaultMbrolaExec, *it);
             if (gender == HadifixProc::MaleGender)
-                configWidget->addVoice(*it, true, i18n("Male voice \"%1\"").tqarg(name));
+                configWidget->addVoice(*it, true, i18n("Male voice \"%1\"").arg(name));
             else if (gender == HadifixProc::FemaleGender)
-                configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").tqarg(name));
+                configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").arg(name));
             else {
                if (name == "de1")
-                   configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").tqarg(name));
+                   configWidget->addVoice(*it, false, i18n("Female voice \"%1\"").arg(name));
                else {
-                   configWidget->addVoice(*it, true,  i18n("Unknown voice \"%1\"").tqarg(name));
-                   configWidget->addVoice(*it, false, i18n("Unknown voice \"%1\"").tqarg(name));
+                   configWidget->addVoice(*it, true,  i18n("Unknown voice \"%1\"").arg(name));
+                   configWidget->addVoice(*it, false, i18n("Unknown voice \"%1\"").arg(name));
                }
             }
          }
@@ -284,12 +284,12 @@ TQString HadifixConf::getTalkerCode()
                     "<voice lang=\"%1\" name=\"%2\" gender=\"%3\" />"
                     "<prosody volume=\"%4\" rate=\"%5\" />"
                     "<kttsd synthesizer=\"%6\" />")
-                    .tqarg(d->languageCode)
-                    .tqarg(voiceCode)
-                    .tqarg(gender)
-                    .tqarg(volume)
-                    .tqarg(rate)
-                    .tqarg("Hadifix");
+                    .arg(d->languageCode)
+                    .arg(voiceCode)
+                    .arg(gender)
+                    .arg(volume)
+                    .arg(rate)
+                    .arg("Hadifix");
         }
     }
     return TQString();

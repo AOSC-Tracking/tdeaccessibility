@@ -159,7 +159,7 @@ void WordCompletionWidget::save() {
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
-         config->setGroup(TQString("Dictionary %1").tqarg(number));
+         config->setGroup(TQString("Dictionary %1").arg(number));
          config->writeEntry ("Filename", item->filename());
          config->writeEntry ("Name",     item->text (0));
          config->writeEntry ("Language", item->languageCode());
@@ -251,8 +251,8 @@ void WordCompletionWidget::exportDictionary() {
          return;
 
       if (KIO::NetAccess::exists(url, false, this)) {
-         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").tqarg(i18n("The file %1 already exists. "
-                                                          "Do you want to overwrite it?").tqarg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
          }
       }
