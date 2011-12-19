@@ -15,7 +15,7 @@ void CreationSourceDetailsUI::init() {
     TQWhatsThis::add (languageButton, i18n("With this combo box you decide which language should be associated with the new dictionary."));
     
     loadLanguageList(languageButton);
-    languageButton->insertLanguage("??", i18n("Other"), TQString::tqfromLatin1("l10n/"), TQString());
+    languageButton->insertLanguage("??", i18n("Other"), TQString::fromLatin1("l10n/"), TQString());
     
    connect (languageButton, TQT_SIGNAL(activated(int)), this, TQT_SLOT(languageButton_activated(int)));
 }
@@ -28,7 +28,7 @@ void CreationSourceDetailsUI::languageButton_activated (int) {
         languageButton->setCurrentItem(customLanguage);
      }
      else {
-        languageButton->insertLanguage(customLanguage, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
+        languageButton->insertLanguage(customLanguage, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
         languageButton->setCurrentItem(customLanguage);
      }
    }

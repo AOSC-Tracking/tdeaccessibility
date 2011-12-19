@@ -47,6 +47,6 @@ void PhraseListItem::paint (TQPainter *p) {
    if (drawCursor()) {
       TQRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
       listBox()->tqstyle().tqdrawPrimitive (TQStyle::PE_FocusRect, p, r,
-                                        listBox()->tqcolorGroup());
+                                        listBox()->colorGroup());
    }
 }

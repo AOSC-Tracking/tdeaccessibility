@@ -247,7 +247,7 @@ void KmagApp::initActions()
 void KmagApp::initView()
 {
   m_zoomView = new KMagZoomView( this, "ZoomView" );
-  m_zoomView->tqsetSizePolicy( TQSizePolicy( (TQSizePolicy::SizeType)7, (TQSizePolicy::SizeType)7, m_zoomView->sizePolicy().hasHeightForWidth() ) );
+  m_zoomView->setSizePolicy( TQSizePolicy( (TQSizePolicy::SizeType)7, (TQSizePolicy::SizeType)7, m_zoomView->sizePolicy().hasHeightForWidth() ) );
   m_zoomView->setFrameShape( TQFrame::StyledPanel );
   m_zoomView->setFrameShadow( TQFrame::Raised );
 
@@ -550,7 +550,7 @@ void KmagApp::saveZoomPixmap()
   bool toggled(false);
 
   // stop refresh temporarily
-  if (m_zoomView->getRefreshtqStatus()) {
+  if (m_zoomView->getRefreshStatus()) {
     slotToggleRefresh();
     toggled = true;
   }
@@ -597,7 +597,7 @@ void KmagApp::saveZoomPixmap()
 void KmagApp::slotToggleRefresh()
 {
   m_zoomView->toggleRefresh();
-  if(m_zoomView->getRefreshtqStatus()) {
+  if(m_zoomView->getRefreshStatus()) {
     refreshSwitch->setIcon("stop.png");
     refreshSwitch->setText(i18n("Stop"));
     refreshSwitch->setToolTip(i18n("Click to stop window update"));
@@ -810,7 +810,7 @@ void KmagApp::slotFilePrint()
 #endif
 
   // stop refresh temporarily
-  if (m_zoomView->getRefreshtqStatus()) {
+  if (m_zoomView->getRefreshStatus()) {
     slotToggleRefresh();
     toggled = true;
   }

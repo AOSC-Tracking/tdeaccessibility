@@ -155,7 +155,7 @@ KttsToolTip::KttsToolTip ( TQWidget* parent ) : TQToolTip(parent)
     TQString status = "<qt><b>KTTSMgr</b> - ";
     status += i18n("<qt>Text-to-Speech Manager");
     status += "<br/><br/>";
-    status += kttsMgrTray->gettqStatus();
+    status += kttsMgrTray->getStatus();
     status += "</qt>";
 
     tip(r, status);
@@ -257,7 +257,7 @@ TQString KttsMgrTray::stateToStr(int state)
     }
 }
 
-TQString KttsMgrTray::gettqStatus()
+TQString KttsMgrTray::getStatus()
 {
     if (!isKttsdRunning()) return i18n("Text-to-Speech System is not running");
     uint jobCount = getTextJobCount();

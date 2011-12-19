@@ -810,7 +810,7 @@ void KeyIcon::drawButton (TQPainter *p) {
    int y = (height()-locked.height())/2;
    int o = 0;
    if (isLocked || isLatched) {
-      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), true, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), true, 1, NULL);
       p->fillRect (1,1,width()-2,height()-2, KGlobalSettings::highlightColor());
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x+1,y+1, latched);
@@ -818,7 +818,7 @@ void KeyIcon::drawButton (TQPainter *p) {
       o = 1;
    }
    else {
-      qDrawShadePanel (p, 0, 0, width(), height(), tqcolorGroup(), false, 1, NULL);
+      qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), false, 1, NULL);
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x,y, unlatched);
       black = KGlobalSettings::textColor();
@@ -1068,12 +1068,12 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 
 StatusIcon::StatusIcon (const TQString &text, TQWidget *parent, const char *name)
  : TQPushButton (text, parent, name) {
-   tqsetSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
+   setSizePolicy(TQSizePolicy(TQSizePolicy::Ignored, TQSizePolicy::Ignored));
 }
 
 StatusIcon::~StatusIcon () {
 }
 
-TQSize StatusIcon::tqminimumSizeHint () const {
+TQSize StatusIcon::minimumSizeHint () const {
    return TQSize (0,0);
 }

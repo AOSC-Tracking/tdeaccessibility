@@ -255,7 +255,7 @@ void KMagZoomView::drawContents ( TQPainter * p, int clipx, int clipy, int clipw
   if (m_invert) {
     TQImage zoomedImage;
     zoomedImage = zoomedPixmap.convertToImage();
-    zoomedImage.tqinvertPixels (false);
+    zoomedImage.invertPixels (false);
     p->drawImage (TQPoint (clipx-contentsX(), clipy-contentsY()), zoomedImage, zoomedImage.rect(),
                   TQt::ThresholdDither | TQt::ThresholdAlphaDither | TQt::AvoidDither);
   } else {
@@ -751,7 +751,7 @@ void KMagZoomView::grabFrame()
   intersection &= TQRegion (selRect, TQRegion::Rectangle);
 
   // We don't want to overpaint other windows that happen to be on top
-  obscuredRegion (intersection, tqtopLevelWidget()->winId(), m_selRect.winId());
+  obscuredRegion (intersection, topLevelWidget()->winId(), m_selRect.winId());
   intersection.translate (-selRect.x(), -selRect.y());
 
   TQPainter painter (&m_grabbedPixmap, true);

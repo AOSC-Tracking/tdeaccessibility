@@ -61,7 +61,7 @@ class KMagZoomView : public TQScrollView
     TQPixmap getPixmap();
 
     /// Returns the state of the refresh switch
-    bool getRefreshtqStatus() const { return m_refreshSwitch; };
+    bool getRefreshStatus() const { return m_refreshSwitch; };
 
     /// Returns teh status of followMouse
     bool getFollowMouse() const { return m_followMouse; };

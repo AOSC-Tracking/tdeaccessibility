@@ -69,7 +69,7 @@ StringReplacerConf::StringReplacerConf( TQWidget *parent, const char *name, cons
     // Create configuration widget.
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "StringReplacerConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new StringReplacerConfWidget(this, "StringReplacerConfigWidget");
     tqlayout->addWidget(m_widget);
     m_widget->substLView->setSortColumn(-1);

@@ -71,11 +71,11 @@ public:
 
    void setLanguage (TQString languageCode) {
       TQString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + TQString::tqfromLatin1("/entry.desktop"));
+			languageCode + TQString::fromLatin1("/entry.desktop"));
 
       KSimpleConfig entry(filename);
-      entry.setGroup(TQString::tqfromLatin1("KCM Locale"));
-      TQString name = entry.readEntry(TQString::tqfromLatin1("Name"), i18n("without name"));
+      entry.setGroup(TQString::fromLatin1("KCM Locale"));
+      TQString name = entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ")", languageCode);
    }
 
@@ -136,7 +136,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         languageTag);
          if (!languageButton->containsTag(languageTag))
-            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
+            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
       }
 
    // Clean up disc space
@@ -200,7 +200,7 @@ void WordCompletionWidget::addDictionary() {
       newDictionaryFiles += filename;
       TQString languageTag = wizard->language();
       if (!languageButton->containsTag(languageTag)) {
-         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
+         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
       }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);

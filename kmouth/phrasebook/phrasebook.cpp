@@ -477,15 +477,15 @@ const char *PhraseBookDrag::format (int i) const {
       return xmlphrasebook.format(i/3);
 }
 
-TQByteArray PhraseBookDrag::tqencodedData (const char* mime) const {
+TQByteArray PhraseBookDrag::encodedData (const char* mime) const {
    TQCString m(mime);
    m = m.lower();
    if (m.contains("xml-phrasebook"))
-      return xmlphrasebook.tqencodedData(mime);
+      return xmlphrasebook.encodedData(mime);
    else if (m.contains("xml"))
-      return xml.tqencodedData(mime);
+      return xml.encodedData(mime);
    else
-      return plain.tqencodedData(mime);
+      return plain.encodedData(mime);
 }
 
 bool PhraseBookDrag::canDecode (const TQMimeSource* e) {

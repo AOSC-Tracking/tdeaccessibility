@@ -64,7 +64,7 @@ SbdConf::SbdConf( TQWidget *parent, const char *name, const TQStringList& /*args
     // Create configuration widget.
     TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "SbdConfigWidgetLayout");
-    tqlayout->tqsetAlignment (TQt::AlignTop);
+    tqlayout->setAlignment (TQt::AlignTop);
     m_widget = new SbdConfWidget(this, "SbdConfigWidget");
     tqlayout->addWidget(m_widget);
 
