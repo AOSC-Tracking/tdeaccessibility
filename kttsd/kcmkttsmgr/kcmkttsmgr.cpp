@@ -119,10 +119,10 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     m_suppressConfigChanged = false;
 
     // Add the KTTS Manager widget
-    TQGridLayout *tqlayout = new TQGridLayout(this, 0, 0);
+    TQGridLayout *layout = new TQGridLayout(this, 0, 0);
     m_kttsmgrw = new KCMKttsMgrWidget(this, "kttsmgrw");
     // m_kttsmgrw = new KCMKttsMgrWidget(this);
-    tqlayout->addWidget(m_kttsmgrw, 0, 0);
+    layout->addWidget(m_kttsmgrw, 0, 0);
 
     // Give buttons icons.
     // Talkers tab.

@@ -206,8 +206,8 @@ class HadifixConfPrivate {
 HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList &) : 
    PlugInConf( parent, name ){
    // kdDebug() << "HadifixConf::HadifixConf: Running" << endl;
-   TQVBoxLayout *tqlayout = new TQVBoxLayout (this, KDialog::marginHint(), KDialog::spacingHint(), "CommandConfigWidgetLayout");
-   tqlayout->setAlignment (TQt::AlignTop); 
+   TQVBoxLayout *layout = new TQVBoxLayout (this, KDialog::marginHint(), KDialog::spacingHint(), "CommandConfigWidgetLayout");
+   layout->setAlignment (TQt::AlignTop); 
 
    d = new HadifixConfPrivate();
    d->configWidget = new HadifixConfigUI (this, "configWidget");
@@ -224,7 +224,7 @@ HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList
    d->initializeCharacterCodes();
    d->initializeVoices();
    d->setDefaults();
-   tqlayout->addWidget (d->configWidget);
+   layout->addWidget (d->configWidget);
 }
 
 /** Destructor */

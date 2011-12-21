@@ -49,11 +49,11 @@ FliteConf::FliteConf( TQWidget* parent, const char* name, const TQStringList& /*
     m_fliteProc = 0;
     m_progressDlg = 0;
     
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FliteConfigWidgetLayout");
-    tqlayout->setAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new FliteConfWidget(this, "FliteConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
     
     defaults();
     

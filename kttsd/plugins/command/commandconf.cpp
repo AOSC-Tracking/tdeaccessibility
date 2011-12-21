@@ -48,11 +48,11 @@ CommandConf::CommandConf( TQWidget* parent, const char* name, const TQStringList
     m_commandProc = 0;
     m_progressDlg = 0;
 
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "CommandConfigWidgetLayout");
-    tqlayout->setAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new CommandConfWidget(this, "CommandConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     // Build codec list and fill combobox.
     m_codecList = PlugInProc::buildCodecList();

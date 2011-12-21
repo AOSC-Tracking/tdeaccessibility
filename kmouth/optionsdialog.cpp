@@ -125,11 +125,11 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
    tabCtl = new TQTabWidget (pageGeneral, "general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
-   behaviourWidget->tqlayout()->setMargin(KDialog::marginHint());
+   behaviourWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (behaviourWidget, i18n("&Preferences"));
    
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
-   commandWidget->tqlayout()->setMargin(KDialog::marginHint());
+   commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    TQPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);

@@ -506,7 +506,7 @@ void KttsJobMgrPart::slot_job_change_talker()
 void KttsJobMgrPart::slot_speak_clipboard()
 {
     // Get the clipboard object.
-    TQClipboard *cb = kapp->tqclipboard();
+    TQClipboard *cb = kapp->clipboard();
 
 
     // Copy text from the clipboard.

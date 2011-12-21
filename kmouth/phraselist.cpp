@@ -48,16 +48,16 @@
 PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
-   TQVBoxLayout *tqlayout = new TQVBoxLayout (this);
+   TQVBoxLayout *layout = new TQVBoxLayout (this);
 
    listBox = new KListBox (this);
    listBox->setFocusPolicy(TQ_NoFocus);
    listBox->setSelectionMode (TQListBox::Extended);
    TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
-   tqlayout->addWidget(listBox);
+   layout->addWidget(listBox);
 
    TQHBoxLayout *rowLayout = new TQHBoxLayout ();
-   tqlayout->addLayout(rowLayout);
+   layout->addLayout(rowLayout);
 
    completion = new WordCompletion();
 
@@ -271,7 +271,7 @@ void PhraseList::cutListSelection () {
 }
 
 void PhraseList::copyListSelection () {
-   TQApplication::tqclipboard()->setText (getListSelection().join ("\n"));
+   TQApplication::clipboard()->setText (getListSelection().join ("\n"));
 }
 
 void PhraseList::lineEntered (const TQString &phrase) {

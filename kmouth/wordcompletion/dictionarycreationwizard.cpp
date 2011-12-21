@@ -283,10 +283,10 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
 
    TQWidget *contents = new TQWidget(viewport());
    addChild(contents);
-   TQGridLayout *tqlayout = new TQGridLayout (contents);
+   TQGridLayout *layout = new TQGridLayout (contents);
    setResizePolicy (TQScrollView::AutoOneFit);
-   tqlayout->setColStretch (0, 0);
-   tqlayout->setColStretch (1, 1);
+   layout->setColStretch (0, 0);
+   layout->setColStretch (1, 1);
 
    int row = 0;
    TQStringList::Iterator nIt = dictionaryNames.begin();
@@ -295,8 +295,8 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
       TQCheckBox *checkbox = new TQCheckBox(*nIt, contents);
       KIntNumInput *numInput = new KIntNumInput(contents);
-      tqlayout->addWidget (checkbox, row, 0);
-      tqlayout->addWidget (numInput, row, 1);
+      layout->addWidget (checkbox, row, 0);
+      layout->addWidget (numInput, row, 1);
       
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);

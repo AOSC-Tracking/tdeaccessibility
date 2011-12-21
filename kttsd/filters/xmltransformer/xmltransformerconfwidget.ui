@@ -22,7 +22,7 @@
         </property>
         <widget class="TQLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>tqlayout5</cstring>
+                <cstring>layout5</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -59,7 +59,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout6</cstring>
+                <cstring>layout6</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -135,7 +135,7 @@
                 </property>
                 <widget class="TQLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>tqlayout6</cstring>
+                        <cstring>layout6</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -169,7 +169,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>tqlayout5</cstring>
+                        <cstring>layout5</cstring>
                     </property>
                     <vbox>
                         <property name="name">
