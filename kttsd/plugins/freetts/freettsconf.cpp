@@ -47,11 +47,11 @@ FreeTTSConf::FreeTTSConf( TQWidget* parent, const char* name, const TQStringList
 	m_freettsProc = 0;
         m_progressDlg = 0;
 	
-	TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+	TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
 								KDialog::spacingHint(), "FreeTTSConfigWidgetLayout");
-	tqlayout->setAlignment (TQt::AlignTop);
+	layout->setAlignment (TQt::AlignTop);
 	m_widget = new FreeTTSConfWidget(this, "FreeTTSConfigWidget");
-	tqlayout->addWidget(m_widget);
+	layout->addWidget(m_widget);
 		
 	defaults();
 	

@@ -65,11 +65,11 @@ FestivalIntConf::FestivalIntConf( TQWidget* parent, const char* name, const TQSt
     m_progressDlg = 0;
     m_supportsSSML = FestivalIntProc::ssUnknown;
 
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "FestivalIntConfigWidgetLayout");
-    tqlayout->setAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new FestivalIntConfWidget(this, "FestivalIntConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     m_widget->festivalPath->setMode(KFile::File | KFile::ExistingOnly);
     m_widget->festivalPath->setFilter("*");

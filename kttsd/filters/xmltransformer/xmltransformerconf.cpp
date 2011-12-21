@@ -49,11 +49,11 @@ XmlTransformerConf::XmlTransformerConf( TQWidget *parent, const char *name, cons
     // kdDebug() << "XmlTransformerConf::XmlTransformerConf: Running" << endl;
 
     // Create configuration widget.
-    TQVBoxLayout *tqlayout = new TQVBoxLayout(this, KDialog::marginHint(),
+    TQVBoxLayout *layout = new TQVBoxLayout(this, KDialog::marginHint(),
         KDialog::spacingHint(), "XmlTransformerConfWidgetLayout");
-    tqlayout->setAlignment (TQt::AlignTop);
+    layout->setAlignment (TQt::AlignTop);
     m_widget = new XmlTransformerConfWidget(this, "XmlTransformerConfigWidget");
-    tqlayout->addWidget(m_widget);
+    layout->addWidget(m_widget);
 
     // Set up defaults.
     defaults();

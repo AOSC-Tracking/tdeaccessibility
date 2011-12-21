@@ -864,7 +864,7 @@ void KmagApp::slotFileQuit()
 
 void KmagApp::copyToClipBoard()
 {
-  TQClipboard *cb=KApplication::tqclipboard();
+  TQClipboard *cb=KApplication::clipboard();
   cb->setPixmap(m_zoomView->getPixmap());
 }
 

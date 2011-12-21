@@ -151,7 +151,7 @@ TQCString encodeString (const TQString str) {
    TQCString res = "";
    for (int i = 0; i < (int)str.length(); i++) {
       TQChar ch = str.at(i);
-      ushort uc = ch.tqunicode();
+      ushort uc = ch.unicode();
       TQCString number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
          res = res + "&#" + number + ";";

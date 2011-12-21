@@ -667,12 +667,12 @@ void PhraseBookDialog::slotCut () {
 void PhraseBookDialog::slotCopy () {
    PhraseBook book;
    treeView->fillBook (&book, true);
-   TQApplication::tqclipboard()->setData(new PhraseBookDrag(&book));
+   TQApplication::clipboard()->setData(new PhraseBookDrag(&book));
 }
 
 void PhraseBookDialog::slotPaste () {
    PhraseBook book;
-   if (PhraseBookDrag::decode(TQApplication::tqclipboard()->data(), &book)) {
+   if (PhraseBookDrag::decode(TQApplication::clipboard()->data(), &book)) {
       addBook (treeView->currentItem(), &book);
    }
 }

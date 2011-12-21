@@ -92,7 +92,7 @@ KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
             TQT_TQOBJECT(this), TQT_SLOT(slotPreferences()) );
     
     // init Clipboard
-    cb = TQApplication::tqclipboard();
+    cb = TQApplication::clipboard();
     connect(cb, TQT_SIGNAL(dataChanged()), TQT_TQOBJECT(this), TQT_SLOT(slotClipboardChanged()) );
     
     // create SystemTray object

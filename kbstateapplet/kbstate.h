@@ -170,7 +170,7 @@ private slots:
 private:
    void loadConfig();
    void saveConfig();
-   void tqlayout();
+   void layout();
    
    int xkb_base_event_type;
 
