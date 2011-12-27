@@ -80,7 +80,7 @@ int main (int argc, char *argv[])
 
     KUniqueApplication app;
 
-#if TDE_VERSION >= KDE_MAKE_VERSION (3,3,90)
+#if TDE_VERSION >= TDE_MAKE_VERSION (3,3,90)
     TQPixmap icon = KGlobal::iconLoader()->loadIcon("kttsd", KIcon::Panel);
     aboutdata.setProgramLogo(icon.convertToImage());
 #endif
@@ -118,7 +118,7 @@ int main (int argc, char *argv[])
     else app.setMainWidget(&dlg);
 
     if (showMainWindowOnStartup)
-#if TDE_VERSION < KDE_MAKE_VERSION (3,3,0)
+#if TDE_VERSION < TDE_MAKE_VERSION (3,3,0)
         dlg.show();
 #else
     {
