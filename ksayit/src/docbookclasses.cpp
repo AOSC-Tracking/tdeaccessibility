@@ -308,7 +308,7 @@ TQVariant ReleaseInfo::getValue( unsigned int index ) const
 AuthorGroup::AuthorGroup(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("kdmconfig", KIcon::Small);
+    TQPixmap pixmap = KGlobal::iconLoader()->loadIcon("tdmconfig", KIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000003");
 
