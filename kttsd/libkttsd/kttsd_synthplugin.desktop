@@ -5,4 +5,4 @@ Type=ServiceType
 X-KDE-ServiceType=KTTSD/SynthPlugin
 
 [PropertyDef::X-KDE-Languages]
-Type=QStringList
+Type=TQStringList

@@ -3,4 +3,4 @@ Type=ServiceType
 X-KDE-ServiceType=KTTSD/FilterPlugin
 
 [PropertyDef::X-KDE-Languages]
-Type=QStringList
+Type=TQStringList
