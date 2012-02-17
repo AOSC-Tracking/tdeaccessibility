@@ -37,7 +37,7 @@ class TQTextCodec;
 
 class EposProc : public PlugInProc{
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /**

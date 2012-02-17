@@ -31,7 +31,7 @@ class KConfig;
 
 class TextToSpeechSystem : public TQObject{
    Q_OBJECT
-  TQ_OBJECT
+  
    friend class TextToSpeechConfigurationWidget;
 public:
    TextToSpeechSystem();

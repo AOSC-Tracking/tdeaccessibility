@@ -47,7 +47,7 @@ typedef struct {
 class FXPluginHandler : public TQObject
 {
 Q_OBJECT
-  TQ_OBJECT
+  
 public:
     FXPluginHandler(TQObject *parent = 0, const char *name = 0, KConfig *config=0);
     ~FXPluginHandler();

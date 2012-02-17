@@ -55,7 +55,7 @@ class KCMKttsMgr :
     virtual public KSpeechSink
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &);

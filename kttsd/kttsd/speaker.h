@@ -111,7 +111,7 @@ const int timerInterval = 500;
  */
 class Speaker : public TQObject{
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

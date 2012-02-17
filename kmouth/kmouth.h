@@ -56,7 +56,7 @@ class PhraseBook;
 class KMouthApp : public KMainWindow
 {
   Q_OBJECT
-  TQ_OBJECT
+  
 
   public:
     /** construtor of KMouthApp, calls all init functions to create the application.

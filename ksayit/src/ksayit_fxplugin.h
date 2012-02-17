@@ -36,7 +36,7 @@ using namespace Arts;
 class FXPlugin : public TQObject
 {
 // Q_OBJECT
-  TQ_OBJECT
+  
 public:
     FXPlugin(TQObject *parent=0, const char* name=0){};
        

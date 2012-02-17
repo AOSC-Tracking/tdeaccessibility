@@ -35,7 +35,7 @@ class TQTextCodec;
 
 class FestivalIntProc : public PlugInProc{
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         enum SupportsSSML {

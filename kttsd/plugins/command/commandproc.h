@@ -29,7 +29,7 @@ class TQTextCodec;
 
 class CommandProc : public PlugInProc{
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /** Constructor */

@@ -37,7 +37,7 @@ class KTextEdit;
 class KttsJobMgrFactory : public KLibFactory
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 public:
     KttsJobMgrFactory() {};
     virtual ~KttsJobMgrFactory();
@@ -59,7 +59,7 @@ class KttsJobMgrPart:
     virtual public KSpeechSink
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 public:
     KttsJobMgrPart(TQWidget *parent, const char *name);
     virtual ~KttsJobMgrPart();
@@ -290,7 +290,7 @@ private:
 class KttsJobMgrBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
-  TQ_OBJECT
+  
     friend class KttsJobMgrPart;
 public:
     KttsJobMgrBrowserExtension(KttsJobMgrPart *parent);

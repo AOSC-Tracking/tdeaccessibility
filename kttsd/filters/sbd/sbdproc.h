@@ -63,7 +63,7 @@ class TQDomNode;
 class SbdThread: public TQObject, public TQThread
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**
@@ -241,7 +241,7 @@ class SbdThread: public TQObject, public TQThread
 class SbdProc : virtual public KttsFilterProc
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

@@ -39,7 +39,7 @@ class State;
   */
 class KSayItSystemTray : public KSystemTray  {
    Q_OBJECT
-  TQ_OBJECT
+  
 
   friend class State;
 
@@ -150,7 +150,7 @@ private:
 
 class State : public KSystemTray {
   Q_OBJECT
-  TQ_OBJECT
+  
 public:
   State();
   ~State();

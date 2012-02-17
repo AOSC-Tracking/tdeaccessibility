@@ -39,7 +39,7 @@
 class KTTSD : public TQObject, virtual public KSpeech
 {
     Q_OBJECT
-//    TQ_OBJECT
+//    
     K_DCOP
 
     public:
@@ -633,7 +633,7 @@ class KTTSD : public TQObject, virtual public KSpeech
 class kspeech : public TQObject, virtual public KSpeech
 {
     Q_OBJECT
-//    TQ_OBJECT
+//    
     K_DCOP
 
     public:

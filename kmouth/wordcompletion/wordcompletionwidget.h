@@ -30,7 +30,7 @@ class KLanguageButton;
  */
 class WordCompletionWidget : public WordCompletionUI {
    Q_OBJECT
-  TQ_OBJECT
+  
 public:
    WordCompletionWidget(TQWidget *parent, const char *name);
    ~WordCompletionWidget();

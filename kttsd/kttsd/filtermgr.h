@@ -40,7 +40,7 @@ typedef TQPtrList<KttsFilterProc> FilterList;
 class FilterMgr : public KttsFilterProc
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

@@ -27,7 +27,7 @@
 class FreeverbPluginFactory : public KLibFactory
 {
 Q_OBJECT
-  TQ_OBJECT
+  
 public:
     // Consturctor
     FreeverbPluginFactory(TQObject *parent=0, const char* name=0);
@@ -51,7 +51,7 @@ private:
 class FreeverbPlugin : public FXPlugin
 {
 Q_OBJECT
-  TQ_OBJECT
+  
 public: 
     // Constructor
     FreeverbPlugin(TQObject *parent=0, const char* name=0); //, KApplication *Appl=0);

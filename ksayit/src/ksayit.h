@@ -68,7 +68,7 @@ class KSayItBookmarkHandler;
 class KSayItApp : public KMainWindow, public DCOPObject
 {
   Q_OBJECT
-//  TQ_OBJECT
+//  
   K_DCOP
 
 public:

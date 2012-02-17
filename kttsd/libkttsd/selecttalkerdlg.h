@@ -42,7 +42,7 @@
 class KDE_EXPORT SelectTalkerDlg : public KDialogBase
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

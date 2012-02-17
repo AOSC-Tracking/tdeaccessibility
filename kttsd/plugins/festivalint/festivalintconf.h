@@ -56,7 +56,7 @@ typedef struct voiceStruct{
 
 class FestivalIntConf : public PlugInConf {
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /** Constructor */

@@ -42,7 +42,7 @@ class KProgressDialog;
 
 class FliteConf : public PlugInConf {
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /** Constructor */

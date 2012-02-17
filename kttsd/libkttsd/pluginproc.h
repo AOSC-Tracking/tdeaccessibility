@@ -229,7 +229,7 @@ enum pluginState
 
 class KDE_EXPORT PlugInProc : virtual public TQObject{
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         enum CharacterCodec {

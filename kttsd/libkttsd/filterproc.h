@@ -39,7 +39,7 @@ class KConfig;
 class KDE_EXPORT KttsFilterProc : virtual public TQObject
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
     enum FilterState {

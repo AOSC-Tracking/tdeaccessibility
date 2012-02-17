@@ -43,7 +43,7 @@ class KProgressDialog;
 
 class EposConf : public PlugInConf {
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /** Constructor */

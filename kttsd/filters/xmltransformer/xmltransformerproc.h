@@ -36,7 +36,7 @@ class KProcess;
 class XmlTransformerProc : virtual public KttsFilterProc
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
     /**

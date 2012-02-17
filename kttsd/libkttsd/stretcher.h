@@ -33,7 +33,7 @@ class KProcess;
 
 class KDE_EXPORT Stretcher : public TQObject{
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

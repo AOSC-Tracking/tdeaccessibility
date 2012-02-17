@@ -148,7 +148,7 @@ public:
  */
 class PhraseBookDrag: public TQDragObject {
    Q_OBJECT
-  TQ_OBJECT
+  
 public:
    PhraseBookDrag (PhraseBook *book, TQWidget *dragSource = 0, const char *name = 0);
    PhraseBookDrag (TQWidget *dragSource = 0, const char *name = 0);
@@ -171,7 +171,7 @@ private:
 
 class PhraseAction : public KAction {
    Q_OBJECT
-  TQ_OBJECT
+  
 public:
    PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {

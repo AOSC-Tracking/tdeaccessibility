@@ -27,7 +27,7 @@ class KProcess;
 class HadifixProcPrivate;
 class HadifixProc : public PlugInProc{
   Q_OBJECT
-  TQ_OBJECT
+  
   
   public:
     enum VoiceGender {

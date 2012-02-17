@@ -40,7 +40,7 @@
 class KLanguageButton : public TQPushButton
 {
   Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
   KLanguageButton(TQWidget *parent=0, const char *name=0);

@@ -43,7 +43,7 @@ namespace KDE {
 class KDE_EXPORT ArtsPlayer : public Player
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
     ArtsPlayer(TQObject* parent = 0, const char* name = 0, const TQStringList& args=TQStringList());

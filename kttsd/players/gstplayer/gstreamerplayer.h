@@ -28,7 +28,7 @@ extern "C" {
 class GStreamerPlayer : public Player
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
     GStreamerPlayer(TQObject* parent = 0, const char* name = 0, const TQStringList& args=TQStringList());

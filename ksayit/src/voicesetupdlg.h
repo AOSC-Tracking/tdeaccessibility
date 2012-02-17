@@ -33,7 +33,7 @@ class KTTSDLib;
   */
 class VoiceSetupDlg : public KDialogBase  {
   Q_OBJECT
-  TQ_OBJECT
+  
 
 public: 
   VoiceSetupDlg(TQWidget *parent=0, const char *name=0, const TQString &caption=NULL,

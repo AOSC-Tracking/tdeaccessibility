@@ -43,7 +43,7 @@ class EditReplacementWidget;
 class StringReplacerConf : public KttsFilterConf
 {
     Q_OBJECT
-  TQ_OBJECT
+  
 
     public:
         /**

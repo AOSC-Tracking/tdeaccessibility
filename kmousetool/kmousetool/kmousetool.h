@@ -55,7 +55,7 @@ class KMouseToolTray;
 class KMouseTool : public KMouseToolUI
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 
 private:
 	MTStroke stroke;
@@ -195,7 +195,7 @@ public:
 
 class KMouseToolTray : public KSystemTray {
         Q_OBJECT
-  TQ_OBJECT
+  
 	int startStopId;
 public:
 	KMouseToolTray (TQWidget *parent=0, const char *name=0);

@@ -74,7 +74,7 @@ private:
 
 class InitialPhraseBookWidget : public TQWidget {
    Q_OBJECT
-  TQ_OBJECT
+  
 public:
    InitialPhraseBookWidget(TQWidget *parent, const char *name);
    ~InitialPhraseBookWidget();
@@ -95,7 +95,7 @@ private:
  */
 class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
-  TQ_OBJECT
+  
 public:
    StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
@@ -143,7 +143,7 @@ protected:
 class PhraseBookDialog : public KMainWindow {
    friend class InitialPhraseBookWidget;
    Q_OBJECT
-  TQ_OBJECT
+  
 private:
    /** Constructor. It is private because this class implements the singleton
     * pattern. For creating the instance of the dialog, use the get() method.

@@ -33,7 +33,7 @@
 
 class KSayItViewImpl : public KSayItView  {
    Q_OBJECT
-  TQ_OBJECT
+  
 
 public: 
     KSayItViewImpl(TQWidget *parent=0, const char *name=0);

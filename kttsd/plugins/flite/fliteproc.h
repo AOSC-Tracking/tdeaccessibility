@@ -35,7 +35,7 @@ class KProcess;
 
 class FliteProc : public PlugInProc{
     Q_OBJECT
-    TQ_OBJECT
+    
 
     public:
         /**
