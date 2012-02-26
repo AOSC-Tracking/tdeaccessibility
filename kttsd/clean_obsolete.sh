@@ -14,11 +14,11 @@
 #   ./clean_obsolete.sh
 #   make install
 
-PREFIX=$(kde-config --prefix)
+PREFIX=$(tde-config --prefix)
 LIBTOOL="../libtool"
 
 if [ -z "$PREFIX" ]; then
-    echo "KDE prefix not found.  Do you have kde-config installed?"
+    echo "KDE prefix not found.  Do you have tde-config installed?"
     exit
 fi
 
