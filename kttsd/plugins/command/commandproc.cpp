@@ -198,7 +198,7 @@ void CommandProc::synth(const TQString& inputText, const TQString& suggestedFile
             if (!stack.isEmpty())
                 isdoublequote = stack.pop();
             else
-                qWarning("Parse error.");
+                tqWarning("Parse error.");
             if (noreplace > 0)
                 // count nested braces when within ${...}
                 noreplace--;

@@ -171,7 +171,7 @@ void AlsaPlayer::startPlay(const TQString &file)
 {
     TQString pName = m_pcmName.section(" ", 0, 0);
     DBG("pName = %s", pName.ascii());
-    pcm_name = qstrdup(pName.ascii());
+    pcm_name = tqstrdup(pName.ascii());
     int err;
     snd_pcm_info_t *info;
 
