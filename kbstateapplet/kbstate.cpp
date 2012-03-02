@@ -100,10 +100,10 @@ KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
 	slow   = new TimeoutIcon (instance, "", "kbstate_slowkeys", this, "slow");
 	bounce = new TimeoutIcon (instance, "", "", this, "bounce");
 
-	xkb = XkbGetMap(qt_xdisplay(), 0, XkbUseCoreKbd);
+	xkb = XkbGetMap(tqt_xdisplay(), 0, XkbUseCoreKbd);
 
 	if (xkb != 0) {
-		XkbGetControls (qt_xdisplay(), XkbAllControlsMask, xkb);
+		XkbGetControls (tqt_xdisplay(), XkbAllControlsMask, xkb);
 		if (xkb->ctrls != 0)
 			accessxFeatures = xkb->ctrls->enabled_ctrls;
 		else
@@ -597,7 +597,7 @@ bool KbStateApplet::x11Event (XEvent *evt) {
 				accessxFeatures = event->enabled_ctrls;
 				
 				if ((accessxFeatures & XkbMouseKeysMask) != 0) {
-					XkbGetControls (qt_xdisplay(), XkbMouseKeysMask, xkb);
+					XkbGetControls (tqt_xdisplay(), XkbMouseKeysMask, xkb);
 					if (xkb->ctrls->mk_dflt_btn < 1)
 						mouse->setActiveKey (1);
 					else if (xkb->ctrls->mk_dflt_btn > 3)

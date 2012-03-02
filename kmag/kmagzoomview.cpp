@@ -82,15 +82,15 @@ static uchar phand_bits[] = {
 static bool obscuredRegion (TQRegion &region, Window winId, Window ignoreId, Window start = 0, int level = -1) {
   Window root, parent, *children; uint nchildren;
   if (0 == start)
-    start = qt_xrootwin();
+    start = tqt_xrootwin();
 
   bool winIdFound = false;
-  if (0 != XQueryTree (qt_xdisplay(), start, &root, &parent, &children, &nchildren)) {
+  if (0 != XQueryTree (tqt_xdisplay(), start, &root, &parent, &children, &nchildren)) {
     for (uint i=0; i < nchildren; ++i) {
       if (winIdFound) {
         if (ignoreId != children [i]) {
           XWindowAttributes atts;
-          XGetWindowAttributes (qt_xdisplay(), children [i], &atts);
+          XGetWindowAttributes (tqt_xdisplay(), children [i], &atts);
           if (atts.map_state == IsViewable)
             region -= TQRegion (atts.x, atts.y, atts.width, atts.height, TQRegion::Rectangle);
         }
