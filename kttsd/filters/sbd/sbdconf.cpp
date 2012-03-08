@@ -216,7 +216,7 @@ void SbdConf::slotReButton_clicked()
     {
         // tdeutils was installed, so the dialog was found.  Fetch the editor interface.
         KRegExpEditorInterface *reEditor =
-                static_cast<KRegExpEditorInterface *>(editorDialog->qt_cast( "KRegExpEditorInterface" ) );
+                static_cast<KRegExpEditorInterface *>(editorDialog->tqt_cast( "KRegExpEditorInterface" ) );
         Q_ASSERT( reEditor ); // This should not fail!// now use the editor.
         reEditor->setRegExp( m_widget->reLineEdit->text() );
         int dlgResult = editorDialog->exec();
