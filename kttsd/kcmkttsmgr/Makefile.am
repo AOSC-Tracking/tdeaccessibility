@@ -43,7 +43,7 @@ noinst_HEADERS = \
 	addtalker.h \
 	selectevent.h
 
-# K Menu entry.
+# TDE Menu entry.
 xdg_apps_DATA = kcmkttsd.desktop
 
 # Install data files.

@@ -30,5 +30,5 @@ kttsmgr_LDADD = \
 # Header files that should not be installed.
 noinst_HEADERS = kttsmgr.h
 
-# K Menu entry.
+# TDE Menu entry.
 xdg_apps_DATA = kttsmgr.desktop
