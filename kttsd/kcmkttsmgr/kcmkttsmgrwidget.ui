@@ -70,7 +70,7 @@
                             <bool>true</bool>
                         </property>
                         <property name="whatsThis" stdset="0">
-                            <string>When checked, KTTSMgr displays an icon in the system tray, and clicking OK or Cancel buttons does not stop KTTSMgr.  Use system tray context menu to quit KTTSMgr.  This setting takes effect when KTTSMgr is next started.  This setting has no effect when running in the KDE Control Center.</string>
+                            <string>When checked, KTTSMgr displays an icon in the system tray, and clicking OK or Cancel buttons does not stop KTTSMgr.  Use system tray context menu to quit KTTSMgr.  This setting takes effect when KTTSMgr is next started.  This setting has no effect when running in the TDE Control Center.</string>
                         </property>
                     </widget>
                     <spacer row="6" column="1">
