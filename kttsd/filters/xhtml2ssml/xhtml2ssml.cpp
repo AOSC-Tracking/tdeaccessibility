@@ -54,7 +54,7 @@ bool XHTMLToSSMLParser::startDocument() {
 bool XHTMLToSSMLParser::startElement(const TQString &, const TQString &, const TQString &qName, const TQXmlAttributes &atts) {
     TQString attributes = "";
     if(atts.length() > 0) {
-        const int attsLength = atts.lenght();
+        const int attsLength = atts.length();
         for(int i = 0; i < attsLength; ++i)
             attributes += " " + atts.qName(i) + "=\"" + atts.value(i) + "\"";
     }
