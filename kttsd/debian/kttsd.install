@@ -57,21 +57,21 @@ debian/tmp/usr/share/apps/kttsd/stringreplacer/polish_festival_unspeakables.xml
 debian/tmp/usr/share/apps/kttsd/xmltransformer/xhtml2ssml.xsl
 debian/tmp/usr/share/apps/ktexteditor_kttsd/ktexteditor_kttsdui.rc
 
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/common
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/general.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/index.cache.bz2
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/index.docbook
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/addtalker.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/audio.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/festivalintconf.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/general.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/interruption.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/jobs.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/talkers.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/filters.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/stringreplacer.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/xmltransformer.png
-debian/tmp/usr/share/doc/kde/HTML/*/kttsd/talkerchooser.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/common
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/general.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/index.cache.bz2
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/index.docbook
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/addtalker.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/audio.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/festivalintconf.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/general.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/interruption.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/jobs.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/talkers.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/filters.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/stringreplacer.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/xmltransformer.png
+debian/tmp/usr/share/doc/tde/HTML/*/kttsd/talkerchooser.png
 
 debian/tmp/usr/share/services/kttsd_festivalintplugin.desktop
 debian/tmp/usr/share/services/kttsd_commandplugin.desktop
