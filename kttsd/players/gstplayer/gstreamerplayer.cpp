@@ -94,18 +94,18 @@ bool GStreamerPlayer::paused() const
 
 int GStreamerPlayer::totalTime() const
 {
-    return time(GST_TQUERY_TOTAL) / GST_SECOND;
+    return time(GST_QUERY_TOTAL) / GST_SECOND;
 }
 
 int GStreamerPlayer::currentTime() const
 {
-    return time(GST_TQUERY_POSITION) / GST_SECOND;
+    return time(GST_QUERY_POSITION) / GST_SECOND;
 }
 
 int GStreamerPlayer::position() const
 {
-    long long total   = time(GST_TQUERY_TOTAL);
-    long long current = time(GST_TQUERY_POSITION);
+    long long total   = time(GST_QUERY_TOTAL);
+    long long current = time(GST_QUERY_POSITION);
     return total > 0 ? int((double(current) / double(total)) * double(1000) + 0.5) : 0;
 }
 
@@ -117,7 +117,7 @@ void GStreamerPlayer::seek(int seekTime)
 
 void GStreamerPlayer::seekPosition(int position)
 {
-    long long total = time(GST_TQUERY_TOTAL);
+    long long total = time(GST_QUERY_TOTAL);
     if(total > 0)
         seek(int(double(position) / double(1000) * double(totalTime()) + 0.5));
 }
