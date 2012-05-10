@@ -33,7 +33,7 @@
 #include "ksayit.h"
 
 static const char *description =
-	I18N_NOOP("KSayIt - A Text To Speech frontend for KDE");
+	I18N_NOOP("KSayIt - A Text To Speech frontend for TDE");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
 

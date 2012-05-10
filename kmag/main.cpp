@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 {
   // about the application
   KAboutData *aboutData = new KAboutData("kmag", I18N_NOOP("KMagnifier"), KMAG_VERSION,
-                                         I18N_NOOP("Screen magnifier for the K Desktop Environment (KDE)"),
+                                         I18N_NOOP("Screen magnifier for the Trinity Desktop Environment (TDE)"),
                                          KAboutData::License_GPL,
                                          "(C) 2001-2003, Sarang Lakare","",
                                          "http://kmag.sourceforge.net");
