@@ -79,13 +79,13 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>From &amp;KDE documentation</string>
+                <string>From &amp;TDE documentation</string>
             </property>
             <property name="checked">
                 <bool>true</bool>
             </property>
             <property name="whatsThis" stdset="0">
-                <string>If you select this box a new dictionary is created by parsing the KDE documentation. The frequentness of the individual words is detect by simply counting the occurrences of each word.</string>
+                <string>If you select this box a new dictionary is created by parsing the TDE documentation. The frequentness of the individual words is detect by simply counting the occurrences of each word.</string>
             </property>
         </widget>
         <widget class="TQRadioButton" row="3" column="1">

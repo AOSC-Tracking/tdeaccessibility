@@ -261,7 +261,7 @@
                         <cstring>cbStart</cstring>
                     </property>
                     <property name="text">
-                        <string>Start with &amp;KDE</string>
+                        <string>Start with &amp;TDE</string>
                     </property>
                 </widget>
                 <widget class="TQCheckBox" row="5" column="0" rowspan="1" colspan="2">
@@ -295,7 +295,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>KMouseTool will run as a background application after you close this dialog. To change the settings again, restart KMouseTool or use the KDE system tray.</string>
+                        <string>KMouseTool will run as a background application after you close this dialog. To change the settings again, restart KMouseTool or use the TDE system tray.</string>
                     </property>
                     <property name="scaledContents">
                         <bool>false</bool>
