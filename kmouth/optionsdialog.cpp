@@ -140,7 +140,7 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
    if (kttsd != 0) {
       TQPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
       TQGrid *pageKttsd = addGridPage (1, Qt::Horizontal, i18n("KTTSD Speech Service"),
-                                      i18n("KDE Text-to-Speech Daemon Configuration"), iconKttsd);
+                                      i18n("TDE Text-to-Speech Daemon Configuration"), iconKttsd);
       
       kttsd->reparent(pageKttsd,0,TQPoint(0,0),true);
    }

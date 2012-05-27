@@ -61,7 +61,7 @@ KTTSDLib::~KTTSDLib()
 
 TQString KTTSDLib::getName() const
 {
-    return "KDE KTTSD";
+    return "TDE KTTSD";
 }
 
 
@@ -69,7 +69,7 @@ TQString KTTSDLib::getDescription() const
 {
     TQString str;
     str =  i18n("<qt><big><u>Description:</u></big><br>");
-    str += i18n("This plugin uses the KDE TTS Daemon for speech output.");
+    str += i18n("This plugin uses the TDE TTS Daemon for speech output.");
         
     return str;
 }
