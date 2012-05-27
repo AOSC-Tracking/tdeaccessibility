@@ -1,14 +1,14 @@
-Begin3
-Title:          KMouseTool 
-Version:        1.11
-Entered-date:   1/16/03
-Description:    Clicks the mouse for you, reducing hand pain
-Keywords:       ergonomic, mouse, tendonitis, carpal tunnel syndrome
-Author:         Jeff Roush <jeff@mousetool.com> 
-Maintained-by:  Jeff Roush <jeff@mousetool.com> 
-Primary-site:   http://www.mousetool.com	
-Home-page:      http://www.mousetool.com
-Original-site:  http://www.mousetool.com
-Platforms:      Linux and other Unices
-Copying-policy: GNU Public License
+Begin4
+Title:          KMouseTool
+Version:        R14.0.0
+Entered-date:   2010-05-10
+Description:    Clicks the mouse to reduce hand pain
+Keywords:       TDE ergonomic, mouse, tendonitis, carpal tunnel syndrome
+Author:         Jeff Roush <jeff@mousetool.com>
+Maintained-by:  The Trinity Desktop Environment (TDE) http://www.trinitydesktop.org/
+Primary-site:   http://git.trinitydesktop.org/cgit/
+Alternate-site:
+Original-site:  http://www.kde.org/
+Platforms:      Linux and other Unices running TDE
+Copying-policy: GPL
 End

@@ -1,14 +1,14 @@
-Begin3
-Title:          KMouth 
-Version:        0.1
-Entered-date:   
+Begin4
+Title:          KMouth
+Version:        R14.0.0
+Entered-date:   2010-05-10
 Description:    Lets your computer speak
-Keywords:        
-Author:         Gunnar Schmi Dt <kmouth@schmi-dt.de> 
-Maintained-by:  Gunnar Schmi Dt <kmouth@schmi-dt.de> 
-Primary-site:   	        
-Home-page:      http://www.schmi-dt.de/kmouth/index.en.html 
-Original-site:  
-Platforms:      Linux and other Unices
-Copying-policy: GNU Public License
+Keywords:       TDE Qt
+Author:         Gunnar Schmi Dt <kmouth@schmi-dt.de>
+Maintained-by:  The Trinity Desktop Environment (TDE) http://www.trinitydesktop.org/
+Primary-site:   http://git.trinitydesktop.org/cgit/
+Alternate-site:
+Original-site:  http://www.schmi-dt.de/kmouth/index.en.html
+Platforms:      Linux and other Unices running TDE
+Copying-policy: GPL
 End
