@@ -66,7 +66,7 @@ DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *parent, const char
     TQWhatsThis::add (dirWidget->url, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    buildCodecCombo (dirWidget->encodingCombo);
 
-   kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
+   kdeDocWidget= new KDEDocSourceUI (this, "TDE documentation source page");
    addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
@@ -247,7 +247,7 @@ TQString DictionaryCreationWizard::name() {
       return dirWidget->url->url();
    }
    else { // creationSource->kdeDocButton must be checked
-      return i18n("KDE Documentation");
+      return i18n("TDE Documentation");
    }
 }
 
