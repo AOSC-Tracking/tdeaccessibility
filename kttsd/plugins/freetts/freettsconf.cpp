@@ -93,7 +93,7 @@ void FreeTTSConf::save(KConfig *config, const TQString &configGroup){
 
     config->setGroup(configGroup);
     if(m_widget->freettsPath->url().isEmpty())
-        KMessageBox::sorry(0, i18n("Unable to locate freetts.jar in your path.\nPlease specify the path to freetts.jar in the Properties tab before using KDE Text-to-Speech"), i18n("KDE Text-to-Speech"));
+        KMessageBox::sorry(0, i18n("Unable to locate freetts.jar in your path.\nPlease specify the path to freetts.jar in the Properties tab before using TDE Text-to-Speech"), i18n("TDE Text-to-Speech"));
     config->writeEntry("FreeTTSJarPath",
         realFilePath(m_widget->freettsPath->url()));
 }
