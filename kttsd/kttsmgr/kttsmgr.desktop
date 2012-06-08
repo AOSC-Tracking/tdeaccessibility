@@ -95,4 +95,4 @@ Comment[uk]=Менеджер TDE для синтезу мовлення з те�
 Comment[vi]=Trình quản lý Văn bản sang Tiếng nói TDE
 Comment[zh_TW]=TDE 文字轉語音管理員
 Terminal=false
-Categories=Qt;KDE;Utility;Accessibility;
+Categories=Qt;TDE;Utility;Accessibility;

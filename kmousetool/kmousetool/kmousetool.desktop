@@ -133,5 +133,5 @@ GenericName[uz@cyrillic]=Сичқончани авто-босиш
 GenericName[vi]=Ấn Chuột Tự động
 GenericName[zh_CN]=自动鼠标点击
 GenericName[zh_TW]=自動滑鼠點擊
-Categories=Qt;KDE;Utility;Accessibility;
+Categories=Qt;TDE;Utility;Accessibility;
 

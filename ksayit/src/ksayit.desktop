@@ -61,4 +61,4 @@ GenericName[uk]=Інтерфейс синтезу мовлення з текст
 GenericName[vi]=Giao diện chuyển Văn bản thành Tiếng nói
 GenericName[zh_CN]=文本到语音前端
 GenericName[zh_TW]=文字轉語音前端程式
-Categories=Qt;KDE;Accessibility;Utility;
+Categories=Qt;TDE;Accessibility;Utility;

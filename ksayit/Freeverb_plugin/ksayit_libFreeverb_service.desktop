@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=ServiceType
-X-KDE-ServiceType=KSayIt/FXPlugin
+X-TDE-ServiceType=KSayIt/FXPlugin
 Comment=A Freeverb Plugin for KSayIt
 Comment[bg]=Приставка Freeverb за KTTSD
 Comment[br]=Lugent Freeverb evit KSayIt

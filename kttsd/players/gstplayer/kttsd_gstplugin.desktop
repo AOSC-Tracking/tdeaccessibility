@@ -89,4 +89,4 @@ Comment[vi]=Trình bổ sung âm thanh KTTSD GStreamer
 Comment[zh_TW]=KTTSd GStreamer 語音外掛程式
 Type=Service
 ServiceTypes=KTTSD/AudioPlugin
-X-KDE-Library=libkttsd_gstplugin
+X-TDE-Library=libkttsd_gstplugin

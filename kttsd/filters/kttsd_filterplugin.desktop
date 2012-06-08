@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=ServiceType
-X-KDE-ServiceType=KTTSD/FilterPlugin
+X-TDE-ServiceType=KTTSD/FilterPlugin
 
-[PropertyDef::X-KDE-Languages]
+[PropertyDef::X-TDE-Languages]
 Type=TQStringList

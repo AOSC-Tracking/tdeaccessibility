@@ -49,4 +49,4 @@ Comment[zh_CN]=KSayIt 的 Freeverb 插件
 Comment[zh_TW]=KSayIt 的 Freeverb 外掛程式
 ServiceTypes=KSayIt/FXPlugin
 Type=Service
-X-KDE-Library=libFreeverb_plugin
+X-TDE-Library=libFreeverb_plugin

@@ -98,4 +98,4 @@ Comment[vi]=Tiểu dụng bảng điều khiển hiển thị trạng thái phí
 Comment[zh_CN]=显示修饰键状态的面板小程序
 Comment[zh_TW]=一個顯示鍵盤狀態的面板小程式
 Icon=key_enter
-X-KDE-Library=kbstate_panelapplet
+X-TDE-Library=kbstate_panelapplet

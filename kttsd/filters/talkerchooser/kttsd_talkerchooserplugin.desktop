@@ -85,5 +85,5 @@ Comment[vi]=Trình bổ sung Lọc Chọn Máy nói Chung cho KTTS
 Comment[zh_TW]=KTTS 使用的語音選擇外掛程式
 Type=Service
 ServiceTypes=KTTSD/FilterPlugin
-X-KDE-Library=libkttsd_talkerchooserplugin
-X-KDE-Languages=en,en_US,en_GB,en_CA,es,es_mx,cy,de,fi,cs,pl
+X-TDE-Library=libkttsd_talkerchooserplugin
+X-TDE-Languages=en,en_US,en_GB,en_CA,es,es_mx,cy,de,fi,cs,pl

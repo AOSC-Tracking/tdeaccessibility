@@ -101,7 +101,7 @@ debian/tmp/usr/share/icons/crystalsvg/64x64/apps/kttsd.png
 debian/tmp/usr/share/icons/crystalsvg/128x128/apps/kttsd.png
 debian/tmp/usr/share/icons/crystalsvg/scalable/apps/kttsd.svgz
 
-debian/tmp/usr/share/applications/kde/kcmkttsd.desktop
-debian/tmp/usr/share/applications/kde/kttsmgr.desktop
+debian/tmp/usr/share/applications/tde/kcmkttsd.desktop
+debian/tmp/usr/share/applications/tde/kttsmgr.desktop
 
 debian/tmp/usr/share/locale/*/LC_MESSAGES/

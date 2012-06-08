@@ -530,7 +530,7 @@ void KCMKttsMgr::load()
     for(unsigned int i=0; i < offers.count() ; ++i)
     {
         TQString synthName = offers[i]->name();
-        TQStringList languageCodes = offers[i]->property("X-KDE-Languages").toStringList();
+        TQStringList languageCodes = offers[i]->property("X-TDE-Languages").toStringList();
         // Add language codes to the language-to-language code map.
         TQStringList::ConstIterator endLanguages(languageCodes.constEnd());
         for( TQStringList::ConstIterator it = languageCodes.constBegin(); it != endLanguages; ++it )

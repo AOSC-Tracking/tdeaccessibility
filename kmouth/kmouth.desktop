@@ -76,4 +76,4 @@ GenericName[uk]=Графічний інтерфейс синтезатора м�
 GenericName[vi]=Giao diện Tổng hợp Giọng nói
 GenericName[zh_CN]=语音合成器前端
 GenericName[zh_TW]=語音合成器前端
-Categories=Qt;KDE;Utility;Accessibility;
+Categories=Qt;TDE;Utility;Accessibility;

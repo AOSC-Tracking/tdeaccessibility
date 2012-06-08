@@ -45,7 +45,7 @@ rm -f $PREFIX/share/servicetypes/kttsd.desktop
 # Change made on or about 18 Dec 2004.
 $LIBTOOL --mode=uninstall $PREFIX/lib/trinity/kcm_kttsmgr
 rm -f $PREFIX/share/applnk/Settings/Accessibility/kcmkttsmgr.desktop
-rm -f $PREFIX/share/applications/kde/kcmkttsmgr.desktop
+rm -f $PREFIX/share/applications/tde/kcmkttsmgr.desktop
 
 # Renamed libkttsjobmgr to libkttsjobmgrpart per tdelibs/NAMING convention
 # on or about 19 Oct 2004:

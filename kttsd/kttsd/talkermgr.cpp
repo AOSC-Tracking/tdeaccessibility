@@ -324,7 +324,7 @@ bool TalkerMgr::autoconfigureTalker(const TQString& langCode, KConfig* config)
     for(unsigned int i=0; i < offers.count() ; ++i)
     {
         // See if this plugin supports the desired language.
-        TQStringList languageCodes = offers[i]->property("X-KDE-Languages").toStringList();
+        TQStringList languageCodes = offers[i]->property("X-TDE-Languages").toStringList();
         if (languageCodes.contains(languageCode))
         {
             TQString desktopEntryName = offers[i]->desktopEntryName();

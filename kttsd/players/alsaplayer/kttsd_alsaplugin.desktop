@@ -86,4 +86,4 @@ Comment[vi]=Trình bổ sung âm thanh KTTSD ALSA
 Comment[zh_TW]=KTTSd ALSA 語音外掛程式
 Type=Service
 ServiceTypes=KTTSD/AudioPlugin
-X-KDE-Library=libkttsd_alsaplugin
+X-TDE-Library=libkttsd_alsaplugin

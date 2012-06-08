@@ -83,5 +83,5 @@ Comment[vi]=Trình tổng hợp Văn bản sang Tiếng nói Epos
 Comment[zh_TW]=Epos TTS 語音合成器
 Type=Service
 ServiceTypes=KTTSD/SynthPlugin
-X-KDE-Library=libkttsd_eposplugin
-X-KDE-Languages=cs,sk
+X-TDE-Library=libkttsd_eposplugin
+X-TDE-Languages=cs,sk

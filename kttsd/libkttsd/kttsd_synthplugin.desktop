@@ -2,7 +2,7 @@
 Name=KTTSD
 Name[zh_TW]=KTTSd
 Type=ServiceType
-X-KDE-ServiceType=KTTSD/SynthPlugin
+X-TDE-ServiceType=KTTSD/SynthPlugin
 
-[PropertyDef::X-KDE-Languages]
+[PropertyDef::X-TDE-Languages]
 Type=TQStringList

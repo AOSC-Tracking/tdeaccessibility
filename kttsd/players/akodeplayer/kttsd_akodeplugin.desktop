@@ -86,4 +86,4 @@ Comment[vi]=Trình bổ sung âm thanh KTTSD aKode
 Comment[zh_TW]=KTTSd aKode 語音外掛程式
 Type=Service
 ServiceTypes=KTTSD/AudioPlugin
-X-KDE-Library=libkttsd_akodeplugin
+X-TDE-Library=libkttsd_akodeplugin
