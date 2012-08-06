@@ -26,7 +26,7 @@ libkttsd_la_SOURCES = \
 	notify.cpp
 
 libkttsd_la_LDFLAGS = -version-info 1:0:0 $(all_libraries) -no-undefined
-libkttsd_la_LIBADD = $(LIB_KIO)
+libkttsd_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
 
 # Header files that should not be installed.
 noinst_HEADERS = \
