@@ -123,14 +123,14 @@
     <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
 </includes>
 <Q_SIGNALS>
-    <signal>signalContentChanged(const QString &amp;)</signal>
+    <signal>signalContentChanged(const TQString &amp;)</signal>
     <signal>signalAllNodesProcessed()</signal>
-    <signal>signalSetText(const QString &amp;)</signal>
+    <signal>signalSetText(const TQString &amp;)</signal>
     <signal>signalEnableTextedit(bool)</signal>
-    <signal>signalNotifyBookmarkManager(const QString&amp;, const QString &amp;)</signal>
-    <signal>signalSetBookmarkFilename(const QString&amp;)</signal>
-    <signal>signalChangeBookmarkFilename(const QString &amp;)</signal>
-    <signal>signalDeleteBookmark(const QString&amp;, const QString&amp;)</signal>
+    <signal>signalNotifyBookmarkManager(const TQString&amp;, const TQString &amp;)</signal>
+    <signal>signalSetBookmarkFilename(const TQString&amp;)</signal>
+    <signal>signalChangeBookmarkFilename(const TQString &amp;)</signal>
+    <signal>signalDeleteBookmark(const TQString&amp;, const TQString&amp;)</signal>
 </Q_SIGNALS>
 <Q_SLOTS>
     <slot>slotItemClicked( TQListViewItem * )</slot>

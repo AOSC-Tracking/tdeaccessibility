@@ -1755,7 +1755,7 @@
     </connection>
     <connection>
         <sender>textPreMsg</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>KCMKttsMgrWidget</receiver>
         <slot>slotConfigChanged()</slot>
     </connection>
@@ -1785,7 +1785,7 @@
     </connection>
     <connection>
         <sender>textPreSnd</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>KCMKttsMgrWidget</receiver>
         <slot>slotConfigChanged()</slot>
     </connection>
@@ -1803,7 +1803,7 @@
     </connection>
     <connection>
         <sender>textPostMsg</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>KCMKttsMgrWidget</receiver>
         <slot>slotConfigChanged()</slot>
     </connection>
@@ -1821,13 +1821,13 @@
     </connection>
     <connection>
         <sender>textPostSnd</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>KCMKttsMgrWidget</receiver>
         <slot>slotConfigChanged()</slot>
     </connection>
     <connection>
         <sender>pcmCustom</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>KCMKttsMgrWidget</receiver>
         <slot>slotConfigChanged()</slot>
     </connection>
