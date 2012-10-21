@@ -102,7 +102,7 @@ FILE_PATTERNS          = *.c \
                          *.tlh \
                          *.diff \
                          *.patch \
-                         *.tqmoc \
+                         *.moc \
                          *.xpm \
                          *.dox
 RECURSIVE              = yes
