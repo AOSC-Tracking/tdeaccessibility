@@ -63,8 +63,8 @@ _ KTTSD:
     _ I am told that when kttsd crashes, it can take knotify down with it.  See about
       "disconnecting" knotify from kttsd (using post to Qt event queue).
     _ Strange msg being produced by KIO::move, but it works fine. ??
-        kio (KIOJob): stat file:///home/kde-devel/.kde/share/apps/kttsd/audio/kttsd-5-1.wav
-        kio (KIOJob): error 11 /home/kde-devel/.kde/share/apps/kttsd/audio/kttsd-5-1.wav
+        kio (KIOJob): stat file:///home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
+        kio (KIOJob): error 11 /home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
         kio (KIOJob): This seems to be a suitable case for trying to rename before stat+[list+]copy+del
     _ While kttsd currently configures a Talker automatically, would be nice if it could
       autoconfigure talkers for each requested language, if one has not already been configured.
