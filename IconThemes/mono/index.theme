@@ -104,7 +104,7 @@ SmallDefault=16
 SmallSizes=16
 PanelDefault=48
 PanelSizes=16,22,32,48,64,128,256
-Directories=scalable/actions,png/16x16/actions,png/22x22/actions,png/32x32/actions,png/48x48/actions,png/64x64/actions,png/96x96/actions,png/128x128/actions,png/192x192/actions,png/256x256/actions,scalable/apps,scalable/devices,scalable/filesystems,scalable/mimetypes
+Directories=scalable/actions,png/16x16/actions,png/22x22/actions,png/32x32/actions,png/48x48/actions,png/64x64/actions,png/96x96/actions,png/128x128/actions,png/192x192/actions,png/256x256/actions,scalable/apps,scalable/devices,scalable/places,scalable/mimetypes
 
 [scalable/actions]
 Size=48
@@ -124,7 +124,7 @@ Type=Scalable
 MinSize=8
 MaxSize=256
 Context=Devices
-[scalable/filesystems]
+[scalable/places]
 Size=48
 Type=Scalable
 MinSize=8
