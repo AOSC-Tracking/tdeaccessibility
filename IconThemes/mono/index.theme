@@ -129,7 +129,7 @@ Size=48
 Type=Scalable
 MinSize=8
 MaxSize=256
-Context=FileSystems
+Context=Places
 [scalable/mimetypes]
 Size=48
 Type=Scalable
