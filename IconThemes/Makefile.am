@@ -16,7 +16,7 @@ install-data-local:
 	    for size in $$sizes ; do \
 	      if [ -d $(top_srcdir)/IconThemes/$$theme/$$size -a $$size != "CVS" -a $$size != ".svn" ]; then \
 	        $(mkinstalldirs) $(DESTDIR)$(kde_icondir)/$$theme/$$size ; \
-	        for group in actions apps devices filesystems mimetypes; do \
+	        for group in actions apps devices places mimetypes; do \
 	          if [ -d $(top_srcdir)/IconThemes/$$theme/$$size/$$group ]; then \
 	              echo "installing $$theme/$$size/$$group" ; \
 	            $(mkinstalldirs) $(DESTDIR)$(kde_icondir)/$$theme/$$size/$$group ; \
