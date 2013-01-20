@@ -222,11 +222,11 @@ TQString DictionaryCreationWizard::createDictionary() {
    do {
       dictnumber++;
       filename = TQString("wordcompletion%1.dict").arg(dictnumber);
-      dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
    
-   dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + filename;
+   dictionaryFile = TDEApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + filename;
    if (WordList::saveWordList (map, dictionaryFile))
       return filename;
    else
@@ -319,7 +319,7 @@ TQMap <TQString, int> MergeWidget::mergeParameters () {
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
          TQString name = it.currentKey();
-         TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", name);
+         TQString dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", name);
          files[dictionaryFile] = weights[name]->value();
       }
    }
@@ -363,7 +363,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    TQString filename;
    TQString dictionaryFile;
    
-   dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
+   dictionaryFile = TDEApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
    if (WordList::saveWordList (map, dictionaryFile)) {
       config->setGroup("Dictionary 0");
       config->writeEntry ("Filename", "wordcompletion1.dict");

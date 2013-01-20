@@ -62,7 +62,7 @@ TQObject* FreeverbPluginFactory::createObject(TQObject *parent, const char* name
 
 
 // Plugin Constructor
-FreeverbPlugin::FreeverbPlugin(TQObject *parent, const char* name) //, KApplication *Appl)
+FreeverbPlugin::FreeverbPlugin(TQObject *parent, const char* name) //, TDEApplication *Appl)
  : FXPlugin(parent, name) //, m_Appl(Appl)
 {
     m_config = new KSimpleConfig("ksayit_freeverbrc");
@@ -76,7 +76,7 @@ FreeverbPlugin::~FreeverbPlugin()
 
 /** sets the Main application object
 */
-void FreeverbPlugin::setApplication(KApplication *Appl)
+void FreeverbPlugin::setApplication(TDEApplication *Appl)
 {
     m_Appl = Appl;
 }

@@ -63,7 +63,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
 }
 
 void ConfigWizard::initBookPage() {
-   TQString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   TQString standardBook = TDEApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
    bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
    if (displayBook) {
@@ -80,7 +80,7 @@ void ConfigWizard::initBookPage() {
 
 void ConfigWizard::initCompletion (KConfig *config) {
    if (!WordCompletion::isConfigured()) {
-      TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
+      TQString dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
       TQFile file(dictionaryFile);
       if (file.exists()) {
          // If there is a word completion dictionary but no entry in the
@@ -138,7 +138,7 @@ bool ConfigWizard::configurationNeeded () {
 }
 
 void ConfigWizard::help () {
-   KApplication::kApplication()->invokeHelp ("Wizard");
+   TDEApplication::kApplication()->invokeHelp ("Wizard");
 }
 
 #include "configwizard.moc"

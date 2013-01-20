@@ -36,14 +36,14 @@
  *  In addition you must implement two class factories:\n
  *  \p createPlugin() returns a pointer to an instance of your class.
  *  The Plugin Handler of KSayIt calls this function with a parameter pointing
- *  to the main application instance, as delivered by \p KApplication::kApplication().
+ *  to the main application instance, as delivered by \p TDEApplication::kApplication().
  *  This pointer can be used for any reason i.e. to install a TQt translator.\n
  *  An instance of your class should be deleted by use of \p destroyPlugin().\n
  *  Example:
  \code
     extern "C"
     {
-        TTSPlugin* createPlugin(KApplication *Appl)
+        TTSPlugin* createPlugin(TDEApplication *Appl)
         {
             return new MyNewPlugin(Appl);
         }
@@ -155,7 +155,7 @@ public:
 };
 
 // Types of the class factories
-typedef TTSPlugin* (*create_ttspi)(KApplication *Appl);
+typedef TTSPlugin* (*create_ttspi)(TDEApplication *Appl);
 typedef void (*destroy_ttspi)(TTSPlugin *p);
 
 

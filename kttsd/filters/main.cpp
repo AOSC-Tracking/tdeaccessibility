@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     // Tell which options are supported
     TDECmdLineArgs::addCmdLineOptions( options );
 
-    KApplication app( false, false );
+    TDEApplication app( false, false );
 
     TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 

@@ -225,7 +225,7 @@ void InitialPhraseBookWidget::createBook () {
       }
    }
 
-   TQString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
+   TQString bookLocation = TDEApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KURL( bookLocation + "standard.phrasebook" ));
    }
@@ -264,7 +264,7 @@ PhraseBookDialog::PhraseBookDialog ()
    initGUI();
    initActions();
    initStandardPhraseBooks();
-   TQString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   TQString standardBook = TDEApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
    if (!standardBook.isNull() && !standardBook.isEmpty()) {
       PhraseBook book;
       book.open(KURL( standardBook ));

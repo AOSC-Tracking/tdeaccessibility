@@ -71,7 +71,7 @@ public slots:
     void slotTextStarted(const uint job);
     
 public:
-    KTTSDLib(TQObject *parent=0, const char *name=0, KApplication *Appl=0);
+    KTTSDLib(TQObject *parent=0, const char *name=0, TDEApplication *Appl=0);
 
     ~KTTSDLib();
 
@@ -109,7 +109,7 @@ private slots:
     void removeAllJobsFromList();  
     
 private:
-    KApplication *m_Appl;
+    TDEApplication *m_Appl;
     kttsdlibtalker2 *m_talker;
     uint m_curJobNum;
     typedef queue<uint> jobListType;

@@ -29,7 +29,7 @@ using namespace Arts;
  *  If you would like to implement a plugin, simply make a class
  *  derived from FXPlugin, include 'ksayit_fxplugin.h' and reimplement all the
  *  pure virtual functions provided herein.
- *  *Appl is a pointer to the main application as delivered by \p KApplication::kApplication().
+ *  *Appl is a pointer to the main application as delivered by \p TDEApplication::kApplication().
  *  It can be used for any reason i.e. to install a TQt translator.\n
  \author Robert Vogl
  */
@@ -42,7 +42,7 @@ public:
        
     /** Sets the Main application object. Useful for config objects etc.
      */
-    virtual void setApplication(KApplication *Appl) = 0;
+    virtual void setApplication(TDEApplication *Appl) = 0;
     
     /** Returns the name of the plugin. This name is the unique identifier
      *  for the plugin. A expressive name is recommended because this name

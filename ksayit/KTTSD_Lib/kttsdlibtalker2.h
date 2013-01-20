@@ -43,7 +43,7 @@ public:
     
     /** Intializes the DCOP interface.
      */
-    void KTTSD_init(KApplication *Appl);
+    void KTTSD_init(TDEApplication *Appl);
     
     /** See \p KSpeech Class Reference. Returns the job number.
      */
@@ -92,7 +92,7 @@ protected:
     
 private:
     TQCString m_objID;
-    KApplication *m_Appl;
+    TDEApplication *m_Appl;
     DCOPClient *m_client;
     uint m_jobNum;
     

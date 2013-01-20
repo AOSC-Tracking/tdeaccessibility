@@ -266,7 +266,7 @@ void KMouthApp::readOptions()
   toolBar("mainToolBar")->applySettings (config, "mainToolBar");
   toolBar("phrasebookBar")->applySettings (config, "phrasebookBar");
 
-  TQString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+  TQString standardBook = TDEApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
   if (!standardBook.isEmpty()) {
      PhraseBook book;
      book.open(KURL::fromPathOrURL( standardBook ));
@@ -460,7 +460,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    phrases = new KActionCollection (this, actionCollection());
    book.addToGUI (popup, toolbar, phrases, TQT_TQOBJECT(this), TQT_SLOT(slotPhraseSelected (const TQString &)));
 
-   TQString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
+   TQString bookLocation = TDEApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KURL::fromPathOrURL( bookLocation + "standard.phrasebook" ));
    }

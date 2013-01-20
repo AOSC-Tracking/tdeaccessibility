@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	TDECmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
 	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
-  KApplication app;
+  TDEApplication app;
 
   if (app.isRestored())
   {

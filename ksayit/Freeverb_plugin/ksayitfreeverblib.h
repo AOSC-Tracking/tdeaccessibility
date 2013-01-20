@@ -54,14 +54,14 @@ Q_OBJECT
   
 public: 
     // Constructor
-    FreeverbPlugin(TQObject *parent=0, const char* name=0); //, KApplication *Appl=0);
+    FreeverbPlugin(TQObject *parent=0, const char* name=0); //, TDEApplication *Appl=0);
     
     // Destructor
     ~FreeverbPlugin();    
     
     /** sets the Main application object
     */
-    void setApplication(KApplication *Appl);
+    void setApplication(TDEApplication *Appl);
     
     /** returns the Name of the Plugin
     */
@@ -87,7 +87,7 @@ public:
                                
 
 private:
-    KApplication *m_Appl;
+    TDEApplication *m_Appl;
     KSimpleConfig *m_config;
 
 };

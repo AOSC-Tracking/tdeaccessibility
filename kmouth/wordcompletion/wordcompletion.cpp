@@ -144,7 +144,7 @@ bool WordCompletion::setWordList(const TQString &wordlist) {
       d->current = d->dictionaries[0];
    
    TQString filename = d->dictDetails[d->current].filename;
-   TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+   TQString dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", filename);
    TQFile file(dictionaryFile);
    if (file.exists() && file.open(IO_ReadOnly)) {
       TQTextStream stream(&file);
@@ -195,7 +195,7 @@ void WordCompletion::addSentence (const TQString &sentence) {
 void WordCompletion::save () {
    if (d->wordsToSave) {
       TQString filename = d->dictDetails[d->current].filename;
-      TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      TQString dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", filename);
       TQFile file(dictionaryFile);
       if (!file.exists())
          return;

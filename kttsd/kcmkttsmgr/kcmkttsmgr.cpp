@@ -1764,7 +1764,7 @@ void KCMKttsMgr::enableKttsdToggled(bool)
         {
             // kdDebug() << "KCMKttsMgr::enableKttsdToggled:: Starting KTTSD" << endl;
             TQString error;
-            if (KApplication::startServiceByDesktopName("kttsd", TQStringList(), &error))
+            if (TDEApplication::startServiceByDesktopName("kttsd", TQStringList(), &error))
             {
                 kdDebug() << "Starting KTTSD failed with message " << error << endl;
                 m_kttsmgrw->enableKttsdCheckBox->setChecked(false);

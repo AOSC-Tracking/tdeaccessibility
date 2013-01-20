@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
   aboutData.addAuthor("Robert Vogl",0, "voglrobe@web.de");
   TDECmdLineArgs::init( argc, argv, &aboutData );
 
-  KApplication app;
+  TDEApplication app;
 
     // setup MCOP
     KArtsDispatcher dispatcher;

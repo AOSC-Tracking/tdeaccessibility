@@ -133,7 +133,7 @@ KMagZoomView::KMagZoomView(TQWidget *parent, const char *name)
     m_invert(false),
     m_fitToWindow(true)
 {
-  KApplication::setGlobalMouseTracking(TRUE);
+  TDEApplication::setGlobalMouseTracking(TRUE);
   viewport()->setMouseTracking(TRUE);
   viewport()->setBackgroundMode (NoBackground);
   viewport()->setFocusPolicy(TQ_StrongFocus);
@@ -167,7 +167,7 @@ KMagZoomView::KMagZoomView(TQWidget *parent, const char *name)
 
 KMagZoomView::~KMagZoomView()
 {
-  KApplication::setGlobalMouseTracking(FALSE);
+  TDEApplication::setGlobalMouseTracking(FALSE);
 }
 
 /**
@@ -307,7 +307,7 @@ void KMagZoomView::paintMouseCursor(TQPaintDevice *dev, TQPoint mousePos)
     {    
       // 3. Actual cursor
       // Get the current cursor type
-      TQWidget *dummy  = KApplication::widgetAt(TQCursor::pos(), FALSE);
+      TQWidget *dummy  = TDEApplication::widgetAt(TQCursor::pos(), FALSE);
       if(!dummy)
         break;
       kdDebug() << ">" << dummy->name() << ":" << dummy->cursor().shape() << "-" << endl;

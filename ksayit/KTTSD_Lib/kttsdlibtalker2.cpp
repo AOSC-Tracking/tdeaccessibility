@@ -46,7 +46,7 @@ kttsdlibtalker2::~kttsdlibtalker2()
 }
 
 
-void kttsdlibtalker2::KTTSD_init(KApplication *Appl)
+void kttsdlibtalker2::KTTSD_init(TDEApplication *Appl)
 {
     kdDebug(100200) << "kttsdlibtalker2::KTTSD_init()" << endl;
 

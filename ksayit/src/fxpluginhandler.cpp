@@ -125,7 +125,7 @@ void FXPluginHandler::readConfiguration()
             if ( factory ){
                 plugin.p = static_cast<FXPlugin*>( factory->create( (TQObject*)this, (plugin.name).latin1() ) );
                 if ( plugin.p ){ // Plugin found
-                    plugin.p->setApplication( KApplication::kApplication() );
+                    plugin.p->setApplication( TDEApplication::kApplication() );
                     plugin.description = plugin.p->getDescription_KS();
                     // append to list of active plugins
                     m_lstActivePlugins.append( plugin.name );
@@ -158,7 +158,7 @@ void FXPluginHandler::showEffectGUI(const TQString &pname)
             if ( factory ){
                 plugin.p = static_cast<FXPlugin*>( factory->create( (TQObject*)this, (plugin.name).latin1() ) );
                 if ( plugin.p ){ // Plugin found
-                    plugin.p->setApplication( KApplication::kApplication() );
+                    plugin.p->setApplication( TDEApplication::kApplication() );
                     plugin.description = plugin.p->getDescription_KS();
                     // append to list of active plugins
                     m_lstActivePlugins.append( plugin.name );

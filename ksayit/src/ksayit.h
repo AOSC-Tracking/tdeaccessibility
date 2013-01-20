@@ -60,7 +60,7 @@ class KSayItBookmarkHandler;
   * KSayItApp reimplements the methods that KMainWindow provides for main window handling and supports
   * full session management as well as using KActions.
   * @see KMainWindow
-  * @see KApplication
+  * @see TDEApplication
   * @see KConfig
   *
   * @author Robert Vogl

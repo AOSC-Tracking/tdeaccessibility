@@ -27,7 +27,7 @@
 #include "kttsdlibsetupimpl.h"
 
 
-KTTSDLib::KTTSDLib(TQObject *parent, const char *name, KApplication *Appl)
+KTTSDLib::KTTSDLib(TQObject *parent, const char *name, TDEApplication *Appl)
  : TQObject(parent, name), m_Appl(Appl)
 {
     KGlobal::locale()->insertCatalogue("libKTTSD");
