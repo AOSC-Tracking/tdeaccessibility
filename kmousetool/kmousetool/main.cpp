@@ -50,8 +50,8 @@ int main(int argc, char *argv[])
 	aboutData.addAuthor("Jeff Roush", I18N_NOOP("Original author"), "jeff@mousetool.com", "http://www.mousetool.com");
 
 	aboutData.addCredit("Joe Betts");
-	KCmdLineArgs::init( argc, argv, &aboutData );
-	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+	TDECmdLineArgs::init( argc, argv, &aboutData );
+	TDECmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 	KUniqueApplication::addCmdLineOptions();
 
 	if (!KUniqueApplication::start()) {

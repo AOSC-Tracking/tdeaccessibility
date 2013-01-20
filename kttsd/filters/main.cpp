@@ -65,13 +65,13 @@ int main(int argc, char *argv[])
          KAboutData::License_GPL, "(C) 2005, Gary Cramblitt <garycramblitt@comcast.net>");
     aboutdata.addAuthor("Gary Cramblitt", I18N_NOOP("Maintainer"),"garycramblitt@comcast.net");
 
-    KCmdLineArgs::init( argc, argv, &aboutdata );
+    TDECmdLineArgs::init( argc, argv, &aboutdata );
     // Tell which options are supported
-    KCmdLineArgs::addCmdLineOptions( options );
+    TDECmdLineArgs::addCmdLineOptions( options );
 
     KApplication app( false, false );
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 
     KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin");
 

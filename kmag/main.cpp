@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
   aboutData->addCredit("Claudiu Costin", I18N_NOOP("Some tips"), "claudiuc@work.ro",
                        "http://www.ro.kde.org");
 
-  KCmdLineArgs::init( argc, argv, aboutData );
-  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  TDECmdLineArgs::init( argc, argv, aboutData );
+  TDECmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
 
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
   {
     kmagapp = new KmagApp();
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 
     args->clear();
   }

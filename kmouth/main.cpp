@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
 		KMOUTH_VERSION, description, KAboutData::License_GPL,
 		"(c) 2002/2003, Gunnar Schmi Dt", 0, "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
 	aboutData.addAuthor("Gunnar Schmi Dt",0, "kmouth@schmi-dt.de");
-	KCmdLineArgs::init( argc, argv, &aboutData );
-	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+	TDECmdLineArgs::init( argc, argv, &aboutData );
+	TDECmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
 	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
   KApplication app;
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 
     kmouth->show();
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 
 		if (args->count())
 		{

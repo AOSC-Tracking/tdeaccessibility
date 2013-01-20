@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     KSAYIT_VERSION, description, KAboutData::License_GPL,
     "(c) 1996 - 2005, Robert Vogl", 0, 0, "voglrobe@web.de");
   aboutData.addAuthor("Robert Vogl",0, "voglrobe@web.de");
-  KCmdLineArgs::init( argc, argv, &aboutData );
+  TDECmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication app;
 

@@ -44,8 +44,8 @@ int main (int argc, char *argv[]){
    aboutdata.addCredit("Jorge Luis Arzola", I18N_NOOP("Testing"), "arzolacub@hotmail.com");
    aboutdata.addCredit("David Powell", I18N_NOOP("Testing"), "achiestdragon@gmail.com");
 
-   KCmdLineArgs::init( argc, argv, &aboutdata );
-   // KCmdLineArgs::addCmdLineOptions( options );
+   TDECmdLineArgs::init( argc, argv, &aboutdata );
+   // TDECmdLineArgs::addCmdLineOptions( options );
    KUniqueApplication::addCmdLineOptions();
 
    if(!KUniqueApplication::start()){

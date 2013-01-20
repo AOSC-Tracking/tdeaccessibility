@@ -66,9 +66,9 @@ int main (int argc, char *argv[])
     aboutdata.addAuthor("Paul Giannaros", I18N_NOOP("Contributor"), "ceruleanblaze@gmail.com");
     aboutdata.addCredit("Jorge Luis Arzola", I18N_NOOP("Testing"), "arzolacub@hotmail.com");
     aboutdata.addCredit("David Powell", I18N_NOOP("Testing"), "achiestdragon@gmail.com");
-    KCmdLineArgs::init( argc, argv, &aboutdata );
+    TDECmdLineArgs::init( argc, argv, &aboutdata );
 
-    KCmdLineArgs::addCmdLineOptions( options );
+    TDECmdLineArgs::addCmdLineOptions( options );
 
     KUniqueApplication::addCmdLineOptions();
 
@@ -102,7 +102,7 @@ int main (int argc, char *argv[])
         showMainWindowOnStartup = config->readBoolEntry("ShowMainWindowOnStartup", true);
 
     // If --systray option specified, start minimized in system tray.
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
     if (args->isSet("systray"))
     {
         embedInSysTray = true;
@@ -192,7 +192,7 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
 
     connect(this, TQT_SIGNAL(quitSelected()), this, TQT_SLOT(quitSelected()));
     // If --autoexit option given, exit when speaking stops.
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
     if (args->isSet("autoexit"))
     {
         connectDCOPSignal("kttsd", "KSpeech",
