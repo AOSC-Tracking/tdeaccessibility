@@ -52,7 +52,7 @@ K_EXPORT_COMPONENT_FACTORY( libkttsjobmgrpart, KttsJobMgrFactory )
 * We need one static instance of the factory for our C 'main'
 * function
 */
-KInstance *KttsJobMgrFactory::s_instance = 0L;
+TDEInstance *KttsJobMgrFactory::s_instance = 0L;
 
 KttsJobMgrFactory::~KttsJobMgrFactory()
 {
@@ -73,16 +73,16 @@ TQObject *KttsJobMgrFactory::createObject(TQObject *parent, const char *name, co
     return obj;
 }
 
-KInstance *KttsJobMgrFactory::instance()
+TDEInstance *KttsJobMgrFactory::instance()
 {
     if ( !s_instance )
-        s_instance = new KInstance( aboutData() );
+        s_instance = new TDEInstance( aboutData() );
     return s_instance;
 }
 
-KAboutData *KttsJobMgrFactory::aboutData()
+TDEAboutData *KttsJobMgrFactory::aboutData()
 {
-  KAboutData *about = new KAboutData("kttsjobmgr", I18N_NOOP("KttsJobMgr"), "1.99");
+  TDEAboutData *about = new TDEAboutData("kttsjobmgr", I18N_NOOP("KttsJobMgr"), "1.99");
   return about;
 }
 

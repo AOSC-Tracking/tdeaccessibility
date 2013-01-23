@@ -41,8 +41,8 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-	KAboutData aboutData( "kmousetool", I18N_NOOP("KMouseTool"),
-	KMOUSETOOL_VERSION, description, KAboutData::License_GPL,
+	TDEAboutData aboutData( "kmousetool", I18N_NOOP("KMouseTool"),
+	KMOUSETOOL_VERSION, description, TDEAboutData::License_GPL,
 	"(c) 2002-2003, Jeff Roush\n(c) 2003, Gunnar Schmi Dt", 0, "http://www.mousetool.com", "gunnar@schmi-dt.de");
 
 	aboutData.addAuthor("Gunnar Schmi Dt", I18N_NOOP("Current maintainer"), "gunnar@schmi-dt.de", "http://www.schmi-dt.de");

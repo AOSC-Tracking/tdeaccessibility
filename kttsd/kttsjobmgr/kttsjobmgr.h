@@ -26,8 +26,8 @@
 #include "kspeech_stub.h"
 #include "kspeechsink.h"
 
-class KAboutData;
-class KInstance;
+class TDEAboutData;
+class TDEInstance;
 class KttsJobMgrBrowserExtension;
 class KListView;
 class TQListViewItem;
@@ -46,11 +46,11 @@ public:
                             const char* classname = TQOBJECT_OBJECT_NAME_STRING,
                             const TQStringList &args = TQStringList());
 
-    static KInstance *instance();
-    static KAboutData *aboutData();
+    static TDEInstance *instance();
+    static TDEAboutData *aboutData();
 
 private:
-    static KInstance *s_instance;
+    static TDEInstance *s_instance;
 };
 
 class KttsJobMgrPart: 

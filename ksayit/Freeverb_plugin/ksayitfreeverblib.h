@@ -40,7 +40,7 @@ public:
             const TQStringList &args=TQStringList());        
 
 private:
-    static KInstance* p_instance;
+    static TDEInstance* p_instance;
 
 };
 

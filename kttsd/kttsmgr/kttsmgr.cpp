@@ -56,9 +56,9 @@ int main (int argc, char *argv[])
 {
     KGlobal::locale()->setMainCatalogue("kttsd");
 
-    KAboutData aboutdata("kttsmgr", I18N_NOOP("KTTSMgr"),
+    TDEAboutData aboutdata("kttsmgr", I18N_NOOP("KTTSMgr"),
         "0.3.5.2", I18N_NOOP("Text-to-Speech Manager"),
-        KAboutData::License_GPL, "(C) 2002, José Pablo Ezequiel Fernández");
+        TDEAboutData::License_GPL, "(C) 2002, José Pablo Ezequiel Fernández");
     aboutdata.addAuthor("José Pablo Ezequiel Fernández",I18N_NOOP("Original Author"),"pupeno@pupeno.com");
     aboutdata.addAuthor("Gary Cramblitt", I18N_NOOP("Maintainer"),"garycramblitt@comcast.net");
     aboutdata.addAuthor("Gunnar Schmi Dt", I18N_NOOP("Contributor"),"gunnar@schmi-dt.de");

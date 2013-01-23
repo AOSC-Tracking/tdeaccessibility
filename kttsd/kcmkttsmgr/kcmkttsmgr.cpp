@@ -1075,10 +1075,10 @@ TQString KCMKttsMgr::quickHelp() const{
         "<p>Be sure to configure a default language for the language you are using as this will be the language used by most of the applications</p>");
 }
 
-const KAboutData* KCMKttsMgr::aboutData() const{
-    KAboutData *about =
-    new KAboutData(I18N_NOOP("kttsd"), I18N_NOOP("KCMKttsMgr"),
-        0, 0, KAboutData::License_GPL,
+const TDEAboutData* KCMKttsMgr::aboutData() const{
+    TDEAboutData *about =
+    new TDEAboutData(I18N_NOOP("kttsd"), I18N_NOOP("KCMKttsMgr"),
+        0, 0, TDEAboutData::License_GPL,
         I18N_NOOP("(c) 2002, José Pablo Ezequiel Fernández"));
 
     about->addAuthor("José Pablo Ezequiel Fernández", I18N_NOOP("Author") , "pupeno@kde.org");

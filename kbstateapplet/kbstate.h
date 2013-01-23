@@ -48,7 +48,7 @@ class TimeoutIcon : public StatusIcon {
    Q_OBJECT
   
 public:
-   TimeoutIcon (KInstance *instance, const TQString &text,
+   TimeoutIcon (TDEInstance *instance, const TQString &text,
 					 const TQString &featurename,
 					 TQWidget *parent, const char *name=0);
    ~TimeoutIcon ();
@@ -66,7 +66,7 @@ private:
    TQPixmap pixmap;
    TQPixmap image;
    TQTimer timer;
-   KInstance *instance;
+   TDEInstance *instance;
    
 private slots:
    void timeout ();
@@ -76,7 +76,7 @@ class KeyIcon : public StatusIcon {
    Q_OBJECT
   
 public:
-   KeyIcon (int keyId, KInstance *instance,
+   KeyIcon (int keyId, TDEInstance *instance,
             TQWidget *parent, const char *name=0);
    ~KeyIcon ();
    void setState (bool latched, bool locked);
@@ -100,14 +100,14 @@ private:
    bool    isLocked;
    bool    tristate;
    int     keyId;
-   KInstance *instance;
+   TDEInstance *instance;
 };
 
 class MouseIcon : public StatusIcon {
 	Q_OBJECT
   
 	public:
-		MouseIcon (KInstance *instance, TQWidget *parent, const char *name=0);
+		MouseIcon (TDEInstance *instance, TQWidget *parent, const char *name=0);
 		~MouseIcon ();
 		void setState (int state);
 		void setActiveKey (int activekey);
@@ -129,7 +129,7 @@ class MouseIcon : public StatusIcon {
 		TQPixmap middleDotSelected;
 		TQPixmap rightDotSelected;
 		int state, activekey;
-		KInstance *instance;
+		TDEInstance *instance;
 };
 
 class KbStateApplet : public KPanelApplet {
@@ -198,7 +198,7 @@ private:
 	bool showModifiers, showLockkeys, showMouse, showAccessX;
 	bool fillSpace;
 
-	KInstance *instance;
+	TDEInstance *instance;
 	XkbDescPtr xkb;
 };
 

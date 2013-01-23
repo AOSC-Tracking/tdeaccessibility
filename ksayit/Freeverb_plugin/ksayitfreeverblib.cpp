@@ -37,13 +37,13 @@ extern "C"
 };
 */
 
-KInstance *FreeverbPluginFactory::p_instance = 0L;
+TDEInstance *FreeverbPluginFactory::p_instance = 0L;
 
 
 // Factory Constructor
 FreeverbPluginFactory::FreeverbPluginFactory(TQObject *parent, const char* name)
 {
-    p_instance = new KInstance("FreeverbPluginFactory");
+    p_instance = new TDEInstance("FreeverbPluginFactory");
 }
 
     

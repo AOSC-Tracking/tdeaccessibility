@@ -59,10 +59,10 @@ static const KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutdata(
+    TDEAboutData aboutdata(
         "testfilter", I18N_NOOP("testfilter"),
         "0.1.0", I18N_NOOP("A utility for testing KTTSD filter plugins."),
-         KAboutData::License_GPL, "(C) 2005, Gary Cramblitt <garycramblitt@comcast.net>");
+         TDEAboutData::License_GPL, "(C) 2005, Gary Cramblitt <garycramblitt@comcast.net>");
     aboutdata.addAuthor("Gary Cramblitt", I18N_NOOP("Maintainer"),"garycramblitt@comcast.net");
 
     TDECmdLineArgs::init( argc, argv, &aboutdata );

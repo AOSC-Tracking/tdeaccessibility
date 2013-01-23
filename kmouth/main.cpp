@@ -39,8 +39,8 @@ static KCmdLineOptions options[] =
 int main(int argc, char *argv[])
 {
 
-	KAboutData aboutData( "kmouth", I18N_NOOP("KMouth"),
-		KMOUTH_VERSION, description, KAboutData::License_GPL,
+	TDEAboutData aboutData( "kmouth", I18N_NOOP("KMouth"),
+		KMOUTH_VERSION, description, TDEAboutData::License_GPL,
 		"(c) 2002/2003, Gunnar Schmi Dt", 0, "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
 	aboutData.addAuthor("Gunnar Schmi Dt",0, "kmouth@schmi-dt.de");
 	TDECmdLineArgs::init( argc, argv, &aboutData );

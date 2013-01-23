@@ -40,7 +40,7 @@
 class PlugInConf;
 class KttsFilterConf;
 class KListViewItem;
-class KAboutData;
+class TDEAboutData;
 class KConfig;
 class TQPopupMenu;
 
@@ -115,7 +115,7 @@ class KCMKttsMgr :
         /**
         * Return the about information for this module
         */
-        const KAboutData* aboutData() const;
+        const TDEAboutData* aboutData() const;
 
     public slots:
         /**

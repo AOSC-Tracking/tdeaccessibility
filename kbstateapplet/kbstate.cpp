@@ -92,7 +92,7 @@ KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
    for (int i = 0; i < 8; i++) {
       icons[i] = 0;
    }
-   instance = new KInstance ("kbstateapplet");
+   instance = new TDEInstance ("kbstateapplet");
    loadConfig();
 	initMasks();
 	mouse    = new MouseIcon (instance, this, "mouse");
@@ -712,8 +712,8 @@ void KbStateApplet::configureMouse() {
 }
 
 void KbStateApplet::about() {
-   KAboutData about("kbstateapplet", I18N_NOOP("Keyboard Status Applet"), "0.2",
-                    I18N_NOOP("Panel applet that shows the state of the modifier keys"), KAboutData::License_GPL_V2, "(C) 2004 Gunnar Schmi Dt");
+   TDEAboutData about("kbstateapplet", I18N_NOOP("Keyboard Status Applet"), "0.2",
+                    I18N_NOOP("Panel applet that shows the state of the modifier keys"), TDEAboutData::License_GPL_V2, "(C) 2004 Gunnar Schmi Dt");
    KAboutApplication a(&about, this);
    a.exec();
 }
@@ -746,7 +746,7 @@ void KbStateApplet::saveConfig()
 
 /********************************************************************/
 
-KeyIcon::KeyIcon (int keyId, KInstance *instance,
+KeyIcon::KeyIcon (int keyId, TDEInstance *instance,
                   TQWidget *parent, const char *name)
  : StatusIcon (modifierKeys[keyId].name, parent, name) {
    this->instance = instance;
@@ -855,7 +855,7 @@ void KeyIcon::drawButton (TQPainter *p) {
 
 /********************************************************************/
 
-MouseIcon::MouseIcon (KInstance *instance, TQWidget *parent, const char *name)
+MouseIcon::MouseIcon (TDEInstance *instance, TQWidget *parent, const char *name)
 	: StatusIcon ("", parent, name)
 {
 	this->instance = instance;
@@ -886,7 +886,7 @@ void MouseIcon::resizeEvent( TQResizeEvent*e )
 	updateImages();
 }
 
-TQPixmap loadIcon(KInstance *instance, int size, TQColor color, TQString name) {
+TQPixmap loadIcon(TDEInstance *instance, int size, TQColor color, TQString name) {
 	KIconLoader *loader = instance->iconLoader();
 	TQPixmap result = loader->loadIcon(name, KIcon::NoGroup, size);
 
@@ -956,7 +956,7 @@ void MouseIcon::drawButton (TQPainter *p) {
 
 /********************************************************************/
 
-TimeoutIcon::TimeoutIcon (KInstance *instance, const TQString &text,
+TimeoutIcon::TimeoutIcon (TDEInstance *instance, const TQString &text,
 								  const TQString &featurename,
 								  TQWidget *parent, const char *name)
  : StatusIcon (text, parent, name) {

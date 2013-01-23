@@ -40,8 +40,8 @@ static const char *description =
 int main(int argc, char *argv[])
 {
 
-  KAboutData aboutData( "ksayit", I18N_NOOP("KSayIt"),
-    KSAYIT_VERSION, description, KAboutData::License_GPL,
+  TDEAboutData aboutData( "ksayit", I18N_NOOP("KSayIt"),
+    KSAYIT_VERSION, description, TDEAboutData::License_GPL,
     "(c) 1996 - 2005, Robert Vogl", 0, 0, "voglrobe@web.de");
   aboutData.addAuthor("Robert Vogl",0, "voglrobe@web.de");
   TDECmdLineArgs::init( argc, argv, &aboutData );
