@@ -85,15 +85,15 @@ bool EposProc::init(KConfig* config, const TQString& configGroup)
     // Start the Epos server if not already started.
     if (!m_eposServerProc)
     {
-        m_eposServerProc = new KProcess;
+        m_eposServerProc = new TDEProcess;
         *m_eposServerProc << m_eposServerExePath;
         if (!m_eposServerOptions.isEmpty())
             *m_eposServerProc << m_eposServerOptions;
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-        m_eposServerProc->start(KProcess::DontCare, KProcess::AllOutput);
+        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+        m_eposServerProc->start(TDEProcess::DontCare, TDEProcess::AllOutput);
     }
 
     kdDebug() << "EposProc::init: Initialized with codec: " << codecString << endl;
@@ -169,15 +169,15 @@ void EposProc::synth(
     // Start the Epos server if not already started.
     if (!m_eposServerProc)
     {
-        m_eposServerProc = new KProcess;
+        m_eposServerProc = new TDEProcess;
         *m_eposServerProc << eposServerExePath;
         if (!eposServerOptions.isEmpty())
             *m_eposServerProc << eposServerOptions;
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-        m_eposServerProc->start(KProcess::DontCare, KProcess::AllOutput);
+        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+        m_eposServerProc->start(TDEProcess::DontCare, TDEProcess::AllOutput);
         kdDebug() << "EposProc:: Epos server process started" << endl;
     }
 
@@ -195,7 +195,7 @@ void EposProc::synth(
         m_encText = text.latin1();  // Should not happen, but just in case.
 
     // kdDebug()<< "EposProc::synth: Creating Epos object" << endl;
-    m_eposProc = new KProcess;
+    m_eposProc = new TDEProcess;
     m_eposProc->setUseShell(true);
     TQString languageCode;
     if (eposLanguage == "czech")
@@ -234,14 +234,14 @@ void EposProc::synth(
     *m_eposProc << "-";   // Read from StdIn.
     if (!suggestedFilename.isEmpty()) 
         *m_eposProc << " >" + suggestedFilename;
-    connect(m_eposProc, TQT_SIGNAL(processExited(KProcess*)),
-        this, TQT_SLOT(slotProcessExited(KProcess*)));
-    connect(m_eposProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-    connect(m_eposProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-    connect(m_eposProc, TQT_SIGNAL(wroteStdin(KProcess*)),
-        this, TQT_SLOT(slotWroteStdin(KProcess* )));
+    connect(m_eposProc, TQT_SIGNAL(processExited(TDEProcess*)),
+        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_eposProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+        this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+    connect(m_eposProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+        this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+    connect(m_eposProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
+        this, TQT_SLOT(slotWroteStdin(TDEProcess* )));
     if (suggestedFilename.isEmpty())
         m_state = psSaying;
     else
@@ -250,7 +250,7 @@ void EposProc::synth(
     // Ok, let's rock.
     m_synthFilename = suggestedFilename;
     // kdDebug() << "EposProc::synth: Synthing text: '" << text << "' using Epos plug in" << endl;
-    if (!m_eposProc->start(KProcess::NotifyOnExit, KProcess::All))
+    if (!m_eposProc->start(TDEProcess::NotifyOnExit, TDEProcess::All))
     {
         kdDebug() << "EposProc::synth: Error starting Epos process.  Is epos in the PATH?" << endl;
         m_state = psIdle;
@@ -305,7 +305,7 @@ void EposProc::stopText(){
     kdDebug() << "EposProc::stopText: Epos stopped." << endl;
 }
 
-void EposProc::slotProcessExited(KProcess*)
+void EposProc::slotProcessExited(TDEProcess*)
 {
     // kdDebug() << "EposProc:slotProcessExited: Epos process has exited." << endl;
     pluginState prevState = m_state;
@@ -324,19 +324,19 @@ void EposProc::slotProcessExited(KProcess*)
     }
 }
 
-void EposProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
+void EposProc::slotReceivedStdout(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStdout: Received output from Epos: " << buf << endl;
 }
 
-void EposProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
+void EposProc::slotReceivedStderr(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "EposProc::slotReceivedStderr: Received error from Epos: " << buf << endl;
 }
 
-void EposProc::slotWroteStdin(KProcess*)
+void EposProc::slotWroteStdin(TDEProcess*)
 {
     // kdDebug() << "EposProc::slotWroteStdin: closing Stdin" << endl;
     m_eposProc->closeStdin();

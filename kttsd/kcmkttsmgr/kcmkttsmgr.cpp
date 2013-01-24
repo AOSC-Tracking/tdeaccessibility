@@ -127,23 +127,23 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Give buttons icons.
     // Talkers tab.
     m_kttsmgrw->higherTalkerPriorityButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
     m_kttsmgrw->lowerTalkerPriorityButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
     m_kttsmgrw->removeTalkerButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
     m_kttsmgrw->configureTalkerButton->setIconSet(
-        KGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
+        TDEGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
 
     // Filters tab.
     m_kttsmgrw->higherFilterPriorityButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
     m_kttsmgrw->lowerFilterPriorityButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
     m_kttsmgrw->removeFilterButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
     m_kttsmgrw->configureFilterButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
 
     // Notify tab.
     m_kttsmgrw->notifyActionComboBox->clear();
@@ -154,9 +154,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
         m_kttsmgrw->notifyPresentComboBox->insertItem( NotifyPresent::presentDisplayName( ndx ) );
 
     m_kttsmgrw->notifyRemoveButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
     m_kttsmgrw->notifyTestButton->setIconSet(
-            KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("speak", KIcon::Small));
 
     m_kttsmgrw->sinkComboBox->setEditable(false);
     m_kttsmgrw->pcmComboBox->setEditable(false);
@@ -164,9 +164,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Construct a popup menu for the Sentence Boundary Detector buttons on Filter tab.
     m_sbdPopmenu = new TQPopupMenu( m_kttsmgrw, "SbdPopupMenu" );
     m_sbdPopmenu->insertItem( i18n("&Edit..."), this, TQT_SLOT(slot_configureSbdFilter()), 0, sbdBtnEdit );
-    m_sbdPopmenu->insertItem( KGlobal::iconLoader()->loadIconSet("up", KIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small),
                               i18n("U&p"), this, TQT_SLOT(slot_higherSbdFilterPriority()), 0, sbdBtnUp );
-    m_sbdPopmenu->insertItem( KGlobal::iconLoader()->loadIconSet("down", KIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small),
                               i18n("Do&wn"), this, TQT_SLOT(slot_lowerSbdFilterPriority()), 0, sbdBtnDown );
     m_sbdPopmenu->insertItem( i18n("&Add..."), this, TQT_SLOT(slot_addSbdFilter()), 0, sbdBtnAdd );
     m_sbdPopmenu->insertItem( i18n("&Remove"), this, TQT_SLOT(slot_removeSbdFilter()), 0, sbdBtnRemove );
@@ -1242,7 +1242,7 @@ void KCMKttsMgr::slot_addTalker()
         KListView* langLView = new KListView(hBox, "SelectLanguage_lview");
         langLView->addColumn(i18n("Language"));
         langLView->addColumn(i18n("Code"));
-        TQStringList allLocales = KGlobal::locale()->allLanguagesTwoAlpha();
+        TQStringList allLocales = TDEGlobal::locale()->allLanguagesTwoAlpha();
         TQString locale;
         TQString countryCode;
         TQString charSet;
@@ -2656,8 +2656,8 @@ void KCMKttsMgr::slotNotifyRemoveButton_clicked()
 
 void KCMKttsMgr::slotNotifyLoadButton_clicked()
 {
-    // TQString dataDir = KGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
-    TQString dataDir = KGlobal::dirs()->findAllResources("data", "kttsd/notify/").last();
+    // TQString dataDir = TDEGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
+    TQString dataDir = TDEGlobal::dirs()->findAllResources("data", "kttsd/notify/").last();
     TQString filename = KFileDialog::getOpenFileName(
         dataDir,
         "*.xml|" + i18n("file type", "Notification Event List") + " (*.xml)",
@@ -2675,7 +2675,7 @@ void KCMKttsMgr::slotNotifyLoadButton_clicked()
 void KCMKttsMgr::slotNotifySaveButton_clicked()
 {
     TQString filename = KFileDialog::getSaveFileName(
-        KGlobal::dirs()->saveLocation( "data" ,"kttsd/notify/", false ),
+        TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/notify/", false ),
         "*.xml|" + i18n("file type", "Notification Event List") + " (*.xml)",
         m_kttsmgrw,
         "event_savefile");

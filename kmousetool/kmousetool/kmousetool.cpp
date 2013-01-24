@@ -102,7 +102,7 @@ void KMouseTool::init_vars()
 	appfilename = locate("exe", "kmousetool");
 
 	// find the user's autostart directory
-	autostartdirname = KGlobalSettings::autostartPath();
+	autostartdirname = TDEGlobalSettings::autostartPath();
 
 	// SimpleSoundServer server(Reference("global:Arts_SimpleSoundServer"));
 //	sound_server(Reference("global:Arts_SimpleSoundServer"));
@@ -612,12 +612,12 @@ KMouseToolTray::KMouseToolTray (TQWidget *parent, const char *name) : KSystemTra
 {
 	startStopId = contextMenu()->insertItem (i18n("&Start"), this, TQT_SIGNAL(startStopSelected()));
 	contextMenu()->insertSeparator();
-	contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("configure", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("configure", KIcon::Small),
 	                           i18n("&Configure KMouseTool..."), this, TQT_SIGNAL(configureSelected()));
 	contextMenu()->insertSeparator();
-	contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("contents", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", KIcon::Small),
 	                           i18n("KMousetool &Handbook"), this, TQT_SIGNAL(helpSelected()));
-	contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("kmousetool", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kmousetool", KIcon::Small),
 	                           i18n("&About KMouseTool"), this, TQT_SIGNAL(aboutSelected()));
 }
 
@@ -630,11 +630,11 @@ void KMouseToolTray::updateStartStopText(bool mousetool_is_running)
 
 	if (mousetool_is_running) {
 		contextMenu()->changeItem (startStopId, i18n("&Stop"));
-		icon = KGlobal::iconLoader()->loadIcon("kmousetool_on", KIcon::Small);
+		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_on", KIcon::Small);
 	}
 	else {
 		contextMenu()->changeItem (startStopId, i18n("&Start"));
-		icon = KGlobal::iconLoader()->loadIcon("kmousetool_off", KIcon::Small);
+		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_off", KIcon::Small);
 	}
 	setPixmap (icon);
 	show();

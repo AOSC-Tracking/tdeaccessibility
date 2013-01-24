@@ -102,15 +102,15 @@ void FreeTTSProc::synth(
         
 	}
 	
-	m_freettsProc = new KProcess;
-	connect(m_freettsProc, TQT_SIGNAL(processExited(KProcess*)),
-		   this, TQT_SLOT(slotProcessExited(KProcess*)));
-	connect(m_freettsProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-		   this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-	connect(m_freettsProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-		   this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-	connect(m_freettsProc, TQT_SIGNAL(wroteStdin(KProcess*)),
-		   this, TQT_SLOT(slotWroteStdin(KProcess* )));
+	m_freettsProc = new TDEProcess;
+	connect(m_freettsProc, TQT_SIGNAL(processExited(TDEProcess*)),
+		   this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+	connect(m_freettsProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+		   this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+	connect(m_freettsProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+		   this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+	connect(m_freettsProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
+		   this, TQT_SLOT(slotWroteStdin(TDEProcess* )));
 	if (synthFilename.isNull())
 		m_state = psSaying;
 	else
@@ -122,7 +122,7 @@ void FreeTTSProc::synth(
 	
 	/// As freetts.jar doesn't seem to like being called from an absolute path, 
 	/// we need to strip off the path to freetts.jar and pass it to 
-	/// KProcess::setWorkingDirectory()
+	/// TDEProcess::setWorkingDirectory()
 	/// We could just strip off 11 characters from the end of the path to freetts.jar, but thats
 	/// not exactly very portable...
 	TQString filename = TQFileInfo(freettsJarPath).baseName().append(TQString(".").append(TQFileInfo(freettsJarPath).extension()));
@@ -140,10 +140,10 @@ void FreeTTSProc::synth(
 	m_synthFilename = synthFilename;
 	
 	kdDebug() << "FreeTTSProc::synth: Synthing text: '" << saidText << "' using FreeTTS plug in" << endl;
-	if (!m_freettsProc->start(KProcess::NotifyOnExit, KProcess::All)) {
+	if (!m_freettsProc->start(TDEProcess::NotifyOnExit, TDEProcess::All)) {
 		kdDebug() << "FreeTTSProc::synth: Error starting FreeTTS process.  Is freetts.jar in the PATH?" << endl;
 		m_state = psIdle;
-		kdDebug() << "KProcess args: " << argsToTQStringList(m_freettsProc->args()) << endl;
+		kdDebug() << "TDEProcess args: " << argsToTQStringList(m_freettsProc->args()) << endl;
 		return;
 	}
 	kdDebug()<< "FreeTTSProc:synth: FreeTTS initialized" << endl;
@@ -188,7 +188,7 @@ void FreeTTSProc::stopText() {
 	kdDebug() << "FreeTTSProc::stopText: FreeTTS stopped." << endl;
 }
 
-void FreeTTSProc::slotProcessExited(KProcess*) {
+void FreeTTSProc::slotProcessExited(TDEProcess*) {
 	kdDebug() << "FreeTTSProc:slotProcessExited: FreeTTS process has exited." << endl;
 	pluginState prevState = m_state;
 	if (m_waitingStop) {
@@ -205,17 +205,17 @@ void FreeTTSProc::slotProcessExited(KProcess*) {
 	}
 }
 
-void FreeTTSProc::slotReceivedStdout(KProcess*, char* buffer, int buflen) {
+void FreeTTSProc::slotReceivedStdout(TDEProcess*, char* buffer, int buflen) {
 	TQString buf = TQString::fromLatin1(buffer, buflen);
 	kdDebug() << "FreeTTSProc::slotReceivedStdout: Received output from FreeTTS: " << buf << endl;
 }
 
-void FreeTTSProc::slotReceivedStderr(KProcess*, char* buffer, int buflen) {
+void FreeTTSProc::slotReceivedStderr(TDEProcess*, char* buffer, int buflen) {
 	TQString buf = TQString::fromLatin1(buffer, buflen);
 	kdDebug() << "FreeTTSProc::slotReceivedStderr: Received error from FreeTTS: " << buf << endl;
 }
 
-void FreeTTSProc::slotWroteStdin(KProcess*) {
+void FreeTTSProc::slotWroteStdin(TDEProcess*) {
 	kdDebug() << "FreeTTSProc::slotWroteStdin: closing Stdin" << endl;
 	m_freettsProc->closeStdin();
 }

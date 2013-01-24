@@ -29,7 +29,7 @@
 #include <kdemacros.h>
 #include "kdeexportfix.h"
 
-class KProcess;
+class TDEProcess;
 
 class KDE_EXPORT Stretcher : public TQObject{
     Q_OBJECT
@@ -82,14 +82,14 @@ class KDE_EXPORT Stretcher : public TQObject{
         void stretchFinished();
 
     private slots:
-        void slotProcessExited(KProcess* proc);
+        void slotProcessExited(TDEProcess* proc);
 
     private:
         // Stretcher state.
         int m_state;
 
         // Sox process.
-        KProcess* m_stretchProc;
+        TDEProcess* m_stretchProc;
 
         // Output file name.
         TQString m_outFilename;

@@ -31,7 +31,7 @@
 // KTTS includes.
 #include <pluginproc.h>
 
-class KProcess;
+class TDEProcess;
 
 class FliteProc : public PlugInProc{
     Q_OBJECT
@@ -150,10 +150,10 @@ class FliteProc : public PlugInProc{
             const TQString &fliteExePath);
     
     private slots:
-        void slotProcessExited(KProcess* proc);
-        void slotReceivedStdout(KProcess* proc, char* buffer, int buflen);
-        void slotReceivedStderr(KProcess* proc, char* buffer, int buflen);
-        void slotWroteStdin(KProcess* proc);
+        void slotProcessExited(TDEProcess* proc);
+        void slotReceivedStdout(TDEProcess* proc, char* buffer, int buflen);
+        void slotReceivedStderr(TDEProcess* proc, char* buffer, int buflen);
+        void slotWroteStdin(TDEProcess* proc);
 
     private:
         
@@ -165,7 +165,7 @@ class FliteProc : public PlugInProc{
         /**
          * Flite process
          */
-        KProcess* m_fliteProc;
+        TDEProcess* m_fliteProc;
         
         /**
         * Synthesis filename.

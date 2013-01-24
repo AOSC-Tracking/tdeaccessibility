@@ -132,7 +132,7 @@ void SbdConf::load(KConfig* config, const TQString& configGroup){
     for ( uint ndx=0; ndx < m_languageCodeList.count(); ++ndx)
     {
         if (!language.isEmpty()) language += ",";
-        language += KGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
+        language += TDEGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
     }
     m_widget->languageLineEdit->setText(language);
     m_widget->appIdLineEdit->setText(
@@ -239,7 +239,7 @@ void SbdConf::slotLanguageBrowseButton_clicked()
     langLView->addColumn(i18n("Language"));
     langLView->addColumn(i18n("Code"));
     langLView->setSelectionMode(TQListView::Extended);
-    TQStringList allLocales = KGlobal::locale()->allLanguagesTwoAlpha();
+    TQStringList allLocales = TDEGlobal::locale()->allLanguagesTwoAlpha();
     TQString locale;
     TQString languageCode;
     TQString countryCode;
@@ -252,10 +252,10 @@ void SbdConf::slotLanguageBrowseButton_clicked()
     for (int ndx=0; ndx < allLocalesCount; ++ndx)
     {
         locale = allLocales[ndx];
-        KGlobal::locale()->splitLocale(locale, languageCode, countryCode, charSet);
-        language = KGlobal::locale()->twoAlphaToLanguageName(languageCode);
+        TDEGlobal::locale()->splitLocale(locale, languageCode, countryCode, charSet);
+        language = TDEGlobal::locale()->twoAlphaToLanguageName(languageCode);
         if (!countryCode.isEmpty()) language +=
-            " (" + KGlobal::locale()->twoAlphaToCountryName(countryCode)+")";
+            " (" + TDEGlobal::locale()->twoAlphaToCountryName(countryCode)+")";
         TQListViewItem* item = new KListViewItem(langLView, language, locale);
         if (m_languageCodeList.contains(locale)) item->setSelected(true);
     }
@@ -294,7 +294,7 @@ void SbdConf::slotLanguageBrowseButton_clicked()
     for ( uint ndx=0; ndx < m_languageCodeList.count(); ++ndx)
     {
         if (!language.isEmpty()) language += ",";
-        language += KGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
+        language += TDEGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
     }
     m_widget->languageLineEdit->setText(language);
     configChanged();
@@ -302,8 +302,8 @@ void SbdConf::slotLanguageBrowseButton_clicked()
 
 void SbdConf::slotLoadButton_clicked()
 {
-    // TQString dataDir = KGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
-    TQString dataDir = KGlobal::dirs()->findAllResources("data", "kttsd/sbd/").last();
+    // TQString dataDir = TDEGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
+    TQString dataDir = TDEGlobal::dirs()->findAllResources("data", "kttsd/sbd/").last();
     TQString filename = KFileDialog::getOpenFileName(
         dataDir,
         "*rc|SBD Config (*rc)",
@@ -319,7 +319,7 @@ void SbdConf::slotLoadButton_clicked()
 void SbdConf::slotSaveButton_clicked()
 {
     TQString filename = KFileDialog::getSaveFileName(
-        KGlobal::dirs()->saveLocation( "data" ,"kttsd/sbd/", false ),
+        TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/sbd/", false ),
         "*rc|SBD Config (*rc)",
         m_widget,
         "sbd_savefile");

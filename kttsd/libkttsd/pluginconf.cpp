@@ -38,7 +38,7 @@
 */
 PlugInConf::PlugInConf( TQWidget *parent, const char *name) : TQWidget(parent, name){
     kdDebug() << "PlugInConf::PlugInConf: Running" << endl;
-    KGlobal::locale()->insertCatalogue("kttsd");
+    TDEGlobal::locale()->insertCatalogue("kttsd");
     TQString systemPath(getenv("PATH"));
     // kdDebug() << "Path is " << systemPath << endl;
     m_path = TQStringList::split(":", systemPath);
@@ -187,7 +187,7 @@ TQString PlugInConf::splitLanguageCode(const TQString& languageCode, TQString& c
     TQString locale = languageCode;
     TQString langCode;
     TQString charSet;
-    KGlobal::locale()->splitLocale(locale, langCode, countryCode, charSet);
+    TDEGlobal::locale()->splitLocale(locale, langCode, countryCode, charSet);
     return langCode;
 }
 

@@ -41,7 +41,7 @@ SelectEvent::SelectEvent(TQWidget* parent, const char* name, WFlags fl, const TQ
 {
     // Load list of event sources (applications).
     TQStringList fullpaths =
-        KGlobal::dirs()->findAllResources("data", "*/eventsrc", false, true );
+        TDEGlobal::dirs()->findAllResources("data", "*/eventsrc", false, true );
     TQStringList::ConstIterator it = fullpaths.begin();
     TQStringList relativePaths;
     for ( ; it != fullpaths.end(); ++it)

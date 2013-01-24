@@ -212,10 +212,10 @@ class FestivalIntProc : public PlugInProc{
         void queryVoicesFinished(const TQStringList &voiceCodes);
 
     private slots:
-        void slotProcessExited(KProcess* proc);
-        void slotReceivedStdout(KProcess* proc, char* buffer, int buflen);
-        void slotReceivedStderr(KProcess* proc, char* buffer, int buflen);
-        void slotWroteStdin(KProcess* proc);
+        void slotProcessExited(TDEProcess* proc);
+        void slotReceivedStdout(TDEProcess* proc, char* buffer, int buflen);
+        void slotReceivedStderr(TDEProcess* proc, char* buffer, int buflen);
+        void slotWroteStdin(TDEProcess* proc);
 
     private:
         /**
@@ -304,7 +304,7 @@ class FestivalIntProc : public PlugInProc{
         /**
          * Festival process
          */
-        KProcess* m_festProc;
+        TDEProcess* m_festProc;
 
         /**
         * Synthesis filename.

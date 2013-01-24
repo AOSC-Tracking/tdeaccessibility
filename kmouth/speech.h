@@ -59,10 +59,10 @@ public:
                      const TQString &filename, const TQString &language);
 
 public slots:
-   void wroteStdin (KProcess *p);
-   void processExited (KProcess *p);
-   void receivedStdout (KProcess *proc, char *buffer, int buflen);
-   void receivedStderr (KProcess *proc, char *buffer, int buflen);
+   void wroteStdin (TDEProcess *p);
+   void processExited (TDEProcess *p);
+   void receivedStdout (TDEProcess *proc, char *buffer, int buflen);
+   void receivedStderr (TDEProcess *proc, char *buffer, int buflen);
 
 private:
    KShellProcess process;

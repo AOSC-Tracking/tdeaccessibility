@@ -75,7 +75,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   TQIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
+   TQIconSet icon = TDEGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
    speakButton = new TQPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(TQ_NoFocus);
    speakButton->setAutoDefault(false);
@@ -188,8 +188,8 @@ void PhraseList::readCompletionOptions(KConfig *config) {
 
    if (config->hasGroup ("Completion")) {
       config->setGroup("Completion");
-      int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
-      lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
+      int mode = config->readNumEntry ("Mode", TDEGlobalSettings::completionMode());
+      lineEdit->setCompletionMode (static_cast<TDEGlobalSettings::Completion>(mode));
 
       TQString current = config->readEntry ("List", TQString());
       TQStringList list = completion->wordLists();

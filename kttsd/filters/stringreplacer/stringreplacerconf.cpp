@@ -192,7 +192,7 @@ TQString StringReplacerConf::loadFromFile( const TQString& filename, bool clear)
     for ( uint ndx=0; ndx < m_languageCodeList.count(); ++ndx )
     {
         if (!language.isEmpty()) language += ",";
-        language += KGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
+        language += TDEGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
     }
     m_widget->languageLineEdit->setText(language);
 
@@ -260,7 +260,7 @@ TQString StringReplacerConf::loadFromFile( const TQString& filename, bool clear)
 void StringReplacerConf::save(KConfig* config, const TQString& configGroup){
     // kdDebug() << "StringReplacerConf::save: Running" << endl;
     TQString wordsFilename =
-        KGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", true );
+        TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", true );
     if ( wordsFilename.isEmpty() )
     {
         kdDebug() << "StringReplacerConf::save: no save location" << endl;
@@ -406,7 +406,7 @@ TQString StringReplacerConf::userPlugInName()
     {
         TQString language;
         if (m_languageCodeList.count() == 1)
-            language = KGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[0]);
+            language = TDEGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[0]);
         if (m_languageCodeList.count() > 1)
             language = i18n("Multiple Languages");
         if (!language.isEmpty())
@@ -424,7 +424,7 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
     langLView->addColumn(i18n("Language"));
     langLView->addColumn(i18n("Code"));
     langLView->setSelectionMode(TQListView::Extended);
-    TQStringList allLocales = KGlobal::locale()->allLanguagesTwoAlpha();
+    TQStringList allLocales = TDEGlobal::locale()->allLanguagesTwoAlpha();
     TQString locale;
     TQString languageCode;
     TQString countryCode;
@@ -437,10 +437,10 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
     for (int ndx=0; ndx < allLocalesCount; ++ndx)
     {
         locale = allLocales[ndx];
-        KGlobal::locale()->splitLocale(locale, languageCode, countryCode, charSet);
-        language = KGlobal::locale()->twoAlphaToLanguageName(languageCode);
+        TDEGlobal::locale()->splitLocale(locale, languageCode, countryCode, charSet);
+        language = TDEGlobal::locale()->twoAlphaToLanguageName(languageCode);
         if (!countryCode.isEmpty()) language +=
-            " (" + KGlobal::locale()->twoAlphaToCountryName(countryCode)+")";
+            " (" + TDEGlobal::locale()->twoAlphaToCountryName(countryCode)+")";
         item = new KListViewItem(langLView, language, locale);
         if (m_languageCodeList.contains(locale)) item->setSelected(true);
     }
@@ -479,7 +479,7 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
     for ( uint ndx=0; ndx < m_languageCodeList.count(); ++ndx)
     {
         if (!language.isEmpty()) language += ",";
-        language += KGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
+        language += TDEGlobal::locale()->twoAlphaToLanguageName(m_languageCodeList[ndx]);
     }
     TQString s1 = m_widget->languageLineEdit->text();
     m_widget->languageLineEdit->setText(language);
@@ -688,8 +688,8 @@ void StringReplacerConf::slotMatchButton_clicked()
 
 void StringReplacerConf::slotLoadButton_clicked()
 {
-    // TQString dataDir = KGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
-    TQString dataDir = KGlobal::dirs()->findAllResources("data", "kttsd/stringreplacer/").last();
+    // TQString dataDir = TDEGlobal::dirs()->resourceDirs("data").last() + "/kttsd/stringreplacer/";
+    TQString dataDir = TDEGlobal::dirs()->findAllResources("data", "kttsd/stringreplacer/").last();
     TQString filename = KFileDialog::getOpenFileName(
         dataDir,
         "*.xml|String Replacer Word List (*.xml)",
@@ -707,7 +707,7 @@ void StringReplacerConf::slotLoadButton_clicked()
 void StringReplacerConf::slotSaveButton_clicked()
 {
     TQString filename = KFileDialog::getSaveFileName(
-            KGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", false ),
+            TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", false ),
            "*.xml|String Replacer Word List (*.xml)",
             m_widget,
             "stringreplacer_savefile");

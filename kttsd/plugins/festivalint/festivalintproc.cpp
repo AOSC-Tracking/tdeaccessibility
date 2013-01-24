@@ -178,20 +178,20 @@ void FestivalIntProc::startEngine(const TQString &festivalExePath, const TQStrin
     if(!m_festProc)
     {
         // kdDebug()<< "FestivalIntProc::startEngine: Creating Festival object" << endl;
-        m_festProc = new KProcess;
+        m_festProc = new TDEProcess;
         *m_festProc << festivalExePath;
         *m_festProc << "--interactive";
         m_festProc->setEnvironment("LANG", languageCode + "." + codec->mimeName());
         m_festProc->setEnvironment("LC_CTYPE", languageCode + "." + codec->mimeName());
         // kdDebug() << "FestivalIntProc::startEngine: setting LANG = LC_CTYPE = " << languageCode << "." << codec->mimeName() << endl;
-        connect(m_festProc, TQT_SIGNAL(processExited(KProcess*)),
-                this, TQT_SLOT(slotProcessExited(KProcess*)));
-        connect(m_festProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-                this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-        connect(m_festProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-                this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-        connect(m_festProc, TQT_SIGNAL(wroteStdin(KProcess*)),
-                this, TQT_SLOT(slotWroteStdin(KProcess*)));
+        connect(m_festProc, TQT_SIGNAL(processExited(TDEProcess*)),
+                this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+        connect(m_festProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+                this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+        connect(m_festProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+                this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+        connect(m_festProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
+                this, TQT_SLOT(slotWroteStdin(TDEProcess*)));
     }
     if (!m_festProc->isRunning())
     {
@@ -201,7 +201,7 @@ void FestivalIntProc::startEngine(const TQString &festivalExePath, const TQStrin
         m_runningPitch = 100;
         m_ready = false;
         m_outputQueue.clear();
-        if (m_festProc->start(KProcess::NotifyOnExit, KProcess::All))
+        if (m_festProc->start(TDEProcess::NotifyOnExit, TDEProcess::All))
         {
             // kdDebug()<< "FestivalIntProc:startEngine: Festival initialized" << endl;
             m_festivalExePath = festivalExePath;
@@ -209,7 +209,7 @@ void FestivalIntProc::startEngine(const TQString &festivalExePath, const TQStrin
             m_codec = codec;
             // Load the SABLE to Wave module.
             sendToFestival("(load \"" +
-                KGlobal::dirs()->resourceDirs("data").last() + "kttsd/festivalint/sabletowave.scm\")");
+                TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/festivalint/sabletowave.scm\")");
         }
         else
         {
@@ -460,7 +460,7 @@ void FestivalIntProc::stopText(){
     } else m_state = psIdle;
 }
 
-void FestivalIntProc::slotProcessExited(KProcess*)
+void FestivalIntProc::slotProcessExited(TDEProcess*)
 {
     // kdDebug() << "FestivalIntProc:slotProcessExited: Festival process has exited." << endl;
     m_ready = true;
@@ -498,7 +498,7 @@ void FestivalIntProc::slotProcessExited(KProcess*)
     m_outputQueue.clear();
 }
 
-void FestivalIntProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
+void FestivalIntProc::slotReceivedStdout(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     // kdDebug() << "FestivalIntProc::slotReceivedStdout: Received from Festival: " << buf << endl;
@@ -567,13 +567,13 @@ void FestivalIntProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
     }
 }
 
-void FestivalIntProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
+void FestivalIntProc::slotReceivedStderr(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "FestivalIntProc::slotReceivedStderr: Received error from Festival: " << buf << endl;
 }
 
-void FestivalIntProc::slotWroteStdin(KProcess* /*proc*/)
+void FestivalIntProc::slotWroteStdin(TDEProcess* /*proc*/)
 {
     // kdDebug() << "FestivalIntProc::slotWroteStdin: Running" << endl;
     m_writingStdin = false;
@@ -655,7 +655,7 @@ bool FestivalIntProc::supportsSynth() { return true; }
 TQString FestivalIntProc::getSsmlXsltFilename()
 {
     if (m_supportsSSML == ssYes)
-        return KGlobal::dirs()->resourceDirs("data").last() + "kttsd/festivalint/xslt/SSMLtoSable.xsl";
+        return TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/festivalint/xslt/SSMLtoSable.xsl";
     else
         return PlugInProc::getSsmlXsltFilename();
 }

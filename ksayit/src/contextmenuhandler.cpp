@@ -123,7 +123,7 @@ ContextMenuHandler::ContextMenuHandler(TQObject *parent, const char *name)
     m_popupmenu = NULL;
     m_item = NULL;  
     initActions();
-    m_XmlFilePath = KGlobal::dirs()->findResource("data", "ksayit/ContextMenus.xml");
+    m_XmlFilePath = TDEGlobal::dirs()->findResource("data", "ksayit/ContextMenus.xml");
 }
 
 

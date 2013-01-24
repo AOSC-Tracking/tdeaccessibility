@@ -455,15 +455,15 @@ void FestivalIntConf::scanVoices()
     if (!m_supportedVoiceCodes.isEmpty())
     {
         // User's desktop language setting.
-        TQString desktopLanguageCode = KGlobal::locale()->language();
+        TQString desktopLanguageCode = TDEGlobal::locale()->language();
         TQString twoAlpha;
         TQString countryCode;
         TQString charSet;
-        KGlobal::locale()->splitLocale(desktopLanguageCode, twoAlpha, countryCode, charSet);
+        TDEGlobal::locale()->splitLocale(desktopLanguageCode, twoAlpha, countryCode, charSet);
         desktopLanguageCode = twoAlpha.lower();
 
         // Festival known voices list.
-        TQString voicesFilename = KGlobal::dirs()->resourceDirs("data").last() + "/kttsd/festivalint/voices";
+        TQString voicesFilename = TDEGlobal::dirs()->resourceDirs("data").last() + "/kttsd/festivalint/voices";
         TQDomDocument voicesDoc("Festival Voices");
         TQFile voicesFile(voicesFilename);
         if (voicesFile.open(IO_ReadOnly)) voicesDoc.setContent(&voicesFile);
@@ -475,8 +475,8 @@ void FestivalIntConf::scanVoices()
 
         // Iterate thru list of voice codes returned by Festival,
         // find matching entry in voices.xml file, and add to list of supported voices.
-        TQPixmap maleIcon = KGlobal::iconLoader()->loadIcon("male", KIcon::Small);
-        TQPixmap femaleIcon = KGlobal::iconLoader()->loadIcon("female", KIcon::Small);
+        TQPixmap maleIcon = TDEGlobal::iconLoader()->loadIcon("male", KIcon::Small);
+        TQPixmap femaleIcon = TDEGlobal::iconLoader()->loadIcon("female", KIcon::Small);
         TQStringList::ConstIterator itEnd = m_supportedVoiceCodes.constEnd();
         for(TQStringList::ConstIterator it = m_supportedVoiceCodes.begin(); it != itEnd; ++it )
         {

@@ -197,16 +197,16 @@ void HadifixProc::synth(TQString text,
    *(d->hadifixProc) << command;
    
    // Connect signals from process.
-   connect(d->hadifixProc, TQT_SIGNAL(processExited(KProcess *)),
-     this, TQT_SLOT(slotProcessExited(KProcess *)));
-   connect(d->hadifixProc, TQT_SIGNAL(wroteStdin(KProcess *)),
-     this, TQT_SLOT(slotWroteStdin(KProcess *)));
+   connect(d->hadifixProc, TQT_SIGNAL(processExited(TDEProcess *)),
+     this, TQT_SLOT(slotProcessExited(TDEProcess *)));
+   connect(d->hadifixProc, TQT_SIGNAL(wroteStdin(TDEProcess *)),
+     this, TQT_SLOT(slotWroteStdin(TDEProcess *)));
    
    // Store off name of wave file to be generated.
    d->synthFilename = waveFilename;
    // Set state, busy synthing.
    d->state = psSynthing;
-   if (!d->hadifixProc->start(KProcess::NotifyOnExit, KProcess::Stdin))
+   if (!d->hadifixProc->start(TDEProcess::NotifyOnExit, TDEProcess::Stdin))
    {
      kdDebug() << "HadifixProc::synth: start process failed." << endl;
      d->state = psIdle;
@@ -316,7 +316,7 @@ bool HadifixProc::supportsAsync() { return true; }
 bool HadifixProc::supportsSynth() { return true; }
 
 
-void HadifixProc::slotProcessExited(KProcess*)
+void HadifixProc::slotProcessExited(TDEProcess*)
 {
     // kdDebug() << "HadifixProc:hadifixProcExited: Hadifix process has exited." << endl;
     pluginState prevState = d->state;
@@ -332,7 +332,7 @@ void HadifixProc::slotProcessExited(KProcess*)
     }
 }
 
-void HadifixProc::slotWroteStdin(KProcess*)
+void HadifixProc::slotWroteStdin(TDEProcess*)
 {
    // kdDebug() << "HadifixProc::slotWroteStdin: closing Stdin" << endl;
    d->hadifixProc->closeStdin();
@@ -359,14 +359,14 @@ HadifixProc::VoiceGender HadifixProc::determineGender(TQString mbrola, TQString 
    HadifixProc speech;
    KShellProcess proc;
    proc << command;
-   connect(&proc, TQT_SIGNAL(receivedStdout(KProcess *, char *, int)),
-     &speech, TQT_SLOT(receivedStdout(KProcess *, char *, int)));
-   connect(&proc, TQT_SIGNAL(receivedStderr(KProcess *, char *, int)),
-     &speech, TQT_SLOT(receivedStderr(KProcess *, char *, int)));
+   connect(&proc, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
+     &speech, TQT_SLOT(receivedStdout(TDEProcess *, char *, int)));
+   connect(&proc, TQT_SIGNAL(receivedStderr(TDEProcess *, char *, int)),
+     &speech, TQT_SLOT(receivedStderr(TDEProcess *, char *, int)));
 
    speech.stdOut = TQString();
    speech.stdErr = TQString();
-   proc.start (KProcess::Block, KProcess::AllOutput);
+   proc.start (TDEProcess::Block, TDEProcess::AllOutput);
 
    VoiceGender result;
    if (!speech.stdErr.isNull() && !speech.stdErr.isEmpty()) {
@@ -388,11 +388,11 @@ HadifixProc::VoiceGender HadifixProc::determineGender(TQString mbrola, TQString 
    return result;
 }
 
-void HadifixProc::receivedStdout (KProcess *, char *buffer, int buflen) {
+void HadifixProc::receivedStdout (TDEProcess *, char *buffer, int buflen) {
    stdOut += TQString::fromLatin1(buffer, buflen);
 }
 
-void HadifixProc::receivedStderr (KProcess *, char *buffer, int buflen) {
+void HadifixProc::receivedStderr (TDEProcess *, char *buffer, int buflen) {
    stdErr += TQString::fromLatin1(buffer, buflen);
 }
 
@@ -407,5 +407,5 @@ void HadifixProc::receivedStderr (KProcess *, char *buffer, int buflen) {
  */
 TQString HadifixProc::getSsmlXsltFilename()
 {
-    return KGlobal::dirs()->resourceDirs("data").last() + "kttsd/hadifix/xslt/SSMLtoTxt2pho.xsl";
+    return TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/hadifix/xslt/SSMLtoTxt2pho.xsl";
 }

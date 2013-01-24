@@ -230,7 +230,7 @@ void KmagApp::initActions()
   m_pRotationBox->setWhatsThis(i18n("Select the rotation degree."));
   m_pRotationBox->setToolTip(i18n("Rotation degree"));
 
-  // KHelpMenu *newHelpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData());
+  // KHelpMenu *newHelpMenu = new KHelpMenu(this, TDEGlobal::instance()->aboutData());
 
   m_keyConf = KStdAction::keyBindings( TQT_TQOBJECT(this), TQT_SLOT( slotConfKeys() ), actionCollection(), "key_conf");
   m_toolConf = KStdAction::configureToolbars( TQT_TQOBJECT(this), TQT_SLOT( slotEditToolbars() ),
@@ -933,7 +933,7 @@ void KmagApp::slotConfKeys()
 
 void KmagApp::slotEditToolbars()
 {
-  saveMainWindowSettings( KGlobal::config(), "MainWindow" );
+  saveMainWindowSettings( TDEGlobal::config(), "MainWindow" );
   KEditToolbar dlg( actionCollection() );
   connect( &dlg, TQT_SIGNAL( newToolbarConfig() ), TQT_TQOBJECT(this), TQT_SLOT( slotNewToolbarConfig() ) );
   if ( dlg.exec() )
@@ -953,6 +953,6 @@ void KmagApp::contextMenu (TQPoint pos)
 
 void KmagApp::slotNewToolbarConfig()
 {
-  applyMainWindowSettings( KGlobal::config(), "MainWindow" );
+  applyMainWindowSettings( TDEGlobal::config(), "MainWindow" );
   createGUI();
 }

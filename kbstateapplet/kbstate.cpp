@@ -52,7 +52,7 @@ extern "C"
 
     KDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
     {
-        KGlobal::locale()->insertCatalogue("kbstateapplet");
+        TDEGlobal::locale()->insertCatalogue("kbstateapplet");
         KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, parent, "kbstateapplet");
         return applet;
     }
@@ -700,10 +700,10 @@ void KbStateApplet::configureAccessX() {
 void KbStateApplet::configureKeyboard() {
    // The modulename "keyboard" is ambiguous on SuSE systems
    // as there is also a YaST-module called "keyboard".
-   KProcess proc;
+   TDEProcess proc;
    proc << "kcmshell";
    proc << "kde/keyboard";
-   proc.start(KProcess::DontCare);
+   proc.start(TDEProcess::DontCare);
    proc.detach();
 }
 
@@ -792,11 +792,11 @@ void KeyIcon::updateImages () {
    	unlatched = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, KIcon::NoGroup, size-4);
 		
 		TQImage img = latched.convertToImage();
-		KIconEffect::colorize(img,  KGlobalSettings::highlightedTextColor(), 1.0);
+		KIconEffect::colorize(img,  TDEGlobalSettings::highlightedTextColor(), 1.0);
 		latched.convertFromImage (img);
 		
 		img = unlatched.convertToImage();
-		KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
+		KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
 		unlatched.convertFromImage (img);
 	}
 
@@ -811,22 +811,22 @@ void KeyIcon::drawButton (TQPainter *p) {
    int o = 0;
    if (isLocked || isLatched) {
       qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), true, 1, NULL);
-      p->fillRect (1,1,width()-2,height()-2, KGlobalSettings::highlightColor());
+      p->fillRect (1,1,width()-2,height()-2, TDEGlobalSettings::highlightColor());
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x+1,y+1, latched);
-      black = KGlobalSettings::highlightedTextColor();
+      black = TDEGlobalSettings::highlightedTextColor();
       o = 1;
    }
    else {
       qDrawShadePanel (p, 0, 0, width(), height(), colorGroup(), false, 1, NULL);
 		if (strcmp(modifierKeys[keyId].icon, ""))
 			p->drawPixmap (x,y, unlatched);
-      black = KGlobalSettings::textColor();
+      black = TDEGlobalSettings::textColor();
    }
 
    TQString text = i18n(modifierKeys[keyId].text);
    if (!text.isEmpty() && !text.isNull()) {
-      TQFont font = KGlobalSettings::generalFont();
+      TQFont font = TDEGlobalSettings::generalFont();
       font.setWeight(TQFont::Black);
       TQFontMetrics metrics(font);
       TQRect rect = metrics.boundingRect (text);
@@ -900,8 +900,8 @@ TQPixmap loadIcon(TDEInstance *instance, int size, TQColor color, TQString name)
 void MouseIcon::updateImages () {
 	int size = width()<height() ? width() : height();
 
-	TQColor textcolor = KGlobalSettings::textColor();
-	TQColor basecolor = KGlobalSettings::baseColor();
+	TQColor textcolor = TDEGlobalSettings::textColor();
+	TQColor basecolor = TDEGlobalSettings::baseColor();
 	mouse = loadIcon (instance, size, textcolor, "kbstate_mouse");
 	leftSelected   = loadIcon (instance, size, textcolor,
 										"kbstate_mouse_left_selected");
@@ -976,7 +976,7 @@ void TimeoutIcon::update () {
 		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
 
    TQImage img = pixmap.convertToImage();
-   KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
+   KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
    image = pixmap;
@@ -988,7 +988,7 @@ void TimeoutIcon::setGlyth (const TQString &glyth) {
    this->glyth = glyth;
 
    TQImage img = pixmap.convertToImage();
-   KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
+   KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
    image = pixmap;
@@ -1003,7 +1003,7 @@ void TimeoutIcon::setImage (const TQString &name, int timeout) {
 		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
 
    	TQImage img = pixmap.convertToImage();
-   	KIconEffect::colorize(img, KGlobalSettings::textColor(), 1.0);
+   	KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    	pixmap.convertFromImage (img);
 
    	image = pixmap;
@@ -1032,7 +1032,7 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 		factor = 64;
 	}
 
-   TQFont font = KGlobalSettings::generalFont();
+   TQFont font = TDEGlobalSettings::generalFont();
    font.setWeight(TQFont::Black);
    TQFontMetrics metrics(font);
    TQRect rect = metrics.boundingRect (text);
@@ -1045,12 +1045,12 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 
    p->setFont (font);
 	if (count == 1) {
-		p->setPen (KGlobalSettings::textColor());
+		p->setPen (TDEGlobalSettings::textColor());
 	   p->drawText (0,0, width()/2, height()/2, TQt::AlignCenter, text);
 	}
 	else {
-		TQColor t = KGlobalSettings::textColor();
-		TQColor b = KGlobalSettings::baseColor();
+		TQColor t = TDEGlobalSettings::textColor();
+		TQColor b = TDEGlobalSettings::baseColor();
 		p->setPen (TQColor ((2*t.red()+3*b.red())/5,
 					  (2*t.green()+3*b.green())/5,
 					  (2*t.blue()+3*b.blue())/5));
@@ -1059,7 +1059,7 @@ void TimeoutIcon::drawButton (TQPainter *p) {
 					  (2*t.green()+b.green())/3,
 					  (2*t.blue()+b.blue())/3));
 		p->drawText (0,0, width(), height(), TQt::AlignCenter, text);
-		p->setPen (KGlobalSettings::textColor());
+		p->setPen (TDEGlobalSettings::textColor());
 		p->drawText (0,0, width()/2, height(), TQt::AlignCenter, text);
 	}
 }

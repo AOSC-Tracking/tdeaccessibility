@@ -22,7 +22,7 @@
 
 #include <pluginproc.h>
 
-class KProcess;
+class TDEProcess;
 
 class HadifixProcPrivate;
 class HadifixProc : public PlugInProc{
@@ -188,11 +188,11 @@ class HadifixProc : public PlugInProc{
     virtual TQString getSsmlXsltFilename();
 
   private slots:
-    void slotProcessExited(KProcess*);
-    void slotWroteStdin(KProcess*);
+    void slotProcessExited(TDEProcess*);
+    void slotWroteStdin(TDEProcess*);
     
-    void receivedStdout (KProcess *, char *buffer, int buflen);
-    void receivedStderr (KProcess *, char *buffer, int buflen);
+    void receivedStdout (TDEProcess *, char *buffer, int buflen);
+    void receivedStderr (TDEProcess *, char *buffer, int buflen);
     
   private:
      HadifixProcPrivate *d;

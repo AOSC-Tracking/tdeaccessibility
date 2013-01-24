@@ -295,7 +295,7 @@ bool TalkerMgr::supportsMarkup(const TQString& talker, const uint /*markupType*/
     if (matchingTalker.isEmpty()) matchingTalker = userDefaultTalker();
     PlugInProc* plugin = talkerToPlugin(matchingTalker);
     return ( plugin->getSsmlXsltFilename() !=
-            KGlobal::dirs()->resourceDirs("data").last() + "kttsd/xslt/SSMLtoPlainText.xsl");
+            TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/xslt/SSMLtoPlainText.xsl");
 }
 
 bool TalkerMgr::autoconfigureTalker(const TQString& langCode, KConfig* config)

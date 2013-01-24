@@ -206,36 +206,36 @@ void Speech::speak(TQString command, bool stdIn, const TQString &text, const TQS
 
       // 3. create a new process
       process << command;
-      connect(&process, TQT_SIGNAL(processExited(KProcess *)), this, TQT_SLOT(processExited(KProcess *)));
-      connect(&process, TQT_SIGNAL(wroteStdin(KProcess *)), this, TQT_SLOT(wroteStdin(KProcess *)));
-      connect(&process, TQT_SIGNAL(receivedStdout(KProcess *, char *, int)), this, TQT_SLOT(receivedStdout(KProcess *, char *, int)));
-      connect(&process, TQT_SIGNAL(receivedStderr(KProcess *, char *, int)), this, TQT_SLOT(receivedStderr(KProcess *, char *, int)));
+      connect(&process, TQT_SIGNAL(processExited(TDEProcess *)), this, TQT_SLOT(processExited(TDEProcess *)));
+      connect(&process, TQT_SIGNAL(wroteStdin(TDEProcess *)), this, TQT_SLOT(wroteStdin(TDEProcess *)));
+      connect(&process, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)), this, TQT_SLOT(receivedStdout(TDEProcess *, char *, int)));
+      connect(&process, TQT_SIGNAL(receivedStderr(TDEProcess *, char *, int)), this, TQT_SLOT(receivedStderr(TDEProcess *, char *, int)));
 
       // 4. start the process
       if (stdIn) {
-         process.start(KProcess::NotifyOnExit, KProcess::All);
+         process.start(TDEProcess::NotifyOnExit, TDEProcess::All);
          if (encText.size() > 0)
             process.writeStdin(encText, encText.size());
          else
             process.closeStdin();
       }
       else
-         process.start(KProcess::NotifyOnExit, KProcess::AllOutput);
+         process.start(TDEProcess::NotifyOnExit, TDEProcess::AllOutput);
    }
 }
 
-void Speech::receivedStdout (KProcess *, char *buffer, int buflen) {
+void Speech::receivedStdout (TDEProcess *, char *buffer, int buflen) {
    kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
-void Speech::receivedStderr (KProcess *, char *buffer, int buflen) {
+void Speech::receivedStderr (TDEProcess *, char *buffer, int buflen) {
    kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
 
-void Speech::wroteStdin(KProcess *) {
+void Speech::wroteStdin(TDEProcess *) {
    process.closeStdin();
 }
 
-void Speech::processExited(KProcess *) {
+void Speech::processExited(TDEProcess *) {
    delete this;
 }
 

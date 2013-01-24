@@ -70,7 +70,7 @@ public:
    }
 
    void setLanguage (TQString languageCode) {
-      TQString filename = KGlobal::dirs()->findResource("locale",
+      TQString filename = TDEGlobal::dirs()->findResource("locale",
 			languageCode + TQString::fromLatin1("/entry.desktop"));
 
       KSimpleConfig entry(filename);
@@ -141,7 +141,7 @@ void WordCompletionWidget::load() {
 
    // Clean up disc space
    for (TQStringList::Iterator it = newDictionaryFiles.begin(); it != newDictionaryFiles.end(); ++it) {
-      TQString filename = KGlobal::dirs()->findResource ("appdata", *it);
+      TQString filename = TDEGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          TQFile::remove (filename);
    }
@@ -171,7 +171,7 @@ void WordCompletionWidget::save() {
 
    // Clean up disc space
    for (TQStringList::Iterator it = removedDictionaryFiles.begin(); it != removedDictionaryFiles.end(); ++it) {
-      TQString filename = KGlobal::dirs()->findResource ("appdata", *it);
+      TQString filename = TDEGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          TQFile::remove (filename);
    }
@@ -257,7 +257,7 @@ void WordCompletionWidget::exportDictionary() {
          }
       }
       KURL src;
-      src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
+      src.setPath( TDEGlobal::dirs()->findResource ("appdata", item->filename()) );
       KIO::NetAccess::copy (src, url, this);
    }
 }

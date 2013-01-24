@@ -285,19 +285,19 @@ void CommandProc::synth(const TQString& inputText, const TQString& suggestedFile
 
     // 3. create a new process
     kdDebug() << "CommandProc::synth: running command: " << command << endl;
-    m_commandProc = new KProcess;
+    m_commandProc = new TDEProcess;
     m_commandProc->setUseShell(true);
     m_commandProc->setEnvironment("LANG", language + "." + codec->mimeName());
     m_commandProc->setEnvironment("LC_CTYPE", language + "." + codec->mimeName());
     *m_commandProc << command;
-    connect(m_commandProc, TQT_SIGNAL(processExited(KProcess*)),
-        this, TQT_SLOT(slotProcessExited(KProcess*)));
-    connect(m_commandProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-    connect(m_commandProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-    connect(m_commandProc, TQT_SIGNAL(wroteStdin(KProcess*)),
-        this, TQT_SLOT(slotWroteStdin(KProcess* )));
+    connect(m_commandProc, TQT_SIGNAL(processExited(TDEProcess*)),
+        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_commandProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+        this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+    connect(m_commandProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+        this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+    connect(m_commandProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
+        this, TQT_SLOT(slotWroteStdin(TDEProcess* )));
 
     // 4. start the process
 
@@ -309,14 +309,14 @@ void CommandProc::synth(const TQString& inputText, const TQString& suggestedFile
         m_state = psSynthing;
     }
     if (stdIn) {
-        m_commandProc->start(KProcess::NotifyOnExit, KProcess::All);
+        m_commandProc->start(TDEProcess::NotifyOnExit, TDEProcess::All);
         if (encodedText.length() > 0)
             m_commandProc->writeStdin(encodedText, encodedText.length());
         else
             m_commandProc->closeStdin();
     }
     else
-        m_commandProc->start(KProcess::NotifyOnExit, KProcess::AllOutput);
+        m_commandProc->start(TDEProcess::NotifyOnExit, TDEProcess::AllOutput);
 }
 
 /**
@@ -361,7 +361,7 @@ void CommandProc::stopText(){
     kdDebug() << "CommandProc::stopText: Command stopped." << endl;
 }
 
-void CommandProc::slotProcessExited(KProcess*)
+void CommandProc::slotProcessExited(TDEProcess*)
 {
     kdDebug() << "CommandProc:slotProcessExited: Command process has exited." << endl;
     pluginState prevState = m_state;
@@ -380,19 +380,19 @@ void CommandProc::slotProcessExited(KProcess*)
     }
 }
 
-void CommandProc::slotReceivedStdout(KProcess*, char* buffer, int buflen)
+void CommandProc::slotReceivedStdout(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "CommandProc::slotReceivedStdout: Received output from Command: " << buf << endl;
 }
 
-void CommandProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
+void CommandProc::slotReceivedStderr(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "CommandProc::slotReceivedStderr: Received error from Command: " << buf << endl;
 }
 
-void CommandProc::slotWroteStdin(KProcess*)
+void CommandProc::slotWroteStdin(TDEProcess*)
 {
     kdDebug() << "CommandProc::slotWroteStdin: closing Stdin" << endl;
     m_commandProc->closeStdin();

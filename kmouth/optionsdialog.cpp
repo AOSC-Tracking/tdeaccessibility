@@ -119,7 +119,7 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
 {
    setHelp ("config-dialog");
 
-   TQPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
+   TQPixmap iconGeneral = TDEGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
    TQGrid *pageGeneral = addGridPage (1, Qt::Horizontal, i18n("General Options"), TQString(), iconGeneral);
    
    tabCtl = new TQTabWidget (pageGeneral, "general");
@@ -132,13 +132,13 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
-   TQPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
+   TQPixmap iconCompletion = TDEGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
    TQGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), TQString(), iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
-      TQPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
+      TQPixmap iconKttsd = TDEGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
       TQGrid *pageKttsd = addGridPage (1, Qt::Horizontal, i18n("KTTSD Speech Service"),
                                       i18n("TDE Text-to-Speech Daemon Configuration"), iconKttsd);
       

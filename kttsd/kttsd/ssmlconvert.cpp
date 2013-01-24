@@ -231,7 +231,7 @@ bool SSMLConvert::transform(const TQString &text, const TQString &xsltFilename) 
     // outFile.unlink();    // only activate this if necessary.
 
     /// Spawn an xsltproc process to apply our stylesheet to our SSML file.
-    m_xsltProc = new KProcess;
+    m_xsltProc = new TDEProcess;
     *m_xsltProc << "xsltproc";
     *m_xsltProc << "-o" << m_outFilename  << "--novalid"
         << m_xsltFilename << m_inFilename;
@@ -239,9 +239,9 @@ bool SSMLConvert::transform(const TQString &text, const TQString &xsltFilename) 
     // kdDebug() << "SSMLConvert::transform: executing command: " <<
     //     m_xsltProc->args() << endl;
 
-    connect(m_xsltProc, TQT_SIGNAL(processExited(KProcess*)),
-        this, TQT_SLOT(slotProcessExited(KProcess*)));
-    if (!m_xsltProc->start(KProcess::NotifyOnExit, KProcess::NoCommunication))
+    connect(m_xsltProc, TQT_SIGNAL(processExited(TDEProcess*)),
+        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    if (!m_xsltProc->start(TDEProcess::NotifyOnExit, TDEProcess::NoCommunication))
     {
         kdDebug() << "SSMLConvert::transform: Error starting xsltproc" << endl;
         return false;
@@ -250,7 +250,7 @@ bool SSMLConvert::transform(const TQString &text, const TQString &xsltFilename) 
     return true;
 }
 
-void SSMLConvert::slotProcessExited(KProcess* /*proc*/)
+void SSMLConvert::slotProcessExited(TDEProcess* /*proc*/)
 {
     m_xsltProc->deleteLater();
     m_xsltProc = 0;

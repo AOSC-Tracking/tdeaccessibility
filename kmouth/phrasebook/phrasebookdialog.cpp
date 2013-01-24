@@ -403,7 +403,7 @@ TQString PhraseBookDialog::displayPath (TQString filename) {
 }
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
-   TQStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
+   TQStringList bookPaths = TDEGlobal::instance()->dirs()->findAllResources (
                           "data", "kmouth/books/*.phrasebook", true, true);
    TQStringList bookNames;
    TQMap<TQString,StandardBook> bookMap;

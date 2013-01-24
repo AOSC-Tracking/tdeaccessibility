@@ -33,10 +33,10 @@ _ Festival Interactive plugin:
 _ EPOS plugin:
 _ Command plugin:
     _ Command plugin encodes text on command line using %t in user's chosen encoding, but
-      if this differs from user's desktop default encoding, doesn't work.  KProcess always
+      if this differs from user's desktop default encoding, doesn't work.  TDEProcess always
       encodes command line stuff using user's default encoding.  There is no point, therefore,
       in attempting to encode it differently, just mangles the text even more.  Short of modifying
-      KProcess, I see no way around this.  But perhaps a warning to user advising to use %f instead?
+      TDEProcess, I see no way around this.  But perhaps a warning to user advising to use %f instead?
     _ Command plugin crashes when using command 'flite -t "%t"' and flite can't get write access to /dev/dsp*.
 _ Hadifix plugin:
     _ BUG:116151 Add options for using the new prepoc capability in Hadifix.

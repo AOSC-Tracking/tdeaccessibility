@@ -102,7 +102,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
    int x = size.x();
    int y = size.y();
    int w = size.width();
-   printpainter.setFont (TQFont (KGlobalSettings::generalFont().family(), 12));
+   printpainter.setFont (TQFont (TDEGlobalSettings::generalFont().family(), 12));
    TQFontMetrics metrics = printpainter.fontMetrics();
 
    PhraseBookEntryList::iterator it;

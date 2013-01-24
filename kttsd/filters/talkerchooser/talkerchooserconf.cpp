@@ -232,7 +232,7 @@ void TalkerChooserConf::slotTalkerButton_clicked()
 
 void TalkerChooserConf::slotLoadButton_clicked()
 {
-    TQString dataDir = KGlobal::dirs()->findAllResources("data", "kttsd/talkerchooser/").last();
+    TQString dataDir = TDEGlobal::dirs()->findAllResources("data", "kttsd/talkerchooser/").last();
     TQString filename = KFileDialog::getOpenFileName(
         dataDir,
         "*rc|Talker Chooser Config (*rc)",
@@ -248,7 +248,7 @@ void TalkerChooserConf::slotLoadButton_clicked()
 void TalkerChooserConf::slotSaveButton_clicked()
 {
     TQString filename = KFileDialog::getSaveFileName(
-        KGlobal::dirs()->saveLocation( "data" ,"kttsd/talkerchooser/", false ),
+        TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/talkerchooser/", false ),
        "*rc|Talker Chooser Config (*rc)",
         m_widget,
         "talkerchooser_savefile");

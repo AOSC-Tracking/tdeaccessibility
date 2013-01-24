@@ -182,7 +182,7 @@ void TalkerCode::normalize()
     TQString language = lang;
     if (language.left(1) == "*") language = language.mid(1);
     TQString charSet;
-    KGlobal::locale()->splitLocale(language, languageCode, countryCode, charSet);
+    TDEGlobal::locale()->splitLocale(language, languageCode, countryCode, charSet);
 }
 
 /**
@@ -218,11 +218,11 @@ void TalkerCode::normalize()
     else
     {
         splitFullLanguageCode(languageCode, twoAlpha, countryCode);
-        language = KGlobal::locale()->twoAlphaToLanguageName(twoAlpha);
+        language = TDEGlobal::locale()->twoAlphaToLanguageName(twoAlpha);
     }
     if (!countryCode.isEmpty())
     {
-        TQString countryName = KGlobal::locale()->twoAlphaToCountryName(countryCode);
+        TQString countryName = TDEGlobal::locale()->twoAlphaToCountryName(countryCode);
         // Some abbreviations to save screen space.
         if (countryName == i18n("full country name", "United States of America"))
             countryName = i18n("abbreviated country name", "USA");

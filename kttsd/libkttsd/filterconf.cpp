@@ -46,7 +46,7 @@ KttsFilterConf::KttsFilterConf( TQWidget *parent, const char *name) : TQWidget(p
     // kdDebug() << "KttsFilterConf::KttsFilterConf: Running" << endl;
     TQString systemPath(getenv("PATH"));
     // kdDebug() << "Path is " << systemPath << endl;
-    KGlobal::locale()->insertCatalogue("kttsd");
+    TDEGlobal::locale()->insertCatalogue("kttsd");
     m_path = TQStringList::split(":", systemPath);
 }
 

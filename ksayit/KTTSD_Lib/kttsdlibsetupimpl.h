@@ -41,7 +41,7 @@ private slots:
 
 	/** Called when the Control Center Module was closed.
 	 */
-	void slotKCMProcessExited(KProcess *p);
+	void slotKCMProcessExited(TDEProcess *p);
 };
 
 #endif

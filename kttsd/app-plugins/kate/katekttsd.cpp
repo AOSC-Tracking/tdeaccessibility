@@ -63,7 +63,7 @@ void KateKttsdPlugin::removeView(KTextEditor::View *view)
         m_views.remove (nview);
         delete nview;
     }
-    KGlobal::locale()->removeCatalogue("kttsd");
+    TDEGlobal::locale()->removeCatalogue("kttsd");
 }
 
 
@@ -73,7 +73,7 @@ KateKttsdPluginView::KateKttsdPluginView( KTextEditor::View *view, const char *n
 {
     view->insertChildClient( this );
     setInstance( KGenericFactory<KateKttsdPlugin>::instance() );
-    KGlobal::locale()->insertCatalogue("kttsd");
+    TDEGlobal::locale()->insertCatalogue("kttsd");
     (void) new KAction( i18n("Speak Text"), "kttsd", 0, this, TQT_SLOT(slotReadOut()), actionCollection(), "tools_kttsd" );
     setXMLFile( "ktexteditor_kttsdui.rc" );
 }

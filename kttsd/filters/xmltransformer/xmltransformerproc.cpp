@@ -241,7 +241,7 @@ bool XmlTransformerProc::init(KConfig* config, const TQString& configGroup)
     // outFile.unlink();    // only activate this if necessary.
 
     /// Spawn an xsltproc process to apply our stylesheet to input file.
-    m_xsltProc = new KProcess;
+    m_xsltProc = new TDEProcess;
     *m_xsltProc << m_xsltprocPath;
     *m_xsltProc << "-o" << m_outFilename  << "--novalid"
             << m_xsltFilePath << m_inFilename;
@@ -250,14 +250,14 @@ bool XmlTransformerProc::init(KConfig* config, const TQString& configGroup)
     //     m_xsltProc->args() << endl;
 
     m_state = fsFiltering;
-    connect(m_xsltProc, TQT_SIGNAL(processExited(KProcess*)),
-            this, TQT_SLOT(slotProcessExited(KProcess*)));
-    connect(m_xsltProc, TQT_SIGNAL(receivedStdout(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(KProcess*, char*, int)));
-    connect(m_xsltProc, TQT_SIGNAL(receivedStderr(KProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(KProcess*, char*, int)));
-    if (!m_xsltProc->start(KProcess::NotifyOnExit,
-         static_cast<KProcess::Communication>(KProcess::Stdout | KProcess::Stderr)))
+    connect(m_xsltProc, TQT_SIGNAL(processExited(TDEProcess*)),
+            this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_xsltProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+    connect(m_xsltProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+    if (!m_xsltProc->start(TDEProcess::NotifyOnExit,
+         static_cast<TDEProcess::Communication>(TDEProcess::Stdout | TDEProcess::Stderr)))
     {
         kdDebug() << "XmlTransformerProc::convert: Error starting xsltproc" << endl;
         m_state = fsIdle;
@@ -365,19 +365,19 @@ void XmlTransformerProc::processOutput()
  */
 /*virtual*/ bool XmlTransformerProc::wasModified() { return m_wasModified; }
 
-void XmlTransformerProc::slotProcessExited(KProcess*)
+void XmlTransformerProc::slotProcessExited(TDEProcess*)
 {
     // kdDebug() << "XmlTransformerProc::slotProcessExited: xsltproc has exited." << endl;
     processOutput();
 }
 
-void XmlTransformerProc::slotReceivedStdout(KProcess*, char* /*buffer*/, int /*buflen*/)
+void XmlTransformerProc::slotReceivedStdout(TDEProcess*, char* /*buffer*/, int /*buflen*/)
 {
     // TQString buf = TQString::fromLatin1(buffer, buflen);
     // kdDebug() << "XmlTransformerProc::slotReceivedStdout: Received from xsltproc: " << buf << endl;
 }
 
-void XmlTransformerProc::slotReceivedStderr(KProcess*, char* buffer, int buflen)
+void XmlTransformerProc::slotReceivedStderr(TDEProcess*, char* buffer, int buflen)
 {
     TQString buf = TQString::fromLatin1(buffer, buflen);
     kdDebug() << "XmlTransformerProc::slotReceivedStderr: Received error from xsltproc: " << buf << endl;

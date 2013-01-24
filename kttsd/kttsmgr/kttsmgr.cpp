@@ -54,7 +54,7 @@ static const KCmdLineOptions options[] =
 
 int main (int argc, char *argv[])
 {
-    KGlobal::locale()->setMainCatalogue("kttsd");
+    TDEGlobal::locale()->setMainCatalogue("kttsd");
 
     TDEAboutData aboutdata("kttsmgr", I18N_NOOP("KTTSMgr"),
         "0.3.5.2", I18N_NOOP("Text-to-Speech Manager"),
@@ -81,7 +81,7 @@ int main (int argc, char *argv[])
     KUniqueApplication app;
 
 #if TDE_VERSION >= TDE_MAKE_VERSION (3,3,90)
-    TQPixmap icon = KGlobal::iconLoader()->loadIcon("kttsd", KIcon::Panel);
+    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("kttsd", KIcon::Panel);
     aboutdata.setProgramLogo(icon.convertToImage());
 #endif
 
@@ -89,7 +89,7 @@ int main (int argc, char *argv[])
     KCMultiDialog dlg(KCMultiDialog::Plain, i18n("TDE Text-to-Speech Manager"), 0, "kttsmgrdlg", false);
     dlg.addModule("kcmkttsd");
 
-    dlg.setIcon(KGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small));
+    dlg.setIcon(TDEGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small));
 
     // Get SysTray and ShowMainWindow options.
     KConfig* config = new KConfig("kttsdrc");
@@ -168,7 +168,7 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
     DCOPObject("kkttsmgr_kspeechsink"),
     KSystemTray(parent, "kttsmgrsystemtray")
 {
-    TQPixmap icon = KGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small);
+    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small);
     setPixmap (icon);
 
     // TQToolTip::add(this, i18n("Text-to-speech manager"));
@@ -178,16 +178,16 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
     id = contextMenu()->idAt(0);
     if (id != -1) contextMenu()->changeTitle(id, icon, "KTTSMgr");
 
-    id = contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("klipper", KIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("klipper", KIcon::Small),
         i18n("&Speak Clipboard Contents"), this, TQT_SLOT(speakClipboardSelected()));
-    id = contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("stop", KIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("stop", KIcon::Small),
         i18n("&Hold"), this, TQT_SLOT(holdSelected()));
-    id = contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("exec", KIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("exec", KIcon::Small),
         i18n("Resume"), this, TQT_SLOT(resumeSelected()));
     id = contextMenu()->insertSeparator();
-    id = contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("contents", KIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", KIcon::Small),
         i18n("KTTS &Handbook"), this, TQT_SLOT(helpSelected()));
-    id = contextMenu()->insertItem (KGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small),
         i18n("&About KTTSMgr"), this, TQT_SLOT(aboutSelected()));
 
     connect(this, TQT_SIGNAL(quitSelected()), this, TQT_SLOT(quitSelected()));

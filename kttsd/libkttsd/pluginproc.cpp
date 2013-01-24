@@ -135,7 +135,7 @@ bool PlugInProc::supportsSynth() { return false; }
 */
 TQString PlugInProc::getSsmlXsltFilename()
 {
-    return KGlobal::dirs()->resourceDirs("data").last() + "kttsd/xslt/SSMLtoPlainText.xsl";
+    return TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/xslt/SSMLtoPlainText.xsl";
 }
 
 /**

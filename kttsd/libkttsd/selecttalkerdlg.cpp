@@ -166,7 +166,7 @@ void SelectTalkerDlg::slotLanguageBrowseButton_clicked()
     langLView->addColumn(i18n("Language"));
     langLView->addColumn(i18n("Code"));
     langLView->setSelectionMode(TQListView::Single);
-    TQStringList allLocales = KGlobal::locale()->allLanguagesTwoAlpha();
+    TQStringList allLocales = TDEGlobal::locale()->allLanguagesTwoAlpha();
     TQString locale;
     TQString language;
     // Blank line so user can select no language.

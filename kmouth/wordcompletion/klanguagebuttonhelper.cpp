@@ -30,7 +30,7 @@
 #include "klanguagebutton.h"
 
 TQString languageName (TQString languageCode) {
-   TQString filename = KGlobal::dirs()->findResource("locale",
+   TQString filename = TDEGlobal::dirs()->findResource("locale",
 			languageCode + TQString::fromLatin1("/entry.desktop"));
       
    KSimpleConfig entry(filename);
@@ -41,7 +41,7 @@ TQString languageName (TQString languageCode) {
 void loadLanguageList(KLanguageButton *combo)
 // This function was taken from tdebase/kcontrol/tdm/tdm-appear.cpp
 {
-  TQStringList langlist = KGlobal::dirs()->findAllResources("locale",
+  TQStringList langlist = TDEGlobal::dirs()->findAllResources("locale",
 			TQString::fromLatin1("*/entry.desktop"));
   langlist.sort();
   for ( TQStringList::ConstIterator it = langlist.begin();
@@ -57,8 +57,8 @@ void loadLanguageList(KLanguageButton *combo)
     combo->insertLanguage(nid, name, TQString::fromLatin1("l10n/"), TQString());
   }
   
-  if (KGlobal::locale())
-     combo->setCurrentItem (KGlobal::locale()->language());
+  if (TDEGlobal::locale())
+     combo->setCurrentItem (TDEGlobal::locale()->language());
   else
      combo->setCurrentItem (KLocale::defaultLanguage());
 }

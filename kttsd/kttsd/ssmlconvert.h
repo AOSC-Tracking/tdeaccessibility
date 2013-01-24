@@ -34,7 +34,7 @@
 #include <tqobject.h>
 #include <tqstringlist.h>
 
-class KProcess;
+class TDEProcess;
 class TQString;
 
 class SSMLConvert : public TQObject {
@@ -110,11 +110,11 @@ signals:
     void transformFinished();
 
 private slots:
-    void slotProcessExited(KProcess* proc);
+    void slotProcessExited(TDEProcess* proc);
 
 private:
     /// The XSLT processor.
-    KProcess *m_xsltProc;
+    TDEProcess *m_xsltProc;
     /// Current talkers.
     TQStringList m_talkers;
     // Current state.

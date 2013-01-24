@@ -24,7 +24,7 @@
 // KTTS includes.
 #include <pluginproc.h>
 
-class KProcess;
+class TDEProcess;
 class TQTextCodec;
 
 class CommandProc : public PlugInProc{
@@ -140,10 +140,10 @@ class CommandProc : public PlugInProc{
             TQTextCodec *codec, TQString& language);
 
     private slots:
-        void slotProcessExited(KProcess* proc);
-        void slotReceivedStdout(KProcess* proc, char* buffer, int buflen);
-        void slotReceivedStderr(KProcess* proc, char* buffer, int buflen);
-        void slotWroteStdin(KProcess* proc);
+        void slotProcessExited(TDEProcess* proc);
+        void slotReceivedStdout(TDEProcess* proc, char* buffer, int buflen);
+        void slotReceivedStderr(TDEProcess* proc, char* buffer, int buflen);
+        void slotWroteStdin(TDEProcess* proc);
 
     private:
 
@@ -175,7 +175,7 @@ class CommandProc : public PlugInProc{
         /**
          * Flite process
          */
-        KProcess* m_commandProc;
+        TDEProcess* m_commandProc;
 
         /**
         * Name of temporary file containing text.

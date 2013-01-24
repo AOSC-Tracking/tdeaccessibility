@@ -71,7 +71,7 @@ StringReplacerProc::StringReplacerProc( TQObject *parent, const char *name, cons
 bool StringReplacerProc::init(KConfig* config, const TQString& configGroup){
     // kdDebug() << "StringReplacerProc::init: Running" << endl;
     TQString wordsFilename =
-        KGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", false );
+        TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", false );
     if ( wordsFilename.isEmpty() ) return false;
     wordsFilename += configGroup;
     config->setGroup( configGroup );

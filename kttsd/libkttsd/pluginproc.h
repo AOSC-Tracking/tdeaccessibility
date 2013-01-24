@@ -112,7 +112,7 @@
 * If @ref supportsAsync returns False, KTTSD will run the plugin in a separate
 * TQThread.  As a consequence, the plugin must not make use of the KDE Library,
 * when @ref sayText or @ref synthText is called,
-* with the exception of KProcess and family (KProcIO, KShellProcess).
+* with the exception of TDEProcess and family (KProcIO, KShellProcess).
 * This restriction comes about because the KDE Libraries make use of the
 * main TQt event loop, which unfortunately, runs only in the main thread.
 * This restriction will likely be lifted in TQt 4 and later.

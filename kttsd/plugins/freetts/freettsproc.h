@@ -24,7 +24,7 @@
 
 #include <pluginproc.h>
 
-class KProcess;
+class TDEProcess;
 
 class FreeTTSProc : public PlugInProc{
 	Q_OBJECT
@@ -143,10 +143,10 @@ public:
 	const TQString &freettsJarPath);
 
 private slots:
-	void slotProcessExited(KProcess* proc);
-	void slotReceivedStdout(KProcess* proc, char* buffer, int buflen);
-	void slotReceivedStderr(KProcess* proc, char* buffer, int buflen);
-	void slotWroteStdin(KProcess* proc);
+	void slotProcessExited(TDEProcess* proc);
+	void slotReceivedStdout(TDEProcess* proc, char* buffer, int buflen);
+	void slotReceivedStderr(TDEProcess* proc, char* buffer, int buflen);
+	void slotWroteStdin(TDEProcess* proc);
 
 private:
 	
@@ -158,7 +158,7 @@ private:
 	/**
 	 * FreeTTS process
 	 */
-	KProcess* m_freettsProc;
+	TDEProcess* m_freettsProc;
 	
 	/**
 	 * Synthesis filename.

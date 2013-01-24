@@ -60,12 +60,12 @@ bool Stretcher::stretch(const TQString &inFilename, const TQString &outFilename,
 {
     if (m_stretchProc) return false;
     m_outFilename = outFilename;
-    m_stretchProc = new KProcess;
+    m_stretchProc = new TDEProcess;
     TQString stretchStr = TQString("%1").arg(stretchFactor, 0, 'f', 3);
     *m_stretchProc << "sox" << inFilename << outFilename << "stretch" << stretchStr;
-    connect(m_stretchProc, TQT_SIGNAL(processExited(KProcess*)),
-        this, TQT_SLOT(slotProcessExited(KProcess*)));
-    if (!m_stretchProc->start(KProcess::NotifyOnExit, KProcess::NoCommunication))
+    connect(m_stretchProc, TQT_SIGNAL(processExited(TDEProcess*)),
+        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    if (!m_stretchProc->start(TDEProcess::NotifyOnExit, TDEProcess::NoCommunication))
     {
         kdDebug() << "Stretcher::stretch: Error starting audio stretcher process.  Is sox installed?" << endl;
         return false;
@@ -74,7 +74,7 @@ bool Stretcher::stretch(const TQString &inFilename, const TQString &outFilename,
     return true;
 }
 
-void Stretcher::slotProcessExited(KProcess*)
+void Stretcher::slotProcessExited(TDEProcess*)
 {
     m_stretchProc->deleteLater();
     m_stretchProc = 0;

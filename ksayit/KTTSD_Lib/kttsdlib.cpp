@@ -30,7 +30,7 @@
 KTTSDLib::KTTSDLib(TQObject *parent, const char *name, TDEApplication *Appl)
  : TQObject(parent, name), m_Appl(Appl)
 {
-    KGlobal::locale()->insertCatalogue("libKTTSD");
+    TDEGlobal::locale()->insertCatalogue("libKTTSD");
     m_talker = new kttsdlibtalker2(static_cast<TQObject*>(this), "kttsdlibtalker");
     connect(m_talker, TQT_SIGNAL(signalTextFinished(const uint)),
         this, TQT_SLOT(slotTextFinished(const uint)) );

@@ -103,7 +103,7 @@ bool KTTSD::initializeTalkerMgr()
         // desktop language, but if that fails, fallback to English.
         if (load < 0)
         {
-            TQString languageCode = KGlobal::locale()->language();
+            TQString languageCode = TDEGlobal::locale()->language();
             if (m_talkerMgr->autoconfigureTalker(languageCode, m_speechData->config))
                 load = m_talkerMgr->loadPlugIns(m_speechData->config);
             else

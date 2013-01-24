@@ -77,9 +77,9 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 PhraseTree::PhraseTree (TQWidget *parent, const char *name)
    : KListView (parent, name)
 {
-   phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
-   phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
-   phrase            = KGlobal::iconLoader()->loadIcon("phrase",            KIcon::Small);
+   phrasebook_open   = TDEGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
+   phrasebook_closed = TDEGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
+   phrase            = TDEGlobal::iconLoader()->loadIcon("phrase",            KIcon::Small);
 
    connect (this, TQT_SIGNAL(expanded (TQListViewItem *)), this, TQT_SLOT(itemExpanded (TQListViewItem *)));
    connect (this, TQT_SIGNAL(collapsed (TQListViewItem *)), this, TQT_SLOT(itemCollapsed (TQListViewItem *)));
@@ -494,7 +494,7 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
 }
 
 bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
-   TQMap<TQString, TQString> mapEntry = KGlobal::config()->entryMap ("Global Shortcuts");
+   TQMap<TQString, TQString> mapEntry = TDEGlobal::config()->entryMap ("Global Shortcuts");
    TQMap<TQString, TQString>::Iterator it;
    for (it = mapEntry.begin(); it != mapEntry.end(); ++it) {
       int iSeq = keyConflict (cut, KShortcut(*it));

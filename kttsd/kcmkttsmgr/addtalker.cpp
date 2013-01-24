@@ -44,14 +44,14 @@ AddTalker::AddTalker(SynthToLangMap synthToLangMap, TQWidget* parent, const char
     applyFilter();
 
     // Default to user's desktop language.
-    TQString languageCode = KGlobal::locale()->defaultLanguage();
+    TQString languageCode = TDEGlobal::locale()->defaultLanguage();
     // If there is not a synth that supports the locale, try stripping country code.
     if (!m_langToSynthMap.contains(languageCode))
     {
         TQString countryCode;
         TQString charSet;
         TQString twoAlpha;
-        KGlobal::locale()->splitLocale(languageCode, twoAlpha, countryCode, charSet);
+        TDEGlobal::locale()->splitLocale(languageCode, twoAlpha, countryCode, charSet);
         languageCode = twoAlpha;
     }
     // If there is still not a synth that supports the language code, default to "other".
@@ -131,11 +131,11 @@ TQString AddTalker::languageCodeToLanguage(const TQString &languageCode)
         language = i18n("Other");
     else
     {
-        KGlobal::locale()->splitLocale(languageCode, twoAlpha, countryCode, charSet);
-        language = KGlobal::locale()->twoAlphaToLanguageName(twoAlpha);
+        TDEGlobal::locale()->splitLocale(languageCode, twoAlpha, countryCode, charSet);
+        language = TDEGlobal::locale()->twoAlphaToLanguageName(twoAlpha);
     }
     if (!countryCode.isEmpty())
-        language += " (" + KGlobal::locale()->twoAlphaToCountryName(countryCode) + ")";
+        language += " (" + TDEGlobal::locale()->twoAlphaToCountryName(countryCode) + ")";
     return language;
 }
 

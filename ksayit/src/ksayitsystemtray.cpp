@@ -232,7 +232,7 @@ void State::mouseReleaseEventCall(KSayItSystemTray *caller, TQMouseEvent *e)
 
 ////////////////////////////////////////////
 StateWAIT::StateWAIT(){
-  m_traypixmap = KGlobal::iconLoader()->loadIcon("ksayit", KIcon::Toolbar);
+  m_traypixmap = TDEGlobal::iconLoader()->loadIcon("ksayit", KIcon::Toolbar);
 }
 StateWAIT::~StateWAIT(){
 }
@@ -273,7 +273,7 @@ void StateWAIT::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 ////////////////////////////////////////////
 StateSAY::StateSAY(){
-  m_traypixmap = KGlobal::iconLoader()->loadIcon("ksayit_talking", KIcon::Toolbar);
+  m_traypixmap = TDEGlobal::iconLoader()->loadIcon("ksayit_talking", KIcon::Toolbar);
 }
 StateSAY::~StateSAY(){
 }
@@ -315,7 +315,7 @@ void StateSAY::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 ////////////////////////////////////////////
 StateCLIPEMPTY::StateCLIPEMPTY(){
-  m_traypixmap = KGlobal::iconLoader()->loadIcon("ksayit_clipempty", KIcon::Toolbar);
+  m_traypixmap = TDEGlobal::iconLoader()->loadIcon("ksayit_clipempty", KIcon::Toolbar);
 }
 StateCLIPEMPTY::~StateCLIPEMPTY(){
 }

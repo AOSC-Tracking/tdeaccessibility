@@ -256,8 +256,8 @@ TQString DictionaryCreationWizard::language() {
       return mergeWidget->language();
    }
    else if (creationSource->emptyButton->isChecked()) {
-      if (KGlobal::locale())
-         return KGlobal::locale()->language();
+      if (TDEGlobal::locale())
+         return TDEGlobal::locale()->language();
       else
          return KLocale::defaultLanguage();
    }

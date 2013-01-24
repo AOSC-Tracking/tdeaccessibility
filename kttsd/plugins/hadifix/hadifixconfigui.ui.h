@@ -47,8 +47,8 @@ void HadifixConfigUI::frequencySlider_valueChanged (int sliderValue) {
 }
 
 void HadifixConfigUI::init () {
-   male = KGlobal::iconLoader()->loadIcon("male", KIcon::Small);
-   female = KGlobal::iconLoader()->loadIcon("female", KIcon::Small);
+   male = TDEGlobal::iconLoader()->loadIcon("male", KIcon::Small);
+   female = TDEGlobal::iconLoader()->loadIcon("female", KIcon::Small);
 }
 
 void HadifixConfigUI::addVoice (const TQString &filename, bool isMale) {

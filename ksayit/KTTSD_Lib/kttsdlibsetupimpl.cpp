@@ -54,18 +54,18 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
     }
 
     // invoke the Control Center Module
-    KProcess *kcmproc = new KProcess();
-    connect(kcmproc, TQT_SIGNAL(processExited(KProcess*)),
-                    this, TQT_SLOT(slotKCMProcessExited(KProcess*)) );
+    TDEProcess *kcmproc = new TDEProcess();
+    connect(kcmproc, TQT_SIGNAL(processExited(TDEProcess*)),
+                    this, TQT_SLOT(slotKCMProcessExited(TDEProcess*)) );
     (*kcmproc) << "kcmshell";
     (*kcmproc) << "kcmkttsd";
-    kcmproc->start(KProcess::NotifyOnExit);
+    kcmproc->start(TDEProcess::NotifyOnExit);
 
     kcm_Button->setEnabled(false);
 }
 
 
-void KTTSDlibSetupImpl::slotKCMProcessExited(KProcess *p)
+void KTTSDlibSetupImpl::slotKCMProcessExited(TDEProcess *p)
 {
     kdDebug(100200) << "slotKCMProcessExited()" << endl;
     kcm_Button->setEnabled(true);
