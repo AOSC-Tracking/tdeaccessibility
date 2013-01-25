@@ -59,7 +59,7 @@ class FestivalIntProc : public PlugInProc{
          * @param config          Settings object.
          * @param configGroup     Settings group.
          */
-        virtual bool init(KConfig *config, const TQString &configGroup);
+        virtual bool init(TDEConfig *config, const TQString &configGroup);
 
         /**
          * Returns true when festival is ready to speak a sentence.

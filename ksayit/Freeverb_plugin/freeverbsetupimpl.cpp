@@ -28,7 +28,7 @@ using namespace std;
 // App specific includes
 #include "freeverbsetupimpl.h"
 
-FreeverbSetupImpl::FreeverbSetupImpl(TQWidget *parent, const char *name, bool modal, KConfig *config )
+FreeverbSetupImpl::FreeverbSetupImpl(TQWidget *parent, const char *name, bool modal, TDEConfig *config )
  : Freeverb_Setup(parent,name,modal), m_config(config) {
 
   // initialize Widgets

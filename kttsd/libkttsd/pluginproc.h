@@ -119,7 +119,7 @@
 *
 * Since the KDE library is not available from the @ref sayText and @ref synthText methods,
 * it is best if the plugin reads configuration settings in the @ref init method.
-* The KConfig object is passed as an argument to @ref init .
+* The TDEConfig object is passed as an argument to @ref init .
 *
 * If the synthesis engine requires a long initialization time (more than a second),
 * it is best if the plugin loads the speech engine from the @ref init method.
@@ -264,7 +264,7 @@ class KDE_EXPORT PlugInProc : virtual public TQObject{
             config->setGroup(configGroup);
           @endverbatim
         */
-        virtual bool init(KConfig *config, const TQString &configGroup);
+        virtual bool init(TDEConfig *config, const TQString &configGroup);
 
         /** 
         * Say a text.  Synthesize and audibilize it.

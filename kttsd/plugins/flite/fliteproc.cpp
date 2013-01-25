@@ -55,7 +55,7 @@ FliteProc::~FliteProc(){
 }
 
 /** Initialize the speech */
-bool FliteProc::init(KConfig* config, const TQString& configGroup){
+bool FliteProc::init(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "Running: FliteProc::init(const TQString &lang)" << endl;
     // kdDebug() << "Initializing plug in: Flite" << endl;
     // Retrieve path to flite executable.

@@ -27,13 +27,13 @@ class HadifixConf : public PlugInConf {
             the control center, to undo all of his changes and restore the currently 
             valid settings. NOTE that this is not called after the modules is loaded,
             so you probably want to call this method in the constructor.*/
-        void load(KConfig *config, const TQString &configGroup);
+        void load(TDEConfig *config, const TQString &configGroup);
 
         /** This function gets called when the user wants to save the settings in 
             the user interface, updating the config files or wherever the 
             configuration is stored. The method is called when the user clicks "Apply" 
             or "Ok". */
-        void save(KConfig *config, const TQString &configGroup);
+        void save(TDEConfig *config, const TQString &configGroup);
 
         /** This function is called to set the settings in the module to sensible
             default values. It gets called when hitting the "Default" button. The 

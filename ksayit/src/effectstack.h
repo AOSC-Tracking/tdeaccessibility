@@ -35,7 +35,7 @@ class FXPluginHandler;
 */
 class EffectStack{
 public:
-    EffectStack(FXPluginHandler *pluginhandler=0, KConfig *config=0);
+    EffectStack(FXPluginHandler *pluginhandler=0, TDEConfig *config=0);
     ~EffectStack();
     
     // KDE::PlayObject *playobj;
@@ -49,7 +49,7 @@ public: //Methods
 
 private:
     FXPluginHandler *m_pluginhandler;
-    KConfig *m_config;
+    TDEConfig *m_config;
 
 
 };

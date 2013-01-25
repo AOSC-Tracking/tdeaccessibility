@@ -102,7 +102,7 @@ EposConf::~EposConf(){
     delete m_progressDlg;
 }
 
-void EposConf::load(KConfig *config, const TQString &configGroup){
+void EposConf::load(TDEConfig *config, const TQString &configGroup){
     // kdDebug() << "EposConf::load: Running " << endl;
 
     config->setGroup(configGroup);
@@ -128,7 +128,7 @@ TQString EposConf::languageCodeToEposLanguage(const TQString &languageCode)
     return eposLanguage;
 }
 
-void EposConf::save(KConfig *config, const TQString &configGroup){
+void EposConf::save(TDEConfig *config, const TQString &configGroup){
     // kdDebug() << "EposConf::save: Running" << endl;
 
     config->setGroup("Epos");

@@ -107,7 +107,7 @@ K_EXPORT_COMPONENT_FACTORY( kcm_kttsd, KCMKttsMgrFactory("kttsd") )
 KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &) :
     DCOPStub("kttsd", "KSpeech"),
     DCOPObject("kcmkttsmgr_kspeechsink"),
-    KCModule(KCMKttsMgrFactory::instance(), parent, name)
+    TDECModule(KCMKttsMgrFactory::instance(), parent, name)
 {
     // kdDebug() << "KCMKttsMgr contructor running." << endl;
 
@@ -240,7 +240,7 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     m_kttsmgrw->keepAudioPath->setURL(locateLocal("data", "kttsd/audio/"));
 
     // Object for the KTTSD configuration.
-    m_config = new KConfig("kttsdrc");
+    m_config = new TDEConfig("kttsdrc");
 
     // Load configuration.
     load();
@@ -1059,7 +1059,7 @@ void KCMKttsMgr::init(){
 */
 int KCMKttsMgr::buttons() {
     // kdDebug() << "KCMKttsMgr::buttons: Running"<< endl;
-    return KCModule::Ok|KCModule::Apply|KCModule::Help|KCModule::Default;
+    return TDECModule::Ok|TDECModule::Apply|TDECModule::Help|TDECModule::Default;
 }
 
 /**
@@ -2707,7 +2707,7 @@ KttsCheckListItem::KttsCheckListItem( TQListView *parent,
 
 /*virtual*/ /*void resizeEvent( TQResizeEvent ev )
 {
-    dynamic_cast<KCModule>(resizeEvent(ev));
+    dynamic_cast<TDECModule>(resizeEvent(ev));
     updateGeometry();
 }
 */

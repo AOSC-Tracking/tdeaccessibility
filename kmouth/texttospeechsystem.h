@@ -23,7 +23,7 @@
 #include <tqobject.h>
 #include <tqptrlist.h>
 
-class KConfig;
+class TDEConfig;
 
 /**This class represents a text-to-speech system.
   *@author Gunnar Schmi Dt
@@ -37,8 +37,8 @@ public:
    TextToSpeechSystem();
    ~TextToSpeechSystem();
 
-   void readOptions (KConfig *config, const TQString &langGroup);
-   void saveOptions (KConfig *config, const TQString &langGroup);
+   void readOptions (TDEConfig *config, const TQString &langGroup);
+   void saveOptions (TDEConfig *config, const TQString &langGroup);
 
 public slots:
    void speak (const TQString &text, const TQString &language);

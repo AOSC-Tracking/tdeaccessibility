@@ -66,7 +66,7 @@ void TextToSpeechSystem::speak (const TQString &text, const TQString &language) 
    }
 }
 
-void TextToSpeechSystem::readOptions (KConfig *config, const TQString &langGroup) {
+void TextToSpeechSystem::readOptions (TDEConfig *config, const TQString &langGroup) {
   config->setGroup(langGroup);
   ttsCommand = config->readPathEntry("Command");
   stdIn = config->readBoolEntry("StdIn", true);
@@ -87,7 +87,7 @@ void TextToSpeechSystem::readOptions (KConfig *config, const TQString &langGroup
   }
 }
 
-void TextToSpeechSystem::saveOptions (KConfig *config, const TQString &langGroup) {
+void TextToSpeechSystem::saveOptions (TDEConfig *config, const TQString &langGroup) {
   config->setGroup(langGroup);
   config->writePathEntry("Command", ttsCommand);
   config->writeEntry("StdIn", stdIn);

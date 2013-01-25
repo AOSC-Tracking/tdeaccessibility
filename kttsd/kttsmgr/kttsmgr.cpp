@@ -92,7 +92,7 @@ int main (int argc, char *argv[])
     dlg.setIcon(TDEGlobal::iconLoader()->loadIcon("kttsd", KIcon::Small));
 
     // Get SysTray and ShowMainWindow options.
-    KConfig* config = new KConfig("kttsdrc");
+    TDEConfig* config = new TDEConfig("kttsdrc");
     config->setGroup("General");
     bool embedInSysTray = config->readBoolEntry("EmbedInSysTray", true);
     // Can only hide main window if we are in the system tray, otherwise, no way

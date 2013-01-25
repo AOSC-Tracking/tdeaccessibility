@@ -106,7 +106,7 @@ WordCompletionWidget::WordCompletionWidget(TQWidget *parent, const char *name) :
     connect (languageButton, TQT_SIGNAL (activated (int)), this, TQT_SLOT (languageSelected(int)) );
 
     // Object for the KCMKTTSD configuration
-    config = new KConfig("kmouthrc");
+    config = new TDEConfig("kmouthrc");
 
     // Load the configuration from the file
     load();
@@ -250,7 +250,7 @@ void WordCompletionWidget::exportDictionary() {
       if (url.isEmpty() || !url.isValid())
          return;
 
-      if (KIO::NetAccess::exists(url, false, this)) {
+      if (TDEIO::NetAccess::exists(url, false, this)) {
          if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                           "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
@@ -258,7 +258,7 @@ void WordCompletionWidget::exportDictionary() {
       }
       KURL src;
       src.setPath( TDEGlobal::dirs()->findResource ("appdata", item->filename()) );
-      KIO::NetAccess::copy (src, url, this);
+      TDEIO::NetAccess::copy (src, url, this);
    }
 }
 

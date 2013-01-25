@@ -69,7 +69,7 @@ XmlTransformerProc::XmlTransformerProc( TQObject *parent, const char *name, cons
  * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
  * separate configuration files of their own.
  */
-bool XmlTransformerProc::init(KConfig* config, const TQString& configGroup)
+bool XmlTransformerProc::init(TDEConfig* config, const TQString& configGroup)
 {
     // kdDebug() << "XmlTransformerProc::init: Running." << endl;
     config->setGroup( configGroup );

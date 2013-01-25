@@ -84,7 +84,7 @@ FestivalIntProc::~FestivalIntProc(){
 }
 
 /** Initialize the speech */
-bool FestivalIntProc::init(KConfig *config, const TQString &configGroup)
+bool FestivalIntProc::init(TDEConfig *config, const TQString &configGroup)
 {
     // kdDebug() << "FestivalIntProc::init: Initializing plug in: Festival" << endl;
 

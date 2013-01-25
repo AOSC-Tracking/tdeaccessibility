@@ -68,7 +68,7 @@ FreeTTSConf::~FreeTTSConf() {
         delete m_progressDlg;
 }
 
-void FreeTTSConf::load(KConfig *config, const TQString &configGroup) {
+void FreeTTSConf::load(TDEConfig *config, const TQString &configGroup) {
 	// kdDebug() << "FreeTTSConf::load: Running" << endl;
 
 	config->setGroup(configGroup);
@@ -84,7 +84,7 @@ void FreeTTSConf::load(KConfig *config, const TQString &configGroup) {
 	/// If freettsPath is still empty, then we couldn't find the file in the path.
 }
 
-void FreeTTSConf::save(KConfig *config, const TQString &configGroup){
+void FreeTTSConf::save(TDEConfig *config, const TQString &configGroup){
 	// kdDebug() << "FreeTTSConf::save: Running" << endl;
 
     config->setGroup("FreeTTS");

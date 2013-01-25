@@ -81,7 +81,7 @@ CommandConf::~CommandConf()
     delete m_progressDlg;
 }
 
-void CommandConf::load(KConfig *config, const TQString &configGroup) {
+void CommandConf::load(TDEConfig *config, const TQString &configGroup) {
     // kdDebug() << "CommandConf::load: Running" << endl;
     config->setGroup(configGroup);
     m_widget->urlReq->setURL (config->readEntry("Command", "cat -"));
@@ -92,7 +92,7 @@ void CommandConf::load(KConfig *config, const TQString &configGroup) {
     m_widget->characterCodingBox->setCurrentItem(codec);
 }
 
-void CommandConf::save(KConfig *config, const TQString &configGroup) {
+void CommandConf::save(TDEConfig *config, const TQString &configGroup) {
     // kdDebug() << "CommandConf::save: Running" << endl;
     config->setGroup(configGroup);
     config->writeEntry("Command", m_widget->urlReq->url());

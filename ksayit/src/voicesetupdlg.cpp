@@ -41,7 +41,7 @@
 
 VoiceSetupDlg::VoiceSetupDlg(TQWidget *parent, const char *name, const TQString &caption,
         bool modal,
-        KConfig *config,
+        TDEConfig *config,
         FXPluginHandler *fxpluginhandler,
         KTTSDLib *ttslib)
  : KDialogBase(IconList, caption, Ok|Cancel, Ok, parent, name, modal, true),

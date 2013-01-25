@@ -75,7 +75,7 @@ bool SpeechData::readConfig(){
     // Load configuration
     delete config;
     //config = TDEGlobal::config();
-    config = new KConfig("kttsdrc");
+    config = new TDEConfig("kttsdrc");
 
     // Set the group general for the configuration of KTTSD itself (no plug ins)
     config->setGroup("General");

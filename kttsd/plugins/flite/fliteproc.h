@@ -53,7 +53,7 @@ class FliteProc : public PlugInProc{
          * @param config          Settings object.
          * @param configGroup     Settings Group.
          */
-        virtual bool init(KConfig *config, const TQString &configGroup);
+        virtual bool init(TDEConfig *config, const TQString &configGroup);
         
         /**
          * Say a text string.

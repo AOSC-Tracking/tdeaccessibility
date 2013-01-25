@@ -64,7 +64,7 @@ EposProc::~EposProc(){
 }
 
 /** Initialize the speech */
-bool EposProc::init(KConfig* config, const TQString& configGroup)
+bool EposProc::init(TDEConfig* config, const TQString& configGroup)
 {
     // kdDebug() << "EposProc::init: Running" << endl;
     // kdDebug() << "Initializing plug in: Epos" << endl;

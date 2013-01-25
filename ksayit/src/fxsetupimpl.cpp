@@ -28,7 +28,7 @@
 #include "fxpluginhandler.h"
 
 FX_SetupImpl::FX_SetupImpl(TQWidget *parent, const char *name,
-        KConfig *config,
+        TDEConfig *config,
         FXPluginHandler *fxpluginhandler )
  : FX_Setup(parent,name), m_config(config), m_fxpluginhandler(fxpluginhandler)
 { 

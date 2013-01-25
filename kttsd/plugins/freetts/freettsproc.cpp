@@ -45,7 +45,7 @@ FreeTTSProc::~FreeTTSProc() {
 }
 
 /** Initializate the speech */
-bool FreeTTSProc::init(KConfig *config, const TQString &configGroup) {
+bool FreeTTSProc::init(TDEConfig *config, const TQString &configGroup) {
 	kdDebug() << "Running: FreeTTSProc::init()" << endl;
 	kdDebug() << "Initializing plug in: FreeTTS" << endl;
 	config->setGroup(configGroup);

@@ -422,7 +422,7 @@
         * Standarize the .desktop files
 
 2004-10-20  Gary Cramblitt (PhantomsDad)
-        * kcm_kttsmgr and kcm_kttsd are now identical libraries/KCModules.
+        * kcm_kttsmgr and kcm_kttsd are now identical libraries/TDECModules.
           Applications should use kcm_kttsd.  When all apps have stopped
           using kcm_kttsmgr, remove it.
 

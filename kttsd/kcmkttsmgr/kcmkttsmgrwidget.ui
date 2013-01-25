@@ -1,7 +1,7 @@
 <!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>KCMKttsMgrWidget</class>
 <author>Gary Cramblitt</author>
-<widget class="KCModule">
+<widget class="TDECModule">
     <property name="name">
         <cstring>KCMKttsMgrWidget</cstring>
     </property>

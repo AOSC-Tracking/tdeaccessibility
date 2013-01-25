@@ -72,7 +72,7 @@ TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const {
    return ttsSystem;
 }
 
-void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const TQString &langGroup) {
+void TextToSpeechConfigurationWidget::readOptions (TDEConfig *config, const TQString &langGroup) {
   ttsSystem->readOptions (config, langGroup);
   urlReq->setURL (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
@@ -80,7 +80,7 @@ void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const TQStri
   useKttsd->setChecked (ttsSystem->useKttsd);
 }
 
-void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const TQString &langGroup) {
+void TextToSpeechConfigurationWidget::saveOptions (TDEConfig *config, const TQString &langGroup) {
   ttsSystem->saveOptions (config, langGroup);
 }
 

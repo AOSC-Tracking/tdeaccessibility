@@ -53,7 +53,7 @@ public:
      * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
      * separate configuration files of their own.
      */
-    virtual bool init(KConfig *config, const TQString &configGroup);
+    virtual bool init(TDEConfig *config, const TQString &configGroup);
 
      /**
       * Returns True if the plugin supports asynchronous processing,

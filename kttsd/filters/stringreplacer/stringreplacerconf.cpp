@@ -122,11 +122,11 @@ StringReplacerConf::~StringReplacerConf(){
 * loaded, so it not necessary to call it in your constructor.
 * The plugin should read its configuration from the specified group
 * in the specified config file.
-* @param config      Pointer to a KConfig object.
+* @param config      Pointer to a TDEConfig object.
 * @param configGroup Call config->setGroup with this argument before
 *                    loading your configuration.
 */
-void StringReplacerConf::load(KConfig* config, const TQString& configGroup){
+void StringReplacerConf::load(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "StringReplacerConf::load: Running" << endl;
     // See if this filter previously save its word list.
     config->setGroup( configGroup );
@@ -253,11 +253,11 @@ TQString StringReplacerConf::loadFromFile( const TQString& filename, bool clear)
 * configuration is stored. The method is called when the user clicks "Apply" 
 * or "Ok". The plugin should save its configuration in the specified
 * group of the specified config file.
-* @param config      Pointer to a KConfig object.
+* @param config      Pointer to a TDEConfig object.
 * @param configGroup Call config->setGroup with this argument before
 *                    saving your configuration.
 */
-void StringReplacerConf::save(KConfig* config, const TQString& configGroup){
+void StringReplacerConf::save(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "StringReplacerConf::save: Running" << endl;
     TQString wordsFilename =
         TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", true );

@@ -41,7 +41,7 @@ class PlugInConf;
 class KttsFilterConf;
 class KListViewItem;
 class TDEAboutData;
-class KConfig;
+class TDEConfig;
 class TQPopupMenu;
 
 /**
@@ -50,7 +50,7 @@ class TQPopupMenu;
 */
 
 class KCMKttsMgr :
-    public KCModule,
+    public TDECModule,
     public KSpeech_stub,
     virtual public KSpeechSink
 {
@@ -326,7 +326,7 @@ class KCMKttsMgr :
         /**
         * Object holding all the configuration
         */
-        KConfig *m_config;
+        TDEConfig *m_config;
 
         /**
         * KTTS Job Manager.

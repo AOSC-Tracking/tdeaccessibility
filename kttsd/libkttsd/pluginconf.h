@@ -231,7 +231,7 @@ class KDE_EXPORT PlugInConf : public TQWidget{
         * loaded, so it not necessary to call it in your constructor.
         * The plugin should read its configuration from the specified group
         * in the specified config file.
-        * @param config      Pointer to a KConfig object.
+        * @param config      Pointer to a TDEConfig object.
         * @param configGroup Call config->setGroup with this argument before
         *                    loading your configuration.
         *
@@ -242,7 +242,7 @@ class KDE_EXPORT PlugInConf : public TQWidget{
         * 
         * @see loadandsavemethods
         */
-        virtual void load(KConfig *config, const TQString &configGroup);
+        virtual void load(TDEConfig *config, const TQString &configGroup);
 
         /**
         * This function gets called when the user wants to save the settings in 
@@ -250,7 +250,7 @@ class KDE_EXPORT PlugInConf : public TQWidget{
         * configuration is stored. The method is called when the user clicks "Apply" 
         * or "Ok". The plugin should save its configuration in the specified
         * group of the specified config file.
-        * @param config      Pointer to a KConfig object.
+        * @param config      Pointer to a TDEConfig object.
         * @param configGroup Call config->setGroup with this argument before
         *                    saving your configuration.
         *
@@ -258,7 +258,7 @@ class KDE_EXPORT PlugInConf : public TQWidget{
         * it is not necessary to save the language code, unless your plugin needs it in
         * order to synthesize speech.
         */
-        virtual void save(KConfig *config, const TQString &configGroup);
+        virtual void save(TDEConfig *config, const TQString &configGroup);
 
         /** 
         * This function is called to set the settings in the module to sensible

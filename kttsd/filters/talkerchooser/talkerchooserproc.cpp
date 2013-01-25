@@ -61,7 +61,7 @@ TalkerChooserProc::~TalkerChooserProc()
  * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
  * separate configuration files of their own.
  */
-bool TalkerChooserProc::init(KConfig* config, const TQString& configGroup){
+bool TalkerChooserProc::init(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "PlugInProc::init: Running" << endl;
     config->setGroup( configGroup );
     m_re = config->readEntry( "MatchRegExp" );

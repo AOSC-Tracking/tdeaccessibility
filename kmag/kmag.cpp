@@ -567,7 +567,7 @@ void KmagApp::saveZoomPixmap()
         KMessageBox::error(0, i18n("Unable to save temporary file (before uploading to the network file you specified)."),
                           i18n("Error Writing File"));
       } else {
-        if(!KIO::NetAccess::upload(tempFile.name(), url, this)) {
+        if(!TDEIO::NetAccess::upload(tempFile.name(), url, this)) {
           KMessageBox::error(0, i18n("Unable to upload file over the network."),
                             i18n("Error Writing File"));
         } else {

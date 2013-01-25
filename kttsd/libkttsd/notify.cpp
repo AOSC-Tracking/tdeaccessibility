@@ -149,7 +149,7 @@ static void notifypresent_init()
 /*static*/ TQString NotifyEvent::getEventSrcName(const TQString& eventSrc, TQString& iconName)
 {
     TQString configFilename = eventSrc + TQString::fromLatin1( "/eventsrc" );
-    KConfig* config = new KConfig( configFilename, true, false, "data" );
+    TDEConfig* config = new TDEConfig( configFilename, true, false, "data" );
     config->setGroup( TQString::fromLatin1( "!Global!" ) );
     TQString appDesc = config->readEntry( "Comment", i18n("No description available") );
     iconName = config->readEntry( "IconName" );
@@ -164,7 +164,7 @@ static void notifypresent_init()
 {
     TQString eventName;
     TQString configFilename = eventSrc + TQString::fromLatin1( "/eventsrc" );
-    KConfig* config = new KConfig( configFilename, true, false, "data" );
+    TDEConfig* config = new TDEConfig( configFilename, true, false, "data" );
     if ( config->hasGroup( event ) )
     {
         config->setGroup( event );

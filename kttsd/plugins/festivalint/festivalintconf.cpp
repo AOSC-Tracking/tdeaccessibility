@@ -137,7 +137,7 @@ int FestivalIntConf::voiceCodeToListIndex(const TQString& voiceCode) const
     return -1;
 }
 
-void FestivalIntConf::load(KConfig *config, const TQString &configGroup){
+void FestivalIntConf::load(TDEConfig *config, const TQString &configGroup){
     //kdDebug() << "FestivalIntConf::load: Running" << endl;
     config->setGroup("FestivalInt");
     TQString exePath = config->readEntry("FestivalExecutablePath", "festival");
@@ -170,7 +170,7 @@ void FestivalIntConf::load(KConfig *config, const TQString &configGroup){
     m_widget->characterCodingBox->setCurrentItem(codecNdx);
 }
 
-void FestivalIntConf::save(KConfig *config, const TQString &configGroup){
+void FestivalIntConf::save(TDEConfig *config, const TQString &configGroup){
     // kdDebug() << "FestivalIntConf::save: Running" << endl;
     config->setGroup("FestivalInt");
     config->writeEntry("FestivalExecutablePath", realFilePath(m_widget->festivalPath->url()));

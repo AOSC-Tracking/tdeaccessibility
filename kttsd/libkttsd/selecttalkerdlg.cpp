@@ -317,7 +317,7 @@ void SelectTalkerDlg::loadTalkers(bool /*runningTalkers*/)
     KListView* lv = m_widget->talkersListView;
     lv->clear();
     TQListViewItem* item;
-    KConfig* config = new KConfig("kttsdrc");
+    TDEConfig* config = new TDEConfig("kttsdrc");
     config->setGroup("General");
     TQStringList talkerIDsList = config->readListEntry("TalkerIDs", ',');
     if (!talkerIDsList.isEmpty())

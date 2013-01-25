@@ -569,7 +569,7 @@ class SpeechData : public TQObject {
         /**
         * Configuration
         */
-        KConfig *config;
+        TDEConfig *config;
 
         /**
         * True if at least one XML Transformer plugin for html is enabled.

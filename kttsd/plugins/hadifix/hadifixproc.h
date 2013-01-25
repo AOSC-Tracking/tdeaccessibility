@@ -44,7 +44,7 @@ class HadifixProc : public PlugInProc{
     ~HadifixProc();
     
     /** Initializate the speech */
-    virtual bool init (KConfig *config, const TQString &configGroup);
+    virtual bool init (TDEConfig *config, const TQString &configGroup);
     
     /** 
     * Say a text.  Synthesize and audibilize it.

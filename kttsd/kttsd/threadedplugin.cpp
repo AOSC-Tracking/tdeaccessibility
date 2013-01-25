@@ -71,7 +71,7 @@ ThreadedPlugIn::~ThreadedPlugIn()
 /**
 * Initialize the speech plugin.
 */
-bool ThreadedPlugIn::init(KConfig *config, const TQString &configGroup)
+bool ThreadedPlugIn::init(TDEConfig *config, const TQString &configGroup)
 {
     bool stat = m_plugin->init(config, configGroup);
     m_supportsSynth = m_plugin->supportsSynth();

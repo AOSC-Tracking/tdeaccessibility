@@ -1325,7 +1325,7 @@ uttIterator Speaker::deleteUtterance(uttIterator it)
                 //  kio (KIOJob): stat file:///home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
                 //  kio (KIOJob): error 11 /home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
                 //  kio (KIOJob): This seems to be a suitable case for trying to rename before stat+[list+]copy+del
-                // KIO::move(it->audioUrl, dest, false);
+                // TDEIO::move(it->audioUrl, dest, false);
             }
             else
                 TQFile::remove(it->audioUrl);

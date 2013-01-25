@@ -720,7 +720,7 @@ void KbStateApplet::about() {
 
 void KbStateApplet::loadConfig()
 {
-   KConfig *c = config();
+   TDEConfig *c = config();
    c->setGroup("General");
    size = c->readNumEntry("IconDim", 20);
 	fillSpace    = c->readBoolEntry("fill space", true);
@@ -733,7 +733,7 @@ void KbStateApplet::loadConfig()
 
 void KbStateApplet::saveConfig()
 {
-   KConfig *c = config();
+   TDEConfig *c = config();
    c->setGroup("General");
 	c->writeEntry("IconDim", size);
 	c->writeEntry("fill space", fillSpace);

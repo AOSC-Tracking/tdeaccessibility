@@ -35,6 +35,6 @@ noinst_HEADERS =
 kde_services_DATA =  kttsjobmgr.desktop
 
 # This rc file should never have been installed.
-# createGUI not supported within a KCModule.
+# createGUI not supported within a TDECModule.
 install-data-local:
 	rm -f $(DESTDIR)$(kde_datadir)/kttsjobmgr/kttsjobmgrui.rc

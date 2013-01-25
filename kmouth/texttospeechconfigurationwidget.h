@@ -35,8 +35,8 @@ public:
 
    TextToSpeechSystem *getTTSSystem() const;
 
-   void readOptions (KConfig *config, const TQString &langGroup);
-   void saveOptions (KConfig *config, const TQString &langGroup);
+   void readOptions (TDEConfig *config, const TQString &langGroup);
+   void saveOptions (TDEConfig *config, const TQString &langGroup);
 
    void ok();
    void cancel();

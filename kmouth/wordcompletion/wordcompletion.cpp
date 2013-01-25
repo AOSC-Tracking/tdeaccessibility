@@ -95,7 +95,7 @@ TQString WordCompletion::currentWordList() {
 }
 
 bool WordCompletion::isConfigured() {
-   KConfig *config = new KConfig("kmouthrc");
+   TDEConfig *config = new TDEConfig("kmouthrc");
    bool result = config->hasGroup("Dictionary 0");
    delete config;
 
@@ -110,7 +110,7 @@ void WordCompletion::configure() {
    d->dictionaries.clear();
    d->dictDetails.clear();
 
-   KConfig *config = new KConfig("kmouthrc");
+   TDEConfig *config = new TDEConfig("kmouthrc");
    TQStringList groups = config->groupList();
    for (TQStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {

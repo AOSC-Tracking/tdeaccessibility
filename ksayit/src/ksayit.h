@@ -61,7 +61,7 @@ class KSayItBookmarkHandler;
   * full session management as well as using KActions.
   * @see KMainWindow
   * @see TDEApplication
-  * @see KConfig
+  * @see TDEConfig
   *
   * @author Robert Vogl
   */
@@ -322,7 +322,7 @@ private: // Methods
     
     
 private:
-    KConfig *config;
+    TDEConfig *config;
     KSayItViewImpl *view;
     KSayItSystemTray *tray;
     EffectStack *es;

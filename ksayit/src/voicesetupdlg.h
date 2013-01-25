@@ -38,7 +38,7 @@ class VoiceSetupDlg : public KDialogBase  {
 public: 
   VoiceSetupDlg(TQWidget *parent=0, const char *name=0, const TQString &caption=NULL,
         bool modal=true,
-        KConfig *config=0,
+        TDEConfig *config=0,
         FXPluginHandler *fxpluginhandler=0,
         KTTSDLib *kttslib=0);
                   
@@ -81,7 +81,7 @@ private slots:
     void slotOk();
        
 private:
-    KConfig *m_config;
+    TDEConfig *m_config;
     FXPluginHandler *m_fxpluginhandler;
     KTTSDLib *m_kttslib;
     TQFrame *m_fxPage;

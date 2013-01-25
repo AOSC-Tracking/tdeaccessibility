@@ -64,7 +64,7 @@ FilterMgr::~FilterMgr()
  * @param config          Settings object.
  * @return                False if FilterMgr is not ready to filter.
  */
-bool FilterMgr::init(KConfig *config, const TQString& /*configGroup*/)
+bool FilterMgr::init(TDEConfig *config, const TQString& /*configGroup*/)
 {
     // Load each of the filters and initialize.
     config->setGroup("General");

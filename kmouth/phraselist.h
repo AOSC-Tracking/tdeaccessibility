@@ -80,8 +80,8 @@ public slots:
 
    void configureCompletion();
    void saveWordCompletion();
-   void saveCompletionOptions(KConfig *config);
-   void readCompletionOptions(KConfig *config);
+   void saveCompletionOptions(TDEConfig *config);
+   void readCompletionOptions(TDEConfig *config);
 
 protected slots:
    void lineEntered (const TQString &phrase);

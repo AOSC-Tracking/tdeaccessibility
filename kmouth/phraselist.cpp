@@ -172,7 +172,7 @@ void PhraseList::configureCompletionCombo(const TQStringList &list) {
    }
 }
 
-void PhraseList::saveCompletionOptions(KConfig *config) {
+void PhraseList::saveCompletionOptions(TDEConfig *config) {
    config->setGroup("General Options");
    config->writeEntry("Show speak button", speakButton->isVisible() || !lineEdit->isVisible());
       
@@ -181,7 +181,7 @@ void PhraseList::saveCompletionOptions(KConfig *config) {
    config->writeEntry("List", completion->currentWordList());
 }
 
-void PhraseList::readCompletionOptions(KConfig *config) {
+void PhraseList::readCompletionOptions(TDEConfig *config) {
    config->setGroup("General Options");
    if (!config->readBoolEntry("Show speak button", true))
       speakButton->hide();

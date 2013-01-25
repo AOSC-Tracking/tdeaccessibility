@@ -60,7 +60,7 @@ SelectEvent::SelectEvent(TQWidget* parent, const char* name, WFlags fl, const TQ
         TQString relativePath = *it;
         if ( !relativePath.isEmpty() )
         {
-            KConfig* config = new KConfig(relativePath, true, false, "data");
+            TDEConfig* config = new TDEConfig(relativePath, true, false, "data");
             config->setGroup( TQString::fromLatin1("!Global!") );
             TQString icon = config->readEntry(TQString::fromLatin1("IconName"),
                 TQString::fromLatin1("misc"));
@@ -90,7 +90,7 @@ void SelectEvent::slotEventSrcComboBox_activated(int index)
     TQListViewItem* item = 0;
     TQString eventSrc = m_eventSrcNames[index];
     TQString configFilename = eventSrc + TQString::fromLatin1( "/eventsrc" );
-    KConfig* config = new KConfig( configFilename, true, false, "data" );
+    TDEConfig* config = new TDEConfig( configFilename, true, false, "data" );
     TQStringList eventNames = config->groupList();
     uint eventNamesCount = eventNames.count();
     for (uint ndx = 0; ndx < eventNamesCount; ++ndx)

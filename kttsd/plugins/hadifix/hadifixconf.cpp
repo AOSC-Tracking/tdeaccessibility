@@ -145,7 +145,7 @@ class HadifixConfPrivate {
                            100, 100, 100, "Local");
       };
 
-      void load (KConfig *config, const TQString &configGroup) {
+      void load (TDEConfig *config, const TQString &configGroup) {
          config->setGroup(configGroup);
          
          TQString voice = config->readEntry("voice", configWidget->getVoiceFilename());
@@ -173,7 +173,7 @@ class HadifixConfPrivate {
          );
       };
 
-      void save (KConfig *config, const TQString &configGroup) {
+      void save (TDEConfig *config, const TQString &configGroup) {
          config->setGroup(configGroup);
          config->writeEntry ("hadifixExec", PlugInConf::realFilePath(configWidget->hadifixURL->url()));
          config->writeEntry ("mbrolaExec", PlugInConf::realFilePath(configWidget->mbrolaURL->url()));
@@ -233,13 +233,13 @@ HadifixConf::~HadifixConf(){
    delete d;
 }
 
-void HadifixConf::load(KConfig *config, const TQString &configGroup) {
+void HadifixConf::load(TDEConfig *config, const TQString &configGroup) {
    // kdDebug() << "HadifixConf::load: Running" << endl;
    d->setDefaults();
    d->load (config, configGroup);
 }
 
-void HadifixConf::save(KConfig *config, const TQString &configGroup) {
+void HadifixConf::save(TDEConfig *config, const TQString &configGroup) {
    // kdDebug() << "HadifixConf::save: Running" << endl;
    d->save (config, configGroup);
 }

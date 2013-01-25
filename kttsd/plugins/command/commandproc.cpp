@@ -64,7 +64,7 @@ CommandProc::~CommandProc()
 }
 
 /** Initialize */
-bool CommandProc::init(KConfig *config, const TQString &configGroup){
+bool CommandProc::init(TDEConfig *config, const TQString &configGroup){
     kdDebug() << "CommandProc::init: Initializing plug in: Command " << endl;
 
     config->setGroup(configGroup);

@@ -34,7 +34,7 @@
 #include "kdeexportfix.h"
 
 class TalkerCode;
-class KConfig;
+class TDEConfig;
 
 class KDE_EXPORT KttsFilterProc : virtual public TQObject
 {
@@ -68,7 +68,7 @@ public:
      * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
      * separate configuration files of their own.
      */
-    virtual bool init(KConfig *config, const TQString &configGroup);
+    virtual bool init(TDEConfig *config, const TQString &configGroup);
 
     /**
      * Returns True if this filter is a Sentence Boundary Detector.

@@ -49,7 +49,7 @@ class FXPluginHandler : public TQObject
 Q_OBJECT
   
 public:
-    FXPluginHandler(TQObject *parent = 0, const char *name = 0, KConfig *config=0);
+    FXPluginHandler(TQObject *parent = 0, const char *name = 0, TDEConfig *config=0);
     ~FXPluginHandler();
 
 public: // Methods  
@@ -87,7 +87,7 @@ public: // Methods
     void getPlugins(TQStringList &pluginlist); 
 
 private: // Attributes
-    KConfig *m_config;
+    TDEConfig *m_config;
     TQMap<TQString, fx_struct> m_mapPluginList; // holds all plugins found on the system
     // TQMap<TQString, fx_struct> m_mapActivePlugins; // holds the active effects
     TQStringList m_lstActivePlugins;

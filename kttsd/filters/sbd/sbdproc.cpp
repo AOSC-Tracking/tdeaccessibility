@@ -596,7 +596,7 @@ SbdProc::~SbdProc()
  * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
  * separate configuration files of their own.
  */
-bool SbdProc::init(KConfig* config, const TQString& configGroup){
+bool SbdProc::init(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "PlugInProc::init: Running" << endl;
     config->setGroup( configGroup );
 //    m_configuredRe = config->readEntry( "SentenceDelimiterRegExp", "([\\.\\?\\!\\:\\;])\\s|(\\n *\\n)" );

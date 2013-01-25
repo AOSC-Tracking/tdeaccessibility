@@ -73,7 +73,7 @@ private:
    /**
     * Object holding all the configuration
     */
-   KConfig *config;
+   TDEConfig *config;
    TQStringList newDictionaryFiles;
    TQStringList removedDictionaryFiles;
 };

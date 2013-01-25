@@ -206,7 +206,7 @@ void GStreamerPlayer::setSinkName(const TQString &sinkName) { m_sinkName = sinkN
 
 void GStreamerPlayer::readConfig()
 {
-    KConfigGroup config(TDEGlobal::config(), "GStreamerPlayer");
+    TDEConfigGroup config(TDEGlobal::config(), "GStreamerPlayer");
     m_sinkName = config.readEntry("SinkName", TQString());
 }
 

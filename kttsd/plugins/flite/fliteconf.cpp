@@ -70,7 +70,7 @@ FliteConf::~FliteConf(){
     delete m_progressDlg;
 }
 
-void FliteConf::load(KConfig *config, const TQString &configGroup){
+void FliteConf::load(TDEConfig *config, const TQString &configGroup){
     // kdDebug() << "FliteConf::load: Loading configuration for language " << langGroup << " with plug in " << "Festival Lite (flite)" << endl;
 
     config->setGroup(configGroup);
@@ -83,7 +83,7 @@ void FliteConf::load(KConfig *config, const TQString &configGroup){
     m_widget->flitePath->setURL(fliteExe);
 }
 
-void FliteConf::save(KConfig *config, const TQString &configGroup){
+void FliteConf::save(TDEConfig *config, const TQString &configGroup){
     // kdDebug() << "FliteConf::save: Saving configuration for language " << langGroup << " with plug in " << "Festival Lite (flite)" << endl;
 
     config->setGroup("Flite");

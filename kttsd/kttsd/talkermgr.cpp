@@ -54,7 +54,7 @@ TalkerMgr::~TalkerMgr()
 /**
  * Load all the configured synth plugins,  populating loadedPlugIns structure.
  */
-int TalkerMgr::loadPlugIns(KConfig* config)
+int TalkerMgr::loadPlugIns(TDEConfig* config)
 {
     // kdDebug() << "Running: TalkerMgr::loadPlugIns()" << endl;
     int good = 0;
@@ -298,7 +298,7 @@ bool TalkerMgr::supportsMarkup(const TQString& talker, const uint /*markupType*/
             TDEGlobal::dirs()->resourceDirs("data").last() + "kttsd/xslt/SSMLtoPlainText.xsl");
 }
 
-bool TalkerMgr::autoconfigureTalker(const TQString& langCode, KConfig* config)
+bool TalkerMgr::autoconfigureTalker(const TQString& langCode, TDEConfig* config)
 {
     // Not yet implemented.
     // return false;

@@ -35,7 +35,7 @@ class FreeverbSetupImpl : public Freeverb_Setup  {
    Q_OBJECT
   
 public: 
-	FreeverbSetupImpl(TQWidget *parent=0, const char *name=0, bool modal=true, KConfig *config=0);
+	FreeverbSetupImpl(TQWidget *parent=0, const char *name=0, bool modal=true, TDEConfig *config=0);
 	~FreeverbSetupImpl();
 
 public slots:
@@ -55,7 +55,7 @@ private: // Methods
 
 
 private:
-  KConfig *m_config;
+  TDEConfig *m_config;
 
 
 };

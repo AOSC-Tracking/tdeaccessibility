@@ -62,7 +62,7 @@ class XmlTransformerConf : public KttsFilterConf
         * loaded, so it not necessary to call it in your constructor.
         * The plugin should read its configuration from the specified group
         * in the specified config file.
-        * @param config      Pointer to a KConfig object.
+        * @param config      Pointer to a TDEConfig object.
         * @param configGroup Call config->setGroup with this argument before
         *                    loading your configuration.
         *
@@ -71,7 +71,7 @@ class XmlTransformerConf : public KttsFilterConf
         * any instance-specific parameters to load, but it may still wish
         * to load parameters that apply to all instances of the plugin.
         */
-        virtual void load(KConfig *config, const TQString &configGroup);
+        virtual void load(TDEConfig *config, const TQString &configGroup);
 
         /**
         * This function gets called when the user wants to save the settings in 
@@ -79,11 +79,11 @@ class XmlTransformerConf : public KttsFilterConf
         * configuration is stored. The method is called when the user clicks "Apply" 
         * or "Ok". The plugin should save its configuration in the specified
         * group of the specified config file.
-        * @param config      Pointer to a KConfig object.
+        * @param config      Pointer to a TDEConfig object.
         * @param configGroup Call config->setGroup with this argument before
         *                    saving your configuration.
         */
-        virtual void save(KConfig *config, const TQString &configGroup);
+        virtual void save(TDEConfig *config, const TQString &configGroup);
 
         /** 
         * This function is called to set the settings in the module to sensible

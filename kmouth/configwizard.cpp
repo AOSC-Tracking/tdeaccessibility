@@ -31,7 +31,7 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, KConfig *config)
+ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, TDEConfig *config)
              : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
@@ -44,7 +44,7 @@ ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, KConfig *config)
 ConfigWizard::~ConfigWizard() {
 }
 
-void ConfigWizard::initCommandPage(KConfig *config) {
+void ConfigWizard::initCommandPage(TDEConfig *config) {
    config->setGroup("TTS System");
    bool displayCommand = false;
    if (!config->hasKey("Command")) displayCommand = true;
@@ -78,7 +78,7 @@ void ConfigWizard::initBookPage() {
       bookWidget = 0;
 }
 
-void ConfigWizard::initCompletion (KConfig *config) {
+void ConfigWizard::initCompletion (TDEConfig *config) {
    if (!WordCompletion::isConfigured()) {
       TQString dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
       TQFile file(dictionaryFile);
@@ -113,7 +113,7 @@ void ConfigWizard::initCompletion (KConfig *config) {
       completionWidget = 0;
 }
 
-void ConfigWizard::saveConfig (KConfig *config) {
+void ConfigWizard::saveConfig (TDEConfig *config) {
    if (commandWidget != 0) {
       commandWidget->ok();
       commandWidget->saveOptions (config, "TTS System");

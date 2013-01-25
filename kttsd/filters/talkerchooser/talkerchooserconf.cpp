@@ -103,11 +103,11 @@ TalkerChooserConf::~TalkerChooserConf(){
 * loaded, so it not necessary to call it in your constructor.
 * The plugin should read its configuration from the specified group
 * in the specified config file.
-* @param config      Pointer to a KConfig object.
+* @param config      Pointer to a TDEConfig object.
 * @param configGroup Call config->setGroup with this argument before
 *                    loading your configuration.
 */
-void TalkerChooserConf::load(KConfig* config, const TQString& configGroup){
+void TalkerChooserConf::load(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "TalkerChooserConf::load: Running" << endl;
     config->setGroup( configGroup );
     m_widget->nameLineEdit->setText( config->readEntry( "UserFilterName", m_widget->nameLineEdit->text() ) );
@@ -138,11 +138,11 @@ void TalkerChooserConf::load(KConfig* config, const TQString& configGroup){
 * configuration is stored. The method is called when the user clicks "Apply" 
 * or "Ok". The plugin should save its configuration in the specified
 * group of the specified config file.
-* @param config      Pointer to a KConfig object.
+* @param config      Pointer to a TDEConfig object.
 * @param configGroup Call config->setGroup with this argument before
 *                    saving your configuration.
 */
-void TalkerChooserConf::save(KConfig* config, const TQString& configGroup){
+void TalkerChooserConf::save(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "TalkerChooserConf::save: Running" << endl;
     config->setGroup( configGroup );
     config->writeEntry( "UserFilterName", m_widget->nameLineEdit->text() );
@@ -239,7 +239,7 @@ void TalkerChooserConf::slotLoadButton_clicked()
         m_widget,
         "talkerchooser_loadfile");
     if ( filename.isEmpty() ) return;
-    KConfig* cfg = new KConfig( filename, true, false, 0 );
+    TDEConfig* cfg = new TDEConfig( filename, true, false, 0 );
     load( cfg, "Filter" );
     delete cfg;
     configChanged();
@@ -253,7 +253,7 @@ void TalkerChooserConf::slotSaveButton_clicked()
         m_widget,
         "talkerchooser_savefile");
     if ( filename.isEmpty() ) return;
-    KConfig* cfg = new KConfig( filename, false, false, 0 );
+    TDEConfig* cfg = new TDEConfig( filename, false, false, 0 );
     save( cfg, "Filter" );
     delete cfg;
 }

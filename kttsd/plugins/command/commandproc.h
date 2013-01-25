@@ -40,7 +40,7 @@ class CommandProc : public PlugInProc{
         ~CommandProc();
 
         /** Initializate the speech */
-        bool init (KConfig *config, const TQString &configGroup);
+        bool init (TDEConfig *config, const TQString &configGroup);
 
         /**
          * Say a text string.

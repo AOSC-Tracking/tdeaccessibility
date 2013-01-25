@@ -41,7 +41,7 @@ class FX_SetupImpl : public FX_Setup  {
 
 public: 
   FX_SetupImpl(TQWidget *parent=0, const char *name=0,
-          KConfig *config=0,
+          TDEConfig *config=0,
           FXPluginHandler *fxpluginhandler=0);
   ~FX_SetupImpl();
 
@@ -79,7 +79,7 @@ private: // Methods
   void Init(TQStringList c_avail);
 
 private:
-  KConfig *m_config;
+  TDEConfig *m_config;
   FXPluginHandler *m_fxpluginhandler;
   TQStringList pluginlist;
   

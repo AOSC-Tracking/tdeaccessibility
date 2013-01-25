@@ -51,7 +51,7 @@ public:
     /**
      * Load all the configured plug ins populating loadedPlugIns
      */
-    int loadPlugIns(KConfig* config);
+    int loadPlugIns(TDEConfig* config);
 
     /**
      * Get a list of the talkers configured in KTTS.
@@ -133,12 +133,12 @@ public:
     /**
      * Try to automatically configure a Talker in the specified language.
      * @param langCode      Two-letter language code.
-     * @param config        KConfig to be updated if successful.
+     * @param config        TDEConfig to be updated if successful.
      * @return              True if successful.
      *
-     * If successful, the KConfig rc file is updated but the talker has not been loaded.
+     * If successful, the TDEConfig rc file is updated but the talker has not been loaded.
      */
-    bool autoconfigureTalker(const TQString& langCode, KConfig* config);
+    bool autoconfigureTalker(const TQString& langCode, TDEConfig* config);
 
 private:
 

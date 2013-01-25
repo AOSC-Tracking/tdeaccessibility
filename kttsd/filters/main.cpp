@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
                         TQStringList(), &errorNo);
                     if(plugIn)
                     {
-                        KConfig* config = new KConfig("kttsdrc");
+                        TDEConfig* config = new TDEConfig("kttsdrc");
                         config->setGroup( "General" );
                         plugIn->init( config, groupName );
                         TQTextStream inp ( stdin,  IO_ReadOnly );

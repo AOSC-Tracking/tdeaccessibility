@@ -245,7 +245,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
       save (*tempFile.textStream(), asPhrasebook);
       tempFile.close();
 
-      return KIO::NetAccess::upload(tempFile.name(), url);
+      return TDEIO::NetAccess::upload(tempFile.name(), url);
    }
 }
 
@@ -273,7 +273,7 @@ int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool p
       return -1;
    }
 
-   if (KIO::NetAccess::exists(url)) {
+   if (TDEIO::NetAccess::exists(url)) {
       if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                        "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
          return 0;
@@ -334,7 +334,7 @@ bool PhraseBook::open (const KURL &url) {
       fileUrl.setPath (url.url());
    }
 
-   if (KIO::NetAccess::download (fileUrl, tempFile)) {
+   if (TDEIO::NetAccess::download (fileUrl, tempFile)) {
       TQStringList list = TQStringList();
 
       // First: try to load it as a normal phrase book
@@ -362,7 +362,7 @@ bool PhraseBook::open (const KURL &url) {
          else
             error = true;
       }
-      KIO::NetAccess::removeTempFile (tempFile);
+      TDEIO::NetAccess::removeTempFile (tempFile);
 
       return !error;
    }

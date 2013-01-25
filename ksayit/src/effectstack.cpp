@@ -20,7 +20,7 @@
 #include "effectstack.h"
 #include "fxpluginhandler.h"
 
-EffectStack::EffectStack(FXPluginHandler *pluginhandler, KConfig *config)
+EffectStack::EffectStack(FXPluginHandler *pluginhandler, TDEConfig *config)
     : 
      dispatcher(), server(),
      m_pluginhandler(pluginhandler),

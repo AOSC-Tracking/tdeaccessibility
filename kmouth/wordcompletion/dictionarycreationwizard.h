@@ -107,7 +107,7 @@ public:
    CompletionWizardWidget(KWizard *parent, const char *name);
    ~CompletionWizardWidget();
 
-   void ok (KConfig *config);
+   void ok (TDEConfig *config);
 };
 
 #endif

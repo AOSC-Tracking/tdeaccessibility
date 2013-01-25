@@ -32,7 +32,7 @@
 // KTTS includes.
 #include "filterproc.h"
 
-class KConfig;
+class TDEConfig;
 class TalkerCode;
 
 typedef TQPtrList<KttsFilterProc> FilterList;
@@ -62,7 +62,7 @@ class FilterMgr : public KttsFilterProc
          * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
          * separate configuration files of their own.
          */
-        virtual bool init(KConfig *config, const TQString &configGroup);
+        virtual bool init(TDEConfig *config, const TQString &configGroup);
 
         /**
          * Returns True if this filter is a Sentence Boundary Detector.

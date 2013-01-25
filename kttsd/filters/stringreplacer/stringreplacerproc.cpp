@@ -68,7 +68,7 @@ StringReplacerProc::StringReplacerProc( TQObject *parent, const char *name, cons
  * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
  * separate configuration files of their own.
  */
-bool StringReplacerProc::init(KConfig* config, const TQString& configGroup){
+bool StringReplacerProc::init(TDEConfig* config, const TQString& configGroup){
     // kdDebug() << "StringReplacerProc::init: Running" << endl;
     TQString wordsFilename =
         TDEGlobal::dirs()->saveLocation( "data" ,"kttsd/stringreplacer/", false );

@@ -45,7 +45,7 @@ PlugInProc::~PlugInProc(){
 /**
 * Initializate the speech plugin.
 */
-bool PlugInProc::init(KConfig* /*config*/, const TQString& /*configGroup*/){
+bool PlugInProc::init(TDEConfig* /*config*/, const TQString& /*configGroup*/){
     // kdDebug() << "PlugInProc::init: Running" << endl;
     return false;
 }

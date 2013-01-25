@@ -62,7 +62,7 @@ _ KTTSMgr:
 _ KTTSD:
     _ I am told that when kttsd crashes, it can take knotify down with it.  See about
       "disconnecting" knotify from kttsd (using post to Qt event queue).
-    _ Strange msg being produced by KIO::move, but it works fine. ??
+    _ Strange msg being produced by TDEIO::move, but it works fine. ??
         kio (KIOJob): stat file:///home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
         kio (KIOJob): error 11 /home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
         kio (KIOJob): This seems to be a suitable case for trying to rename before stat+[list+]copy+del
@@ -83,7 +83,7 @@ _ Other/General:
     _ .desktop files must have a Type keyword, but what to use for kcmkttsd_testmessage.desktop?
     _ Add option to kill plugin process when no longer needed so that memory can be recovered.
       Or maybe some sort of "nice" setting so that process will be swapped out when no longer needed.
-    _ Convert to KConfig XT.
+    _ Convert to TDEConfig XT.
     _ Add a plugin for TuxTalk, http://tuxtalk.sourceforge.net/.  Since it only supports
       English (at the moment) and is alpha, don't think it is worth it now.
     _ Add a plugin for dhvani, an Indian and Hindi TTS engine, http://dhvani.sourceforge.net/

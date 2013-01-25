@@ -347,7 +347,7 @@ CompletionWizardWidget::CompletionWizardWidget (KWizard *parent, const char *nam
 CompletionWizardWidget::~CompletionWizardWidget() {
 }
 
-void CompletionWizardWidget::ok (KConfig *config) {
+void CompletionWizardWidget::ok (TDEConfig *config) {
    WordList::WordMap map;
    KProgressDialog *pdlg = WordList::progressDialog();
 

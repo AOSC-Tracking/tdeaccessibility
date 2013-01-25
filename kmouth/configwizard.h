@@ -23,7 +23,7 @@
 
 #include <kwizard.h>
 
-class KConfig;
+class TDEConfig;
 class TextToSpeechConfigurationWidget;
 class InitialPhraseBookWidget;
 class CompletionWizardWidget;
@@ -37,20 +37,20 @@ class ConfigWizard : public KWizard  {
    Q_OBJECT
   
 public:
-   ConfigWizard (TQWidget *parent, const char *name, KConfig *config);
+   ConfigWizard (TQWidget *parent, const char *name, TDEConfig *config);
    ~ConfigWizard();
 
    bool configurationNeeded ();
    bool requestConfiguration ();
-   void saveConfig (KConfig *config);
+   void saveConfig (TDEConfig *config);
 
 protected:
    void help();
 
 private:
-   void initCommandPage (KConfig *config);
+   void initCommandPage (TDEConfig *config);
    void initBookPage();
-   void initCompletion (KConfig *config);
+   void initCompletion (TDEConfig *config);
 
    TextToSpeechConfigurationWidget *commandWidget;
    InitialPhraseBookWidget *bookWidget;

@@ -24,7 +24,7 @@
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
 class TQTabWidget;
-class KCModule;
+class TDECModule;
 class WordCompletionWidget;
 
 /**This class represents a configuration widget for user preferences.
@@ -38,8 +38,8 @@ public:
    PreferencesWidget(TQWidget *parent, const char *name);
    ~PreferencesWidget();
 
-   void readOptions (KConfig *config);
-   void saveOptions (KConfig *config);
+   void readOptions (TDEConfig *config);
+   void saveOptions (TDEConfig *config);
 
    void ok();
    void cancel();
@@ -68,8 +68,8 @@ public:
 
    TextToSpeechSystem *getTTSSystem() const;
 
-   void readOptions (KConfig *config);
-   void saveOptions (KConfig *config);
+   void readOptions (TDEConfig *config);
+   void saveOptions (TDEConfig *config);
 
    bool isSpeakImmediately();
 
@@ -80,10 +80,10 @@ private:
    TQTabWidget *tabCtl;
    TextToSpeechConfigurationWidget *commandWidget;
    PreferencesWidget *behaviourWidget;
-   KCModule *kttsd;
+   TDECModule *kttsd;
    WordCompletionWidget *completionWidget;
 
-   KCModule *loadKttsd ();
+   TDECModule *loadKttsd ();
    void unloadKttsd ();
 };
 

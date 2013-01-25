@@ -65,7 +65,7 @@ void PreferencesWidget::ok() {
    save  = closeCombo->currentItem ();
 }
 
-void PreferencesWidget::readOptions (KConfig *config) {
+void PreferencesWidget::readOptions (TDEConfig *config) {
    config->setGroup("Preferences");
    if (config->hasKey("AutomaticSpeak"))
       if (config->readEntry ("AutomaticSpeak") == "Yes")
@@ -91,7 +91,7 @@ void PreferencesWidget::readOptions (KConfig *config) {
    closeCombo->setCurrentItem (save);
 }
 
-void PreferencesWidget::saveOptions (KConfig *config) {
+void PreferencesWidget::saveOptions (TDEConfig *config) {
    config->setGroup("Preferences");
    if (speak)
       config->writeEntry ("AutomaticSpeak", "Yes");
@@ -184,12 +184,12 @@ TextToSpeechSystem *OptionsDialog::getTTSSystem() const {
    return commandWidget->getTTSSystem();
 }
 
-void OptionsDialog::readOptions (KConfig *config) {
+void OptionsDialog::readOptions (TDEConfig *config) {
    commandWidget->readOptions (config, "TTS System");
    behaviourWidget->readOptions (config);
 }
 
-void OptionsDialog::saveOptions (KConfig *config) {
+void OptionsDialog::saveOptions (TDEConfig *config) {
    commandWidget->saveOptions (config, "TTS System");
    behaviourWidget->saveOptions (config);
    config->sync();
@@ -199,7 +199,7 @@ bool OptionsDialog::isSpeakImmediately () {
    return behaviourWidget->isSpeakImmediately ();
 }
 
-KCModule *OptionsDialog::loadKttsd () {
+TDECModule *OptionsDialog::loadKttsd () {
    KLibLoader *loader = KLibLoader::self();
 
    TQString libname = "kcm_kttsd";
@@ -218,7 +218,7 @@ KCModule *OptionsDialog::loadKttsd () {
          // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
          KLibFactory *factory = lib->factory();
          if (factory != 0) {
-            KCModule *module = KParts::ComponentFactory::createInstanceFromFactory<KCModule> (factory);
+            TDECModule *module = KParts::ComponentFactory::createInstanceFromFactory<TDECModule> (factory);
             if (module)
                 return module;
          }

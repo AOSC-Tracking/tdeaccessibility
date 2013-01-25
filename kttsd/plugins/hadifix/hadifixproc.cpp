@@ -47,7 +47,7 @@ class HadifixProcPrivate {
         delete hadifixProc;
       };
 
-      void load(KConfig *config, const TQString &configGroup) {
+      void load(TDEConfig *config, const TQString &configGroup) {
          config->setGroup(configGroup);
          hadifix  = config->readEntry ("hadifixExec",   TQString());
          mbrola   = config->readEntry ("mbrolaExec",    TQString());
@@ -92,7 +92,7 @@ HadifixProc::~HadifixProc(){
 }
 
 /** Initializate the speech */
-bool HadifixProc::init(KConfig *config, const TQString &configGroup){
+bool HadifixProc::init(TDEConfig *config, const TQString &configGroup){
    // kdDebug() << "HadifixProc::init: Initializing plug in: Hadifix" << endl;
 
    if (d == 0)
