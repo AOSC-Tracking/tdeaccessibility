@@ -29,7 +29,7 @@
 #include <kconfig.h>
 #include <kglobal.h>
 #include <kiconloader.h>
-#include <kcmodule.h>
+#include <tdecmodule.h>
 #include <klibloader.h>
 #include <kparts/componentfactory.h>
 

@@ -11,7 +11,7 @@ METASOURCES = AUTO
 #########################################################################
 # KCMODULE SECTION
 #########################################################################
-# This is the kcmodule that gets installed.  It's name is used for all
+# This is the tdecmodule that gets installed.  It's name is used for all
 # of the other Makefile.am variables.
 
 kde_module_LTLIBRARIES = kcm_kttsd.la

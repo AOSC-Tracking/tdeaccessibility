@@ -26,7 +26,7 @@
 #include <tqlistview.h>
 
 // KDE includes.
-#include <kcmodule.h>
+#include <tdecmodule.h>
 #include <ktrader.h>
 #include <kdebug.h>
 #include <kparts/part.h>
