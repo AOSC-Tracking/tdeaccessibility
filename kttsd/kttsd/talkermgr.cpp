@@ -25,7 +25,7 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 #include <ktrader.h>
 #include <kstandarddirs.h>
 

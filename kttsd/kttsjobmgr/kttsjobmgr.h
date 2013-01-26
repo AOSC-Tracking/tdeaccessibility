@@ -19,7 +19,7 @@
 #define _KTTSJOBMGRPART_H_
 
 // KDE includes.
-#include <kparts/browserextension.h>
+#include <tdeparts/browserextension.h>
 #include <klibloader.h>
 
 // KTTS includes.

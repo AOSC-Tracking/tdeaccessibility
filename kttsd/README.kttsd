@@ -5,6 +5,6 @@ Most of it has moved to tdeaccessibility/kttsd.
 The following pieces were also moved.
 
 kttsd/libktts -> tdelibs/interfaces/kspeech
-kttsd/app-plugins/khtml-plugin -> tdebase/konqueror/kttsplugin
+kttsd/app-plugins/tdehtml-plugin -> tdebase/konqueror/kttsplugin
 kttsd/app-plugins/kate-plugin -> tdebase/kate/plugins/ktts
 kttsd/app-plugins/katepart-plugin -> tdebase/kate/plugin/katepartktts

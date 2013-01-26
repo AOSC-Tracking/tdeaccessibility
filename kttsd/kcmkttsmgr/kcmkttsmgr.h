@@ -29,7 +29,7 @@
 #include <tdecmodule.h>
 #include <ktrader.h>
 #include <kdebug.h>
-#include <kparts/part.h>
+#include <tdeparts/part.h>
 
 // KTTS includes.
 #include "addtalker.h"

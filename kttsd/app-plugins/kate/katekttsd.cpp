@@ -23,8 +23,8 @@
 #include <tqtimer.h>
 
 // KDE includes.
-#include <ktexteditor/editinterface.h>
-#include <ktexteditor/selectioninterface.h>
+#include <tdetexteditor/editinterface.h>
+#include <tdetexteditor/selectioninterface.h>
 
 #include <kaction.h>
 #include <klocale.h>
@@ -36,7 +36,7 @@
 #include "katekttsd.h"
 #include "katekttsd.moc"
 
-K_EXPORT_COMPONENT_FACTORY( ktexteditor_kttsd, KGenericFactory<KateKttsdPlugin>( "ktexteditor_kttsd" ) )
+K_EXPORT_COMPONENT_FACTORY( tdetexteditor_kttsd, KGenericFactory<KateKttsdPlugin>( "tdetexteditor_kttsd" ) )
 
 KateKttsdPlugin::KateKttsdPlugin( TQObject *parent, const char* name, const TQStringList& )
     : KTextEditor::Plugin ( (KTextEditor::Document*) parent, name )
@@ -75,7 +75,7 @@ KateKttsdPluginView::KateKttsdPluginView( KTextEditor::View *view, const char *n
     setInstance( KGenericFactory<KateKttsdPlugin>::instance() );
     TDEGlobal::locale()->insertCatalogue("kttsd");
     (void) new KAction( i18n("Speak Text"), "kttsd", 0, this, TQT_SLOT(slotReadOut()), actionCollection(), "tools_kttsd" );
-    setXMLFile( "ktexteditor_kttsdui.rc" );
+    setXMLFile( "tdetexteditor_kttsdui.rc" );
 }
 
 void KateKttsdPluginView::slotReadOut()

@@ -27,7 +27,7 @@
 #include <kdebug.h>
 #include <kconfig.h>
 #include <ktrader.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 #include <klocale.h>
 
 // FilterMgr includes.

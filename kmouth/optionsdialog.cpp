@@ -31,7 +31,7 @@
 #include <kiconloader.h>
 #include <tdecmodule.h>
 #include <klibloader.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 
 #include "optionsdialog.h"
 #include "wordcompletion/wordcompletionwidget.h"

@@ -263,7 +263,7 @@
 2004-12-20  Gary Cramblitt (PhantomsDad)
         * kdenonbeta/kttsd moved to tdeaccessibility/kttsd.
         * kdenonbeta/kttsd/libktts moved to tdelibs/interfaces/kspeech.  libktts dropped.
-        * kdenonbeta/app-plugins/khtml-plugin moved to tdebase/konqueror/kttsplugin.
+        * kdenonbeta/app-plugins/tdehtml-plugin moved to tdebase/konqueror/kttsplugin.
         * kdenonbeta/app-plugins/kate-plugin moved to tdebase/kate/plugins/ktts.
         * kdenonbeta/app-plugins/katepart-plugin moved to tdebase/kate/plugin/katepartktts.
 

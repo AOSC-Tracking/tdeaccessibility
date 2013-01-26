@@ -29,7 +29,7 @@
 #include <kapplication.h>
 #include <ktempfile.h>
 #include <kstandarddirs.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 #include <ktrader.h>
 #include <kdebug.h>
 

@@ -43,7 +43,7 @@
 #include <kstandarddirs.h>
 #include <kregexpeditorinterface.h>
 #include <ktrader.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 #include <kfiledialog.h>
 
 // KTTS includes.

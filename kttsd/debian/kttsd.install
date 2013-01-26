@@ -29,11 +29,11 @@ debian/tmp/usr/lib/trinity/libkttsjobmgrpart.so
 debian/tmp/usr/lib/trinity/libkttsjobmgrpart.la
 debian/tmp/usr/lib/trinity/kcm_kttsd.so
 debian/tmp/usr/lib/trinity/kcm_kttsd.la
-debian/tmp/usr/lib/trinity/ktexteditor_kttsd.la
-debian/tmp/usr/lib/trinity/ktexteditor_kttsd.so
+debian/tmp/usr/lib/trinity/tdetexteditor_kttsd.la
+debian/tmp/usr/lib/trinity/tdetexteditor_kttsd.so
 
-debian/tmp/usr/lib/trinity/libkhtmlkttsdplugin.la
-debian/tmp/usr/lib/trinity/libkhtmlkttsdplugin.so
+debian/tmp/usr/lib/trinity/libtdehtmlkttsdplugin.la
+debian/tmp/usr/lib/trinity/libtdehtmlkttsdplugin.so
 
 debian/tmp/usr/share/servicetypes/kttsd_synthplugin.desktop
 debian/tmp/usr/share/servicetypes/kttsd_audioplugin.desktop
@@ -55,7 +55,7 @@ debian/tmp/usr/share/apps/kttsd/stringreplacer/chat.xml
 debian/tmp/usr/share/apps/kttsd/stringreplacer/kmail.xml
 debian/tmp/usr/share/apps/kttsd/stringreplacer/polish_festival_unspeakables.xml
 debian/tmp/usr/share/apps/kttsd/xmltransformer/xhtml2ssml.xsl
-debian/tmp/usr/share/apps/ktexteditor_kttsd/ktexteditor_kttsdui.rc
+debian/tmp/usr/share/apps/tdetexteditor_kttsd/tdetexteditor_kttsdui.rc
 
 debian/tmp/usr/share/doc/tde/HTML/*/kttsd/common
 debian/tmp/usr/share/doc/tde/HTML/*/kttsd/general.png
@@ -86,10 +86,10 @@ debian/tmp/usr/share/services/kttsd_talkerchooserplugin.desktop
 debian/tmp/usr/share/services/kttsd.desktop
 debian/tmp/usr/share/services/kttsjobmgr.desktop
 debian/tmp/usr/share/services/kttsd_artsplugin.desktop
-debian/tmp/usr/share/services/ktexteditor_kttsd.desktop
+debian/tmp/usr/share/services/tdetexteditor_kttsd.desktop
 
-debian/tmp/usr/share/apps/khtml/kpartplugins/khtmlkttsd.desktop
-debian/tmp/usr/share/apps/khtml/kpartplugins/khtmlkttsd.rc
+debian/tmp/usr/share/apps/tdehtml/kpartplugins/tdehtmlkttsd.desktop
+debian/tmp/usr/share/apps/tdehtml/kpartplugins/tdehtmlkttsd.rc
 
 debian/tmp/usr/share/icons/hicolor/16x16/actions/male.png
 debian/tmp/usr/share/icons/hicolor/16x16/actions/female.png

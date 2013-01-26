@@ -34,7 +34,7 @@ using namespace std;
 #include <kcmdlineargs.h>
 #include <kconfig.h>
 #include <ktrader.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 
 #include "filterproc.h"
 #include "talkercode.h"

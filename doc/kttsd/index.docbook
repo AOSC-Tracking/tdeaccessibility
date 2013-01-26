@@ -194,13 +194,13 @@ kttsd.  kttsmgr sits in the system tray.
 </para></listitem></varlistentry>
 
 <varlistentry>
-<term><command>libkhtmlkttsdplugin</command></term>
+<term><command>libtdehtmlkttsdplugin</command></term>
 <listitem><para>A plugin for the &konqueror; web browser that permits you
 to speak all or a portion of the text on a web page.
 </para></listitem></varlistentry>
 
 <varlistentry>
-<term><command>ktexteditor_kttsd</command></term>
+<term><command>tdetexteditor_kttsd</command></term>
 <listitem><para>A plugin for the &kate; text editor that permits you to speak
 all or a portion of a text file.
 </para></listitem></varlistentry>

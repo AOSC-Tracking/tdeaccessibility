@@ -21,7 +21,7 @@ kcmkttsd
   A KControl module for configuring the KTTS System. kcmkttsd runs in the
 TDE Control Center or start it with the command "kcmshell kcmkttsd".
 
-ktexteditor_kttsd
+tdetexteditor_kttsd
   A plugin for the KDE Advanced Text Editor that permits you to speak an entire
 text file or any portion of a file.
 

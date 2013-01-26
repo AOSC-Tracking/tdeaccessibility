@@ -20,8 +20,8 @@
 #ifndef _KATEKTTSD_H_
 #define _KATEKTTSD_H_
 
-#include <ktexteditor/plugin.h>
-#include <ktexteditor/view.h>
+#include <tdetexteditor/plugin.h>
+#include <tdetexteditor/view.h>
 #include <kxmlguiclient.h>
 #include <tqobject.h>
 
