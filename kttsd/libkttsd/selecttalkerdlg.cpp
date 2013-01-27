@@ -36,7 +36,7 @@
 #include <kpushbutton.h>
 #include <klistview.h>
 #include <klineedit.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kdebug.h>
 
 // KTTS includes.

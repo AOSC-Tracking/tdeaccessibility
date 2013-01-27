@@ -23,7 +23,7 @@
 #include <tqstring.h>
 #include <kdemacros.h>
 #include "kdeexportfix.h"
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 /**
 * @interface PlugInProc

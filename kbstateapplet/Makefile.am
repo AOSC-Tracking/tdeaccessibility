@@ -19,6 +19,6 @@ messages:
 	$(XGETTEXT) *.cpp *.h -o $(podir)/kbstateapplet.pot
 
 srcdoc:
-	kdoc -a -p -H -d $$HOME/web/src/kbstateapplet kbstateapplet *.h -lqt -ltdecore -ltdeui -lkfile
+	kdoc -a -p -H -d $$HOME/web/src/kbstateapplet kbstateapplet *.h -lqt -ltdecore -ltdeui -ltdefile
 
 SUBDIRS = images

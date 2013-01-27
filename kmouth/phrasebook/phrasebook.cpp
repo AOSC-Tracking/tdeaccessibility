@@ -27,8 +27,8 @@
 #include <kpopupmenu.h>
 #include <ktoolbar.h>
 #include <ktempfile.h>
-#include <kio/netaccess.h>
-#include <kfiledialog.h>
+#include <tdeio/netaccess.h>
+#include <tdefiledialog.h>
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
 

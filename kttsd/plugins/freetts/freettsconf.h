@@ -21,7 +21,7 @@
 #include <tqstringlist.h>
 
 #include <kdebug.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include <pluginconf.h>
 

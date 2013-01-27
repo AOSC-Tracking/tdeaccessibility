@@ -26,7 +26,7 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kprocess.h>
 #include <ktempfile.h>
 #include <kstandarddirs.h>

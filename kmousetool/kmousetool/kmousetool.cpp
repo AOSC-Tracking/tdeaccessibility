@@ -23,7 +23,7 @@
 #include "Xmd_kmousetool.h"
 #include "kmousetool.h"
 #include "kmousetool.moc"
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <X11/Intrinsic.h>     /* Intrinsics Definitions*/
 #include <X11/StringDefs.h>    /* Standard Name-String definitions*/
 #include <X11/extensions/xtestext1.h>    /* Standard Name-String definitions*/

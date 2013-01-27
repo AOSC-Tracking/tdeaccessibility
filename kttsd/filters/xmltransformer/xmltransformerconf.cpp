@@ -28,7 +28,7 @@
 // KDE includes.
 #include <klocale.h>
 #include <klineedit.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kdialog.h>
 #include <kurlrequester.h>
 #include <kstandarddirs.h>

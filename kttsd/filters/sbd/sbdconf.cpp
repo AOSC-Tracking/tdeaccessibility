@@ -39,12 +39,12 @@
 #include <kdialog.h>
 #include <kdialogbase.h>
 #include <kpushbutton.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kstandarddirs.h>
 #include <kregexpeditorinterface.h>
 #include <ktrader.h>
 #include <tdeparts/componentfactory.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 
 // KTTS includes.
 #include "filterconf.h"

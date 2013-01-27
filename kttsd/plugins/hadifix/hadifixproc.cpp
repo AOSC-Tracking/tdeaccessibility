@@ -21,7 +21,7 @@
 #include <tqtextcodec.h>
 
 #include <kdebug.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 

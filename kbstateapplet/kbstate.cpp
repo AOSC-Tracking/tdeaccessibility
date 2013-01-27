@@ -701,7 +701,7 @@ void KbStateApplet::configureKeyboard() {
    // The modulename "keyboard" is ambiguous on SuSE systems
    // as there is also a YaST-module called "keyboard".
    TDEProcess proc;
-   proc << "kcmshell";
+   proc << "tdecmshell";
    proc << "kde/keyboard";
    proc.start(TDEProcess::DontCare);
    proc.detach();

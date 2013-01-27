@@ -24,7 +24,7 @@
 
 
 // KDE includes
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 // App specific includes
 #include "fx_setup.h"

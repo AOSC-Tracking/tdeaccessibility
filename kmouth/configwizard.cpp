@@ -24,7 +24,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <ksconfig.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/phrasebookdialog.h"

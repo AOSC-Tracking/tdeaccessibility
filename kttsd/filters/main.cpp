@@ -32,7 +32,7 @@ using namespace std;
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <ktrader.h>
 #include <tdeparts/componentfactory.h>
 

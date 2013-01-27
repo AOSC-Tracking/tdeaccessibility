@@ -24,7 +24,7 @@
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <klocale.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kstdaction.h>
 #include <kprinter.h>
 #include <kpopupmenu.h>

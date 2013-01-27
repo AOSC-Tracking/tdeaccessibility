@@ -30,7 +30,7 @@
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <klocale.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <dcopclient.h>
 #include <knotifyclient.h>
 #include <krun.h>

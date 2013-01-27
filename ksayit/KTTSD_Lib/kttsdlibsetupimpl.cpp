@@ -42,8 +42,8 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
     FILE *fp;
     char cmdresult[20];
 
-    // if ( (fp = popen("kcmshell --list | grep kcmkttsmgr", "r")) != NULL){
-    if ( (fp = popen("kcmshell --list | grep kcmkttsd", "r")) != NULL){
+    // if ( (fp = popen("tdecmshell --list | grep kcmkttsmgr", "r")) != NULL){
+    if ( (fp = popen("tdecmshell --list | grep kcmkttsd", "r")) != NULL){
         fgets(cmdresult, 18, fp);
         pclose(fp);
     }
@@ -57,7 +57,7 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
     TDEProcess *kcmproc = new TDEProcess();
     connect(kcmproc, TQT_SIGNAL(processExited(TDEProcess*)),
                     this, TQT_SLOT(slotKCMProcessExited(TDEProcess*)) );
-    (*kcmproc) << "kcmshell";
+    (*kcmproc) << "tdecmshell";
     (*kcmproc) << "kcmkttsd";
     kcmproc->start(TDEProcess::NotifyOnExit);
 

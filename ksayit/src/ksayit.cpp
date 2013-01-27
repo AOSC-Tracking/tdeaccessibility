@@ -29,11 +29,11 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kdialogbase.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>
 #include <kstatusbar.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kstdaction.h>
 #include <kedittoolbar.h>
 #include <kkeydialog.h>
@@ -290,7 +290,7 @@ void KSayItApp::slotChangeBookmarkFilename(const TQString &newname)
     if ( newbkFile.isNull() )
         return;    
     
-    // copy old bookmarkfile to new file
+    // copy old bookmartdefile to new file
     if ( m_currentBookmarkFile != newbkFile ){
         if ( TQFile::exists(m_currentBookmarkFile) ){
             TQString command = TQString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);

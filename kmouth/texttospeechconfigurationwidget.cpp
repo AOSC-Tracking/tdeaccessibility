@@ -17,7 +17,7 @@
 
 
 #include "texttospeechconfigurationwidget.h"
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <tqtextcodec.h>
 #include <tqptrlist.h>
 #include <tqlayout.h>

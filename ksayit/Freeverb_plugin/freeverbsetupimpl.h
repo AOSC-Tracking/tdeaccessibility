@@ -22,7 +22,7 @@
 #include <tqwidget.h>
 
 // KDE includes
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 // App specific includes
 #include <freeverb_setup.h>

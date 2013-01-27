@@ -23,7 +23,7 @@
 
 // KDE includes
 #include <kdialogbase.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 // forward declaration
 class FXPluginHandler;

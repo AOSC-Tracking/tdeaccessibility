@@ -45,7 +45,7 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 #include <klocale.h>

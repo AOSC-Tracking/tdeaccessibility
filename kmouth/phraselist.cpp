@@ -30,7 +30,7 @@
 #include <kcursor.h>
 #include <kiconloader.h>
 #include <klocale.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kcombobox.h>
 #include <kmessagebox.h>
 

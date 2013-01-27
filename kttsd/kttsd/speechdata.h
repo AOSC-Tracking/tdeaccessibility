@@ -33,7 +33,7 @@
 #include <tqmap.h>
 
 // KDE includes.
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 // KTTS includes.
 #include <kspeech.h>

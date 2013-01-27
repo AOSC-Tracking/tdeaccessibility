@@ -24,7 +24,7 @@
 #include <kuniqueapplication.h>
 #include <dcopclient.h>
 #include <tqmessagebox.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include "kmousetool.h"
 

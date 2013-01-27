@@ -3,7 +3,7 @@
 
 #include <tqstringlist.h>
 
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include <pluginconf.h>
 

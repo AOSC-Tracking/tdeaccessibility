@@ -26,7 +26,7 @@
 #include <tqimage.h>
 
 // KDE includes.
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kuniqueapplication.h>
 #include <kcmultidialog.h>
 #include <kaboutdata.h>

@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include <klocale.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kaction.h>
 #include <kstdaccel.h>
 #include <kshortcutlist.h>

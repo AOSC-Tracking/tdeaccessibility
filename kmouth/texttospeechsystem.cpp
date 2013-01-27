@@ -24,7 +24,7 @@
 
 #include <kapplication.h>
 #include <dcopclient.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include "speech.h"
 

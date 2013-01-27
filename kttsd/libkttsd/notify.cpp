@@ -22,7 +22,7 @@
 #include <tqstringlist.h>
 
 // KDE includes.
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <klocale.h>
 #include <kstaticdeleter.h>
 

@@ -21,7 +21,7 @@
 // #include <tqvaluelist.h>
 
 // KDE includes
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <arts/kartsserver.h>
 #include <arts/artsflow.h>
 

@@ -26,10 +26,10 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <ksimpleconfig.h>
-#include <kfiledialog.h>
-#include <kio/netaccess.h>
+#include <tdefiledialog.h>
+#include <tdeio/netaccess.h>
 #include <kmessagebox.h>
 
 #include "dictionarycreationwizard.h"

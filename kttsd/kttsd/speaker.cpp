@@ -32,7 +32,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <ktempfile.h>
-//#include <kio/job.h>
+//#include <tdeio/job.h>
 
 // KTTSD includes.
 #include "player.h"

@@ -46,12 +46,12 @@
 #include <kgenericfactory.h>
 #include <kstandarddirs.h>
 #include <kaboutdata.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <knuminput.h>
 #include <kcombobox.h>
 #include <kinputdialog.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 
 // KTTS includes.
 #include "talkercode.h"

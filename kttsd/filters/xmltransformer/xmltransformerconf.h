@@ -28,7 +28,7 @@
 #include <tqwidget.h>
 
 // KDE includes.
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kdebug.h>
 
 // KTTS includes.

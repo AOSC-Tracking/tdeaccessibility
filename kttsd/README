@@ -19,7 +19,7 @@ kttsjobmgr
 
 kcmkttsd
   A KControl module for configuring the KTTS System. kcmkttsd runs in the
-TDE Control Center or start it with the command "kcmshell kcmkttsd".
+TDE Control Center or start it with the command "tdecmshell kcmkttsd".
 
 tdetexteditor_kttsd
   A plugin for the KDE Advanced Text Editor that permits you to speak an entire
@@ -158,7 +158,7 @@ plugins            Plugins for KTTSD.  You must have at least one plugin to use 
 kttsd              KTTSD itself.  Non-interactive deamon.
 icons              Icon for kttsmgr and KTTSD.
 kttsjobmgr         A KPart used by kcmkttsmgr for managing text jobs in KTTSD.
-kcmkttsmgr         A KControl module for managing KTTSD.  Run using "kcmshell kcmkttsd".
+kcmkttsmgr         A KControl module for managing KTTSD.  Run using "tdecmshell kcmkttsd".
 kttsmgr            Application for managing KTTSD.  Wrapper for kcmkttsmgr plus a system tray icon.
 app-plugins        Plugins for other applications to speak text.
   kate               Embedded Kate plugin.

@@ -14,7 +14,7 @@
 
 // KDE includes
 #include <arts/kmedia2.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include <arts/kartsdispatcher.h>
 #include <arts/kartsserver.h>

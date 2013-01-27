@@ -23,7 +23,7 @@
 #include <tqstringlist.h>
 
 // KDE includes.
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 // KTTS includes.
 #include <pluginconf.h>

@@ -33,7 +33,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include "dictionarycreationwizard.h"
 #include "klanguagebutton.h"
