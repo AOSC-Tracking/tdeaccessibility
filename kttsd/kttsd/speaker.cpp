@@ -1322,9 +1322,9 @@ uttIterator Speaker::deleteUtterance(uttIterator it)
                 d.rename(it->audioUrl, dest);
                 // TODO: This is always producing the following.  Why and how to fix?
                 // It moves the files just fine.
-                //  kio (TDEIOJob): stat file:///home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
-                //  kio (TDEIOJob): error 11 /home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
-                //  kio (TDEIOJob): This seems to be a suitable case for trying to rename before stat+[list+]copy+del
+                //  tdeio (TDEIOJob): stat file:///home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
+                //  tdeio (TDEIOJob): error 11 /home/kde-devel/.trinity/share/apps/kttsd/audio/kttsd-5-1.wav
+                //  tdeio (TDEIOJob): This seems to be a suitable case for trying to rename before stat+[list+]copy+del
                 // TDEIO::move(it->audioUrl, dest, false);
             }
             else
