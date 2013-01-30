@@ -13,7 +13,7 @@ libkttsd_hadifixplugin_la_SOURCES = \
 	hadifixconfigui.ui \
 	voicefileui.ui
 libkttsd_hadifixplugin_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries)
-libkttsd_hadifixplugin_la_LIBADD = $(LIB_TDECORE) $(LIB_KFILE) $(top_builddir)/kttsd/libkttsd/libkttsd.la
+libkttsd_hadifixplugin_la_LIBADD = $(LIB_TDECORE) $(LIB_TDEFILE) $(top_builddir)/kttsd/libkttsd/libkttsd.la
 
 services_DATA = kttsd_hadifixplugin.desktop
 servicesdir = $(kde_servicesdir)

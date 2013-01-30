@@ -26,7 +26,7 @@ libkttsjobmgrpart_la_SOURCES = \
 libkttsjobmgrpart_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries) $(KDE_PLUGIN)
 libkttsjobmgrpart_la_LIBADD = \
 	$(top_builddir)/kttsd/libkttsd/libkttsd.la \
-	$(LIB_KFILE) $(LIBVM) $(LIB_KPARTS)
+	$(LIB_TDEFILE) $(LIBVM) $(LIB_KPARTS)
 
 # Header files not to be installed.
 noinst_HEADERS = 
