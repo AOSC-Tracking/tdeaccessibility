@@ -224,7 +224,7 @@ TQString DictionaryCreationWizard::createDictionary() {
       filename = TQString("wordcompletion%1.dict").arg(dictnumber);
       dictionaryFile = TDEApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
-   while (KStandardDirs::exists(dictionaryFile));
+   while (TDEStandardDirs::exists(dictionaryFile));
    
    dictionaryFile = TDEApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + filename;
    if (WordList::saveWordList (map, dictionaryFile))

@@ -57,7 +57,7 @@ TQString findExecutable (const TQStringList &names, const TQString &possiblePath
    TQStringList::ConstIterator it;
    TQStringList::ConstIterator itEnd = names.constEnd();
    for (it = names.constBegin(); it != itEnd; ++it) {
-      TQString executable = KStandardDirs::findExe (*it);
+      TQString executable = TDEStandardDirs::findExe (*it);
       if (!executable.isNull() && !executable.isEmpty())
          return executable;
    }

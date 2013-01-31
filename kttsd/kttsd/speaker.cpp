@@ -498,7 +498,7 @@ void Speaker::doUtterances()
                         // See if synthesis is completed.
                         if (it->plugin->getState() == psFinished)
                         {
-                            it->audioUrl = KStandardDirs::realFilePath(it->plugin->getFilename());
+                            it->audioUrl = TDEStandardDirs::realFilePath(it->plugin->getFilename());
                             // kdDebug() << "Speaker::doUtterances: synthesized filename: " << it->audioUrl << endl;
                             it->plugin->ackFinished();
                             it->state = usSynthed;
@@ -1507,7 +1507,7 @@ TQString Speaker::makeSuggestedFilename()
     tempFile.close();
     TQFile::remove(waveFile);
     // kdDebug() << "Speaker::makeSuggestedFilename: Suggesting filename: " << waveFile << endl;
-    return KStandardDirs::realFilePath(waveFile);
+    return TDEStandardDirs::realFilePath(waveFile);
 }
 
 /**

@@ -47,7 +47,7 @@ SelectEvent::SelectEvent(TQWidget* parent, const char* name, WFlags fl, const TQ
     for ( ; it != fullpaths.end(); ++it)
     {
         TQString relativePath = *it;
-        if ( relativePath.at(0) == '/' && KStandardDirs::exists( relativePath ) )
+        if ( relativePath.at(0) == '/' && TDEStandardDirs::exists( relativePath ) )
         {
             relativePath = makeRelative( relativePath );
             relativePaths.append(relativePath);
