@@ -69,7 +69,7 @@ SbdConf::SbdConf( TQWidget *parent, const char *name, const TQStringList& /*args
     layout->addWidget(m_widget);
 
     // Determine if tdeutils Regular Expression Editor is installed.
-    m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
+    m_reEditorInstalled = !TDETrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
 
     m_widget->reButton->setEnabled( m_reEditorInstalled );
     if ( m_reEditorInstalled )

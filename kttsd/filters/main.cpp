@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 
     TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/FilterPlugin");
 
     if (args->isSet("list"))
     {

@@ -524,7 +524,7 @@ void KCMKttsMgr::load()
     }
 
     // Query for all the KCMKTTSD SynthPlugins and store the list in offers.
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/SynthPlugin");
 
     // Iterate thru the possible plug ins getting their language support codes.
     for(unsigned int i=0; i < offers.count() ; ++i)
@@ -623,7 +623,7 @@ void KCMKttsMgr::load()
 
     // Add at least one unchecked instance of each available filter plugin if there is
     // not already at least one instance and the filter can autoconfig itself.
-    offers = KTrader::self()->query("KTTSD/FilterPlugin");
+    offers = TDETrader::self()->query("KTTSD/FilterPlugin");
     for (unsigned int i=0; i < offers.count() ; ++i)
     {
         TQString filterPlugInName = offers[i]->name();
@@ -1099,7 +1099,7 @@ PlugInConf* KCMKttsMgr::loadTalkerPlugin(const TQString& name)
     // kdDebug() << "KCMKttsMgr::loadPlugin: Running"<< endl;
 
     // Find the plugin.
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin",
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/SynthPlugin",
         TQString("DesktopEntryName == '%1'").arg(name));
 
     if (offers.count() == 1)
@@ -1128,7 +1128,7 @@ PlugInConf* KCMKttsMgr::loadTalkerPlugin(const TQString& name)
         }
     }
     // The plug in was not found (unexpected behaviour, returns null).
-    kdDebug() << "KCMKttsMgr::loadTalkerPlugin: KTrader did not return an offer for plugin "
+    kdDebug() << "KCMKttsMgr::loadTalkerPlugin: TDETrader did not return an offer for plugin "
         << name << endl;
     return NULL;
 }
@@ -1143,7 +1143,7 @@ KttsFilterConf* KCMKttsMgr::loadFilterPlugin(const TQString& plugInName)
     // kdDebug() << "KCMKttsMgr::loadPlugin: Running"<< endl;
 
     // Find the plugin.
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/FilterPlugin",
         TQString("DesktopEntryName == '%1'").arg(plugInName));
 
     if (offers.count() == 1)
@@ -1174,7 +1174,7 @@ KttsFilterConf* KCMKttsMgr::loadFilterPlugin(const TQString& plugInName)
         }
     }
     // The plug in was not found (unexpected behaviour, returns null).
-    kdDebug() << "KCMKttsMgr::loadFilterPlugin: KTrader did not return an offer for plugin " << plugInName << endl;
+    kdDebug() << "KCMKttsMgr::loadFilterPlugin: TDETrader did not return an offer for plugin " << plugInName << endl;
     return NULL;
 }
 
@@ -1406,7 +1406,7 @@ void KCMKttsMgr::addFilter( bool sbd)
         item = item->nextSibling();
     }
     // Append those available plugins not yet in the list at all.
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/FilterPlugin");
     for (unsigned int i=0; i < offers.count() ; ++i)
     {
         TQString filterPlugInName = offers[i]->name();
@@ -2198,7 +2198,7 @@ void KCMKttsMgr::slotFiltersList_stateChanged()
 }
 
 /**
- * Uses KTrader to convert a translated Filter Plugin Name to DesktopEntryName.
+ * Uses TDETrader to convert a translated Filter Plugin Name to DesktopEntryName.
  * @param name                   The translated plugin name.  From Name= line in .desktop file.
  * @return                       DesktopEntryName.  The name of the .desktop file (less .desktop).
  *                               TQString() if not found.
@@ -2206,21 +2206,21 @@ void KCMKttsMgr::slotFiltersList_stateChanged()
 TQString KCMKttsMgr::FilterNameToDesktopEntryName(const TQString& name)
 {
     if (name.isEmpty()) return TQString();
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/FilterPlugin");
     for (uint ndx = 0; ndx < offers.count(); ++ndx)
         if (offers[ndx]->name() == name) return offers[ndx]->desktopEntryName();
     return TQString();
 }
 
 /**
- * Uses KTrader to convert a DesktopEntryName into a translated Filter Plugin Name.
+ * Uses TDETrader to convert a DesktopEntryName into a translated Filter Plugin Name.
  * @param desktopEntryName       The DesktopEntryName.
  * @return                       The translated Name of the plugin, from Name= line in .desktop file.
  */
 TQString KCMKttsMgr::FilterDesktopEntryNameToName(const TQString& desktopEntryName)
 {
     if (desktopEntryName.isEmpty()) return TQString();
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/FilterPlugin",
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/FilterPlugin",
         TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
     if (offers.count() == 1)

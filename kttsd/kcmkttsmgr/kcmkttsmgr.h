@@ -283,7 +283,7 @@ class KCMKttsMgr :
         int countFilterPlugins(const TQString& filterPlugInName);
 
         /**
-         * Uses KTrader to convert a translated Filter Plugin Name to DesktopEntryName.
+         * Uses TDETrader to convert a translated Filter Plugin Name to DesktopEntryName.
          * @param name                   The translated plugin name.  From Name= line in .desktop file.
          * @return                       DesktopEntryName.  The name of the .desktop file (less .desktop).
          *                               TQString() if not found.
@@ -291,7 +291,7 @@ class KCMKttsMgr :
         TQString FilterNameToDesktopEntryName(const TQString& name);
 
         /**
-         * Uses KTrader to convert a DesktopEntryName into a translated Filter Plugin Name.
+         * Uses TDETrader to convert a DesktopEntryName into a translated Filter Plugin Name.
          * @param desktopEntryName       The DesktopEntryName.
          * @return                       The translated Name of the plugin, from Name= line in .desktop file.
          */

@@ -62,7 +62,7 @@ TalkerChooserConf::TalkerChooserConf( TQWidget *parent, const char *name, const 
     layout->addWidget(m_widget);
 
     // Determine if tdeutils Regular Expression Editor is installed.
-    m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
+    m_reEditorInstalled = !TDETrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
     m_widget->reEditorButton->setEnabled(m_reEditorInstalled);
 
     connect(m_widget->nameLineEdit, TQT_SIGNAL(textChanged(const TQString&)),

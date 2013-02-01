@@ -100,7 +100,7 @@ StringReplacerConf::StringReplacerConf( TQWidget *parent, const char *name, cons
         this, TQT_SLOT(configChanged()));
 
     // Determine if tdeutils Regular Expression Editor is installed.
-    m_reEditorInstalled = !KTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
+    m_reEditorInstalled = !TDETrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
 
     // Set up defaults.
     defaults();

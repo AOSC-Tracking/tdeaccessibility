@@ -1540,7 +1540,7 @@ Player* Speaker::createPlayerObject()
                 break;
             }
     }
-    KTrader::OfferList offers = KTrader::self()->query(
+    TDETrader::OfferList offers = TDETrader::self()->query(
             "KTTSD/AudioPlugin", TQString("DesktopEntryName == '%1'").arg(plugInName));
 
     if(offers.count() == 1)

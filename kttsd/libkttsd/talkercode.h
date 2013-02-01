@@ -164,7 +164,7 @@ class KDE_EXPORT TalkerCode
         static TQString stripPrefer( const TQString& code, bool& preferred);
 
         /**
-        * Uses KTrader to convert a translated Synth Plugin Name to DesktopEntryName.
+        * Uses TDETrader to convert a translated Synth Plugin Name to DesktopEntryName.
         * @param name                   The translated plugin name.  From Name= line in .desktop file.
         * @return                       DesktopEntryName.  The name of the .desktop file (less .desktop).
         *                               TQString() if not found.
@@ -172,7 +172,7 @@ class KDE_EXPORT TalkerCode
         static TQString TalkerNameToDesktopEntryName(const TQString& name);
 
         /**
-        * Uses KTrader to convert a DesktopEntryName into a translated Synth Plugin Name.
+        * Uses TDETrader to convert a DesktopEntryName into a translated Synth Plugin Name.
         * @param desktopEntryName       The DesktopEntryName.
         * @return                       The translated Name of the plugin, from Name= line in .desktop file.
         */

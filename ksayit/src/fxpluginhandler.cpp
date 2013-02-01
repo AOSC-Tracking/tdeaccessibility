@@ -56,12 +56,12 @@ void FXPluginHandler::searchPlugins()
     sRegistered.clear();
     m_mapPluginList.clear();
     
-    KTrader::OfferList offers = KTrader::self()->query("KSayIt/FXPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KSayIt/FXPlugin");
     KLibFactory *factory = NULL;
     TQString library = TQString();
     TQString name = TQString();
     
-    KTrader::OfferList::Iterator it=offers.begin();
+    TDETrader::OfferList::Iterator it=offers.begin();
     for ( ;it!=offers.end(); ++it ){
         KService::Ptr ptr = (*it);
         library = ptr->library();

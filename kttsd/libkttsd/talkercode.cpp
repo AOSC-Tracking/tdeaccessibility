@@ -484,7 +484,7 @@ void TalkerCode::parseTalkerCode(const TQString &talkerCode)
 }
 
 /**
-* Uses KTrader to convert a translated Synth Plugin Name to DesktopEntryName.
+* Uses TDETrader to convert a translated Synth Plugin Name to DesktopEntryName.
 * @param name                   The translated plugin name.  From Name= line in .desktop file.
 * @return                       DesktopEntryName.  The name of the .desktop file (less .desktop).
 *                               TQString() if not found.
@@ -492,21 +492,21 @@ void TalkerCode::parseTalkerCode(const TQString &talkerCode)
 /*static*/ TQString TalkerCode::TalkerNameToDesktopEntryName(const TQString& name)
 {
     if (name.isEmpty()) return TQString();
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/SynthPlugin");
     for (uint ndx = 0; ndx < offers.count(); ++ndx)
         if (offers[ndx]->name() == name) return offers[ndx]->desktopEntryName();
     return TQString();
 }
 
 /**
-* Uses KTrader to convert a DesktopEntryName into a translated Synth Plugin Name.
+* Uses TDETrader to convert a DesktopEntryName into a translated Synth Plugin Name.
 * @param desktopEntryName       The DesktopEntryName.
 * @return                       The translated Name of the plugin, from Name= line in .desktop file.
 */
 /*static*/ TQString TalkerCode::TalkerDesktopEntryNameToName(const TQString& desktopEntryName)
 {
     if (desktopEntryName.isEmpty()) return TQString();
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin",
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/SynthPlugin",
     TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
     if (offers.count() == 1)

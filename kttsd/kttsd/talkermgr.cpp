@@ -106,7 +106,7 @@ int TalkerMgr::loadPlugIns(TDEConfig* config)
             talkerCode = TalkerCode::normalizeTalkerCode(talkerCode, fullLanguageCode);
 
             // Find the KTTSD SynthPlugin.
-            KTrader::OfferList offers = KTrader::self()->query(
+            TDETrader::OfferList offers = TDETrader::self()->query(
                 "KTTSD/SynthPlugin", TQString("DesktopEntryName == '%1'").arg(desktopEntryName));
 
             if(offers.count() > 1){
@@ -318,7 +318,7 @@ bool TalkerMgr::autoconfigureTalker(const TQString& langCode, TDEConfig* config)
     TQString talkerID = TQString::number(lastTalkerID + 1);
 
     // Query for all the KTTSD SynthPlugins.
-    KTrader::OfferList offers = KTrader::self()->query("KTTSD/SynthPlugin");
+    TDETrader::OfferList offers = TDETrader::self()->query("KTTSD/SynthPlugin");
 
     // Iterate thru the possible plug ins.
     for(unsigned int i=0; i < offers.count() ; ++i)
