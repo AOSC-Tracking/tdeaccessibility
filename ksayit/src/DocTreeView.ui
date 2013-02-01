@@ -39,7 +39,7 @@
         <property name="resizeMode">
             <enum>Minimum</enum>
         </property>
-        <widget class="KListView" row="0" column="0">
+        <widget class="TDEListView" row="0" column="0">
             <column>
                 <property name="text">
                     <string>Chapter</string>

@@ -134,21 +134,21 @@ KbStateApplet::~KbStateApplet() {
 // Builds, connects _popup menu
 void KbStateApplet::buildPopupMenu()
 {
-   sizePopup=new KPopupMenu(this);
+   sizePopup=new TDEPopupMenu(this);
    sizePopup->setCheckable( true );
    sizePopup->insertItem(i18n("Small"),  13);
    sizePopup->insertItem(i18n("Medium"), 20);
    sizePopup->insertItem(i18n("Large"),  26);
    connect(sizePopup,TQT_SIGNAL(activated(int)), this, TQT_SLOT(setIconDim(int)));
 
-   showPopup=new KPopupMenu(this);
+   showPopup=new TDEPopupMenu(this);
    showPopup->setCheckable( true );
    modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQT_SLOT(toggleModifier()));
 	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQT_SLOT(toggleLockkeys()));
 	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQT_SLOT(toggleMouse()));
 	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQT_SLOT(toggleAccessX()));
 
-	popup = new KPopupMenu(this);
+	popup = new TDEPopupMenu(this);
 	popup->setCheckable( true );
    popup->insertTitle(0, i18n("Keyboard Status Applet"));
 	popup->insertItem(i18n("Set Icon Size"),sizePopup);

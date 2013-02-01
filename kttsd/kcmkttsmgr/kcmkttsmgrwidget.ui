@@ -199,7 +199,7 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="KListView" row="0" column="0">
+                    <widget class="TDEListView" row="0" column="0">
                         <column>
                             <property name="text">
                                 <string>ID</string>
@@ -446,7 +446,7 @@
                             <property name="margin">
                                 <number>0</number>
                             </property>
-                            <widget class="KListView" row="1" column="0">
+                            <widget class="TDEListView" row="1" column="0">
                                 <column>
                                     <property name="text">
                                         <string>Application/Event</string>
@@ -824,7 +824,7 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="KListView">
+                            <widget class="TDEListView">
                                 <column>
                                     <property name="text">
                                         <string>Filter</string>
@@ -994,7 +994,7 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="KListView">
+                            <widget class="TDEListView">
                                 <column>
                                     <property name="text">
                                         <string>Sentence Boundary Detector</string>

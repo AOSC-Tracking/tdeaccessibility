@@ -145,7 +145,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (TQWidget *parent, const char *
    TQLabel *label = new TQLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
    mainLayout->add (label);
 
-   books = new KListView (this, "books");
+   books = new TDEListView (this, "books");
    books->setSorting (-1);
    books->setItemsMovable (false);
    books->setDragEnabled (false);
@@ -258,7 +258,7 @@ namespace PhraseBookPrivate {
 }
 
 PhraseBookDialog::PhraseBookDialog ()
- : KMainWindow (0, "phraseEditDialog")
+ : TDEMainWindow (0, "phraseEditDialog")
 {
    setCaption (i18n("Phrase Book"));
    initGUI();
@@ -313,7 +313,7 @@ void PhraseBookDialog::initGUI () {
    connect (buttonBox->lineEdit, TQT_SIGNAL(textChanged(const TQString &)), TQT_SLOT(slotTextChanged(const TQString &)));
    connect (buttonBox->noKey, TQT_SIGNAL(clicked()), TQT_SLOT(slotNoKey()));
    connect (buttonBox->customKey, TQT_SIGNAL(clicked()), TQT_SLOT(slotCustomKey()));
-   connect (buttonBox->keyButton, TQT_SIGNAL(capturedShortcut(const KShortcut&)), TQT_SLOT(capturedShortcut(const KShortcut&)));
+   connect (buttonBox->keyButton, TQT_SIGNAL(capturedShortcut(const TDEShortcut&)), TQT_SLOT(capturedShortcut(const TDEShortcut&)));
    mainLayout->addWidget (buttonBox);
 
    treeView->setFocus();
@@ -322,11 +322,11 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
+   fileNewPhrase = new TDEAction (i18n("&New Phrase"), "phrase_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
    fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new TDEAction (i18n("New Phrase &Book"), "phrasebook_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
    fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
@@ -334,19 +334,19 @@ void PhraseBookDialog::initActions() {
    fileSave->setStatusText(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
-   fileImport = new KAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
+   fileImport = new TDEAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
    fileImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   toolbarImport = new KToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
+   toolbarImport = new TDEToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
    toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   fileImportStandardBook = new KActionMenu (i18n("I&mport Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
+   fileImportStandardBook = new TDEActionMenu (i18n("I&mport Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
    fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-   fileExport = new KAction (i18n("&Export..."), "phrasebook_save", 0, TQT_TQOBJECT(this), TQT_SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
+   fileExport = new TDEAction (i18n("&Export..."), "phrasebook_save", 0, TQT_TQOBJECT(this), TQT_SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
    fileExport->setStatusText(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
@@ -371,7 +371,7 @@ void PhraseBookDialog::initActions() {
    editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new KAction (i18n("&Delete"), "editdelete", 0, TQT_TQOBJECT(this), TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
+   editDelete = new TDEAction (i18n("&Delete"), "editdelete", 0, TQT_TQOBJECT(this), TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
    editDelete->setStatusText(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 
@@ -434,9 +434,9 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
 void PhraseBookDialog::initStandardPhraseBooks () {
    StandardBookList bookPaths = standardPhraseBooks();
    
-   KActionMenu *parent = fileImportStandardBook;
+   TDEActionMenu *parent = fileImportStandardBook;
    TQStringList currentNamePath = "x";
-   TQPtrStack<KActionMenu> stack;
+   TQPtrStack<TDEActionMenu> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       KURL url;
@@ -453,7 +453,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          parent = stack.pop();
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
-         KActionMenu *newParent = new KActionMenu (*it2);
+         TDEActionMenu *newParent = new TDEActionMenu (*it2);
          parent->insert(newParent);
          if (parent == fileImportStandardBook)
             newParent->plug(toolbarImport->popupMenu());
@@ -461,7 +461,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       }
       currentNamePath = dirs;
       
-      KAction *book = new StandardPhraseBookInsertAction (
+      TDEAction *book = new StandardPhraseBookInsertAction (
           url, (*it).name, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
       parent->insert(book);
       if (parent == fileImportStandardBook)
@@ -567,7 +567,7 @@ void PhraseBookDialog::slotNoKey() {
    
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
-      currentItem->setCut (KShortcut(TQString()));
+      currentItem->setCut (TDEShortcut(TQString()));
       buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
@@ -577,7 +577,7 @@ void PhraseBookDialog::slotCustomKey() {
    buttonBox->keyButton->captureShortcut();
 }
 
-void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
+void PhraseBookDialog::capturedShortcut (const TDEShortcut& cut) {
    if (cut.isNull()) {
       slotNoKey();
    }
@@ -586,7 +586,7 @@ void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
    phrasebookChanged = true;
 }
 
-void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
+void PhraseBookDialog::setShortcut( const TDEShortcut& cut ) {
    // Check whether the shortcut is valid
    for (uint i = 0; i < cut.count(); i++) {
       const KKeySequence& seq = cut.seq(i);

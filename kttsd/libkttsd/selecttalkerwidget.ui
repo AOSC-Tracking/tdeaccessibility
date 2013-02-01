@@ -449,7 +449,7 @@
                                 </size>
                             </property>
                         </spacer>
-                        <widget class="KListView">
+                        <widget class="TDEListView">
                             <column>
                                 <property name="text">
                                     <string>Language</string>

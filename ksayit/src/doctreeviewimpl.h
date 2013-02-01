@@ -173,7 +173,7 @@ private: // Methods
         
 private: // Attributes
     ContextMenuHandler *m_contextmenuhandler;
-    KPopupMenu *m_contextmenu; 
+    TDEPopupMenu *m_contextmenu; 
     ListViewInterface *m_rootItem;
     ListViewInterface *m_currentItem;
     TQString m_changedContent;

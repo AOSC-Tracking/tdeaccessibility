@@ -31,7 +31,7 @@ extern "C"
      
 class TQLabel;      
 class TQGridLayout;
-class KPopupMenu;
+class TDEPopupMenu;
 
 class StatusIcon : public TQPushButton {
    Q_OBJECT
@@ -190,9 +190,9 @@ private:
 
    void buildPopupMenu();
    void updateMenu();
-   KPopupMenu *popup;
-   KPopupMenu *sizePopup;
-   KPopupMenu *showPopup;
+   TDEPopupMenu *popup;
+   TDEPopupMenu *sizePopup;
+   TDEPopupMenu *showPopup;
 	int modifierItem, lockkeysItem, mouseItem, accessxItem;
 	int fillSpaceItem;
 	bool showModifiers, showLockkeys, showMouse, showAccessX;

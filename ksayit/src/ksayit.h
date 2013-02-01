@@ -57,15 +57,15 @@ class KSayItBookmarkHandler;
   * The base class for KSayIt application windows. It sets up the main
   * window and reads the config file as well as providing a menubar, toolbar
   * and statusbar. An instance of KSayItView creates the center view.
-  * KSayItApp reimplements the methods that KMainWindow provides for main window handling and supports
-  * full session management as well as using KActions.
-  * @see KMainWindow
+  * KSayItApp reimplements the methods that TDEMainWindow provides for main window handling and supports
+  * full session management as well as using TDEActions.
+  * @see TDEMainWindow
   * @see TDEApplication
   * @see TDEConfig
   *
   * @author Robert Vogl
   */
-class KSayItApp : public KMainWindow, public DCOPObject
+class KSayItApp : public TDEMainWindow, public DCOPObject
 {
   Q_OBJECT
 //  
@@ -276,7 +276,7 @@ private: // Methods
      */
     void readOptions();
 
-    /** initializes the KActions of the application */
+    /** initializes the TDEActions of the application */
     void initActions();
 
     /** sets up the statusbar for the main window by initialzing a statuslabel.
@@ -331,23 +331,23 @@ private:
     KSayItBookmarkHandler *bkHandler;
     KBookmarkMenu *bkMenu;
 
-    // KAction pointers
-    KToggleAction *statusBarAction;
-    KAction *say;
-    KAction *pause;
-    KAction *shutup;
-    KAction *next_sentence;
-    KAction *prev_sentence;
-    KAction *clear;
-    KAction *copy;
-    KAction *cut;
-    KAction *paste;
-    KAction *open;
-    KAction *save;
-    KAction *saveAs;
-    KAction *preferences;
-    KToggleAction *edit;
-    KActionMenu *bookmarkmenu;
+    // TDEAction pointers
+    TDEToggleAction *statusBarAction;
+    TDEAction *say;
+    TDEAction *pause;
+    TDEAction *shutup;
+    TDEAction *next_sentence;
+    TDEAction *prev_sentence;
+    TDEAction *clear;
+    TDEAction *copy;
+    TDEAction *cut;
+    TDEAction *paste;
+    TDEAction *open;
+    TDEAction *save;
+    TDEAction *saveAs;
+    TDEAction *preferences;
+    TDEToggleAction *edit;
+    TDEActionMenu *bookmarkmenu;
     
     // Misc stuff
     TQClipboard *cb;

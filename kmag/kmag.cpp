@@ -75,7 +75,7 @@
 #endif
 
 KmagApp::KmagApp(TQWidget* , const char* name)
-  : KMainWindow(0, name, WStyle_MinMax | WType_TopLevel | WStyle_StaysOnTop | WDestructiveClose | WStyle_ContextHelp),
+  : TDEMainWindow(0, name, WStyle_MinMax | WType_TopLevel | WStyle_StaysOnTop | WDestructiveClose | WStyle_ContextHelp),
     m_defaultMouseCursorType(2)
 {
   config=kapp->config();
@@ -126,18 +126,18 @@ KmagApp::~KmagApp()
 
 void KmagApp::initActions()
 {
-  fileNewWindow = new KAction(i18n("New &Window"), "window_new", KStdAccel::openNew(), TQT_TQOBJECT(this),
+  fileNewWindow = new TDEAction(i18n("New &Window"), "window_new", TDEStdAccel::openNew(), TQT_TQOBJECT(this),
                               TQT_SLOT(slotFileNewWindow()), actionCollection(),"new_window");
   fileNewWindow->setToolTip(i18n("Open a new KMagnifier window"));
 
-  refreshSwitch = new KAction(i18n("&Stop"), "stop", KStdAccel::reload(), TQT_TQOBJECT(this),
+  refreshSwitch = new TDEAction(i18n("&Stop"), "stop", TDEStdAccel::reload(), TQT_TQOBJECT(this),
                               TQT_SLOT(slotToggleRefresh()), actionCollection(), "start_stop_refresh");
   refreshSwitch->setToolTip(i18n("Click to stop window refresh"));
   refreshSwitch->setWhatsThis(i18n("Clicking on this icon will <b>start</b> / <b>stop</b>\
   updating of the display. Stopping the update will zero the processing power\
   required (CPU usage)"));
 
-  m_pSnapshot = new KAction(i18n("&Save Snapshot As..."), "ksnapshot", KStdAccel::save(), TQT_TQOBJECT(this),
+  m_pSnapshot = new TDEAction(i18n("&Save Snapshot As..."), "ksnapshot", TDEStdAccel::save(), TQT_TQOBJECT(this),
                             TQT_SLOT(saveZoomPixmap()), actionCollection(),"snapshot");
   m_pSnapshot->setWhatsThis(i18n("Saves the zoomed view to an image file."));
   m_pSnapshot->setToolTip(i18n("Save image to a file"));
@@ -153,58 +153,58 @@ void KmagApp::initActions()
   m_pCopy->setWhatsThis(i18n("Click on this button to copy the current zoomed view to the clipboard which you can paste in other applications."));
   m_pCopy->setToolTip(i18n("Copy zoomed image to clipboard"));
 
-  m_pShowMenu = new KToggleAction(i18n("Show &Menu"), "showmenu", CTRL+Key_M, TQT_TQOBJECT(this),
+  m_pShowMenu = new TDEToggleAction(i18n("Show &Menu"), "showmenu", CTRL+Key_M, TQT_TQOBJECT(this),
                             TQT_SLOT(slotShowMenu()), actionCollection(),"show_menu");
   #ifdef havesetCheckedState
   m_pShowMenu->setCheckedState(i18n("Hide &Menu"));
   #endif
-  m_pShowMainToolBar = new KToggleAction(i18n("Show Main &Toolbar"), 0, 0, TQT_TQOBJECT(this),
+  m_pShowMainToolBar = new TDEToggleAction(i18n("Show Main &Toolbar"), 0, 0, TQT_TQOBJECT(this),
                             TQT_SLOT(slotShowMainToolBar()), actionCollection(),"show_mainToolBar");
   #ifdef havesetCheckedState
   m_pShowMainToolBar->setCheckedState(i18n("Hide Main &Toolbar"));
   #endif
-  m_pShowViewToolBar = new KToggleAction(i18n("Show &View Toolbar"), 0, 0, TQT_TQOBJECT(this),
+  m_pShowViewToolBar = new TDEToggleAction(i18n("Show &View Toolbar"), 0, 0, TQT_TQOBJECT(this),
                             TQT_SLOT(slotShowViewToolBar()), actionCollection(),"show_viewToolBar");
   #ifdef havesetCheckedState
   m_pShowViewToolBar->setCheckedState(i18n("Hide &View Toolbar"));
   #endif
-  m_pShowSettingsToolBar = new KToggleAction(i18n("Show &Settings Toolbar"), 0, 0, TQT_TQOBJECT(this),
+  m_pShowSettingsToolBar = new TDEToggleAction(i18n("Show &Settings Toolbar"), 0, 0, TQT_TQOBJECT(this),
                             TQT_SLOT(slotShowSettingsToolBar()), actionCollection(),"show_settingsToolBar");
   #ifdef havesetCheckedState
   m_pShowSettingsToolBar->setCheckedState(i18n("Hide &Settings Toolbar"));
   #endif
 
-  m_modeFollowMouse = new KRadioAction(i18n("&Follow Mouse Mode"), "followmouse", Key_F1, TQT_TQOBJECT(this),
+  m_modeFollowMouse = new TDERadioAction(i18n("&Follow Mouse Mode"), "followmouse", Key_F1, TQT_TQOBJECT(this),
                             TQT_SLOT(slotModeFollowMouse()), actionCollection(), "mode_followmouse");
   m_modeFollowMouse->setToolTip(i18n("Magnify mouse area into window"));
   m_modeFollowMouse->setWhatsThis(i18n("In this mode the area around the mouse cursor is shown in a normal window."));
 
-  m_modeSelWin = new KRadioAction(i18n("S&election Window Mode"), "window", Key_F2, TQT_TQOBJECT(this),
+  m_modeSelWin = new TDERadioAction(i18n("S&election Window Mode"), "window", Key_F2, TQT_TQOBJECT(this),
                             TQT_SLOT(slotModeSelWin()), actionCollection(), "mode_selectionwindow");
   m_modeSelWin->setToolTip(i18n("Magnify selected area into window"));
   m_modeSelWin->setWhatsThis(i18n("In this mode a selection window is opened. The selected area is shown in a normal window."));
 
-  m_modeEdgeTop = new KRadioAction(i18n("&Top Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
+  m_modeEdgeTop = new TDERadioAction(i18n("&Top Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
                               TQT_SLOT(slotModeEdgeTop()), actionCollection(),"mode_edgetop");
   m_modeEdgeTop->setToolTip(i18n("Magnify mouse area to top screen edge"));
   m_modeEdgeTop->setWhatsThis(i18n("In this mode the area around the mouse is magnified to the top screen edge."));
 
-  m_modeEdgeLeft = new KRadioAction(i18n("&Left Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
+  m_modeEdgeLeft = new TDERadioAction(i18n("&Left Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
                               TQT_SLOT(slotModeEdgeLeft()), actionCollection(),"mode_edgeleft");
   m_modeEdgeLeft->setToolTip(i18n("Magnify mouse area to left screen edge"));
   m_modeEdgeLeft->setWhatsThis(i18n("In this mode the area around the mouse is magnified to the left screen edge."));
 
-  m_modeEdgeRight = new KRadioAction(i18n("&Right Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
+  m_modeEdgeRight = new TDERadioAction(i18n("&Right Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
                               TQT_SLOT(slotModeEdgeRight()), actionCollection(),"mode_edgeright");
   m_modeEdgeRight->setToolTip(i18n("Magnify mouse area to right screen edge"));
   m_modeEdgeRight->setWhatsThis(i18n("In this mode the area around the mouse is magnified to the right screen edge."));
 
-  m_modeEdgeBottom = new KRadioAction(i18n("&Bottom Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
+  m_modeEdgeBottom = new TDERadioAction(i18n("&Bottom Screen Edge Mode"), 0, 0, TQT_TQOBJECT(this),
                               TQT_SLOT(slotModeEdgeBottom()), actionCollection(),"mode_edgebottom");
   m_modeEdgeBottom->setToolTip(i18n("Magnify mouse area to bottom screen edge"));
   m_modeEdgeBottom->setWhatsThis(i18n("In this mode the area around the mouse is magnified to the bottom screen edge."));
 
-  m_hideCursor = new KToggleAction(i18n("Hide Mouse &Cursor"), "hidemouse", Key_F4, TQT_TQOBJECT(this),
+  m_hideCursor = new TDEToggleAction(i18n("Hide Mouse &Cursor"), "hidemouse", Key_F4, TQT_TQOBJECT(this),
                             TQT_SLOT(slotToggleHideCursor()), actionCollection(), "hidecursor");
   #ifdef havesetCheckedState
   m_hideCursor->setCheckedState(i18n("Show Mouse &Cursor"));
@@ -214,7 +214,7 @@ void KmagApp::initActions()
   m_pZoomIn = KStdAction::zoomIn(TQT_TQOBJECT(this), TQT_SLOT(zoomIn()), actionCollection(), "zoom_in");
   m_pZoomIn->setWhatsThis(i18n("Click on this button to <b>zoom-in</b> on the selected region."));
 
-  m_pZoomBox = new KSelectAction(i18n("&Zoom"),0,actionCollection(),"zoom");
+  m_pZoomBox = new TDESelectAction(i18n("&Zoom"),0,actionCollection(),"zoom");
   m_pZoomBox->setItems(zoomArrayString);
   m_pZoomBox->setWhatsThis(i18n("Select the zoom factor."));
   m_pZoomBox->setToolTip(i18n("Zoom factor"));
@@ -222,10 +222,10 @@ void KmagApp::initActions()
   m_pZoomOut = KStdAction::zoomOut(TQT_TQOBJECT(this), TQT_SLOT(zoomOut()), actionCollection(), "zoom_out");
   m_pZoomOut->setWhatsThis(i18n("Click on this button to <b>zoom-out</b> on the selected region."));
 
-  m_pInvert = new KToggleAction(i18n("&Invert Colors"), 0, Key_F6, TQT_TQOBJECT(this),
+  m_pInvert = new TDEToggleAction(i18n("&Invert Colors"), 0, Key_F6, TQT_TQOBJECT(this),
                             TQT_SLOT(slotToggleInvert()), actionCollection(), "invert");
 
-  m_pRotationBox = new KSelectAction(i18n("&Rotation"),0,actionCollection(),"rotation");
+  m_pRotationBox = new TDESelectAction(i18n("&Rotation"),0,actionCollection(),"rotation");
   m_pRotationBox->setItems(rotationArrayString);
   m_pRotationBox->setWhatsThis(i18n("Select the rotation degree."));
   m_pRotationBox->setToolTip(i18n("Rotation degree"));
@@ -236,7 +236,7 @@ void KmagApp::initActions()
   m_toolConf = KStdAction::configureToolbars( TQT_TQOBJECT(this), TQT_SLOT( slotEditToolbars() ),
                                               actionCollection(), "toolbar_conf");
 
-  m_pFPSBox = new KSelectAction(i18n("Re&fresh"),0,actionCollection(),"fps_selector");
+  m_pFPSBox = new TDESelectAction(i18n("Re&fresh"),0,actionCollection(),"fps_selector");
   m_pFPSBox->setItems(fpsArrayString);
   m_pFPSBox->setWhatsThis(i18n("Select the refresh rate. The higher the rate, the more computing power (CPU) will be needed."));
   m_pFPSBox->setToolTip(i18n("Refresh rate"));
@@ -694,7 +694,7 @@ void KmagApp::slotModeEdgeBottom()
 }
 
 
-void KmagApp::setEdgeMode (KToggleAction *mode)
+void KmagApp::setEdgeMode (TDEToggleAction *mode)
 {
   if (m_modeEdgeLeft || mode == m_modeEdgeRight) {
     if (edgesize < 200 || edgesize > TQApplication::desktop()->screenGeometry( this ).width()/2)
@@ -759,7 +759,7 @@ void KmagApp::setEdgeMode (KToggleAction *mode)
 }
 
 
-void KmagApp::unsetEdgeMode (KToggleAction *mode)
+void KmagApp::unsetEdgeMode (TDEToggleAction *mode)
 {
   edgesize = 0;
 
@@ -848,7 +848,7 @@ void KmagApp::slotFileQuit()
   saveOptions();
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
-  KMainWindow* w;
+  TDEMainWindow* w;
   if (memberList)
   {
     for(w=memberList->first(); w!=0; w=memberList->first())

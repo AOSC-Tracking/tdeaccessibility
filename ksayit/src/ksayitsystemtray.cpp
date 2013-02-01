@@ -51,28 +51,28 @@ void KSayItSystemTray::initActions()
   help_kde = KStdAction::aboutKDE(help, TQT_SLOT(aboutKDE()), actionCollection());
 
   // User defined actions
-  say = new KAction(i18n("Say"),
+  say = new TDEAction(i18n("Say"),
               "player_play",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotSayActivated()),
               actionCollection(),
               "say_it");
   
-  shutup = new KAction(i18n("Shut Up"),
+  shutup = new TDEAction(i18n("Shut Up"),
               "player_stop",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
   
-  pause = new KAction (i18n("Pause"),
+  pause = new TDEAction (i18n("Pause"),
               "player_pause",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
 
-  next_sentence = new KAction (i18n("Next Sentence"),
+  next_sentence = new TDEAction (i18n("Next Sentence"),
               "2rightarrow",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotNextSentenceActivated()),
@@ -80,7 +80,7 @@ void KSayItSystemTray::initActions()
               "next_sentence");
 
 
-  prev_sentence = new KAction (i18n("Previous Sentence"),
+  prev_sentence = new TDEAction (i18n("Previous Sentence"),
               "2leftarrow",
               0,
               TQT_TQOBJECT(this), TQT_SLOT(slotPrevSentenceActivated()),

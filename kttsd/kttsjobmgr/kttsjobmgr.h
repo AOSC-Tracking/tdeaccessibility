@@ -29,7 +29,7 @@
 class TDEAboutData;
 class TDEInstance;
 class KttsJobMgrBrowserExtension;
-class KListView;
+class TDEListView;
 class TQListViewItem;
 class TQVBox;
 class KTextEdit;
@@ -262,7 +262,7 @@ private:
     /**
     * Job ListView.
     */
-    KListView* m_jobListView;
+    TDEListView* m_jobListView;
     KttsJobMgrBrowserExtension *m_extension;
 
     /**

@@ -37,20 +37,20 @@
 #include "wordcompletion.h"
 #include "klanguagebutton.h"
 
-class DictionaryListItem : public KListViewItem {
+class DictionaryListItem : public TDEListViewItem {
 public:
    DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString language, TQString languageCode)
-   : KListViewItem (parent, name) {
+   : TDEListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
    };
    DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (parent, name) {
+   : TDEListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
    DictionaryListItem (TQListView *parent, TQListViewItem *after, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (parent, after, name) {
+   : TDEListViewItem (parent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
@@ -202,7 +202,7 @@ void WordCompletionWidget::addDictionary() {
       if (!languageButton->containsTag(languageTag)) {
          languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString());
       }
-      KListViewItem *item = new DictionaryListItem (dictionaryList,
+      TDEListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
       dictionaryList->setSelected(item, true);
    }

@@ -28,8 +28,8 @@
 #include "phrasebookdialog.h"
 #include "phrasebook.h"
 
-PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
-   : KListViewItem (parent, after, phrase)
+PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, TDEShortcut shortcut, TQPixmap icon)
+   : TDEListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -38,8 +38,8 @@ PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQStr
    setExpandable (false);
 }
 
-PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
-   : KListViewItem (parent, after, phrase)
+PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, TDEShortcut shortcut, TQPixmap icon)
+   : TDEListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -48,14 +48,14 @@ PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, T
    setExpandable (false);
 }
 PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString name, TQPixmap icon)
-   : KListViewItem (parent, after, name)
+   : TDEListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
    setExpandable (true);
 }
 PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString name, TQPixmap icon)
-   : KListViewItem (parent, after, name)
+   : TDEListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
@@ -64,10 +64,10 @@ PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, T
 bool PhraseTreeItem::isPhrase () {
    return isPhraseValue;
 }
-KShortcut PhraseTreeItem::cut () {
+TDEShortcut PhraseTreeItem::cut () {
    return cutValue;
 }
-void PhraseTreeItem::setCut (KShortcut cut) {
+void PhraseTreeItem::setCut (TDEShortcut cut) {
    cutValue = cut;
    setText(1, cut.toString());
 }
@@ -75,7 +75,7 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 // ***************************************************************************
 
 PhraseTree::PhraseTree (TQWidget *parent, const char *name)
-   : KListView (parent, name)
+   : TDEListView (parent, name)
 {
    phrasebook_open   = TDEGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
    phrasebook_closed = TDEGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
@@ -343,13 +343,13 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
          return;
       }
    }
-   KListView::keyPressEvent(e);
+   TDEListView::keyPressEvent(e);
 }
 
 PhraseTreeItem *PhraseTree::insertPhrase (TQListViewItem *parent, TQListViewItem *after, TQString phrase, TQString shortcut) {
-   KShortcut cut = KShortcut(shortcut);
+   TDEShortcut cut = TDEShortcut(shortcut);
    if (isKeyPresent (cut, 0, false))
-      cut = KShortcut(TQString());
+      cut = TDEShortcut(TQString());
 
    if (parent == 0)
       return new PhraseTreeItem (this, after, phrase, cut, this->phrase);
@@ -445,7 +445,7 @@ TQDragObject *PhraseTree::dragObject (bool isDependent) {
 }
 
 bool PhraseTree::acceptDrag (TQDropEvent* event) const {
-   if (KListView::acceptDrag (event))
+   if (TDEListView::acceptDrag (event))
       return true;
    else
       return PhraseBookDrag::canDecode(event);
@@ -453,7 +453,7 @@ bool PhraseTree::acceptDrag (TQDropEvent* event) const {
 
 // Returns iSeq index if cut2 has a sequence of equal or higher priority
 // to a sequence in cut, else -1
-static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
+static int keyConflict (const TDEShortcut& cut, const TDEShortcut& cut2) {
    for (uint iSeq = 0; iSeq < cut.count(); iSeq++) {
       for (uint iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < cut2.count(); iSeq2++) {
          if (cut.seq(iSeq) == cut2.seq(iSeq2))
@@ -475,17 +475,17 @@ void PhraseTree::_warning (const KKeySequence& cut, TQString sAction, TQString s
    KMessageBox::sorry( this, s, sTitle );
 }
 
-bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
+bool PhraseTree::isStdAccelPresent (const TDEShortcut& cut, bool warnUser) {
    for (uint iSeq = 0; iSeq < cut.count(); iSeq++) {
       const KKeySequence& seq = cut.seq(iSeq);
 
-      KStdAccel::StdAccel id = KStdAccel::findStdAccel( seq );
-      if( id != KStdAccel::AccelNone
-          && keyConflict (cut, KStdAccel::shortcut(id)) > -1)
+      TDEStdAccel::StdAccel id = TDEStdAccel::findStdAccel( seq );
+      if( id != TDEStdAccel::AccelNone
+          && keyConflict (cut, TDEStdAccel::shortcut(id)) > -1)
       {
          if (warnUser)
             _warning (cut.seq(iSeq),
-                      i18n("the standard \"%1\" action").arg(KStdAccel::label(id)),
+                      i18n("the standard \"%1\" action").arg(TDEStdAccel::label(id)),
                       i18n("Conflict with Standard Application Shortcut"));
          return true;
       }
@@ -493,11 +493,11 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
    return false;
 }
 
-bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
+bool PhraseTree::isGlobalKeyPresent (const TDEShortcut& cut, bool warnUser) {
    TQMap<TQString, TQString> mapEntry = TDEGlobal::config()->entryMap ("Global Shortcuts");
    TQMap<TQString, TQString>::Iterator it;
    for (it = mapEntry.begin(); it != mapEntry.end(); ++it) {
-      int iSeq = keyConflict (cut, KShortcut(*it));
+      int iSeq = keyConflict (cut, TDEShortcut(*it));
       if (iSeq > -1) {
          if (warnUser)
             _warning (cut.seq(iSeq),
@@ -509,7 +509,7 @@ bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
    return false;
 }
 
-bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser) {
+bool PhraseTree::isPhraseKeyPresent (const TDEShortcut& cut, PhraseTreeItem* cutItem, bool warnUser) {
    for (TQListViewItemIterator it(this); it.current(); ++it) {
       PhraseTreeItem* item = dynamic_cast<PhraseTreeItem*>(it.current());
       if ((item != 0) && (item != cutItem)) {
@@ -526,7 +526,7 @@ bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutIt
    return false;
 }
 
-bool PhraseTree::isKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser) {
+bool PhraseTree::isKeyPresent (const TDEShortcut& cut, PhraseTreeItem* cutItem, bool warnUser) {
    if (isStdAccelPresent (cut, warnUser))
       return true;
 

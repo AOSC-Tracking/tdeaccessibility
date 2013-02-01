@@ -45,7 +45,7 @@ public:
      * \param label The label is shown in column 0 of the TreeView and is also
      * used as bookmark title.
      */
-    RobDocument(KListView *lv=0, TQString label=TQString());
+    RobDocument(TDEListView *lv=0, TQString label=TQString());
     ~RobDocument();
 
     bool setValue( unsigned int index, TQVariant data );

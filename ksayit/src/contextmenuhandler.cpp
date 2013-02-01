@@ -92,7 +92,7 @@ bool ContextActionHandler::endElement( const TQString &,
         return true;
         
     if ( qName == "Action" ){
-        KAction* newAction = m_menuhandler->ActionFactory(m_actionName, m_qty);
+        TDEAction* newAction = m_menuhandler->ActionFactory(m_actionName, m_qty);
         if ( newAction )
             newAction->plug( m_popup );
     } else if ( qName == "Submenu" ){
@@ -156,81 +156,81 @@ ContextMenuHandler::~ContextMenuHandler()
 void ContextMenuHandler::initActions()
 {
   // User defined actions
-  renameItem = new KAction (i18n("Rename..."),
+  renameItem = new TDEAction (i18n("Rename..."),
               0,
               m_DocTreeView, TQT_SLOT (slotRenameItem()), NULL );
   
-  deleteItem = new KAction (i18n("Delete..."),
+  deleteItem = new TDEAction (i18n("Delete..."),
               0,
               m_DocTreeView, TQT_SLOT (slotDeleteItem()), NULL );
               
-  newBookInfo = new KAction ( i18n("Overview"),
+  newBookInfo = new TDEAction ( i18n("Overview"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewBookInfo()), NULL );
 
-  newChapter = new KAction ( i18n("Chapter"),
+  newChapter = new TDEAction ( i18n("Chapter"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewChapter()), NULL );
 
-  newKeywordSet = new KAction ( i18n("Keywords"),
+  newKeywordSet = new TDEAction ( i18n("Keywords"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewKeywordSet()), NULL );
 
-  newKeyword = new KAction ( i18n("Keyword"),
+  newKeyword = new TDEAction ( i18n("Keyword"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewKeyword()), NULL );
   
-  newAbstract = new KAction ( i18n("Abstract"),
+  newAbstract = new TDEAction ( i18n("Abstract"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewAbstract()), NULL );
   
-  newAuthorGroup = new KAction ( i18n("Authors"),
+  newAuthorGroup = new TDEAction ( i18n("Authors"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewAuthorGroup()), NULL );
   
-  newAuthor = new KAction ( i18n("Author"),
+  newAuthor = new TDEAction ( i18n("Author"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewAuthor()), NULL );
   
-  newDate = new KAction ( i18n("Date"),
+  newDate = new TDEAction ( i18n("Date"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewDate()), NULL );
   
-  newReleaseInfo = new KAction ( i18n("Release Info"),
+  newReleaseInfo = new TDEAction ( i18n("Release Info"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewReleaseInfo()), NULL );
 
-  newTitle = new KAction ( i18n("Title"),
+  newTitle = new TDEAction ( i18n("Title"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewTitle()), NULL );
 
-  newParagraph = new KAction ( i18n("Paragraph"),
+  newParagraph = new TDEAction ( i18n("Paragraph"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewParagraph()), NULL );
 
-  newSection_1 = new KAction ( i18n("Section Level 1"),
+  newSection_1 = new TDEAction ( i18n("Section Level 1"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewSection_1()), NULL );
 
-  newSection_2 = new KAction ( i18n("Section Level 2"),
+  newSection_2 = new TDEAction ( i18n("Section Level 2"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewSection_2()), NULL );
 
-  newSection_3 = new KAction ( i18n("Section Level 3"),
+  newSection_3 = new TDEAction ( i18n("Section Level 3"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewSection_3()), NULL );
 
-  newSection_4 = new KAction ( i18n("Section Level 4"),
+  newSection_4 = new TDEAction ( i18n("Section Level 4"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewSection_4()), NULL );
 
-  newSection_5 = new KAction ( i18n("Section Level 5"),
+  newSection_5 = new TDEAction ( i18n("Section Level 5"),
               0,
               m_DocTreeView, TQT_SLOT (slotNewSection_5()), NULL );
 }
 
 
-KPopupMenu* ContextMenuHandler::getPopupMenu(ListViewInterface *item)
+TDEPopupMenu* ContextMenuHandler::getPopupMenu(ListViewInterface *item)
 {
     if ( !item )
         return NULL;
@@ -246,7 +246,7 @@ KPopupMenu* ContextMenuHandler::getPopupMenu(ListViewInterface *item)
         delete m_popupmenu;
         m_popupmenu = NULL;
     }
-    m_popupmenu = new KPopupMenu(0);
+    m_popupmenu = new TDEPopupMenu(0);
 
     bool res;
     res = parseXmlFile(xmlID);
@@ -297,7 +297,7 @@ bool ContextMenuHandler::parseXmlFile(const TQString &xmlID)
 }
 
 
-KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQString &qty )
+TDEAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQString &qty )
 {
     bool enabled;
     if ( qty.lower() == "n" ){
@@ -378,9 +378,9 @@ KAction* ContextMenuHandler::ActionFactory( const TQString &actionName, const TQ
 }
 
 
-KPopupMenu* ContextMenuHandler::SubMenuFactory(KPopupMenu *parent)
+TDEPopupMenu* ContextMenuHandler::SubMenuFactory(TDEPopupMenu *parent)
 {
-    return new KPopupMenu(parent);
+    return new TDEPopupMenu(parent);
 }
 
 

@@ -102,9 +102,9 @@ void SelectEvent::slotEventSrcComboBox_activated(int index)
             TQString eventDesc = config->readEntry( TQString::fromLatin1( "Comment" ),
                 config->readEntry( TQString::fromLatin1( "Name" )));
             if ( !item )
-                item = new KListViewItem( eventsListView, eventDesc, eventName );
+                item = new TDEListViewItem( eventsListView, eventDesc, eventName );
             else
-                item = new KListViewItem( eventsListView, item, eventDesc, eventName );
+                item = new TDEListViewItem( eventsListView, item, eventDesc, eventName );
         }
     }
     delete config;
@@ -112,9 +112,9 @@ void SelectEvent::slotEventSrcComboBox_activated(int index)
     item = eventsListView->lastChild();
     TQString eventDesc = i18n("All other %1 events").arg(eventSrcComboBox->currentText());
     if ( !item )
-        item = new KListViewItem( eventsListView, eventDesc, "default" );
+        item = new TDEListViewItem( eventsListView, eventDesc, "default" );
     else
-        item = new KListViewItem( eventsListView, item, eventDesc, "default" );
+        item = new TDEListViewItem( eventsListView, item, eventDesc, "default" );
 
 }
 

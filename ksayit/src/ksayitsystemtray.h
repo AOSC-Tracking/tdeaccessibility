@@ -125,22 +125,22 @@ protected: // Methods
   void sayClipboard();
     
 private: // Methods
-  /** initializes the KActions of the application */
+  /** initializes the TDEActions of the application */
   void initActions();
 
 public:
-  KAction *say;
-  KAction *shutup;
-  KAction *pause;
-  KAction *next_sentence;
-  KAction *prev_sentence;
+  TDEAction *say;
+  TDEAction *shutup;
+  TDEAction *pause;
+  TDEAction *next_sentence;
+  TDEAction *prev_sentence;
 
 private:
-  KPopupMenu *menu;
+  TDEPopupMenu *menu;
   KHelpMenu *help;
-  KAction *settings;
-  KAction *help_about;
-  KAction *help_kde;
+  TDEAction *settings;
+  TDEAction *help_about;
+  TDEAction *help_kde;
   State *_state;
   
 };

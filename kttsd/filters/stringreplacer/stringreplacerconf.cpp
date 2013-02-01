@@ -239,9 +239,9 @@ TQString StringReplacerConf::loadFromFile( const TQString& filename, bool clear)
         TQString matchCaseStr = 
             (matchCase=="Yes"?i18n("Yes"):i18n("No"));  
         if (!item)
-            item = new KListViewItem(m_widget->substLView, wordTypeStr, matchCaseStr, match, subst);
+            item = new TDEListViewItem(m_widget->substLView, wordTypeStr, matchCaseStr, match, subst);
         else
-            item = new KListViewItem(m_widget->substLView, item, wordTypeStr, matchCaseStr, match, subst);
+            item = new TDEListViewItem(m_widget->substLView, item, wordTypeStr, matchCaseStr, match, subst);
     }
 
     return TQString();
@@ -417,10 +417,10 @@ TQString StringReplacerConf::userPlugInName()
 
 void StringReplacerConf::slotLanguageBrowseButton_clicked()
 {
-    // Create a  TQHBox to host KListView.
+    // Create a  TQHBox to host TDEListView.
     TQHBox* hBox = new TQHBox(m_widget, "SelectLanguage_hbox");
-    // Create a KListView and fill with all known languages.
-    KListView* langLView = new KListView(hBox, "SelectLanguage_lview");
+    // Create a TDEListView and fill with all known languages.
+    TDEListView* langLView = new TDEListView(hBox, "SelectLanguage_lview");
     langLView->addColumn(i18n("Language"));
     langLView->addColumn(i18n("Code"));
     langLView->setSelectionMode(TQListView::Extended);
@@ -431,7 +431,7 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
     TQString charSet;
     TQString language;
     // Blank line so user can select no language.
-    TQListViewItem* item = new KListViewItem(langLView, "", "");
+    TQListViewItem* item = new TDEListViewItem(langLView, "", "");
     if (m_languageCodeList.isEmpty()) item->setSelected(true);
     const int allLocalesCount = allLocales.count();
     for (int ndx=0; ndx < allLocalesCount; ++ndx)
@@ -441,7 +441,7 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
         language = TDEGlobal::locale()->twoAlphaToLanguageName(languageCode);
         if (!countryCode.isEmpty()) language +=
             " (" + TDEGlobal::locale()->twoAlphaToCountryName(countryCode)+")";
-        item = new KListViewItem(langLView, language, locale);
+        item = new TDEListViewItem(langLView, language, locale);
         if (m_languageCodeList.contains(locale)) item->setSelected(true);
     }
     // Sort by language.
@@ -473,7 +473,7 @@ void StringReplacerConf::slotLanguageBrowseButton_clicked()
         }
     }
     delete dlg;
-    // TODO: Also delete KListView and TQHBox?
+    // TODO: Also delete TDEListView and TQHBox?
     if (dlgResult != TQDialog::Accepted) return;
     language = "";
     for ( uint ndx=0; ndx < m_languageCodeList.count(); ++ndx)
@@ -620,9 +620,9 @@ void StringReplacerConf::addOrEditSubstitution(bool isAdd)
     if ( isAdd )
     {
         if ( item )
-            item = new KListViewItem( m_widget->substLView, item, substType, matchCase, match, subst );
+            item = new TDEListViewItem( m_widget->substLView, item, substType, matchCase, match, subst );
         else
-            item = new KListViewItem( m_widget->substLView, substType, matchCase, match, subst );
+            item = new TDEListViewItem( m_widget->substLView, substType, matchCase, match, subst );
         m_widget->substLView->setSelected( item, true );
     }
     else

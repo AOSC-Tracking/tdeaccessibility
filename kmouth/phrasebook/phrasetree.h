@@ -29,13 +29,13 @@ class PhraseShortcutRequest;
   *@author Gunnar Schmi Dt
   */
 
-class PhraseTreeItem : public KListViewItem {
+class PhraseTreeItem : public TDEListViewItem {
    friend class PhraseTree;
 private:
    /** Creates a phrase item within a sub phrase book */
-   PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
+   PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, TDEShortcut shortcut, TQPixmap icon);
    /** Creates a phrase item at the top level */
-   PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
+   PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, TDEShortcut shortcut, TQPixmap icon);
    /** Creates a phrase book item within a sub phrase book */
    PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString name, TQPixmap icon);
    /** Creates a phrase book item at the top level */
@@ -43,21 +43,21 @@ private:
 
 public:
    bool isPhrase();
-   KShortcut cut();
-   void setCut(KShortcut cut);
+   TDEShortcut cut();
+   void setCut(TDEShortcut cut);
 
 private:
    bool isPhraseValue;
-   KShortcut cutValue;
+   TDEShortcut cutValue;
 };
 
 /**
  * The class PhraseTree represents the ListView of the phrase book edit
- * dialog. It extends KListView for providing better drag-and-drop support.
+ * dialog. It extends TDEListView for providing better drag-and-drop support.
  * @author Gunnar Schmi Dt
  */
 
-class PhraseTree : public KListView  {
+class PhraseTree : public TDEListView  {
    friend class PhraseTreeItem;
    Q_OBJECT
   
@@ -86,12 +86,12 @@ protected:
 
 private:
    void _warning (const KKeySequence& cut, TQString sAction, TQString sTitle);
-   bool isStdAccelPresent (const KShortcut& cut, bool warnUser);
-   bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isApplicationKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser);
+   bool isStdAccelPresent (const TDEShortcut& cut, bool warnUser);
+   bool isGlobalKeyPresent (const TDEShortcut& cut, bool warnUser);
+   bool isApplicationKeyPresent (const TDEShortcut& cut, bool warnUser);
+   bool isPhraseKeyPresent (const TDEShortcut& cut, PhraseTreeItem* cutItem, bool warnUser);
 public:
-   bool isKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser);
+   bool isKeyPresent (const TDEShortcut& cut, PhraseTreeItem* cutItem, bool warnUser);
 
 public slots:
    void itemExpanded (TQListViewItem *item);

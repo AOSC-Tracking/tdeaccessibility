@@ -35,7 +35,7 @@ class PhraseTreeItem;
 class PhraseTree;
 class TQStringList;
 class TQString;
-class KListView;
+class TDEListView;
 
 struct StandardBook {
    TQString name;
@@ -85,7 +85,7 @@ private:
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
 
-   KListView *books;
+   TDEListView *books;
 };
 
 /**
@@ -93,12 +93,12 @@ private:
  * inserting a standard phrase book.
  * @author Gunnar Schmi Dt
  */
-class StandardPhraseBookInsertAction : public KAction {
+class StandardPhraseBookInsertAction : public TDEAction {
    Q_OBJECT
   
 public:
-   StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
+   StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, TDEActionCollection* parent)
+   : TDEAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
       connect (this, TQT_SIGNAL(slotActivated (const KURL &)), receiver, slot);
    };
@@ -107,7 +107,7 @@ public:
 
 public slots:
    void slotActivated () {
-      KAction::slotActivated();
+      TDEAction::slotActivated();
       emit slotActivated (url);
    };
 
@@ -140,7 +140,7 @@ protected:
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookDialog : public KMainWindow {
+class PhraseBookDialog : public TDEMainWindow {
    friend class InitialPhraseBookWidget;
    Q_OBJECT
   
@@ -168,7 +168,7 @@ public slots:
    void slotTextChanged (const TQString &s);
    void slotNoKey();
    void slotCustomKey();
-   void capturedShortcut (const KShortcut& cut);
+   void capturedShortcut (const TDEShortcut& cut);
    
    void selectionChanged ();
    void contextMenuRequested(TQListViewItem *, const TQPoint &pos, int);
@@ -197,7 +197,7 @@ private:
    static StandardBookList standardPhraseBooks ();
 
    void initGUI();
-   /** initializes the KActions of the window */
+   /** initializes the TDEActions of the window */
    void initActions();
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
@@ -205,13 +205,13 @@ private:
    TQListViewItem *addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book);
    TQListViewItem *addBook (TQListViewItem *item, PhraseBook *book);
    
-   void setShortcut (const KShortcut &cut);
+   void setShortcut (const TDEShortcut &cut);
 
    void _warning (const KKeySequence &cut, TQString sAction, TQString sTitle);
    
-   bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isPhraseKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isKeyPresent (const KShortcut& cut, bool warnUser);
+   bool isGlobalKeyPresent (const TDEShortcut& cut, bool warnUser);
+   bool isPhraseKeyPresent (const TDEShortcut& cut, bool warnUser);
+   bool isKeyPresent (const TDEShortcut& cut, bool warnUser);
 
    PhraseBook book;
    bool phrasebookChanged;
@@ -219,19 +219,19 @@ private:
    PhraseTree *treeView;
    ButtonBoxWidget *buttonBox;
 
-   KAction* fileNewPhrase;
-   KAction* fileNewBook;
-   KAction* fileSave;
-   KAction* fileImport;
-   KToolBarPopupAction* toolbarImport;
-   KActionMenu* fileImportStandardBook;
-   KAction* fileExport;
-   KAction* filePrint;
-   KAction* fileClose;
-   KAction* editCut;
-   KAction* editCopy;
-   KAction* editPaste;
-   KAction* editDelete;
+   TDEAction* fileNewPhrase;
+   TDEAction* fileNewBook;
+   TDEAction* fileSave;
+   TDEAction* fileImport;
+   TDEToolBarPopupAction* toolbarImport;
+   TDEActionMenu* fileImportStandardBook;
+   TDEAction* fileExport;
+   TDEAction* filePrint;
+   TDEAction* fileClose;
+   TDEAction* editCut;
+   TDEAction* editCopy;
+   TDEAction* editPaste;
+   TDEAction* editDelete;
 };
 
 #endif

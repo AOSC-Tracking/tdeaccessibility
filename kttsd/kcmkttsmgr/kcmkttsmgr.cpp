@@ -511,10 +511,10 @@ void KCMKttsMgr::load()
             {
                 // kdDebug() << "KCMKttsMgr::load: talkerCode = " << talkerCode << endl;
                 if (talkerItem)
-                    talkerItem = new KListViewItem(m_kttsmgrw->talkersList, talkerItem,
+                    talkerItem = new TDEListViewItem(m_kttsmgrw->talkersList, talkerItem,
                         talkerID, language, synthName);
                 else
-                    talkerItem = new KListViewItem(m_kttsmgrw->talkersList,
+                    talkerItem = new TDEListViewItem(m_kttsmgrw->talkersList,
                         talkerID, language, synthName);
                 updateTalkerItem(talkerItem, talkerCode);
                 m_languagesToCodes[language] = fullLanguageCode;
@@ -595,10 +595,10 @@ void KCMKttsMgr::load()
                 {
                     filterItem = m_kttsmgrw->sbdsList->lastChild();
                     if (!filterItem)
-                        filterItem = new KListViewItem(m_kttsmgrw->sbdsList,
+                        filterItem = new TDEListViewItem(m_kttsmgrw->sbdsList,
                             userFilterName, filterID, filterPlugInName);
                     else
-                        filterItem = new KListViewItem(m_kttsmgrw->sbdsList, filterItem,
+                        filterItem = new TDEListViewItem(m_kttsmgrw->sbdsList, filterItem,
                             userFilterName, filterID, filterPlugInName);
                 } else {
                     filterItem = m_kttsmgrw->filtersList->lastChild();
@@ -650,10 +650,10 @@ void KCMKttsMgr::load()
                     {
                         filterItem = m_kttsmgrw->sbdsList->lastChild();
                         if (!filterItem)
-                            filterItem = new KListViewItem(m_kttsmgrw->sbdsList,
+                            filterItem = new TDEListViewItem(m_kttsmgrw->sbdsList,
                                 userFilterName, filterID, filterPlugInName);
                         else
-                            filterItem = new KListViewItem(m_kttsmgrw->sbdsList, filterItem,
+                            filterItem = new TDEListViewItem(m_kttsmgrw->sbdsList, filterItem,
                                 userFilterName, filterID, filterPlugInName);
                     } else {
                         filterItem = m_kttsmgrw->filtersList->lastChild();
@@ -1236,10 +1236,10 @@ void KCMKttsMgr::slot_addTalker()
     // If user chose "Other", must now get a language from him.
     if(languageCode == "other")
     {
-        // Create a  TQHBox to host KListView.
+        // Create a  TQHBox to host TDEListView.
         TQHBox* hBox = new TQHBox(m_kttsmgrw, "SelectLanguage_hbox");
-        // Create a KListView and fill with all known languages.
-        KListView* langLView = new KListView(hBox, "SelectLanguage_lview");
+        // Create a TDEListView and fill with all known languages.
+        TDEListView* langLView = new TDEListView(hBox, "SelectLanguage_lview");
         langLView->addColumn(i18n("Language"));
         langLView->addColumn(i18n("Code"));
         TQStringList allLocales = TDEGlobal::locale()->allLanguagesTwoAlpha();
@@ -1252,7 +1252,7 @@ void KCMKttsMgr::slot_addTalker()
         {
             locale = allLocales[ndx];
             language = TalkerCode::languageCodeToLanguage(locale);
-            new KListViewItem(langLView, language, locale);
+            new TDEListViewItem(langLView, language, locale);
         }
         // Sort by language.
         langLView->setSorting(0);
@@ -1274,7 +1274,7 @@ void KCMKttsMgr::slot_addTalker()
         languageCode = TQString();
         if (langLView->selectedItem()) languageCode = langLView->selectedItem()->text(1);
         delete dlg;
-        // TODO: Also delete KListView and TQHBox?
+        // TODO: Also delete TDEListView and TQHBox?
         if (dlgResult != TQDialog::Accepted) return;
     }
 
@@ -1342,10 +1342,10 @@ void KCMKttsMgr::slot_addTalker()
         // Add listview item.
         TQListViewItem* talkerItem = m_kttsmgrw->talkersList->lastChild();
         if (talkerItem)
-            talkerItem =  new KListViewItem(m_kttsmgrw->talkersList, talkerItem,
+            talkerItem =  new TDEListViewItem(m_kttsmgrw->talkersList, talkerItem,
                 TQString::number(m_lastTalkerID), language, synthName);
         else
-            talkerItem = new KListViewItem(m_kttsmgrw->talkersList,
+            talkerItem = new TDEListViewItem(m_kttsmgrw->talkersList,
                 TQString::number(m_lastTalkerID), language, synthName);
 
         // Set additional columns of the listview item.
@@ -1391,7 +1391,7 @@ void KCMKttsMgr:: slot_addSbdFilter()
 void KCMKttsMgr::addFilter( bool sbd)
 {
     // Build a list of filters that support multiple instances and let user choose.
-    KListView* lView = m_kttsmgrw->filtersList;
+    TDEListView* lView = m_kttsmgrw->filtersList;
     if (sbd) lView = m_kttsmgrw->sbdsList;
 
     TQStringList filterPlugInNames;
@@ -1506,9 +1506,9 @@ void KCMKttsMgr::addFilter( bool sbd)
         if (sbd)
         {
             if (filterItem)
-                filterItem = new KListViewItem( lView, filterItem, userFilterName );
+                filterItem = new TDEListViewItem( lView, filterItem, userFilterName );
             else
-                filterItem = new KListViewItem( lView, userFilterName );
+                filterItem = new TDEListViewItem( lView, userFilterName );
         }
         else
         {
@@ -1591,7 +1591,7 @@ void KCMKttsMgr::removeFilter( bool sbd )
 {
     // kdDebug() << "KCMKttsMgr::removeFilter: Running"<< endl;
 
-    KListView* lView = m_kttsmgrw->filtersList;
+    TDEListView* lView = m_kttsmgrw->filtersList;
     if (sbd) lView = m_kttsmgrw->sbdsList;
     // Get the selected filter.
     TQListViewItem *itemToRemove = lView->selectedItem();
@@ -1634,7 +1634,7 @@ void KCMKttsMgr::slot_higherSbdFilterPriority()
 /**
 * This is called whenever user clicks the Up button.
 */
-void KCMKttsMgr::higherItemPriority( KListView* lView )
+void KCMKttsMgr::higherItemPriority( TDEListView* lView )
 {
     TQListViewItem* item = lView->selectedItem();
     if (!item) return;
@@ -1667,7 +1667,7 @@ void KCMKttsMgr::slot_lowerSbdFilterPriority()
 /**
 * This is called whenever user clicks the Down button.
 */
-void KCMKttsMgr::lowerItemPriority( KListView* lView )
+void KCMKttsMgr::lowerItemPriority( TDEListView* lView )
 {
     TQListViewItem* item = lView->selectedItem();
     if (!item) return;
@@ -1954,7 +1954,7 @@ void KCMKttsMgr::slot_configureSbdFilter()
 void KCMKttsMgr::configureFilterItem( bool sbd )
 {
     // Get highlighted plugin from Filter ListView and load into memory.
-    KListView* lView = m_kttsmgrw->filtersList;
+    TDEListView* lView = m_kttsmgrw->filtersList;
     if (sbd) lView = m_kttsmgrw->sbdsList;
     TQListViewItem* filterItem = lView->selectedItem();
     if (!filterItem) return;
@@ -2296,7 +2296,7 @@ TQString KCMKttsMgr::saveNotifyEventsToFile(const TQString& filename)
     doc.appendChild( root );
 
     // Events.
-    KListView* lv = m_kttsmgrw->notifyListView;
+    TDEListView* lv = m_kttsmgrw->notifyListView;
     TQListViewItemIterator it(lv);
     while ( it.current() )
     {
@@ -2519,7 +2519,7 @@ TQListViewItem* KCMKttsMgr::addNotifyItem(
     const TQString& message,
     TalkerCode& talkerCode)
 {
-    KListView* lv = m_kttsmgrw->notifyListView;
+    TDEListView* lv = m_kttsmgrw->notifyListView;
     TQListViewItem* item = 0;
     TQString iconName;
     TQString eventSrcName;
@@ -2548,10 +2548,10 @@ TQListViewItem* KCMKttsMgr::addNotifyItem(
         {
             item = lv->lastItem();
             if (!item)
-                parentItem = new KListViewItem(lv, eventSrcName, TQString(), TQString(),
+                parentItem = new TDEListViewItem(lv, eventSrcName, TQString(), TQString(),
                     eventSrc);
             else
-                parentItem = new KListViewItem(lv, item, eventSrcName, TQString(), TQString(),
+                parentItem = new TDEListViewItem(lv, item, eventSrcName, TQString(), TQString(),
                     eventSrc);
             if ( !iconName.isEmpty() )
                 parentItem->setPixmap( nlvcEventSrcName, SmallIcon( iconName ) );
@@ -2559,7 +2559,7 @@ TQListViewItem* KCMKttsMgr::addNotifyItem(
         // No duplicates.
         item = lv->findItem( event, nlvcEvent );
         if ( !item || item->parent() != parentItem )
-            item = new KListViewItem(parentItem, eventName, actionDisplayName, talkerName,
+            item = new TDEListViewItem(parentItem, eventName, actionDisplayName, talkerName,
                 eventSrc, event, actionName, talkerCode.getTalkerCode());
         if ( action == NotifyAction::DoNotSpeak )
             item->setPixmap( nlvcActionName, SmallIcon( "nospeak" ) );

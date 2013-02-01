@@ -57,7 +57,7 @@
 
 KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
     const TQCString &objID)
-  : KMainWindow(parent, name, f), DCOPObject(objID)
+  : TDEMainWindow(parent, name, f), DCOPObject(objID)
 {
     config    = NULL;
     view      = NULL;
@@ -156,50 +156,50 @@ void KSayItApp::initActions()
   statusBarAction = KStdAction::showStatusbar(TQT_TQOBJECT(this), TQT_SLOT(slotToggleStatusBar()), actionCollection());
 
   // User defined actions
-  say = new KAction (i18n("Say"),
+  say = new TDEAction (i18n("Say"),
               TQt::Key_F9,
               TQT_TQOBJECT(this), TQT_SLOT (slotSayText()),
               actionCollection(),
               "say_it");
 
-  pause = new KAction (i18n("Pause"),
+  pause = new TDEAction (i18n("Pause"),
               TQt::Key_Pause,
               TQT_TQOBJECT(this), TQT_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
   
-  shutup = new KAction (i18n("Shut Up"),
+  shutup = new TDEAction (i18n("Shut Up"),
               TQt::Key_F10,
               TQT_TQOBJECT(this), TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
               
-  next_sentence = new KAction (i18n("Next Sentence"),
+  next_sentence = new TDEAction (i18n("Next Sentence"),
               TQt::Key_Next,
               TQT_TQOBJECT(this), TQT_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
 
-  prev_sentence = new KAction (i18n("Previous Sentence"),
+  prev_sentence = new TDEAction (i18n("Previous Sentence"),
               TQt::Key_Prior,
               TQT_TQOBJECT(this), TQT_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
   
-  clear = new KAction (i18n("Clear"),
+  clear = new TDEAction (i18n("Clear"),
               TQt::Key_F12,
               TQT_TQOBJECT(this), TQT_SLOT(slotClear()),
               actionCollection(),
               "clear");
   
-  edit = new KToggleAction( i18n("Edit Text"),
+  edit = new TDEToggleAction( i18n("Edit Text"),
              0,
              TQT_TQOBJECT(this), TQT_SLOT(slotEditToggled()),
              actionCollection(),
              "edittext");
              
-  bookmarkmenu = new KActionMenu( i18n("Bookmarks"),
+  bookmarkmenu = new TDEActionMenu( i18n("Bookmarks"),
              "bookmark", // icon
              actionCollection(),
              "bookmarks"); // name
@@ -240,7 +240,7 @@ void KSayItApp::initBookmarkManager(const TQString &filename)
     bkHandler = new KSayItBookmarkHandler(bkManager, this);
     
     // create Bookmarkmenu
-    KPopupMenu *bkPopupMenu = bookmarkmenu->popupMenu(); 
+    TDEPopupMenu *bkPopupMenu = bookmarkmenu->popupMenu(); 
     if ( bkMenu )
         delete bkMenu;
     bkMenu = new KBookmarkMenu(bkManager, bkHandler, bkPopupMenu, 0, true );   

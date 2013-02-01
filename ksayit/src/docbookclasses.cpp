@@ -32,16 +32,16 @@
 // Interface
 //////////////////////////////////////
 ListViewInterface::ListViewInterface(ListViewInterface *parent, TQString label)
-    : KListViewItem( parent, label )
+    : TDEListViewItem( parent, label )
 {
 }
 
-ListViewInterface::ListViewInterface(ListViewInterface *parent, ListViewInterface *after, TQString label) : KListViewItem( parent, after, label )
+ListViewInterface::ListViewInterface(ListViewInterface *parent, ListViewInterface *after, TQString label) : TDEListViewItem( parent, after, label )
 {
 }
 
-ListViewInterface::ListViewInterface(KListView *lv, TQString label)
-    : KListViewItem( lv, label )
+ListViewInterface::ListViewInterface(TDEListView *lv, TQString label)
+    : TDEListViewItem( lv, label )
 {
 }
 
@@ -52,7 +52,7 @@ ListViewInterface::ListViewInterface(KListView *lv, TQString label)
 /**
  * RobDocument
  */
-RobDocument::RobDocument(KListView *lv, TQString label)
+RobDocument::RobDocument(TDEListView *lv, TQString label)
     : ListViewInterface( lv, label )
 {
     TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("contents", KIcon::Small);

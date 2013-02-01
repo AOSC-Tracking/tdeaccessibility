@@ -50,7 +50,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    setBackgroundMode(PaletteBase);
    TQVBoxLayout *layout = new TQVBoxLayout (this);
 
-   listBox = new KListBox (this);
+   listBox = new TDEListBox (this);
    listBox->setFocusPolicy(TQ_NoFocus);
    listBox->setSelectionMode (TQListBox::Extended);
    TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));

@@ -55,7 +55,7 @@ private:
     TQString m_subName;
     TQString m_actionName;
     TQString m_qty;
-    KPopupMenu *m_popup;
+    TDEPopupMenu *m_popup;
     bool m_hit;
     TQString m_searchID;
 };
@@ -77,13 +77,13 @@ public:
      * \param item The selected TreeView item.
      * \returns A pointer to the popup-menu.
      */
-    KPopupMenu* getPopupMenu(ListViewInterface *item);
+    TDEPopupMenu* getPopupMenu(ListViewInterface *item);
     
     /**
      * \returns A pointer to the Submenu as a child of the parent
      * \p parent.
      */
-    KPopupMenu* SubMenuFactory(KPopupMenu *parent);
+    TDEPopupMenu* SubMenuFactory(TDEPopupMenu *parent);
     
     /**
      * Creates an action sufficiant to the given name.
@@ -95,7 +95,7 @@ public:
      * given element.
      * \returns A Pointer to the action. 
      */
-    KAction* ActionFactory( const TQString &actionName, const TQString &qty );
+    TDEAction* ActionFactory( const TQString &actionName, const TQString &qty );
     
     /**
      * Creates a Popup context menu for the given item and stores a
@@ -119,29 +119,29 @@ private: // Methods
     bool parseXmlFile(const TQString &xmlID);
 
 public: // Attributes
-    KPopupMenu* m_popupmenu;
+    TDEPopupMenu* m_popupmenu;
 
 private:
     // Basic actions
-    KAction* renameItem;
-    KAction* deleteItem;
+    TDEAction* renameItem;
+    TDEAction* deleteItem;
     // Actions to create new items
-    KAction* newBookInfo;
-    KAction* newChapter;
-    KAction* newKeywordSet;
-    KAction* newKeyword;
-    KAction* newAbstract;
-    KAction* newAuthorGroup;
-    KAction* newAuthor;
-    KAction* newDate;
-    KAction* newReleaseInfo;
-    KAction* newTitle;
-    KAction* newParagraph;
-    KAction* newSection_1;
-    KAction* newSection_2;
-    KAction* newSection_3;
-    KAction* newSection_4;
-    KAction* newSection_5;
+    TDEAction* newBookInfo;
+    TDEAction* newChapter;
+    TDEAction* newKeywordSet;
+    TDEAction* newKeyword;
+    TDEAction* newAbstract;
+    TDEAction* newAuthorGroup;
+    TDEAction* newAuthor;
+    TDEAction* newDate;
+    TDEAction* newReleaseInfo;
+    TDEAction* newTitle;
+    TDEAction* newParagraph;
+    TDEAction* newSection_1;
+    TDEAction* newSection_2;
+    TDEAction* newSection_3;
+    TDEAction* newSection_4;
+    TDEAction* newSection_5;
 
     // mixed stuff
     TQString m_XmlFilePath;

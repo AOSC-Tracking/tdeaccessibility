@@ -39,7 +39,7 @@
 
 class PlugInConf;
 class KttsFilterConf;
-class KListViewItem;
+class TDEListViewItem;
 class TDEAboutData;
 class TDEConfig;
 class TQPopupMenu;
@@ -272,10 +272,10 @@ class KCMKttsMgr :
         void removeFilter( bool sbd );
 
         /**
-        * Move an item in a KListView up or down.
+        * Move an item in a TDEListView up or down.
         */
-        void lowerItemPriority( KListView* lView );
-        void higherItemPriority( KListView* lView );
+        void lowerItemPriority( TDEListView* lView );
+        void higherItemPriority( TDEListView* lView );
 
         /**
         * Count number of configured Filters with the specified plugin name.

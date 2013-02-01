@@ -131,8 +131,8 @@ public:
    /** Adds the entries of the book to both the given popup menu and the given
     * toolbar. The corresponding actions will be inserted into phrases.
     */
-   void addToGUI (TQPopupMenu *popup, KToolBar *toolbar,
-                  KActionCollection *phrases,
+   void addToGUI (TQPopupMenu *popup, TDEToolBar *toolbar,
+                  TDEActionCollection *phrases,
                   TQObject *receiver, const char *slot) const;
 
    /** Inserts book into a new sub phrase book.
@@ -169,12 +169,12 @@ private:
    TQTextDrag plain;
 };
 
-class PhraseAction : public KAction {
+class PhraseAction : public TDEAction {
    Q_OBJECT
   
 public:
-   PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {
+   PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, TDEActionCollection* parent)
+   : TDEAction (phrase, "phrase", TDEShortcut(cut), 0, 0, parent, phrase.latin1()) {
       this->phrase = phrase;
       connect (this, TQT_SIGNAL(slotActivated (const TQString &)), receiver, slot);
    };
@@ -183,7 +183,7 @@ public:
 
 public slots:
    void slotActivated () {
-      KAction::slotActivated();
+      TDEAction::slotActivated();
       emit slotActivated (phrase);
    }
 

@@ -52,14 +52,14 @@ DocTreeViewImpl::DocTreeViewImpl(TQWidget* parent, const char* name, WFlags fl)
     listView->setColumnText(1, i18n("Info"));
     listView->setColumnText(2, i18n("Page"));
     listView->setColumnText(3, "");
-    listView->setResizeMode( KListView::NoColumn );
-    listView->setColumnWidthMode(0, KListView::Maximum );
-    listView->setColumnWidthMode(1, KListView::Maximum );
-    listView->setColumnWidthMode(2, KListView::Maximum );
-    listView->setColumnWidthMode(3, KListView::Manual );
+    listView->setResizeMode( TDEListView::NoColumn );
+    listView->setColumnWidthMode(0, TDEListView::Maximum );
+    listView->setColumnWidthMode(1, TDEListView::Maximum );
+    listView->setColumnWidthMode(2, TDEListView::Maximum );
+    listView->setColumnWidthMode(3, TDEListView::Manual );
     listView->setColumnWidth(3, 0);
     listView->setAlternateBackground( TQColor(230, 230, 240) );
-    listView->setSelectionModeExt( KListView::Single );
+    listView->setSelectionModeExt( TDEListView::Single );
     
     m_idCounter = KSayItGlobal::item_initial_id;
     m_stopped = false;

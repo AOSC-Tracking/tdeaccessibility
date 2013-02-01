@@ -370,7 +370,7 @@ bool PhraseBook::open (const KURL &url) {
       return false;
 }
 
-void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
+void PhraseBook::addToGUI (TQPopupMenu *popup, TDEToolBar *toolbar, TDEActionCollection *phrases,
                   TQObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
       TQPtrStack<TQWidget> stack;
@@ -381,7 +381,7 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
       for (it = begin(); it != end(); ++it) {
          int newLevel = (*it).getLevel();
          while (newLevel > level) {
-            KActionMenu *menu = new KActionMenu("", "phrasebook");
+            TDEActionMenu *menu = new TDEActionMenu("", "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
             menu->plug (parent);
@@ -398,7 +398,7 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
          }
          if ((*it).isPhrase()) {
             Phrase phrase = (*it).getPhrase();
-            KAction *action = new PhraseAction (phrase.getPhrase(),
+            TDEAction *action = new PhraseAction (phrase.getPhrase(),
                      phrase.getShortcut(), receiver, slot, phrases);
             if (parent == popup)
                action->plug (toolbar);
@@ -407,7 +407,7 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
          }
          else {
             Phrase phrase = (*it).getPhrase();
-            KActionMenu *menu = new KActionMenu(phrase.getPhrase(), "phrasebook");
+            TDEActionMenu *menu = new TDEActionMenu(phrase.getPhrase(), "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
             if (parent == popup)

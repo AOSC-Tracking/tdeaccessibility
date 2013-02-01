@@ -51,12 +51,12 @@ namespace KSayItGlobal {
 This abstract class is the interface to access the items of the TreeView.
 @author Robert Vogl
 */
-class ListViewInterface : public KListViewItem
+class ListViewInterface : public TDEListViewItem
 {
 public:
     ListViewInterface(ListViewInterface *parent=0, TQString label=TQString());
     ListViewInterface(ListViewInterface *parent=0, ListViewInterface *after=0, TQString label=TQString());
-    ListViewInterface(KListView *lv=0, TQString label=TQString());
+    ListViewInterface(TDEListView *lv=0, TQString label=TQString());
 
     // ~ListViewItemInterface();
     

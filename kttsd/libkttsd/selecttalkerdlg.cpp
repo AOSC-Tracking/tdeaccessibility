@@ -159,10 +159,10 @@ TQString SelectTalkerDlg::getSelectedTranslatedDescription()
 
 void SelectTalkerDlg::slotLanguageBrowseButton_clicked()
 {
-    // Create a  TQHBox to host KListView.
+    // Create a  TQHBox to host TDEListView.
     TQHBox* hBox = new TQHBox(m_widget, "SelectLanguage_hbox");
-    // Create a KListView and fill with all known languages.
-    KListView* langLView = new KListView(hBox, "SelectLanguage_lview");
+    // Create a TDEListView and fill with all known languages.
+    TDEListView* langLView = new TDEListView(hBox, "SelectLanguage_lview");
     langLView->addColumn(i18n("Language"));
     langLView->addColumn(i18n("Code"));
     langLView->setSelectionMode(TQListView::Single);
@@ -171,14 +171,14 @@ void SelectTalkerDlg::slotLanguageBrowseButton_clicked()
     TQString language;
     // Blank line so user can select no language.
     // Note: Don't use TQString(), which gets displayed at bottom of list, rather than top.
-    TQListViewItem* item = new KListViewItem(langLView, "", "");
+    TQListViewItem* item = new TDEListViewItem(langLView, "", "");
     if (m_talkerCode.languageCode().isEmpty()) item->setSelected(true);
     int allLocalesCount = allLocales.count();
     for (int ndx=0; ndx < allLocalesCount; ++ndx)
     {
         locale = allLocales[ndx];
         language = TalkerCode::languageCodeToLanguage(locale);
-        item = new KListViewItem(langLView, language, locale);
+        item = new TDEListViewItem(langLView, language, locale);
         if (m_talkerCode.fullLanguageCode() == locale) item->setSelected(true);
     }
     // Sort by language.
@@ -258,7 +258,7 @@ void SelectTalkerDlg::applyTalkerCodeToControls()
 
     // Select closest matching specific Talker.
     int talkerIndex = TalkerCode::findClosestMatchingTalker(m_talkers, m_talkerCode.getTalkerCode(), false);
-    KListView* lv = m_widget->talkersListView;
+    TDEListView* lv = m_widget->talkersListView;
     TQListViewItem* item = lv->firstChild();
     if ( item )
     {
@@ -314,7 +314,7 @@ void SelectTalkerDlg::applyControlsToTalkerCode()
 void SelectTalkerDlg::loadTalkers(bool /*runningTalkers*/)
 {
     m_talkers.clear();
-    KListView* lv = m_widget->talkersListView;
+    TDEListView* lv = m_widget->talkersListView;
     lv->clear();
     TQListViewItem* item;
     TDEConfig* config = new TDEConfig("kttsdrc");
@@ -334,7 +334,7 @@ void SelectTalkerDlg::loadTalkers(bool /*runningTalkers*/)
             TQString desktopEntryName = config->readEntry("DesktopEntryName", TQString());
             TQString synthName = TalkerCode::TalkerDesktopEntryNameToName(desktopEntryName);
             // Display in List View using translated strings.
-            item = new KListViewItem(lv, item);
+            item = new TDEListViewItem(lv, item);
             TQString fullLanguageCode = talker.fullLanguageCode();
             TQString language = TalkerCode::languageCodeToLanguage(fullLanguageCode);
             item->setText(tlvcLanguage, language);

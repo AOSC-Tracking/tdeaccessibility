@@ -74,7 +74,7 @@ KateKttsdPluginView::KateKttsdPluginView( KTextEditor::View *view, const char *n
     view->insertChildClient( this );
     setInstance( KGenericFactory<KateKttsdPlugin>::instance() );
     TDEGlobal::locale()->insertCatalogue("kttsd");
-    (void) new KAction( i18n("Speak Text"), "kttsd", 0, this, TQT_SLOT(slotReadOut()), actionCollection(), "tools_kttsd" );
+    (void) new TDEAction( i18n("Speak Text"), "kttsd", 0, this, TQT_SLOT(slotReadOut()), actionCollection(), "tools_kttsd" );
     setXMLFile( "tdetexteditor_kttsdui.rc" );
 }
 

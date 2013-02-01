@@ -92,7 +92,7 @@ protected slots:
    void configureCompletionCombo(const TQStringList &list);
 
 private:
-   KListBox *listBox;
+   TDEListBox *listBox;
    KComboBox *dictionaryCombo;
    KLineEdit *lineEdit;
    TQPushButton *speakButton;
