@@ -60,5 +60,5 @@ void loadLanguageList(KLanguageButton *combo)
   if (TDEGlobal::locale())
      combo->setCurrentItem (TDEGlobal::locale()->language());
   else
-     combo->setCurrentItem (KLocale::defaultLanguage());
+     combo->setCurrentItem (TDELocale::defaultLanguage());
 }

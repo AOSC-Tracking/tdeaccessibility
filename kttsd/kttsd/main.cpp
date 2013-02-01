@@ -32,7 +32,7 @@
 #include "kttsd.h"
 
 int main (int argc, char *argv[]){
-   KLocale::setMainCatalogue("kttsd");
+   TDELocale::setMainCatalogue("kttsd");
    TDEAboutData aboutdata("kttsd", I18N_NOOP("kttsd"),
          "0.3.5.2", I18N_NOOP("Text-to-speech synthesis deamon"),
          TDEAboutData::License_GPL, "(C) 2002, José Pablo Ezequiel Fernández");

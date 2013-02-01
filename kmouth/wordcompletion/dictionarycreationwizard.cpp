@@ -259,7 +259,7 @@ TQString DictionaryCreationWizard::language() {
       if (TDEGlobal::locale())
          return TDEGlobal::locale()->language();
       else
-         return KLocale::defaultLanguage();
+         return TDELocale::defaultLanguage();
    }
    else if (creationSource->fileButton->isChecked()) {
       return fileWidget->languageButton->currentTag();
