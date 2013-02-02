@@ -29,7 +29,7 @@
 #include <tdeconfig.h>
 #include <klocale.h>
 #include <kdebug.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <kiconloader.h>
 
 // KTTS includes

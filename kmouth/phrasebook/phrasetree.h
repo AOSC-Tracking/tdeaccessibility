@@ -19,8 +19,8 @@
 #define PHRASETREE_H
 
 #include <tqpixmap.h>
-#include <kshortcut.h>
-#include <klistview.h>
+#include <tdeshortcut.h>
+#include <tdelistview.h>
 
 class PhraseBook;
 class PhraseShortcutRequest;

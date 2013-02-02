@@ -31,7 +31,7 @@
 #include <kdialogbase.h>
 #include <tdefiledialog.h>
 #include <kmenubar.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kstatusbar.h>
 #include <tdeconfig.h>
 #include <kstdaction.h>

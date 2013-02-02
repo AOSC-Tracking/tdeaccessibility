@@ -22,7 +22,7 @@
 #include <tqdragobject.h>
 #include <tqxml.h>
 
-#include <kaction.h>
+#include <tdeaction.h>
 #include <kprinter.h>
 
 class KURL;

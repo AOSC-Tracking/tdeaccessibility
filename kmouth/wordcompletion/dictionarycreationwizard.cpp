@@ -24,7 +24,7 @@
 #include <tqtextcodec.h>
 #include <tqwhatsthis.h>
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>

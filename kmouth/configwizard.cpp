@@ -19,7 +19,7 @@
 #include "configwizard.h"
 #include <tqlayout.h>
 #include <tqlabel.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klocale.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>

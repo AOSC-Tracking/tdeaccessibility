@@ -23,7 +23,7 @@
 #include <tqpopupmenu.h>
 
 #include <kaboutapplication.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kglobal.h>
@@ -32,7 +32,7 @@
 #include <kiconloader.h>
 #include <kiconeffect.h>
 #include <knotifyclient.h>
-#include <kshortcut.h>
+#include <tdeshortcut.h>
 #include <kkeynative.h>
 #include <kdemacros.h>
 #include <kprocess.h>

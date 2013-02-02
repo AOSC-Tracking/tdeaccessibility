@@ -17,10 +17,10 @@
 
 #include <klocale.h>
 #include <tdeconfig.h>
-#include <kaction.h>
-#include <kstdaccel.h>
-#include <kshortcutlist.h>
-#include <kactionshortcutlist.h>
+#include <tdeaction.h>
+#include <tdestdaccel.h>
+#include <tdeshortcutlist.h>
+#include <tdeactionshortcutlist.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
 

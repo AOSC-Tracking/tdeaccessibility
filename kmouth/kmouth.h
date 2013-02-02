@@ -28,9 +28,9 @@
 
 // include files for KDE
 #include <kapplication.h>
-#include <kmainwindow.h>
-#include <kaccel.h>
-#include <kaction.h>
+#include <tdemainwindow.h>
+#include <tdeaccel.h>
+#include <tdeaction.h>
 #include <kurl.h>
 
 // forward declaration of the KMouth classes

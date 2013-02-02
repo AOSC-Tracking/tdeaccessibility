@@ -23,7 +23,7 @@
 #include <tqbuttongroup.h>
 #include <tqlabel.h>
 #include <tqlistview.h> 
-#include <kmainwindow.h>
+#include <tdemainwindow.h>
 #include <klineedit.h>
 #include <kkeybutton.h>
 #include <kurl.h>

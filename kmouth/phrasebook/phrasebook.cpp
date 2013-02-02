@@ -23,9 +23,9 @@
 #include <tqptrstack.h>
 
 #include <klocale.h>
-#include <kaction.h>
-#include <kpopupmenu.h>
-#include <ktoolbar.h>
+#include <tdeaction.h>
+#include <tdepopupmenu.h>
+#include <tdetoolbar.h>
 #include <ktempfile.h>
 #include <tdeio/netaccess.h>
 #include <tdefiledialog.h>

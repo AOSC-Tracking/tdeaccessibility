@@ -25,7 +25,7 @@
 #include <tqmap.h>
 
 // KDE includes
-#include <klistview.h>
+#include <tdelistview.h>
 
 typedef TQValueList<int> ParameterList_type;
 typedef TQMap<TQString, ParameterList_type> EffectConfig_type;

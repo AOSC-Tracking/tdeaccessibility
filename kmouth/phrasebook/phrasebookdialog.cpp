@@ -30,11 +30,11 @@
 #include <tqwhatsthis.h>
 
 // include files for KDE
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <klocale.h>
-#include <kaction.h>
+#include <tdeaction.h>
 #include <kapplication.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <kiconloader.h>
 #include <kguiitem.h>
 #include <kmessagebox.h>

@@ -25,8 +25,8 @@
 // KDE includes
 #include <kapplication.h>
 #include <ksystemtray.h>
-#include <kpopupmenu.h>
-#include <kaction.h>
+#include <tdepopupmenu.h>
+#include <tdeaction.h>
 #include <kmenubar.h>
 #include <khelpmenu.h>
 #include <kiconloader.h>

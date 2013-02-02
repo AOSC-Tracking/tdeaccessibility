@@ -27,7 +27,7 @@
 #include <tdeconfig.h>
 #include <kstdaction.h>
 #include <kprinter.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kstandarddirs.h>
 
 // application specific includes

@@ -52,7 +52,7 @@
 #include <tdeio/job.h>
 #include <tdeio/netaccess.h>
 #include <ktempfile.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kedittoolbar.h>
 #include <twin.h>
 

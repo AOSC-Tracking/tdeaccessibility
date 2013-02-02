@@ -20,7 +20,7 @@
 #include <tqcheckbox.h>
 #include <tqlineedit.h>
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>

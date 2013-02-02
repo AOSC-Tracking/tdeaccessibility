@@ -17,8 +17,8 @@
 
 // KDE includes
 #include <kurl.h>
-#include <klistview.h>
-#include <kpopupmenu.h>
+#include <tdelistview.h>
+#include <tdepopupmenu.h>
 
 // App specific includes
 #include "Types.h"

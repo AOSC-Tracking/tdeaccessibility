@@ -19,7 +19,7 @@
 #include <tqvaluelist.h>
 
 // KDE includes
-#include <klistview.h>
+#include <tdelistview.h>
  
 // App specific includes
 #include "Types.h"

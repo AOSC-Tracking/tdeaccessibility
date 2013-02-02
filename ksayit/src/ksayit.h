@@ -30,10 +30,10 @@ using namespace std;
 
 // include files for KDE 
 #include <kapplication.h>
-#include <kmainwindow.h>
-#include <kaccel.h>
-#include <kaction.h>
-#include <kactionclasses.h>
+#include <tdemainwindow.h>
+#include <tdeaccel.h>
+#include <tdeaction.h>
+#include <tdeactionclasses.h>
 #include <kurl.h>
 #include <dcopobject.h>
 #include <kbookmarkmanager.h>

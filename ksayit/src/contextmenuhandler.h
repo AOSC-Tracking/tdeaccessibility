@@ -18,8 +18,8 @@
 #include <tqxml.h>
 
 // KDE includes
-#include <kaction.h>
-#include <kpopupmenu.h>
+#include <tdeaction.h>
+#include <tdepopupmenu.h>
 
 //forward declarations
 class ContextMenuHandler;

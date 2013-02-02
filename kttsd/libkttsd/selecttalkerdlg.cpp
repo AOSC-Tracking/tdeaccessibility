@@ -34,7 +34,7 @@
 #include <kcombobox.h>
 #include <ktrader.h>
 #include <kpushbutton.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klineedit.h>
 #include <tdeconfig.h>
 #include <kdebug.h>

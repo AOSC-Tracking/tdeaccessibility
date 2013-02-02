@@ -34,7 +34,7 @@
 #include <kdebug.h>
 #include <ksystemtray.h>
 #include <kiconloader.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kaboutapplication.h>
 #include <dcopclient.h>
 #include <tdeversion.h>

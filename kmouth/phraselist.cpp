@@ -24,7 +24,7 @@
 #include <tqclipboard.h>
 
 // include files for KDE
-#include <klistbox.h>
+#include <tdelistbox.h>
 #include <klineedit.h>
 #include <kaudioplayer.h>
 #include <kcursor.h>

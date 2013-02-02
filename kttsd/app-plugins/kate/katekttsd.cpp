@@ -26,7 +26,7 @@
 #include <tdetexteditor/editinterface.h>
 #include <tdetexteditor/selectioninterface.h>
 
-#include <kaction.h>
+#include <tdeaction.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kapplication.h>

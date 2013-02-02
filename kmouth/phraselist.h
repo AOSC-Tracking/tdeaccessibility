@@ -19,7 +19,7 @@
 #define PHRASELIST_H
 
 // include files for KDE
-#include <klistbox.h>
+#include <tdelistbox.h>
 #include <klineedit.h>
 #include <kprinter.h>
 
