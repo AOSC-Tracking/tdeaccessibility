@@ -113,7 +113,7 @@ KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
 		accessxFeatures = 0;
 
    //startTimer(100); // ten times a second
-   connect(kapp, TQT_SIGNAL(kdisplayPaletteChanged()), TQT_SLOT(paletteChanged()));
+   connect(kapp, TQT_SIGNAL(tdedisplayPaletteChanged()), TQT_SLOT(paletteChanged()));
    
    kapp->installX11EventFilter (this);
    int opcode_rtn, error_rtn;
