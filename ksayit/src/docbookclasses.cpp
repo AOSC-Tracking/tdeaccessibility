@@ -55,7 +55,7 @@ ListViewInterface::ListViewInterface(TDEListView *lv, TQString label)
 RobDocument::RobDocument(TDEListView *lv, TQString label)
     : ListViewInterface( lv, label )
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("contents", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("contents", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -119,7 +119,7 @@ TQVariant RobDocument::getValue( unsigned int index ) const
 Overview::Overview(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "0"); // upmost element
 
@@ -174,7 +174,7 @@ TQVariant Overview::getValue( unsigned int index ) const
 Date::Date(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000001");
     
@@ -241,7 +241,7 @@ TQVariant Date::getValue( unsigned int index ) const
 ReleaseInfo::ReleaseInfo(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000002");
 
@@ -308,7 +308,7 @@ TQVariant ReleaseInfo::getValue( unsigned int index ) const
 AuthorGroup::AuthorGroup(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("tdmconfig", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("tdmconfig", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000003");
 
@@ -364,7 +364,7 @@ TQVariant AuthorGroup::getValue( unsigned int index ) const
 Author::Author(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("personal", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("personal", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
@@ -448,7 +448,7 @@ TQVariant Author::getValue( unsigned int index ) const
 KeywordSet::KeywordSet(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("txt", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("txt", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000004");
 
@@ -569,7 +569,7 @@ TQVariant Keyword::getValue( unsigned int index ) const
 Abstract::Abstract(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000005");
 
@@ -625,7 +625,7 @@ TQVariant Abstract::getValue( unsigned int index ) const
 Para::Para(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
@@ -699,7 +699,7 @@ TQVariant Para::getValue( unsigned int index ) const
 Chapter::Chapter(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -760,7 +760,7 @@ TQVariant Chapter::getValue( unsigned int index ) const
 Sect1::Sect1(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -820,7 +820,7 @@ TQVariant Sect1::getValue( unsigned int index ) const
 Sect2::Sect2(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -880,7 +880,7 @@ TQVariant Sect2::getValue( unsigned int index ) const
 Sect3::Sect3(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
@@ -940,7 +940,7 @@ TQVariant Sect3::getValue( unsigned int index ) const
 Sect4::Sect4(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -1000,7 +1000,7 @@ TQVariant Sect4::getValue( unsigned int index ) const
 Sect5::Sect5(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", KIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)

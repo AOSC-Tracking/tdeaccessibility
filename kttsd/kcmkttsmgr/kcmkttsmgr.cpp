@@ -127,23 +127,23 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Give buttons icons.
     // Talkers tab.
     m_kttsmgrw->higherTalkerPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small));
     m_kttsmgrw->lowerTalkerPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small));
     m_kttsmgrw->removeTalkerButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small));
     m_kttsmgrw->configureTalkerButton->setIconSet(
-        TDEGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
+        TDEGlobal::iconLoader()->loadIconSet("configure", TDEIcon::Small));
 
     // Filters tab.
     m_kttsmgrw->higherFilterPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small));
     m_kttsmgrw->lowerFilterPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small));
     m_kttsmgrw->removeFilterButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small));
     m_kttsmgrw->configureFilterButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("configure", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("configure", TDEIcon::Small));
 
     // Notify tab.
     m_kttsmgrw->notifyActionComboBox->clear();
@@ -154,9 +154,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
         m_kttsmgrw->notifyPresentComboBox->insertItem( NotifyPresent::presentDisplayName( ndx ) );
 
     m_kttsmgrw->notifyRemoveButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small));
     m_kttsmgrw->notifyTestButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("speak", KIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("speak", TDEIcon::Small));
 
     m_kttsmgrw->sinkComboBox->setEditable(false);
     m_kttsmgrw->pcmComboBox->setEditable(false);
@@ -164,9 +164,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Construct a popup menu for the Sentence Boundary Detector buttons on Filter tab.
     m_sbdPopmenu = new TQPopupMenu( m_kttsmgrw, "SbdPopupMenu" );
     m_sbdPopmenu->insertItem( i18n("&Edit..."), this, TQT_SLOT(slot_configureSbdFilter()), 0, sbdBtnEdit );
-    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("up", KIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small),
                               i18n("U&p"), this, TQT_SLOT(slot_higherSbdFilterPriority()), 0, sbdBtnUp );
-    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small),
                               i18n("Do&wn"), this, TQT_SLOT(slot_lowerSbdFilterPriority()), 0, sbdBtnDown );
     m_sbdPopmenu->insertItem( i18n("&Add..."), this, TQT_SLOT(slot_addSbdFilter()), 0, sbdBtnAdd );
     m_sbdPopmenu->insertItem( i18n("&Remove"), this, TQT_SLOT(slot_removeSbdFilter()), 0, sbdBtnRemove );

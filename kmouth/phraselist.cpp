@@ -75,7 +75,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   TQIconSet icon = TDEGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
+   TQIconSet icon = TDEGlobal::iconLoader()->loadIconSet("speak", TDEIcon::Small);
    speakButton = new TQPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(TQ_NoFocus);
    speakButton->setAutoDefault(false);

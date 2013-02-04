@@ -66,7 +66,7 @@ VoiceSetupDlg::~VoiceSetupDlg()
 
 void VoiceSetupDlg::initVoicePage()
 {
-    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("ksayit", KIcon::Toolbar, KIcon::SizeMedium);
+    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("ksayit", TDEIcon::Toolbar, TDEIcon::SizeMedium);
     TQFrame *voicePage = addPage( i18n( "Voice" ), i18n("Voice Settings"), icon );
     TQVBoxLayout *voiceLayout = new TQVBoxLayout( voicePage, 0, spacingHint() );
     
@@ -77,7 +77,7 @@ void VoiceSetupDlg::initVoicePage()
 
 void VoiceSetupDlg::initFXPage()
 {
-    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("ksysguard", KIcon::Toolbar, KIcon::SizeMedium);
+    TQPixmap icon = TDEGlobal::iconLoader()->loadIcon("ksysguard", TDEIcon::Toolbar, TDEIcon::SizeMedium);
     m_fxPage = addPage( i18n( "Audio FX" ), i18n("Effect Stack"), icon );
     TQVBoxLayout *fxLayout = new TQVBoxLayout( m_fxPage, 0, spacingHint() );
     

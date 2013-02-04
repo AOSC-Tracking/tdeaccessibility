@@ -77,9 +77,9 @@ void PhraseTreeItem::setCut (TDEShortcut cut) {
 PhraseTree::PhraseTree (TQWidget *parent, const char *name)
    : TDEListView (parent, name)
 {
-   phrasebook_open   = TDEGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
-   phrasebook_closed = TDEGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
-   phrase            = TDEGlobal::iconLoader()->loadIcon("phrase",            KIcon::Small);
+   phrasebook_open   = TDEGlobal::iconLoader()->loadIcon("phrasebook",        TDEIcon::Small);
+   phrasebook_closed = TDEGlobal::iconLoader()->loadIcon("phrasebook_closed", TDEIcon::Small);
+   phrase            = TDEGlobal::iconLoader()->loadIcon("phrase",            TDEIcon::Small);
 
    connect (this, TQT_SIGNAL(expanded (TQListViewItem *)), this, TQT_SLOT(itemExpanded (TQListViewItem *)));
    connect (this, TQT_SIGNAL(collapsed (TQListViewItem *)), this, TQT_SLOT(itemCollapsed (TQListViewItem *)));

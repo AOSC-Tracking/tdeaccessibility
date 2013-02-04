@@ -475,8 +475,8 @@ void FestivalIntConf::scanVoices()
 
         // Iterate thru list of voice codes returned by Festival,
         // find matching entry in voices.xml file, and add to list of supported voices.
-        TQPixmap maleIcon = TDEGlobal::iconLoader()->loadIcon("male", KIcon::Small);
-        TQPixmap femaleIcon = TDEGlobal::iconLoader()->loadIcon("female", KIcon::Small);
+        TQPixmap maleIcon = TDEGlobal::iconLoader()->loadIcon("male", TDEIcon::Small);
+        TQPixmap femaleIcon = TDEGlobal::iconLoader()->loadIcon("female", TDEIcon::Small);
         TQStringList::ConstIterator itEnd = m_supportedVoiceCodes.constEnd();
         for(TQStringList::ConstIterator it = m_supportedVoiceCodes.begin(); it != itEnd; ++it )
         {

@@ -612,12 +612,12 @@ KMouseToolTray::KMouseToolTray (TQWidget *parent, const char *name) : KSystemTra
 {
 	startStopId = contextMenu()->insertItem (i18n("&Start"), this, TQT_SIGNAL(startStopSelected()));
 	contextMenu()->insertSeparator();
-	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("configure", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("configure", TDEIcon::Small),
 	                           i18n("&Configure KMouseTool..."), this, TQT_SIGNAL(configureSelected()));
 	contextMenu()->insertSeparator();
-	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", TDEIcon::Small),
 	                           i18n("KMousetool &Handbook"), this, TQT_SIGNAL(helpSelected()));
-	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kmousetool", KIcon::Small),
+	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kmousetool", TDEIcon::Small),
 	                           i18n("&About KMouseTool"), this, TQT_SIGNAL(aboutSelected()));
 }
 
@@ -630,11 +630,11 @@ void KMouseToolTray::updateStartStopText(bool mousetool_is_running)
 
 	if (mousetool_is_running) {
 		contextMenu()->changeItem (startStopId, i18n("&Stop"));
-		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_on", KIcon::Small);
+		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_on", TDEIcon::Small);
 	}
 	else {
 		contextMenu()->changeItem (startStopId, i18n("&Start"));
-		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_off", KIcon::Small);
+		icon = TDEGlobal::iconLoader()->loadIcon("kmousetool_off", TDEIcon::Small);
 	}
 	setPixmap (icon);
 	show();

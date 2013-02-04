@@ -786,17 +786,17 @@ void KeyIcon::resizeEvent( TQResizeEvent*e )
 void KeyIcon::updateImages () {
    int size = width()<height() ? width() : height();
 
-   locked    = instance->iconLoader()->loadIcon("lock_overlay", KIcon::Panel, size-4);
+   locked    = instance->iconLoader()->loadIcon("lock_overlay", TDEIcon::Panel, size-4);
 	if (strcmp(modifierKeys[keyId].icon, "")) {
-	   latched   = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, KIcon::NoGroup, size-4);
-   	unlatched = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, KIcon::NoGroup, size-4);
+	   latched   = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, TDEIcon::NoGroup, size-4);
+   	unlatched = instance->iconLoader()->loadIcon(modifierKeys[keyId].icon, TDEIcon::NoGroup, size-4);
 		
 		TQImage img = latched.convertToImage();
-		KIconEffect::colorize(img,  TDEGlobalSettings::highlightedTextColor(), 1.0);
+		TDEIconEffect::colorize(img,  TDEGlobalSettings::highlightedTextColor(), 1.0);
 		latched.convertFromImage (img);
 		
 		img = unlatched.convertToImage();
-		KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
+		TDEIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
 		unlatched.convertFromImage (img);
 	}
 
@@ -887,11 +887,11 @@ void MouseIcon::resizeEvent( TQResizeEvent*e )
 }
 
 TQPixmap loadIcon(TDEInstance *instance, int size, TQColor color, TQString name) {
-	KIconLoader *loader = instance->iconLoader();
-	TQPixmap result = loader->loadIcon(name, KIcon::NoGroup, size);
+	TDEIconLoader *loader = instance->iconLoader();
+	TQPixmap result = loader->loadIcon(name, TDEIcon::NoGroup, size);
 
 	TQImage img = result.convertToImage();
-	KIconEffect::colorize(img, color, 1.0);
+	TDEIconEffect::colorize(img, color, 1.0);
 	result.convertFromImage (img);
 	
 	return result;
@@ -973,10 +973,10 @@ TimeoutIcon::~TimeoutIcon () {
 void TimeoutIcon::update () {
    int size = width()<height() ? width() : height();
    if (pixmap.width() != size)
-		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
+		pixmap = instance->iconLoader()->loadIcon(iconname, TDEIcon::NoGroup, size);
 
    TQImage img = pixmap.convertToImage();
-   KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
+   TDEIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
    image = pixmap;
@@ -988,7 +988,7 @@ void TimeoutIcon::setGlyth (const TQString &glyth) {
    this->glyth = glyth;
 
    TQImage img = pixmap.convertToImage();
-   KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
+   TDEIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    pixmap.convertFromImage (img);
 
    image = pixmap;
@@ -1000,10 +1000,10 @@ void TimeoutIcon::setImage (const TQString &name, int timeout) {
    iconname = name;
 	if (!name.isNull() && !name.isEmpty()) {
 	   int size = width()<height() ? width() : height();
-		pixmap = instance->iconLoader()->loadIcon(iconname, KIcon::NoGroup, size);
+		pixmap = instance->iconLoader()->loadIcon(iconname, TDEIcon::NoGroup, size);
 
    	TQImage img = pixmap.convertToImage();
-   	KIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
+   	TDEIconEffect::colorize(img, TDEGlobalSettings::textColor(), 1.0);
    	pixmap.convertFromImage (img);
 
    	image = pixmap;

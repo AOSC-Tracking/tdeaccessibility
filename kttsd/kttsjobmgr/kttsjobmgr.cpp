@@ -172,7 +172,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
 
     TQPushButton* btn;
     TQString wt;
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("stop", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("stop", TDEIcon::Small, 0, true),
                           i18n("Hold"), hbox1, "job_hold");
     wt = i18n(
             "<p>Changes a job to Paused state.  If currently speaking, the job stops speaking.  "
@@ -181,28 +181,28 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "down in the list.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_hold()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("exec", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("exec", TDEIcon::Small, 0, true),
                           i18n("Resume"), hbox1, "job_resume");
     wt = i18n(
             "<p>Resumes a paused job or changes a Queued job to Waiting.  If the job is the "
             "top speakable job in the list, it begins speaking.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_resume()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("redo", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("redo", TDEIcon::Small, 0, true),
                           i18n("R&estart"), hbox1, "job_restart");
     wt = i18n(
             "<p>Rewinds a job to the beginning and changes its state to Waiting.  If the job "
             "is the top speakable job in the list, it begins speaking.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_restart()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("edittrash", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small, 0, true),
                           i18n("Re&move"), hbox1, "job_remove");
     wt = i18n(
             "<p>Deletes the job.  If it is currently speaking, it stops speaking.  The next "
             "speakable job in the list begins speaking.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_remove()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("down", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small, 0, true),
                           i18n("&Later"), hbox1, "job_later");
     wt = i18n(
             "<p>Moves a job downward in the list so that it will be spoken later.  If the job "
@@ -210,32 +210,32 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_move()));
 
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("2leftarrow", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("2leftarrow", TDEIcon::Small, 0, true),
                           i18n("Pre&vious Part"), hbox2, "part_prevpart");
     wt = i18n(
             "<p>Rewinds a multi-part job to the previous part.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_prev_par()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("1leftarrow", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("1leftarrow", TDEIcon::Small, 0, true),
                           i18n("&Previous Sentence"), hbox2, "job_prevsentence");
     wt = i18n(
             "<p>Rewinds a job to the previous sentence.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_prev_sen()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("1rightarrow", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("1rightarrow", TDEIcon::Small, 0, true),
                           i18n("&Next Sentence"), hbox2, "job_nextsentence");
     wt = i18n(
             "<p>Advances a job to the next sentence.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_next_sen()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("2rightarrow", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("2rightarrow", TDEIcon::Small, 0, true),
                           i18n("Ne&xt Part"), hbox2, "part_nextpart");
     wt = i18n(
             "<p>Advances a multi-part job to the next part.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_next_par()));
 
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("klipper", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("klipper", TDEIcon::Small, 0, true),
                           i18n("&Speak Clipboard"), hbox3, "speak_clipboard");
     wt = i18n(
             "<p>Queues the current contents of the clipboard for speaking and sets its state "
@@ -243,7 +243,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "The job will be spoken by the topmost Talker in the <b>Talkers</b> tab.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_speak_clipboard()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("fileopen", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("fileopen", TDEIcon::Small, 0, true),
                           i18n("Spea&k File"), hbox3, "speak_file");
     wt = i18n(
             "<p>Prompts you for a file name and queues the contents of the file for speaking.  "
@@ -251,14 +251,14 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "The job will be spoken by the topmost Talker in the <b>Talkers</b> tab.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_speak_file()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("translate", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("translate", TDEIcon::Small, 0, true),
                           i18n("Change Talker"), hbox3, "job_changetalker");
     wt = i18n(
             "<p>Prompts you with a list of your configured Talkers from the <b>Talkers</b> tab.  "
             "The job will be spoken using the selected Talker.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_change_talker()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("reload_page", KIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("reload_page", TDEIcon::Small, 0, true),
                           i18n("&Refresh"), hbox3, "refresh");
     wt = i18n(
             "<p>Refresh the list of jobs.</p>");
