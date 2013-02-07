@@ -26,7 +26,7 @@ private:
    bool wordsToSave;
 };
 
-WordCompletion::WordCompletion() : KCompletion () {
+WordCompletion::WordCompletion() : TDECompletion () {
    d = new WordCompletionPrivate();
    d->blockCurrentListSignal = false;
    d->wordsToSave = false;
@@ -44,7 +44,7 @@ typedef TQValueList<Match> MatchList;
 TQString WordCompletion::makeCompletion(const TQString &text) {
    if (d->lastText != text) {
       d->lastText = text;
-      KCompletion::clear();
+      TDECompletion::clear();
 
       int border = text.findRev(TQRegExp("\\W"));
       TQString suffix = text.right (text.length() - border - 1).lower();
@@ -61,13 +61,13 @@ TQString WordCompletion::makeCompletion(const TQString &text) {
          MatchList::ConstIterator iter = matches.begin();
          for (int count = 0; (iter != matches.end()) && (count < 10); ++iter, ++count) {
             int length = (*iter).second.length() + prefix.length() - text.length();
-            KCompletion::addItem(text + (*iter).second.right(length), -(*iter).first);
+            TDECompletion::addItem(text + (*iter).second.right(length), -(*iter).first);
          }
       }
    }
 
-   // call the KCompletion::makeCompletion(...) method
-   return KCompletion::makeCompletion (text);
+   // call the TDECompletion::makeCompletion(...) method
+   return TDECompletion::makeCompletion (text);
 }
 
 TQStringList WordCompletion::wordLists() {

@@ -6,7 +6,7 @@
 /**
  * This class does completion based on a dictionary of words.
  */
-class WordCompletion : public KCompletion {
+class WordCompletion : public TDECompletion {
    friend class WordListWidget;
    Q_OBJECT
   
