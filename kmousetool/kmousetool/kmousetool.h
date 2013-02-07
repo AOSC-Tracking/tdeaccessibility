@@ -41,7 +41,7 @@ class TQLabel;
 class TQCheckBox;
 class TQPushButton;
 class KAudioPlayer;
-class KAboutApplication;
+class TDEAboutApplication;
 class KMouseToolTray;
 
 
@@ -82,7 +82,7 @@ private:
 	KAudioPlayer *mplayer;
 	KMouseToolTray *trayIcon;
 
-	KAboutApplication *aboutDlg;
+	TDEAboutApplication *aboutDlg;
 
 	/**
 	 * Initialize all variables

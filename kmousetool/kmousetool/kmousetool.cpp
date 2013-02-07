@@ -291,7 +291,7 @@ KMouseTool::KMouseTool(TQWidget *parent, const char *name) : KMouseToolUI(parent
 	connect(trayIcon, TQT_SIGNAL(helpSelected()), this, TQT_SLOT(helpSelected()));
 	connect(trayIcon, TQT_SIGNAL(quitSelected()), this, TQT_SLOT(quitSelected()));
 
-	aboutDlg = new KAboutApplication (0, "KMouseToolDlg", false);
+	aboutDlg = new TDEAboutApplication (0, "KMouseToolDlg", false);
 }
 
 KMouseTool::~KMouseTool()

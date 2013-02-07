@@ -714,7 +714,7 @@ void KbStateApplet::configureMouse() {
 void KbStateApplet::about() {
    TDEAboutData about("kbstateapplet", I18N_NOOP("Keyboard Status Applet"), "0.2",
                     I18N_NOOP("Panel applet that shows the state of the modifier keys"), TDEAboutData::License_GPL_V2, "(C) 2004 Gunnar Schmi Dt");
-   KAboutApplication a(&about, this);
+   TDEAboutApplication a(&about, this);
    a.exec();
 }
 
