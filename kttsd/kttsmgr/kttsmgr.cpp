@@ -43,13 +43,13 @@
 #include "kspeech.h"
 #include "kttsmgr.h"
 
-static const KCmdLineOptions options[] =
+static const TDECmdLineOptions options[] =
 {
     { "s", 0, 0 },
     { "systray", I18N_NOOP("Start minimized in system tray"), 0 },
     { "a", 0, 0 },
     { "autoexit", I18N_NOOP("Exit when speaking is finished and minimized in system tray"), 0 },
-    KCmdLineLastOption
+    TDECmdLineLastOption
 };
 
 int main (int argc, char *argv[])

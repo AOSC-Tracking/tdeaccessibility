@@ -39,7 +39,7 @@ using namespace std;
 #include "filterproc.h"
 #include "talkercode.h"
 
-static const KCmdLineOptions options[] =
+static const TDECmdLineOptions options[] =
 {
     { "+pluginName", I18N_NOOP("Name of a KTTSD filter plugin (required)"), 0 },
     { "t", 0, 0 },
@@ -54,7 +54,7 @@ static const KCmdLineOptions options[] =
     { "b", 0, 0 },
     { "break", I18N_NOOP("Display tabs as \\t, otherwise they are removed"), 0 },
     { "list", I18N_NOOP("Display list of available filter plugins and exit"), 0 },
-    KCmdLineLastOption
+    TDECmdLineLastOption
 };
 
 int main(int argc, char *argv[])

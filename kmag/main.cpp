@@ -32,10 +32,10 @@ KmagApp *kmagapp;
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
 
-static KCmdLineOptions options[] =
+static TDECmdLineOptions options[] =
 {
   { "+[File]", I18N_NOOP("File to open"), 0 },
-  KCmdLineLastOption
+  TDECmdLineLastOption
   // INSERT YOUR COMMANDLINE OPTIONS HERE
 };
 
