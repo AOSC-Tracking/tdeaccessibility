@@ -23,8 +23,8 @@
  ******************************************************************************/
 
 #include <kuniqueapplication.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
+#include <tdeaboutdata.h>
+#include <tdecmdlineargs.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <dcopclient.h>

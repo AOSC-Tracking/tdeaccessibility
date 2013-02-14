@@ -26,8 +26,8 @@
 
 // KDE includes.
 #include <ktempfile.h>
-#include <kaboutdata.h>
-#include <kaboutapplication.h>
+#include <tdeaboutdata.h>
+#include <tdeaboutapplication.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kdialog.h>

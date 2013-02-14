@@ -29,7 +29,7 @@
 #include <klocale.h>
 #include <tdeparts/componentfactory.h>
 #include <ktrader.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <ktempfile.h>
 //#include <tdeio/job.h>

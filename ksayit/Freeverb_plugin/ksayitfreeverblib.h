@@ -18,7 +18,7 @@
 
 // KDE includes
 #include <ksimpleconfig.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <klibloader.h>
 #include <kinstance.h>
 

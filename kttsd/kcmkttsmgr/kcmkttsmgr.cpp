@@ -42,10 +42,10 @@
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <kiconloader.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kgenericfactory.h>
 #include <kstandarddirs.h>
-#include <kaboutdata.h>
+#include <tdeaboutdata.h>
 #include <tdeconfig.h>
 #include <knuminput.h>
 #include <kcombobox.h>

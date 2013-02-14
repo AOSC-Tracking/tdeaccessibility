@@ -30,12 +30,12 @@
 // KDE includes.
 #include <kinstance.h>
 #include <klocale.h>
-#include <kaboutdata.h>
+#include <tdeaboutdata.h>
 #include <tdelistview.h>
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <kencodingfiledialog.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kinputdialog.h>
 #include <ktextedit.h>
 

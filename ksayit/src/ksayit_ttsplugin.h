@@ -21,7 +21,7 @@
 
 
 // KDE includes
-#include <kapplication.h>
+#include <tdeapplication.h>
 
 // App specific includes
 

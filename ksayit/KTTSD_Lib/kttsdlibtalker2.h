@@ -20,7 +20,7 @@
 #include <kspeechsink.h>
 
 // KDE includes
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <dcopclient.h>
 
 /**

@@ -30,7 +30,7 @@
 #include <klocale.h>
 #include <kcombobox.h>
 #include <ksconfig.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
 #include <tdeconfig.h>

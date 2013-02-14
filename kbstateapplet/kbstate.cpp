@@ -22,13 +22,13 @@
 #include <tqimage.h>
 #include <tqpopupmenu.h>
 
-#include <kaboutapplication.h>
+#include <tdeaboutapplication.h>
 #include <tdepopupmenu.h>
-#include <kaboutdata.h>
+#include <tdeaboutdata.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include <kglobalsettings.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kiconloader.h>
 #include <kiconeffect.h>
 #include <knotifyclient.h>

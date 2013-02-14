@@ -33,7 +33,7 @@
 #include <tqwidget.h>
 
 // include files for KDE
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kcursor.h>
 #include <kdebug.h>
 #include <klocale.h>

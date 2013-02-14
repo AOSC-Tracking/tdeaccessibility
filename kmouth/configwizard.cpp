@@ -21,7 +21,7 @@
 #include <tqlabel.h>
 #include <tdelistview.h>
 #include <klocale.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <ksconfig.h>
 #include <tdeconfig.h>

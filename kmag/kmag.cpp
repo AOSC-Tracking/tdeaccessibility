@@ -32,7 +32,7 @@
 
 // include files for KDE
 #if TDE_VERSION > 300
-#include <kapplication.h>
+#include <tdeapplication.h>
 #else
 #include <kapp.h>
 #endif // KDE 3.x

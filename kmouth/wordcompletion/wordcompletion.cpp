@@ -1,7 +1,7 @@
 #include <tqregexp.h>
 #include <tqfile.h>
 
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <tdeconfig.h>
 

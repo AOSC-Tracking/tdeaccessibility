@@ -29,9 +29,9 @@ using namespace std;
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kaboutdata.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <tdeaboutdata.h>
+#include <tdeapplication.h>
+#include <tdecmdlineargs.h>
 #include <tdeconfig.h>
 #include <ktrader.h>
 #include <tdeparts/componentfactory.h>

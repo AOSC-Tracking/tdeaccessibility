@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <tdecmdlineargs.h>
+#include <tdeaboutdata.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kuniqueapplication.h>

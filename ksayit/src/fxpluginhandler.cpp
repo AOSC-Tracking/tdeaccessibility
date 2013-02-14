@@ -15,7 +15,7 @@
 
 // KDE includes
 #include <kdebug.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <ktrader.h>
 #include <klibloader.h>
 #include <kservice.h>

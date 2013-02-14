@@ -27,14 +27,14 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <tdefiledialog.h>
 #include <dcopclient.h>
 #include <knotifyclient.h>
 #include <krun.h>
-#include <kaboutdata.h>
+#include <tdeaboutdata.h>
 
 // KTTS includes.
 #include "notify.h"

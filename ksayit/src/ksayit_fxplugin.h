@@ -17,7 +17,7 @@
 #include <tqstring.h>
 
 // KDE includes
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <arts/kartsserver.h>
 #include <arts/artsflow.h>
 

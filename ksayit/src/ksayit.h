@@ -29,7 +29,7 @@ using namespace std;
 #include <tqclipboard.h>
 
 // include files for KDE 
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdemainwindow.h>
 #include <tdeaccel.h>
 #include <tdeaction.h>

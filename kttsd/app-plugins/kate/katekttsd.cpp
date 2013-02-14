@@ -29,7 +29,7 @@
 #include <tdeaction.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kgenericfactory.h>
 
 // KateKttsdPlugin includes.

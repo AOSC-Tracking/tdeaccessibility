@@ -20,7 +20,7 @@
 #include <tqregexp.h>
 #include <tqdir.h>
 
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
 #include <klocale.h>

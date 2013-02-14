@@ -26,7 +26,7 @@
 #include <tqfile.h>
 
 // KDE includes.
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <ktempfile.h>
 #include <kstandarddirs.h>
 #include <tdeparts/componentfactory.h>

@@ -23,7 +23,7 @@
 #include <tqpixmap.h>
 
 // KDE includes
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <ksystemtray.h>
 #include <tdepopupmenu.h>
 #include <tdeaction.h>

@@ -20,9 +20,9 @@
 // QT includes
 
 // KDE includes
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <tdeapplication.h>
+#include <tdecmdlineargs.h>
+#include <tdeaboutdata.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <arts/kartsdispatcher.h>

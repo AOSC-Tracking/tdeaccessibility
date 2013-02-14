@@ -29,13 +29,13 @@
 #include <tdeconfig.h>
 #include <kuniqueapplication.h>
 #include <kcmultidialog.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
+#include <tdeaboutdata.h>
+#include <tdecmdlineargs.h>
 #include <kdebug.h>
 #include <ksystemtray.h>
 #include <kiconloader.h>
 #include <tdepopupmenu.h>
-#include <kaboutapplication.h>
+#include <tdeaboutapplication.h>
 #include <dcopclient.h>
 #include <tdeversion.h>
 

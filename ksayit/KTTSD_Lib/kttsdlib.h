@@ -25,7 +25,7 @@ using namespace std;
 #include "kdeexportfix.h"
 
 // KDE includes
-#include <kapplication.h>
+#include <tdeapplication.h>
 
 // App specific includes
 

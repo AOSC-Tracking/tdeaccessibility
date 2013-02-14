@@ -33,7 +33,7 @@
 #include <tqstringlist.h>
 
 // include files for KDE
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdemainwindow.h>
 #include <kdockwidget.h>
 #include <tdeaction.h>

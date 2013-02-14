@@ -48,7 +48,7 @@
 #include <kstdguiitem.h>
 #include <knuminput.h>
 #include <tdepopupmenu.h>
-#include <kaboutapplication.h>
+#include <tdeaboutapplication.h>
 
 //#include <arts/soundserver.h>
 #include <netwm.h>

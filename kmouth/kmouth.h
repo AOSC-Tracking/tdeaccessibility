@@ -27,7 +27,7 @@
 // include files for TQt
 
 // include files for KDE
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdemainwindow.h>
 #include <tdeaccel.h>
 #include <tdeaction.h>

@@ -33,7 +33,7 @@
 #include <tdepopupmenu.h>
 #include <klocale.h>
 #include <tdeaction.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdelistview.h>
 #include <kiconloader.h>
 #include <kguiitem.h>
