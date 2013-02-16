@@ -27,7 +27,7 @@
 
 // KDE includes.
 #include <tdeapplication.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <tdeparts/componentfactory.h>
 #include <ktrader.h>

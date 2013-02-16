@@ -22,7 +22,7 @@
 // KDE includes.
 #include <kdebug.h>
 #include <kstandarddirs.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 // PlugInProc includes.
 #include "pluginproc.h"

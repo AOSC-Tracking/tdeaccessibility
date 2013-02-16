@@ -23,8 +23,8 @@
  ******************************************************************************/
 
 // KDE includes.
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <ktrader.h>
 #include <kdebug.h>
 

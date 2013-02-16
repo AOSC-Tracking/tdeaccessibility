@@ -31,13 +31,13 @@
 
 // include files for KDE
 #include <tdepopupmenu.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeaction.h>
 #include <tdeapplication.h>
 #include <tdelistview.h>
 #include <kiconloader.h>
 #include <kguiitem.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdefiledialog.h>
 #include <kstandarddirs.h>
 #include <kdesktopfile.h> 

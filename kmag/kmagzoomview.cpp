@@ -36,7 +36,7 @@
 #include <tdeapplication.h>
 #include <kcursor.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>

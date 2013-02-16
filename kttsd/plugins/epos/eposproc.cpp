@@ -34,7 +34,7 @@
 // KDE includes.
 #include <kdebug.h>
 #include <tdeconfig.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <kprocess.h>
 

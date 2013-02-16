@@ -25,11 +25,11 @@
 #include <tqfile.h>
 
 // KDE includes.
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <tdeaboutdata.h>
 #include <tdeaboutapplication.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kdialog.h>
 #include <kcombobox.h>
 #include <kstandarddirs.h>

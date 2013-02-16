@@ -26,7 +26,7 @@
 #include <tqlayout.h>
 
 // KDE includes.
-#include <klocale.h>
+#include <tdelocale.h>
 #include <klineedit.h>
 #include <tdeconfig.h>
 #include <kdialog.h>

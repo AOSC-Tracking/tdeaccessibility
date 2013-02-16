@@ -27,7 +27,7 @@
 #include <tqbitmap.h>
 
 #include <tdeapplication.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 static uchar line_bits[] = {0x2d, 0x96, 0x4b, 0xa5, 0xd2, 0x69, 0xb4, 0x5a};
 

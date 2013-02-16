@@ -29,10 +29,10 @@
 #include <kaudioplayer.h>
 #include <kcursor.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdefiledialog.h>
 #include <kcombobox.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include <stdlib.h>
 

@@ -20,8 +20,8 @@
 #include <tqstringlist.h>
 #include <kdemacros.h>
 #include "kdeexportfix.h"
-#include "kglobal.h"
-#include "klocale.h"
+#include "tdeglobal.h"
+#include "tdelocale.h"
 
 // #include "filehandle.h"
 

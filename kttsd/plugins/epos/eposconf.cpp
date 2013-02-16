@@ -33,10 +33,10 @@
 
 // KDE includes.
 #include <kdialog.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <kcombobox.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <knuminput.h>
 
 // KTTS includes.

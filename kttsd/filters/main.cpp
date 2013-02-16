@@ -28,7 +28,7 @@ using namespace std;
 #include <tqtextstream.h>
 
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeaboutdata.h>
 #include <tdeapplication.h>
 #include <tdecmdlineargs.h>

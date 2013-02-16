@@ -28,9 +28,9 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeconfig.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 
 // KTTS includes.

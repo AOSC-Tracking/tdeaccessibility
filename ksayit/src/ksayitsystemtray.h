@@ -27,7 +27,7 @@
 #include <ksystemtray.h>
 #include <tdepopupmenu.h>
 #include <tdeaction.h>
-#include <kmenubar.h>
+#include <tdemenubar.h>
 #include <khelpmenu.h>
 #include <kiconloader.h>
 

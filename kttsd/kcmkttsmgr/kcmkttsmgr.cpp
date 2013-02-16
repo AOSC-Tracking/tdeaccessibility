@@ -50,7 +50,7 @@
 #include <knuminput.h>
 #include <kcombobox.h>
 #include <kinputdialog.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdefiledialog.h>
 
 // KTTS includes.

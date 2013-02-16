@@ -26,12 +26,12 @@
 
 // KDE includes.
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeparts/componentfactory.h>
 #include <ktrader.h>
 #include <tdeapplication.h>
 #include <kstandarddirs.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 //#include <tdeio/job.h>
 
 // KTTSD includes.

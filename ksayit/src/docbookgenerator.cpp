@@ -16,8 +16,8 @@
 
 //KDE includes
 #include <kdebug.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 
 // App specific includes
 #include "docbookgenerator.h"

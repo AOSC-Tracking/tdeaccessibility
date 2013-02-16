@@ -23,14 +23,14 @@
 #include <tdelistview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <tdeconfig.h>
 #include <ksimpleconfig.h>
 #include <tdefiledialog.h>
 #include <tdeio/netaccess.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletionwidget.h"

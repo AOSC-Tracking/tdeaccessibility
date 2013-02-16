@@ -29,15 +29,15 @@
 #include <X11/extensions/xtestext1.h>    /* Standard Name-String definitions*/
 #include <X11/extensions/XTest.h>    /* Standard Name-String definitions*/
 #include <kdialog.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqpushbutton.h>
 #include <tqpoint.h>
 #include <tqnamespace.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kaudioplayer.h>
 #include <kstandarddirs.h>
 #include <tqsound.h>
-#include <kglobalsettings.h>
+#include <tdeglobalsettings.h>
 #include <kdebug.h>
 #include <tqlayout.h>
 #include <tqlineedit.h>

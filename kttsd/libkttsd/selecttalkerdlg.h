@@ -32,7 +32,7 @@
 
 // KDE includes.
 #include <kdialogbase.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kdemacros.h>
 
 // KTTS includes.

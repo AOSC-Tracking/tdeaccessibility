@@ -32,8 +32,8 @@
 #include <tqstring.h>
 
 // KDE includes.
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 
 // PluginConf includes.
 #include "filterconf.h"

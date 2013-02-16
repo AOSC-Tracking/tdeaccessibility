@@ -40,10 +40,10 @@
 #include <kkeydialog.h>
 #include <kinputdialog.h>
 #include <kiconloader.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdefiledialog.h>
-#include <kmenubar.h>
-#include <klocale.h>
+#include <tdemenubar.h>
+#include <tdelocale.h>
 #include <tdeconfig.h>
 #include <kdebug.h>
 #include <kstdaction.h>
@@ -51,7 +51,7 @@
 #include <kimageio.h>
 #include <tdeio/job.h>
 #include <tdeio/netaccess.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <tdepopupmenu.h>
 #include <kedittoolbar.h>
 #include <twin.h>

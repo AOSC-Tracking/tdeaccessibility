@@ -27,7 +27,7 @@
 #include <tdetexteditor/selectioninterface.h>
 
 #include <tdeaction.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kstandarddirs.h>
 #include <tdeapplication.h>
 #include <kgenericfactory.h>

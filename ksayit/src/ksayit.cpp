@@ -24,13 +24,13 @@
 #include <tqfile.h>
 
 // include files for KDE
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kdebug.h>
 #include <kiconloader.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kdialogbase.h>
 #include <tdefiledialog.h>
-#include <kmenubar.h>
+#include <tdemenubar.h>
 #include <tdepopupmenu.h>
 #include <kstatusbar.h>
 #include <tdeconfig.h>

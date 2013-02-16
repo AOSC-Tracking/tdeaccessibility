@@ -25,9 +25,9 @@
 #include <tdeaboutapplication.h>
 #include <tdepopupmenu.h>
 #include <tdeaboutdata.h>
-#include <klocale.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
+#include <tdeglobalsettings.h>
 #include <tdeapplication.h>
 #include <kiconloader.h>
 #include <kiconeffect.h>

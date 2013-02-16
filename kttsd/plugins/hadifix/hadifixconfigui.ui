@@ -636,7 +636,7 @@
     <include location="global" impldecl="in declaration">tqpixmap.h</include>
     <include location="global" impldecl="in declaration">kurl.h</include>
     <include location="global" impldecl="in declaration">tqmap.h</include>
-    <include location="global" impldecl="in implementation">kglobal.h</include>
+    <include location="global" impldecl="in implementation">tdeglobal.h</include>
     <include location="global" impldecl="in implementation">tqstringlist.h</include>
     <include location="global" impldecl="in implementation">math.h</include>
     <include location="global" impldecl="in implementation">kiconloader.h</include>

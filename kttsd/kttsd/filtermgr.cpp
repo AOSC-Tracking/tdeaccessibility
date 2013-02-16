@@ -28,7 +28,7 @@
 #include <tdeconfig.h>
 #include <ktrader.h>
 #include <tdeparts/componentfactory.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 // FilterMgr includes.
 #include "filtermgr.h"

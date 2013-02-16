@@ -20,8 +20,8 @@
 #include <tqtranslator.h>
 
 // KDE includes
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 
 // App specific includes
 #include "ksayitsystemtray.h"

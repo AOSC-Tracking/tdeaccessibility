@@ -21,7 +21,7 @@
 #include <tqobject.h>
 #include <tqstring.h>
 #include <kprocess.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
   *@author Gunnar Schmi Dt

@@ -38,10 +38,10 @@
 // KDE includes.
 #include <kdialog.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kcombobox.h>
-#include <kglobal.h>
-#include <ktempfile.h>
+#include <tdeglobal.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <knuminput.h>
 #include <kprocio.h>

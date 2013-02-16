@@ -30,7 +30,7 @@
 #include <tdeversion.h>
 #include <kstandarddirs.h>
 #include <kprocess.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kdebug.h>
 
 // SSMLConvert includes.

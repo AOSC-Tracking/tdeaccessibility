@@ -28,7 +28,7 @@
 #include <kdebug.h>
 #include <tdeconfig.h>
 #include <kprocess.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 
 // KTTS includes.

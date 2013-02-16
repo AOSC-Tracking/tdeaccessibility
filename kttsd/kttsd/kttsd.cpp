@@ -28,8 +28,8 @@
 // KDE includes.
 #include <kdebug.h>
 #include <tdeapplication.h>
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
 #include <tdefiledialog.h>
 #include <dcopclient.h>
 #include <knotifyclient.h>

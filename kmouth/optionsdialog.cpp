@@ -25,9 +25,9 @@
 #include <tqfile.h>
 
 #include <kcombobox.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeconfig.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 #include <tdecmodule.h>
 #include <klibloader.h>

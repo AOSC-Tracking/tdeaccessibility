@@ -32,8 +32,8 @@
 #include <tqradiobutton.h>
 
 // KDE includes.
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <tdelistview.h>
 #include <klineedit.h>
 #include <kdialog.h>

@@ -23,8 +23,8 @@
 #include <tdeapplication.h>
 #include <tdecmdlineargs.h>
 #include <tdeaboutdata.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <arts/kartsdispatcher.h>
 #include <dcopclient.h>
 

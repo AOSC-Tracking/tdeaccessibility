@@ -33,8 +33,8 @@
 #include <tqradiobutton.h>
 
 // KDE includes.
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <tdelistview.h>
 #include <klineedit.h>
 #include <kdialog.h>
@@ -46,7 +46,7 @@
 #include <ktrader.h>
 #include <tdeparts/componentfactory.h>
 #include <tdefiledialog.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 // KTTS includes.
 #include "filterconf.h"

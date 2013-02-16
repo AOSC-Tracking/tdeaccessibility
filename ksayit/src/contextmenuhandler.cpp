@@ -16,8 +16,8 @@
 
 // KDE includes
 #include <kdebug.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 
 // App specific includes

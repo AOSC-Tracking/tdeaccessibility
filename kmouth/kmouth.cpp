@@ -21,9 +21,9 @@
 
 // include files for KDE
 #include <kiconloader.h>
-#include <kmenubar.h>
+#include <tdemenubar.h>
 #include <kstatusbar.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeconfig.h>
 #include <kstdaction.h>
 #include <kprinter.h>

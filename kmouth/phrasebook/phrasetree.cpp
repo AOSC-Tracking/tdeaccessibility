@@ -15,14 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeconfig.h>
 #include <tdeaction.h>
 #include <tdestdaccel.h>
 #include <tdeshortcutlist.h>
 #include <tdeactionshortcutlist.h>
 #include <kiconloader.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include "phrasetree.h"
 #include "phrasebookdialog.h"

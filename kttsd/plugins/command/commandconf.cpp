@@ -25,10 +25,10 @@
 // KDE includes.
 #include <kdialog.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kdialog.h>
 #include <kcombobox.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
 

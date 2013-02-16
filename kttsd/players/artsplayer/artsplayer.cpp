@@ -32,9 +32,9 @@
 
 #include <sys/wait.h>
 
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kaudiomanagerplay.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 // public methods

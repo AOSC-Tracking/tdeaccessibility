@@ -22,15 +22,15 @@
 #include <tqregexp.h>
 #include <tqptrstack.h>
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeaction.h>
 #include <tdepopupmenu.h>
 #include <tdetoolbar.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <tdeio/netaccess.h>
 #include <tdefiledialog.h>
-#include <kmessagebox.h>
-#include <kglobalsettings.h>
+#include <tdemessagebox.h>
+#include <tdeglobalsettings.h>
 
 #include "phrasebookparser.h"
 #include "phrasebook.h"

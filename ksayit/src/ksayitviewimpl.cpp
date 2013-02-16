@@ -26,9 +26,9 @@ using namespace std;
 
 // KDE includes
 #include <kdebug.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <ktextedit.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 // App specific includes
 #include "ksayitviewimpl.h"

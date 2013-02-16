@@ -18,7 +18,7 @@
 // KDE includes.
 #include <tdeapplication.h>
 #include <tdeconfig.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kdebug.h>
 
 // GStreamerPlayer includes.

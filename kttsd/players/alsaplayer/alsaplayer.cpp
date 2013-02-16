@@ -47,8 +47,8 @@
 #include <kdebug.h>
 #include <tdeconfig.h>
 #include <kstandarddirs.h>
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
 
 // AlsaPlayer includes.
 #include "alsaplayer.h"

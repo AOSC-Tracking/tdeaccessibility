@@ -29,7 +29,7 @@
 
 // KDE includes.
 #include <kinstance.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeaboutdata.h>
 #include <tdelistview.h>
 #include <kiconloader.h>

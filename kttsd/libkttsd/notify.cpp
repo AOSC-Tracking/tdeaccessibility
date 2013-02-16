@@ -23,7 +23,7 @@
 
 // KDE includes.
 #include <tdeconfig.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kstaticdeleter.h>
 
 // KTTS includes.

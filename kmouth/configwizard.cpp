@@ -20,7 +20,7 @@
 #include <tqlayout.h>
 #include <tqlabel.h>
 #include <tdelistview.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <ksconfig.h>

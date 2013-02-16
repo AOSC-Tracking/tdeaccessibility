@@ -18,10 +18,10 @@
 
 //KDE includes
 #include <kdebug.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <kiconloader.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 // App specific includes
 #include "parasaxparser.h"

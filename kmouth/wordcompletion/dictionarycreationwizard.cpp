@@ -27,7 +27,7 @@
 #include <tdelistview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kcombobox.h>
 #include <ksconfig.h>
 #include <tdeapplication.h>

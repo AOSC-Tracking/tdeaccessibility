@@ -18,7 +18,7 @@
 
 #include <tdecmdlineargs.h>
 #include <tdeaboutdata.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include "kmag.h"
 

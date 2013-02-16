@@ -23,7 +23,7 @@
 #include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include "wordlist.h"
 

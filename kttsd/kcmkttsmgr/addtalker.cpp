@@ -27,8 +27,8 @@
 
 // KDE includes.
 #include <kcombobox.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <kdebug.h>
 
 // KTTS includes.

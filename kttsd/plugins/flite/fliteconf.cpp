@@ -27,9 +27,9 @@
 #include <tqapplication.h>
 
 // KDE includes.
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kdialog.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
 

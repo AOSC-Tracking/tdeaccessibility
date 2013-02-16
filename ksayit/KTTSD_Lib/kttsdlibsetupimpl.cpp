@@ -17,8 +17,8 @@
 
 // KDE includes
 #include <kdebug.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 
 // App specific includes
 #include "kttsdlibsetupimpl.h"
