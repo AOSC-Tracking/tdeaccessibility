@@ -310,7 +310,7 @@ private: // Methods
     void setActions(int actions);
     
     /**
-     * Returns the absolute pathname of the given bookmartdefile.
+     * Returns the absolute pathname of the given bookmarkfile.
      * This is the first KDE resource directory \p (share/apps) in which
      * the user has write permissions. The relative path is
      * \p ksayit/ksayit_bookmarks/.

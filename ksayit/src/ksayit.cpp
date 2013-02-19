@@ -290,7 +290,7 @@ void KSayItApp::slotChangeBookmarkFilename(const TQString &newname)
     if ( newbkFile.isNull() )
         return;    
     
-    // copy old bookmartdefile to new file
+    // copy old bookmarkfile to new file
     if ( m_currentBookmarkFile != newbkFile ){
         if ( TQFile::exists(m_currentBookmarkFile) ){
             TQString command = TQString("cp %1 %2").arg(m_currentBookmarkFile).arg(newbkFile);
