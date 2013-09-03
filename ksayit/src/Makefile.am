@@ -31,8 +31,8 @@ ksayit_SOURCES = doctreeviewimpl.cpp effectstack.cpp fxpluginhandler.cpp \
 		parasaxparser.cpp saxhandler.cpp ksayitbookmarkhandler.cpp contextmenuhandler.cpp docbookclasses.cpp \
 		docbookgenerator.cpp docbookparser.cpp
 
-ksayit_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -ltdetexteditor -lartsflow -lartsflow_idl
-ksayit_LDADD = $(top_builddir)/ksayit/KTTSD_Lib/libKTTSD_Lib.la $(LIB_KIO) \
+ksayit_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor -lartsflow -lartsflow_idl
+ksayit_LDADD = $(top_builddir)/ksayit/KTTSD_Lib/libKTTSD_Lib.la $(LIB_TDEIO) \
 	-lartskde -lsoundserver_idl -lartsflow -lartsflow_idl
 
 

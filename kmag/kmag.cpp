@@ -109,7 +109,7 @@ KmagApp::KmagApp(TQWidget* , const char* name)
   initActions();
   initConnections();
 
-  // Register all KIO image formats - to be used when saving image.
+  // Register all TDEIO image formats - to be used when saving image.
   KImageIO::registerFormats();
 
   // read options from config file

@@ -33,12 +33,12 @@ kttsd_SOURCES = \
 	filtermgr.cpp \
 	talkermgr.cpp
 
-kttsd_LDFLAGS = -avoid-version -module $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -ltdetexteditor
+kttsd_LDFLAGS = -avoid-version -module $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 kttsd_LDADD = \
 	$(top_builddir)/kttsd/libkttsd/libkttsd.la \
 	$(LIB_TDECORE) \
-	$(LIB_KIO) \
-	$(LIB_KUTILS)
+	$(LIB_TDEIO) \
+	$(LIB_TDEUTILS)
 
 # Install desktop file to standard services directory.
 kde_services_DATA = kttsd.desktop

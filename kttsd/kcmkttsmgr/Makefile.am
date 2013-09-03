@@ -33,7 +33,7 @@ kcm_kttsd_la_SOURCES = \
 kcm_kttsd_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries)
 kcm_kttsd_la_LIBADD = \
 	$(top_builddir)/kttsd/libkttsd/libkttsd.la \
-	$(LIB_KIO) 
+	$(LIB_TDEIO) 
 
 # Header files that should not be installed.
 noinst_HEADERS = \
