@@ -27,7 +27,7 @@
                 <bool>false</bool>
             </property>
             <property name="whatsThis" stdset="0">
-                <string>If you select this check box the words from the KDE documentation are spell-checked before they are inserted into the new dictionary.</string>
+                <string>If you select this check box the words from the TDE documentation are spell-checked before they are inserted into the new dictionary.</string>
             </property>
         </widget>
         <widget class="KURLRequester" row="2" column="1">

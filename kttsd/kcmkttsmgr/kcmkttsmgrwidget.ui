@@ -1554,7 +1554,7 @@
                                     <number>0</number>
                                 </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Check to use the KDE aRts system for audio output.</string>
+                                    <string>Check to use the TDE aRts system for audio output.</string>
                                 </property>
                             </widget>
                             <widget class="TQRadioButton" row="3" column="0">
