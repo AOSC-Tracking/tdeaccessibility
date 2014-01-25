@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY ksayit "<application>KSayIt</application>">
+  <!ENTITY kappname "&ksayit;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+
+<!-- Note: When updating this empty handbook, remember that usually most handbooks -->
+<!-- use the book model rather than article. Feel free to use article if the new handbook -->
+<!-- remains really short. -->
+
+<article lang="&language;">
+<title>The &ksayit; Handbook</title>
+
+<articleinfo>
+<title>The &ksayit; Handbook</title>
+
+<authorgroup>
+<corpauthor>&tde-team;</corpauthor>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<releaseinfo>&tde-release-version;</releaseinfo>
+<date>Reviewed: &tde-release-date;</date>
+
+<copyright>
+<year>&tde-copyright-date;</year>
+<holder>&tde-team;</holder>
+</copyright>
+
+<!-- <legalnotice>&FDLNotice;</legalnotice> -->
+
+<abstract>
+<para>
+&ksayit; is a text to speech frontend for TDE.
+</para>
+</abstract>
+
+<keywordset>
+<keyword>TDE</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="apologies">
+<title>We Apologize</title>
+<para>No documentation has yet been written for &ksayit;.</para>
+
+<para>If you need help, please check <ulink url="http://www.trinitydesktop.org">The &tde;
+web site</ulink>, submit questions to the <ulink url="http://www.trinitydesktop.org/mailinglist.php">
+&tde; mail lists</ulink>, or file a bug report at the <ulink url="http://bugs.trinitydesktop.org/">
+&tde; bug tracker</ulink>.</para>
+
+<para>If you are interested in helping, please consider writing the help file.
+Submitting a basic text file is acceptable as the &tde-team; will convert the text.</para>
+
+<para>Thank you for helping and thank you for your patience.</para>
+
+&underFDL;
+
+</sect1>
+
+&documentation.index; 
+</article>
