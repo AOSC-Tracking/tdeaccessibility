@@ -32,7 +32,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>&lt;p align="center"&gt;If you would like to change the configuration of KTTSD please use the TDE Control Center or click the button below.&lt;/p&gt;</string>
+                <string>&lt;p align="center"&gt;If you would like to change the configuration of KTTSD please use the Trinity Control Center or click the button below.&lt;/p&gt;</string>
             </property>
         </widget>
         <widget class="Line">
