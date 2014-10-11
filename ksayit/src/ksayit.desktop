@@ -2,7 +2,7 @@
 Type=Application
 Exec=ksayit -caption "%c" %i
 Icon=ksayit
-DocPath=ksayit/index.html
+X-DocPath=ksayit/index.html
 Terminal=false
 Name=KSayIt
 Name[hi]=के-से-इट

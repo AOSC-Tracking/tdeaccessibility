@@ -87,5 +87,5 @@ Comment[uk]=Звуковий втулок aRts для KTTSD
 Comment[vi]=Trình bổ sung âm thanh KTTSD aRts
 Comment[zh_TW]=KTTSd aRts 語音外掛程式
 Type=Service
-ServiceTypes=KTTSD/AudioPlugin
+X-TDE-ServiceTypes=KTTSD/AudioPlugin
 X-TDE-Library=libkttsd_artsplugin

@@ -2,7 +2,7 @@
 Type=Service
 Exec=kttsd
 Icon=kttsd
-ServiceTypes=DCOP/Text-to-Speech
+X-TDE-ServiceTypes=DCOP/Text-to-Speech
 X-DCOP-ServiceType=Unique
 X-DCOP-ServiceName=kttsd
 X-TDE-StartupNotify=false

@@ -47,6 +47,6 @@ Comment[uk]=Втулок Freeverb для KSayIt
 Comment[vi]=Trình bổ sung "Động từ tự do" cho "Nói K"
 Comment[zh_CN]=KSayIt 的 Freeverb 插件
 Comment[zh_TW]=KSayIt 的 Freeverb 外掛程式
-ServiceTypes=KSayIt/FXPlugin
+X-TDE-ServiceTypes=KSayIt/FXPlugin
 Type=Service
 X-TDE-Library=libFreeverb_plugin

@@ -54,6 +54,6 @@ Comment[uk]=Синтезатор мовлення Festival Lite (flite)
 Comment[vi]=Trình tổng hợp tiếng nói Festival Lite (flite)
 Comment[zh_TW]=Festival Lite (flite) 語音合成器
 Type=Service
-ServiceTypes=KTTSD/SynthPlugin
+X-TDE-ServiceTypes=KTTSD/SynthPlugin
 X-TDE-Library=libkttsd_fliteplugin
 X-TDE-Languages=en,en_US,en_GB

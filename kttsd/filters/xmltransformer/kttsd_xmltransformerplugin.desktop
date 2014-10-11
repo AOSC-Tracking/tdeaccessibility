@@ -83,6 +83,6 @@ Comment[uk]=Втулок загального фільтра перетворе�
 Comment[vi]=Trình bổ sung Lọc Chuyển đổi XML Chung cho KTTS
 Comment[zh_TW]=KTTS 使用的一般 XML 轉換外掛程式
 Type=Service
-ServiceTypes=KTTSD/FilterPlugin
+X-TDE-ServiceTypes=KTTSD/FilterPlugin
 X-TDE-Library=libkttsd_xmltransformerplugin
 X-TDE-Languages=en,en_US,en_GB,en_CA,es,es_mx,cy,de,fi,cs,pl

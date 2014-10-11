@@ -87,6 +87,6 @@ Comment[uk]=Загальний синтезатор мовлення з кома
 Comment[vi]=Tổng hợp giọng nói chung cho việc ra lệnh
 Comment[zh_TW]=從命令列的一般語音合成器
 Type=Service
-ServiceTypes=KTTSD/SynthPlugin
+X-TDE-ServiceTypes=KTTSD/SynthPlugin
 X-TDE-Library=libkttsd_commandplugin
 X-TDE-Languages=other

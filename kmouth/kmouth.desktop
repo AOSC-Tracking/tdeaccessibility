@@ -2,7 +2,7 @@
 Type=Application
 Exec=kmouth -caption "%c" %i %m
 Icon=kmouth
-DocPath=kmouth/index.html
+X-DocPath=kmouth/index.html
 Comment=
 Comment[ro]=Un utilitar de mărit zone ale ecranului
 Terminal=false

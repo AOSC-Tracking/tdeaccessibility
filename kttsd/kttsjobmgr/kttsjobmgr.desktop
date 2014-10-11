@@ -46,4 +46,4 @@ Comment[tr]=TDE Metinden Konuşmaya Görev Yöneticisi
 Comment[uk]=Менеджер завдань TDE для синтезу мовлення з тексту
 Comment[vi]=Trình quản lý Tác vụ Văn bản sang Tiếng nói TDE
 Comment[zh_TW]=TDE 文字轉語音工作管理員
-ServiceTypes=KParts/ReadOnlyPart
+X-TDE-ServiceTypes=KParts/ReadOnlyPart
