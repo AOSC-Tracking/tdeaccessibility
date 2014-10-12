@@ -172,7 +172,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
 
     TQPushButton* btn;
     TQString wt;
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("stop", TDEIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("process-stop", TDEIcon::Small, 0, true),
                           i18n("Hold"), hbox1, "job_hold");
     wt = i18n(
             "<p>Changes a job to Paused state.  If currently speaking, the job stops speaking.  "

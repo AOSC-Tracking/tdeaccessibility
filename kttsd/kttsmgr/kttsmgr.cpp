@@ -180,7 +180,7 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
 
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("klipper", TDEIcon::Small),
         i18n("&Speak Clipboard Contents"), this, TQT_SLOT(speakClipboardSelected()));
-    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("stop", TDEIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("process-stop", TDEIcon::Small),
         i18n("&Hold"), this, TQT_SLOT(holdSelected()));
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("exec", TDEIcon::Small),
         i18n("Resume"), this, TQT_SLOT(resumeSelected()));

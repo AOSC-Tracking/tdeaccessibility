@@ -130,7 +130,7 @@ void KmagApp::initActions()
                               TQT_SLOT(slotFileNewWindow()), actionCollection(),"new_window");
   fileNewWindow->setToolTip(i18n("Open a new KMagnifier window"));
 
-  refreshSwitch = new TDEAction(i18n("&Stop"), "stop", TDEStdAccel::reload(), TQT_TQOBJECT(this),
+  refreshSwitch = new TDEAction(i18n("&Stop"), "process-stop", TDEStdAccel::reload(), TQT_TQOBJECT(this),
                               TQT_SLOT(slotToggleRefresh()), actionCollection(), "start_stop_refresh");
   refreshSwitch->setToolTip(i18n("Click to stop window refresh"));
   refreshSwitch->setWhatsThis(i18n("Clicking on this icon will <b>start</b> / <b>stop</b>\
