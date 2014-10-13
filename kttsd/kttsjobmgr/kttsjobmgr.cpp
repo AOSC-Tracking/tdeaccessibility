@@ -188,7 +188,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "top speakable job in the list, it begins speaking.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_resume()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("redo", TDEIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("edit-redo", TDEIcon::Small, 0, true),
                           i18n("R&estart"), hbox1, "job_restart");
     wt = i18n(
             "<p>Rewinds a job to the beginning and changes its state to Waiting.  If the job "
