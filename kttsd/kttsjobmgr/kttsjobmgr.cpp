@@ -202,7 +202,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "speakable job in the list begins speaking.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_remove()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("go-down", TDEIcon::Small, 0, true),
                           i18n("&Later"), hbox1, "job_later");
     wt = i18n(
             "<p>Moves a job downward in the list so that it will be spoken later.  If the job "

@@ -127,9 +127,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Give buttons icons.
     // Talkers tab.
     m_kttsmgrw->higherTalkerPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("go-up", TDEIcon::Small));
     m_kttsmgrw->lowerTalkerPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("go-down", TDEIcon::Small));
     m_kttsmgrw->removeTalkerButton->setIconSet(
             TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small));
     m_kttsmgrw->configureTalkerButton->setIconSet(
@@ -137,9 +137,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
 
     // Filters tab.
     m_kttsmgrw->higherFilterPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("go-up", TDEIcon::Small));
     m_kttsmgrw->lowerFilterPriorityButton->setIconSet(
-            TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small));
+            TDEGlobal::iconLoader()->loadIconSet("go-down", TDEIcon::Small));
     m_kttsmgrw->removeFilterButton->setIconSet(
             TDEGlobal::iconLoader()->loadIconSet("edittrash", TDEIcon::Small));
     m_kttsmgrw->configureFilterButton->setIconSet(
@@ -164,9 +164,9 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Construct a popup menu for the Sentence Boundary Detector buttons on Filter tab.
     m_sbdPopmenu = new TQPopupMenu( m_kttsmgrw, "SbdPopupMenu" );
     m_sbdPopmenu->insertItem( i18n("&Edit..."), this, TQT_SLOT(slot_configureSbdFilter()), 0, sbdBtnEdit );
-    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("up", TDEIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("go-up", TDEIcon::Small),
                               i18n("U&p"), this, TQT_SLOT(slot_higherSbdFilterPriority()), 0, sbdBtnUp );
-    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("down", TDEIcon::Small),
+    m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("go-down", TDEIcon::Small),
                               i18n("Do&wn"), this, TQT_SLOT(slot_lowerSbdFilterPriority()), 0, sbdBtnDown );
     m_sbdPopmenu->insertItem( i18n("&Add..."), this, TQT_SLOT(slot_addSbdFilter()), 0, sbdBtnAdd );
     m_sbdPopmenu->insertItem( i18n("&Remove"), this, TQT_SLOT(slot_removeSbdFilter()), 0, sbdBtnRemove );
