@@ -371,7 +371,7 @@ void PhraseBookDialog::initActions() {
    editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new TDEAction (i18n("&Delete"), "editdelete", 0, TQT_TQOBJECT(this), TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
+   editDelete = new TDEAction (i18n("&Delete"), "edit-delete", 0, TQT_TQOBJECT(this), TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
    editDelete->setStatusText(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 

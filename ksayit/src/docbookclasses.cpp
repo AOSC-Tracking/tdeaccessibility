@@ -119,7 +119,7 @@ TQVariant RobDocument::getValue( unsigned int index ) const
 Overview::Overview(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("document-new", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "0"); // upmost element
 
@@ -174,7 +174,7 @@ TQVariant Overview::getValue( unsigned int index ) const
 Date::Date(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("document-new", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000001");
     
@@ -241,7 +241,7 @@ TQVariant Date::getValue( unsigned int index ) const
 ReleaseInfo::ReleaseInfo(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("document-new", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000002");
 
@@ -569,7 +569,7 @@ TQVariant Keyword::getValue( unsigned int index ) const
 Abstract::Abstract(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("filenew", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("document-new", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000005");
 

@@ -243,7 +243,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "The job will be spoken by the topmost Talker in the <b>Talkers</b> tab.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_speak_clipboard()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("fileopen", TDEIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("document-open", TDEIcon::Small, 0, true),
                           i18n("Spea&k File"), hbox3, "speak_file");
     wt = i18n(
             "<p>Prompts you for a file name and queues the contents of the file for speaking.  "

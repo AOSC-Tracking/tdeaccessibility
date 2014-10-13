@@ -157,15 +157,15 @@ void KMouthApp::initActions() {
    phraseListSpeak->setStatusText(i18n("Speaks the currently selected phrases in the history"));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
-   phraseListRemove = new TDEAction (i18n("&Delete"), "editdelete", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
+   phraseListRemove = new TDEAction (i18n("&Delete"), "edit-delete", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
    phraseListRemove->setStatusText(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
-   phraseListCut = new TDEAction (i18n("Cu&t"),   "editcut", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
+   phraseListCut = new TDEAction (i18n("Cu&t"),   "edit-cut", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
    phraseListCut->setStatusText(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
-   phraseListCopy   = new TDEAction (i18n("&Copy"), "editcopy", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(copyListSelection()),   actionCollection(), "phraselist_copy");
+   phraseListCopy   = new TDEAction (i18n("&Copy"), "edit-copy", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(copyListSelection()),   actionCollection(), "phraselist_copy");
    phraseListCut->setStatusText(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
