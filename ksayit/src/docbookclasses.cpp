@@ -364,7 +364,7 @@ TQVariant AuthorGroup::getValue( unsigned int index ) const
 Author::Author(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("personal", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("preferences-desktop-personal", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
