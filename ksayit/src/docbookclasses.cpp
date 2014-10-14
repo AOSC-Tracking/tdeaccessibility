@@ -625,7 +625,7 @@ TQVariant Abstract::getValue( unsigned int index ) const
 Para::Para(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
@@ -699,7 +699,7 @@ TQVariant Para::getValue( unsigned int index ) const
 Chapter::Chapter(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -760,7 +760,7 @@ TQVariant Chapter::getValue( unsigned int index ) const
 Sect1::Sect1(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -820,7 +820,7 @@ TQVariant Sect1::getValue( unsigned int index ) const
 Sect2::Sect2(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -880,7 +880,7 @@ TQVariant Sect2::getValue( unsigned int index ) const
 Sect3::Sect3(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
@@ -940,7 +940,7 @@ TQVariant Sect3::getValue( unsigned int index ) const
 Sect4::Sect4(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     
     // new Concept (begin)
@@ -1000,7 +1000,7 @@ TQVariant Sect4::getValue( unsigned int index ) const
 Sect5::Sect5(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("leftjust", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("format-justify-left", TDEIcon::Small);
     this->setPixmap(0, pixmap);
 
     // new Concept (begin)
