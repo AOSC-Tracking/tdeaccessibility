@@ -52,21 +52,21 @@ void KSayItSystemTray::initActions()
 
   // User defined actions
   say = new TDEAction(i18n("Say"),
-              "player_play",
+              "media-playback-start",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotSayActivated()),
               actionCollection(),
               "say_it");
   
   shutup = new TDEAction(i18n("Shut Up"),
-              "player_stop",
+              "media-playback-stop",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
   
   pause = new TDEAction (i18n("Pause"),
-              "player_pause",
+              "media-playback-pause",
               0,
               TQT_TQOBJECT(this), TQT_SLOT (slotPauseActivated()),
               actionCollection(),

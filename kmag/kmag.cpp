@@ -126,7 +126,7 @@ KmagApp::~KmagApp()
 
 void KmagApp::initActions()
 {
-  fileNewWindow = new TDEAction(i18n("New &Window"), "window_new", TDEStdAccel::openNew(), TQT_TQOBJECT(this),
+  fileNewWindow = new TDEAction(i18n("New &Window"), "window-new", TDEStdAccel::openNew(), TQT_TQOBJECT(this),
                               TQT_SLOT(slotFileNewWindow()), actionCollection(),"new_window");
   fileNewWindow->setToolTip(i18n("Open a new KMagnifier window"));
 
