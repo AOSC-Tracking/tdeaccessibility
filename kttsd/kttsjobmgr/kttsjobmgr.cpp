@@ -181,7 +181,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
             "down in the list.</p>");
     TQWhatsThis::add(btn, wt);
     connect (btn, TQT_SIGNAL(clicked()), this, TQT_SLOT(slot_job_hold()));
-    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("exec", TDEIcon::Small, 0, true),
+    btn = new TQPushButton(TDEGlobal::iconLoader()->loadIconSet("application-x-executable", TDEIcon::Small, 0, true),
                           i18n("Resume"), hbox1, "job_resume");
     wt = i18n(
             "<p>Resumes a paused job or changes a Queued job to Waiting.  If the job is the "

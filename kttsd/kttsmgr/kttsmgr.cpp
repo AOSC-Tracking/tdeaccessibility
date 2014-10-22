@@ -182,7 +182,7 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
         i18n("&Speak Clipboard Contents"), this, TQT_SLOT(speakClipboardSelected()));
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("process-stop", TDEIcon::Small),
         i18n("&Hold"), this, TQT_SLOT(holdSelected()));
-    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("exec", TDEIcon::Small),
+    id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("application-x-executable", TDEIcon::Small),
         i18n("Resume"), this, TQT_SLOT(resumeSelected()));
     id = contextMenu()->insertSeparator();
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", TDEIcon::Small),
