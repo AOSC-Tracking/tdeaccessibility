@@ -448,7 +448,7 @@ TQVariant Author::getValue( unsigned int index ) const
 KeywordSet::KeywordSet(ListViewInterface *parent, ListViewInterface *after, TQString label)
     : ListViewInterface(parent, after, label)
 {
-    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon("txt", TDEIcon::Small);
+    TQPixmap pixmap = TDEGlobal::iconLoader()->loadIcon(""text-plain", TDEIcon::Small);
     this->setPixmap(0, pixmap);
     this->setText(3, "00000004");
 
