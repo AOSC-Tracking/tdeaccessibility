@@ -132,7 +132,7 @@ OptionsDialog::OptionsDialog (TQWidget *parent)
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
-   TQPixmap iconCompletion = TDEGlobal::iconLoader()->loadIcon("keyboard", TDEIcon::NoGroup, TDEIcon::SizeMedium);
+   TQPixmap iconCompletion = TDEGlobal::iconLoader()->loadIcon("input-keyboard", TDEIcon::NoGroup, TDEIcon::SizeMedium);
    TQGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), TQString(), iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
