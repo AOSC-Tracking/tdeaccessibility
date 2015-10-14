@@ -9,8 +9,7 @@ EXTRA_DIST = main.cpp version.h kmouth.cpp kmouth.h kmouthui.rc kmouth.desktop p
 
 kde_conf_DATA = kmouthrc
 
-apps_DATA = kmouth.desktop
-appsdir = $(kde_appsdir)/Applications
+xdg_apps_DATA = kmouth.desktop
 
 # set the include path for X, qt and KDE
 INCLUDES= -Iphrasebook -Iwordcompletion $(all_includes)

@@ -7,8 +7,7 @@ SUBDIRS = pics
 
 EXTRA_DIST = main.cpp version.h kmousetool.cpp kmousetool.h kmousetool.desktop mtstroke.cpp mtstroke.h mousetool_tap.wav 
 
-kmousetooldir = $(kde_appsdir)/Applications
-kmousetool_DATA = kmousetool.desktop
+xdg_apps_DATA = kmousetool.desktop
 
 sounddatadir = $(kde_datadir)/kmousetool/sounds
 sounddata_DATA = mousetool_tap.wav

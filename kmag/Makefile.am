@@ -13,8 +13,7 @@ uninstall-local:
 
 KDE_ICON = kmag 
 
-kmagdir = $(kde_appsdir)/Applications
-kmag_DATA = kmag.desktop
+xdg_apps_DATA = kmag.desktop
 
 kmagiconsdir = $(kde_datadir)/kmag/icons
 kmagicons_ICON = followmouse hidemouse window
