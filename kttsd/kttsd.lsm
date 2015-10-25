@@ -1,7 +1,7 @@
 Begin4
 Title:          KTTS
 Version:        R14.0.2
-Entered-date:   2015-08-26
+Entered-date:   2015-10-25
 Description:    KTTS (KDE Text-to-Speech) is a subsystem for converting text to audible speech.
 Keywords:       TDE accessibility tdeaccessibility TTS Text-to-Speech KTTSD
                 kttsmgr festival flite hadifix MBROLA freetts epos SSML
