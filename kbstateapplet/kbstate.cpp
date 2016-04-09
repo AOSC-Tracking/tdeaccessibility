@@ -824,8 +824,8 @@ void KeyIcon::drawButton (TQPainter *p) {
       black = TDEGlobalSettings::textColor();
    }
 
-   TQString text = i18n(modifierKeys[keyId].text);
-   if (!text.isEmpty() && !text.isNull()) {
+   if (strcmp(modifierKeys[keyId].text, "")) {
+      TQString text = i18n(modifierKeys[keyId].text);
       TQFont font = TDEGlobalSettings::generalFont();
       font.setWeight(TQFont::Black);
       TQFontMetrics metrics(font);
