@@ -1,6 +1,5 @@
 # The build order must be libktts, then libkttsd, then the rest.
 SUBDIRS = \
-        compat \
         libkttsd \
         players \
         plugins \
