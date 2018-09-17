@@ -1,7 +1,7 @@
 bin_PROGRAMS = kmouth
 
 kmouth_SOURCES = preferencesui.ui texttospeechconfigurationui.ui texttospeechconfigurationwidget.cpp optionsdialog.cpp configwizard.cpp phraseedit.cpp phraselist.cpp speech.cpp texttospeechsystem.cpp phraselistitem.cpp kmouth.cpp main.cpp 
-kmouth_LDADD   = ./phrasebook/libphrasebook.a ./wordcompletion/libwordcompletion.a -ltdeprint $(LIB_TDEFILE) $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_QT) $(LIBSOCKET)
+kmouth_LDADD   = ./phrasebook/libphrasebook.a ./wordcompletion/libwordcompletion.a -ltdeprint $(LIB_TDEFILE) $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_TQT) $(LIBSOCKET)
 
 SUBDIRS = icons phrasebook wordcompletion books . 
 
@@ -17,7 +17,7 @@ INCLUDES= -Iphrasebook -Iwordcompletion $(all_includes)
 METASOURCES = AUTO
 
 # the library search path. 
-kmouth_LDFLAGS = $(all_libraries) -ltdespell $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
+kmouth_LDFLAGS = $(all_libraries) -ltdespell $(KDE_RPATH) $(LIB_TQT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 
 rcdir = $(kde_datadir)/kmouth
 rc_DATA = kmouthui.rc

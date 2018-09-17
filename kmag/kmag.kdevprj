@@ -22,7 +22,7 @@ bin_program=kmag
 cflags=
 cppflags=
 cxxflags=\s-O3
-ldadd=-ltdeprint $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_QT)
+ldadd=-ltdeprint $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_TQT)
 ldflags=\s  \s
 
 [General]

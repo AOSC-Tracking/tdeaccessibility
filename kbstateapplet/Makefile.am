@@ -13,7 +13,7 @@ lnk_DATA = kbstateapplet.desktop
 EXTRA_DIST = $(lnk_DATA)
 
 kbstate_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
-kbstate_panelapplet_la_LIBADD = $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_QT)
+kbstate_panelapplet_la_LIBADD = $(LIB_TDEUI) $(LIB_TDECORE) $(LIB_TQT)
 
 messages:
 	$(XGETTEXT) *.cpp *.h -o $(podir)/kbstateapplet.pot

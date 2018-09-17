@@ -11,7 +11,7 @@ kde_module_LTLIBRARIES = tdetexteditor_kttsd.la
 
 tdetexteditor_kttsd_la_SOURCES = katekttsd.cpp
 tdetexteditor_kttsd_la_LIBADD  = -ltdetexteditor
-tdetexteditor_kttsd_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries) $(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) -lDCOP
+tdetexteditor_kttsd_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries) $(LIB_TQT) $(LIB_TDECORE) $(LIB_TDEUI) -lDCOP
 
 kttsddatadir = $(kde_datadir)/tdetexteditor_kttsd
 kttsddata_DATA = tdetexteditor_kttsdui.rc

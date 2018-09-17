@@ -33,7 +33,7 @@ kttsd_SOURCES = \
 	filtermgr.cpp \
 	talkermgr.cpp
 
-kttsd_LDFLAGS = -avoid-version -module $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
+kttsd_LDFLAGS = -avoid-version -module $(all_libraries) $(KDE_RPATH) $(LIB_TQT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 kttsd_LDADD = \
 	$(top_builddir)/kttsd/libkttsd/libkttsd.la \
 	$(LIB_TDECORE) \

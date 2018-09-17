@@ -17,7 +17,7 @@ check_PROGRAMS = testfilter
 
 testfilter_SOURCES = main.cpp
 
-testfilter_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
+testfilter_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_TQT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 testfilter_LDADD = \
 	$(top_builddir)/kttsd/libkttsd/libkttsd.la \
 	$(LIB_TDECORE)
