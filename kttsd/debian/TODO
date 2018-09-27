@@ -1,8 +1,8 @@
 * FWIW, I have the following packages installed (among many others, of course):
-    libqt3-headers 3.3.3-4.1      Qt3 header files
-    libqt3-mt-dev  3.3.3-4.1      Qt development files (Threaded)
-    libqt3c102-mt  3.3.3-4.1      Qt GUI Library (Threaded runtime version), V
-    libqthreads-12 1.6.4-4        QuickThreads library for Guile
+    libtqt3-headers 3.3.3-4.1      Qt3 header files
+    libtqt3-mt-dev  3.3.3-4.1      Qt development files (Threaded)
+    libtqt3c102-mt  3.3.3-4.1      Qt GUI Library (Threaded runtime version), V
+    libtqthreads-12 1.6.4-4        QuickThreads library for Guile
     qt3-designer   3.3.3-4.1      Qt3 Designer
     qt3-dev-tools  3.3.3-4.1      Qt3 development tools
     qt3-doc        3.3.3-4.1      Qt3 API documentation

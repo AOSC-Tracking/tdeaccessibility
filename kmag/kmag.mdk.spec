@@ -15,7 +15,7 @@ Buildroot: 	%_tmppath/%{name}-%{version}-buildroot
 BuildRequires:  gcc-cpp db3 readline pam popt libtermcap2 zlib1 XFree86-devel XFree86-libs Mesa-common
 BuildRequires:  automake arts autoconf diffutils tdelibs file 
 BuildRequires:  m4 texinfo gettext libjpeg62-devel tdelibs-devel gcc-c++ libbinutils2 libbzip2_1
-BuildRequires:  db1 freetype2 libjpeg62 libmng1 libpng libqt2 libqt2-devel rpm-build
+BuildRequires:  db1 freetype2 libjpeg62 libmng1 libpng libtqt2 libtqt2-devel rpm-build
 
 
 %description
