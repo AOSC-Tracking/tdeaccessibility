@@ -1,0 +1,17 @@
+##### prepare plugins/festivalint/voices ########
+
+tde_l10n_prepare_xml(
+    SOURCE plugins/festivalint/voices
+    TAGS name
+    CONTEXT FestivalVoiceName
+)
+
+
+##### create translation templates ##############
+
+tde_l10n_create_template(
+    CATALOG "kttsd"
+    SOURCES
+        "."
+        "plugins/festivalint/voices.tde_l10n"
+)
