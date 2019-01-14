@@ -1254,7 +1254,7 @@ void AlsaPlayer::voc_play(int fd, int ofs, const char* name)
     char was_extended = 0, output = 0;
     u_short *sp, repeat = 0;
     size_t silence;
-    off64_t filepos = 0;
+    off_t filepos = 0;
 
 #define COUNT(x)    nextblock -= x; in_buffer -= x; data += x
 #define COUNT1(x)    in_buffer -= x; data += x
@@ -1385,7 +1385,7 @@ void AlsaPlayer::voc_play(int fd, int ofs, const char* name)
                 MSG("Repeat loop %d times", repeat);
 #endif
                 if (filepos >= 0) {    /* if < 0, one seek fails, why test another */
-                    if ((filepos = lseek64(fd, 0, 1)) < 0) {
+                    if ((filepos = lseek(fd, 0, 1)) < 0) {
                         ERR("can't play loops; %s isn't seekable", name);
                         repeat = 0;
                     } else {
@@ -1407,7 +1407,7 @@ void AlsaPlayer::voc_play(int fd, int ofs, const char* name)
                     else
                         MSG("Neverending loop");
 #endif
-                    lseek64(fd, filepos, 0);
+                    lseek(fd, filepos, 0);
                     in_buffer = 0;    /* clear the buffer */
                     goto Fill_the_buffer;
                 }
@@ -1471,15 +1471,15 @@ void AlsaPlayer::init_raw_data(void)
 }
 
 /* calculate the data count to read from/to dsp */
-off64_t AlsaPlayer::calc_count(void)
+off_t AlsaPlayer::calc_count(void)
 {
-    off64_t count;
+    off_t count;
 
     if (timelimit == 0) {
         count = pbrec_count;
     } else {
         count = snd_pcm_format_size(hwdata.format, hwdata.rate * hwdata.channels);
-        count *= (off64_t)timelimit;
+        count *= (off_t)timelimit;
     }
     return count < pbrec_count ? count : pbrec_count;
 }
@@ -1505,11 +1505,11 @@ void AlsaPlayer::header(int /*rtype*/, const char* /*name*/)
 
 /* playing raw data */
 
-void AlsaPlayer::playback_go(int fd, size_t loaded, off64_t count, int rtype, const char *name)
+void AlsaPlayer::playback_go(int fd, size_t loaded, off_t count, int rtype, const char *name)
 {
     int l, r;
-    off64_t written = 0;
-    off64_t c;
+    off_t written = 0;
+    off_t c;
 
     if (m_debugLevel >= 1) header(rtype, name);
     set_params();

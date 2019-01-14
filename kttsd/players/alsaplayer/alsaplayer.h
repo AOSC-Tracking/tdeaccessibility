@@ -124,9 +124,9 @@ private:
     void voc_pcm_flush(void);
     void voc_play(int fd, int ofs, const char *name);
     void init_raw_data(void);
-    off64_t calc_count(void);
+    off_t calc_count(void);
     void header(int rtype, const char *name);
-    void playback_go(int fd, size_t loaded, off64_t count, int rtype, const char *name);
+    void playback_go(int fd, size_t loaded, off_t count, int rtype, const char *name);
     void playback(int fd);
 
     KURL m_currentURL;
@@ -168,8 +168,8 @@ private:
     size_t chunk_bytes;
     snd_output_t *log;
     int fd;
-    off64_t pbrec_count;
-    off64_t fdcount;
+    off_t pbrec_count;
+    off_t fdcount;
     int vocmajor;
     int vocminor;
 
