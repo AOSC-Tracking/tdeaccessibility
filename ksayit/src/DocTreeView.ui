@@ -121,6 +121,7 @@
 </forwards>
 <includes>
     <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
+    <include location="global" impldecl="in implementation">tdelistview.h</include>
 </includes>
 <Q_SIGNALS>
     <signal>signalContentChanged(const TQString &amp;)</signal>
@@ -155,7 +156,4 @@
     <slot>slotRightButtonPressed( TQListViewItem * i, const TQPoint &amp;, int )</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>tdelistview.h</includehint>
-</includehints>
 </UI>

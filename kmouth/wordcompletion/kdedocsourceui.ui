@@ -82,6 +82,9 @@
     <include location="local" impldecl="in implementation">klanguagebutton.h</include>
     <include location="local" impldecl="in implementation">klanguagebuttonhelper.h</include>
     <include location="local" impldecl="in implementation">kdedocsourceui.ui.h</include>
+    <include location="global" impldecl="in implementation">kurlrequester.h</include>
+	<include location="global" impldecl="in implementation">klineedit.h</include>
+	<include location="global" impldecl="in implementation">kpushbutton.h</include>
 </includes>
 <forwards>
     <forward>class KLanguageButton</forward>
@@ -93,9 +96,4 @@
     <function access="private" specifier="non virtual">init()</function>
 </functions>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
 </UI>

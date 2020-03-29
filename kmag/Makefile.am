@@ -15,9 +15,6 @@ KDE_ICON = kmag
 
 xdg_apps_DATA = kmag.desktop
 
-kmagiconsdir = $(kde_datadir)/kmag/icons
-kmagicons_ICON = followmouse hidemouse window
-
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 
@@ -37,3 +34,4 @@ messages: rc.cpp
 	 $(XGETTEXT) $$LIST -o $(podir)/kmag.pot; \
 	fi
 
+SUBDIRS = images

@@ -63,7 +63,7 @@
     <slot>slotTextChanged()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>ktextedit.h</includehint>
-</includehints>
+<includes>
+	<include location="global" impldecl="in implementation">ktextedit.h</include>
+</includes>
 </UI>

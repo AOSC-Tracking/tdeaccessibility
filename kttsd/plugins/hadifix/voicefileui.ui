@@ -100,6 +100,9 @@
 <includes>
     <include location="global" impldecl="in implementation">kurlrequesterdlg.h</include>
     <include location="global" impldecl="in implementation">tdemessagebox.h</include>
+    <include location="global" impldecl="in implementation">klineedit.h</include>
+    <include location="global" impldecl="in implementation">kpushbutton.h</include>
+    <include location="global" impldecl="in implementation">kurlrequester.h</include>
     <include location="local" impldecl="in implementation">hadifixproc.h</include>
     <include location="local" impldecl="in implementation">voicefileui.ui.h</include>
 </includes>
@@ -110,10 +113,4 @@
     <slot>genderButton_clicked()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
 </UI>

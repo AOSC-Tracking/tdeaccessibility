@@ -15,7 +15,9 @@
 #ifndef GSTREAMERPLAYER_H
 #define GSTREAMERPLAYER_H
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif
 
 #include <glib.h>
 extern "C" {

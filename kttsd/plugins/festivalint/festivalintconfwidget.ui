@@ -581,18 +581,10 @@
 </tabstops>
 <includes>
     <include location="global" impldecl="in declaration">kurlrequester.h</include>
-    <include location="global" impldecl="in implementation">kurlrequester.h</include>
+    <include location="global" impldecl="in implementation">kcombobox.h</include>
+	<include location="global" impldecl="in implementation">klineedit.h</include>
+	<include location="global" impldecl="in implementation">kpushbutton.h</include>
+	<include location="global" impldecl="in implementation">knuminput.h</include>
 </includes>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kcombobox.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

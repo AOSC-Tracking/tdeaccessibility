@@ -19,9 +19,8 @@
 #ifndef KMOUTH_H
 #define KMOUTH_H
 
-
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
 
 // include files for TQt
