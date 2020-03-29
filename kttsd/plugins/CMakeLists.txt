@@ -1,0 +1,6 @@
+tde_conditional_add_subdirectory( BUILD_KTTSD_COMMAND  command     )
+tde_conditional_add_subdirectory( BUILD_KTTSD_EPOS     epos        )
+tde_conditional_add_subdirectory( BUILD_KTTSD_FESTIVAL festivalint )
+tde_conditional_add_subdirectory( BUILD_KTTSD_FREETTS  freetts     )
+tde_conditional_add_subdirectory( BUILD_KTTSD_FLITE    flite       )
+tde_conditional_add_subdirectory( BUILD_KTTSD_HADIFIX  hadifix     )

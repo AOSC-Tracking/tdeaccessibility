@@ -22,11 +22,11 @@
 #ifndef KMOUSETOOL_H
 #define KMOUSETOOL_H
 
-#include <tqdir.h>
-
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include "config.h"
 #endif
+
+#include <tqdir.h>
 
 #include "version.h"
 

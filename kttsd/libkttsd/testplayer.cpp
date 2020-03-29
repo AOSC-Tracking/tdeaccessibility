@@ -174,7 +174,7 @@ Player* TestPlayer::createPlayerObject(int playerOption)
                     offers[0]->library().latin1(), this, offers[0]->library().latin1());
         else
             kdDebug() << "TestPlayer::createPlayerObject: Could not create factory." << endl;
-    }
+    } 
     if (player == 0)
         kdDebug() << "TestPlayer::createPlayerObject: Could not load " + plugInName +
             ".  Is TDEDIRS set correctly?" << endl;
@@ -207,3 +207,4 @@ TQString TestPlayer::makeSuggestedFilename()
     return PlugInConf::realFilePath(waveFile);
 }
 
+#include "player.moc"

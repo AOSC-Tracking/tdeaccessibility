@@ -24,6 +24,10 @@
 #ifndef ALSAPLAYER_H
 #define ALSAPLAYER_H
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 // System includes.
 #include <alsa/asoundlib.h>
 #include <sys/poll.h>
@@ -36,7 +40,6 @@
 #include <tqmutex.h>
 
 // KDE includes.
-#include <config.h>
 #include <kdemacros.h>
 #include "kdeexportfix.h"
 #include <kurl.h>

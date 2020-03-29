@@ -218,10 +218,4 @@
     <signal>configurationChanged()</signal>
 </Q_SIGNALS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

@@ -662,7 +662,7 @@
     <slot>slotOKwasClicked()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
+<includes>
+    <include location="global" impldecl="in implementation">kpushbutton.h</include>
+</includes>
 </UI>

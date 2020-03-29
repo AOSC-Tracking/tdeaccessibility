@@ -1884,9 +1884,15 @@
     <tabstop>keepAudioPath</tabstop>
 </tabstops>
 <includes>
-    <include location="global" impldecl="in declaration">tdelocale.h</include>
     <include location="global" impldecl="in implementation">tdelocale.h</include>
     <include location="global" impldecl="in implementation">kdebug.h</include>
+    <include location="global" impldecl="in implementation">tdecmodule.h</include>
+	<include location="global" impldecl="in implementation">tdelistview.h</include>
+	<include location="global" impldecl="in implementation">kpushbutton.h</include>
+	<include location="global" impldecl="in implementation">klineedit.h</include>
+	<include location="global" impldecl="in implementation">kurlrequester.h</include>
+	<include location="global" impldecl="in implementation">knuminput.h</include>
+	<include location="global" impldecl="in implementation">kcombobox.h</include>
 </includes>
 <Q_SIGNALS>
     <signal>configChanged()</signal>
@@ -1895,34 +1901,4 @@
     <slot access="private">slotConfigChanged()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="6"/>
-<includehints>
-    <includehint>tdecmodule.h</includehint>
-    <includehint>tdelistview.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>tdelistview.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>tdelistview.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>tdelistview.h</includehint>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>kcombobox.h</includehint>
-    <includehint>kcombobox.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

@@ -266,6 +266,10 @@
     <include location="local" impldecl="in implementation">klanguagebutton.h</include>
     <include location="local" impldecl="in implementation">klanguagebuttonhelper.h</include>
     <include location="local" impldecl="in implementation">wordcompletionui.ui.h</include>
+    <include location="local" impldecl="in implementation">klineedit.h</include>
+    <include location="global" impldecl="in implementation">kurlrequester.h</include>
+	<include location="global" impldecl="in implementation">kpushbutton.h</include>
+	<include location="global" impldecl="in implementation">tdelistview.h</include>
 </includes>
 <forwards>
     <forward>class KLanguageButton</forward>
@@ -280,14 +284,4 @@
     <function access="private" specifier="non virtual">init()</function>
 </functions>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>tdelistview.h</includehint>
-    <includehint>kinputdialog.h</includehint>
-</includehints>
 </UI>

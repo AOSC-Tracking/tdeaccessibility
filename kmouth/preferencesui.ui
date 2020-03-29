@@ -159,4 +159,7 @@
     </vbox>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
+<includehints>
+	<include location="global" impldecl="in implementation">kcombobox.h</include>
+</includehints>
 </UI>

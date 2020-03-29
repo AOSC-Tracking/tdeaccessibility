@@ -24,18 +24,16 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
+// AlsaPlayer includes.
+#include "alsaplayer.h"
+
 // #include <sys/wait.h>
 // System includes.
-#include <config.h>
-#if TIME_WITH_SYS_TIME
+#if defined(HAVE_SYS_TIME_H)
 # include <sys/time.h>
+#endif
+#if defined(TIME_WITH_SYS_TIME)
 # include <time.h>
-#else
-# if HAVE_SYS_TIME_H
-#  include <sys/time.h>
-# else
-#  include <time.h>
-# endif
 #endif
 
 // TQt includes.
@@ -50,8 +48,6 @@
 #include <tdemessagebox.h>
 #include <tdelocale.h>
 
-// AlsaPlayer includes.
-#include "alsaplayer.h"
 
 #if !defined(__GNUC__) || __GNUC__ >= 3
 #define ERR(...) do {\

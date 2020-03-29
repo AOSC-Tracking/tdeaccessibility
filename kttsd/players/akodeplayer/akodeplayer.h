@@ -16,7 +16,10 @@
 #ifndef AKODEPLAYER_H
 #define AKODEPLAYER_H
 
-#include <config.h>
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "kdeexportfix.h"
 
 #include <tqstring.h>
