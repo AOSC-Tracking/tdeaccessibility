@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   This contains the SpeechData class which is in charge of maintaining
   all the data on the memory.
   It maintains queues manages the text.

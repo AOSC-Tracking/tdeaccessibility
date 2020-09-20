@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Filter Configuration class.
   This is the interface definition for text filter configuration dialogs.
   -------------------

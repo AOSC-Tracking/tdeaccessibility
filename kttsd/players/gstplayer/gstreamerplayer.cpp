@@ -254,5 +254,3 @@ long long GStreamerPlayer::time(GstQueryType type) const
     gst_element_query(m_sink, type, &format, &ns);
     return ns;
 }
-
-// vim: set et sw=4:

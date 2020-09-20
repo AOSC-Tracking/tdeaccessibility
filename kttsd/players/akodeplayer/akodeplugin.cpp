@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Generating the factories so aKode can be used as an audio plug in.
   -------------------
   Copyright:

@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   A KPart to display running jobs in KTTSD and permit user to stop, rewind,
   advance, change Talker, etc. 
   -------------------

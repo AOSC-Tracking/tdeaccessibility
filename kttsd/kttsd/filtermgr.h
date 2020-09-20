@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Description: 
     Filters text, applying each configured Filter in turn.
     Runs asynchronously, emitting Finished() signal when all Filters have run.

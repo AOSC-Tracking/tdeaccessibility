@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   tdelibs < 3.3.2 had a bug in the KDE_EXPORT macro.  This file fixes this
   by undefining it.
   -------------------

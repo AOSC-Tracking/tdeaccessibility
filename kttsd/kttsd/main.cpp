@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Where the main function for KTTSD resides.
   -------------------
   Copyright:

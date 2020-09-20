@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Configuration widget and functions for Festival (Interactive) plug in
   -------------------
   Copyright:

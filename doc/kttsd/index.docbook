@@ -2820,15 +2820,3 @@ ISO 8859-2 encoding and removing unspeakable punctuation characters.</para>
 
 &documentation.index;
 </book>
-
-<!--
-Local Variables:
-mode: xml
-sgml-minimize-attributes:nil
-sgml-general-insert-case:lower
-sgml-indent-step:0
-sgml-indent-data:nil
-End:
-
-vim:tabstop=2:shiftwidth=2:expandtab 
--->

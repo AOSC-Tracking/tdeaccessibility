@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Convenience object for manipulating Talker Codes.
   For an explanation of what a Talker Code is, see kspeech.h. 
   -------------------
