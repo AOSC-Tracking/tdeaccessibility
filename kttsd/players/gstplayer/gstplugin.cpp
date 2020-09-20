@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Generating the factories so that GStreamer can be used as and audio plug in.
   -------------------
   Copyright:

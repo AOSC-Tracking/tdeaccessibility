@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Generic XML Transformation Filter Processing class.
   -------------------
   Copyright:

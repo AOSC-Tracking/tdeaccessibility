@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   KControl module for KTTSD configuration and Job Management
   -------------------
   Copyright : (C) 2002-2003 by José Pablo Ezequiel "Pupeno" Fernández

@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Speaker class.
   This class is in charge of getting the messages, warnings and text from
   the queue and call the plug ins function to actually speak the texts.

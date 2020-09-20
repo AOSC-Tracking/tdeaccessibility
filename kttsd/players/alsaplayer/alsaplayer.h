@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   ALSA player.
   -------------------
   Copyright:
@@ -184,5 +184,3 @@ private:
 };
 
 #endif              // ALSAPLAYER_H
-
-// vim: sw=4 ts=8 et

@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Notification Action constants and utility functions.
   -------------------
   Copyright : (C) 2005 by Gary Cramblitt <garycramblitt@comcast.net>

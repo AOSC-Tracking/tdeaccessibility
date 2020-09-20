@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Description: 
      A dialog for user to select a Talker, either by specifying
      selected Talker attributes, or by specifying all attributes

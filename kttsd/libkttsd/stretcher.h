@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   Description: 
      Speeds up or slows down an audio file by stretching the audio stream.
      Uses the sox program to do the stretching.

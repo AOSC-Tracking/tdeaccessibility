@@ -1,4 +1,4 @@
-/***************************************************** vim:set ts=4 sw=4 sts=4:
+/*
   ALSA player.
   -------------------
   Copyright:
@@ -1725,5 +1725,3 @@ int AlsaPlayer::wait_for_poll(int draining)
 #undef DBG
 #undef MSG
 #undef ERR
-
-// vim: sw=4 ts=8 et
