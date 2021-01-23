@@ -26,7 +26,7 @@ tde_add_library( KTTSD_Lib SHARED AUTOMOC
   LINK
      tdeui-shared
      tdecore-shared
-     DUMMY_kspeech_lib-static
+     kspeech_stub-static
 
   VERSION 0.0.1
 

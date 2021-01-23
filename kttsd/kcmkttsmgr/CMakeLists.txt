@@ -30,7 +30,7 @@ tde_add_kpart( kcm_kttsd MODULE AUTOMOC
   LINK
      tdeio-shared
      kttsd-shared
-     DUMMY_kspeech_lib-static
+     kspeech_stub-static
 
   DESTINATION ${PLUGIN_INSTALL_DIR}
 )
