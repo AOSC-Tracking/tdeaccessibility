@@ -25,7 +25,7 @@ tde_add_executable( kttsmgr AUTOMOC
      tdeui-shared
      tdeio-shared
      tdeutils-shared
-     DUMMY_kspeech_lib-static
+     kspeech_stub-static
 
   DESTINATION ${BIN_INSTALL_DIR}
 )
