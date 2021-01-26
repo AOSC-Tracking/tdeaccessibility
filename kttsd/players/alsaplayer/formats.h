@@ -1,8 +1,15 @@
 #ifndef FORMATS_H
 #define FORMATS_H		1
 
-#include <endian.h>
-#include <byteswap.h>
+#if defined(__FreeBSD__) || defined(__NetBSD__)
+# include <sys/endian.h>
+# define bswap_16(x) bswap16(x)
+# define bswap_32(x) bswap32(x)
+# define bswap_64(x) bswap64(x)
+#else
+# include <endian.h>
+# include <byteswap.h>
+#endif
 
 /* Definitions for .VOC files */
 
