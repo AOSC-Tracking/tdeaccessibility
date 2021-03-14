@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-14 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Name
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:2
+msgid "KTextEditor KTTSD Plugin"
+msgstr "KTextEditor KTTSD சொருகுப்பொருள்"
+
+#. Comment
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:4
+msgid "Adds a menu entry for speaking the text"
+msgstr "உரையை பேசுவதற்கு ஒரு பட்டியல் உள்ளிட்டை சேர்க்கிறது"
+
+#. Name
+#: filters/sbd/kttsd_sbdplugin.desktop:2
+msgid "Sentence Boundary Detector"
+msgstr "வாக்கிய பவுண்டரி கண்டுபிடிப்பான்"
+
+#. Comment
+#: filters/sbd/kttsd_sbdplugin.desktop:4
+msgid "Sentence Boundary Detection Filter Plugin for KTTS"
+msgstr "KTTSக்கான வாக்கிய கண்டறி அலங்கார சொருகுப்பொருள்"
+
+#. Name
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:2
+msgid "String Replacer"
+msgstr "சர இடமாற்றி"
+
+#. Comment
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:4
+msgid "Generic String Replacement Filter Plugin for KTTS"
+msgstr "KTTSக்கான அலங்கார சொருகுபொருள் சர இடமாற்றி"
+
+#. Name
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:2
+msgid "Talker Chooser"
+msgstr "டாக்கர் தேர்ந்தெடுப்பான்"
+
+#. Comment
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:4
+msgid "Generic Talker Chooser Filter Plugin for KTTS"
+msgstr "KTTS க்கான ஜெனரிக் பேச்சாளர் தேர்ந்தெடுப்பான அலங்கார சொருகுப்பொருள்"
+
+#. Name
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:2
+msgid "XML Transformer"
+msgstr ""
+
+#. Comment
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:4
+msgid "Generic XML Tranformation Filter Plugin for KTTS"
+msgstr "KTTSக்கான ஜெனரிக் XML மாற்று அலங்கார சொருகுப்பொருள்"
+
+#. Name
+#: kcmkttsmgr/kcmkttsd.desktop:2
+msgid "Text-to-Speech"
+msgstr "உரையில் இருந்து பேச்சுக்கு"
+
+#. Comment
+#: kcmkttsmgr/kcmkttsd.desktop:4
+msgid "Text-to-Speech Control Module"
+msgstr "உரையில் இருந்து பேச்சு கட்டுப்பாட்டு பகுதி"
+
+#. Keywords
+#: kcmkttsmgr/kcmkttsd.desktop:6
+msgid ""
+"kttsd;kcmkttsmgr;kttsmgr;tts;ttsd;ktts;text;to;speech;speak;synthesizer;"
+"synth;festival;command;freetts;proklam;via;voice;"
+msgstr ""
+
+#. Name
+#: kcmkttsmgr/kcmkttsd_testmessage.desktop:2
+msgid "The text-to-speech system seems to be functioning properly."
+msgstr "உரையில் இருந்து பேச்சு அமைப்பு சரியாக இயங்குகிறது."
+
+#. Name
+#: kttsd/kttsd.desktop:2 libkttsd/kttsd_synthplugin.desktop:2
+msgid "KTTSD"
+msgstr ""
+
+#. Comment
+#: kttsd/kttsd.desktop:3
+msgid "TDE Text To Speech Daemon"
+msgstr "கேடியி உரையில் இருந்து பேச்சு டெமான்"
+
+#. Name
+#: kttsjobmgr/kttsjobmgr.desktop:2
+msgid "kttsjobmgrpart"
+msgstr ""
+
+#. Comment
+#: kttsjobmgr/kttsjobmgr.desktop:4
+msgid "TDE Text-to-speech Job Manager"
+msgstr "கேடியி உரையில் இருந்து பேச்சு பணி மேலாளர்"
+
+#. Name
+#: kttsmgr/kttsmgr.desktop:2
+msgid "KTTSMgr"
+msgstr ""
+
+#. GenericName
+#: kttsmgr/kttsmgr.desktop:4
+msgid "Text-to-Speech Manager"
+msgstr "உரையில் இருந்து பேச்சு மேலாளர்"
+
+#. Comment
+#: kttsmgr/kttsmgr.desktop:6
+msgid "TDE Text-to-speech Manager"
+msgstr "கேடியி உரையில் இருந்து பேச்சு மேலாளர்"
+
+#. Name
+#: players/akodeplayer/kttsd_akodeplugin.desktop:2
+#, fuzzy
+msgid "KTTSD aKode Plugin"
+msgstr "KTTSD GStreamer சொருகுப்பொருள்"
+
+#. Comment
+#: players/akodeplayer/kttsd_akodeplugin.desktop:4
+#, fuzzy
+msgid "KTTSD aKode audio plugin"
+msgstr "KTTSD aRts கேட்பொலி சொருகுப்பொருள்"
+
+#. Name
+#: players/alsaplayer/kttsd_alsaplugin.desktop:2
+#, fuzzy
+msgid "KTTSD ALSA Plugin"
+msgstr "KTTSD ஆர்ட்ஸ் சொருகுப்பொருள்"
+
+#. Comment
+#: players/alsaplayer/kttsd_alsaplugin.desktop:4
+#, fuzzy
+msgid "KTTSD ALSA audio plugin"
+msgstr "KTTSD aRts கேட்பொலி சொருகுப்பொருள்"
+
+#. Name
+#: players/artsplayer/kttsd_artsplugin.desktop:2
+msgid "KTTSD Arts Plugin"
+msgstr "KTTSD ஆர்ட்ஸ் சொருகுப்பொருள்"
+
+#. Comment
+#: players/artsplayer/kttsd_artsplugin.desktop:4
+msgid "KTTSD aRts audio plugin"
+msgstr "KTTSD aRts கேட்பொலி சொருகுப்பொருள்"
+
+#. Name
+#: players/gstplayer/kttsd_gstplugin.desktop:2
+msgid "KTTSD GStreamer Plugin"
+msgstr "KTTSD GStreamer சொருகுப்பொருள்"
+
+#. Comment
+#: players/gstplayer/kttsd_gstplugin.desktop:4
+msgid "KTTSD GStreamer audio plugin"
+msgstr "KTTSD GStreamer கேட்பொலி சொருகுப்பொருள்"
+
+#. Comment
+#: players/kttsd_audioplugin.desktop:2
+msgid "Audio Plugin for KTTSD"
+msgstr "KTTSDக்கான கேட்பொலி சொருகுப்பொருள்"
+
+#. Name
+#: plugins/command/kttsd_commandplugin.desktop:2
+msgid "Command"
+msgstr "கட்டளை"
+
+#. Comment
+#: plugins/command/kttsd_commandplugin.desktop:4
+msgid "Generic speech synthesizer from command line"
+msgstr "கட்டளை வரியில் இருந்து பொது பேச்சு கூட்டிணைப்பாளர்"
+
+#. Name
+#: plugins/epos/kttsd_eposplugin.desktop:2
+msgid "Epos TTS Synthesis System"
+msgstr "Epos TTS கூட்டிணைப்பு அமைப்பு"
+
+#. Comment
+#: plugins/epos/kttsd_eposplugin.desktop:4
+msgid "Epos TTS speech synthesizer"
+msgstr "Epos TTS பேச்சு கூட்டிணைப்பான்"
+
+#. Name
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:2
+msgid "Festival Interactive"
+msgstr "பெஸ்டிவல் உள்செயல்"
+
+#. Comment
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:4
+msgid "Festival speech synthetizer"
+msgstr "பெஸ்டிவல் பேச்சு கூட்டிணைப்பான்"
+
+#. Name
+#: plugins/flite/kttsd_fliteplugin.desktop:2
+msgid "Festival Lite (flite)"
+msgstr "பெஸ்டிவல் லைட் (flite)"
+
+#. Comment
+#: plugins/flite/kttsd_fliteplugin.desktop:4
+msgid "Festival Lite (flite) speech synthesizer"
+msgstr "பெஸ்டிவல் லைட் (flite) பேச்சு கூட்டிணைப்பான்"
+
+#. Name
+#: plugins/freetts/kttsd_freettsplugin.desktop:2
+msgid "FreeTTS"
+msgstr ""
+
+#. Comment
+#: plugins/freetts/kttsd_freettsplugin.desktop:4
+msgid "FreeTTS speech synthesizer"
+msgstr "FreeTTS பேச்சு கூட்டிணைப்பான்"
+
+#. Name
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:2
+msgid "Hadifix"
+msgstr ""
+
+#. Comment
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:4
+msgid "German hadifix text-to-speech system"
+msgstr "ஜெர்மன் ஹாடிஃபிக்ஸ் உரையில் இருந்து பேச்சு அமைப்பு"
