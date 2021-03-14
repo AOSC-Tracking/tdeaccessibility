@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-14 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Name
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:2
+msgid "KTextEditor KTTSD Plugin"
+msgstr "Plugin de KTTSD para KTextEditor"
+
+#. Comment
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:4
+msgid "Adds a menu entry for speaking the text"
+msgstr "Engade unha entrada no menu para falar o texto"
+
+#. Name
+#: filters/sbd/kttsd_sbdplugin.desktop:2
+msgid "Sentence Boundary Detector"
+msgstr "Detector de Límite de Frases"
+
+#. Comment
+#: filters/sbd/kttsd_sbdplugin.desktop:4
+msgid "Sentence Boundary Detection Filter Plugin for KTTS"
+msgstr "Plugin de Filtro Detector de Límite de Frases para KTTS"
+
+#. Name
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:2
+msgid "String Replacer"
+msgstr "Reemprazamento de Cadeas"
+
+#. Comment
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:4
+msgid "Generic String Replacement Filter Plugin for KTTS"
+msgstr "Plugin de Filtro Xenérico de Substituición de Cadeas para KTTS"
+
+#. Name
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:2
+msgid "Talker Chooser"
+msgstr "Escolla de Locutor"
+
+#. Comment
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:4
+msgid "Generic Talker Chooser Filter Plugin for KTTS"
+msgstr "Plugin para Escoller o Locutor para KTTS"
+
+#. Name
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:2
+msgid "XML Transformer"
+msgstr "Transformador XML"
+
+#. Comment
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:4
+msgid "Generic XML Tranformation Filter Plugin for KTTS"
+msgstr "Plugin de Transformación de XML para KTTS"
+
+#. Name
+#: kcmkttsmgr/kcmkttsd.desktop:2
+msgid "Text-to-Speech"
+msgstr "Texto-para-Fala"
+
+#. Comment
+#: kcmkttsmgr/kcmkttsd.desktop:4
+msgid "Text-to-Speech Control Module"
+msgstr "Módulo de Control do Texto-para-Fala"
+
+#. Keywords
+#: kcmkttsmgr/kcmkttsd.desktop:6
+msgid ""
+"kttsd;kcmkttsmgr;kttsmgr;tts;ttsd;ktts;text;to;speech;speak;synthesizer;"
+"synth;festival;command;freetts;proklam;via;voice;"
+msgstr ""
+"kttsd;kcmkttsmgr;kttsmgr;tts;ttsd;ktts;texto;para;fala;falar;sintetizador;"
+"sintetizar;festival;comando;freetts;proklam;via;voz;"
+
+#. Name
+#: kcmkttsmgr/kcmkttsd_testmessage.desktop:2
+msgid "The text-to-speech system seems to be functioning properly."
+msgstr "O sistema de texto-para-fala parece estar a funcionar correctamente."
+
+#. Name
+#: kttsd/kttsd.desktop:2 libkttsd/kttsd_synthplugin.desktop:2
+msgid "KTTSD"
+msgstr ""
+
+#. Comment
+#: kttsd/kttsd.desktop:3
+msgid "TDE Text To Speech Daemon"
+msgstr "Servizo Texto-para-Fala de TDE"
+
+#. Name
+#: kttsjobmgr/kttsjobmgr.desktop:2
+msgid "kttsjobmgrpart"
+msgstr ""
+
+#. Comment
+#: kttsjobmgr/kttsjobmgr.desktop:4
+msgid "TDE Text-to-speech Job Manager"
+msgstr "Xestor de Traballos de Texto-para-Fala de TDE"
+
+#. Name
+#: kttsmgr/kttsmgr.desktop:2
+msgid "KTTSMgr"
+msgstr ""
+
+#. GenericName
+#: kttsmgr/kttsmgr.desktop:4
+msgid "Text-to-Speech Manager"
+msgstr "Xestor de Texto-para-Fala"
+
+#. Comment
+#: kttsmgr/kttsmgr.desktop:6
+msgid "TDE Text-to-speech Manager"
+msgstr "Xestor de Texto-para-fala de TDE"
+
+#. Name
+#: players/akodeplayer/kttsd_akodeplugin.desktop:2
+msgid "KTTSD aKode Plugin"
+msgstr "Plugin aKode de KTTSD"
+
+#. Comment
+#: players/akodeplayer/kttsd_akodeplugin.desktop:4
+msgid "KTTSD aKode audio plugin"
+msgstr "Plugin de áudio aKode para KTTSD"
+
+#. Name
+#: players/alsaplayer/kttsd_alsaplugin.desktop:2
+msgid "KTTSD ALSA Plugin"
+msgstr "Plugin ALSA de KTTSD"
+
+#. Comment
+#: players/alsaplayer/kttsd_alsaplugin.desktop:4
+msgid "KTTSD ALSA audio plugin"
+msgstr "Plugin de áudio ALSA para KTTSD"
+
+#. Name
+#: players/artsplayer/kttsd_artsplugin.desktop:2
+msgid "KTTSD Arts Plugin"
+msgstr "Plugin Arts de KTTSD"
+
+#. Comment
+#: players/artsplayer/kttsd_artsplugin.desktop:4
+msgid "KTTSD aRts audio plugin"
+msgstr "Plugin de áudio aRts para KTTSD"
+
+#. Name
+#: players/gstplayer/kttsd_gstplugin.desktop:2
+msgid "KTTSD GStreamer Plugin"
+msgstr "Plugin GStreamer de KTTSD"
+
+#. Comment
+#: players/gstplayer/kttsd_gstplugin.desktop:4
+msgid "KTTSD GStreamer audio plugin"
+msgstr "Plugin de áudio GStreamer para KTTSD"
+
+#. Comment
+#: players/kttsd_audioplugin.desktop:2
+msgid "Audio Plugin for KTTSD"
+msgstr "Plugin de Áudio para KTTSD"
+
+#. Name
+#: plugins/command/kttsd_commandplugin.desktop:2
+msgid "Command"
+msgstr "Comando"
+
+#. Comment
+#: plugins/command/kttsd_commandplugin.desktop:4
+msgid "Generic speech synthesizer from command line"
+msgstr "Sintetizados de fala xenérico para a liña de comandos"
+
+#. Name
+#: plugins/epos/kttsd_eposplugin.desktop:2
+msgid "Epos TTS Synthesis System"
+msgstr "Sistema de Síntese de TTS Epos"
+
+#. Comment
+#: plugins/epos/kttsd_eposplugin.desktop:4
+msgid "Epos TTS speech synthesizer"
+msgstr "Sintetizador de fala TTS Epos"
+
+#. Name
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:2
+msgid "Festival Interactive"
+msgstr "Festival Interactivo"
+
+#. Comment
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:4
+msgid "Festival speech synthetizer"
+msgstr "Sistetizador de voces Festival"
+
+#. Name
+#: plugins/flite/kttsd_fliteplugin.desktop:2
+#, fuzzy
+msgid "Festival Lite (flite)"
+msgstr "Sintetizador de voces Festival Lite (flite)"
+
+#. Comment
+#: plugins/flite/kttsd_fliteplugin.desktop:4
+msgid "Festival Lite (flite) speech synthesizer"
+msgstr "Sintetizador de voces Festival Lite (flite)"
+
+#. Name
+#: plugins/freetts/kttsd_freettsplugin.desktop:2
+msgid "FreeTTS"
+msgstr ""
+
+#. Comment
+#: plugins/freetts/kttsd_freettsplugin.desktop:4
+msgid "FreeTTS speech synthesizer"
+msgstr "Sintetizador de voces FreeTTS"
+
+#. Name
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:2
+msgid "Hadifix"
+msgstr ""
+
+#. Comment
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:4
+msgid "German hadifix text-to-speech system"
+msgstr "Sistema alemao de texto-para-fala hadifix"

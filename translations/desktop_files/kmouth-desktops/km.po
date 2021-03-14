@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-14 11:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Name
+#: kmouth.desktop:2
+msgid "KMouth"
+msgstr "KMouth"
+
+#. GenericName
+#: kmouth.desktop:4
+msgid "Speech Synthesizer Frontend"
+msgstr "ផ្នែក​ខាង​មុខ​កម្មវិធី​សង្គ្រោះ​ការ​និយាយ"
+
+#. Name
+#: books/de.desktop:2
+msgid "German"
+msgstr "អាល្លឺម៉ង់"
+
+#. Name
+#: books/en.desktop:2
+msgid "English"
+msgstr "អង់គ្លេស​"
+
+#. Name
+#: books/nl.desktop:2
+msgid "Dutch"
+msgstr "ហុល្លង់​"
+
+#. Name
+#: books/sv.desktop:2
+msgid "Swedish"
+msgstr "ស៊ុយអែដ"

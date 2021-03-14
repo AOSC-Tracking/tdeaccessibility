@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=KTTSD
-Name[zh_TW]=KTTSd
+
 Type=ServiceType
 X-TDE-ServiceType=KTTSD/SynthPlugin
 

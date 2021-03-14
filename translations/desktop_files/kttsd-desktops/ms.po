@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-14 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Name
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:2
+msgid "KTextEditor KTTSD Plugin"
+msgstr "Plugin KTextEditor KTTSD"
+
+#. Comment
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:4
+msgid "Adds a menu entry for speaking the text"
+msgstr "Tambah entri menu untuk menjadikan teks bercakap"
+
+#. Name
+#: filters/sbd/kttsd_sbdplugin.desktop:2
+msgid "Sentence Boundary Detector"
+msgstr "Pengesan Sempadan Ayat"
+
+#. Comment
+#: filters/sbd/kttsd_sbdplugin.desktop:4
+msgid "Sentence Boundary Detection Filter Plugin for KTTS"
+msgstr "Plugin Penapis Pengesan Sempadan Ayat bagi KTTS"
+
+#. Name
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:2
+msgid "String Replacer"
+msgstr "Pengganti Rentetan"
+
+#. Comment
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:4
+msgid "Generic String Replacement Filter Plugin for KTTS"
+msgstr "Plugin Penapis Penggantian Rentetan Generik bagi KTTS"
+
+#. Name
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:2
+msgid "Talker Chooser"
+msgstr "Pemilih Penutur"
+
+#. Comment
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:4
+msgid "Generic Talker Chooser Filter Plugin for KTTS"
+msgstr "Plugin Penapis Pemilih Penutur Generik bagi KTTS"
+
+#. Name
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:2
+msgid "XML Transformer"
+msgstr "Transformer XML"
+
+#. Comment
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:4
+msgid "Generic XML Tranformation Filter Plugin for KTTS"
+msgstr "Plugin Penapis Transformasi XML Generik bagi KTTS"
+
+#. Name
+#: kcmkttsmgr/kcmkttsd.desktop:2
+msgid "Text-to-Speech"
+msgstr "Teks-ke-Tutur"
+
+#. Comment
+#: kcmkttsmgr/kcmkttsd.desktop:4
+msgid "Text-to-Speech Control Module"
+msgstr "Modul Kawalan Teks-ke-Tutur"
+
+#. Keywords
+#: kcmkttsmgr/kcmkttsd.desktop:6
+msgid ""
+"kttsd;kcmkttsmgr;kttsmgr;tts;ttsd;ktts;text;to;speech;speak;synthesizer;"
+"synth;festival;command;freetts;proklam;via;voice;"
+msgstr ""
+
+#. Name
+#: kcmkttsmgr/kcmkttsd_testmessage.desktop:2
+msgid "The text-to-speech system seems to be functioning properly."
+msgstr "Sistem teks-ke-Tutur berfungsi dengan baik."
+
+#. Name
+#: kttsd/kttsd.desktop:2 libkttsd/kttsd_synthplugin.desktop:2
+msgid "KTTSD"
+msgstr ""
+
+#. Comment
+#: kttsd/kttsd.desktop:3
+msgid "TDE Text To Speech Daemon"
+msgstr "Daemon Teks Ke Tutur TDE"
+
+#. Name
+#: kttsjobmgr/kttsjobmgr.desktop:2
+msgid "kttsjobmgrpart"
+msgstr ""
+
+#. Comment
+#: kttsjobmgr/kttsjobmgr.desktop:4
+msgid "TDE Text-to-speech Job Manager"
+msgstr "Pengurus Kerja Teks-ke-tutur TDE"
+
+#. Name
+#: kttsmgr/kttsmgr.desktop:2
+msgid "KTTSMgr"
+msgstr ""
+
+#. GenericName
+#: kttsmgr/kttsmgr.desktop:4
+msgid "Text-to-Speech Manager"
+msgstr "Pengurus Teks-ke-Tutur"
+
+#. Comment
+#: kttsmgr/kttsmgr.desktop:6
+msgid "TDE Text-to-speech Manager"
+msgstr "Pengurus Teks-ke-tutur TDE"
+
+#. Name
+#: players/akodeplayer/kttsd_akodeplugin.desktop:2
+#, fuzzy
+msgid "KTTSD aKode Plugin"
+msgstr "Plugin KTTSD GStreamer"
+
+#. Comment
+#: players/akodeplayer/kttsd_akodeplugin.desktop:4
+#, fuzzy
+msgid "KTTSD aKode audio plugin"
+msgstr "Plugin audio aRts KTTSD"
+
+#. Name
+#: players/alsaplayer/kttsd_alsaplugin.desktop:2
+#, fuzzy
+msgid "KTTSD ALSA Plugin"
+msgstr "Plugin KTTSD GStreamer"
+
+#. Comment
+#: players/alsaplayer/kttsd_alsaplugin.desktop:4
+#, fuzzy
+msgid "KTTSD ALSA audio plugin"
+msgstr "Plugin audio aRts KTTSD"
+
+#. Name
+#: players/artsplayer/kttsd_artsplugin.desktop:2
+#, fuzzy
+msgid "KTTSD Arts Plugin"
+msgstr "Plugin KTTSD GStreamer"
+
+#. Comment
+#: players/artsplayer/kttsd_artsplugin.desktop:4
+msgid "KTTSD aRts audio plugin"
+msgstr "Plugin audio aRts KTTSD"
+
+#. Name
+#: players/gstplayer/kttsd_gstplugin.desktop:2
+msgid "KTTSD GStreamer Plugin"
+msgstr "Plugin KTTSD GStreamer"
+
+#. Comment
+#: players/gstplayer/kttsd_gstplugin.desktop:4
+msgid "KTTSD GStreamer audio plugin"
+msgstr "Plugin audio KTTSD GStreamer"
+
+#. Comment
+#: players/kttsd_audioplugin.desktop:2
+msgid "Audio Plugin for KTTSD"
+msgstr "Plugin Audio bagi KTTSD"
+
+#. Name
+#: plugins/command/kttsd_commandplugin.desktop:2
+msgid "Command"
+msgstr "Arahan"
+
+#. Comment
+#: plugins/command/kttsd_commandplugin.desktop:4
+msgid "Generic speech synthesizer from command line"
+msgstr "Pensintesis tutur generik dari baris arahan"
+
+#. Name
+#: plugins/epos/kttsd_eposplugin.desktop:2
+msgid "Epos TTS Synthesis System"
+msgstr "Sistem Sintesis Epos TTS"
+
+#. Comment
+#: plugins/epos/kttsd_eposplugin.desktop:4
+msgid "Epos TTS speech synthesizer"
+msgstr "Pensintesis tutur Epos TTS"
+
+#. Name
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:2
+msgid "Festival Interactive"
+msgstr "Interaktif Perayaan"
+
+#. Comment
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:4
+msgid "Festival speech synthetizer"
+msgstr "Pensintesis tutur perayaan"
+
+#. Name
+#: plugins/flite/kttsd_fliteplugin.desktop:2
+#, fuzzy
+msgid "Festival Lite (flite)"
+msgstr "Pensintesis tutur Festival Lite (flite)"
+
+#. Comment
+#: plugins/flite/kttsd_fliteplugin.desktop:4
+msgid "Festival Lite (flite) speech synthesizer"
+msgstr "Pensintesis tutur Festival Lite (flite)"
+
+#. Name
+#: plugins/freetts/kttsd_freettsplugin.desktop:2
+msgid "FreeTTS"
+msgstr ""
+
+#. Comment
+#: plugins/freetts/kttsd_freettsplugin.desktop:4
+msgid "FreeTTS speech synthesizer"
+msgstr "Pensintesis tutur FreeTTS"
+
+#. Name
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:2
+msgid "Hadifix"
+msgstr ""
+
+#. Comment
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:4
+msgid "German hadifix text-to-speech system"
+msgstr "Sistem teks-ke-tutur hadifiks Jerman"

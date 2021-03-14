@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-14 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Name
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:2
+msgid "KTextEditor KTTSD Plugin"
+msgstr "Ktexteditor KTTSD Eklentisi"
+
+#. Comment
+#: app-plugins/kate/tdetexteditor_kttsd.desktop:4
+msgid "Adds a menu entry for speaking the text"
+msgstr "Metni okumak için bir menü girdisi oluşturur"
+
+#. Name
+#: filters/sbd/kttsd_sbdplugin.desktop:2
+msgid "Sentence Boundary Detector"
+msgstr "Cümle Sınırlama Algılayıcı"
+
+#. Comment
+#: filters/sbd/kttsd_sbdplugin.desktop:4
+msgid "Sentence Boundary Detection Filter Plugin for KTTS"
+msgstr "KTTS için Cümle Sınırlama Algılayıcı Süzgeci Eklentisi"
+
+#. Name
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:2
+msgid "String Replacer"
+msgstr "Metin Değiştirici"
+
+#. Comment
+#: filters/stringreplacer/kttsd_stringreplacerplugin.desktop:4
+msgid "Generic String Replacement Filter Plugin for KTTS"
+msgstr "KTTS için Genel Metin Değiştirme Süzgeci Eklentisi"
+
+#. Name
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:2
+msgid "Talker Chooser"
+msgstr "Konuşmacı Seçici"
+
+#. Comment
+#: filters/talkerchooser/kttsd_talkerchooserplugin.desktop:4
+msgid "Generic Talker Chooser Filter Plugin for KTTS"
+msgstr "KTTS için Genel Konuşma Seçici Süzgeci Eklentisi"
+
+#. Name
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:2
+msgid "XML Transformer"
+msgstr "XML Dönüştürücü"
+
+#. Comment
+#: filters/xmltransformer/kttsd_xmltransformerplugin.desktop:4
+msgid "Generic XML Tranformation Filter Plugin for KTTS"
+msgstr "KTTS için genel XML Dönüştürücü Süzgeci Eklentisi"
+
+#. Name
+#: kcmkttsmgr/kcmkttsd.desktop:2
+msgid "Text-to-Speech"
+msgstr "Metinden Konuşmaya"
+
+#. Comment
+#: kcmkttsmgr/kcmkttsd.desktop:4
+msgid "Text-to-Speech Control Module"
+msgstr "Metinden Konuşmaya Kontrol Modülü"
+
+#. Keywords
+#: kcmkttsmgr/kcmkttsd.desktop:6
+msgid ""
+"kttsd;kcmkttsmgr;kttsmgr;tts;ttsd;ktts;text;to;speech;speak;synthesizer;"
+"synth;festival;command;freetts;proklam;via;voice;"
+msgstr ""
+
+#. Name
+#: kcmkttsmgr/kcmkttsd_testmessage.desktop:2
+msgid "The text-to-speech system seems to be functioning properly."
+msgstr "Metinden Konuşmaya sistemi düzgün çalışıyor."
+
+#. Name
+#: kttsd/kttsd.desktop:2 libkttsd/kttsd_synthplugin.desktop:2
+#, fuzzy
+msgid "KTTSD"
+msgstr "Kttsmgr"
+
+#. Comment
+#: kttsd/kttsd.desktop:3
+msgid "TDE Text To Speech Daemon"
+msgstr "TDE Metinden Konuşmaya Artalan Süreci"
+
+#. Name
+#: kttsjobmgr/kttsjobmgr.desktop:2
+msgid "kttsjobmgrpart"
+msgstr "Kttsjobmgrpart"
+
+#. Comment
+#: kttsjobmgr/kttsjobmgr.desktop:4
+msgid "TDE Text-to-speech Job Manager"
+msgstr "TDE Metinden Konuşmaya Görev Yöneticisi"
+
+#. Name
+#: kttsmgr/kttsmgr.desktop:2
+msgid "KTTSMgr"
+msgstr "Kttsmgr"
+
+#. GenericName
+#: kttsmgr/kttsmgr.desktop:4
+msgid "Text-to-Speech Manager"
+msgstr "Metinden Konuşmaya Yöneticisi"
+
+#. Comment
+#: kttsmgr/kttsmgr.desktop:6
+msgid "TDE Text-to-speech Manager"
+msgstr "TDE Metinden Konuşmaya yöneticisi"
+
+#. Name
+#: players/akodeplayer/kttsd_akodeplugin.desktop:2
+msgid "KTTSD aKode Plugin"
+msgstr "KTTSD aKode Eklentisi"
+
+#. Comment
+#: players/akodeplayer/kttsd_akodeplugin.desktop:4
+msgid "KTTSD aKode audio plugin"
+msgstr "KTTSD aRts ses eklentisi"
+
+#. Name
+#: players/alsaplayer/kttsd_alsaplugin.desktop:2
+msgid "KTTSD ALSA Plugin"
+msgstr "KTTSD ALSA Eklentisi"
+
+#. Comment
+#: players/alsaplayer/kttsd_alsaplugin.desktop:4
+msgid "KTTSD ALSA audio plugin"
+msgstr "KTTSD ALSA ses eklentisi"
+
+#. Name
+#: players/artsplayer/kttsd_artsplugin.desktop:2
+msgid "KTTSD Arts Plugin"
+msgstr "KTTSD Arts Eklentisi"
+
+#. Comment
+#: players/artsplayer/kttsd_artsplugin.desktop:4
+msgid "KTTSD aRts audio plugin"
+msgstr "KTTSD aRts ses eklentisi"
+
+#. Name
+#: players/gstplayer/kttsd_gstplugin.desktop:2
+msgid "KTTSD GStreamer Plugin"
+msgstr "KTTSD GStreamer Eklentisi"
+
+#. Comment
+#: players/gstplayer/kttsd_gstplugin.desktop:4
+msgid "KTTSD GStreamer audio plugin"
+msgstr "KTTSD GStreamer ses eklentisi"
+
+#. Comment
+#: players/kttsd_audioplugin.desktop:2
+msgid "Audio Plugin for KTTSD"
+msgstr "KTTS için Ses Eklentisi"
+
+#. Name
+#: plugins/command/kttsd_commandplugin.desktop:2
+msgid "Command"
+msgstr "Komut"
+
+#. Comment
+#: plugins/command/kttsd_commandplugin.desktop:4
+msgid "Generic speech synthesizer from command line"
+msgstr "Komut satırından genel konuşma bireştirici"
+
+#. Name
+#: plugins/epos/kttsd_eposplugin.desktop:2
+msgid "Epos TTS Synthesis System"
+msgstr "Epos TTS Sentezleme Sistemi"
+
+#. Comment
+#: plugins/epos/kttsd_eposplugin.desktop:4
+msgid "Epos TTS speech synthesizer"
+msgstr "Epos TTS konuşma sentezleyicisi"
+
+#. Name
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:2
+msgid "Festival Interactive"
+msgstr "Etkileşimli Festival"
+
+#. Comment
+#: plugins/festivalint/kttsd_festivalintplugin.desktop:4
+msgid "Festival speech synthetizer"
+msgstr "Festival konuşma bireştirici"
+
+#. Name
+#: plugins/flite/kttsd_fliteplugin.desktop:2
+msgid "Festival Lite (flite)"
+msgstr "Festival Lite(flite)"
+
+#. Comment
+#: plugins/flite/kttsd_fliteplugin.desktop:4
+msgid "Festival Lite (flite) speech synthesizer"
+msgstr "Festival Lite(flite) konuşma bireştirici"
+
+#. Name
+#: plugins/freetts/kttsd_freettsplugin.desktop:2
+msgid "FreeTTS"
+msgstr "Freetts"
+
+#. Comment
+#: plugins/freetts/kttsd_freettsplugin.desktop:4
+msgid "FreeTTS speech synthesizer"
+msgstr "FreeTTS konuşma bireştirici"
+
+#. Name
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:2
+msgid "Hadifix"
+msgstr ""
+
+#. Comment
+#: plugins/hadifix/kttsd_hadifixplugin.desktop:4
+msgid "German hadifix text-to-speech system"
+msgstr "Alman hadifix metinden konuşmaya sistemi"
