@@ -35,4 +35,5 @@ tde_add_kpart( libkttsd_commandplugin AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_commandplugin.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

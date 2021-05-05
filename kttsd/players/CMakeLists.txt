@@ -9,4 +9,5 @@ tde_conditional_add_subdirectory( WITH_GSTREAMER gstplayer   )
 tde_create_translated_desktop(
     SOURCE kttsd_audioplugin.desktop
     DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

@@ -34,4 +34,5 @@ tde_add_kpart( libkttsd_freettsplugin AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_freettsplugin.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

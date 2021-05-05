@@ -44,4 +44,5 @@ tde_add_library( kttsd SHARED AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_synthplugin.desktop
     DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

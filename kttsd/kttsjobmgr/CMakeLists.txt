@@ -37,4 +37,5 @@ tde_add_kpart( libkttsjobmgrpart MODULE AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsjobmgr.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

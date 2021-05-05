@@ -37,6 +37,7 @@ tde_add_kpart( libkttsd_hadifixplugin AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_hadifixplugin.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )
 
 install(
