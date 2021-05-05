@@ -38,4 +38,5 @@ tde_add_check_executable( testfilter AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_filterplugin.desktop
     DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

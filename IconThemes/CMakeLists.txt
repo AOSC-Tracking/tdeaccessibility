@@ -1,8 +1,9 @@
 ##### index theme
 
-install(
-    FILES mono/index.theme
+tde_create_translated_desktop(
+    SOURCE mono/index.theme
     DESTINATION ${ICON_INSTALL_DIR}/mono
+    PO_DIR icon-themes
 )
 
 

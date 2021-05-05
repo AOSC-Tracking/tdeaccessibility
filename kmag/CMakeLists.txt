@@ -46,4 +46,7 @@ install(
     DESTINATION ${DATA_INSTALL_DIR}/kmag
 )
 
-tde_create_translated_desktop( kmag.desktop )
+tde_create_translated_desktop(
+    SOURCE kmag.desktop
+    PO_DIR kmag-desktops
+)

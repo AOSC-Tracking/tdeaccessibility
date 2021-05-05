@@ -62,7 +62,10 @@ install(
     DESTINATION ${DATA_INSTALL_DIR}/ksayit
 )
 
-tde_create_translated_desktop( ksayit.desktop )
+tde_create_translated_desktop(
+    SOURCE ksayit.desktop
+    PO_DIR ksayit-desktops
+)
 
 install(
     FILES ksayit_fxplugin.h

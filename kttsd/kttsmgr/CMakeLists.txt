@@ -33,4 +33,7 @@ tde_add_executable( kttsmgr AUTOMOC
 
 ##### other data
 
-tde_create_translated_desktop( kttsmgr.desktop )
+tde_create_translated_desktop(
+    SOURCE kttsmgr.desktop
+    PO_DIR kttsd-desktops
+)

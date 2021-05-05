@@ -36,9 +36,11 @@ tde_add_library( libFreeverb_plugin MODULE AUTOMOC
 tde_create_translated_desktop(
     SOURCE ksayit_libFreeverb_service.desktop
     DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    PO_DIR ksayit-desktops
 )
 
 tde_create_translated_desktop(
     SOURCE ksayit_libFreeverb.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR ksayit-desktops
 )

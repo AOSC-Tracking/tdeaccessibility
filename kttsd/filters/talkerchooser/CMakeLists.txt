@@ -36,6 +36,7 @@ tde_add_kpart( libkttsd_talkerchooserplugin AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_talkerchooserplugin.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )
 
 install(

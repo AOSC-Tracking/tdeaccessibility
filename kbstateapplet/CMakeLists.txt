@@ -35,4 +35,5 @@ tde_add_kpart( kbstate_panelapplet MODULE AUTOMOC
 tde_create_translated_desktop(
     SOURCE kbstateapplet.desktop
     DESTINATION ${DATA_INSTALL_DIR}/kicker/applets
+    PO_DIR kbstateapplet-desktops
 )

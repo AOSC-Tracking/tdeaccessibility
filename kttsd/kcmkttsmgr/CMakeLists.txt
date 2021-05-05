@@ -41,6 +41,10 @@ tde_add_kpart( kcm_kttsd MODULE AUTOMOC
 tde_create_translated_desktop(
     SOURCE kcmkttsd_testmessage.desktop
     DESTINATION ${DATA_INSTALL_DIR}/kttsd
+    PO_DIR kttsd-desktops
 )
 
-tde_create_translated_desktop( kcmkttsd.desktop )
+tde_create_translated_desktop(
+    SOURCE kcmkttsd.desktop
+    PO_DIR kttsd-desktops
+)

@@ -49,4 +49,5 @@ install(
 tde_create_translated_desktop(
     SOURCE kttsd.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )

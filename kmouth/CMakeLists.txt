@@ -60,4 +60,7 @@ install(
     DESTINATION ${CONFIG_INSTALL_DIR}
 )
 
-tde_create_translated_desktop( kmouth.desktop )
+tde_create_translated_desktop(
+    SOURCE kmouth.desktop
+    PO_DIR kmouth-desktops
+)

@@ -39,7 +39,10 @@ tde_add_executable( kmousetool AUTOMOC
 
 ##### other data
 
-tde_create_translated_desktop( kmousetool.desktop )
+tde_create_translated_desktop(
+    SOURCE kmousetool.desktop
+    PO_DIR kmousetool-desktops
+)
 
 install(
     FILES mousetool_tap.wav

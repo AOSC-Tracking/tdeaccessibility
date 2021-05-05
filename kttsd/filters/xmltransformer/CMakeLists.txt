@@ -35,6 +35,7 @@ tde_add_kpart( libkttsd_xmltransformerplugin AUTOMOC
 tde_create_translated_desktop(
     SOURCE kttsd_xmltransformerplugin.desktop
     DESTINATION ${SERVICES_INSTALL_DIR}
+    PO_DIR kttsd-desktops
 )
 
 install(
