@@ -1,20 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Roman Savochenko <roman@oscada.org>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-14 11:47+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-10-06 16:30+0000\n"
+"Last-Translator: Roman Savochenko <roman@oscada.org>\n"
+"Language-Team: Ukrainian <https://mirror.git.trinitydesktop.org/weblate/"
+"projects/tdeaccessibility/kttsd-desktop-files/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.8.1\n"
 
 #. Name
 #: app-plugins/kate/tdetexteditor_kttsd.desktop:2
@@ -94,7 +96,7 @@ msgstr "Система синтезу мовлення з тексту фун
 #. Name
 #: kttsd/kttsd.desktop:2 libkttsd/kttsd_synthplugin.desktop:2
 msgid "KTTSD"
-msgstr ""
+msgstr "KTTSD"
 
 #. Comment
 #: kttsd/kttsd.desktop:3
@@ -104,7 +106,7 @@ msgstr "Демон TDE синтезу мовлення з тексту"
 #. Name
 #: kttsjobmgr/kttsjobmgr.desktop:2
 msgid "kttsjobmgrpart"
-msgstr ""
+msgstr "kttsjobmgrpart"
 
 #. Comment
 #: kttsjobmgr/kttsjobmgr.desktop:4
@@ -114,7 +116,7 @@ msgstr "Менеджер завдань TDE для синтезу мовленн
 #. Name
 #: kttsmgr/kttsmgr.desktop:2
 msgid "KTTSMgr"
-msgstr ""
+msgstr "KTTSMgr"
 
 #. GenericName
 #: kttsmgr/kttsmgr.desktop:4
@@ -183,9 +185,8 @@ msgstr "Загальний синтезатор мовлення з команд
 
 #. Name
 #: plugins/epos/kttsd_eposplugin.desktop:2
-#, fuzzy
 msgid "Epos TTS Synthesis System"
-msgstr "Синтезатор мовлення Epos TTS"
+msgstr "Система синтезування мовлення Epos TTS"
 
 #. Comment
 #: plugins/epos/kttsd_eposplugin.desktop:4
@@ -194,9 +195,8 @@ msgstr "Синтезатор мовлення Epos TTS"
 
 #. Name
 #: plugins/festivalint/kttsd_festivalintplugin.desktop:2
-#, fuzzy
 msgid "Festival Interactive"
-msgstr "Синтезатор мовлення Festival"
+msgstr "Festival Interactive"
 
 #. Comment
 #: plugins/festivalint/kttsd_festivalintplugin.desktop:4
@@ -205,9 +205,8 @@ msgstr "Синтезатор мовлення Festival"
 
 #. Name
 #: plugins/flite/kttsd_fliteplugin.desktop:2
-#, fuzzy
 msgid "Festival Lite (flite)"
-msgstr "Синтезатор мовлення Festival Lite (flite)"
+msgstr "Легкий Festival Lite (flite)"
 
 #. Comment
 #: plugins/flite/kttsd_fliteplugin.desktop:4
@@ -217,7 +216,7 @@ msgstr "Синтезатор мовлення Festival Lite (flite)"
 #. Name
 #: plugins/freetts/kttsd_freettsplugin.desktop:2
 msgid "FreeTTS"
-msgstr ""
+msgstr "FreeTTS"
 
 #. Comment
 #: plugins/freetts/kttsd_freettsplugin.desktop:4
@@ -227,7 +226,7 @@ msgstr "Синтезатор мовлення FreeTTS"
 #. Name
 #: plugins/hadifix/kttsd_hadifixplugin.desktop:2
 msgid "Hadifix"
-msgstr ""
+msgstr "Hadifix"
 
 #. Comment
 #: plugins/hadifix/kttsd_hadifixplugin.desktop:4
