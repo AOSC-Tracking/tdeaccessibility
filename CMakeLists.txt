@@ -13,7 +13,7 @@ cmake_minimum_required( VERSION 2.8.12 )
 #### general package setup
 
 project( tdeaccessibility )
-set( VERSION R14.0.11 )
+set( VERSION R14.0.12 )
 
 
 #### include essential cmake modules
