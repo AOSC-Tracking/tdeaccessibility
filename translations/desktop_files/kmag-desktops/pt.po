@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-14 11:43+0100\n"
-"PO-Revision-Date: 2021-11-06 21:31+0000\n"
+"PO-Revision-Date: 2021-11-25 18:59+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/tdeaccessibility/kmag-desktop-files/pt/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.8.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #. Name
 #: kmag.desktop:2
@@ -30,4 +30,4 @@ msgstr "Lupa"
 #. Comment
 #: kmag.desktop:6
 msgid "Tool to zoom screen areas"
-msgstr ""
+msgstr "Ferramenta para ampliar áreas do ecrã"
