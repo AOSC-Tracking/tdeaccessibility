@@ -13,7 +13,6 @@ cmake_minimum_required( VERSION 3.1 )
 #### general package setup
 
 project( tdeaccessibility )
-set( VERSION R14.1.0 )
 
 
 #### include essential cmake modules
@@ -32,6 +31,11 @@ include( CheckCXXSourceCompiles )
 
 include( TDEMacros )
 enable_testing( )
+
+
+##### set version number ########################
+
+tde_set_project_version( )
 
 
 ##### setup install paths
