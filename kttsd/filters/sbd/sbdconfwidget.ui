@@ -286,9 +286,6 @@
                     <property name="text">
                         <string>Load...</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                     <property name="whatsThis" stdset="0">
                         <string>Click to load a Sentence Boundary Detection configuration from a file.</string>
                         <comment>What's this text</comment>

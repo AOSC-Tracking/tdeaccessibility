@@ -307,9 +307,6 @@
                                 <property name="text">
                                     <string>Add...</string>
                                 </property>
-                                <property name="accel">
-                                    <string></string>
-                                </property>
                                 <property name="whatsThis" stdset="0">
                                     <string>Click to add and configure a new Talker (speech synthesizer).</string>
                                     <comment>What's this text</comment>
@@ -547,9 +544,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Add...</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string></string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
                                             <string>Click to configure notification for a specific application event.</string>
@@ -868,9 +862,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Add...</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string></string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
                                             <string>Click to add and configure a new Filter.</string>
@@ -1567,9 +1558,6 @@
                                 <property name="text">
                                     <string>aKode</string>
                                 </property>
-                                <property name="accel">
-                                    <string></string>
-                                </property>
                                 <property name="checked">
                                     <bool>false</bool>
                                 </property>
@@ -1597,9 +1585,6 @@
                                         </property>
                                         <property name="text">
                                             <string>ALSA</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string></string>
                                         </property>
                                         <property name="checked">
                                             <bool>false</bool>

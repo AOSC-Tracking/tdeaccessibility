@@ -170,9 +170,6 @@
                                             <property name="text">
                                                 <string></string>
                                             </property>
-                                            <property name="accel">
-                                                <string></string>
-                                            </property>
                                         </widget>
                                     </hbox>
                                 </widget>
@@ -216,9 +213,6 @@
                                                 </sizepolicy>
                                             </property>
                                             <property name="text">
-                                                <string></string>
-                                            </property>
-                                            <property name="accel">
                                                 <string></string>
                                             </property>
                                         </widget>
@@ -283,9 +277,6 @@
                                             <property name="text">
                                                 <string></string>
                                             </property>
-                                            <property name="accel">
-                                                <string></string>
-                                            </property>
                                         </widget>
                                     </hbox>
                                 </widget>
@@ -329,9 +320,6 @@
                                                 </sizepolicy>
                                             </property>
                                             <property name="text">
-                                                <string></string>
-                                            </property>
-                                            <property name="accel">
                                                 <string></string>
                                             </property>
                                         </widget>
@@ -401,9 +389,6 @@
                                                 </sizepolicy>
                                             </property>
                                             <property name="text">
-                                                <string></string>
-                                            </property>
-                                            <property name="accel">
                                                 <string></string>
                                             </property>
                                         </widget>
