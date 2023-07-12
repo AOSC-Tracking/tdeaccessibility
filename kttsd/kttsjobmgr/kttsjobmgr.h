@@ -43,7 +43,7 @@ public:
     virtual ~KttsJobMgrFactory();
 
     virtual TQObject* createObject(TQObject* parent = 0, const char* name = 0,
-                            const char* classname = TQOBJECT_OBJECT_NAME_STRING,
+                            const char* classname = "TQObject",
                             const TQStringList &args = TQStringList());
 
     static TDEInstance *instance();
