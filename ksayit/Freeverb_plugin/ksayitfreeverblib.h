@@ -36,7 +36,7 @@ public:
     virtual ~FreeverbPluginFactory(){ delete p_instance; };
     
     TQObject* createObject(TQObject *parent=0, const char* name=0, 
-            const char* className=TQOBJECT_OBJECT_NAME_STRING, 
+            const char* className="TQObject", 
             const TQStringList &args=TQStringList());        
 
 private:
