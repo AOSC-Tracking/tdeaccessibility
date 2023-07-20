@@ -38,7 +38,7 @@
 
 class KTTSD : public TQObject, virtual public KSpeech
 {
-    Q_OBJECT
+    TQ_OBJECT
 //    
     K_DCOP
 
@@ -632,7 +632,7 @@ class KTTSD : public TQObject, virtual public KSpeech
 // kspeech is obsolete.  Applications should use KSpeech instead.
 class kspeech : public TQObject, virtual public KSpeech
 {
-    Q_OBJECT
+    TQ_OBJECT
 //    
     K_DCOP
 

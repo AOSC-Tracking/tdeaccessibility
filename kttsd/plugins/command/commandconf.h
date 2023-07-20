@@ -35,7 +35,7 @@ class CommandProc;
 class KProgressDialog;
 
 class CommandConf : public PlugInConf {
-    Q_OBJECT
+    TQ_OBJECT
     
 
     public:

@@ -28,7 +28,7 @@
   */
 
 class Speech : public TQObject {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    enum CharacterCodec {

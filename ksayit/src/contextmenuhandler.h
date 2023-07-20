@@ -66,7 +66,7 @@ private:
 */
 class ContextMenuHandler : public TQObject
 {
-Q_OBJECT
+TQ_OBJECT
   
 public:
     ContextMenuHandler(TQObject *parent = 0, const char *name = 0);

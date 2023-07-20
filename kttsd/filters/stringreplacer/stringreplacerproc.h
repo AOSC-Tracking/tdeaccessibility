@@ -37,7 +37,7 @@
 
 class StringReplacerProc : virtual public KttsFilterProc
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

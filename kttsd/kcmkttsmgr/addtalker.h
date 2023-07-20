@@ -35,7 +35,7 @@ typedef TQMap<TQString,TQStringList> LangToSynthMap;
 
 class AddTalker : public AddTalkerWidget
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

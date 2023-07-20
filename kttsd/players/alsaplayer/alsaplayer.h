@@ -68,7 +68,7 @@ static snd_pcm_sframes_t (*writen_func)(snd_pcm_t *handle, void **bufs, snd_pcm_
 
 class KDE_EXPORT AlsaPlayer : public Player, TQThread
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

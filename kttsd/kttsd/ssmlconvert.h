@@ -38,7 +38,7 @@ class TDEProcess;
 class TQString;
 
 class SSMLConvert : public TQObject {
-    Q_OBJECT
+    TQ_OBJECT
   
 public:
     /** Constructors */

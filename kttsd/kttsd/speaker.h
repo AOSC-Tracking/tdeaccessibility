@@ -110,7 +110,7 @@ const int timerInterval = 500;
  * the queue and call the plug ins function to actually speak the texts.
  */
 class Speaker : public TQObject{
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

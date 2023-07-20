@@ -54,7 +54,7 @@ class KMouseToolTray;
 
 class KMouseTool : public KMouseToolUI
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 
 private:
@@ -194,7 +194,7 @@ public:
 };
 
 class KMouseToolTray : public KSystemTray {
-        Q_OBJECT
+        TQ_OBJECT
   
 	int startStopId;
 public:

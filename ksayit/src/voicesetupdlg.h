@@ -32,7 +32,7 @@ class KTTSDLib;
   *@author Robert Vogl
   */
 class VoiceSetupDlg : public KDialogBase  {
-  Q_OBJECT
+  TQ_OBJECT
   
 
 public: 

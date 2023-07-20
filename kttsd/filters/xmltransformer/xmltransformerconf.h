@@ -39,7 +39,7 @@
 
 class XmlTransformerConf : public KttsFilterConf
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

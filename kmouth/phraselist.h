@@ -39,7 +39,7 @@ class WordCompletion;
  */
 
 class PhraseList : public TQWidget  {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    PhraseList(TQWidget *parent=0, const char *name=0);

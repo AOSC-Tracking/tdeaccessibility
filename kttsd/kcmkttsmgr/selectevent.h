@@ -28,7 +28,7 @@
 
 class SelectEvent : public SelectEventWidget
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

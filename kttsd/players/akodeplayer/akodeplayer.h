@@ -33,7 +33,7 @@ namespace aKode {
 
 class KDE_EXPORT aKodePlayer : public Player
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

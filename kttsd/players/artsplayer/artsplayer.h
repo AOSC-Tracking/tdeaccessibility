@@ -45,7 +45,7 @@ namespace KDE {
 
 class KDE_EXPORT ArtsPlayer : public Player
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

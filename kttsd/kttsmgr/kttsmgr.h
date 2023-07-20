@@ -47,7 +47,7 @@ class KttsToolTip: public TQToolTip
 
 class KttsMgrTray: public KSystemTray, public KSpeech_stub, virtual public KSpeechSink
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

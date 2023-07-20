@@ -44,7 +44,7 @@ class EditReplacementWidget;
 
 class TalkerChooserConf : public KttsFilterConf
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

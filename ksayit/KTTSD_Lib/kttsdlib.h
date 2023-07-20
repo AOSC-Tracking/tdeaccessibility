@@ -47,7 +47,7 @@ class kttsdlibtalker2;
 */
 class KDE_EXPORT KTTSDLib : public TQObject
 {
-Q_OBJECT
+TQ_OBJECT
 
 signals:
     /** Emitted when the plugin has been finished speeking.

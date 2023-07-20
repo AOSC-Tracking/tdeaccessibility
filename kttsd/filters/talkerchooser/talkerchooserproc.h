@@ -30,7 +30,7 @@
 
 class TalkerChooserProc : virtual public KttsFilterProc
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:
