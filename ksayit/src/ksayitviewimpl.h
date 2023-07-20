@@ -32,7 +32,7 @@
   */
 
 class KSayItViewImpl : public KSayItView  {
-   Q_OBJECT
+   TQ_OBJECT
   
 
 public: 

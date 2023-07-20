@@ -41,7 +41,7 @@ class MergeWidget;
  * completion.
  */
 class DictionaryCreationWizard : public KWizard {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    DictionaryCreationWizard (TQWidget *parent, const char *name,
@@ -76,7 +76,7 @@ private:
  * @author Gunnar Schmi Dt
  */
 class MergeWidget : public TQScrollView {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    MergeWidget(KWizard *parent, const char *name,
@@ -100,7 +100,7 @@ private:
  * @author Gunnar Schmi Dt
  */
 class CompletionWizardWidget : public KDEDocSourceUI {
-   Q_OBJECT
+   TQ_OBJECT
   
    friend class ConfigWizard;
 public:

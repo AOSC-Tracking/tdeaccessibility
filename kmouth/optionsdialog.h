@@ -32,7 +32,7 @@ class WordCompletionWidget;
   */
 
 class PreferencesWidget : public PreferencesUI {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    PreferencesWidget(TQWidget *parent, const char *name);
@@ -56,7 +56,7 @@ private:
   */
 
 class OptionsDialog : public KDialogBase  {
-   Q_OBJECT
+   TQ_OBJECT
   
 public: 
    OptionsDialog(TQWidget *parent);

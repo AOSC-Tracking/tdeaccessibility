@@ -25,7 +25,7 @@
 */
 class KTTSDlibSetupImpl : public KTTSDlibSetup
 {
-Q_OBJECT
+TQ_OBJECT
   
 public:
     KTTSDlibSetupImpl(TQWidget *parent = 0, const char *name = 0);

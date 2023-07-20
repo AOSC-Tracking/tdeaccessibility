@@ -59,7 +59,7 @@ private:
 
 class PhraseTree : public TDEListView  {
    friend class PhraseTreeItem;
-   Q_OBJECT
+   TQ_OBJECT
   
 public: 
    PhraseTree (TQWidget *parent = 0, const char *name = 0);

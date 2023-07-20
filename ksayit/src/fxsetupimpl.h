@@ -36,7 +36,7 @@ class FXPluginHandler;
   *@author voglrobe
   */
 class FX_SetupImpl : public FX_Setup  {
-   Q_OBJECT
+   TQ_OBJECT
   
 
 public: 

@@ -73,7 +73,7 @@ private:
  */
 
 class InitialPhraseBookWidget : public TQWidget {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    InitialPhraseBookWidget(TQWidget *parent, const char *name);
@@ -94,7 +94,7 @@ private:
  * @author Gunnar Schmi Dt
  */
 class StandardPhraseBookInsertAction : public TDEAction {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, TDEActionCollection* parent)
@@ -142,7 +142,7 @@ protected:
 
 class PhraseBookDialog : public TDEMainWindow {
    friend class InitialPhraseBookWidget;
-   Q_OBJECT
+   TQ_OBJECT
   
 private:
    /** Constructor. It is private because this class implements the singleton

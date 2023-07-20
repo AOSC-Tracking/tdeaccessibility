@@ -34,7 +34,7 @@ class TQGridLayout;
 class TDEPopupMenu;
 
 class StatusIcon : public TQPushButton {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    StatusIcon (const TQString &text, TQWidget *parent, const char *name=0);
@@ -45,7 +45,7 @@ public:
 typedef TQPtrList<StatusIcon> IconList;
 
 class TimeoutIcon : public StatusIcon {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    TimeoutIcon (TDEInstance *instance, const TQString &text,
@@ -73,7 +73,7 @@ private slots:
 };
 
 class KeyIcon : public StatusIcon {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    KeyIcon (int keyId, TDEInstance *instance,
@@ -104,7 +104,7 @@ private:
 };
 
 class MouseIcon : public StatusIcon {
-	Q_OBJECT
+	TQ_OBJECT
   
 	public:
 		MouseIcon (TDEInstance *instance, TQWidget *parent, const char *name=0);
@@ -133,7 +133,7 @@ class MouseIcon : public StatusIcon {
 };
 
 class KbStateApplet : public KPanelApplet {
-   Q_OBJECT
+   TQ_OBJECT
   
 
 public:

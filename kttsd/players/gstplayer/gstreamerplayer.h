@@ -29,7 +29,7 @@ extern "C" {
 
 class GStreamerPlayer : public Player
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

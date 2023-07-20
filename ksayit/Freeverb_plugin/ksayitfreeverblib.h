@@ -26,7 +26,7 @@
 
 class FreeverbPluginFactory : public KLibFactory
 {
-Q_OBJECT
+TQ_OBJECT
   
 public:
     // Consturctor
@@ -50,7 +50,7 @@ private:
 
 class FreeverbPlugin : public FXPlugin
 {
-Q_OBJECT
+TQ_OBJECT
   
 public: 
     // Constructor

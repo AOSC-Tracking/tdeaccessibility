@@ -45,7 +45,7 @@
  */
 class KMagZoomView : public TQScrollView
 {
-  Q_OBJECT
+  TQ_OBJECT
   
   public:
     /// Constructor for the main view

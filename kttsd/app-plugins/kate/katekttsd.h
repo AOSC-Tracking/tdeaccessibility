@@ -27,7 +27,7 @@
 
 class KateKttsdPlugin : public KTextEditor::Plugin, public KTextEditor::PluginViewInterface
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:
@@ -45,7 +45,7 @@ class KateKttsdPlugin : public KTextEditor::Plugin, public KTextEditor::PluginVi
 
 class KateKttsdPluginView : public TQObject, public KXMLGUIClient
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

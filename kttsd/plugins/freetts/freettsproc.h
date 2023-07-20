@@ -27,7 +27,7 @@
 class TDEProcess;
 
 class FreeTTSProc : public PlugInProc{
-	Q_OBJECT
+	TQ_OBJECT
 	
 
 public:

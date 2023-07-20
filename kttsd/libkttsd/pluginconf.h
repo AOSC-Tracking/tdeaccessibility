@@ -208,7 +208,7 @@
 */
 
 class KDE_EXPORT PlugInConf : public TQWidget{
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

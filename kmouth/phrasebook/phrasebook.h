@@ -147,7 +147,7 @@ public:
  * @author Gunnar Schmi Dt
  */
 class PhraseBookDrag: public TQDragObject {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    PhraseBookDrag (PhraseBook *book, TQWidget *dragSource = 0, const char *name = 0);
@@ -170,7 +170,7 @@ private:
 };
 
 class PhraseAction : public TDEAction {
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, TDEActionCollection* parent)

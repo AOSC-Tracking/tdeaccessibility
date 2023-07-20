@@ -11,7 +11,7 @@ class HadifixProc;
 class HadifixConfPrivate;
 
 class HadifixConf : public PlugInConf {
-    Q_OBJECT
+    TQ_OBJECT
     
 
     public:

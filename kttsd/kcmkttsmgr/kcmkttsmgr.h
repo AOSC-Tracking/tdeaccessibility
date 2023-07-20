@@ -54,7 +54,7 @@ class KCMKttsMgr :
     public KSpeech_stub,
     virtual public KSpeechSink
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

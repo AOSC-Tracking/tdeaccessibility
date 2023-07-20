@@ -29,7 +29,7 @@
 
 class KMagSelWinCorner : public TQLabel
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:
@@ -54,7 +54,7 @@ protected:
 
 class KMagSelWin : public TQWidget
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:
@@ -99,7 +99,7 @@ protected:
  */
 class KMagSelRect : public TQObject, public TQRect
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

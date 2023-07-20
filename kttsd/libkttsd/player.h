@@ -27,7 +27,7 @@
 
 class KDE_EXPORT Player : virtual public TQObject
 {
-    Q_OBJECT
+    TQ_OBJECT
   
 
 public:

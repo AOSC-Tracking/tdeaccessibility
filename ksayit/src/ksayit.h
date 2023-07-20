@@ -67,7 +67,7 @@ class KSayItBookmarkHandler;
   */
 class KSayItApp : public TDEMainWindow, public DCOPObject
 {
-  Q_OBJECT
+  TQ_OBJECT
 //  
   K_DCOP
 

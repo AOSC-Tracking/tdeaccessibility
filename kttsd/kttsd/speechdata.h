@@ -109,7 +109,7 @@ typedef TQMap<TQString, NotifyEventMap> NotifyAppMap;
  * functions)
  */
 class SpeechData : public TQObject {
-    Q_OBJECT
+    TQ_OBJECT
   
 
     public:

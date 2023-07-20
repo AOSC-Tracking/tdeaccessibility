@@ -54,7 +54,7 @@ class PhraseBook;
   */
 class KMouthApp : public TDEMainWindow
 {
-  Q_OBJECT
+  TQ_OBJECT
   
 
   public:

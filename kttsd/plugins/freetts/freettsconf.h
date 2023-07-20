@@ -32,7 +32,7 @@ class TQStringList;
 class KProgressDialog;
 
 class FreeTTSConf : public PlugInConf {
-	Q_OBJECT
+	TQ_OBJECT
 	
 	
 	public:

@@ -55,7 +55,7 @@
   */
 class KmagApp : public TDEMainWindow
 {
-  Q_OBJECT
+  TQ_OBJECT
   
 
   public:

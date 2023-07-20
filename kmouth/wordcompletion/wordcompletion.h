@@ -8,7 +8,7 @@
  */
 class WordCompletion : public TDECompletion {
    friend class WordListWidget;
-   Q_OBJECT
+   TQ_OBJECT
   
 public:
    WordCompletion();
