@@ -51,7 +51,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    TQVBoxLayout *layout = new TQVBoxLayout (this);
 
    listBox = new TDEListBox (this);
-   listBox->setFocusPolicy(TQ_NoFocus);
+   listBox->setFocusPolicy(TQWidget::NoFocus);
    listBox->setSelectionMode (TQListBox::Extended);
    TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
    layout->addWidget(listBox);
@@ -66,7 +66,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    rowLayout->addWidget(dictionaryCombo);
 
    lineEdit = new PhraseEdit ("", this);
-   lineEdit->setFocusPolicy(TQ_StrongFocus);
+   lineEdit->setFocusPolicy(TQWidget::StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(TQLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
@@ -77,7 +77,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
 
    TQIconSet icon = TDEGlobal::iconLoader()->loadIconSet("speak", TDEIcon::Small);
    speakButton = new TQPushButton (icon, i18n("&Speak"), this);
-   speakButton->setFocusPolicy(TQ_NoFocus);
+   speakButton->setFocusPolicy(TQWidget::NoFocus);
    speakButton->setAutoDefault(false);
    TQWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);

@@ -136,7 +136,7 @@ KMagZoomView::KMagZoomView(TQWidget *parent, const char *name)
   TDEApplication::setGlobalMouseTracking(TRUE);
   viewport()->setMouseTracking(TRUE);
   viewport()->setBackgroundMode (NoBackground);
-  viewport()->setFocusPolicy(TQ_StrongFocus);
+  viewport()->setFocusPolicy(TQWidget::StrongFocus);
   
   m_ctrlKeyPressed = false;
   m_shiftKeyPressed = false;
