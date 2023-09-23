@@ -107,7 +107,7 @@
     <include location="local" impldecl="in implementation">voicefileui.ui.h</include>
 </includes>
 <variables>
-    <variable access="public">QString mbrola;</variable>
+    <variable access="public">TQString mbrola;</variable>
 </variables>
 <Q_SLOTS>
     <slot>genderButton_clicked()</slot>
