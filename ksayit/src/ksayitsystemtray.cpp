@@ -253,7 +253,7 @@ void StateWAIT::setContext(KSayItSystemTray *caller)
 
 void StateWAIT::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
+  if (e->button()==TQt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -262,7 +262,7 @@ void StateWAIT::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateWAIT::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button released
+  if (e->button()==TQt::LeftButton){ // left Mouse-button released
     say(caller);
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling
@@ -294,7 +294,7 @@ void StateSAY::setContext(KSayItSystemTray *caller)
 
 void StateSAY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
+  if (e->button()==TQt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -303,7 +303,7 @@ void StateSAY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateSAY::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button released
+  if (e->button()==TQt::LeftButton){ // left Mouse-button released
     TQWidget::mouseReleaseEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling
@@ -336,7 +336,7 @@ void StateCLIPEMPTY::setContext(KSayItSystemTray *caller)
 
 void StateCLIPEMPTY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button pressed
+  if (e->button()==TQt::LeftButton){ // left Mouse-button pressed
     TQWidget::mousePressEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mousePressEventCall(caller, e); // normal mouse-handling
@@ -345,7 +345,7 @@ void StateCLIPEMPTY::mousePressEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 
 void StateCLIPEMPTY::mouseReleaseEvent(KSayItSystemTray *caller, TQMouseEvent *e)
 {
-  if (e->button()==Qt::LeftButton){ // left Mouse-button released
+  if (e->button()==TQt::LeftButton){ // left Mouse-button released
     TQWidget::mouseReleaseEvent(e); // do nothing (see mouseReleaseEvent)
   } else {
     mouseReleaseEventCall(caller, e); // normal mouse-handling

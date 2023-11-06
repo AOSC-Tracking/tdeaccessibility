@@ -927,7 +927,7 @@ void DocTreeViewImpl::slotNewDate()
         date->setText(3, TQString("%1").arg(newIndex).rightJustify(8,'0') );
         // get current date
         TQString today;
-        today = TDEGlobal::locale()->formatDate(TQDate::currentDate(Qt::LocalTime), true);
+        today = TDEGlobal::locale()->formatDate(TQDate::currentDate(TQt::LocalTime), true);
         date->setText( 1, today);
         date->setValue( KSayItGlobal::RAWDATA,     today );
         date->setValue( KSayItGlobal::RTFDATA,     today );

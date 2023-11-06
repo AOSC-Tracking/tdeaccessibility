@@ -106,7 +106,7 @@ KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
 
     // Create a splitter to contain the Job List View and the current sentence.
     TQSplitter* splitter = new TQSplitter(vBox);
-    splitter->setOrientation(Qt::Vertical);
+    splitter->setOrientation(TQt::Vertical);
 
     // Create Job List View widget.
     m_jobListView = new TDEListView(splitter, "joblistview");

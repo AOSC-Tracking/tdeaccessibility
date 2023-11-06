@@ -370,7 +370,7 @@ TQPoint KMagZoomView::calcMousePos(bool updateMousePos)
 void KMagZoomView::mousePressEvent(TQMouseEvent *e)
 {
   switch(e->button()) {
-  case Qt::LeftButton :
+  case TQt::LeftButton :
     if(m_ctrlKeyPressed) {
       // check if currently in resize mode
       // don't do anything if fitToWindow is enabled
@@ -443,7 +443,7 @@ void KMagZoomView::mousePressEvent(TQMouseEvent *e)
     }
     break;
 
-  case Qt::MidButton :
+  case TQt::MidButton :
     // check if currently in move mode
     // don't do anything if follow mouse is enabled
     if ((m_mouseMode != MoveSelection) && !m_followMouse) {
@@ -484,8 +484,8 @@ void KMagZoomView::mousePressEvent(TQMouseEvent *e)
 void KMagZoomView::mouseReleaseEvent(TQMouseEvent *e)
 {
   switch(e->button()) {
-  case Qt::LeftButton :
-  case Qt::MidButton :
+  case TQt::LeftButton :
+  case TQt::MidButton :
     // check if currently in move mode
     if(m_mouseMode == MoveSelection) {
       // hide the selection window
@@ -521,9 +521,9 @@ void KMagZoomView::mouseReleaseEvent(TQMouseEvent *e)
     }    
     break;
 
-  case Qt::RightButton :
+  case TQt::RightButton :
     break;
-  case Qt::NoButton :
+  case TQt::NoButton :
     break;
 
   // do nothing
