@@ -264,7 +264,7 @@ int KbStateApplet::heightForWidth(int w) const {
 }
 
 void KbStateApplet::mousePressEvent(TQMouseEvent *e) {
-   if (e->button() == Qt::RightButton)
+   if (e->button() == TQt::RightButton)
       popup->popup(e->globalPos());
 }
 
@@ -308,7 +308,7 @@ void KbStateApplet::layout() {
 			accessxCount++;
 	}
 
-   if (orientation() ==Qt::Vertical) {
+   if (orientation() ==TQt::Vertical) {
 		calculateSizes (width(), modifierCount, lockkeyCount, accessxCount,
 							 showMouse, lines, length, size);
 		
