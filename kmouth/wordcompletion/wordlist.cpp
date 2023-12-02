@@ -160,7 +160,7 @@ void addWords (WordMap &map, WordMap add) {
 
 void addWordsFromFile (WordMap &map, TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec) {
    TQFile xmlfile(filename);
-   TQXmlInputSource source (TQT_TQIODEVICE(&xmlfile));
+   TQXmlInputSource source (&xmlfile);
    XMLParser parser;
    TQXmlSimpleReader reader;
    reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);

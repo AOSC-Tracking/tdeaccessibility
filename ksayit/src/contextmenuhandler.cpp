@@ -293,7 +293,7 @@ bool ContextMenuHandler::parseXmlFile(const TQString &xmlID)
     ContextActionHandler handler(this);
     handler.setSearchID(xmlID);
     parser.setContentHandler( &handler );
-    return parser.parse( TQT_TQIODEVICE(&xmlFile) );
+    return parser.parse( &xmlFile );
 }
 
 

@@ -246,7 +246,7 @@ void KMagZoomView::drawContents ( TQPainter * p, int clipx, int clipy, int clipw
   // show the pixel under mouse cursor
   if(m_showMouse) {
     // paint the mouse cursor
-    paintMouseCursor(TQT_TQPAINTDEVICE(&clippedPixmap), calcMousePos (m_refreshSwitch)-TQPoint (areaToPaint.x(), areaToPaint.y()));
+    paintMouseCursor(&clippedPixmap, calcMousePos (m_refreshSwitch)-TQPoint (areaToPaint.x(), areaToPaint.y()));
   }
 
   TQPixmap zoomedPixmap;
@@ -889,7 +889,7 @@ TQPixmap KMagZoomView::getPixmap()
     TQPixmap mousePixmap(m_grabbedPixmap);
 
     // paint the mouse cursor w/o updating to a newer position
-    paintMouseCursor(TQT_TQPAINTDEVICE(&mousePixmap), calcMousePos(false));
+    paintMouseCursor(&mousePixmap, calcMousePos(false));
     
     return(mousePixmap);
   } else { // no mouse cursor
