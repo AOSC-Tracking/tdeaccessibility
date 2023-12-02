@@ -339,7 +339,7 @@ bool PhraseBook::open (const KURL &url) {
 
       // First: try to load it as a normal phrase book
       TQFile file(tempFile);
-      TQXmlInputSource source (TQT_TQIODEVICE(&file));
+      TQXmlInputSource source (&file);
       bool error = !decode (source);
 
       // Second: if the file does not contain a phrase book, load it as
