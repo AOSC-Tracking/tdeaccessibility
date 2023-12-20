@@ -1835,7 +1835,7 @@ void KCMKttsMgr::kttsdStarted()
         if (factory)
         {
             // Create the Job Manager part
-            m_jobMgrPart = (KParts::ReadOnlyPart *)factory->create( TQT_TQOBJECT(m_kttsmgrw->mainTab), "kttsjobmgr",
+            m_jobMgrPart = (KParts::ReadOnlyPart *)factory->create( m_kttsmgrw->mainTab, "kttsjobmgr",
                 "KParts::ReadOnlyPart" );
             if (m_jobMgrPart)
             {
@@ -2063,7 +2063,7 @@ void KCMKttsMgr::configureTalker()
     }
     float audioStretchFactor = 1.0/(float(m_kttsmgrw->timeBox->value())/100.0);
     // kdDebug() << "KCMKttsMgr::configureTalker: playerOption = " << playerOption << " audioStretchFactor = " << audioStretchFactor << " sink name = " << sinkName << endl;
-    TestPlayer* testPlayer = new TestPlayer(TQT_TQOBJECT(this), "ktts_testplayer", 
+    TestPlayer* testPlayer = new TestPlayer(this, "ktts_testplayer", 
         playerOption, audioStretchFactor, sinkName);
     m_loadedTalkerPlugIn->setPlayer(testPlayer);
     // Display the dialog.
