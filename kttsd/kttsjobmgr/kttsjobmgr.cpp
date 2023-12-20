@@ -89,7 +89,7 @@ TDEAboutData *KttsJobMgrFactory::aboutData()
 KttsJobMgrPart::KttsJobMgrPart(TQWidget *parent, const char *name) :
     DCOPStub("kttsd", "KSpeech"),
     DCOPObject("kttsjobmgr_kspeechsink"),
-    KParts::ReadOnlyPart(TQT_TQOBJECT(parent), name)
+    KParts::ReadOnlyPart(parent, name)
 {
     // Initialize some variables.
     m_selectOnTextSet = false;

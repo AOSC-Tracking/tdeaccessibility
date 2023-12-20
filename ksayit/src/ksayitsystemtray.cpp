@@ -46,7 +46,7 @@ void KSayItSystemTray::initActions()
   menu = this->contextMenu();
   help = new KHelpMenu(this, kapp->aboutData(), false, actionCollection());
   // Standard actions
-  settings = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(slotPreferences()), actionCollection());
+  settings = KStdAction::preferences(this, TQT_SLOT(slotPreferences()), actionCollection());
   help_about = KStdAction::aboutApp(help, TQT_SLOT(aboutApplication()), actionCollection());
   help_kde = KStdAction::aboutKDE(help, TQT_SLOT(aboutKDE()), actionCollection());
 
@@ -54,28 +54,28 @@ void KSayItSystemTray::initActions()
   say = new TDEAction(i18n("Say"),
               "media-playback-start",
               0,
-              TQT_TQOBJECT(this), TQT_SLOT (slotSayActivated()),
+              this, TQT_SLOT (slotSayActivated()),
               actionCollection(),
               "say_it");
   
   shutup = new TDEAction(i18n("Shut Up"),
               "media-playback-stop",
               0,
-              TQT_TQOBJECT(this), TQT_SLOT (slotStopActivated()),
+              this, TQT_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
   
   pause = new TDEAction (i18n("Pause"),
               "media-playback-pause",
               0,
-              TQT_TQOBJECT(this), TQT_SLOT (slotPauseActivated()),
+              this, TQT_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
 
   next_sentence = new TDEAction (i18n("Next Sentence"),
               "2rightarrow",
               0,
-              TQT_TQOBJECT(this), TQT_SLOT (slotNextSentenceActivated()),
+              this, TQT_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
@@ -83,7 +83,7 @@ void KSayItSystemTray::initActions()
   prev_sentence = new TDEAction (i18n("Previous Sentence"),
               "2leftarrow",
               0,
-              TQT_TQOBJECT(this), TQT_SLOT(slotPrevSentenceActivated()),
+              this, TQT_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
 

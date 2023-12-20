@@ -86,7 +86,7 @@ DocTreeViewImpl::~DocTreeViewImpl()
 void DocTreeViewImpl::enableContextMenus( bool enabled )
 {
     if ( enabled ){
-        m_contextmenuhandler = new ContextMenuHandler(TQT_TQOBJECT(this), "contextmenuhandler");
+        m_contextmenuhandler = new ContextMenuHandler(this, "contextmenuhandler");
     } else {
         if ( m_contextmenuhandler )
             delete m_contextmenuhandler;

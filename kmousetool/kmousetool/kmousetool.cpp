@@ -147,7 +147,7 @@ void KMouseTool::timerEvent( TQTimerEvent * )
 		return;
 
 	if (!continue_timer) {
-		TQT_TQOBJECT(this)->killTimers();
+		this->killTimers();
 		return;
 	}
 

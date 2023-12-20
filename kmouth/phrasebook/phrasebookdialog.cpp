@@ -303,10 +303,10 @@ void PhraseBookDialog::initGUI () {
    treeView->setAllColumnsShowFocus (true);
    treeView->setSelectionMode (TQListView::Extended); 
    TQWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
-   connect (treeView, TQT_SIGNAL(selectionChanged()), TQT_TQOBJECT(this), TQT_SLOT(selectionChanged()));
-   connect (treeView, TQT_SIGNAL(contextMenuRequested (TQListViewItem *, const TQPoint &, int)), TQT_TQOBJECT(this), TQT_SLOT(contextMenuRequested (TQListViewItem *, const TQPoint &, int)));
-   connect (treeView, TQT_SIGNAL(dropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)), TQT_TQOBJECT(this), TQT_SLOT(slotDropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)));
-   connect (treeView, TQT_SIGNAL(moved (TQListViewItem *, TQListViewItem *, TQListViewItem *)), TQT_TQOBJECT(this), TQT_SLOT(slotMoved (TQListViewItem *, TQListViewItem *, TQListViewItem *)));
+   connect (treeView, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(selectionChanged()));
+   connect (treeView, TQT_SIGNAL(contextMenuRequested (TQListViewItem *, const TQPoint &, int)), this, TQT_SLOT(contextMenuRequested (TQListViewItem *, const TQPoint &, int)));
+   connect (treeView, TQT_SIGNAL(dropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)), this, TQT_SLOT(slotDropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)));
+   connect (treeView, TQT_SIGNAL(moved (TQListViewItem *, TQListViewItem *, TQListViewItem *)), this, TQT_SLOT(slotMoved (TQListViewItem *, TQListViewItem *, TQListViewItem *)));
    mainLayout->addWidget (treeView);
    
    buttonBox = new ButtonBoxWidget (page, "buttonbox");
@@ -322,23 +322,23 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new TDEAction (i18n("&New Phrase"), "phrase_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
+   fileNewPhrase = new TDEAction (i18n("&New Phrase"), "phrase_new", 0, this, TQT_SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
    fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new TDEAction (i18n("New Phrase &Book"), "phrasebook_new", 0, TQT_TQOBJECT(this), TQT_SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new TDEAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, TQT_SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
    fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
-   fileSave = KStdAction::save(TQT_TQOBJECT(this), TQT_SLOT(slotSave()), actionCollection());
+   fileSave = KStdAction::save(this, TQT_SLOT(slotSave()), actionCollection());
    fileSave->setStatusText(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
-   fileImport = new TDEAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
+   fileImport = new TDEAction (i18n("&Import..."), "phrasebook_open", 0, this, TQT_SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
    fileImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   toolbarImport = new TDEToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
+   toolbarImport = new TDEToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, this, TQT_SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
    toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
@@ -346,32 +346,32 @@ void PhraseBookDialog::initActions() {
    fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-   fileExport = new TDEAction (i18n("&Export..."), "phrasebook_save", 0, TQT_TQOBJECT(this), TQT_SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
+   fileExport = new TDEAction (i18n("&Export..."), "phrasebook_save", 0, this, TQT_SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
    fileExport->setStatusText(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
-   filePrint = KStdAction::print(TQT_TQOBJECT(this), TQT_SLOT(slotPrint()), actionCollection());
+   filePrint = KStdAction::print(this, TQT_SLOT(slotPrint()), actionCollection());
    filePrint->setStatusText(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
    filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
 
-   fileClose = KStdAction::close(TQT_TQOBJECT(this), TQT_SLOT(close()), actionCollection());
+   fileClose = KStdAction::close(this, TQT_SLOT(close()), actionCollection());
    fileClose->setStatusText(i18n("Closes the window"));
    fileClose->setWhatsThis (i18n("Closes the window"));
 
 // The edit menu
-   editCut = KStdAction::cut(TQT_TQOBJECT(this), TQT_SLOT(slotCut()), actionCollection());
+   editCut = KStdAction::cut(this, TQT_SLOT(slotCut()), actionCollection());
    editCut->setStatusText(i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
 
-   editCopy = KStdAction::copy(TQT_TQOBJECT(this), TQT_SLOT(slotCopy()), actionCollection());
+   editCopy = KStdAction::copy(this, TQT_SLOT(slotCopy()), actionCollection());
    editCopy->setStatusText(i18n("Copies the currently selected entry from the phrase book to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the currently selected entry from the phrase book to the clipboard"));
 
-   editPaste = KStdAction::paste(TQT_TQOBJECT(this), TQT_SLOT(slotPaste()), actionCollection());
+   editPaste = KStdAction::paste(this, TQT_SLOT(slotPaste()), actionCollection());
    editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new TDEAction (i18n("&Delete"), "edit-delete", 0, TQT_TQOBJECT(this), TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
+   editDelete = new TDEAction (i18n("&Delete"), "edit-delete", 0, this, TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
    editDelete->setStatusText(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 
@@ -462,7 +462,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       currentNamePath = dirs;
       
       TDEAction *book = new StandardPhraseBookInsertAction (
-          url, (*it).name, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
+          url, (*it).name, this, TQT_SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
       parent->insert(book);
       if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());
