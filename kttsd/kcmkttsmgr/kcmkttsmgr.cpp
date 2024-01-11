@@ -163,13 +163,13 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
 
     // Construct a popup menu for the Sentence Boundary Detector buttons on Filter tab.
     m_sbdPopmenu = new TQPopupMenu( m_kttsmgrw, "SbdPopupMenu" );
-    m_sbdPopmenu->insertItem( i18n("&Edit..."), this, TQT_SLOT(slot_configureSbdFilter()), 0, sbdBtnEdit );
+    m_sbdPopmenu->insertItem( i18n("&Edit..."), this, TQ_SLOT(slot_configureSbdFilter()), 0, sbdBtnEdit );
     m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("go-up", TDEIcon::Small),
-                              i18n("U&p"), this, TQT_SLOT(slot_higherSbdFilterPriority()), 0, sbdBtnUp );
+                              i18n("U&p"), this, TQ_SLOT(slot_higherSbdFilterPriority()), 0, sbdBtnUp );
     m_sbdPopmenu->insertItem( TDEGlobal::iconLoader()->loadIconSet("go-down", TDEIcon::Small),
-                              i18n("Do&wn"), this, TQT_SLOT(slot_lowerSbdFilterPriority()), 0, sbdBtnDown );
-    m_sbdPopmenu->insertItem( i18n("&Add..."), this, TQT_SLOT(slot_addSbdFilter()), 0, sbdBtnAdd );
-    m_sbdPopmenu->insertItem( i18n("&Remove"), this, TQT_SLOT(slot_removeSbdFilter()), 0, sbdBtnRemove );
+                              i18n("Do&wn"), this, TQ_SLOT(slot_lowerSbdFilterPriority()), 0, sbdBtnDown );
+    m_sbdPopmenu->insertItem( i18n("&Add..."), this, TQ_SLOT(slot_addSbdFilter()), 0, sbdBtnAdd );
+    m_sbdPopmenu->insertItem( i18n("&Remove"), this, TQ_SLOT(slot_removeSbdFilter()), 0, sbdBtnRemove );
     m_kttsmgrw->sbdButton->setPopup( m_sbdPopmenu );
 
     // If aRts is available, enable its radio button.
@@ -248,94 +248,94 @@ KCMKttsMgr::KCMKttsMgr(TQWidget *parent, const char *name, const TQStringList &)
     // Connect the signals from the KCMKtssMgrWidget to this class.
 
     // Talker tab.
-    connect(m_kttsmgrw->addTalkerButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_addTalker()));
-    connect(m_kttsmgrw->higherTalkerPriorityButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_higherTalkerPriority()));
-    connect(m_kttsmgrw->lowerTalkerPriorityButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_lowerTalkerPriority()));
-    connect(m_kttsmgrw->removeTalkerButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_removeTalker()));
-    connect(m_kttsmgrw->configureTalkerButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_configureTalker()));
-    connect(m_kttsmgrw->talkersList, TQT_SIGNAL(selectionChanged()),
-            this, TQT_SLOT(updateTalkerButtons()));
+    connect(m_kttsmgrw->addTalkerButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_addTalker()));
+    connect(m_kttsmgrw->higherTalkerPriorityButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_higherTalkerPriority()));
+    connect(m_kttsmgrw->lowerTalkerPriorityButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_lowerTalkerPriority()));
+    connect(m_kttsmgrw->removeTalkerButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_removeTalker()));
+    connect(m_kttsmgrw->configureTalkerButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_configureTalker()));
+    connect(m_kttsmgrw->talkersList, TQ_SIGNAL(selectionChanged()),
+            this, TQ_SLOT(updateTalkerButtons()));
 
     // Filter tab.
-    connect(m_kttsmgrw->addFilterButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_addNormalFilter()));
-    connect(m_kttsmgrw->higherFilterPriorityButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_higherNormalFilterPriority()));
-    connect(m_kttsmgrw->lowerFilterPriorityButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_lowerNormalFilterPriority()));
-    connect(m_kttsmgrw->removeFilterButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_removeNormalFilter()));
-    connect(m_kttsmgrw->configureFilterButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slot_configureNormalFilter()));
-    connect(m_kttsmgrw->filtersList, TQT_SIGNAL(selectionChanged()),
-            this, TQT_SLOT(updateFilterButtons()));
-    //connect(m_kttsmgrw->filtersList, TQT_SIGNAL(stateChanged()),
-    //        this, TQT_SLOT(configChanged()));
-    connect(m_kttsmgrw->sbdsList, TQT_SIGNAL(selectionChanged()),
-            this, TQT_SLOT(updateSbdButtons()));
+    connect(m_kttsmgrw->addFilterButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_addNormalFilter()));
+    connect(m_kttsmgrw->higherFilterPriorityButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_higherNormalFilterPriority()));
+    connect(m_kttsmgrw->lowerFilterPriorityButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_lowerNormalFilterPriority()));
+    connect(m_kttsmgrw->removeFilterButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_removeNormalFilter()));
+    connect(m_kttsmgrw->configureFilterButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slot_configureNormalFilter()));
+    connect(m_kttsmgrw->filtersList, TQ_SIGNAL(selectionChanged()),
+            this, TQ_SLOT(updateFilterButtons()));
+    //connect(m_kttsmgrw->filtersList, TQ_SIGNAL(stateChanged()),
+    //        this, TQ_SLOT(configChanged()));
+    connect(m_kttsmgrw->sbdsList, TQ_SIGNAL(selectionChanged()),
+            this, TQ_SLOT(updateSbdButtons()));
 
     // Audio tab.
-    connect(m_kttsmgrw->gstreamerRadioButton, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(slotGstreamerRadioButton_toggled(bool)));
-    connect(m_kttsmgrw->alsaRadioButton, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(slotAlsaRadioButton_toggled(bool)));
-    connect(m_kttsmgrw->pcmComboBox, TQT_SIGNAL(activated(int)),
-            this, TQT_SLOT(slotPcmComboBox_activated()));
-    connect(m_kttsmgrw->akodeRadioButton, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(slotAkodeRadioButton_toggled(bool)));
-    connect(m_kttsmgrw->timeBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeBox_valueChanged(int)));
-    connect(m_kttsmgrw->timeSlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeSlider_valueChanged(int)));
-    connect(m_kttsmgrw->timeBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_kttsmgrw->timeSlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_kttsmgrw->keepAudioCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(keepAudioCheckBox_toggled(bool)));
-    connect(m_kttsmgrw->keepAudioPath, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
+    connect(m_kttsmgrw->gstreamerRadioButton, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(slotGstreamerRadioButton_toggled(bool)));
+    connect(m_kttsmgrw->alsaRadioButton, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(slotAlsaRadioButton_toggled(bool)));
+    connect(m_kttsmgrw->pcmComboBox, TQ_SIGNAL(activated(int)),
+            this, TQ_SLOT(slotPcmComboBox_activated()));
+    connect(m_kttsmgrw->akodeRadioButton, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(slotAkodeRadioButton_toggled(bool)));
+    connect(m_kttsmgrw->timeBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeBox_valueChanged(int)));
+    connect(m_kttsmgrw->timeSlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeSlider_valueChanged(int)));
+    connect(m_kttsmgrw->timeBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_kttsmgrw->timeSlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_kttsmgrw->keepAudioCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(keepAudioCheckBox_toggled(bool)));
+    connect(m_kttsmgrw->keepAudioPath, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
 
     // General tab.
-    connect(m_kttsmgrw->enableKttsdCheckBox, TQT_SIGNAL(toggled(bool)),
-            TQT_SLOT(enableKttsdToggled(bool)));
+    connect(m_kttsmgrw->enableKttsdCheckBox, TQ_SIGNAL(toggled(bool)),
+            TQ_SLOT(enableKttsdToggled(bool)));
 
     // Notify tab.
-    connect(m_kttsmgrw->notifyEnableCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(slotNotifyEnableCheckBox_toggled(bool)));
-    connect(m_kttsmgrw->notifyExcludeEventsWithSoundCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_kttsmgrw->notifyAddButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyAddButton_clicked()));
-    connect(m_kttsmgrw->notifyRemoveButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyRemoveButton_clicked()));
-    connect(m_kttsmgrw->notifyClearButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyClearButton_clicked()));
-    connect(m_kttsmgrw->notifyLoadButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyLoadButton_clicked()));
-    connect(m_kttsmgrw->notifySaveButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifySaveButton_clicked()));
-    connect(m_kttsmgrw->notifyListView, TQT_SIGNAL(selectionChanged()),
-            this, TQT_SLOT(slotNotifyListView_selectionChanged()));
-    connect(m_kttsmgrw->notifyPresentComboBox, TQT_SIGNAL(activated(int)),
-            this, TQT_SLOT(slotNotifyPresentComboBox_activated(int)));
-    connect(m_kttsmgrw->notifyActionComboBox, TQT_SIGNAL(activated(int)),
-            this, TQT_SLOT(slotNotifyActionComboBox_activated(int)));
-    connect(m_kttsmgrw->notifyTestButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyTestButton_clicked()));
-    connect(m_kttsmgrw->notifyMsgLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(slotNotifyMsgLineEdit_textChanged(const TQString&)));
-    connect(m_kttsmgrw->notifyTalkerButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotNotifyTalkerButton_clicked()));
+    connect(m_kttsmgrw->notifyEnableCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(slotNotifyEnableCheckBox_toggled(bool)));
+    connect(m_kttsmgrw->notifyExcludeEventsWithSoundCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_kttsmgrw->notifyAddButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyAddButton_clicked()));
+    connect(m_kttsmgrw->notifyRemoveButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyRemoveButton_clicked()));
+    connect(m_kttsmgrw->notifyClearButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyClearButton_clicked()));
+    connect(m_kttsmgrw->notifyLoadButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyLoadButton_clicked()));
+    connect(m_kttsmgrw->notifySaveButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifySaveButton_clicked()));
+    connect(m_kttsmgrw->notifyListView, TQ_SIGNAL(selectionChanged()),
+            this, TQ_SLOT(slotNotifyListView_selectionChanged()));
+    connect(m_kttsmgrw->notifyPresentComboBox, TQ_SIGNAL(activated(int)),
+            this, TQ_SLOT(slotNotifyPresentComboBox_activated(int)));
+    connect(m_kttsmgrw->notifyActionComboBox, TQ_SIGNAL(activated(int)),
+            this, TQ_SLOT(slotNotifyActionComboBox_activated(int)));
+    connect(m_kttsmgrw->notifyTestButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyTestButton_clicked()));
+    connect(m_kttsmgrw->notifyMsgLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(slotNotifyMsgLineEdit_textChanged(const TQString&)));
+    connect(m_kttsmgrw->notifyTalkerButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotNotifyTalkerButton_clicked()));
 
     // Others.
-    connect(m_kttsmgrw, TQT_SIGNAL( configChanged() ),
-            this, TQT_SLOT( configChanged() ) );
-    connect(m_kttsmgrw->mainTab, TQT_SIGNAL(currentChanged(TQWidget*)),
-            this, TQT_SLOT(slotTabChanged()));
+    connect(m_kttsmgrw, TQ_SIGNAL( configChanged() ),
+            this, TQ_SLOT( configChanged() ) );
+    connect(m_kttsmgrw->mainTab, TQ_SIGNAL(currentChanged(TQWidget*)),
+            this, TQ_SLOT(slotTabChanged()));
 
     // Connect KTTSD DCOP signals to our slots.
     if (!connectDCOPSignal("kttsd", "KSpeech",
@@ -2040,9 +2040,9 @@ void KCMKttsMgr::configureTalker()
     m_configDlg->setMainWidget(m_loadedTalkerPlugIn);
     m_configDlg->setHelp("configure-plugin", "kttsd");
     m_configDlg->enableButtonOK(false);
-    connect(m_loadedTalkerPlugIn, TQT_SIGNAL( changed(bool) ), this, TQT_SLOT( slotConfigTalkerDlg_ConfigChanged() ));
-    connect(m_configDlg, TQT_SIGNAL( defaultClicked() ), this, TQT_SLOT( slotConfigTalkerDlg_DefaultClicked() ));
-    connect(m_configDlg, TQT_SIGNAL( cancelClicked() ), this, TQT_SLOT (slotConfigTalkerDlg_CancelClicked() ));
+    connect(m_loadedTalkerPlugIn, TQ_SIGNAL( changed(bool) ), this, TQ_SLOT( slotConfigTalkerDlg_ConfigChanged() ));
+    connect(m_configDlg, TQ_SIGNAL( defaultClicked() ), this, TQ_SLOT( slotConfigTalkerDlg_DefaultClicked() ));
+    connect(m_configDlg, TQ_SIGNAL( cancelClicked() ), this, TQ_SLOT (slotConfigTalkerDlg_CancelClicked() ));
     // Create a Player object for the plugin to use for testing.
     int playerOption = 0;
     TQString sinkName;
@@ -2098,9 +2098,9 @@ void KCMKttsMgr::configureFilter()
     m_configDlg->setMainWidget(m_loadedFilterPlugIn);
     m_configDlg->setHelp("configure-filter", "kttsd");
     m_configDlg->enableButtonOK(false);
-    connect(m_loadedFilterPlugIn, TQT_SIGNAL( changed(bool) ), this, TQT_SLOT( slotConfigFilterDlg_ConfigChanged() ));
-    connect(m_configDlg, TQT_SIGNAL( defaultClicked() ), this, TQT_SLOT( slotConfigFilterDlg_DefaultClicked() ));
-    connect(m_configDlg, TQT_SIGNAL( cancelClicked() ), this, TQT_SLOT (slotConfigFilterDlg_CancelClicked() ));
+    connect(m_loadedFilterPlugIn, TQ_SIGNAL( changed(bool) ), this, TQ_SLOT( slotConfigFilterDlg_ConfigChanged() ));
+    connect(m_configDlg, TQ_SIGNAL( defaultClicked() ), this, TQ_SLOT( slotConfigFilterDlg_DefaultClicked() ));
+    connect(m_configDlg, TQ_SIGNAL( cancelClicked() ), this, TQ_SLOT (slotConfigFilterDlg_CancelClicked() ));
     // Display the dialog.
     m_configDlg->exec();
 }

@@ -32,12 +32,12 @@ KTTSDLib::KTTSDLib(TQObject *parent, const char *name, TDEApplication *Appl)
 {
     TDEGlobal::locale()->insertCatalogue("libKTTSD");
     m_talker = new kttsdlibtalker2(static_cast<TQObject*>(this), "kttsdlibtalker");
-    connect(m_talker, TQT_SIGNAL(signalTextFinished(const uint)),
-        this, TQT_SLOT(slotTextFinished(const uint)) );
-    connect(m_talker, TQT_SIGNAL(signalTextStopped(const uint)),
-        this, TQT_SLOT(slotTextStopped(const uint)) );
-    connect(m_talker, TQT_SIGNAL(signalTextStarted(const uint)),
-        this, TQT_SLOT(slotTextStarted(const uint)) );
+    connect(m_talker, TQ_SIGNAL(signalTextFinished(const uint)),
+        this, TQ_SLOT(slotTextFinished(const uint)) );
+    connect(m_talker, TQ_SIGNAL(signalTextStopped(const uint)),
+        this, TQ_SLOT(slotTextStopped(const uint)) );
+    connect(m_talker, TQ_SIGNAL(signalTextStarted(const uint)),
+        this, TQ_SLOT(slotTextStarted(const uint)) );
     
     // reset list of currently processed jobs
     while ( !jobList.empty() ){

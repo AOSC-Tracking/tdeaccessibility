@@ -83,27 +83,27 @@ KSayItApp::KSayItApp(TQWidget* parent, const char* name, WFlags f,
     readOptions();
     
     // connect TTS plugin handler to this object
-    connect(m_kttslib, TQT_SIGNAL(signalFinished()),
-            this, TQT_SLOT(slotTTSFinished()) );
+    connect(m_kttslib, TQ_SIGNAL(signalFinished()),
+            this, TQ_SLOT(slotTTSFinished()) );
     
     // only used if library thinks it has to call the preferences dialog.
     // e.g. when it detects a bad configuration.
-    connect(m_kttslib, TQT_SIGNAL(signalCallPreferences()),
-            this, TQT_SLOT(slotPreferences()) );
+    connect(m_kttslib, TQ_SIGNAL(signalCallPreferences()),
+            this, TQ_SLOT(slotPreferences()) );
     
     // init Clipboard
     cb = TQApplication::clipboard();
-    connect(cb, TQT_SIGNAL(dataChanged()), this, TQT_SLOT(slotClipboardChanged()) );
+    connect(cb, TQ_SIGNAL(dataChanged()), this, TQ_SLOT(slotClipboardChanged()) );
     
     // create SystemTray object
     tray = new KSayItSystemTray(this, "system_tray");
-    connect(tray, TQT_SIGNAL(signalCallPreferences()), this, TQT_SLOT(slotPreferences()) );
-    connect(tray, TQT_SIGNAL(signalSayActivated()), this, TQT_SLOT(slotSayText()) );
-    connect(tray, TQT_SIGNAL(signalSayClipboard()), this, TQT_SLOT(slotSayClipboard()) );
-    connect(tray, TQT_SIGNAL(signalShutUpActivated()), this, TQT_SLOT(slotStopActivated()) );
-    connect(tray, TQT_SIGNAL(signalPauseActivated()), this, TQT_SLOT(slotPauseActivated()) );
-    connect(tray, TQT_SIGNAL(signalNextActivated()), this, TQT_SLOT(slotNextSentenceActivated()) );
-    connect(tray, TQT_SIGNAL(signalPrevActivated()), this, TQT_SLOT(slotPrevSentenceActivated()) );
+    connect(tray, TQ_SIGNAL(signalCallPreferences()), this, TQ_SLOT(slotPreferences()) );
+    connect(tray, TQ_SIGNAL(signalSayActivated()), this, TQ_SLOT(slotSayText()) );
+    connect(tray, TQ_SIGNAL(signalSayClipboard()), this, TQ_SLOT(slotSayClipboard()) );
+    connect(tray, TQ_SIGNAL(signalShutUpActivated()), this, TQ_SLOT(slotStopActivated()) );
+    connect(tray, TQ_SIGNAL(signalPauseActivated()), this, TQ_SLOT(slotPauseActivated()) );
+    connect(tray, TQ_SIGNAL(signalNextActivated()), this, TQ_SLOT(slotNextSentenceActivated()) );
+    connect(tray, TQ_SIGNAL(signalPrevActivated()), this, TQ_SLOT(slotPrevSentenceActivated()) );
     tray->show();
     tray->setEnabled(true);
     
@@ -141,61 +141,61 @@ KSayItApp::~KSayItApp()
 void KSayItApp::initActions()
 {
   // Standard-Actions
-  open   = KStdAction::open(this, TQT_SLOT(slotFileOpen()), actionCollection());
-  save   = KStdAction::save(this, TQT_SLOT(slotFileSave()), actionCollection());
-  saveAs = KStdAction::saveAs(this, TQT_SLOT(slotFileSaveAs()), actionCollection());
-  KStdAction::quit(this, TQT_SLOT(slotFileQuit()), actionCollection());
-  KStdAction::close(this, TQT_SLOT(slotCloseMainWindow()), actionCollection());
-  cut   = KStdAction::cut(view, TQT_SLOT(slotCut()), actionCollection());
-  copy  = KStdAction::copy(view, TQT_SLOT(slotCopy()), actionCollection());
-  paste = KStdAction::paste(view, TQT_SLOT(slotPaste()), actionCollection());
-  preferences = KStdAction::preferences(this, TQT_SLOT(slotPreferences()), actionCollection());
-  KStdAction::keyBindings(this, TQT_SLOT(slotEditKeys()), actionCollection());
-  KStdAction::configureToolbars(this, TQT_SLOT(slotConfigureToolbar()), actionCollection());
+  open   = KStdAction::open(this, TQ_SLOT(slotFileOpen()), actionCollection());
+  save   = KStdAction::save(this, TQ_SLOT(slotFileSave()), actionCollection());
+  saveAs = KStdAction::saveAs(this, TQ_SLOT(slotFileSaveAs()), actionCollection());
+  KStdAction::quit(this, TQ_SLOT(slotFileQuit()), actionCollection());
+  KStdAction::close(this, TQ_SLOT(slotCloseMainWindow()), actionCollection());
+  cut   = KStdAction::cut(view, TQ_SLOT(slotCut()), actionCollection());
+  copy  = KStdAction::copy(view, TQ_SLOT(slotCopy()), actionCollection());
+  paste = KStdAction::paste(view, TQ_SLOT(slotPaste()), actionCollection());
+  preferences = KStdAction::preferences(this, TQ_SLOT(slotPreferences()), actionCollection());
+  KStdAction::keyBindings(this, TQ_SLOT(slotEditKeys()), actionCollection());
+  KStdAction::configureToolbars(this, TQ_SLOT(slotConfigureToolbar()), actionCollection());
   KStdAction::showToolbar("mainToolBar", actionCollection());
-  statusBarAction = KStdAction::showStatusbar(this, TQT_SLOT(slotToggleStatusBar()), actionCollection());
+  statusBarAction = KStdAction::showStatusbar(this, TQ_SLOT(slotToggleStatusBar()), actionCollection());
 
   // User defined actions
   say = new TDEAction (i18n("Say"),
               TQt::Key_F9,
-              this, TQT_SLOT (slotSayText()),
+              this, TQ_SLOT (slotSayText()),
               actionCollection(),
               "say_it");
 
   pause = new TDEAction (i18n("Pause"),
               TQt::Key_Pause,
-              this, TQT_SLOT (slotPauseActivated()),
+              this, TQ_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
   
   shutup = new TDEAction (i18n("Shut Up"),
               TQt::Key_F10,
-              this, TQT_SLOT (slotStopActivated()),
+              this, TQ_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
               
   next_sentence = new TDEAction (i18n("Next Sentence"),
               TQt::Key_Next,
-              this, TQT_SLOT (slotNextSentenceActivated()),
+              this, TQ_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
 
   prev_sentence = new TDEAction (i18n("Previous Sentence"),
               TQt::Key_Prior,
-              this, TQT_SLOT(slotPrevSentenceActivated()),
+              this, TQ_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
   
   clear = new TDEAction (i18n("Clear"),
               TQt::Key_F12,
-              this, TQT_SLOT(slotClear()),
+              this, TQ_SLOT(slotClear()),
               actionCollection(),
               "clear");
   
   edit = new TDEToggleAction( i18n("Edit Text"),
              0,
-             this, TQT_SLOT(slotEditToggled()),
+             this, TQ_SLOT(slotEditToggled()),
              actionCollection(),
              "edittext");
              
@@ -325,14 +325,14 @@ void KSayItApp::initView()
   view->setMinimumSize(view->sizeHint());
   setCentralWidget(view);
   // connections
-  connect( view, TQT_SIGNAL(signalEnableCopyCut(bool)),
-    this, TQT_SLOT(slotEnableCopyCut(bool)));
-  connect( view, TQT_SIGNAL(signalShowStatus(const TQString &)),
-    this, TQT_SLOT(slotStatusMsg(const TQString &)));
-  connect( view, TQT_SIGNAL(signalSetCaption(const TQString &)),
-    this, TQT_SLOT(slotSetCaption(const TQString &)));
-  connect( view, TQT_SIGNAL(signalTextChanged(bool)),
-    this, TQT_SLOT(slotTextChanged(bool)) );
+  connect( view, TQ_SIGNAL(signalEnableCopyCut(bool)),
+    this, TQ_SLOT(slotEnableCopyCut(bool)));
+  connect( view, TQ_SIGNAL(signalShowStatus(const TQString &)),
+    this, TQ_SLOT(slotStatusMsg(const TQString &)));
+  connect( view, TQ_SIGNAL(signalSetCaption(const TQString &)),
+    this, TQ_SLOT(slotSetCaption(const TQString &)));
+  connect( view, TQ_SIGNAL(signalTextChanged(bool)),
+    this, TQ_SLOT(slotTextChanged(bool)) );
   
   // DockWindow
   TQDockWindow *docview = new TQDockWindow(TQDockWindow::InDock, this, "docview");
@@ -344,22 +344,22 @@ void KSayItApp::initView()
   this->setDockEnabled(docview, TQt::DockTop, false);
   this->setDockEnabled(docview, TQt::DockBottom, false);
   this->moveDockWindow(docview, TQt::DockLeft);
-  connect( treeview, TQT_SIGNAL(signalContentChanged(const TQString&)),
-    this, TQT_SLOT(slotTreeViewChanged(const TQString&)) );
-  connect( treeview, TQT_SIGNAL(signalSetText(const TQString&)),
-    this, TQT_SLOT(slotSetText(const TQString&)) );
-  connect( treeview, TQT_SIGNAL(signalAllNodesProcessed()),
-    this, TQT_SLOT(slotSayNode()) );
-  connect( treeview, TQT_SIGNAL(signalEnableTextedit(bool)),
-    this, TQT_SLOT(slotEnableTextedit(bool)) );
-  connect( treeview, TQT_SIGNAL(signalNotifyBookmarkManager(const TQString&, const TQString&)),
-    this, TQT_SLOT(slotNotifyBookmarkHandler(const TQString&, const TQString&)) );
-  connect( treeview, TQT_SIGNAL(signalSetBookmarkFilename(const TQString&)),
-    this, TQT_SLOT(slotSetBookmarkFilename(const TQString&)) );
-  connect( treeview, TQT_SIGNAL(signalChangeBookmarkFilename(const TQString&)),
-    this, TQT_SLOT(slotChangeBookmarkFilename(const TQString&)) );                     
-  connect( treeview, TQT_SIGNAL(signalDeleteBookmark(const TQString&, const TQString&)),
-    this, TQT_SLOT(slotDeleteBookmark(const TQString&, const TQString&)) );
+  connect( treeview, TQ_SIGNAL(signalContentChanged(const TQString&)),
+    this, TQ_SLOT(slotTreeViewChanged(const TQString&)) );
+  connect( treeview, TQ_SIGNAL(signalSetText(const TQString&)),
+    this, TQ_SLOT(slotSetText(const TQString&)) );
+  connect( treeview, TQ_SIGNAL(signalAllNodesProcessed()),
+    this, TQ_SLOT(slotSayNode()) );
+  connect( treeview, TQ_SIGNAL(signalEnableTextedit(bool)),
+    this, TQ_SLOT(slotEnableTextedit(bool)) );
+  connect( treeview, TQ_SIGNAL(signalNotifyBookmarkManager(const TQString&, const TQString&)),
+    this, TQ_SLOT(slotNotifyBookmarkHandler(const TQString&, const TQString&)) );
+  connect( treeview, TQ_SIGNAL(signalSetBookmarkFilename(const TQString&)),
+    this, TQ_SLOT(slotSetBookmarkFilename(const TQString&)) );
+  connect( treeview, TQ_SIGNAL(signalChangeBookmarkFilename(const TQString&)),
+    this, TQ_SLOT(slotChangeBookmarkFilename(const TQString&)) );                     
+  connect( treeview, TQ_SIGNAL(signalDeleteBookmark(const TQString&, const TQString&)),
+    this, TQ_SLOT(slotDeleteBookmark(const TQString&, const TQString&)) );
 }
 
 
@@ -425,7 +425,7 @@ ASYNC KSayItApp::dcopSayXmlFile(KURL url)
 
 
 /////////////////////////////////////////////////////////////////////
-// TQT_SLOT IMPLEMENTATION
+// SLOT IMPLEMENTATION
 /////////////////////////////////////////////////////////////////////
 
 void KSayItApp::slotEditToggled()
@@ -451,7 +451,7 @@ void KSayItApp::slotConfigureToolbar()
 {
   saveMainWindowSettings( config, "MainWindow" );
   KEditToolbar dlg(actionCollection(), KSAYITUI);
-  connect(&dlg,TQT_SIGNAL(newToolbarConfig()),this,TQT_SLOT(slotNewToolbarConfig()));
+  connect(&dlg,TQ_SIGNAL(newToolbarConfig()),this,TQ_SLOT(slotNewToolbarConfig()));
   if (dlg.exec())
   {
      createGUI(KSAYITUI);

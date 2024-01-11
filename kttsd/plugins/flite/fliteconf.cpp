@@ -57,9 +57,9 @@ FliteConf::FliteConf( TQWidget* parent, const char* name, const TQStringList& /*
     
     defaults();
     
-    connect(m_widget->flitePath, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->fliteTest, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFliteTest_clicked()));
+    connect(m_widget->flitePath, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->fliteTest, TQ_SIGNAL(clicked()), this, TQ_SLOT(slotFliteTest_clicked()));
 }
 
 /** Destructor */
@@ -135,7 +135,7 @@ void FliteConf::slotFliteTest_clicked()
     else
     {
         m_fliteProc = new FliteProc();
-        connect (m_fliteProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+        connect (m_fliteProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
     }
     // Create a temp file name for the wave file.
     KTempFile tempFile (locateLocal("tmp", "fliteplugin-"), ".wav");
@@ -154,7 +154,7 @@ void FliteConf::slotFliteTest_clicked()
     m_progressDlg->setAllowCancel(true);
 
     // Play an English test.  Flite only supports English.
-    connect (m_fliteProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    connect (m_fliteProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     m_fliteProc->synth(
         testMsg,
         tmpWaveFile,
@@ -163,7 +163,7 @@ void FliteConf::slotFliteTest_clicked()
     // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
     // or if user clicks Cancel button.
     m_progressDlg->exec();
-    disconnect (m_fliteProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    disconnect (m_fliteProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     if (m_progressDlg->wasCancelled()) m_fliteProc->stopText();
     delete m_progressDlg;
     m_progressDlg = 0;

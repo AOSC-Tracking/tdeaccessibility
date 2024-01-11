@@ -81,8 +81,8 @@ PhraseTree::PhraseTree (TQWidget *parent, const char *name)
    phrasebook_closed = TDEGlobal::iconLoader()->loadIcon("phrasebook_closed", TDEIcon::Small);
    phrase            = TDEGlobal::iconLoader()->loadIcon("phrase",            TDEIcon::Small);
 
-   connect (this, TQT_SIGNAL(expanded (TQListViewItem *)), this, TQT_SLOT(itemExpanded (TQListViewItem *)));
-   connect (this, TQT_SIGNAL(collapsed (TQListViewItem *)), this, TQT_SLOT(itemCollapsed (TQListViewItem *)));
+   connect (this, TQ_SIGNAL(expanded (TQListViewItem *)), this, TQ_SLOT(itemExpanded (TQListViewItem *)));
+   connect (this, TQ_SIGNAL(collapsed (TQListViewItem *)), this, TQ_SLOT(itemCollapsed (TQListViewItem *)));
 }
 
 PhraseTree::~PhraseTree (){

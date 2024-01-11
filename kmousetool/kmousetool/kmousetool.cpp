@@ -255,28 +255,28 @@ KMouseTool::KMouseTool(TQWidget *parent, const char *name) : KMouseToolUI(parent
 	init_vars();
 	resetSettings();
 
-	connect(movementEdit, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(dwellTimeEdit, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(dragTimeEdit, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(cbDrag, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(cbStroke, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(cbClick, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(settingsChanged()));
-	connect(cbStart, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(settingsChanged()));
+	connect(movementEdit, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(dwellTimeEdit, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(dragTimeEdit, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(cbDrag, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(cbStroke, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(cbClick, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(settingsChanged()));
+	connect(cbStart, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(settingsChanged()));
 
-	connect(buttonStartStop, TQT_SIGNAL(clicked()), this, TQT_SLOT(startStopSelected()));
+	connect(buttonStartStop, TQ_SIGNAL(clicked()), this, TQ_SLOT(startStopSelected()));
 	buttonDefault->setGuiItem(KStdGuiItem::defaults());
-	connect(buttonDefault, TQT_SIGNAL(clicked()), this, TQT_SLOT(defaultSelected()));
-	connect(buttonReset, TQT_SIGNAL(clicked()), this, TQT_SLOT(resetSelected()));
+	connect(buttonDefault, TQ_SIGNAL(clicked()), this, TQ_SLOT(defaultSelected()));
+	connect(buttonReset, TQ_SIGNAL(clicked()), this, TQ_SLOT(resetSelected()));
 	buttonApply->setGuiItem(KStdGuiItem::apply());
-	connect(buttonApply, TQT_SIGNAL(clicked()), this, TQT_SLOT(applySelected()));
+	connect(buttonApply, TQ_SIGNAL(clicked()), this, TQ_SLOT(applySelected()));
 	buttonHelp->setGuiItem(KStdGuiItem::help());
-	connect(buttonHelp, TQT_SIGNAL(clicked()), this, TQT_SLOT(helpSelected()));
+	connect(buttonHelp, TQ_SIGNAL(clicked()), this, TQ_SLOT(helpSelected()));
 	buttonClose->setGuiItem(KStdGuiItem::close());
-	connect(buttonClose, TQT_SIGNAL(clicked()), this, TQT_SLOT(closeSelected()));
+	connect(buttonClose, TQ_SIGNAL(clicked()), this, TQ_SLOT(closeSelected()));
 #if TDE_VERSION >= TDE_MAKE_VERSION (3,1,90)
 	buttonQuit->setGuiItem(KStdGuiItem::quit());
 #endif // KDE 3.2
-	connect(buttonQuit, TQT_SIGNAL(clicked()), this, TQT_SLOT(quitSelected()));
+	connect(buttonQuit, TQ_SIGNAL(clicked()), this, TQ_SLOT(quitSelected()));
 
 	// When we first start, it's nice to not click immediately.
 	// So, tell MT we're just starting
@@ -285,11 +285,11 @@ KMouseTool::KMouseTool(TQWidget *parent, const char *name) : KMouseToolUI(parent
 	startTimer(100);
 	trayIcon = new KMouseToolTray (this, "systemTrayIcon");
 	updateStartStopText ();
-	connect(trayIcon, TQT_SIGNAL(startStopSelected()), this, TQT_SLOT(startStopSelected()));
-	connect(trayIcon, TQT_SIGNAL(configureSelected()), this, TQT_SLOT(configureSelected()));
-	connect(trayIcon, TQT_SIGNAL(aboutSelected()), this, TQT_SLOT(aboutSelected()));
-	connect(trayIcon, TQT_SIGNAL(helpSelected()), this, TQT_SLOT(helpSelected()));
-	connect(trayIcon, TQT_SIGNAL(quitSelected()), this, TQT_SLOT(quitSelected()));
+	connect(trayIcon, TQ_SIGNAL(startStopSelected()), this, TQ_SLOT(startStopSelected()));
+	connect(trayIcon, TQ_SIGNAL(configureSelected()), this, TQ_SLOT(configureSelected()));
+	connect(trayIcon, TQ_SIGNAL(aboutSelected()), this, TQ_SLOT(aboutSelected()));
+	connect(trayIcon, TQ_SIGNAL(helpSelected()), this, TQ_SLOT(helpSelected()));
+	connect(trayIcon, TQ_SIGNAL(quitSelected()), this, TQ_SLOT(quitSelected()));
 
 	aboutDlg = new TDEAboutApplication (0, "KMouseToolDlg", false);
 }
@@ -610,15 +610,15 @@ void KMouseTool::aboutSelected()
 
 KMouseToolTray::KMouseToolTray (TQWidget *parent, const char *name) : KSystemTray (parent, name)
 {
-	startStopId = contextMenu()->insertItem (i18n("&Start"), this, TQT_SIGNAL(startStopSelected()));
+	startStopId = contextMenu()->insertItem (i18n("&Start"), this, TQ_SIGNAL(startStopSelected()));
 	contextMenu()->insertSeparator();
 	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("configure", TDEIcon::Small),
-	                           i18n("&Configure KMouseTool..."), this, TQT_SIGNAL(configureSelected()));
+	                           i18n("&Configure KMouseTool..."), this, TQ_SIGNAL(configureSelected()));
 	contextMenu()->insertSeparator();
 	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", TDEIcon::Small),
-	                           i18n("KMousetool &Handbook"), this, TQT_SIGNAL(helpSelected()));
+	                           i18n("KMousetool &Handbook"), this, TQ_SIGNAL(helpSelected()));
 	contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kmousetool", TDEIcon::Small),
-	                           i18n("&About KMouseTool"), this, TQT_SIGNAL(aboutSelected()));
+	                           i18n("&About KMouseTool"), this, TQ_SIGNAL(aboutSelected()));
 }
 
 KMouseToolTray::~KMouseToolTray() {

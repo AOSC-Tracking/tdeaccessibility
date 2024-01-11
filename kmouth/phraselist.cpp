@@ -82,13 +82,13 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    TQWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
-   connect(dictionaryCombo, TQT_SIGNAL (activated (const TQString &)), completion, TQT_SLOT (setWordList(const TQString &)));
-   connect(completion, TQT_SIGNAL (wordListsChanged (const TQStringList &)), this, TQT_SLOT (configureCompletionCombo (const TQStringList &)));
-   connect(listBox,  TQT_SIGNAL(selectionChanged()), TQT_SLOT(selectionChanged()));
-   connect(listBox,  TQT_SIGNAL(contextMenuRequested (TQListBoxItem *, const TQPoint &)), TQT_SLOT(contextMenuRequested (TQListBoxItem *, const TQPoint &)));
-   connect(lineEdit, TQT_SIGNAL(returnPressed(const TQString &)), TQT_SLOT(lineEntered(const TQString &)));
-   connect(lineEdit, TQT_SIGNAL(textChanged  (const TQString &)), TQT_SLOT(textChanged(const TQString &)));
-   connect(speakButton, TQT_SIGNAL( clicked ()), TQT_SLOT(speak()));
+   connect(dictionaryCombo, TQ_SIGNAL (activated (const TQString &)), completion, TQ_SLOT (setWordList(const TQString &)));
+   connect(completion, TQ_SIGNAL (wordListsChanged (const TQStringList &)), this, TQ_SLOT (configureCompletionCombo (const TQStringList &)));
+   connect(listBox,  TQ_SIGNAL(selectionChanged()), TQ_SLOT(selectionChanged()));
+   connect(listBox,  TQ_SIGNAL(contextMenuRequested (TQListBoxItem *, const TQPoint &)), TQ_SLOT(contextMenuRequested (TQListBoxItem *, const TQPoint &)));
+   connect(lineEdit, TQ_SIGNAL(returnPressed(const TQString &)), TQ_SLOT(lineEntered(const TQString &)));
+   connect(lineEdit, TQ_SIGNAL(textChanged  (const TQString &)), TQ_SLOT(textChanged(const TQString &)));
+   connect(speakButton, TQ_SIGNAL( clicked ()), TQ_SLOT(speak()));
 }
 
 PhraseList::~PhraseList() {

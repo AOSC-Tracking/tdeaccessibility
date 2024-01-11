@@ -60,16 +60,16 @@ CommandConf::CommandConf( TQWidget* parent, const char* name, const TQStringList
     m_widget->characterCodingBox->insertStringList(m_codecList);
 
     defaults();
-    connect(m_widget->characterCodingBox, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->characterCodingBox, TQT_SIGNAL(activated(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->stdInButton, TQT_SIGNAL(toggled(bool)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->urlReq, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->commandTestButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotCommandTest_clicked()));
+    connect(m_widget->characterCodingBox, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->characterCodingBox, TQ_SIGNAL(activated(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->stdInButton, TQ_SIGNAL(toggled(bool)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->urlReq, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->commandTestButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotCommandTest_clicked()));
 }
 
 /** Destructor */
@@ -147,7 +147,7 @@ void CommandConf::slotCommandTest_clicked()
     else
     {
         m_commandProc = new CommandProc();
-        connect (m_commandProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+        connect (m_commandProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
     }
 
     // Create a temp file name for the wave file.
@@ -167,7 +167,7 @@ void CommandConf::slotCommandTest_clicked()
     m_progressDlg->setAllowCancel(true);
 
     // TODO: Do codec names contain non-ASCII characters?
-    connect (m_commandProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    connect (m_commandProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     m_commandProc->synth(
         testMsg,
         tmpWaveFile,
@@ -179,7 +179,7 @@ void CommandConf::slotCommandTest_clicked()
     // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
     // or if user clicks Cancel button.
     m_progressDlg->exec();
-    disconnect (m_commandProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    disconnect (m_commandProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     if (m_progressDlg->wasCancelled()) m_commandProc->stopText();
     delete m_progressDlg;
     m_progressDlg = 0;

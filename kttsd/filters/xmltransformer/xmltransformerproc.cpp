@@ -250,12 +250,12 @@ bool XmlTransformerProc::init(TDEConfig* config, const TQString& configGroup)
     //     m_xsltProc->args() << endl;
 
     m_state = fsFiltering;
-    connect(m_xsltProc, TQT_SIGNAL(processExited(TDEProcess*)),
-            this, TQT_SLOT(slotProcessExited(TDEProcess*)));
-    connect(m_xsltProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
-    connect(m_xsltProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+    connect(m_xsltProc, TQ_SIGNAL(processExited(TDEProcess*)),
+            this, TQ_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_xsltProc, TQ_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+    connect(m_xsltProc, TQ_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
     if (!m_xsltProc->start(TDEProcess::NotifyOnExit,
          static_cast<TDEProcess::Communication>(TDEProcess::Stdout | TDEProcess::Stderr)))
     {

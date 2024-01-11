@@ -162,7 +162,7 @@ void KMagSelRect::show()
 {
   if (selectionwindow == 0) {
     selectionwindow = new KMagSelWin (selWindowParent, "selectionwindow");
-    connect (selectionwindow, TQT_SIGNAL (resized ()), this, TQT_SLOT (selWinResized ()));
+    connect (selectionwindow, TQ_SIGNAL (resized ()), this, TQ_SLOT (selWinResized ()));
 
     update();
     selectionwindow->show();
@@ -226,32 +226,32 @@ KMagSelWin::KMagSelWin ( TQWidget * parent, const char * name, WFlags ) :
   titleBar->setPaletteBackgroundColor (getTitleColor ());
   titleBar->setPaletteForegroundColor (getTextColor ());
   titleBar->setText(i18n("Selection Window")+" - "+i18n("KMagnifier"));
-  connect (titleBar, TQT_SIGNAL (startResizing ()), this, TQT_SLOT (startResizing ()));
-  connect (titleBar, TQT_SIGNAL (resized (TQPoint)), this, TQT_SLOT (titleMoved (TQPoint)));
+  connect (titleBar, TQ_SIGNAL (startResizing ()), this, TQ_SLOT (startResizing ()));
+  connect (titleBar, TQ_SIGNAL (resized (TQPoint)), this, TQ_SLOT (titleMoved (TQPoint)));
 
   topLeftCorner = new KMagSelWinCorner (this, "topleft");
   topLeftCorner->setCursor (TQt::SizeFDiagCursor);
   topLeftCorner->setPaletteBackgroundColor (getTitleBtnColor ());
-  connect (topLeftCorner, TQT_SIGNAL (startResizing ()), this, TQT_SLOT (startResizing ()));
-  connect (topLeftCorner, TQT_SIGNAL (resized (TQPoint)), this, TQT_SLOT (topLeftResized (TQPoint)));
+  connect (topLeftCorner, TQ_SIGNAL (startResizing ()), this, TQ_SLOT (startResizing ()));
+  connect (topLeftCorner, TQ_SIGNAL (resized (TQPoint)), this, TQ_SLOT (topLeftResized (TQPoint)));
 
   topRightCorner = new KMagSelWinCorner (this, "topright");
   topRightCorner->setCursor (TQt::SizeBDiagCursor);
   topRightCorner->setPaletteBackgroundColor (getTitleBtnColor ());
-  connect (topRightCorner, TQT_SIGNAL (startResizing ()), this, TQT_SLOT (startResizing ()));
-  connect (topRightCorner, TQT_SIGNAL (resized (TQPoint)), this, TQT_SLOT (topRightResized (TQPoint)));
+  connect (topRightCorner, TQ_SIGNAL (startResizing ()), this, TQ_SLOT (startResizing ()));
+  connect (topRightCorner, TQ_SIGNAL (resized (TQPoint)), this, TQ_SLOT (topRightResized (TQPoint)));
 
   bottomLeftCorner = new KMagSelWinCorner (this, "bottomleft");
   bottomLeftCorner->setCursor (TQt::SizeBDiagCursor);
   bottomLeftCorner->setPaletteBackgroundColor (getTitleBtnColor ());
-  connect (bottomLeftCorner, TQT_SIGNAL (startResizing ()), this, TQT_SLOT (startResizing ()));
-  connect (bottomLeftCorner, TQT_SIGNAL (resized (TQPoint)), this, TQT_SLOT (bottomLeftResized (TQPoint)));
+  connect (bottomLeftCorner, TQ_SIGNAL (startResizing ()), this, TQ_SLOT (startResizing ()));
+  connect (bottomLeftCorner, TQ_SIGNAL (resized (TQPoint)), this, TQ_SLOT (bottomLeftResized (TQPoint)));
 
   bottomRightCorner = new KMagSelWinCorner (this, "bottomright");
   bottomRightCorner->setCursor (TQt::SizeFDiagCursor);
   bottomRightCorner->setPaletteBackgroundColor (getTitleBtnColor ());
-  connect (bottomRightCorner, TQT_SIGNAL (startResizing ()), this, TQT_SLOT (startResizing ()));
-  connect (bottomRightCorner, TQT_SIGNAL (resized (TQPoint)), this, TQT_SLOT (bottomRightResized (TQPoint)));
+  connect (bottomRightCorner, TQ_SIGNAL (startResizing ()), this, TQ_SLOT (startResizing ()));
+  connect (bottomRightCorner, TQ_SIGNAL (resized (TQPoint)), this, TQ_SLOT (bottomRightResized (TQPoint)));
 }
 
 KMagSelWin::~KMagSelWin()

@@ -103,14 +103,14 @@ void FreeTTSProc::synth(
 	}
 	
 	m_freettsProc = new TDEProcess;
-	connect(m_freettsProc, TQT_SIGNAL(processExited(TDEProcess*)),
-		   this, TQT_SLOT(slotProcessExited(TDEProcess*)));
-	connect(m_freettsProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
-		   this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
-	connect(m_freettsProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
-		   this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
-	connect(m_freettsProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
-		   this, TQT_SLOT(slotWroteStdin(TDEProcess* )));
+	connect(m_freettsProc, TQ_SIGNAL(processExited(TDEProcess*)),
+		   this, TQ_SLOT(slotProcessExited(TDEProcess*)));
+	connect(m_freettsProc, TQ_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+		   this, TQ_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+	connect(m_freettsProc, TQ_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+		   this, TQ_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+	connect(m_freettsProc, TQ_SIGNAL(wroteStdin(TDEProcess*)),
+		   this, TQ_SLOT(slotWroteStdin(TDEProcess* )));
 	if (synthFilename.isNull())
 		m_state = psSaying;
 	else

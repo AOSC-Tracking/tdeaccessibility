@@ -69,12 +69,12 @@ bool KTTSD::initializeSpeechData()
     if (!m_speechData)
     {
         m_speechData = new SpeechData();
-        connect (m_speechData, TQT_SIGNAL(textSet(const TQCString&, const uint)), 
-            this, TQT_SLOT(slotTextSet(const TQCString&, const uint)));
-        connect (m_speechData, TQT_SIGNAL(textAppended(const TQCString&, const uint, const int)),
-            this, TQT_SLOT(slotTextAppended(const TQCString&, const uint, const int)));
-        connect (m_speechData, TQT_SIGNAL(textRemoved(const TQCString&, const uint)), 
-            this, TQT_SLOT(slotTextRemoved(const TQCString&, const uint)));
+        connect (m_speechData, TQ_SIGNAL(textSet(const TQCString&, const uint)), 
+            this, TQ_SLOT(slotTextSet(const TQCString&, const uint)));
+        connect (m_speechData, TQ_SIGNAL(textAppended(const TQCString&, const uint, const int)),
+            this, TQ_SLOT(slotTextAppended(const TQCString&, const uint, const int)));
+        connect (m_speechData, TQ_SIGNAL(textRemoved(const TQCString&, const uint)), 
+            this, TQ_SLOT(slotTextRemoved(const TQCString&, const uint)));
 
         // Hook KNotify signal.
         if (!connectDCOPSignal(0, 0, 
@@ -156,20 +156,20 @@ bool KTTSD::initializeSpeaker()
 
     // Create speaker object and load plug ins, checking for the return
     m_speaker = new Speaker(m_speechData, m_talkerMgr);
-    connect (m_speaker, TQT_SIGNAL(textStarted(const TQCString&, const uint)), 
-        this, TQT_SLOT(slotTextStarted(const TQCString&, const uint)));
-    connect (m_speaker, TQT_SIGNAL(textFinished(const TQCString&, const uint)), 
-        this, TQT_SLOT(slotTextFinished(const TQCString&, const uint)));
-    connect (m_speaker, TQT_SIGNAL(textResumed(const TQCString&, const uint)), 
-        this, TQT_SLOT(slotTextResumed(const TQCString&, const uint)));
-    connect (m_speaker, TQT_SIGNAL(sentenceStarted(TQString, TQString, const TQCString&, const uint, const uint)),
-        this, TQT_SLOT(slotSentenceStarted(TQString, TQString, const TQCString&, const uint, const uint)));
-    connect (m_speaker, TQT_SIGNAL(sentenceFinished(const TQCString&, const uint, const uint)), this,
-        TQT_SLOT(slotSentenceFinished(const TQCString&, const uint, const uint)));
-    connect (m_speaker, TQT_SIGNAL(textStopped(const TQCString&, const uint)), 
-        this, TQT_SLOT(slotTextStopped(const TQCString&, const uint)));
-    connect (m_speaker, TQT_SIGNAL(textPaused(const TQCString&, const uint)), 
-        this, TQT_SLOT(slotTextPaused(const TQCString&, const uint)));
+    connect (m_speaker, TQ_SIGNAL(textStarted(const TQCString&, const uint)), 
+        this, TQ_SLOT(slotTextStarted(const TQCString&, const uint)));
+    connect (m_speaker, TQ_SIGNAL(textFinished(const TQCString&, const uint)), 
+        this, TQ_SLOT(slotTextFinished(const TQCString&, const uint)));
+    connect (m_speaker, TQ_SIGNAL(textResumed(const TQCString&, const uint)), 
+        this, TQ_SLOT(slotTextResumed(const TQCString&, const uint)));
+    connect (m_speaker, TQ_SIGNAL(sentenceStarted(TQString, TQString, const TQCString&, const uint, const uint)),
+        this, TQ_SLOT(slotSentenceStarted(TQString, TQString, const TQCString&, const uint, const uint)));
+    connect (m_speaker, TQ_SIGNAL(sentenceFinished(const TQCString&, const uint, const uint)), this,
+        TQ_SLOT(slotSentenceFinished(const TQCString&, const uint, const uint)));
+    connect (m_speaker, TQ_SIGNAL(textStopped(const TQCString&, const uint)), 
+        this, TQ_SLOT(slotTextStopped(const TQCString&, const uint)));
+    connect (m_speaker, TQ_SIGNAL(textPaused(const TQCString&, const uint)), 
+        this, TQ_SLOT(slotTextPaused(const TQCString&, const uint)));
 
     return true;
 }

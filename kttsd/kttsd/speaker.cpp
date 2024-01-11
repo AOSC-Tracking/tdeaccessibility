@@ -152,7 +152,7 @@ Speaker::Speaker( SpeechData*speechData, TalkerMgr* talkerMgr,
             break;
     }
     // Connect timer timeout signal.
-    connect(m_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(slotTimeout()));
+    connect(m_timer, TQ_SIGNAL(timeout()), this, TQ_SLOT(slotTimeout()));
 
     // Connect plugins to slots.
     TQPtrList<PlugInProc> plugins = m_talkerMgr->getLoadedPlugIns();
@@ -160,14 +160,14 @@ Speaker::Speaker( SpeechData*speechData, TalkerMgr* talkerMgr,
     for (int ndx = 0; ndx < pluginsCount; ++ndx)
     {
         PlugInProc* speech = plugins.at(ndx);
-        connect(speech, TQT_SIGNAL(synthFinished()),
-            this, TQT_SLOT(slotSynthFinished()));
-        connect(speech, TQT_SIGNAL(sayFinished()),
-            this, TQT_SLOT(slotSayFinished()));
-        connect(speech, TQT_SIGNAL(stopped()),
-            this, TQT_SLOT(slotStopped()));
-        connect(speech, TQT_SIGNAL(error(bool, const TQString&)),
-            this, TQT_SLOT(slotError(bool, const TQString&)));
+        connect(speech, TQ_SIGNAL(synthFinished()),
+            this, TQ_SLOT(slotSynthFinished()));
+        connect(speech, TQ_SIGNAL(sayFinished()),
+            this, TQ_SLOT(slotSayFinished()));
+        connect(speech, TQ_SIGNAL(stopped()),
+            this, TQ_SLOT(slotStopped()));
+        connect(speech, TQ_SIGNAL(error(bool, const TQString&)),
+            this, TQ_SLOT(slotError(bool, const TQString&)));
     }
 }
 
@@ -275,8 +275,8 @@ void Speaker::doUtterances()
                     {
                         // Create an XSLT transformer and transform the text.
                         it->transformer = new SSMLConvert();
-                        connect(it->transformer, TQT_SIGNAL(transformFinished()),
-                            this, TQT_SLOT(slotTransformFinished()));
+                        connect(it->transformer, TQ_SIGNAL(transformFinished()),
+                            this, TQ_SLOT(slotTransformFinished()));
                         if (it->transformer->transform(it->sentence->text,
                             it->plugin->getSsmlXsltFilename()))
                         {
@@ -345,8 +345,8 @@ void Speaker::doUtterances()
                         else
                         {
                             it->audioStretcher = new Stretcher();
-                            connect(it->audioStretcher, TQT_SIGNAL(stretchFinished()),
-                                this, TQT_SLOT(slotStretchFinished()));
+                            connect(it->audioStretcher, TQ_SIGNAL(stretchFinished()),
+                                this, TQ_SLOT(slotStretchFinished()));
                             if (it->audioStretcher->stretch(it->audioUrl, makeSuggestedFilename(),
                                 m_audioStretchFactor))
                             {

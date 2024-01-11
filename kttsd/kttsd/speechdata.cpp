@@ -125,8 +125,8 @@ bool SpeechData::readConfig(){
     pooledFilterMgr->job = 0;
     pooledFilterMgr->partNum = 0;
     // Connect signals from FilterMgr.
-    connect (filterMgr, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilterMgrFinished()));
-    connect (filterMgr, TQT_SIGNAL(filteringStopped()),  this, TQT_SLOT(slotFilterMgrStopped()));
+    connect (filterMgr, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilterMgrFinished()));
+    connect (filterMgr, TQ_SIGNAL(filteringStopped()),  this, TQ_SLOT(slotFilterMgrStopped()));
     m_pooledFilterMgrs.append(pooledFilterMgr);
 
     return true;
@@ -1136,8 +1136,8 @@ void SpeechData::startJobFiltering(mlJob* job, const TQString& text, bool noSBD)
         filterMgr->init(config, "General");
         pooledFilterMgr->filterMgr = filterMgr;
         // Connect signals from FilterMgr.
-        connect (filterMgr, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilterMgrFinished()));
-        connect (filterMgr, TQT_SIGNAL(filteringStopped()),  this, TQT_SLOT(slotFilterMgrStopped()));
+        connect (filterMgr, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilterMgrFinished()));
+        connect (filterMgr, TQ_SIGNAL(filteringStopped()),  this, TQ_SLOT(slotFilterMgrStopped()));
         m_pooledFilterMgrs.append(pooledFilterMgr);
     }
     // else kdDebug() << "SpeechData::startJobFiltering: re-using idle pooledFilterMgr for job " << jobNum << " part " << partNum << endl;

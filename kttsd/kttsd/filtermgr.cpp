@@ -202,7 +202,7 @@ void FilterMgr::nextFilter()
         {
             m_text = m_filterProc->getOutput();
             m_filterProc->ackFinished();
-            disconnect( m_filterProc, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilteringFinished()) );
+            disconnect( m_filterProc, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilteringFinished()) );
         }
         // if ( m_filterProc->wasModified() )
         //     kdDebug() << "FilterMgr::nextFilter: Filter# " << m_filterIndex << " modified the text." << endl;
@@ -239,10 +239,10 @@ void FilterMgr::nextFilter()
         if ( m_filterProc->supportsAsync() )
         {
             // kdDebug() << "FilterMgr::nextFilter: calling asyncConvert on filter " << m_filterIndex << endl;
-            connect( m_filterProc, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilteringFinished()) );
+            connect( m_filterProc, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilteringFinished()) );
             if ( !m_filterProc->asyncConvert( m_text, m_talkerCode, m_appId ) )
             {
-                disconnect( m_filterProc, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilteringFinished()) );
+                disconnect( m_filterProc, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilteringFinished()) );
                 m_filterProc = 0;
                 nextFilter();
             }
@@ -284,7 +284,7 @@ bool FilterMgr::event ( TQEvent * e )
 void FilterMgr::waitForFinished()
 {
     if ( m_state != fsFiltering ) return;
-    disconnect(m_filterProc, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilteringFinished()) );
+    disconnect(m_filterProc, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilteringFinished()) );
     m_async = false;
     m_filterProc->waitForFinished();
     while ( m_state == fsFiltering )
@@ -321,7 +321,7 @@ void FilterMgr::stopFiltering()
 {
     if ( m_state != fsFiltering ) return;
     if ( m_async )
-        disconnect( m_filterProc, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotFilteringFinished()) );
+        disconnect( m_filterProc, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotFilteringFinished()) );
     m_filterProc->stopFiltering();
     m_state = fsIdle;
     TQCustomEvent* ev = new TQCustomEvent(TQEvent::User + 302);

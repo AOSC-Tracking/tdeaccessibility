@@ -51,7 +51,7 @@ VoiceSetupDlg::VoiceSetupDlg(TQWidget *parent, const char *name, const TQString 
 {
 
   setIconListAllVisible(true);
-  connect (this, TQT_SIGNAL(aboutToShowPage(TQWidget*)), this, TQT_SLOT(slotPageChanged(TQWidget*)));
+  connect (this, TQ_SIGNAL(aboutToShowPage(TQWidget*)), this, TQ_SLOT(slotPageChanged(TQWidget*)));
 
   initVoicePage();
   initFXPage();
@@ -83,9 +83,9 @@ void VoiceSetupDlg::initFXPage()
     
     FX_SetupImpl *fxDialog = new FX_SetupImpl(m_fxPage, "fxsetup", m_config, m_fxpluginhandler);
     fxLayout->addWidget(fxDialog);
-    connect( this, TQT_SIGNAL(signalOKWasClicked()), fxDialog, TQT_SLOT(slotSaveWasClicked()) );
-    connect( this, TQT_SIGNAL(signalRemoveAllFX()), fxDialog, TQT_SLOT(slotRemoveAll()) );
-    connect( this, TQT_SIGNAL(signalReloadFX()), fxDialog, TQT_SLOT(slotReload()) );
+    connect( this, TQ_SIGNAL(signalOKWasClicked()), fxDialog, TQ_SLOT(slotSaveWasClicked()) );
+    connect( this, TQ_SIGNAL(signalRemoveAllFX()), fxDialog, TQ_SLOT(slotRemoveAll()) );
+    connect( this, TQ_SIGNAL(signalReloadFX()), fxDialog, TQ_SLOT(slotReload()) );
     
     // Disable/enable FX-Setup depending on TTS-libs capability
     int status = m_kttslib->getStatus() & TTS::AUDIOFILE;

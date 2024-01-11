@@ -68,30 +68,30 @@ EposConf::EposConf( TQWidget* parent, const char* name, const TQStringList& /*ar
 
     defaults();
 
-    connect(m_widget->eposServerPath, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->eposClientPath, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->timeBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeBox_valueChanged(int)));
-    connect(m_widget->frequencyBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(frequencyBox_valueChanged(int)));
-    connect(m_widget->timeSlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeSlider_valueChanged(int)));
-    connect(m_widget->frequencySlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(frequencySlider_valueChanged(int)));
-    connect(m_widget->timeBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->timeSlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->frequencyBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->frequencySlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->characterCodingBox, TQT_SIGNAL(activated(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->eposServerOptions, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->eposClientOptions, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->eposTest, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotEposTest_clicked()));
+    connect(m_widget->eposServerPath, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->eposClientPath, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->timeBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeBox_valueChanged(int)));
+    connect(m_widget->frequencyBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(frequencyBox_valueChanged(int)));
+    connect(m_widget->timeSlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeSlider_valueChanged(int)));
+    connect(m_widget->frequencySlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(frequencySlider_valueChanged(int)));
+    connect(m_widget->timeBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->timeSlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->frequencyBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->frequencySlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->characterCodingBox, TQ_SIGNAL(activated(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->eposServerOptions, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->eposClientOptions, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->eposTest, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotEposTest_clicked()));
 }
 
 /** Destructor */
@@ -214,7 +214,7 @@ void EposConf::slotEposTest_clicked()
     else
     {
         m_eposProc = new EposProc();
-        connect (m_eposProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+        connect (m_eposProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
     }
     // Create a temp file name for the wave file.
     KTempFile tempFile (locateLocal("tmp", "eposplugin-"), ".wav");
@@ -234,7 +234,7 @@ void EposConf::slotEposTest_clicked()
 
     // TODO: Whenever server options change, the server must be restarted.
     // TODO: Do codec names contain non-ASCII characters?
-    connect (m_eposProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    connect (m_eposProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     m_eposProc->synth(
         testMsg,
         tmpWaveFile,
@@ -251,7 +251,7 @@ void EposConf::slotEposTest_clicked()
     // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
     // or if user clicks Cancel button.
     m_progressDlg->exec();
-    disconnect (m_eposProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    disconnect (m_eposProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     if (m_progressDlg->wasCancelled()) m_eposProc->stopText();
     delete m_progressDlg;
     m_progressDlg = 0;

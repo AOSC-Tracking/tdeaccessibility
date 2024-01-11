@@ -59,18 +59,18 @@ XmlTransformerConf::XmlTransformerConf( TQWidget *parent, const char *name, cons
     defaults();
 
     // Connect signals.
-    connect( m_widget->nameLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()));
-    connect( m_widget->xsltPath, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()) );
-    connect( m_widget->xsltprocPath, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()) );
-    connect( m_widget->rootElementLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()) );
-    connect( m_widget->doctypeLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()) );
-    connect( m_widget->appIdLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(configChanged()) );
+    connect( m_widget->nameLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()));
+    connect( m_widget->xsltPath, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()) );
+    connect( m_widget->xsltprocPath, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()) );
+    connect( m_widget->rootElementLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()) );
+    connect( m_widget->doctypeLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()) );
+    connect( m_widget->appIdLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(configChanged()) );
 }
 
 /**

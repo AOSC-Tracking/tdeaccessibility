@@ -123,10 +123,10 @@ void KLanguageButton::insertSubmenu( const TQString &text, const TQString &tag,
   checkInsertPos( pi, text, index );
   pi->insertItem( text, p, count(), index );
   m_tags->append( tag );
-  connect( p, TQT_SIGNAL( activated( int ) ),
-                        TQT_SLOT( slotActivated( int ) ) );
-  connect( p, TQT_SIGNAL( highlighted( int ) ), this,
-                        TQT_SIGNAL( highlighted( int ) ) );
+  connect( p, TQ_SIGNAL( activated( int ) ),
+                        TQ_SLOT( slotActivated( int ) ) );
+  connect( p, TQ_SIGNAL( highlighted( int ) ), this,
+                        TQ_SIGNAL( highlighted( int ) ) );
 }
 
 void KLanguageButton::insertLanguage( const TQString& path, const TQString& name,
@@ -169,10 +169,10 @@ void KLanguageButton::clear()
 
   setPopup( m_popup );
 
-  connect( m_popup, TQT_SIGNAL( activated( int ) ),
-                        TQT_SLOT( slotActivated( int ) ) );
-  connect( m_popup, TQT_SIGNAL( highlighted( int ) ),
-                        TQT_SIGNAL( highlighted( int ) ) );
+  connect( m_popup, TQ_SIGNAL( activated( int ) ),
+                        TQ_SLOT( slotActivated( int ) ) );
+  connect( m_popup, TQ_SIGNAL( highlighted( int ) ),
+                        TQ_SIGNAL( highlighted( int ) ) );
 
   setText( TQString() );
   setIconSet( TQIconSet() );
