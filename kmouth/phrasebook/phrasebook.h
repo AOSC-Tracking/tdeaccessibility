@@ -176,7 +176,7 @@ public:
    PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, TDEActionCollection* parent)
    : TDEAction (phrase, "phrase", TDEShortcut(cut), 0, 0, parent, phrase.latin1()) {
       this->phrase = phrase;
-      connect (this, TQT_SIGNAL(slotActivated (const TQString &)), receiver, slot);
+      connect (this, TQ_SIGNAL(slotActivated (const TQString &)), receiver, slot);
    };
    ~PhraseAction () {
    }

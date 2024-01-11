@@ -72,11 +72,11 @@ DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *parent, const char
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
    
-   connect (creationSource->fileButton,    TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->directoryButton,TQT_SIGNAL(toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->kdeDocButton,  TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->mergeButton,   TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->emptyButton,   TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->fileButton,    TQ_SIGNAL (toggled(bool)), this, TQ_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->directoryButton,TQ_SIGNAL(toggled(bool)), this, TQ_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->kdeDocButton,  TQ_SIGNAL (toggled(bool)), this, TQ_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->mergeButton,   TQ_SIGNAL (toggled(bool)), this, TQ_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->emptyButton,   TQ_SIGNAL (toggled(bool)), this, TQ_SLOT(calculateAppropriate(bool)) );
 
    calculateAppropriate (true);
 }
@@ -301,7 +301,7 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);
       numInput->setValue (100);
-      connect (checkbox, TQT_SIGNAL (toggled(bool)), numInput, TQT_SLOT(setEnabled(bool)));
+      connect (checkbox, TQ_SIGNAL (toggled(bool)), numInput, TQ_SLOT(setEnabled(bool)));
       
       dictionaries.insert(*fIt, checkbox);
       weights.insert(*fIt, numInput);

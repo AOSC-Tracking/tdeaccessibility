@@ -197,10 +197,10 @@ void HadifixProc::synth(TQString text,
    *(d->hadifixProc) << command;
    
    // Connect signals from process.
-   connect(d->hadifixProc, TQT_SIGNAL(processExited(TDEProcess *)),
-     this, TQT_SLOT(slotProcessExited(TDEProcess *)));
-   connect(d->hadifixProc, TQT_SIGNAL(wroteStdin(TDEProcess *)),
-     this, TQT_SLOT(slotWroteStdin(TDEProcess *)));
+   connect(d->hadifixProc, TQ_SIGNAL(processExited(TDEProcess *)),
+     this, TQ_SLOT(slotProcessExited(TDEProcess *)));
+   connect(d->hadifixProc, TQ_SIGNAL(wroteStdin(TDEProcess *)),
+     this, TQ_SLOT(slotWroteStdin(TDEProcess *)));
    
    // Store off name of wave file to be generated.
    d->synthFilename = waveFilename;
@@ -359,10 +359,10 @@ HadifixProc::VoiceGender HadifixProc::determineGender(TQString mbrola, TQString 
    HadifixProc speech;
    KShellProcess proc;
    proc << command;
-   connect(&proc, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
-     &speech, TQT_SLOT(receivedStdout(TDEProcess *, char *, int)));
-   connect(&proc, TQT_SIGNAL(receivedStderr(TDEProcess *, char *, int)),
-     &speech, TQT_SLOT(receivedStderr(TDEProcess *, char *, int)));
+   connect(&proc, TQ_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
+     &speech, TQ_SLOT(receivedStdout(TDEProcess *, char *, int)));
+   connect(&proc, TQ_SIGNAL(receivedStderr(TDEProcess *, char *, int)),
+     &speech, TQ_SLOT(receivedStderr(TDEProcess *, char *, int)));
 
    speech.stdOut = TQString();
    speech.stdErr = TQString();

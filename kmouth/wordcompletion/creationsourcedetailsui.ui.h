@@ -17,7 +17,7 @@ void CreationSourceDetailsUI::init() {
     loadLanguageList(languageButton);
     languageButton->insertLanguage("??", i18n("Other"), TQString::fromLatin1("l10n/"), TQString());
     
-   connect (languageButton, TQT_SIGNAL(activated(int)), this, TQT_SLOT(languageButton_activated(int)));
+   connect (languageButton, TQ_SIGNAL(activated(int)), this, TQ_SLOT(languageButton_activated(int)));
 }
 
 void CreationSourceDetailsUI::languageButton_activated (int) {

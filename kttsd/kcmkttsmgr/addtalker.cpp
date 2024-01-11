@@ -65,10 +65,10 @@ AddTalker::AddTalker(SynthToLangMap synthToLangMap, TQWidget* parent, const char
     applyFilter();
 
     // Connect widgets to slots.
-    connect(languageRadioButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(applyFilter()));
-    connect(synthesizerRadioButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(applyFilter()));
-    connect(languageSelection, TQT_SIGNAL(activated(int)), this, TQT_SLOT(applyFilter()));
-    connect(synthesizerSelection, TQT_SIGNAL(activated(int)), this, TQT_SLOT(applyFilter()));
+    connect(languageRadioButton, TQ_SIGNAL(clicked()), this, TQ_SLOT(applyFilter()));
+    connect(synthesizerRadioButton, TQ_SIGNAL(clicked()), this, TQ_SLOT(applyFilter()));
+    connect(languageSelection, TQ_SIGNAL(activated(int)), this, TQ_SLOT(applyFilter()));
+    connect(synthesizerSelection, TQ_SIGNAL(activated(int)), this, TQ_SLOT(applyFilter()));
 }
 
 AddTalker::~AddTalker()

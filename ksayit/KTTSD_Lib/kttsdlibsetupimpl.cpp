@@ -55,8 +55,8 @@ void KTTSDlibSetupImpl::slotLaunchControlcenter()
 
     // invoke the Control Center Module
     TDEProcess *kcmproc = new TDEProcess();
-    connect(kcmproc, TQT_SIGNAL(processExited(TDEProcess*)),
-                    this, TQT_SLOT(slotKCMProcessExited(TDEProcess*)) );
+    connect(kcmproc, TQ_SIGNAL(processExited(TDEProcess*)),
+                    this, TQ_SLOT(slotKCMProcessExited(TDEProcess*)) );
     (*kcmproc) << "tdecmshell";
     (*kcmproc) << "kcmkttsd";
     kcmproc->start(TDEProcess::NotifyOnExit);

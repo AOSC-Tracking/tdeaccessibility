@@ -74,30 +74,30 @@ StringReplacerConf::StringReplacerConf( TQWidget *parent, const char *name, cons
     layout->addWidget(m_widget);
     m_widget->substLView->setSortColumn(-1);
 
-    connect(m_widget->nameLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-    connect(m_widget->languageBrowseButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotLanguageBrowseButton_clicked()));
-    connect(m_widget->addButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotAddButton_clicked()));
-    connect(m_widget->upButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotUpButton_clicked()));
-    connect(m_widget->downButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotDownButton_clicked()));
-    connect(m_widget->editButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotEditButton_clicked()));
-    connect(m_widget->removeButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotRemoveButton_clicked()));
-    connect(m_widget->loadButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotLoadButton_clicked()));
-    connect(m_widget->saveButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotSaveButton_clicked()));
-    connect(m_widget->clearButton, TQT_SIGNAL(clicked()),
-        this, TQT_SLOT(slotClearButton_clicked()));
-    connect(m_widget->substLView, TQT_SIGNAL(selectionChanged()),
-        this, TQT_SLOT(enableDisableButtons()));
-    connect(m_widget->appIdLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
+    connect(m_widget->nameLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+    connect(m_widget->languageBrowseButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotLanguageBrowseButton_clicked()));
+    connect(m_widget->addButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotAddButton_clicked()));
+    connect(m_widget->upButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotUpButton_clicked()));
+    connect(m_widget->downButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotDownButton_clicked()));
+    connect(m_widget->editButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotEditButton_clicked()));
+    connect(m_widget->removeButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotRemoveButton_clicked()));
+    connect(m_widget->loadButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotLoadButton_clicked()));
+    connect(m_widget->saveButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotSaveButton_clicked()));
+    connect(m_widget->clearButton, TQ_SIGNAL(clicked()),
+        this, TQ_SLOT(slotClearButton_clicked()));
+    connect(m_widget->substLView, TQ_SIGNAL(selectionChanged()),
+        this, TQ_SLOT(enableDisableButtons()));
+    connect(m_widget->appIdLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
 
     // Determine if tdeutils Regular Expression Editor is installed.
     m_reEditorInstalled = !TDETrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
@@ -581,14 +581,14 @@ void StringReplacerConf::addOrEditSubstitution(bool isAdd)
         m_editWidget->substLineEdit->setText( item->text(3) );
     }
     // The match box may not be blank.
-    connect( m_editWidget->matchLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-         this, TQT_SLOT(slotMatchLineEdit_textChanged(const TQString&)) );
-    connect( m_editWidget->regexpRadioButton, TQT_SIGNAL(clicked()),
-         this, TQT_SLOT(slotTypeButtonGroup_clicked()) );
-    connect( m_editWidget->wordRadioButton, TQT_SIGNAL(clicked()),
-         this, TQT_SLOT(slotTypeButtonGroup_clicked()) );
-    connect( m_editWidget->matchButton, TQT_SIGNAL(clicked()),
-         this, TQT_SLOT(slotMatchButton_clicked()) );
+    connect( m_editWidget->matchLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+         this, TQ_SLOT(slotMatchLineEdit_textChanged(const TQString&)) );
+    connect( m_editWidget->regexpRadioButton, TQ_SIGNAL(clicked()),
+         this, TQ_SLOT(slotTypeButtonGroup_clicked()) );
+    connect( m_editWidget->wordRadioButton, TQ_SIGNAL(clicked()),
+         this, TQ_SLOT(slotTypeButtonGroup_clicked()) );
+    connect( m_editWidget->matchButton, TQ_SIGNAL(clicked()),
+         this, TQ_SLOT(slotMatchButton_clicked()) );
     // Display the box in a dialog.
     m_editDlg = new KDialogBase(
         KDialogBase::Swallow,

@@ -239,8 +239,8 @@ bool SSMLConvert::transform(const TQString &text, const TQString &xsltFilename) 
     // kdDebug() << "SSMLConvert::transform: executing command: " <<
     //     m_xsltProc->args() << endl;
 
-    connect(m_xsltProc, TQT_SIGNAL(processExited(TDEProcess*)),
-        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_xsltProc, TQ_SIGNAL(processExited(TDEProcess*)),
+        this, TQ_SLOT(slotProcessExited(TDEProcess*)));
     if (!m_xsltProc->start(TDEProcess::NotifyOnExit, TDEProcess::NoCommunication))
     {
         kdDebug() << "SSMLConvert::transform: Error starting xsltproc" << endl;

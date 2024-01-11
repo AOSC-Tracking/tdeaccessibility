@@ -89,10 +89,10 @@ bool EposProc::init(TDEConfig* config, const TQString& configGroup)
         *m_eposServerProc << m_eposServerExePath;
         if (!m_eposServerOptions.isEmpty())
             *m_eposServerProc << m_eposServerOptions;
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQ_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQ_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
         m_eposServerProc->start(TDEProcess::DontCare, TDEProcess::AllOutput);
     }
 
@@ -173,10 +173,10 @@ void EposProc::synth(
         *m_eposServerProc << eposServerExePath;
         if (!eposServerOptions.isEmpty())
             *m_eposServerProc << eposServerOptions;
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
-        connect(m_eposServerProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
-            this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQ_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+        connect(m_eposServerProc, TQ_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+            this, TQ_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
         m_eposServerProc->start(TDEProcess::DontCare, TDEProcess::AllOutput);
         kdDebug() << "EposProc:: Epos server process started" << endl;
     }
@@ -234,14 +234,14 @@ void EposProc::synth(
     *m_eposProc << "-";   // Read from StdIn.
     if (!suggestedFilename.isEmpty()) 
         *m_eposProc << " >" + suggestedFilename;
-    connect(m_eposProc, TQT_SIGNAL(processExited(TDEProcess*)),
-        this, TQT_SLOT(slotProcessExited(TDEProcess*)));
-    connect(m_eposProc, TQT_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
-    connect(m_eposProc, TQT_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
-        this, TQT_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
-    connect(m_eposProc, TQT_SIGNAL(wroteStdin(TDEProcess*)),
-        this, TQT_SLOT(slotWroteStdin(TDEProcess* )));
+    connect(m_eposProc, TQ_SIGNAL(processExited(TDEProcess*)),
+        this, TQ_SLOT(slotProcessExited(TDEProcess*)));
+    connect(m_eposProc, TQ_SIGNAL(receivedStdout(TDEProcess*, char*, int)),
+        this, TQ_SLOT(slotReceivedStdout(TDEProcess*, char*, int)));
+    connect(m_eposProc, TQ_SIGNAL(receivedStderr(TDEProcess*, char*, int)),
+        this, TQ_SLOT(slotReceivedStderr(TDEProcess*, char*, int)));
+    connect(m_eposProc, TQ_SIGNAL(wroteStdin(TDEProcess*)),
+        this, TQ_SLOT(slotWroteStdin(TDEProcess* )));
     if (suggestedFilename.isEmpty())
         m_state = psSaying;
     else

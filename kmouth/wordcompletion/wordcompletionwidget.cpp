@@ -95,15 +95,15 @@ WordCompletionWidget::WordCompletionWidget(TQWidget *parent, const char *name) :
     dictionaryList->setSorting (-1); // no sorted list
 
     // Connect the signals from hte KCMKTTSDWidget to this class
-    connect (addButton, TQT_SIGNAL (clicked()), this, TQT_SLOT(addDictionary()) );
-    connect (deleteButton, TQT_SIGNAL (clicked()), this, TQT_SLOT (deleteDictionary()) );
-    connect (moveUpButton, TQT_SIGNAL (clicked()), this, TQT_SLOT (moveUp()) );
-    connect (moveDownButton, TQT_SIGNAL (clicked()), this, TQT_SLOT (moveDown()) );
-    connect (exportButton, TQT_SIGNAL (clicked()), this, TQT_SLOT (exportDictionary()) );
+    connect (addButton, TQ_SIGNAL (clicked()), this, TQ_SLOT(addDictionary()) );
+    connect (deleteButton, TQ_SIGNAL (clicked()), this, TQ_SLOT (deleteDictionary()) );
+    connect (moveUpButton, TQ_SIGNAL (clicked()), this, TQ_SLOT (moveUp()) );
+    connect (moveDownButton, TQ_SIGNAL (clicked()), this, TQ_SLOT (moveDown()) );
+    connect (exportButton, TQ_SIGNAL (clicked()), this, TQ_SLOT (exportDictionary()) );
 
-    connect (dictionaryList, TQT_SIGNAL (selectionChanged()), this, TQT_SLOT (selectionChanged()) );
-    connect (dictionaryName, TQT_SIGNAL (textChanged (const TQString &)), this, TQT_SLOT (nameChanged (const TQString &)) );
-    connect (languageButton, TQT_SIGNAL (activated (int)), this, TQT_SLOT (languageSelected(int)) );
+    connect (dictionaryList, TQ_SIGNAL (selectionChanged()), this, TQ_SLOT (selectionChanged()) );
+    connect (dictionaryName, TQ_SIGNAL (textChanged (const TQString &)), this, TQ_SLOT (nameChanged (const TQString &)) );
+    connect (languageButton, TQ_SIGNAL (activated (int)), this, TQ_SLOT (languageSelected(int)) );
 
     // Object for the KCMKTTSD configuration
     config = new TDEConfig("kmouthrc");

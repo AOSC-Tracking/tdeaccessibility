@@ -113,7 +113,7 @@ KbStateApplet::KbStateApplet(const TQString& configFile, Type t, int actions,
 		accessxFeatures = 0;
 
    //startTimer(100); // ten times a second
-   connect(kapp, TQT_SIGNAL(tdedisplayPaletteChanged()), TQT_SLOT(paletteChanged()));
+   connect(kapp, TQ_SIGNAL(tdedisplayPaletteChanged()), TQ_SLOT(paletteChanged()));
    
    kapp->installX11EventFilter (this);
    int opcode_rtn, error_rtn;
@@ -139,27 +139,27 @@ void KbStateApplet::buildPopupMenu()
    sizePopup->insertItem(i18n("Small"),  13);
    sizePopup->insertItem(i18n("Medium"), 20);
    sizePopup->insertItem(i18n("Large"),  26);
-   connect(sizePopup,TQT_SIGNAL(activated(int)), this, TQT_SLOT(setIconDim(int)));
+   connect(sizePopup,TQ_SIGNAL(activated(int)), this, TQ_SLOT(setIconDim(int)));
 
    showPopup=new TDEPopupMenu(this);
    showPopup->setCheckable( true );
-   modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQT_SLOT(toggleModifier()));
-	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQT_SLOT(toggleLockkeys()));
-	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQT_SLOT(toggleMouse()));
-	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQT_SLOT(toggleAccessX()));
+   modifierItem=showPopup->insertItem(i18n("Modifier Keys"), this, TQ_SLOT(toggleModifier()));
+	lockkeysItem=showPopup->insertItem(i18n("Lock Keys"),     this, TQ_SLOT(toggleLockkeys()));
+	mouseItem=showPopup->insertItem(i18n("Mouse Status"), this, TQ_SLOT(toggleMouse()));
+	accessxItem=showPopup->insertItem(i18n("AccessX Status"), this, TQ_SLOT(toggleAccessX()));
 
 	popup = new TDEPopupMenu(this);
 	popup->setCheckable( true );
    popup->insertTitle(0, i18n("Keyboard Status Applet"));
 	popup->insertItem(i18n("Set Icon Size"),sizePopup);
 	fillSpaceItem = popup->insertItem(i18n("Fill Available Space"),
-												 this, TQT_SLOT(toggleFillSpace()));
+												 this, TQ_SLOT(toggleFillSpace()));
    popup->insertItem(i18n("Show"),showPopup);
-   popup->insertItem(i18n("Configure AccessX Features..."), this, TQT_SLOT(configureAccessX()));
-   popup->insertItem(i18n("Configure Keyboard..."), this, TQT_SLOT(configureKeyboard()));
-   popup->insertItem(i18n("Configure Mouse..."), this, TQT_SLOT(configureMouse()));
+   popup->insertItem(i18n("Configure AccessX Features..."), this, TQ_SLOT(configureAccessX()));
+   popup->insertItem(i18n("Configure Keyboard..."), this, TQ_SLOT(configureKeyboard()));
+   popup->insertItem(i18n("Configure Mouse..."), this, TQ_SLOT(configureMouse()));
    popup->insertSeparator();
-   popup->insertItem(i18n("About"), this, TQT_SLOT(about()));
+   popup->insertItem(i18n("About"), this, TQ_SLOT(about()));
    setCustomMenu(popup);
    updateMenu();
 }
@@ -547,8 +547,8 @@ void KbStateApplet::initMasks() {
       if ((map <= 7) && !(icons[map])) {
          icons[map] = new KeyIcon (i, instance, this, modifierKeys[i].name);
          TQToolTip::add (icons[map], i18n (modifierKeys[i].name));
-         connect (icons[map], TQT_SIGNAL(stateChangeRequest (KeyIcon*,bool,bool)),
-                                TQT_SLOT(stateChangeRequest (KeyIcon*,bool,bool)));
+         connect (icons[map], TQ_SIGNAL(stateChangeRequest (KeyIcon*,bool,bool)),
+                                TQ_SLOT(stateChangeRequest (KeyIcon*,bool,bool)));
          if (modifierKeys[i].isModifier)
             modifiers.append(icons[map]);
          else
@@ -755,7 +755,7 @@ KeyIcon::KeyIcon (int keyId, TDEInstance *instance,
    isLocked  = false;
    isLatched = false;
    updateImages ();
-   connect (this, TQT_SIGNAL(clicked()), TQT_SLOT(clickedSlot()));
+   connect (this, TQ_SIGNAL(clicked()), TQ_SLOT(clickedSlot()));
 }
 
 KeyIcon::~KeyIcon () {
@@ -862,7 +862,7 @@ MouseIcon::MouseIcon (TDEInstance *instance, TQWidget *parent, const char *name)
 	state = 0;
 	activekey = 0;
 	updateImages ();
-	connect (this, TQT_SIGNAL(clicked()), TQT_SLOT(clickedSlot()));
+	connect (this, TQ_SIGNAL(clicked()), TQ_SLOT(clickedSlot()));
 }
 
 MouseIcon::~MouseIcon () {
@@ -964,7 +964,7 @@ TimeoutIcon::TimeoutIcon (TDEInstance *instance, const TQString &text,
 	this->featurename = featurename;
 	glyth = " ";
 	setImage (featurename);
-   connect (&timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(timeout()));
+   connect (&timer, TQ_SIGNAL(timeout()), this, TQ_SLOT(timeout()));
 }
 
 TimeoutIcon::~TimeoutIcon () {

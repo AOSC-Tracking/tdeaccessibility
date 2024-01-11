@@ -158,75 +158,75 @@ void ContextMenuHandler::initActions()
   // User defined actions
   renameItem = new TDEAction (i18n("Rename..."),
               0,
-              m_DocTreeView, TQT_SLOT (slotRenameItem()), NULL );
+              m_DocTreeView, TQ_SLOT (slotRenameItem()), NULL );
   
   deleteItem = new TDEAction (i18n("Delete..."),
               0,
-              m_DocTreeView, TQT_SLOT (slotDeleteItem()), NULL );
+              m_DocTreeView, TQ_SLOT (slotDeleteItem()), NULL );
               
   newBookInfo = new TDEAction ( i18n("Overview"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewBookInfo()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewBookInfo()), NULL );
 
   newChapter = new TDEAction ( i18n("Chapter"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewChapter()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewChapter()), NULL );
 
   newKeywordSet = new TDEAction ( i18n("Keywords"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewKeywordSet()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewKeywordSet()), NULL );
 
   newKeyword = new TDEAction ( i18n("Keyword"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewKeyword()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewKeyword()), NULL );
   
   newAbstract = new TDEAction ( i18n("Abstract"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewAbstract()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewAbstract()), NULL );
   
   newAuthorGroup = new TDEAction ( i18n("Authors"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewAuthorGroup()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewAuthorGroup()), NULL );
   
   newAuthor = new TDEAction ( i18n("Author"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewAuthor()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewAuthor()), NULL );
   
   newDate = new TDEAction ( i18n("Date"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewDate()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewDate()), NULL );
   
   newReleaseInfo = new TDEAction ( i18n("Release Info"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewReleaseInfo()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewReleaseInfo()), NULL );
 
   newTitle = new TDEAction ( i18n("Title"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewTitle()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewTitle()), NULL );
 
   newParagraph = new TDEAction ( i18n("Paragraph"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewParagraph()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewParagraph()), NULL );
 
   newSection_1 = new TDEAction ( i18n("Section Level 1"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewSection_1()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewSection_1()), NULL );
 
   newSection_2 = new TDEAction ( i18n("Section Level 2"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewSection_2()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewSection_2()), NULL );
 
   newSection_3 = new TDEAction ( i18n("Section Level 3"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewSection_3()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewSection_3()), NULL );
 
   newSection_4 = new TDEAction ( i18n("Section Level 4"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewSection_4()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewSection_4()), NULL );
 
   newSection_5 = new TDEAction ( i18n("Section Level 5"),
               0,
-              m_DocTreeView, TQT_SLOT (slotNewSection_5()), NULL );
+              m_DocTreeView, TQ_SLOT (slotNewSection_5()), NULL );
 }
 
 

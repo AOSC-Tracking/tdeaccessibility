@@ -111,36 +111,36 @@ SelectTalkerDlg::SelectTalkerDlg(
     applyTalkerCodeToControls();
     enableDisableControls();
 
-    connect(m_widget->useDefaultRadioButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->useClosestMatchRadioButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->useSpecificTalkerRadioButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(configChanged()));
+    connect(m_widget->useDefaultRadioButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->useClosestMatchRadioButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->useSpecificTalkerRadioButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(configChanged()));
 
-    connect(m_widget->languageBrowseButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotLanguageBrowseButton_clicked()));
+    connect(m_widget->languageBrowseButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotLanguageBrowseButton_clicked()));
 
-    connect(m_widget->synthComboBox, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->genderComboBox, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->volumeComboBox, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->rateComboBox, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
+    connect(m_widget->synthComboBox, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->genderComboBox, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->volumeComboBox, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->rateComboBox, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
 
-    connect(m_widget->synthCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->genderCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->volumeCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->rateCheckBox, TQT_SIGNAL(toggled(bool)),
-            this, TQT_SLOT(configChanged()));
+    connect(m_widget->synthCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->genderCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->volumeCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->rateCheckBox, TQ_SIGNAL(toggled(bool)),
+            this, TQ_SLOT(configChanged()));
 
-    connect(m_widget->talkersListView, TQT_SIGNAL(selectionChanged()),
-            this, TQT_SLOT(slotTalkersListView_selectionChanged()));
+    connect(m_widget->talkersListView, TQ_SIGNAL(selectionChanged()),
+            this, TQ_SLOT(slotTalkersListView_selectionChanged()));
 
     m_widget->talkersListView->setMinimumHeight( 120 );
 }

@@ -147,12 +147,12 @@ KMagZoomView::KMagZoomView(TQWidget *parent, const char *name)
   setRefreshRate(10);
 
   // connect it to grabFrame()
-  connect(&m_grabTimer, TQT_SIGNAL(timeout()), TQT_SLOT(grabFrame()));
+  connect(&m_grabTimer, TQ_SIGNAL(timeout()), TQ_SLOT(grabFrame()));
   // start the grabTimer
   m_grabTimer.start(static_cast<int>(1000.0/m_fps));
 
   // connect it to updateMouseView()
-  connect(&m_mouseViewTimer, TQT_SIGNAL(timeout()), TQT_SLOT(updateMouseView()));
+  connect(&m_mouseViewTimer, TQ_SIGNAL(timeout()), TQ_SLOT(updateMouseView()));
   // start the grabTimer @ 25 frames per second!
   m_mouseViewTimer.start(25);
 

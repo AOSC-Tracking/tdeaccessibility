@@ -100,7 +100,7 @@ public:
    StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, TDEActionCollection* parent)
    : TDEAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
-      connect (this, TQT_SIGNAL(slotActivated (const KURL &)), receiver, slot);
+      connect (this, TQ_SIGNAL(slotActivated (const KURL &)), receiver, slot);
    };
    ~StandardPhraseBookInsertAction () {
    };

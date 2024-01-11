@@ -81,37 +81,37 @@ FestivalIntConf::FestivalIntConf( TQWidget* parent, const char* name, const TQSt
 
     //    defaults();
 
-    connect(m_widget->festivalPath, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(slotFestivalPath_textChanged()));
-    connect(m_widget->selectVoiceCombo, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(slotSelectVoiceCombo_activated()));
-    connect(m_widget->selectVoiceCombo, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->testButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotTest_clicked()));
-    connect(m_widget->rescan, TQT_SIGNAL(clicked()), this, TQT_SLOT(scanVoices()));
-    connect(m_widget->volumeBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(volumeBox_valueChanged(int)));
-    connect(m_widget->timeBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeBox_valueChanged(int)));
-    connect(m_widget->frequencyBox, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(frequencyBox_valueChanged(int)));
-    connect(m_widget->volumeSlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(volumeSlider_valueChanged(int)));
-    connect(m_widget->timeSlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(timeSlider_valueChanged(int)));
-    connect(m_widget->frequencySlider, TQT_SIGNAL(valueChanged(int)),
-            this, TQT_SLOT(frequencySlider_valueChanged(int)));
-    connect(m_widget->volumeBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->volumeSlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->timeBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->timeSlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->frequencyBox, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->frequencySlider, TQT_SIGNAL(valueChanged(int)), this, TQT_SLOT(configChanged()));
-    connect(m_widget->preloadCheckBox, TQT_SIGNAL(clicked()), this, TQT_SLOT(configChanged()));
-    connect(m_widget->characterCodingBox, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->characterCodingBox, TQT_SIGNAL(activated(const TQString&)),
-            this, TQT_SLOT(configChanged()));
+    connect(m_widget->festivalPath, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(slotFestivalPath_textChanged()));
+    connect(m_widget->selectVoiceCombo, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(slotSelectVoiceCombo_activated()));
+    connect(m_widget->selectVoiceCombo, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->testButton, TQ_SIGNAL(clicked()), this, TQ_SLOT(slotTest_clicked()));
+    connect(m_widget->rescan, TQ_SIGNAL(clicked()), this, TQ_SLOT(scanVoices()));
+    connect(m_widget->volumeBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(volumeBox_valueChanged(int)));
+    connect(m_widget->timeBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeBox_valueChanged(int)));
+    connect(m_widget->frequencyBox, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(frequencyBox_valueChanged(int)));
+    connect(m_widget->volumeSlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(volumeSlider_valueChanged(int)));
+    connect(m_widget->timeSlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(timeSlider_valueChanged(int)));
+    connect(m_widget->frequencySlider, TQ_SIGNAL(valueChanged(int)),
+            this, TQ_SLOT(frequencySlider_valueChanged(int)));
+    connect(m_widget->volumeBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->volumeSlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->timeBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->timeSlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->frequencyBox, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->frequencySlider, TQ_SIGNAL(valueChanged(int)), this, TQ_SLOT(configChanged()));
+    connect(m_widget->preloadCheckBox, TQ_SIGNAL(clicked()), this, TQ_SLOT(configChanged()));
+    connect(m_widget->characterCodingBox, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->characterCodingBox, TQ_SIGNAL(activated(const TQString&)),
+            this, TQ_SLOT(configChanged()));
 }
 
 /** Destructor */
@@ -430,10 +430,10 @@ void FestivalIntConf::scanVoices()
         else
         {
             m_festProc = new FestivalIntProc();
-            connect (m_festProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+            connect (m_festProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
         }
-        connect (m_festProc, TQT_SIGNAL(queryVoicesFinished(const TQStringList&)),
-                 this, TQT_SLOT(slotQueryVoicesFinished(const TQStringList&)));
+        connect (m_festProc, TQ_SIGNAL(queryVoicesFinished(const TQStringList&)),
+                 this, TQ_SLOT(slotQueryVoicesFinished(const TQStringList&)));
         m_festProc->queryVoices(exePath);
 
         // Display progress dialog modally.
@@ -444,8 +444,8 @@ void FestivalIntConf::scanVoices()
         // Festival responds with the list.  When Festival responds with list,
         // the progress dialog is closed.
 
-        disconnect (m_festProc, TQT_SIGNAL(queryVoicesFinished(const TQStringList&)),
-                    this, TQT_SLOT(slotQueryVoicesFinished(const TQStringList&)));
+        disconnect (m_festProc, TQ_SIGNAL(queryVoicesFinished(const TQStringList&)),
+                    this, TQ_SLOT(slotQueryVoicesFinished(const TQStringList&)));
         if (!m_progressDlg->wasCancelled()) m_festProc->stopText();
         delete m_progressDlg;
         m_progressDlg = 0;
@@ -552,7 +552,7 @@ void FestivalIntConf::slotTest_clicked()
     else
     {
         m_festProc = new FestivalIntProc();
-        connect (m_festProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+        connect (m_festProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
     }
     // Create a temp file name for the wave file.
     KTempFile tempFile (locateLocal("tmp", "festivalintplugin-"), ".wav");
@@ -581,7 +581,7 @@ void FestivalIntConf::slotTest_clicked()
     m_progressDlg->setAllowCancel(true);
 
     // kdDebug() << "FestivalIntConf::slotTest_clicked: calling synth with voiceCode: " << voiceCode << " time percent: " << m_widget->timeBox->value() << endl;
-    connect (m_festProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    connect (m_festProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     m_festProc->synth(
         realFilePath(m_widget->festivalPath->url()),
         testMsg,
@@ -596,7 +596,7 @@ void FestivalIntConf::slotTest_clicked()
     // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
     // or if user clicks Cancel button.
     m_progressDlg->exec();
-    disconnect (m_festProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+    disconnect (m_festProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
     if (m_progressDlg->wasCancelled()) m_festProc->stopText();
     delete m_progressDlg;
     m_progressDlg = 0;

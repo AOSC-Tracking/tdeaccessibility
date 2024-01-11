@@ -215,12 +215,12 @@ HadifixConf::HadifixConf( TQWidget* parent, const char* name, const TQStringList
    TQString file = locate("data", "LICENSES/LGPL_V2");
    i18n("This plugin is distributed under the terms of the GPL v2 or later.");
    
-   connect(d->configWidget->voiceButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(voiceButton_clicked()));
-   connect(d->configWidget->testButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(testButton_clicked()));
-   connect(d->configWidget, TQT_SIGNAL(changed(bool)), this, TQT_SLOT(configChanged (bool)));
-   connect(d->configWidget->characterCodingBox, TQT_SIGNAL(textChanged(const TQString&)),
-        this, TQT_SLOT(configChanged()));
-   connect(d->configWidget->voiceCombo, TQT_SIGNAL(activated(int)), this, TQT_SLOT(voiceCombo_activated(int)));
+   connect(d->configWidget->voiceButton, TQ_SIGNAL(clicked()), this, TQ_SLOT(voiceButton_clicked()));
+   connect(d->configWidget->testButton, TQ_SIGNAL(clicked()), this, TQ_SLOT(testButton_clicked()));
+   connect(d->configWidget, TQ_SIGNAL(changed(bool)), this, TQ_SLOT(configChanged (bool)));
+   connect(d->configWidget->characterCodingBox, TQ_SIGNAL(textChanged(const TQString&)),
+        this, TQ_SLOT(configChanged()));
+   connect(d->configWidget->voiceCombo, TQ_SIGNAL(activated(int)), this, TQ_SLOT(voiceCombo_activated(int)));
    d->initializeCharacterCodes();
    d->initializeVoices();
    d->setDefaults();
@@ -330,7 +330,7 @@ void HadifixConf::testButton_clicked () {
    else
    {
       d->hadifixProc = new HadifixProc();
-      connect (d->hadifixProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+      connect (d->hadifixProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
    }
    // Create a temp file name for the wave file.
    KTempFile tempFile (locateLocal("tmp", "hadifixplugin-"), ".wav");
@@ -354,7 +354,7 @@ void HadifixConf::testButton_clicked () {
 
    // TQString testMsg = "K D E ist eine moderne grafische Arbeitsumgebung für UNIX-Computer.";
    TQString testMsg = testMessage(d->languageCode);
-   connect (d->hadifixProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+   connect (d->hadifixProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
    d->hadifixProc->synth (testMsg,
       realFilePath(d->configWidget->hadifixURL->url()),
       d->configWidget->isMaleVoice(),
@@ -369,7 +369,7 @@ void HadifixConf::testButton_clicked () {
    // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
    // or if user clicks Cancel button.
    d->progressDlg->exec();
-   disconnect (d->hadifixProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+   disconnect (d->hadifixProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
    if (d->progressDlg->wasCancelled()) d->hadifixProc->stopText();
    delete d->progressDlg;
    d->progressDlg = 0;

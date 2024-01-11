@@ -79,7 +79,7 @@ SelectEvent::SelectEvent(TQWidget* parent, const char* name, WFlags fl, const TQ
         }
     }
     slotEventSrcComboBox_activated(eventSrcComboBox->currentItem());
-    connect (eventSrcComboBox, TQT_SIGNAL(activated(int)), this, TQT_SLOT(slotEventSrcComboBox_activated(int)));
+    connect (eventSrcComboBox, TQ_SIGNAL(activated(int)), this, TQ_SLOT(slotEventSrcComboBox_activated(int)));
 }
 
 SelectEvent::~SelectEvent() { }

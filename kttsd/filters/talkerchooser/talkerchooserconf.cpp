@@ -65,23 +65,23 @@ TalkerChooserConf::TalkerChooserConf( TQWidget *parent, const char *name, const 
     m_reEditorInstalled = !TDETrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty();
     m_widget->reEditorButton->setEnabled(m_reEditorInstalled);
 
-    connect(m_widget->nameLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->reLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->reEditorButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotReEditorButton_clicked()));
-    connect(m_widget->appIdLineEdit, TQT_SIGNAL(textChanged(const TQString&)),
-            this, TQT_SLOT(configChanged()));
-    connect(m_widget->talkerButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotTalkerButton_clicked()));
+    connect(m_widget->nameLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->reLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->reEditorButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotReEditorButton_clicked()));
+    connect(m_widget->appIdLineEdit, TQ_SIGNAL(textChanged(const TQString&)),
+            this, TQ_SLOT(configChanged()));
+    connect(m_widget->talkerButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotTalkerButton_clicked()));
 
-    connect(m_widget->loadButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotLoadButton_clicked()));
-    connect(m_widget->saveButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotSaveButton_clicked()));
-    connect(m_widget->clearButton, TQT_SIGNAL(clicked()),
-            this, TQT_SLOT(slotClearButton_clicked()));
+    connect(m_widget->loadButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotLoadButton_clicked()));
+    connect(m_widget->saveButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotSaveButton_clicked()));
+    connect(m_widget->clearButton, TQ_SIGNAL(clicked()),
+            this, TQ_SLOT(slotClearButton_clicked()));
 
     // Set up defaults.
     defaults();

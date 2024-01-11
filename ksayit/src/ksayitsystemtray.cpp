@@ -46,36 +46,36 @@ void KSayItSystemTray::initActions()
   menu = this->contextMenu();
   help = new KHelpMenu(this, kapp->aboutData(), false, actionCollection());
   // Standard actions
-  settings = KStdAction::preferences(this, TQT_SLOT(slotPreferences()), actionCollection());
-  help_about = KStdAction::aboutApp(help, TQT_SLOT(aboutApplication()), actionCollection());
-  help_kde = KStdAction::aboutKDE(help, TQT_SLOT(aboutKDE()), actionCollection());
+  settings = KStdAction::preferences(this, TQ_SLOT(slotPreferences()), actionCollection());
+  help_about = KStdAction::aboutApp(help, TQ_SLOT(aboutApplication()), actionCollection());
+  help_kde = KStdAction::aboutKDE(help, TQ_SLOT(aboutKDE()), actionCollection());
 
   // User defined actions
   say = new TDEAction(i18n("Say"),
               "media-playback-start",
               0,
-              this, TQT_SLOT (slotSayActivated()),
+              this, TQ_SLOT (slotSayActivated()),
               actionCollection(),
               "say_it");
   
   shutup = new TDEAction(i18n("Shut Up"),
               "media-playback-stop",
               0,
-              this, TQT_SLOT (slotStopActivated()),
+              this, TQ_SLOT (slotStopActivated()),
               actionCollection(),
               "shut_up");
   
   pause = new TDEAction (i18n("Pause"),
               "media-playback-pause",
               0,
-              this, TQT_SLOT (slotPauseActivated()),
+              this, TQ_SLOT (slotPauseActivated()),
               actionCollection(),
               "pause");
 
   next_sentence = new TDEAction (i18n("Next Sentence"),
               "2rightarrow",
               0,
-              this, TQT_SLOT (slotNextSentenceActivated()),
+              this, TQ_SLOT (slotNextSentenceActivated()),
               actionCollection(),
               "next_sentence");
 
@@ -83,7 +83,7 @@ void KSayItSystemTray::initActions()
   prev_sentence = new TDEAction (i18n("Previous Sentence"),
               "2leftarrow",
               0,
-              this, TQT_SLOT(slotPrevSentenceActivated()),
+              this, TQ_SLOT(slotPrevSentenceActivated()),
               actionCollection(),
               "prev_sentence");
 

@@ -179,18 +179,18 @@ KttsMgrTray::KttsMgrTray(TQWidget *parent):
     if (id != -1) contextMenu()->changeTitle(id, icon, "KTTSMgr");
 
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("klipper", TDEIcon::Small),
-        i18n("&Speak Clipboard Contents"), this, TQT_SLOT(speakClipboardSelected()));
+        i18n("&Speak Clipboard Contents"), this, TQ_SLOT(speakClipboardSelected()));
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("process-stop", TDEIcon::Small),
-        i18n("&Hold"), this, TQT_SLOT(holdSelected()));
+        i18n("&Hold"), this, TQ_SLOT(holdSelected()));
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("application-x-executable", TDEIcon::Small),
-        i18n("Resume"), this, TQT_SLOT(resumeSelected()));
+        i18n("Resume"), this, TQ_SLOT(resumeSelected()));
     id = contextMenu()->insertSeparator();
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("contents", TDEIcon::Small),
-        i18n("KTTS &Handbook"), this, TQT_SLOT(helpSelected()));
+        i18n("KTTS &Handbook"), this, TQ_SLOT(helpSelected()));
     id = contextMenu()->insertItem (TDEGlobal::iconLoader()->loadIcon("kttsd", TDEIcon::Small),
-        i18n("&About KTTSMgr"), this, TQT_SLOT(aboutSelected()));
+        i18n("&About KTTSMgr"), this, TQ_SLOT(aboutSelected()));
 
-    connect(this, TQT_SIGNAL(quitSelected()), this, TQT_SLOT(quitSelected()));
+    connect(this, TQ_SIGNAL(quitSelected()), this, TQ_SLOT(quitSelected()));
     // If --autoexit option given, exit when speaking stops.
     TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
     if (args->isSet("autoexit"))

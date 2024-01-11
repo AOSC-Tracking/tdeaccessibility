@@ -206,10 +206,10 @@ void Speech::speak(TQString command, bool stdIn, const TQString &text, const TQS
 
       // 3. create a new process
       process << command;
-      connect(&process, TQT_SIGNAL(processExited(TDEProcess *)), this, TQT_SLOT(processExited(TDEProcess *)));
-      connect(&process, TQT_SIGNAL(wroteStdin(TDEProcess *)), this, TQT_SLOT(wroteStdin(TDEProcess *)));
-      connect(&process, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)), this, TQT_SLOT(receivedStdout(TDEProcess *, char *, int)));
-      connect(&process, TQT_SIGNAL(receivedStderr(TDEProcess *, char *, int)), this, TQT_SLOT(receivedStderr(TDEProcess *, char *, int)));
+      connect(&process, TQ_SIGNAL(processExited(TDEProcess *)), this, TQ_SLOT(processExited(TDEProcess *)));
+      connect(&process, TQ_SIGNAL(wroteStdin(TDEProcess *)), this, TQ_SLOT(wroteStdin(TDEProcess *)));
+      connect(&process, TQ_SIGNAL(receivedStdout(TDEProcess *, char *, int)), this, TQ_SLOT(receivedStdout(TDEProcess *, char *, int)));
+      connect(&process, TQ_SIGNAL(receivedStderr(TDEProcess *, char *, int)), this, TQ_SLOT(receivedStderr(TDEProcess *, char *, int)));
 
       // 4. start the process
       if (stdIn) {

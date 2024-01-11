@@ -55,9 +55,9 @@ FreeTTSConf::FreeTTSConf( TQWidget* parent, const char* name, const TQStringList
 		
 	defaults();
 	
-	connect(m_widget->freettsPath, TQT_SIGNAL(textChanged(const TQString&)),
-		this, TQT_SLOT(configChanged()));
-	connect(m_widget->freettsTest, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFreeTTSTest_clicked()));
+	connect(m_widget->freettsPath, TQ_SIGNAL(textChanged(const TQString&)),
+		this, TQ_SLOT(configChanged()));
+	connect(m_widget->freettsTest, TQ_SIGNAL(clicked()), this, TQ_SLOT(slotFreeTTSTest_clicked()));
 }
 
 /** Destructor */
@@ -163,7 +163,7 @@ void FreeTTSConf::slotFreeTTSTest_clicked()
 	else
         {
 		m_freettsProc = new FreeTTSProc();
-                connect (m_freettsProc, TQT_SIGNAL(stopped()), this, TQT_SLOT(slotSynthStopped()));
+                connect (m_freettsProc, TQ_SIGNAL(stopped()), this, TQ_SLOT(slotSynthStopped()));
         }
         // Create a temp file name for the wave file.
 	KTempFile tempFile (locateLocal("tmp", "freettsplugin-"), ".wav");
@@ -183,7 +183,7 @@ void FreeTTSConf::slotFreeTTSTest_clicked()
 
 	// I think FreeTTS only officialy supports English, but if anyone knows of someone
 	// whos built up a different language lexicon and has it working with FreeTTS gimme an email at ceruleanblaze@gmail.com
-        connect (m_freettsProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+        connect (m_freettsProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
         m_freettsProc->synth(
             testMsg,
             tmpWaveFile,
@@ -192,7 +192,7 @@ void FreeTTSConf::slotFreeTTSTest_clicked()
         // Display progress dialog modally.  Processing continues when plugin signals synthFinished,
         // or if user clicks Cancel button.
         m_progressDlg->exec();
-        disconnect (m_freettsProc, TQT_SIGNAL(synthFinished()), this, TQT_SLOT(slotSynthFinished()));
+        disconnect (m_freettsProc, TQ_SIGNAL(synthFinished()), this, TQ_SLOT(slotSynthFinished()));
         if (m_progressDlg->wasCancelled()) m_freettsProc->stopText();
         delete m_progressDlg;
         m_progressDlg = 0;

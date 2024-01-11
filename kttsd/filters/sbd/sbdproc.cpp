@@ -567,7 +567,7 @@ SbdProc::SbdProc( TQObject *parent, const char *name, const TQStringList& /*args
 {
     // kdDebug() << "SbdProc::SbdProc: Running" << endl;
     m_sbdThread = new SbdThread( parent, *name + "_thread" );
-    connect( m_sbdThread, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotSbdThreadFilteringFinished()) );
+    connect( m_sbdThread, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotSbdThreadFilteringFinished()) );
 }
 
 /**
@@ -753,7 +753,7 @@ bool SbdProc::init(TDEConfig* config, const TQString& configGroup){
         delete m_sbdThread;
         m_sbdThread = new SbdThread();
         m_sbdThread->setConfiguredSbRegExp( m_configuredRe );
-        connect( m_sbdThread, TQT_SIGNAL(filteringFinished()), this, TQT_SLOT(slotSbdThreadFilteringFinished()) );
+        connect( m_sbdThread, TQ_SIGNAL(filteringFinished()), this, TQ_SLOT(slotSbdThreadFilteringFinished()) );
         m_state = fsIdle;
         emit filteringStopped();
     }

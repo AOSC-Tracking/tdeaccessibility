@@ -87,7 +87,7 @@ void ArtsPlayer::startPlay(const TQString &file)
         m_playobject = m_factory->createPlayObject(m_currentURL, false);
 
         if(m_playobject->object().isNull())
-            connect(m_playobject, TQT_SIGNAL(playObjectCreated()), TQT_SLOT(playObjectCreated()));
+            connect(m_playobject, TQ_SIGNAL(playObjectCreated()), TQ_SLOT(playObjectCreated()));
         else
             playObjectCreated();
     }
@@ -254,7 +254,7 @@ void ArtsPlayer::setupPlayer()
     m_dispatcher = new KArtsDispatcher;
     m_server = new KArtsServer;
     setupArtsObjects();
-    connect(m_server, TQT_SIGNAL(restartedServer()), TQT_SLOT(setupArtsObjects()));
+    connect(m_server, TQ_SIGNAL(restartedServer()), TQ_SLOT(setupArtsObjects()));
 }
 
 void ArtsPlayer::setupVolumeControl()
