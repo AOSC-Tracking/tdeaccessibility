@@ -114,8 +114,8 @@
         <slot>slotLaunchControlcenter()</slot>
     </connection>
 </connections>
-<Q_SLOTS>
+<slots>
     <slot access="protected">slotLaunchControlcenter()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

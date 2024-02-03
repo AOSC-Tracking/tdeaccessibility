@@ -653,14 +653,14 @@
         <slot>slotOKwasClicked()</slot>
     </connection>
 </connections>
-<Q_SLOTS>
+<slots>
     <slot>sliderRoomChanged(int)</slot>
     <slot>sliderDampChanged(int)</slot>
     <slot>sliderWetChanged(int)</slot>
     <slot>sliderDryChanged(int)</slot>
     <slot>sliderWidthChanged(int)</slot>
     <slot>slotOKwasClicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kpushbutton.h</include>

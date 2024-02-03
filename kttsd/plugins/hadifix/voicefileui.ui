@@ -109,8 +109,8 @@
 <variables>
     <variable access="public">TQString mbrola;</variable>
 </variables>
-<Q_SLOTS>
+<slots>
     <slot>genderButton_clicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -169,9 +169,9 @@
 <variables>
     <variable access="public">KLanguageButton *languageButton;</variable>
 </variables>
-<Q_SLOTS>
+<slots>
     <slot access="protected" specifier="non virtual">languageButton_activated( int index )</slot>
-</Q_SLOTS>
+</slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
 </functions>

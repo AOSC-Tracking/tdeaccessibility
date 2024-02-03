@@ -58,10 +58,10 @@
 <tabstops>
     <tabstop>TextEdit</tabstop>
 </tabstops>
-<Q_SLOTS>
+<slots>
     <slot>slotCopyAvailable(bool)</slot>
     <slot>slotTextChanged()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
 	<include location="global" impldecl="in implementation">ktextedit.h</include>
