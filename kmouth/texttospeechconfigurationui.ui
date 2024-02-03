@@ -157,9 +157,9 @@
         </widget>
     </vbox>
 </widget>
-<Q_SIGNALS>
+<signals>
     <signal>configurationChanged()</signal>
-</Q_SIGNALS>
+</signals>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
 	<include location="global" impldecl="in implementation">kurlrequester.h</include>

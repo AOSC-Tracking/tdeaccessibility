@@ -214,8 +214,8 @@
     <include location="global" impldecl="in implementation">kpushbutton.h</include>
     <include location="global" impldecl="in implementation">kcombobox.h</include>
 </includes>
-<Q_SIGNALS>
+<signals>
     <signal>configurationChanged()</signal>
-</Q_SIGNALS>
+</signals>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

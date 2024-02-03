@@ -1879,11 +1879,11 @@
 	<include location="global" impldecl="in implementation">knuminput.h</include>
 	<include location="global" impldecl="in implementation">kcombobox.h</include>
 </includes>
-<Q_SIGNALS>
+<signals>
     <signal>configChanged()</signal>
-</Q_SIGNALS>
-<Q_SLOTS>
+</signals>
+<slots>
     <slot access="private">slotConfigChanged()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="6"/>
 </UI>

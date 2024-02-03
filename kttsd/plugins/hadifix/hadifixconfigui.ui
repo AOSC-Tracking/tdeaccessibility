@@ -656,10 +656,10 @@
     <variable>TQPixmap male;</variable>
     <variable>TQMap&lt;TQString,int&gt; femaleVoices;</variable>
 </variables>
-<Q_SIGNALS>
+<signals>
     <signal>changed(bool)</signal>
-</Q_SIGNALS>
-<Q_SLOTS>
+</signals>
+<slots>
     <slot access="protected" specifier="non virtual">volumeBox_valueChanged( int percentValue )</slot>
     <slot access="protected" specifier="non virtual">timeBox_valueChanged( int percentValue )</slot>
     <slot access="protected" specifier="non virtual">frequencyBox_valueChanged( int percentValue )</slot>
@@ -667,7 +667,7 @@
     <slot access="protected" specifier="non virtual">timeSlider_valueChanged( int sliderValue )</slot>
     <slot access="protected" specifier="non virtual">frequencySlider_valueChanged( int sliderValue )</slot>
     <slot access="protected">changed( const TQString &amp; )</slot>
-</Q_SLOTS>
+</slots>
 <functions>
     <function access="protected" specifier="non virtual" returnType="int">percentToSlider( int percentValue )</function>
     <function access="protected" specifier="non virtual" returnType="int">sliderToPercent( int sliderValue )</function>

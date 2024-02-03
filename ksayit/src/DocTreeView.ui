@@ -123,7 +123,7 @@
     <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
     <include location="global" impldecl="in implementation">tdelistview.h</include>
 </includes>
-<Q_SIGNALS>
+<signals>
     <signal>signalContentChanged(const TQString &amp;)</signal>
     <signal>signalAllNodesProcessed()</signal>
     <signal>signalSetText(const TQString &amp;)</signal>
@@ -132,8 +132,8 @@
     <signal>signalSetBookmarkFilename(const TQString&amp;)</signal>
     <signal>signalChangeBookmarkFilename(const TQString &amp;)</signal>
     <signal>signalDeleteBookmark(const TQString&amp;, const TQString&amp;)</signal>
-</Q_SIGNALS>
-<Q_SLOTS>
+</signals>
+<slots>
     <slot>slotItemClicked( TQListViewItem * )</slot>
     <slot access="protected">slotRenameItem()</slot>
     <slot access="protected">slotDeleteItem()</slot>
@@ -154,6 +154,6 @@
     <slot access="protected">slotNewSection_4()</slot>
     <slot access="protected">slotNewSection_5()</slot>
     <slot>slotRightButtonPressed( TQListViewItem * i, const TQPoint &amp;, int )</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

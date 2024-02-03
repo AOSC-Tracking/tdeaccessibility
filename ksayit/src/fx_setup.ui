@@ -242,11 +242,11 @@
         <slot>slotConfigureEffect(TQListBoxItem*)</slot>
     </connection>
 </connections>
-<Q_SLOTS>
+<slots>
     <slot>slotAdd()</slot>
     <slot>slotRemove()</slot>
     <slot>slotRemoveAll()</slot>
     <slot>slotConfigureEffect(TQListBoxItem*)</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
