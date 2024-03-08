@@ -1,6 +1,6 @@
-FILE( GLOB EPS_FILES *.eps)
+file( GLOB EPS_FILES *.eps)
 
-INSTALL(
+install(
     FILES ${EPS_FILES}
     DESTINATION ${HTML_INSTALL_DIR}/en/kmouth
 )
