@@ -43,7 +43,7 @@ namespace KDE {
     class PlayObject;
 }
 
-class KDE_EXPORT ArtsPlayer : public Player
+class TDE_EXPORT ArtsPlayer : public Player
 {
     TQ_OBJECT
   

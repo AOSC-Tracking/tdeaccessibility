@@ -45,7 +45,7 @@ class kttsdlibtalker2;
 /**
 @author Robert Vogl
 */
-class KDE_EXPORT KTTSDLib : public TQObject
+class TDE_EXPORT KTTSDLib : public TQObject
 {
 TQ_OBJECT
 

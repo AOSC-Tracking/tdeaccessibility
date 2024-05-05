@@ -39,7 +39,7 @@
 #include "talkercode.h"
 #include "selecttalkerwidget.h"
 
-class KDE_EXPORT SelectTalkerDlg : public KDialogBase
+class TDE_EXPORT SelectTalkerDlg : public KDialogBase
 {
     TQ_OBJECT
   

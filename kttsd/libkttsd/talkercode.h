@@ -32,7 +32,7 @@
 #include "kdeexportfix.h"
 #include <tqvaluelist.h>
 
-class KDE_EXPORT TalkerCode
+class TDE_EXPORT TalkerCode
 {
     public:
         /**

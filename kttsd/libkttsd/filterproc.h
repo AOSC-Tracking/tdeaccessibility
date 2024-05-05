@@ -36,7 +36,7 @@
 class TalkerCode;
 class TDEConfig;
 
-class KDE_EXPORT KttsFilterProc : virtual public TQObject
+class TDE_EXPORT KttsFilterProc : virtual public TQObject
 {
     TQ_OBJECT
   
