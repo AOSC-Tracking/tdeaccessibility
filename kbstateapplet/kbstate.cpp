@@ -50,7 +50,7 @@ extern "C"
 #include <X11/keysymdef.h>
 #include <X11/extensions/XKB.h>
 
-    KDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
+    TDE_EXPORT KPanelApplet* init(TQWidget *parent, const TQString& configFile)
     {
         TDEGlobal::locale()->insertCatalogue("kbstateapplet");
         KbStateApplet *applet = new KbStateApplet(configFile, KPanelApplet::Normal, KPanelApplet::About, parent, "kbstateapplet");

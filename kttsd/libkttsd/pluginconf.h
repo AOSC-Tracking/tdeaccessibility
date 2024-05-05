@@ -207,7 +207,7 @@
 * order to synthesize speech.
 */
 
-class KDE_EXPORT PlugInConf : public TQWidget{
+class TDE_EXPORT PlugInConf : public TQWidget{
     TQ_OBJECT
   
 

@@ -31,7 +31,7 @@
 
 class TDEProcess;
 
-class KDE_EXPORT Stretcher : public TQObject{
+class TDE_EXPORT Stretcher : public TQObject{
     TQ_OBJECT
   
 

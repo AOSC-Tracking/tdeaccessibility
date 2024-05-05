@@ -25,7 +25,7 @@
 
 // #include "filehandle.h"
 
-class KDE_EXPORT Player : virtual public TQObject
+class TDE_EXPORT Player : virtual public TQObject
 {
     TQ_OBJECT
   

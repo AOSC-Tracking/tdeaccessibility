@@ -1,5 +1,5 @@
 /*
-  tdelibs < 3.3.2 had a bug in the KDE_EXPORT macro.  This file fixes this
+  tdelibs < 3.3.2 had a bug in the TDE_EXPORT macro.  This file fixes this
   by undefining it.
   -------------------
   Copyright : (C) 2005 by Gary Cramblitt <garycramblitt@comcast.net>
@@ -20,8 +20,8 @@
 
 #include <tdeversion.h>
 #if TDE_VERSION < TDE_MAKE_VERSION (3,3,2)
-#undef KDE_EXPORT
-#define KDE_EXPORT
+#undef TDE_EXPORT
+#define TDE_EXPORT
 #endif
 
 #endif      // _KDEEXPORTFIX_H_

@@ -31,7 +31,7 @@ namespace aKode {
     class Player;
 }
 
-class KDE_EXPORT aKodePlayer : public Player
+class TDE_EXPORT aKodePlayer : public Player
 {
     TQ_OBJECT
   

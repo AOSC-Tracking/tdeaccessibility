@@ -66,7 +66,7 @@ static snd_pcm_sframes_t (*writei_func)(snd_pcm_t *handle, const void *buffer, s
 static snd_pcm_sframes_t (*readn_func)(snd_pcm_t *handle, void **bufs, snd_pcm_uframes_t size);
 static snd_pcm_sframes_t (*writen_func)(snd_pcm_t *handle, void **bufs, snd_pcm_uframes_t size);
 
-class KDE_EXPORT AlsaPlayer : public Player, TQThread
+class TDE_EXPORT AlsaPlayer : public Player, TQThread
 {
     TQ_OBJECT
   

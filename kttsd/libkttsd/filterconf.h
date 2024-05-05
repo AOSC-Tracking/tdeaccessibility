@@ -34,7 +34,7 @@
 #include <kdemacros.h>
 #include "kdeexportfix.h"
 
-class KDE_EXPORT KttsFilterConf : public TQWidget{
+class TDE_EXPORT KttsFilterConf : public TQWidget{
     TQ_OBJECT
   
 

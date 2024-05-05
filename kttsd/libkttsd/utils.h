@@ -24,7 +24,7 @@
 class TQString;
 class TQComboBox;
 
-class KDE_EXPORT KttsUtils {
+class TDE_EXPORT KttsUtils {
 
 public:
     /// Constructor

@@ -22,7 +22,7 @@
 
 class TQString;
 
-class KDE_EXPORT NotifyAction
+class TDE_EXPORT NotifyAction
 {
 
 public:
@@ -44,7 +44,7 @@ public:
 
 // --------------------------------------------------------------------
 
-class KDE_EXPORT NotifyPresent
+class TDE_EXPORT NotifyPresent
 {
 
 public:
@@ -67,7 +67,7 @@ public:
 
 // --------------------------------------------------------------------
 
-class KDE_EXPORT NotifyEvent
+class TDE_EXPORT NotifyEvent
 {
 
 public:

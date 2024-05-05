@@ -33,7 +33,7 @@ class Stretcher;
 
 // TODO: Make this work asynchronously.
 
-class KDE_EXPORT TestPlayer : public TQObject{
+class TDE_EXPORT TestPlayer : public TQObject{
     public:
         /**
          * Constructor.
