@@ -26,7 +26,7 @@
 #ifndef _STRETCHER_H_
 #define _STRETCHER_H_
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 class TDEProcess;

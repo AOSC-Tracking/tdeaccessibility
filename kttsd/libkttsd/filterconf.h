@@ -31,7 +31,7 @@
 // KDE includes.
 #include <tdeconfig.h>
 #include <kdebug.h>
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 class TDE_EXPORT KttsFilterConf : public TQWidget{

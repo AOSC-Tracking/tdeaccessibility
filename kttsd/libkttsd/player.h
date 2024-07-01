@@ -18,7 +18,7 @@
 
 #include <tqobject.h>
 #include <tqstringlist.h>
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 #include "tdeglobal.h"
 #include "tdelocale.h"

@@ -18,7 +18,7 @@
 #ifndef _NOTIFYACTION_H
 #define _NOTIFYACTION_H
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 
 class TQString;
 

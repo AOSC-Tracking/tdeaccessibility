@@ -34,7 +34,7 @@
 #include <knotifyclient.h>
 #include <tdeshortcut.h>
 #include <kkeynative.h>
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include <kprocess.h>
 #include "kdeexportfix.h"
 #include "kbstate.h"

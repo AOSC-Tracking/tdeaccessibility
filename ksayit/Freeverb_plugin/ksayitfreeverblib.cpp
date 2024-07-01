@@ -17,7 +17,7 @@
 // KDE includes
 #include <kdebug.h>
 #include <tdelocale.h>
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include <arts/artsmodules.h>
 
 // App specific includes

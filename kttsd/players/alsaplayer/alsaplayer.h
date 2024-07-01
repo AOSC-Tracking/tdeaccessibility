@@ -40,7 +40,7 @@
 #include <tqmutex.h>
 
 // KDE includes.
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 #include <kurl.h>
 

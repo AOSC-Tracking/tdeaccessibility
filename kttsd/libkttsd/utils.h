@@ -18,7 +18,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 class TQString;

@@ -25,7 +25,7 @@
 #include <tqstring.h>
 
 #include "player.h"
-#include <kdemacros.h>
+#include <tdemacros.h>
 namespace aKode {
     class File;
     class Player;
