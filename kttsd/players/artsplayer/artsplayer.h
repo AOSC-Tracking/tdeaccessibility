@@ -23,7 +23,7 @@
 #include "config.h"
 #endif
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 #include "player.h"

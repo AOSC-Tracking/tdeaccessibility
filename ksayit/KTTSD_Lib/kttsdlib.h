@@ -21,7 +21,7 @@ using namespace std;
 #include <tqwidget.h>
 #include <tqframe.h>
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 // KDE includes

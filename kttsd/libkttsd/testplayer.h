@@ -25,7 +25,7 @@
 #ifndef _TESTPLAYER_H_
 #define _TESTPLAYER_H_
 
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 class Player;

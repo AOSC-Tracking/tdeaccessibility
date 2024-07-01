@@ -21,7 +21,7 @@
 
 #include <tqobject.h>
 #include <tqstring.h>
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 #include <tdeconfig.h>
 

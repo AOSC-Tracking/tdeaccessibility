@@ -30,7 +30,7 @@
 #include <tqstringlist.h>
 
 // KDE includes.
-#include <kdemacros.h>
+#include <tdemacros.h>
 #include "kdeexportfix.h"
 
 class TalkerCode;
